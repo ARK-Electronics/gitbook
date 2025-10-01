@@ -178,6 +178,7 @@
 ## Airframes
 
 * [ARK RIG5](airframes/ark-rig5.md)
+* [ARK RIG7](airframes/ark-rig7.md)
 
 ## Resources
 
