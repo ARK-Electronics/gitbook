@@ -14,76 +14,37 @@ You can update the bootloader using the [AM32 Configurator](https://am32.ca/conf
 
 ## Flashing Bootloader via SWD
 
-If you're flashing an ESC without firmware or the firmware has become corrupted, you can reflesh the ESC with SWD to bring it back to a fresh state.
+If you're flashing an ESC without firmware or the firmware has become corrupted, you can reflash the ESC with SWD to bring it back to a fresh state.
 
 #### What You'll Need
 
 * ARK 4IN1 ESC
 * ST-Link V2 or V3 programmer
-* Power supply for the ESC (3s-8s LiPo or bench power supply, 6-33V)
-* Computer running Windows or Ubuntu 22.04+
-* AM32 bootloader file (AM32\_F051\_BOOTLOADER\_PB4.bin)
+* Computer running Windows or Ubuntu
+* [AM32 bootloader file](./#am32-bootloader-firmware)
 
 #### Hardware Setup
 
-You will flash one MCU at a time, connecting three wires from your ST-Link to the appropriate pins on the debug connector:
+Connect and program each MCU. If your ESC is powered with a power supply or battery **do not** connect the 3.3V
 
 * ST-Link SWDIO → Corresponding ESC SWDIO pin
 * ST-Link SWCLK → Corresponding ESC SWCLK pin
 * ST-Link GND → Pin 10 (GND)
-
-**Important:** Do NOT connect the 3.3V pin from the ST-Link. Power the ESC through its main battery input (6-33V). It's recommended to flash without motors connected.
+* ST-Link 3.3V → Pin 1 (3.3V) — **do not connect if ESC is externally powered**
 
 #### Software Installation
 
-**Windows**
+#### **Windows**
 
-1. Download the latest Windows release from the [stlink releases page](https://github.com/stlink-org/stlink/releases)
-2. Choose the correct version for your system (i686 for 32-bit or x86\_64 for 64-bit)
-3. Extract the archive to `C:\Program Files\stlink` or `C:\Program Files (x86)\stlink`
-4. Add the stlink folder to your system PATH:
-   * Open System Properties → Advanced → Environment Variables
-   * Edit the PATH variable and add the stlink installation directory
-   * Click OK to save
+Download the ST-Link Utility from the ST-LINK [website](https://www.st.com/en/development-tools/st-link-v2.html#tools-software).
 
-**USB Driver Setup:**
+Open the GUI and follow the [ST Documentation](https://www.st.com/en/development-tools/stsw-link007.html#documentation) to program the MCU.
 
-Windows requires USB driver installation for the ST-Link:
+#### **Ubuntu**
 
-1. Download and install [Zadig](https://zadig.akeo.ie/)
-2. Connect your ST-Link to your computer
-3. Open Zadig and select your ST-Link device from the dropdown
-4. Select WinUSB driver
-5. Click "Replace Driver" or "Install Driver"
+Follow the instructions on the official ST-LINK[ github page](https://github.com/stlink-org/stlink) to install the stlink tools.
 
-**Verify Installation:**
-
-Open Command Prompt or PowerShell and run:
-
-```bash
-st-info --version
-```
-
-**Ubuntu**
-
-Follow the instructions on the official [stlink-org github page](https://github.com/stlink-org/stlink) to install the stlink tools.
-
-#### Flashing Process
-
-You must flash the bootloader to each of the four MCUs individually.
-
-**Step 1: Connect to MCU**
-
-For each ESC:
-
-1. Power off the ESC
-2. Connect your ST-Link to the corresponding SWD pins
-3. Power on the ESC (6-33V on main battery input)
-4. Connect the ST-Link to your computer via USB
-
-**Step 2: Verify Connection**
-
-Test the connection to ensure the MCU is detected:
+**Test the Connection**
 
 ```bash
 st-info --probe
@@ -101,9 +62,9 @@ Found 1 stlink programmers
   dev-type:   STM32F03x/STM32F05x
 ```
 
-If you see an error, check your wiring and ensure the ESC is powered.
+If you see an error, check your wiring.
 
-**Step 3: Erase Flash Memory**
+**Erase Flash Memory**
 
 Before flashing the bootloader, erase the flash:
 
@@ -111,7 +72,7 @@ Before flashing the bootloader, erase the flash:
 st-flash erase
 ```
 
-**Step 4: Flash the Bootloader**
+**Flash the Bootloader**
 
 Navigate to the directory containing AM32\_F051\_BOOTLOADER\_PB4.bin, then flash it:
 
