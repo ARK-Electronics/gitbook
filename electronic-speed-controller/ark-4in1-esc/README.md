@@ -32,8 +32,8 @@ coverY: -23.514666666666663
 [pinout.md](pinout.md)
 {% endcontent-ref %}
 
-{% content-ref url="firmware.md" %}
-[firmware.md](firmware.md)
+{% content-ref url="firmware/" %}
+[firmware](firmware/)
 {% endcontent-ref %}
 
 {% content-ref url="pwm-calibration.md" %}
