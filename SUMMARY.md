@@ -46,6 +46,7 @@
   * [Mini DisplayPort](flight-controller/ark-jetson-pab-carrier/mini-displayport.md)
   * [USB Wi-Fi Adapters](flight-controller/ark-jetson-pab-carrier/usb-wi-fi-adapters.md)
   * [USB Bluetooth Adapters](flight-controller/ark-jetson-pab-carrier/usb-bluetooth-adapters.md)
+  * [USB Cameras and GPS](flight-controller/ark-jetson-pab-carrier/usb-cameras-and-gps.md)
   * [Apt Upgrade Hold Back Risky Packages](flight-controller/ark-jetson-pab-carrier/apt-upgrade-hold-back-risky-packages.md)
 * [ARK Pi6X Flow](flight-controller/ark-pi6x-flow/README.md)
   * [Block Diagram](flight-controller/ark-pi6x-flow/block-diagram.md)
