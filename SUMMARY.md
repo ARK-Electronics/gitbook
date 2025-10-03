@@ -188,5 +188,6 @@
 
 ## Resources
 
+* [Demos and Examples](resources/demos-and-examples.md)
 * [Links](resources/links.md)
 * [About](resources/about.md)

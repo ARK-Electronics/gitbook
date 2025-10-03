@@ -1,13 +1,15 @@
 # Links
 
+Check out our store
+
 {% embed url="https://arkelectron.com/" %}
 Webshop
 {% endembed %}
 
-{% embed url="https://www.linkedin.com/company/ark-electronics-llc/posts/?feedView=all" %}
-LinkedIn
-{% endembed %}
+Follow us on LinkedIn
 
-{% embed url="https://x.com/ark_electr0nics" %}
-Twitter
-{% endembed %}
+{% embed url="https://www.linkedin.com/company/ark-electronics-llc" %}
+
+Follow us on X\
+\
+[https://x.com/ARK\_Electr0nics](https://x.com/ARK_Electr0nics)
