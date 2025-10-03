@@ -5,6 +5,10 @@ coverY: 0
 
 # ARK MOSAIC-X5 RTK GPS
 
+Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
+
+{% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.&#x20;

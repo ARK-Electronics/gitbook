@@ -5,6 +5,10 @@ coverY: -10
 
 # ARK TESEO GPS
 
+Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
+
+{% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}
+
 ## PX4 EKF Parameters
 
 The ST Teseo-LIV4F can report slightly higher speed accuracy values than the default [EKF2\_REQ\_SACC](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_REQ_SACC) parameter, causing PX4 to reject GPS fusion. The default is 0.5m/s. Increasing this to 1.5-2.0m/s is recommended.
