@@ -33,6 +33,9 @@ ARK Teseo GPS Bootloader
 
 * 86-1.16.3c45b562 - 2025-9-26
   * Migrate to build server
+  * Improve NMEA decoder
+  * platforms: Serial new dedicated writeBlocking method [#25537](https://github.com/PX4/PX4-Autopilot/pull/25537)
+  * Update to STA8041\_LIV4F\_PVT\_STD\_4\_6\_8\_5\_11\_UPG [Teseo Firmware](https://www.st.com/en/embedded-software/teseo-liv4fsw.html)
 * 86-1.15.b4c24e95 - 2025-6-13
   * Update to STA8041\_LIV4F\_PVT\_STD\_4\_6\_8\_5\_10\_UPG [Teseo Firmware](https://www.st.com/en/embedded-software/teseo-liv4fsw.html)
 * 86-1.15.6616d230 - 2025-2-26
