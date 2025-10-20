@@ -11,6 +11,8 @@
   * [Block Diagram](embedded-computers/ark-just-a-jetson/block-diagram.md)
   * [3D Model](embedded-computers/ark-just-a-jetson/3d-model.md)
   * [Apt Upgrade Hold Back Risky Packages](embedded-computers/ark-just-a-jetson/apt-upgrade-hold-back-risky-packages.md)
+  * [IMU ICM-42688P Guide](embedded-computers/ark-just-a-jetson/imu-icm-42688p-guide.md)
+  * [INA238 Power Monitor Guide](embedded-computers/ark-just-a-jetson/ina238-power-monitor-guide.md)
 
 ## Flight Controller
 
