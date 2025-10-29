@@ -91,6 +91,15 @@
 
 ## Sensor
 
+* [ARK CANnode](sensor/ark-cannode/README.md)
+  * [PX4 Instructions](sensor/ark-cannode/px4-instructions.md)
+  * [3D Models](sensor/ark-cannode/3d-models.md)
+* [ARK DIST](sensor/ark-dist/README.md)
+  * [Pinout](sensor/ark-dist/pinout.md)
+  * [Firmware](sensor/ark-dist/firmware.md)
+  * [Ardupilot Instructions](sensor/ark-dist/ardupilot-instructions.md)
+  * [PX4 Instructions](sensor/ark-dist/px4-instructions.md)
+  * [3D models & Case files](sensor/ark-dist/3d-models-and-case-files.md)
 * [ARK Flow](sensor/ark-flow/README.md)
   * [Ardupilot Instructions](sensor/ark-flow/ardupilot-instructions.md)
   * [PX4 Instructions](sensor/ark-flow/px4-instructions.md)
@@ -101,15 +110,11 @@
   * [PX4 Instructions](sensor/ark-flow-mr/px4-instructions.md)
   * [DroneCAN Messages](sensor/ark-flow-mr/dronecan-messages.md)
   * [3D models & Case files](sensor/ark-flow-mr/3d-models-and-case-files.md)
-* [ARK DIST](sensor/ark-dist/README.md)
-  * [Pinout](sensor/ark-dist/pinout.md)
-  * [Firmware](sensor/ark-dist/firmware.md)
-  * [Ardupilot Instructions](sensor/ark-dist/ardupilot-instructions.md)
-  * [PX4 Instructions](sensor/ark-dist/px4-instructions.md)
-  * [3D models & Case files](sensor/ark-dist/3d-models-and-case-files.md)
-* [ARK CANnode](sensor/ark-cannode/README.md)
-  * [PX4 Instructions](sensor/ark-cannode/px4-instructions.md)
-  * [3D Models](sensor/ark-cannode/3d-models.md)
+* [ARK MAG](sensor/ark-mag/README.md)
+  * [Pinout](sensor/ark-mag/pinout.md)
+  * [Ardupilot Instructions](sensor/ark-mag/ardupilot-instructions.md)
+  * [PX4 Instructions](sensor/ark-mag/px4-instructions.md)
+  * [3D models & Case files](sensor/ark-mag/3d-models-and-case-files.md)
 
 ## GPS
 
