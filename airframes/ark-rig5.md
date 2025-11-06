@@ -57,6 +57,9 @@ All printed parts are available on GitHub. They will be available as STEP files 
 
 The frame will also be included so that you can modify it or just make it yourself if you have access to a CNC machine
 
+Design files can be found here:\
+[https://a360.co/48jmK8b](https://a360.co/48jmK8b)
+
 3D models can be found here:\
 [https://github.com/ARK-Electronics/ARK\_RIG5](https://github.com/ARK-Electronics/ARK_RIG5)
 
