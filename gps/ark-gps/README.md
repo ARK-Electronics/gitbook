@@ -13,12 +13,14 @@ Follow the steps for updating the firmware through the flight controller.&#x20;
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/81-1.16.e68afe1e.uavcan.bin" %}
+{% file src="../../.gitbook/assets/81-1.17.67ace351.uavcan.bin" %}
 ARK GPS Firmware
 {% endfile %}
 
 ## Release Notes
 
+* 81-1.17.67ace351 - 2025-11-14
+  * [Fix M9N output rate](https://github.com/PX4/PX4-GPSDrivers/pull/191)
 * 81-1.16.e68afe1e - 2025-2-12
   * Disable mag bias estimator by default
 
