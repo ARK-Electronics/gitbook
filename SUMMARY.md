@@ -138,6 +138,7 @@
   * [Betaflight Instructions](gps/ark-sam-gps/betaflight-instructions.md)
   * [3D Model](gps/ark-sam-gps/3d-model.md)
 * [ARK TESEO GPS](gps/ark-teseo-gps.md)
+* [ARK X20 RTK GPS](gps/ark-x20-rtk-gps.md)
 
 ## Power
 
