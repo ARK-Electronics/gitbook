@@ -15,13 +15,11 @@ Select DShot protocol for your motors\
 
 
 Configure the direction in the Geometry tab. This tells PX4 the direction the motors will spin.\
-![](<../../.gitbook/assets/image (50).png>)\
-
+![](<../../.gitbook/assets/image (50).png>)<br>
 
 Use the "Set Spin Direction" buttons to change the spin direction for each motor. You can lightly touch each motor to ensure the spin direction matches the geometry you selected above.\
 \
-![](<../../.gitbook/assets/Screenshot from 2025-06-11 15-39-45.png>)\
-
+![](<../../.gitbook/assets/Screenshot from 2025-06-11 15-39-45.png>)<br>
 
 ***
 

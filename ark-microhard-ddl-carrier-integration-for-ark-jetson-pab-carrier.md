@@ -45,23 +45,19 @@ This example demonstrates the basic steps required to set up each unit so that a
    **Password: admin**\
    Once successfully logged in for the first\
    time, the pMDDL will force a password\
-   change\
-
-4.  Once successfully logged in, the System Summary window will be displayed.\
-
+   change<br>
+4.  Once successfully logged in, the System Summary window will be displayed.<br>
 
     <figure><img src=".gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 5. Hover over **Network** settings and select **LAN**
-6.  Edit the existing connection\
-
+6.  Edit the existing connection<br>
 
     <figure><img src=".gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
 
 7.  Enter the following Network Information:\
     **IP Address: 192.168.168.11**\
-    **IP Subnet Mask: 255.255.255.0**\
-
+    **IP Subnet Mask: 255.255.255.0**<br>
 
     <figure><img src=".gitbook/assets/Screenshot from 2025-09-09 14-45-01.png" alt=""><figcaption></figcaption></figure>
 
@@ -87,13 +83,11 @@ This example demonstrates the basic steps required to set up each unit so that a
    **User name: admin**\
    **Password: admin**\
    Once successfully logged in for the first time, the pMDDL will force a password change.
-4.  Once successfully logged in, the System Summary window will be displayed.\
-
+4.  Once successfully logged in, the System Summary window will be displayed.<br>
 
     <figure><img src=".gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
 5. Hover over **Network** settings and select **LAN**
-6.  Edit the existing connection\
-
+6.  Edit the existing connection<br>
 
     <figure><img src=".gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
 
@@ -112,15 +106,13 @@ This example demonstrates the basic steps required to set up each unit so that a
     In the **RF Configuration** ensure the **Compatibility Mode, Channel Bandwidth and Channel-Frequency** are set the same on each module.\
     Select **Slave** from the **Operation Mode dropdown box**.\
     Set a **Network ID**, which will need to be the same on each unit in the network.\
-    This example uses **ARK**\
-
+    This example uses **ARK**<br>
 
     <figure><img src=".gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 \
 For best performance, the **Master unit** should be connected to the **Drone(Jetson)**, while the **Remote unit** should be connected to the **Ground Control Station(Your PC)**. The pMDDL system supports **Point-to-Multipoint applications**, meaning multiple remote units can be added to simultaneously view the same video stream from different locations.\
-Once both radios are set up and powered they connect automatically. It can be observed in the **Wireless Status tab.**\
-
+Once both radios are set up and powered they connect automatically. It can be observed in the **Wireless Status tab.**<br>
 
 <figure><img src=".gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
 
@@ -140,8 +132,7 @@ The process for assigning a static IP address depends on your operating system (
 
 ⚠️ **Note:** IP addresses are statically assigned. Ensure you do not reuse an IP address already in use on the network to avoid conflicts.
 
-**For Windows:**\
-
+**For Windows:**<br>
 
 <figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 

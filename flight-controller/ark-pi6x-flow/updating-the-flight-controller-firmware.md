@@ -13,4 +13,4 @@ Otherwise you can ssh into the Pi and use the [flashing script from ARK-OS](http
 ## PX4 Binaries
 
 You can download the latest PX4 v1.15 release here:\
-[https://github.com/PX4/PX4-Autopilot/releases/download/v1.15.0/ark\_pi6x\_default.px4](https://github.com/PX4/PX4-Autopilot/releases/download/v1.15.0/ark_pi6x_default.px4)\
+[https://github.com/PX4/PX4-Autopilot/releases/download/v1.15.0/ark\_pi6x\_default.px4](https://github.com/PX4/PX4-Autopilot/releases/download/v1.15.0/ark_pi6x_default.px4)<br>

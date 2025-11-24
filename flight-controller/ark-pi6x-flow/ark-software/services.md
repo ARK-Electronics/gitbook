@@ -61,8 +61,7 @@ The **hotspot-control** service configures the Pi as a hotspot if it is unable t
 
 ## Polaris
 
-The **polaris** service provides a client interface to the Point One [Polaris RTK Correction Network](https://pointonenav.com/polaris). This service allows you to receive network RTK corrections over the internet with an active Point One subscription. This allows you to achieve centimeter precision position hold anywhere the network is available.\
-
+The **polaris** service provides a client interface to the Point One [Polaris RTK Correction Network](https://pointonenav.com/polaris). This service allows you to receive network RTK corrections over the internet with an active Point One subscription. This allows you to achieve centimeter precision position hold anywhere the network is available.<br>
 
 The configuration can be edited in the [ARK-UI](http://jetson.local/). The default configuration is found here:
 

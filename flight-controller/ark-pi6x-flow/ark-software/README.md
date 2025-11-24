@@ -7,8 +7,7 @@ If you purchased an ARK Pi6X Flow with a Pi included these software packages wil
 
 On boot, if no known WiFi network is found, a hotspot will be created named **raspberrypi-\<serial>** with the password **password**.
 
-Open a web browser and go to [http://raspberrypi.local/](http://raspberrypi.local/) Here you can edit the WiFi hotspot or connect to your local network.\
-
+Open a web browser and go to [http://raspberrypi.local/](http://raspberrypi.local/) Here you can edit the WiFi hotspot or connect to your local network.<br>
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2024-10-09 12-53-22.png" alt=""><figcaption></figcaption></figure>
 

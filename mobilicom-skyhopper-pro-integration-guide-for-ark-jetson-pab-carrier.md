@@ -81,8 +81,7 @@ sudo nmcli connection up "Wired connection 1"
 \
 \
 **GUI configuration**\
-Once the static IP address is assigned, you can access the radio’s web interface by navigating to its IP address in a browser.\
-
+Once the static IP address is assigned, you can access the radio’s web interface by navigating to its IP address in a browser.<br>
 
 * Navigate to the "Basic Configuration" section and verify that the unit mode is set to **Remote**.\
   Once confirmed, you can set the frequency you intend to use for this link.
@@ -149,4 +148,4 @@ sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
 ```
 
-After setting the static IP, you can disconnect the USB connection and **restart the Jetson**. Once it reboots, you should be able to **SSH into the Jetson over the network** via the IP address you assigned.\
+After setting the static IP, you can disconnect the USB connection and **restart the Jetson**. Once it reboots, you should be able to **SSH into the Jetson over the network** via the IP address you assigned.<br>

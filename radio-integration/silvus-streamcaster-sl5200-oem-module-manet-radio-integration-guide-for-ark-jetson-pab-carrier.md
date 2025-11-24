@@ -161,10 +161,9 @@ Once the static IP address is assigned, you can access the radio’s web interfa
 Use the same configuration settings as previously described for the air unit.\
 The **key difference** is the **Peer IP** — this should be set to the IP address of the **air-side radio**.
 
-This ensures proper two-way communication between the ground and air units.\
+This ensures proper two-way communication between the ground and air units.<br>
 
-
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 You can then view all connected devices by navigating to the **Network Topology** section in the radio’s web interface.
 

@@ -13,8 +13,7 @@ We recommend running MAVLink on USB and XRCE-DDS on Serial.
 
 ## USB
 
-The USB connection to the autopilot is muxed with the external Jetson micro USB port. When a micro USB cable is connected, the autopilot is disconnected from the Jetson and the USB port on the Jetson switches from host to device mode. After the micro USB cable is disconnected, a reboot is required to switch the USB port back to a host and connect to the autopilot.\
-
+The USB connection to the autopilot is muxed with the external Jetson micro USB port. When a micro USB cable is connected, the autopilot is disconnected from the Jetson and the USB port on the Jetson switches from host to device mode. After the micro USB cable is disconnected, a reboot is required to switch the USB port back to a host and connect to the autopilot.<br>
 
 <figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 

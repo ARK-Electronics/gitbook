@@ -314,8 +314,7 @@ The default mode on Nimble is with Mesh Rider Radio interoperability disabled, a
 
 This will allow the Nimble radio to connect with Mesh Rider radios in WDS AP/Client mode. The Mesh Rider radio also needs to be configured in WDS mode for Nimble to connect.&#x20;
 
-You have to be in Client/AP Mode already, then you can enable WDS using Nimble Software Configuration Utility.\
-
+You have to be in Client/AP Mode already, then you can enable WDS using Nimble Software Configuration Utility.<br>
 
 To configure the Nimble transceiver, navigate to the nimble\_config folder /Nimble/nimble\_config/then run the nimble\_config shell script as root.
 
@@ -414,8 +413,7 @@ Once you have established the connection you should remove the usb connection an
 
 With this setup, your Jetson is part of your IP network, which means if it’s running a MAVLink server or any MAVLink-compatible device, you should be able to connect to it via QGroundControl (QGC) over the network. Additionally, you can access the Jetson remotely using SSH for monitoring or configuration tasks.
 
-Resources:\
-
+Resources:<br>
 
 {% embed url="https://techlibrary.doodlelabs.com/nimble-jetson-guide" %}
 
