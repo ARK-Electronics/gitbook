@@ -119,8 +119,4 @@ Expected output:
 2025-11-24T11:58:53 INFO common_flash.c: Flash written and verified! jolly good!
 2025-11-24T11:58:53 INFO common_legacy.c: Go to Thumb mode
 st-flash 1.8.0-121-g8c34a4e
-2025-11-24T11:58:53 INFO common_legacy.c: STM32H74x_H75x: 128 KiB SRAM, 2048 KiB flash in at least 128 KiB pages.
-2025-11-24T11:58:53 INFO common_legacy.c: NRST is not connected --> using software reset via AIRCR
-2025-11-24T11:58:53 INFO common_legacy.c: Go to Thumb mode
-2025-11-24T11:58:53 INFO common_legacy.c: Go to Thumb mode
 ```
