@@ -4,8 +4,8 @@ description: >-
   ARK electronics hardware. Specifically designed for compatibility with the ARK
   Jetson PAB carrier.
 icon: drone
-cover: ../.gitbook/assets/IMG_5452-EDIT.jpg
-coverY: 0
+cover: ../.gitbook/assets/rig7 frame.JPG
+coverY: -727.1453590192643
 ---
 
 # ARK RIG7
@@ -103,4 +103,8 @@ N/A
 
 ### Gallery
 
-N/A
+<figure><img src="../.gitbook/assets/rig7 angled.JPG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/rig7 front.JPG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/rig7 side.JPG" alt=""><figcaption></figcaption></figure>
