@@ -1,12 +1,16 @@
 ---
 description: >-
-  After flashing the SD/EMMC you must modify the boot/config.txt in order for
-  the ARK Pi6X to function properly.
+  After flashing the SD/EMMC you must modify the config.txt in order for the ARK
+  Pi6X to function properly.
 ---
 
 # After Flashing, Before Installing
 
-Comment out the following lines in **boot/config.txt**
+On the CM4, edit **/boot/config.txt**
+
+On the CM5, edit **/boot/firmware/config.txt**
+
+Comment out the following lines
 
 ```
 # Automatically load overlays for detected cameras
@@ -16,7 +20,7 @@ Comment out the following lines in **boot/config.txt**
 # display_auto_detect=1
 ```
 
-Add the following to the **boot/config.txt**
+Add the following
 
 ```
 # Turn on uart debug console
