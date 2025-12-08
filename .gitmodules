@@ -1,0 +1,9 @@
+[submodule "external-docs/px4"]
+	path = external-docs/px4
+	url = https://github.com/PX4/PX4-Autopilot.git
+[submodule "external-docs/ardupilot"]
+	path = external-docs/ardupilot
+	url = https://github.com/ArduPilot/ardupilot_wiki.git
+[submodule "external-docs/betaflight"]
+	path = external-docs/betaflight
+	url = https://github.com/betaflight/betaflight.com.git
