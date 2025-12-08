@@ -13,3 +13,10 @@ Follow us on LinkedIn
 Follow us on X\
 \
 [https://x.com/ARK\_Electr0nics](https://x.com/ARK_Electr0nics)
+
+## External Documentation
+
+* [PX4 Autopilot Documentation](https://docs.px4.io/main/en/)
+* [ArduPilot Documentation](https://ardupilot.org/ardupilot/)
+* [Betaflight Documentation](https://betaflight.com/docs/wiki/)
+
