@@ -196,8 +196,3 @@
 * [Demos and Examples](resources/demos-and-examples.md)
 * [Links](resources/links.md)
 * [About](resources/about.md)
-
-## External Documentation
-
-* [PX4 User Guide](external-documentation/px4-user-guide.md)
-* [Betaflight Wiki](external-documentation/betaflight-wiki.md)

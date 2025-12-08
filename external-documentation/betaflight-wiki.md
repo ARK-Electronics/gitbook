@@ -1,2 +1,0 @@
-# Betaflight Wiki
-
