@@ -199,5 +199,5 @@
 
 ## External Documentation
 
-* [PX4 User Guide](external-documentation/px4-user-guide.md)
-* [Betaflight Wiki](external-documentation/betaflight-wiki.md)
+* [PX4 User Guide](external-docs/px4/en/index.md)
+* [Betaflight Wiki](external-docs/betaflight/wiki/wiki.md)

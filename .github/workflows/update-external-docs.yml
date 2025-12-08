@@ -1,0 +1,63 @@
+name: Update External Docs
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Run every day at midnight
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update External Documentation
+        run: |
+          # Create temp directories for cloning
+          mkdir -p temp_clones
+
+          echo "Cloning PX4..."
+          git clone --depth 1 https://github.com/PX4/PX4-Autopilot.git temp_clones/px4
+          
+          echo "Cloning ArduPilot..."
+          git clone --depth 1 https://github.com/ArduPilot/ardupilot_wiki.git temp_clones/ardupilot
+          
+          echo "Cloning Betaflight..."
+          git clone --depth 1 https://github.com/betaflight/betaflight.com.git temp_clones/betaflight
+
+          # Clean existing external docs directories
+          echo "Cleaning old docs..."
+          rm -rf external-docs/px4 external-docs/ardupilot external-docs/betaflight
+          mkdir -p external-docs/px4 external-docs/ardupilot external-docs/betaflight
+
+          # Copy PX4 docs (content of docs/ folder)
+          echo "Copying PX4 docs..."
+          cp -r temp_clones/px4/docs/. external-docs/px4/
+
+          # Copy ArduPilot docs (entire repo content)
+          echo "Copying ArduPilot docs..."
+          cp -r temp_clones/ardupilot/. external-docs/ardupilot/
+          # Remove .git directory from copied content
+          rm -rf external-docs/ardupilot/.git
+
+          # Copy Betaflight docs (content of docs/ folder)
+          echo "Copying Betaflight docs..."
+          cp -r temp_clones/betaflight/docs/. external-docs/betaflight/
+
+          # Cleanup temp directory
+          rm -rf temp_clones
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add external-docs
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update external documentation [skip ci]"
+            git push
+          fi
