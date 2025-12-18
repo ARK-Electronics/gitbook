@@ -78,16 +78,16 @@
 [ark-dan-gps](gps/ark-dan-gps/)
 {% endcontent-ref %}
 
-{% content-ref url="gps/ark-mosaic-x5-rtk-gps.md" %}
-[ark-mosaic-x5-rtk-gps.md](gps/ark-mosaic-x5-rtk-gps.md)
+{% content-ref url="gps/ark-g5-rtk-gps.md" %}
+[ark-g5-rtk-gps.md](gps/ark-g5-rtk-gps.md)
 {% endcontent-ref %}
 
 {% content-ref url="gps/ark-gps/" %}
 [ark-gps](gps/ark-gps/)
 {% endcontent-ref %}
 
-{% content-ref url="gps/ark-mosaic-x5-rtk-gps-1.md" %}
-[ark-mosaic-x5-rtk-gps-1.md](gps/ark-mosaic-x5-rtk-gps-1.md)
+{% content-ref url="gps/ark-mosaic-x5-rtk-gps.md" %}
+[ark-mosaic-x5-rtk-gps.md](gps/ark-mosaic-x5-rtk-gps.md)
 {% endcontent-ref %}
 
 {% content-ref url="gps/ark-rtk-base/" %}
