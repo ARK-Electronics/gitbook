@@ -5,11 +5,11 @@ coverY: 0
 
 # ARK G5 RTK GPS
 
-### G5 vs G5H
+## G5 vs G5H
 
 The ARK G5 RTK GPS and the ARK G5H RTK GPS share the same PCB design but use different Septentrio G5 modules. The G5 uses the P3 and the G5H uses the P3H. Note that the G5/P3 only support a single antenna and the ANT2 connector is not active.&#x20;
 
-### DroneCAN
+## DroneCAN
 
 Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
 
@@ -95,3 +95,18 @@ Configures the output rate for GNSS data messages.
 ## 3D Model
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_G5\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_G5_RTK_GPS)
+
+## Septentrio G5 Module Firmware Updating
+
+The Septentrio G5 module firmware can be updated using the [Septentrio RxTools](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools) application.
+
+1. Install [RxTools](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools)
+2. &#x20;Launch RxControl
+3. Connect to the module on the USB serial connection\
+   ![](<../.gitbook/assets/image (70).png>)
+4. Under File, select "Upgrade Receiver using Current Connection"\
+   ![](<../.gitbook/assets/image (71).png>)
+5. Select the SUF firmware file downloaded from [Septentrio's website](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3#resources)\
+   ![](<../.gitbook/assets/image (72).png>)
+6. Run the upgrade
+
