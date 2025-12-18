@@ -23,8 +23,6 @@ To power the **Air unit**, we recommend using the **ARK 12S Payload Power Module
 
 Once powered, the **Air** and **Ground** units automatically establish a peer-to-peer IP link. This enables transparent data exchange between the Jetson companion computer and the ground control system, supporting high-throughput communication for ROS2, PX4, MAVLink, and ARK-specific applications.
 
-<figure><img src=".gitbook/assets/IMG_5018.JPG" alt=""><figcaption></figcaption></figure>
-
 ### PTP Link Step-by-Step Configuration
 
 To set up a Point-to-Point (PTP) link, you'll need two SkyHopper PRO units. One unit will serve as the\
@@ -37,8 +35,8 @@ To begin setup:
 3. Open a web browser on your PC or laptop (we recommend Chrome) and enter the following\
    address in the address bar: https://192.168.131.241 to access the Web GUI interface (of the\
    remote unit).\
-   &#xNAN;_&#x52;emark: The default IP address of the **Remote** Unit is 192.168.131.241 and the default IP address of the **Controller** Unit is 192.168.131.242. These addresses can be changed according to customer_\
-   _requirements_.
+   \&#xNAN;_Remark: The default IP address of the **Remote** Unit is 192.168.131.241 and the default IP address of the **Controller** Unit is 192.168.131.242. These addresses can be changed according to customer_\
+   &#xNAN;_&#x72;equirements_.
 4. **Repeat these steps for your Ground/Controller unit**
 
 > ⚠️ Use an IP address that is not already in use on the network to avoid conflicts.
@@ -55,8 +53,6 @@ To begin setup:
    * **IP address**: `192.168.131.150`
    * **Subnet mask**: `255.255.255.0`
    * **Default gateway**: `192.168.131.1` _(optional but recommended)_
-
-
 
 For Linux:
 
@@ -101,26 +97,16 @@ Once the static IP address is assigned, you can access the radio’s web interfa
   turn green, and the link uptime will start counting.
 
 _Please note that SkyHopper PRO units offer additional features including DFS, pairing, sense, and_\
-_avoid. Detailed explanations and configuration for these features can be found in their respective_\
-_tabs._
-
-<figure><img src=".gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+&#xNAN;_&#x61;void. Detailed explanations and configuration for these features can be found in their respective_\
+&#xNAN;_&#x74;abs._
 
 Set the profile as required (RF bandwidth, bitrate and ratio), the two units should match.
 
-<figure><img src=".gitbook/assets/Screenshot from 2025-06-18 15-27-29.png" alt=""><figcaption></figcaption></figure>
-
 The **Ground** unit and the **Air** unit should be configured as **Controller** and **Remote** respectively.
-
-<figure><img src=".gitbook/assets/Screenshot from 2025-06-18 15-29-25.png" alt=""><figcaption></figcaption></figure>
-
-
 
 On the Frequency Configuration page you can setup the pairing key.\
 **Repeat the steps for the other radio.**\
 The recommended settings are RF bandwidth of 4.2 MHz and a bit rate of 3.2 Mbps. A higher bitrate and high pover mode can be used for the RTSP stream, however, please note that this may reduce the effective transmission range.
-
-<figure><img src=".gitbook/assets/Screenshot from 2025-07-10 17-14-41.png" alt=""><figcaption></figcaption></figure>
 
 \
 \
