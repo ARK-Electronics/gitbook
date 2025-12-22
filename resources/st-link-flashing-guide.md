@@ -21,37 +21,19 @@ We recommend the **ST-LINK V3 Mini** because it is a composite USB device that p
 
 When you connect an ST-LINK V3 Mini to your computer, it creates multiple USB interfaces:
 
-**Example `lsusb` output:**
-
-```
-Bus 001 Device 012: ID 0483:3754 STMicroelectronics STLINK-V3
-```
-
 **Example `dmesg` output:**
 
 ```
-usb 1-2: new high-speed USB device number 12 using xhci_hcd
-usb 1-2: New USB device found, idVendor=0483, idProduct=3754, bcdDevice= 1.00
-usb 1-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-usb 1-2: Product: STLINK-V3
-usb 1-2: Manufacturer: STMicroelectronics
-cdc_acm 1-2:1.2: ttyACM0: USB ACM device
+usb 1-3: new high-speed USB device number 66 using xhci_hcd
+usb 1-3: New USB device found, idVendor=0483, idProduct=3754, bcdDevice= 1.00
+usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-3: Product: STLINK-V3
+usb 1-3: Manufacturer: STMicroelectronics
+usb 1-3: SerialNumber: 003500313133510F37363734
+cdc_acm 1-3:1.1: ttyACM0: USB ACM device
 ```
 
 The `ttyACM0` device is the virtual serial port you can use for UART debug console access.
-
-***
-
-## Product Compatibility
-
-The following ARK products have debug connectors that support ST-LINK programming:
-
-| Product | Debug Connector | MCU | Pinout |
-|---------|-----------------|-----|--------|
-| ARK FPV | 6-pin JST-SH | STM32H74x | [Pinout](../flight-controller/ark-fpv/pinout.md) |
-| ARK 4IN1 ESC | 10-pin JST-SH | STM32F051 (x4) | [Pinout](../electronic-speed-controller/ark-4in1-esc/pinout.md) |
-| ARK CANnode | 6-pin JST-SH | STM32F412 | [README](../sensor/ark-cannode/README.md) |
-| ARK Flow | 6-pin JST-SH | STM32F412 | [README](../sensor/ark-flow/README.md) |
 
 ***
 
@@ -60,61 +42,15 @@ The following ARK products have debug connectors that support ST-LINK programmin
 * **ST-LINK V3 Mini** (recommended) or ST-LINK V2
 * **Debug cable** - 6-pin or 10-pin JST-SH depending on your product
 * **Computer** running Ubuntu or Windows
-* **Firmware binary file** (.bin format)
+* **Firmware binary file** (.bin)
 
 ***
 
 ## Hardware Setup
 
-### 6-Pin Debug Connector (Most Products)
+# TODO: for hardware setup we should say just get the ARK debug adaptor (look it up if you need to), the stlink v3 mini, and the jst sh cable. Since this is all that is needed, the ark debug adaptor makes it easy to connect the stlink and the jst sh debug cable without having to do any manual pinouts.
 
-Most ARK products use a standard 6-pin JST-SH debug connector with the following pinout:
-
-| Pin | Signal | Description |
-|-----|--------|-------------|
-| 1 | 3.3V | Power (optional) |
-| 2 | TX | UART Debug TX |
-| 3 | RX | UART Debug RX |
-| 4 | SWDIO | SWD Data |
-| 5 | SWCLK | SWD Clock |
-| 6 | GND | Ground |
-
-**ST-LINK V3 Mini Connections:**
-
-| ST-LINK V3 Pin | Debug Connector Pin | Signal |
-|----------------|---------------------|--------|
-| Pin 1 (VCC) | Pin 1 | 3.3V (**do not connect if board is externally powered**) |
-| Pin 2 (SWCLK) | Pin 5 | SWCLK |
-| Pin 4 (SWDIO) | Pin 4 | SWDIO |
-| Pin 3 or 5 (GND) | Pin 6 | GND |
-
-{% hint style="warning" %}
-**Important:** Do not connect the 3.3V line if your board is powered from another source (battery, USB, etc.). Connecting both can damage your board or ST-LINK.
-{% endhint %}
-
-For UART debug console access using the ST-LINK V3 Mini's built-in serial port:
-
-| ST-LINK V3 Pin | Debug Connector Pin | Signal |
-|----------------|---------------------|--------|
-| Pin 12 (VCP_RX) | Pin 2 | Debug TX |
-| Pin 14 (VCP_TX) | Pin 3 | Debug RX |
-
-### 10-Pin Debug Connector (ARK 4IN1 ESC)
-
-The ARK 4IN1 ESC has 4 separate STM32F051 microcontrollers (one per motor channel), each with their own SWD interface on a single 10-pin connector:
-
-| Pin | Signal | Description |
-|-----|--------|-------------|
-| 1 | 3.3V | Power (optional) |
-| 2 | SWDIO 1 | ESC 1 Data |
-| 3 | SWCLK 1 | ESC 1 Clock |
-| 4 | SWDIO 2 | ESC 2 Data |
-| 5 | SWCLK 2 | ESC 2 Clock |
-| 6 | SWDIO 3 | ESC 3 Data |
-| 7 | SWCLK 3 | ESC 3 Clock |
-| 8 | SWDIO 4 | ESC 4 Data |
-| 9 | SWCLK 4 | ESC 4 Clock |
-| 10 | GND | Ground |
+# TODO: we should put the below 4-in-1 specific SWD stuff in the ESC page.
 
 To flash each ESC, connect your ST-LINK to the corresponding SWDIO/SWCLK pair:
 
@@ -199,7 +135,7 @@ If you see an error or no device found, check your wiring connections.
 
 #### Erase Flash Memory (Optional)
 
-Before flashing new firmware, you may want to erase the existing flash:
+Before flashing new firmware, you may want to erase the existing flash. On PX4 boards with FLASH based parameters (ARK FPV, ARK Pi6X) this will also wipe all parameters back to default. If you don't mass erase, parameters will remain unchanged.
 
 ```bash
 st-flash erase
@@ -271,12 +207,6 @@ screen /dev/ttyACM0 57600
 
 To exit screen, press `Ctrl+A` then `K`, then `Y` to confirm.
 
-Using `minicom`:
-
-```bash
-minicom -D /dev/ttyACM0 -b 57600
-```
-
 ### Windows
 
 Use a serial terminal application such as:
@@ -297,8 +227,8 @@ Use a serial terminal application such as:
 
 ### "Target voltage detected" or Similar Errors
 
-* Ensure proper power configuration - either power from ST-LINK OR external source, not both
-* Check that the board is not in a low-power sleep mode
+* Ensure proper power configuration - either power from ST-LINK OR external source, not both.
+* Disconnect peripheral devices in case they are drawing too much power.
 
 ### Permission Denied (Linux)
 
