@@ -16,76 +16,51 @@ You can update the bootloader using the [AM32 Configurator](https://am32.ca/conf
 
 If you're flashing an ESC without firmware or the firmware has become corrupted, you can reflash the ESC with SWD to bring it back to a fresh state.
 
+For detailed instructions on ST-LINK setup, software installation, and usage, see the [ST-LINK Flashing Guide](../../../resources/st-link-flashing-guide.md).
+
 #### What You'll Need
 
 * ARK 4IN1 ESC
-* ST-Link V2 or V3 programmer
+* ST-LINK V3 Mini (recommended) or ST-LINK V2
 * Computer running Windows or Ubuntu
 * [AM32 bootloader file](./#am32-bootloader-firmware)
 
 #### Hardware Setup
 
-Connect and program each MCU. If your ESC is powered with a power supply or battery **do not** connect the 3.3V
+The ARK 4IN1 ESC has 4 separate STM32F051 microcontrollers (one per motor channel), each with their own SWD interface on a single 10-pin debug connector. See the [pinout](../pinout.md) for the full connector diagram.
 
-* ST-Link SWDIO → Corresponding ESC SWDIO pin
-* ST-Link SWCLK → Corresponding ESC SWCLK pin
-* ST-Link GND → Pin 10 (GND)
-* ST-Link 3.3V → Pin 1 (3.3V) — **do not connect if ESC is externally powered**
+| Pin | Signal |
+|-----|--------|
+| 1 | 3.3V |
+| 2 | SWDIO 1 (ESC 1) |
+| 3 | SWCLK 1 (ESC 1) |
+| 4 | SWDIO 2 (ESC 2) |
+| 5 | SWCLK 2 (ESC 2) |
+| 6 | SWDIO 3 (ESC 3) |
+| 7 | SWCLK 3 (ESC 3) |
+| 8 | SWDIO 4 (ESC 4) |
+| 9 | SWCLK 4 (ESC 4) |
+| 10 | GND |
 
-#### Software Installation
+To flash each ESC, connect your ST-LINK to the corresponding SWDIO/SWCLK pair. For example, to flash ESC 1:
 
-#### **Windows**
+| ST-LINK Pin | Debug Connector Pin | Signal |
+|-------------|---------------------|--------|
+| SWDIO | Pin 2 | SWDIO 1 |
+| SWCLK | Pin 3 | SWCLK 1 |
+| GND | Pin 10 | GND |
+| 3.3V (optional) | Pin 1 | 3.3V |
 
-Download the ST-Link Utility from the ST-LINK [website](https://www.st.com/en/development-tools/st-link-v2.html#tools-software).
+{% hint style="warning" %}
+If your ESC is powered from a battery or power supply, **do not** connect the 3.3V line from the ST-LINK.
+{% endhint %}
 
-Open the GUI and follow the [ST Documentation](https://www.st.com/en/development-tools/stsw-link007.html#documentation) to program the MCU.
+Repeat the process for ESC 2-4 using their respective SWDIO/SWCLK pins (4/5, 6/7, 8/9).
 
-#### **Ubuntu**
+#### Flash the Bootloader
 
-Follow the instructions on the official ST-LINK[ github page](https://github.com/stlink-org/stlink) to install the stlink tools.
-
-**Test the Connection**
-
-```bash
-st-info --probe
-```
-
-You should see output similar to:
-
-```
-Found 1 stlink programmers
-  version:    V2J45S7
-  serial:     543C0A135550
-  flash:      32768 (pagesize: 1024)
-  sram:       4096
-  chipid:     0x0440
-  dev-type:   STM32F03x/STM32F05x
-```
-
-If you see an error, check your wiring.
-
-**Erase Flash Memory**
-
-Before flashing the bootloader, erase the flash:
-
-```bash
-st-flash erase
-```
-
-**Flash the Bootloader**
-
-Navigate to the directory containing AM32\_F051\_BOOTLOADER\_PB4.bin, then flash it:
+Flash each ESC MCU with the bootloader binary:
 
 ```bash
 st-flash write AM32_F051_BOOTLOADER_PB4.bin 0x08000000
-```
-
-You should see output indicating successful flash:
-
-```
-st-flash 1.8.0
-2025-10-01T12:34:56 INFO common.c: F0xx (Low/Medium): 4 KiB SRAM, 32 KiB flash in at least 1 KiB pages.
-file AM32_F051_BOOTLOADER_PB4.bin md5 checksum: a3b4c5d6e7f8g9h0i1j2k3l4m5n6o7p8, stlink checksum: 0x001234ab
-2025-10-01T12:34:56 INFO common.c: Attempting to write 6144 (0x1800) bytes to stm32 address: 134217728 (0x8000000)
-2025-10-01T12:34:56 INFO common.c: Flash written and verified! jolly good!
 ```
