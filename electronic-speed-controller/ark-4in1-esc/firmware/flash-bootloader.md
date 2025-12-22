@@ -27,9 +27,35 @@ For detailed instructions on ST-LINK setup, software installation, and usage, se
 
 #### Hardware Setup
 
-The ARK 4IN1 ESC uses a 10-pin debug connector with separate SWD pins for each of the 4 ESC MCUs. See the [pinout](../pinout.md) for pin assignments.
+The ARK 4IN1 ESC has 4 separate STM32F051 microcontrollers (one per motor channel), each with their own SWD interface on a single 10-pin debug connector. See the [pinout](../pinout.md) for the full connector diagram.
 
-Connect and program each MCU individually. If your ESC is powered with a power supply or battery **do not** connect the 3.3V.
+| Pin | Signal |
+|-----|--------|
+| 1 | 3.3V |
+| 2 | SWDIO 1 (ESC 1) |
+| 3 | SWCLK 1 (ESC 1) |
+| 4 | SWDIO 2 (ESC 2) |
+| 5 | SWCLK 2 (ESC 2) |
+| 6 | SWDIO 3 (ESC 3) |
+| 7 | SWCLK 3 (ESC 3) |
+| 8 | SWDIO 4 (ESC 4) |
+| 9 | SWCLK 4 (ESC 4) |
+| 10 | GND |
+
+To flash each ESC, connect your ST-LINK to the corresponding SWDIO/SWCLK pair. For example, to flash ESC 1:
+
+| ST-LINK Pin | Debug Connector Pin | Signal |
+|-------------|---------------------|--------|
+| SWDIO | Pin 2 | SWDIO 1 |
+| SWCLK | Pin 3 | SWCLK 1 |
+| GND | Pin 10 | GND |
+| 3.3V (optional) | Pin 1 | 3.3V |
+
+{% hint style="warning" %}
+If your ESC is powered from a battery or power supply, **do not** connect the 3.3V line from the ST-LINK.
+{% endhint %}
+
+Repeat the process for ESC 2-4 using their respective SWDIO/SWCLK pins (4/5, 6/7, 8/9).
 
 #### Flash the Bootloader
 

@@ -39,8 +39,8 @@ The `ttyACM0` device is the virtual serial port you can use for UART debug conso
 
 ## What You'll Need
 
+* **[ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/)** - Includes 6-pin and 10-pin JST-SH debug cables
 * **ST-LINK V3 Mini** (recommended) or ST-LINK V2
-* **Debug cable** - 6-pin or 10-pin JST-SH depending on your product
 * **Computer** running Ubuntu or Windows
 * **Firmware binary file** (.bin)
 
@@ -48,22 +48,17 @@ The `ttyACM0` device is the virtual serial port you can use for UART debug conso
 
 ## Hardware Setup
 
-# TODO: for hardware setup we should say just get the ARK debug adaptor (look it up if you need to), the stlink v3 mini, and the jst sh cable. Since this is all that is needed, the ark debug adaptor makes it easy to connect the stlink and the jst sh debug cable without having to do any manual pinouts.
+The [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/) makes connecting an ST-LINK to ARK products simple - no manual wiring required.
 
-# TODO: we should put the below 4-in-1 specific SWD stuff in the ESC page.
+1. Connect the ST-LINK V3 Mini to the adapter's STDC14 connector using the cable that comes with the ST-LINK
+2. Connect the appropriate JST-SH debug cable (6-pin or 10-pin) from the adapter to your ARK product's debug port
+3. Connect the ST-LINK to your computer via USB
 
-To flash each ESC, connect your ST-LINK to the corresponding SWDIO/SWCLK pair:
+The adapter routes SWD signals (SWDIO, SWCLK, GND) and UART signals (TX, RX) between the ST-LINK and the Pixhawk Standard Debug connector.
 
-**Example for ESC 1:**
-
-| ST-LINK V3 Pin | Debug Connector Pin | Signal |
-|----------------|---------------------|--------|
-| Pin 1 (VCC) | Pin 1 | 3.3V (**do not connect if ESC is externally powered**) |
-| Pin 2 (SWCLK) | Pin 3 | SWCLK 1 |
-| Pin 4 (SWDIO) | Pin 2 | SWDIO 1 |
-| Pin 3 or 5 (GND) | Pin 10 | GND |
-
-Repeat for ESC 2-4 using their respective SWDIO/SWCLK pins.
+{% hint style="warning" %}
+**Power:** The ST-LINK can provide 3.3V power to the target. If your board is already powered from another source (battery, USB, etc.), the adapter handles this safely. However, for boards that draw significant current, power from an external source is recommended.
+{% endhint %}
 
 ***
 
@@ -173,21 +168,11 @@ file firmware.bin md5 checksum: abc123..., stlink checksum: 0x00abcdef
 
 The debug connector provides a serial console (UART) for viewing system output and debugging. This is useful for accessing the NuttX shell, viewing boot messages, and debugging issues.
 
-### Connection Methods
+### Connection
 
-**Using ST-LINK V3 Mini (Recommended):**
+When using the ARK Pixhawk Debug Adapter with an ST-LINK V3 Mini, the UART signals are routed through the adapter. The ST-LINK V3 Mini's composite USB creates a virtual serial port (`/dev/ttyACM0` on Linux, `COMx` on Windows) that provides access to the debug console.
 
-The ST-LINK V3 Mini's composite USB creates a virtual serial port (`/dev/ttyACM0` on Linux, `COMx` on Windows) that you can connect to debug pins 2 (TX) and 3 (RX) as shown in the hardware setup section above.
-
-**Using ST-LINK V2 with Separate USB-Serial Adapter:**
-
-If using an ST-LINK V2 (which does not have a built-in serial port), connect a separate USB-to-serial adapter:
-
-| USB-Serial Adapter | Debug Connector Pin | Signal |
-|--------------------|---------------------|--------|
-| RX | Pin 2 | Debug TX |
-| TX | Pin 3 | Debug RX |
-| GND | Pin 6 | GND |
+No additional wiring or adapters are needed.
 
 ### Serial Terminal Settings
 
