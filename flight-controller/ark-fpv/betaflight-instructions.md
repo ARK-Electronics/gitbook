@@ -56,67 +56,10 @@ Betaflight does not have a separate bootloader. If you want to re-flash back to 
 
 #### Flash using ST-Link
 
-**What You'll Need**
+For detailed instructions on ST-LINK setup, software installation, and usage, see the [ST-LINK Flashing Guide](../../resources/st-link-flashing-guide.md).
 
-* ARK FPV
-* ST-Link V2 or V3 programmer
-* Computer running Windows or Ubuntu
-
-**Software Installation**
-
-**Windows**
-
-Download the ST-Link Utility from the ST-LINK [website](https://www.st.com/en/development-tools/st-link-v2.html#tools-software).
-
-Open the GUI and follow the [ST Documentation](https://www.st.com/en/development-tools/stsw-link007.html#documentation) to program the MCU.
-
-**Ubuntu**
-
-Follow the instructions on the official ST-LINK[ github page](https://github.com/stlink-org/stlink) to install the stlink tools.
-
-**Test the Connection**
-
-Connect the hardware components(using DEBUG port)
-
-```
-st-info --probe
-```
-
-You should see output similar to:
-
-```
-Found 1 stlink programmers
-  version:    V3J8
-  serial:     003800333433510937363934
-  flash:      2097152 (pagesize: 131072)
-  sram:       131072
-  chipid:     0x450
-  dev-type:   STM32H74x_H75x
-```
-
-**Flash**
-
-Navigate to the betaflight folder, your folder structure should look like this:
-
-<pre><code><strong>betaflight/
-</strong> ├── obj/
- │    ├── ARK_FPV.bin          ← this is what you are flashing
- │    ├── ARK_FPV_somevariant.bin
- │    └── other build files...
- └── other project files...
-</code></pre>
-
-Then you can flash your FC
+Connect to the 6-pin debug connector and flash:
 
 ```
 st-flash write obj/ARK_FPV.bin 0x08000000
-```
-
-Expected output:
-
-```
-2025-11-24T11:58:47 INFO common_flash.c: Starting verification of write complete
-2025-11-24T11:58:53 INFO common_flash.c: Flash written and verified! jolly good!
-2025-11-24T11:58:53 INFO common_legacy.c: Go to Thumb mode
-st-flash 1.8.0-121-g8c34a4e
 ```

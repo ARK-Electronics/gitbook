@@ -195,5 +195,6 @@
 ## Resources
 
 * [Demos and Examples](resources/demos-and-examples.md)
+* [ST-LINK Flashing Guide](resources/st-link-flashing-guide.md)
 * [Links](resources/links.md)
 * [About](resources/about.md)
