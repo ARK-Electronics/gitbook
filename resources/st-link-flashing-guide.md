@@ -40,9 +40,16 @@ The `ttyACM0` device is the virtual serial port you can use for UART debug conso
 ## What You'll Need
 
 * **[ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/)** - Includes 6-pin and 10-pin JST-SH debug cables
-* **ST-LINK V3 Mini** (recommended) or ST-LINK V2
+* **[ST-LINK V3MINIE](https://www.digikey.com/en/products/detail/stmicroelectronics/STLINK-V3MINIE/16284301)** (recommended) or ST-LINK V2
 * **Computer** running Ubuntu or Windows
 * **Firmware binary file** (.bin)
+
+### Optional: JST Cable Kits
+
+If you need additional cables for custom wiring, these pre-crimped cable kits are convenient (no crimping tool required):
+
+* **JST-SH 1.0mm** (debug connectors): [JST SH 1.0mm Connector Kit on Amazon](https://www.amazon.com/Teansic-Connector-Pre-Crimped-Housing-Controller/dp/B0D5X6BY5Z)
+* **JST-GH 1.25mm** (peripheral connectors): [GH1.25 Connectors Kit on Amazon](https://www.amazon.com/Pre-Crimped-Connectors-Pixhawk2-Pixracer-Silicone/dp/B07PBHN7TM)
 
 ***
 
