@@ -1,6 +1,7 @@
 ---
 description: >-
-  Guide for using the DroneCAN GUI Tool to configure, update firmware, and monitor ARK DroneCAN devices.
+  Guide for using the DroneCAN GUI Tool to configure, update firmware, and
+  monitor ARK DroneCAN devices.
 ---
 
 # DroneCAN GUI Tool Guide
@@ -50,9 +51,9 @@ PX4 requires a USB-to-CAN adapter that supports the SLCAN protocol to connect to
 5. Click OK to connect
 6. Once connected press the "Set" button to the right of "Set local node ID."
 
-![](<../.gitbook/assets/dronecan_gui_tool_start.png>)
-![](<../.gitbook/assets/dronecan_gui_tool_connected.png>)
+![](../.gitbook/assets/dronecan_gui_tool_start.png)
 
+![](../.gitbook/assets/dronecan_gui_tool_connected.png)
 
 ### ArduPilot - Flight Controller as CAN Interface
 
@@ -80,7 +81,6 @@ To connect via MAVCAN in the DroneCAN GUI Tool, enter the connection string with
 It is not recommended to run MAVCAN while the vehicle is armed, due to the high amount of link traffic it creates.
 {% endhint %}
 
-
 ***
 
 ## Firmware Upload
@@ -95,14 +95,14 @@ To upload firmware:
 
 **Firmware file formats:**
 
-* `.apj` - AP_Periph firmware (ArduPilot)
+* `.apj` - AP\_Periph firmware (ArduPilot)
 * `.uavcan.bin` - PX4 CANnode firmware
 
 {% hint style="info" %}
 Check the individual ARK product documentation pages for which firmware types are supported by each device.
 {% endhint %}
 
-![](<../.gitbook/assets/dronecan_gui_tool_fw_update.png>)
+![](../.gitbook/assets/dronecan_gui_tool_fw_update.png)
 
 ***
 
@@ -115,7 +115,7 @@ To view and modify device parameters:
 3. Edit parameter values as needed
 4. Click **Send** to write the changed parameters to the device
 
-![](<../.gitbook/assets/dronecan_gui_tool_params.png>)
+![](../.gitbook/assets/dronecan_gui_tool_params.png)
 
 ***
 
@@ -136,4 +136,4 @@ The Bus Monitor displays:
 * Source and destination node IDs
 * Decoded message contents
 
-![](<../.gitbook/assets/dronecan_gui_tool_bus_monitor.png>)
+![](../.gitbook/assets/dronecan_gui_tool_bus_monitor.png)
