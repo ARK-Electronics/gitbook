@@ -196,5 +196,6 @@
 
 * [Demos and Examples](resources/demos-and-examples.md)
 * [ST-LINK Flashing Guide](resources/st-link-flashing-guide.md)
+* [DroneCAN GUI Tool Guide](resources/dronecan-gui-tool-guide.md)
 * [Links](resources/links.md)
 * [About](resources/about.md)
