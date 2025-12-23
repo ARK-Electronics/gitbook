@@ -48,8 +48,11 @@ PX4 requires a USB-to-CAN adapter that supports the SLCAN protocol to connect to
 3. Select the adapter's serial port from the dropdown
 4. Set the CAN bus bit rate to 1000000 (1 Mbps)
 5. Click OK to connect
+6. Once connected press the "Set" button to the right of "Set local node ID."
 
-<!-- TODO: Screenshot of setup dialog -->
+![](<../.gitbook/assets/dronecan_gui_tool_start.png>)
+![](<../.gitbook/assets/dronecan_gui_tool_connected.png>)
+
 
 ### ArduPilot - Flight Controller as CAN Interface
 
@@ -59,10 +62,9 @@ With ArduPilot, the flight controller can act as a CAN interface, eliminating th
 
 SLCAN exposes the CAN bus over the flight controller's USB serial port. This is the simplest method when the vehicle is not armed.
 
-For setup instructions, see the ArduPilot documentation:
+This is already enabled by default on ARK boards running Ardupilot.
 
 * [SLCAN on F7/H7 Autopilots](https://ardupilot.org/copter/docs/common-slcan-f7h7.html)
-* [SLCAN on F4 Autopilots](https://ardupilot.org/copter/docs/common-slcan-f4.html)
 
 {% hint style="info" %}
 SLCAN access is disabled when the vehicle is armed to reduce CPU load.
@@ -73,6 +75,11 @@ SLCAN access is disabled when the vehicle is armed to reduce CPU load.
 MAVCAN tunnels CAN frames over a MAVLink connection. This method works while armed and over any MAVLink link (USB, telemetry radio, etc.).
 
 To connect via MAVCAN in the DroneCAN GUI Tool, enter the connection string with the `mavcan:` prefix, for example `mavcan:udp:14550`.
+
+{% hint style="info" %}
+It is not recommended to run MAVCAN while the vehicle is armed, due to the high amount of link traffic it creates.
+{% endhint %}
+
 
 ***
 
@@ -95,7 +102,7 @@ To upload firmware:
 Check the individual ARK product documentation pages for which firmware types are supported by each device.
 {% endhint %}
 
-<!-- TODO: Screenshot of node properties with firmware update button -->
+![](<../.gitbook/assets/dronecan_gui_tool_fw_update.png>)
 
 ***
 
@@ -108,7 +115,7 @@ To view and modify device parameters:
 3. Edit parameter values as needed
 4. Click **Send** to write the changed parameters to the device
 
-<!-- TODO: Screenshot of parameter list -->
+![](<../.gitbook/assets/dronecan_gui_tool_params.png>)
 
 ***
 
@@ -120,6 +127,8 @@ To open the Bus Monitor:
 
 1. Go to **Tools** in the menu bar
 2. Select **Bus Monitor**
+3. Press the camera icon to begin capturing frames
+4. Press the pause icon to stop cature and review
 
 The Bus Monitor displays:
 
@@ -127,4 +136,4 @@ The Bus Monitor displays:
 * Source and destination node IDs
 * Decoded message contents
 
-<!-- TODO: Screenshot of bus monitor -->
+![](<../.gitbook/assets/dronecan_gui_tool_bus_monitor.png>)
