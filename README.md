@@ -134,6 +134,12 @@
 [ark-sch16t](imu/ark-sch16t/)
 {% endcontent-ref %}
 
+## Accessories
+
+{% content-ref url="accessories/ark-servo-expander/" %}
+[ark-servo-expander](accessories/ark-servo-expander/)
+{% endcontent-ref %}
+
 ## ROS2 & PX4
 
 {% content-ref url="ros2-and-px4/mastering-precision-landing-with-px4-and-ros2.md" %}

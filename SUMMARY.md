@@ -167,6 +167,13 @@
   * [ArduPilot Instructions](imu/ark-sch16t/ardupilot-instructions.md)
   * [3D Model](imu/ark-sch16t/3d-model.md)
 
+## Accessories
+
+* [ARK Servo Expander](accessories/ark-servo-expander/README.md)
+  * [Pinout](accessories/ark-servo-expander/pinout.md)
+  * [PX4 Instructions](accessories/ark-servo-expander/px4-instructions.md)
+  * [3D Model](accessories/ark-servo-expander/3d-model.md)
+
 ## ROS2 & PX4
 
 * [ROS2 & PX4 Teleop Example](ros2-and-px4/ros2-and-px4-teleop-example.md)
