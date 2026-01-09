@@ -82,6 +82,11 @@ On the ARK CANnode, you may need to configure the following parameters:
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5.0V Out (500mA)</td><td>5.0V</td></tr><tr><td>2</td><td>I2C1_SCL</td><td>3.3V</td></tr><tr><td>3</td><td>I2C1_SDA</td><td>3.3V</td></tr><tr><td>4</td><td>GND</td><td>GND</td></tr></tbody></table>
 
+#### SPI - 7 Pin JST-GH
+
+<table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5.0V</td><td>5.0V</td></tr><tr><td>2</td><td>SPI2_SCK</td><td>3.3V</td></tr><tr><td>3</td><td>SPI2_MISO</td><td>3.3V</td></tr><tr><td>4</td><td>SPI2_MOSI</td><td>3.3V</td></tr><tr><td>5</td><td>SPI2_CS_1</td><td>3.3V</td></tr><tr><td>6</td><td>SPI2_CS_2</td><td>3.3V</td></tr><tr><td>7</td><td>GND</td><td>GND</td></tr></tbody></table>
+
 #### Debug - 6 Pin JST-SH
 
 <table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>3.3V</td><td>3.3V</td></tr><tr><td>2</td><td>USART2_TX</td><td>3.3V</td></tr><tr><td>3</td><td>USART2_RX</td><td>3.3V</td></tr><tr><td>4</td><td>FMU_SWDIO</td><td>3.3V</td></tr><tr><td>5</td><td>FMU_SWCLK</td><td>3.3V</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
+
