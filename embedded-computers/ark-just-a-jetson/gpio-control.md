@@ -44,11 +44,7 @@ For a complete working example, see the [i2s_gpio_example.py](https://github.com
 
 ## Creating Custom Overlays
 
-To create your own overlay for different pins, refer to the annotated example overlay in the [ark_jetson_kernel](https://github.com/ARK-Electronics/ark_jetson_kernel) repository:
-
-```
-device_tree/ark_jaj/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/overlay/ark_i2s_gpio.dts
-```
+To create your own overlay for different pins, refer to the annotated example overlay in the [ark_jetson_kernel](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/device_tree/ark_jaj/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/overlay/ark_i2s_gpio.dts) repository.
 
 The overlay file contains documentation explaining how to:
 
