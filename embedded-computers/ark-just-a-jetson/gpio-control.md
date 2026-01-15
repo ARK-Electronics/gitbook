@@ -54,3 +54,13 @@ The overlay file contains documentation explaining how to:
 4. Configure pin properties (tristate, input enable, pull resistors)
 
 For more information on Jetson device tree overlays, see the [NVIDIA Jetson-IO Documentation](https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/HR/ConfiguringTheJetsonExpansionHeaders.html).
+
+{% hint style="warning" %}
+**GPIO State Not Retained After Script Exit**
+
+When using libgpiod (which Jetson.GPIO uses internally), GPIO lines are released when your script or process exits. Once released, the pins revert to their default state (typically input mode). This is standard Linux character device behavior, not a bug.
+
+If you need to maintain GPIO state persistently, your application must continue running. For command-line tools like `gpioset`, use the `--mode=wait` or `--mode=signal` flags to keep the process alive.
+
+For more technical details, see the [libgpiod persistent state discussion](https://github.com/brgl/libgpiod/issues/77) and the [gpioset documentation](https://libgpiod.readthedocs.io/en/stable/gpioset.html).
+{% endhint %}
