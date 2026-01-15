@@ -13,6 +13,7 @@
   * [Apt Upgrade Hold Back Risky Packages](embedded-computers/ark-just-a-jetson/apt-upgrade-hold-back-risky-packages.md)
   * [IMU ICM-42688P Guide](embedded-computers/ark-just-a-jetson/imu-icm-42688p-guide.md)
   * [INA238 Power Monitor Guide](embedded-computers/ark-just-a-jetson/ina238-power-monitor-guide.md)
+  * [GPIO Control](embedded-computers/ark-just-a-jetson/gpio-control.md)
 
 ## Flight Controller
 
@@ -50,6 +51,7 @@
   * [USB Bluetooth Adapters](flight-controller/ark-jetson-pab-carrier/usb-bluetooth-adapters.md)
   * [USB Cameras and GPS](flight-controller/ark-jetson-pab-carrier/usb-cameras-and-gps.md)
   * [Apt Upgrade Hold Back Risky Packages](flight-controller/ark-jetson-pab-carrier/apt-upgrade-hold-back-risky-packages.md)
+  * [GPIO Control](flight-controller/ark-jetson-pab-carrier/gpio-control.md)
 * [ARK Pi6X Flow](flight-controller/ark-pi6x-flow/README.md)
   * [Block Diagram](flight-controller/ark-pi6x-flow/block-diagram.md)
   * [Pinout](flight-controller/ark-pi6x-flow/pinout.md)
