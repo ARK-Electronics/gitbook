@@ -17,7 +17,9 @@ Whether you're configuring a new vehicle or upgrading an existing system, this i
 
 ## Hardware setup
 
-The **ARK Microhard DDL Carrier** requires external power to operate reliably. We recommend using the **ARK 12S Payload Power Module**, which provides regulated and protected power suitable for airborne and mobile robotics platforms.
+The **ARK Microhard DDL Carrier** requires external power to operate reliably. We recommend using the **ARK 12S Payload Power Module**, which provides regulated and protected power suitable for airborne and mobile robotics platforms. You can also use the batteries the radios come with, but that means extra accessories( weight and cabling)
+
+
 
 In addition, to powering the **ARK Microhard DDL Carrier**, use an Ethernet adapter to bridge the connection between the **Radio** and the **ARK Jetson PAB Carrier**. Connect the adapter to the radio's LAN port, and then use an Ethernet cable to connect to the **Jetson**. This setup enables high-throughput data exchange between the **Jetson** companion computer and the network established by the radio.
 
