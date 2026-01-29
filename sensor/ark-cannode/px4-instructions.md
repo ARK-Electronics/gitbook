@@ -53,23 +53,80 @@ This is done using the the parameters named like `UAVCAN_SUB_*` in the parameter
 
 ## CANnode as PWM Expander
 
-The ARK CANnode can be used as a PWM Expander over CAN. This allows configuring additional servos or ESCs over CAN. The update rate is limited to 400Hz, so it is recommneded to keep ESCs on the Flight Controllers outputs if possible and use the PWM Expander for servos only.\
-\
-As an example, this is how you would configure 4 Motors:
+The ARK CANnode can be used as a PWM Expander over CAN, allowing you to drive additional servos or ESCs from the flight controller.
 
-### Flight Controller Parameters
+### Common Setup
+
+Regardless of whether you are using servos or ESCs, the following flight controller parameters must be configured:
 
 ```
-UAVCAN_PUB_ARM 1    # required
+UAVCAN_ENABLE 3  # Sensors and Actuators (ESCs) Automatic Config
+UAVCAN_PUB_ARM 1 # Required to publish arming state to CANnode
+```
+
+On the CANnode, set the timer output protocol using `PWM_MAIN_TIMx` parameters. You can see the timer-to-output mapping here:\
+[https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer\_config.cpp#L43-L50](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer_config.cpp#L43-L50)
+
+### Servos
+
+For servo outputs, we recommend using standard 50Hz PWM. Set the timer protocol to 50Hz on the CANnode:
+
+```
+PWM_MAIN_TIM0 50
+```
+
+#### Flight Controller Parameters
+
+```
+UAVCAN_EC_FUNC1 201 # Servo 1
+UAVCAN_EC_FUNC2 202 # Servo 2
+UAVCAN_EC_FUNC3 203 # Servo 3
+UAVCAN_EC_FUNC4 204 # Servo 4
+```
+
+#### CANnode Parameters
+
+Using the DroneCAN GUI Tool or QGroundControl, configure the parameters to map your PWM outputs:
+
+```
+PWM_MAIN_FUNC1 201 # Servo 1
+PWM_MAIN_FUNC2 202 # Servo 2
+PWM_MAIN_FUNC3 203 # Servo 3
+PWM_MAIN_FUNC4 204 # Servo 4
+```
+
+You can also optionally adjust the min, max, and disarmed values:
+
+```
+PWM_MAIN_DIS1 1500
+PWM_MAIN_MIN1 1000
+PWM_MAIN_MAX1 2000
+```
+
+### ESCs
+
+For ESC outputs, we recommend using DShot300. Set the timer protocol on the CANnode:
+
+```
+PWM_MAIN_TIM0 -4 # DShot300
+```
+
+{% hint style="info" %}
+PWM over CAN update rate is limited to 400Hz, so it is recommended to keep ESCs on the flight controller's outputs if possible.
+{% endhint %}
+
+#### Flight Controller Parameters
+
+```
 UAVCAN_EC_FUNC1 101 # Motor 1
 UAVCAN_EC_FUNC2 102 # Motor 2
 UAVCAN_EC_FUNC3 103 # Motor 3
 UAVCAN_EC_FUNC4 104 # Motor 4
 ```
 
-### CANnode Parameters
+#### CANnode Parameters
 
-Using the DroneCAN GUI Tool or QGroundControl, configure the parameters to map your PWM outputs.
+Using the DroneCAN GUI Tool or QGroundControl, configure the parameters to map your PWM outputs:
 
 ```
 PWM_MAIN_FUNC1 101 # Motor 1
@@ -84,17 +141,6 @@ You can also optionally adjust the min, max, and disarmed values:
 PWM_MAIN_DIS1 1000
 PWM_MAIN_MIN1 1100
 PWM_MAIN_MAX1 1900
-```
-
-#### DShot
-
-You can also use the DShot protocol on the CANnode. Make sure to set the timer output protocol for the outputs you are using for DShot. You can see the timer-to-output mapping here:\
-[https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer\_config.cpp#L43-L50](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer_config.cpp#L43-L50)
-
-```
-PWM_MAIN_TIM0 -3 #DShot600
-PWM_MAIN_TIM1 -3 #DShot600
-PWM_MAIN_TIM2 -3 #DShot600
 ```
 
 {% hint style="info" %}
