@@ -1,4 +1,4 @@
-# DTC
+# DTC BluSDR Radio integration Guide for ARK Jetson PAB Carrier
 
 ## Introduction
 
@@ -44,7 +44,11 @@ You also need the radio for the Ground side, see below:
 
 ⚠️ Ensure all connections are secure and that antennas are properly attached to avoid damage during operation.
 
+You can pick your two radios from the **DTC BluSDR™** Radio Technology Family:
 
+[https://www.dtccodan.com/products/the-blusdr-family](https://www.dtccodan.com/products/the-blusdr-family)\
+\
+For this integration the following hardware were used:
 
 | Description            | Link                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
