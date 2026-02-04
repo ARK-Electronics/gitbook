@@ -50,11 +50,11 @@ You can pick your two radios from the **DTC BluSDR™** Radio Technology Family:
 \
 For this integration the following hardware were used:
 
-| Description            | Link                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| SDR-M                  | [https://www.dtccodan.com/products/sol8sdr-m](https://www.dtccodan.com/products/sol8sdr-m)                         |
-| SDR-UC                 | [https://www.dtccodan.com/products/sdr-u](https://www.dtccodan.com/products/sdr-u)                                 |
-| ARK Jetson PAB Carrier | [https://arkelectron.com/product/ark-jetson-pab-carrier/](https://arkelectron.com/product/ark-jetson-pab-carrier/) |
+| Description            | Link                                                                                                                                                                                                                 |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BluSDR-6               | [https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-30-2W-BluSDR-Radio-Module.pdf](https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-30-2W-BluSDR-Radio-Module.pdf) |
+| BluSDR-30              | [https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-30-2W-BluSDR-Radio-Module.pdf](https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-30-2W-BluSDR-Radio-Module.pdf) |
+| ARK Jetson PAB Carrier | [https://arkelectron.com/product/ark-jetson-pab-carrier/](https://arkelectron.com/product/ark-jetson-pab-carrier/)                                                                                                   |
 
 
 
