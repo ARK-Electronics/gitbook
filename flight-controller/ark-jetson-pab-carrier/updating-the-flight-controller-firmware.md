@@ -8,7 +8,7 @@ If you have ARK-OS installed you can use the UI at [http://jetson.local](http://
 
 <figure><img src="../../.gitbook/assets/image (33).png" alt="" width="456"><figcaption></figcaption></figure>
 
-Otherwise you can ssh into the Jetson and use the [flashing script from ARK-OS](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/scripts/px4_flash.sh).
+Otherwise you can ssh into the Jetson and use the [flashing script from ARK-OS](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/scripts/flash_firmware.sh).
 
 ## PX4 Binaries
 
