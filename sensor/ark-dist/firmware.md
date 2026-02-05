@@ -1,6 +1,6 @@
 # Firmware
 
-{% file src="../../.gitbook/assets/92-1.16.3c45b562.uavcan.bin" %}
+{% file src="../../.gitbook/assets/92-1.16.3c45b562.uavcan (1).bin" %}
 ARK DIST Firmware
 {% endfile %}
 

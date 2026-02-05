@@ -18,9 +18,7 @@ In addition to powering the **BluSDR**, connect an Ethernet cable from the radio
 
 Note: CA4005 battery or **6-18VDC** power source can be used as power options (**ARK 12S Payload Power Module**)
 
-
-
-<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption><p>DTC User Guide</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption><p>DTC User Guide</p></figcaption></figure>
 
 
 
