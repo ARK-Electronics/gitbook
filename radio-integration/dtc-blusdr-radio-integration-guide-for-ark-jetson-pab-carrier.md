@@ -18,7 +18,7 @@ In addition to powering the **BluSDR**, connect an Ethernet cable from the radio
 
 Note: CA4005 battery or **6-18VDC** power source can be used as power options (**ARK 12S Payload Power Module**)
 
-<figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption><p>DTC User Guide</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2026-02-05 11-20-29.png" alt=""><figcaption><p>DTC User Guide</p></figcaption></figure>
 
 
 
@@ -54,7 +54,7 @@ For this integration the following hardware were used:
 | BluSDR-30              | [https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-30-2W-BluSDR-Radio-Module.pdf](https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-30-2W-BluSDR-Radio-Module.pdf) |
 | ARK Jetson PAB Carrier | [https://arkelectron.com/product/ark-jetson-pab-carrier/](https://arkelectron.com/product/ark-jetson-pab-carrier/)                                                                                                   |
 
-
+For long-range applications, the [BluSDR-90-UL](https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-90-UL-10W-BluSDR-Ultra-Light-Radio-Module.pdf) offers the same connectivity as the BluSDR-30 (with the exception of the power connector), allowing it to be used as a direct drop-in replacement.
 
 
 
