@@ -1,5 +1,9 @@
 # DTC BluSDR Radio integration Guide for ARK Jetson PAB Carrier
 
+## Video Guide
+
+{% embed url="https://www.youtube.com/watch?v=5takKTgAS9g" %}
+
 ## Introduction
 
 This guide provides step-by-step instructions for integrating the **DTC radio system** with the **ARK Jetson PAB Carrier**, enabling seamless deployment in **UAV** and robotic platforms.
