@@ -27,7 +27,7 @@ Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_CANNOD
 * Pixhawk Standard SPI Connector
   * 7 Pin JST GH
 * PWM Connector
-  * 10 Pin JST JST
+  * 10 Pin JST GH
   * 8 PWM Outputs
   * Matches Pixhawk 4 PWM Connector Pinout
 * Pixhawk Standard Debug Connector
@@ -85,6 +85,10 @@ On the ARK CANnode, you may need to configure the following parameters:
 #### SPI - 7 Pin JST-GH
 
 <table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5.0V</td><td>5.0V</td></tr><tr><td>2</td><td>SPI2_SCK</td><td>3.3V</td></tr><tr><td>3</td><td>SPI2_MISO</td><td>3.3V</td></tr><tr><td>4</td><td>SPI2_MOSI</td><td>3.3V</td></tr><tr><td>5</td><td>SPI2_CS_1</td><td>3.3V</td></tr><tr><td>6</td><td>SPI2_CS_2</td><td>3.3V</td></tr><tr><td>7</td><td>GND</td><td>GND</td></tr></tbody></table>
+
+#### PWM - 10 Pin JST-GH
+
+<table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>Pulled up to 3.3V through a 1.5kΩ resistor</td><td>3.3V</td></tr><tr><td>2</td><td>TIM2_CH1_PWM1</td><td>3.3V</td></tr><tr><td>3</td><td>TIM2_CH2_PWM2</td><td>3.3V</td></tr><tr><td>4</td><td>TIM2_CH3_PWM3</td><td>3.3V</td></tr><tr><td>5</td><td>TIM3_CH1_PWM4</td><td>3.3V</td></tr><tr><td>6</td><td>TIM3_CH2_PWM5</td><td>3.3V</td></tr><tr><td>7</td><td>TIM3_CH3_PWM6</td><td>3.3V</td></tr><tr><td>8</td><td>TIM3_CH4_PWM7</td><td>3.3V</td></tr><tr><td>9</td><td>TIM4_CH2_PWM8</td><td>3.3V</td></tr><tr><td>10</td><td>GND</td><td>GND</td></tr></tbody></table>
 
 #### Debug - 6 Pin JST-SH
 
