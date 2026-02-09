@@ -7,6 +7,11 @@ If you purchased a bundle the [Jetpack Ubuntu OS](https://developer.nvidia.com/e
 This repository contains helper scripts to download and build the kernel. Please follow the README.\
 [https://github.com/ARK-Electronics/ark\_jetson\_kernel](https://github.com/ARK-Electronics/ark_jetson_kernel)
 
+## Device Tree
+
+The ARK Jetson PAB Carrier requires a custom device tree to enable all hardware features. The device tree files are located here:\
+[https://github.com/ARK-Electronics/ark\_jetson\_kernel/tree/main/device\_tree/ark\_pab](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/device_tree/ark_pab)
+
 ## Overview
 
 To flash the kernel you will need to connect the Jetson to your Host PC using the **Micro USB** connection. You must boot the jetson while holding the **Force Recovery** button.\

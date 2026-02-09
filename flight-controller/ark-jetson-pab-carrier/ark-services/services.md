@@ -48,8 +48,8 @@ The **flight-review** service is a locally hosted instance of the [PX4 Flight Re
 
 ## DDS Agent
 
-The **dds-agent** service bridges the [PX4 uORB ](https://docs.px4.io/main/en/middleware/uorb.html)pub/sub system to ROS2 topics on the Jetson. The bridged topics are defined in PX4 Firmware and can be [found here](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml).\
-\
+The **dds-agent** service bridges the [PX4 uORB ](https://docs.px4.io/main/en/middleware/uorb.html)pub/sub system to ROS2 topics on the Jetson. The bridged topics are defined in PX4 Firmware and can be [found here](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml).
+
 The **dds-agent** runs the [micro-xrce-dds-agent ](https://github.com/eProsima/Micro-XRCE-DDS-Agent)on the **/dev/ttyTHS1** serial port of the Jetson. This serial port is connected directly to the Flight Controller **Telem2** port and is capable of 3Mbps.
 
 The Flight Controller firmware needs to be configured by setting these parameters:
@@ -63,15 +63,15 @@ For more information please see the official [PX4 docs for UXRCE DDS](https://do
 
 ***
 
-## Hostspot Control
+## Hotspot Updater
 
-The **hotspot-control** service configures the Jetson as a hotspot if it is unable to connect to a WiFi network after 1 minute from booting. It will create a hotspot with the name **jetson-\<serialnumber>** with a password of **password.** Once connected to the hotspot you can go to [http://jetson.local](http://jetson.local/) to connect to your local network.
+The **hotspot-updater** service configures the Jetson as a hotspot if it is unable to connect to a WiFi network after 1 minute from booting. It will create a hotspot with the name **jetson-\<serialnumber>** with a password of **password.** Once connected to the hotspot you can go to [http://jetson.local](http://jetson.local/) to connect to your local network.
 
 ***
 
 ## Polaris
 
-The **polaris** service provides a client interface to the Point One [Polaris RTK Correction Network](https://pointonenav.com/polaris). This service allows you to receive network RTK corrections over the internet with an active Point One subscription. This allows you to achieve centimeter precision position hold anywhere the network is available.<br>
+The **polaris** service provides a client interface to the Point One [Polaris RTK Correction Network](https://pointonenav.com/polaris). This service allows you to receive network RTK corrections over the internet with an active Point One subscription. This allows you to achieve centimeter precision position hold anywhere the network is available.
 
 The configuration can be edited in the [ARK-UI](http://jetson.local/). The default configuration is found here:
 
@@ -97,10 +97,28 @@ The **ark-ui-backend** service is a REST API backend for the ARK-UI. It provides
 
 ## Jetson CAN
 
-This **jetson-can** service enables the CAN interface on the Jetson.
+The **jetson-can** service enables the CAN interface on the Jetson.
 
 ***
 
-## Jetson Clocks
+## System Manager
 
-The **jetson-clocks** service sets the Jetson clocks to their maximum rate. This will increase the power consumption and heat generation of the Jetson so ensure you are using a heatsink with a fan.
+The **system-manager** service provides a REST API for Linux system monitoring. It exposes endpoints for querying system information such as CPU usage, memory usage, disk space, network statistics, and system health metrics.
+
+***
+
+## Autopilot Manager
+
+The **autopilot-manager** service provides a REST API for autopilot MAVLink interactions. It enables programmatic access to autopilot data and control, including reading telemetry, sending commands, and managing parameters.
+
+***
+
+## Connection Manager
+
+The **connection-manager** service provides a REST API for network connection management. It handles WiFi network scanning, connection, and configuration, as well as hotspot management and network interface control.
+
+***
+
+## Service Manager
+
+The **service-manager** service provides a REST API for systemd service management. It allows starting, stopping, enabling, and disabling systemd services, as well as querying service status and logs.
