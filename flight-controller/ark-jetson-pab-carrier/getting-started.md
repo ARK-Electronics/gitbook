@@ -52,6 +52,8 @@ Once connected to the same network as your Jetson:
 ssh jetson@jetson.local
 ```
 
+If mDNS is not working on your network, use the Jetson's IP address directly.
+
 ### Option 2: Via Micro USB
 
 {% hint style="danger" %}

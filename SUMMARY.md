@@ -16,6 +16,9 @@
   * [INA238 Power Monitor Guide](embedded-computers/ark-just-a-jetson/ina238-power-monitor-guide.md)
   * [GPIO Control](embedded-computers/ark-just-a-jetson/gpio-control.md)
   * [Camera Overlays](embedded-computers/ark-just-a-jetson/camera-overlays.md)
+  * [USB Wi-Fi Adapters](embedded-computers/ark-just-a-jetson/usb-wi-fi-adapters.md)
+  * [USB Bluetooth Adapters](embedded-computers/ark-just-a-jetson/usb-bluetooth-adapters.md)
+  * [USB Cameras and GPS](embedded-computers/ark-just-a-jetson/usb-cameras-and-gps.md)
 
 ## Flight Controller
 

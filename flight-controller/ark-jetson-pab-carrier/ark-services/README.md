@@ -1,6 +1,6 @@
 # ARK Services
 
-ARK-OS is a collection of systemd services that provide core functionality for the ARK Jetson PAB Carrier. If you purchased an ARK Jetson bundle with an SSD, these services come pre-installed.
+ARK-OS is a collection of optional systemd services that provide convenience features for the ARK Jetson PAB Carrier. These services are not required for basic operation but add useful functionality like automatic log downloading, web-based configuration, and network RTK corrections. If you purchased an ARK Jetson bundle with an SSD, these services come pre-installed.
 
 **Repository**: [https://github.com/ARK-Electronics/ARK-OS](https://github.com/ARK-Electronics/ARK-OS)
 

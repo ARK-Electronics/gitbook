@@ -1,6 +1,6 @@
 # ARK Services
 
-ARK-OS is a collection of systemd services that provide core functionality for the ARK Pi6X Flow. If you purchased an ARK Pi6X Flow with a Pi included, these services come pre-installed.
+ARK-OS is a collection of optional systemd services that provide convenience features for the ARK Pi6X Flow. These services are not required for basic operation but add useful functionality like automatic log downloading, web-based configuration, and network RTK corrections. If you purchased an ARK Pi6X Flow with a Pi included, these services come pre-installed.
 
 **Repository**: [https://github.com/ARK-Electronics/ARK-OS](https://github.com/ARK-Electronics/ARK-OS)
 
