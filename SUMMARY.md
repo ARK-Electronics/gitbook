@@ -5,6 +5,7 @@
 ## Embedded Computers
 
 * [ARK Just A Jetson](embedded-computers/ark-just-a-jetson/README.md)
+  * [Getting Started](embedded-computers/ark-just-a-jetson/getting-started.md)
   * [Flashing Guide](embedded-computers/ark-just-a-jetson/flashing-guide.md)
   * [Connections](embedded-computers/ark-just-a-jetson/connections.md)
   * [Pinout](embedded-computers/ark-just-a-jetson/pinout.md)
@@ -15,6 +16,9 @@
   * [INA238 Power Monitor Guide](embedded-computers/ark-just-a-jetson/ina238-power-monitor-guide.md)
   * [GPIO Control](embedded-computers/ark-just-a-jetson/gpio-control.md)
   * [Camera Overlays](embedded-computers/ark-just-a-jetson/camera-overlays.md)
+  * [USB Wi-Fi Adapters](embedded-computers/ark-just-a-jetson/usb-wi-fi-adapters.md)
+  * [USB Bluetooth Adapters](embedded-computers/ark-just-a-jetson/usb-bluetooth-adapters.md)
+  * [USB Cameras and GPS](embedded-computers/ark-just-a-jetson/usb-cameras-and-gps.md)
 
 ## Flight Controller
 
@@ -39,8 +43,8 @@
   * [Pinout](flight-controller/ark-jetson-pab-carrier/pinout.md)
   * [3D Models and Case Files](flight-controller/ark-jetson-pab-carrier/3d-models-and-case-files.md)
   * [Flashing Guide](flight-controller/ark-jetson-pab-carrier/flashing-guide.md)
-  * [ARK Software](flight-controller/ark-jetson-pab-carrier/ark-software/README.md)
-    * [Services](flight-controller/ark-jetson-pab-carrier/ark-software/services.md)
+  * [ARK Services](flight-controller/ark-jetson-pab-carrier/ark-services/README.md)
+    * [Services](flight-controller/ark-jetson-pab-carrier/ark-services/services.md)
   * [Autopilot Connections](flight-controller/ark-jetson-pab-carrier/autopilot-connections/README.md)
     * [QGroundControl Connection](flight-controller/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection.md)
     * [MissionPlanner ArduPilot Connection](flight-controller/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection.md)
@@ -64,8 +68,8 @@
     * [After Flashing, Before Installing](flight-controller/ark-pi6x-flow/flashing-guide/after-flashing-before-installing.md)
     * [Wi-Fi Setup](flight-controller/ark-pi6x-flow/flashing-guide/wi-fi-setup.md)
     * [SSH](flight-controller/ark-pi6x-flow/flashing-guide/ssh.md)
-  * [ARK Software](flight-controller/ark-pi6x-flow/ark-software/README.md)
-    * [Services](flight-controller/ark-pi6x-flow/ark-software/services.md)
+  * [ARK Services](flight-controller/ark-pi6x-flow/ark-services/README.md)
+    * [Services](flight-controller/ark-pi6x-flow/ark-services/services.md)
   * [Autopilot Connections](flight-controller/ark-pi6x-flow/autopilot-connections.md)
   * [Updating the Flight Controller Firmware](flight-controller/ark-pi6x-flow/updating-the-flight-controller-firmware.md)
 * [ARK VOXL2 RTK PAB Carrier](flight-controller/ark-voxl2-rtk-pab-carrier/README.md)
