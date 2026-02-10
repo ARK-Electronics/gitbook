@@ -1,4 +1,8 @@
-# Doodle Labs Mini Integration Guide for ARK Jetson PAB Carrier
+---
+hidden: true
+---
+
+# Doodle Labs Nimble Integration Guide for ARK Jetson PAB Carrier
 
 ## Introduction
 
