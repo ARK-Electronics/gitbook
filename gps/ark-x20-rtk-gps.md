@@ -1,23 +1,6 @@
 ---
 cover: ../.gitbook/assets/IMG_5106_edited.JPG
 coverY: 2.777482269503546
-layout:
-  width: default
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
 ---
 
 # ARK X20 RTK GPS

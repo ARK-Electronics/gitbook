@@ -5,23 +5,6 @@ description: >-
 icon: drone
 cover: ../.gitbook/assets/IMG_5452-EDIT.jpg
 coverY: -126.29255898366611
-layout:
-  width: default
-  cover:
-    visible: true
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
 ---
 
 # ARK RIG5

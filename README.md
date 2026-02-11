@@ -172,8 +172,8 @@
 [ark-microhard-ddl-carrier-integration-for-ark-jetson-pab-carrier.md](radio-integration/ark-microhard-ddl-carrier-integration-for-ark-jetson-pab-carrier.md)
 {% endcontent-ref %}
 
-{% content-ref url="radio-integration/doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md" %}
-[doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md](radio-integration/doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md)
+{% content-ref url="radio-integration/doodle-labs-mesh-rider-radio-integration-guide-for-ark-jetson-pab-carrier-1.md" %}
+[doodle-labs-mesh-rider-radio-integration-guide-for-ark-jetson-pab-carrier-1.md](radio-integration/doodle-labs-mesh-rider-radio-integration-guide-for-ark-jetson-pab-carrier-1.md)
 {% endcontent-ref %}
 
 {% content-ref url="radio-integration/mobilicom-skyhopper-pro-integration-guide-for-ark-jetson-pab-carrier.md" %}

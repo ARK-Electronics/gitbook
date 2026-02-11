@@ -1,60 +1,154 @@
-# Doodle Labs Mesh Rider Radio Integration Guide for ARK Jetson PAB Carrier
+---
+hidden: true
+---
+
+# Doodle Labs Nimble Integration Guide for ARK Jetson PAB Carrier
 
 ## Introduction
 
-This guide provides step-by-step instructions for integrating the **Doodle Labs Mesh Rider Radio system** with the **ARK Jetson PAB Carrier**, designed for seamless deployment in UAV and robotic platforms.\
-It covers hardware connections, software configuration, and troubleshooting tips to enable robust, high-throughput wireless communication over a private mesh network using the Doodle Labs platform. Standard Wi-Fi modes are also supported for more conventional networking setups.
+This guide provides step-by-step instructions for integrating the **Mini Mesh Rider Radio system** with the **ARK Jetson PAB Carrier**, designed for seamless deployment in UAV and robotic platforms.
 
-Whether you're setting up a new vehicle or retrofitting an existing system, this integration guide ensures a reliable link between the **Jetson-based** companion computer and the ground control station, optimized for use with **ROS 2, PX4, MAVLink**, and other **ARK Electronics software frameworks**.
+It covers hardware connections, software configuration, and troubleshooting tips to enable robust, high-throughput wireless communication over a **private WDS/ Mesh network** using the Doodle Labs platform. Standard Wi-Fi modes are also supported for more conventional networking setups.
+
+Whether you're setting up a new vehicle or retrofitting an existing system, this integration guide ensures a reliable link between the **Jetson-based companion computer** and ground control station, optimized for use with **ROS2, PX4, MAVLink**, and other ARK Electronics software frameworks.
+
+
 
 ## Hardware setup
 
-The Doodle Labs **Mini and Nano OEM radios** require an external **5 V power supply** to operate reliably. For airborne and mobile robotics platforms, we recommend using ARK Electronics power solutions that provide regulated and protected output.
+In this case, you will need the Mini evaluation test board. Once it is connected, it must be powered using an additional power module via the barrel jack port. This auxiliary power supply can also serve as a good redundant power source for the Jetson. After powering the board, you can use the Ethernet ports to connect the Mini (expansion board) to the Jetson carrier.
 
-To power the system, use **two separate power modules**:
-
-* One power module to supply the **ARK Jetson PAB Carrier / Jetson**
-* A second power module to supply the **Mini or Nano OEM radio**
-
-Because the radio operates at **5 V**, it can be powered using either the **ARK 12S Power Module** or the **ARK 12S  Payload Power Module**. Using separate power modules adds redundancy, which is beneficial for overall system reliability—especially for the Jetson companion computer.
-
-<br>
-
-<figure><img src="../.gitbook/assets/image (84).png" alt="" width="375"><figcaption></figcaption></figure>
-
-{% hint style="warning" %}
-**Note:** A **5 V barrel jack (5.5 mm × 2.5 mm, center-positive)** rated for **at least 3 A** is required to power on the Mini/Nano OEM radio.
-{% endhint %}
-
-In addition to power, connect an **Ethernet cable** from the radio’s **LAN port** directly to the Ethernet port on the **ARK Jetson PAB Carrier**. This wired connection enables high-throughput, low-latency data exchange between the Jetson companion computer and the mesh network formed by the Doodle Labs radios.
+## ~~Jetson setup~~
 
 
 
-<figure><img src="../.gitbook/assets/20260210_105745.jpg" alt="" width="375"><figcaption></figcaption></figure>
-
-
-
-## Jetson setup
-
-After connecting the radio, you can SSH into the pre-flashed Jetson via **Micro USB** to continue configuration or verify connectivity.\
-Once connected via SSH, set a **static IP address** on the Jetson that matches the radio network’s subnet. This allows seamless communication with the **Mini/Nano OEM radio** and other devices on the mesh network.
+Once you are done you should ssh to your Jetson:
 
 ```
-sudo nmcli connection modify "Wired connection 1" ipv4.addresses 10.223.0.101/16
-sudo nmcli connection modify "Wired connection 1" ipv4.method manual
-sudo nmcli connection modify "Wired connection 1" ipv4.gateway 10.223.0.1
-
-sudo nmcli connection down "Wired connection 1"
-sudo nmcli connection up "Wired connection 1"
+ssh jetson@jetson.local
 ```
 
-After setting the static IP, you can disconnect the USB connection and **restart the Jetson**. Once it reboots, you should be able to **SSH into the Jetson over the network** via the IP address you assigned.
+Password:**jetson**\
+\
+You should also install the [Broken link](/broken/pages/Yxqz8349jGsIQFKfvban "mention")
 
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 11-54-42.png" alt=""><figcaption><p>Login page at the IP</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 11-57-20.png" alt=""><figcaption><p>Dashboard</p></figcaption></figure>
+## Mesh Rider Radio software setup
 
 
+
+## Supported Networking Modes <a href="#supported-networking-modes" id="supported-networking-modes"></a>
+
+One of the two main networking layouts we expect Nimble to operate as is Nimble as Access Point and Client, the photo below is an example of such a layout. The Nimble radio is integrated into a ground control station and acts as an Access Point. The drones are each integrated with a Nimble radio and are configured to be clients.
+
+There are two ways to proceed. One option is to configure for Nimble to be in Access Point mode and the other is to configure Nimble to be in Client/Station mode.
+
+### Wifi AP/Client
+
+#### Client Mode
+
+To install and configure the radio to be in Client mode do the following
+
+Navigate to the Nimble/nimble\_installer directory in a terminal and run the following command
+
+```
+cd Nimble/nimble_installer
+sudo ./nimble_installer.sh Client 
+```
+
+Reboot the device after installation is complete
+
+```
+sudo reboot
+```
+
+The device will act as a WiFi Client device with the following parameters
+
+**SSID: wireless-hotspot** \
+**PSK: DoodleSmartRadio**\
+**IP: DHCP Client**
+
+If an access point is running with the above credentials, on the same channel and bandwidth (it should be if it is the default Nimble AP installation). Check if this client/station is connected to AP using following commands, please use the DoodleLabs WiFi card interface name, for example “wlp3s0”
+
+```
+sudo iw wlp3s0 info 
+sudo iw wlp3s0 station dump 
+```
+
+#### Access Point Mode
+
+To install and configure the radio to be in AP mode do the following
+
+Navigate to the Nimble/nimble\_installer directory in a terminal and run the following command
+
+```
+cd Nimble/nimble_installer
+sudo ./nimble_installer.sh AP 
+```
+
+Reboot the device after installation is complete
+
+```
+sudo reboot
+```
+
+Check if the AP is functional using iw command, please use the DoodleLabs WiFi card interface name, for example “wlp3s0”
+
+```
+sudo iw wlp3s0 info
+```
+
+The device will act as a WiFi AP with the following settings
+
+**SSID: wireless-hotspot**\
+**PSK: DoodleSmartRadio**\
+**IP: 10.223.3.1/16 and running a DHCP server**
+
+#### **Notes**
+
+You can switch between AP and Client mode by running the nimble\_installer.sh script again with the desired mode and rebooting.
+
+##
+
+## **WDS Client/WDS AP**
+
+The other networking layout we expect is for customers to use Nimble in Mesh Rider interoperability mode. This allows Nimble to function as either WDS AP or WDS Client. The Mesh Rider radio must also be configured to operate in the appropriate WDS AP or WDS Client mode. Here is a possible network setup possible with Nimble and Mesh Rider.
+
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+The default mode on Nimble is with Mesh Rider Radio interoperability disabled, and it acts as a normal AP/Client. To achieve the Mesh Rider <-> Nimble network architecture as illustrated in the network diagram above, Mesh Rider interoperability must be enabled using the Nimble Configuration script nimble\_config.sh mentioned earlier.&#x20;
+
+This will allow the Nimble radio to connect with Mesh Rider radios in WDS AP/Client mode. The Mesh Rider radio also needs to be configured in WDS mode for Nimble to connect.&#x20;
+
+You have to be in Client/AP Mode already, then you can enable WDS using Nimble Software Configuration Utility.<br>
+
+To configure the Nimble transceiver, navigate to the nimble\_config folder /Nimble/nimble\_config/then run the nimble\_config shell script as root.
+
+```
+cd /Nimble/nimble_config
+sudo ./nimble_config.sh 
+```
+
+Select option 5 and enter 1 to Enable Meshrider interoperability then select 6 to exit to save and close the Configuration Utility
+
+{% stepper %}
+{% step %}
+Select option 5&#x20;
+
+To edit Meshrider interoperability
+{% endstep %}
+
+{% step %}
+Enter 1&#x20;
+
+To enable Meshrider interoperability
+{% endstep %}
+
+{% step %}
+Select option 6&#x20;
+
+To exit to save and close the Configuration Utility
+{% endstep %}
+{% endstepper %}
 
 ## Ground station radio setup
 
@@ -75,61 +169,50 @@ For a Windows 10 or later system, navigate to the Network Connections folder in 
 
 For Linux:
 
-```
-nmcli connection modify "Wired connection 1" ipv4.addresses 10.223.0.100/16
-nmcli connection modify "Wired connection 1" ipv4.method manual
+<pre><code><strong>nmcli connection modify "Wired connection 1" ipv4.addresses 10.223.0.100/16
+</strong>nmcli connection modify "Wired connection 1" ipv4.method manual
 nmcli connection modify "Wired connection 1" ipv4.gateway 10.223.0.1
 nmcli connection modify "Wired connection 1" ipv4.dns "8.8.8.8 1.1.1.1"
 
+# Apply changes by restarting the connection
 nmcli connection down "Wired connection 1"
 nmcli connection up "Wired connection 1"
+</code></pre>
+
+Once the setup is complete you can go ahead and and open a web browser and navigate to the IP address written on your device
+
+<figure><img src="../.gitbook/assets/20250328_141507.jpg" alt=""><figcaption></figcaption></figure>
+
+Key setups for connection
+
+Same SSID
+
+* Same SSID
+* Same Key
+* Same Frequency (2.4ghz band should be one both of the radios can talk on)
+* Same bandwidth
+
+On the Jetson you could run the following command to see the correct setup
+
+```
+sudo iw wlan0 info
 ```
 
-Once the setup is complete you can go ahead and open a web browser and navigate to the IP address written on your device.
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/20250328_141507.jpg" alt=""><figcaption><p>IP on the Wearable</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>WDS AP on Ground Control Station Radio</p></figcaption></figure>
 
 
 
-The default configuration of the Mesh Rider radios allows Mesh Rider radios of identical band models to automatically form a mesh on first boot-up without any configuration changes. You can immediately run IP-based connections over the Mesh Rider network. The configuration should be adjusted for your application and match both on the radios.
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>WDS Client on Ground Control Station Radio</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Ground station in AP</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Ground station in Client</p></figcaption></figure>
+
+Once you have established the connection you should remove the usb connection and reboot the Jetson.
 
 With this setup, your Jetson is part of your IP network, which means if it’s running a MAVLink server or any MAVLink-compatible device, you should be able to connect to it via QGroundControl (QGC) over the network. Additionally, you can access the Jetson remotely using SSH for monitoring or configuration tasks.
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 11-55-05.png" alt=""><figcaption><p>Dashboard</p></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 11-57-57.png" alt=""><figcaption><p>Simple mesh configuration</p></figcaption></figure>
-
-**Wi-Fi Connection (only for wearable and OEM)**&#x20;
-
-You can connect to the radio over its built-in Wi-Fi radio. By default, the built-in Wi-Fi radio starts up an Access Point with SSID DoodleLabsWiFi-\<last 6 hex digits of MAC> and password DoodleSmartRadio. No cables are required for this connection method.
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-09 16-38-43.png" alt=""><figcaption><p>Wi-Fi setup</p></figcaption></figure>
-
-### Establishing the connection
-
-Once you set up all the static IP-s on both the Ground PC and the Jetson you can go ahead and power up the drone. You'll be able to reach to both IP-s from the Ground PC and you can also **SSH** to the Jetson from the established network.
-
-`jetson.local` should load, here you can interact with our services<br>
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-08-31.png" alt=""><figcaption><p>ARK OS</p></figcaption></figure>
-
-
-
-<figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption><p>RTSP server is ready at IP:5600/camera1</p></figcaption></figure>
-
-### **QGround Control**
-
-You can go ahead and add the Link for the Drone in QGC, `jetson.local` should give you the correct address you set previously.
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-00-35.png" alt=""><figcaption><p>Adding the UDP connection</p></figcaption></figure>
-
-Finally, you can add the RTSP video stream using the same IP and `:5600/camera1`
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-00-51 (1).png" alt=""><figcaption><p>RTSP setup</p></figcaption></figure>
-
-As you can see below the connection and the camera stream are established. We are ready to fly.
-
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-02-42.png" alt=""><figcaption><p>Connection and stream are ready</p></figcaption></figure>
 
 Resources:<br>
 
