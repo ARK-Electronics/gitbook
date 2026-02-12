@@ -210,6 +210,18 @@
 * [ARK RIG5](airframes/ark-rig5.md)
 * [ARK RIG7](airframes/ark-rig7.md)
 
+## Fundamentals
+
+* [Fundamentals](fundamentals/README.md)
+  * [Microcontrollers](fundamentals/microcontrollers.md)
+  * [SWD Programming](fundamentals/swd-programming.md)
+  * [Serial Communication (UART)](fundamentals/serial-communication-uart.md)
+  * [CAN Bus](fundamentals/can-bus.md)
+  * [MAVLink](fundamentals/mavlink.md)
+  * [Connectors and Wiring](fundamentals/connectors-and-wiring.md)
+  * [Power and Grounding](fundamentals/power-and-grounding.md)
+  * [Communication Buses (I2C, SPI)](fundamentals/communication-buses.md)
+
 ## Resources
 
 * [Demos and Examples](resources/demos-and-examples.md)
