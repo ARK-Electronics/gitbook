@@ -70,25 +70,9 @@ DroneCAN (formerly UAVCAN v0) is the application-layer protocol that runs on top
 Key DroneCAN concepts:
 
 * **Node ID** — each device on the bus has a unique ID (1–127). PX4 and ArduPilot assign these automatically by default.
-* **Message types** — standardized data structures (e.g., `uavcan.equipment.ahrs.RawIMU`, `uavcan.equipment.gnss.Fix2`) that all compliant devices understand.
+* **Message types** — [standardized data structures](https://dronecan.github.io/Specification/7._List_of_standard_data_types/) (e.g., `uavcan.equipment.ahrs.RawIMU`, `uavcan.equipment.gnss.Fix2`) that all compliant devices understand.
 * **Dynamic node allocation** — devices can obtain a node ID automatically from the flight controller on first boot.
 * **Firmware update** — the flight controller or a tool like the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) can push firmware updates to any node on the bus.
-
-## How ARK Products Use It
-
-CAN is the primary communication bus for ARK peripherals:
-
-* **Sensors** — [ARK Flow](../sensor/ark-flow/README.md), [ARK MAG](../sensor/ark-mag/README.md), [ARK DIST](../sensor/ark-dist/README.md), and [ARK CANnode](../sensor/ark-cannode/README.md) all communicate with the flight controller over DroneCAN.
-* **GPS modules** — [ARK GPS](../gps/ark-gps/README.md), [ARK SAM GPS](../gps/ark-sam-gps/README.md), and [ARK RTK GPS](../gps/ark-rtk-gps/README.md) publish position data over DroneCAN.
-* **Power modules** — [ARK PAB Power Module](../power/ark-pab-power-module/README.md) reports battery voltage and current over DroneCAN.
-* **Flight controllers** — [ARKV6X](../flight-controller/arkv6x/README.md), [ARK FPV](../flight-controller/ark-fpv/README.md), and PAB carriers act as the CAN bus master.
-
-A typical CAN bus on an ARK-based drone might look like:
-
-```
-ARKV6X ── ARK GPS ── ARK Flow ── ARK MAG ── ARK PAB Power Module
- 120Ω                                              120Ω
-```
 
 ## Common Pitfalls
 
