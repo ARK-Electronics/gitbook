@@ -83,7 +83,7 @@ The [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.
 
 ### MAVCAN
 
-MAVLink can tunnel [CAN bus](can-bus.md) traffic over any MAVLink link using the MAVCAN protocol. This lets you use the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) to manage CAN devices remotely — even over a telemetry radio link.
+Ardupilot supports MAVLink can tunnel [CAN bus](can-bus.md) traffic over any MAVLink link using the MAVCAN protocol. This lets you use the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) to manage CAN devices remotely — even over a telemetry radio link. PX4 does not yet support this.
 
 ## Common Pitfalls
 
@@ -92,6 +92,7 @@ MAVLink can tunnel [CAN bus](can-bus.md) traffic over any MAVLink link using the
 * **Firewall blocking UDP** — QGC listens on UDP port 14550 by default. Firewalls or VPNs can block these packets silently.
 * **System ID conflicts** — if two vehicles share the same system ID on the same network, the GCS will merge their telemetry into a confusing mess. Each vehicle needs a unique system ID.
 * **MAVLink vs XRCE-DDS confusion** — these are separate protocols on separate interfaces. You cannot connect QGC to an XRCE-DDS port or subscribe to ROS 2 topics over MAVLink.
+* **Baudrate and throughput** — Ensure the baudrate is high enough for the configured mavlink throughput. Baudrates at or above 921600 tend to only work with very short wires, otherwise hardware flow control must be used.
 
 ## Further Reading
 
