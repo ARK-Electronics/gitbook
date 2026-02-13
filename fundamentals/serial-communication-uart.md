@@ -51,7 +51,11 @@ Common baud rates in the ARK/PX4 ecosystem:
 | 9600 | Some GPS modules (default) |
 | 57600 | PX4 debug console (NuttX shell) |
 | 115200 | MAVLink telemetry, some GPS modules |
-| 921600 | High-speed MAVLink, companion computer links |
+| 921600 | High-speed MAVLink, companion computer links (see note below) |
+
+{% hint style="warning" %}
+**921600 baud and above requires hardware flow control** (CTS/RTS) unless the UART connection is very short (PCB-to-PCB, like the on-board link between the Jetson and flight controller on the [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.md)). Over cables of any significant length, data will be lost at these speeds without flow control. If you must run high baud rates over a cable, use a TELEM port with CTS/RTS lines connected.
+{% endhint %}
 
 ### Data Format
 
@@ -67,7 +71,7 @@ This is the default on virtually all PX4 and ArduPilot peripherals. You almost n
 
 ### Debug Console
 
-Every ARK board with a debug connector exposes a UART on pins 2 (TX) and 3 (RX) of the [Pixhawk Standard Debug Connector](connectors-and-wiring.md). Connecting to this UART at 57600 baud gives you the NuttX shell, where you can:
+Every ARK board with a debug connector exposes a UART on pins 2 (TX) and 3 (RX) of the [Pixhawk Standard Debug Connector](connectors-and-wiring.md). Connecting to this UART at 57600 baud gives you the NuttX shell (PX4), where you can:
 
 * View boot messages and error logs
 * Run diagnostic commands (`sensors status`, `listener sensor_accel`)
@@ -93,7 +97,9 @@ The [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.
 * **Baud rate mismatch** — if you see garbled characters instead of readable text, double-check that both ends are set to the same baud rate. The PX4 debug console is 57600, not 115200.
 * **Missing common ground** — UART signals are referenced to ground. If two devices don't share a common ground, communication will be unreliable or fail entirely.
 * **Voltage mismatch** — STM32 UART signals are 3.3V. Connecting directly to a 5V device (like some Arduino boards) can damage the MCU. Use a level shifter if needed.
+* **Long or untwisted wires** — UART signals degrade over distance. Keep cables as short as possible and use twisted pairs (TX with GND, RX with GND) to reject noise. Runs over 15–20 cm at 115200 baud or above become unreliable without twisted wires, especially on a drone with motors running.
 * **Port already in use** — on Linux, if `screen` or another terminal is already connected to a serial port, a second connection will fail silently. Kill existing sessions before reconnecting.
+* **Not using an oscilloscope** — if UART isn't working and you've checked TX/RX wiring and baud rate, connect an oscilloscope to the TX and RX lines. This immediately tells you whether the signal is present, at the right voltage level, and clean. It also catches bad solder joints, broken traces, and damaged connectors that are invisible to the eye.
 
 ## Further Reading
 
