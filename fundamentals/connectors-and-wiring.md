@@ -108,17 +108,6 @@ If you need additional or custom-length cables, these pre-crimped kits include c
 * **JST-GH 1.25 mm** (peripheral connectors): [GH1.25 Connectors Kit on Amazon](https://www.amazon.com/Pre-Crimped-Connectors-Pixhawk2-Pixracer-Silicone/dp/B07PBHN7TM)
 * **JST-SH 1.0 mm** (debug connectors): [JST SH 1.0mm Connector Kit on Amazon](https://www.amazon.com/Teansic-Connector-Pre-Crimped-Housing-Controller/dp/B0D5X6BY5Z)
 
-## How ARK Products Use It
-
-All ARK products follow the Pixhawk Connector Standard:
-
-* **Flight controllers** ([ARKV6X](../flight-controller/arkv6x/README.md), [ARK FPV](../flight-controller/ark-fpv/README.md)) provide JST-GH ports for CAN, I2C, UART/GPS, TELEM, and power, plus a JST-SH debug port.
-* **DroneCAN sensors** ([ARK CANnode](../sensor/ark-cannode/README.md), [ARK Flow](../sensor/ark-flow/README.md), [ARK MAG](../sensor/ark-mag/README.md)) have two CAN JST-GH connectors for daisy-chaining, plus a JST-SH debug port.
-* **GPS modules** ([ARK SAM GPS](../gps/ark-sam-gps/README.md), [ARK DAN GPS](../gps/ark-dan-gps/README.md)) use CAN JST-GH connectors and may also have a UART JST-GH connector.
-* **Power modules** ([ARK PAB Power Module](../power/ark-pab-power-module/README.md)) use CAN JST-GH connectors for both CAN data and power delivery.
-
-The [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/) bridges between the ST-LINK's STDC14 connector and the JST-SH debug port, and includes 6-pin and 10-pin JST-SH cables.
-
 ## Common Pitfalls
 
 * **JST-GH and JST-SH are not interchangeable** — they look similar but have different pitches (1.25 mm vs 1.0 mm). Forcing the wrong connector will damage the socket.
