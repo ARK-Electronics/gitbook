@@ -99,7 +99,7 @@ I2C and SPI remain critical for on-board sensors where their speed advantages an
 
 ### CAN
 
-* All external ARK sensors, GPS modules, and power modules use [DroneCAN](can-bus.md) as their primary interface
+* Most external ARK sensors use [DroneCAN](can-bus.md) as their primary interface
 * This is by design — CAN's noise immunity and robustness make it the right bus for inter-board communication on a drone
 
 ## Common Pitfalls
