@@ -39,3 +39,7 @@ This section covers the foundational knowledge you need to work effectively with
 {% content-ref url="communication-buses.md" %}
 [communication-buses.md](communication-buses.md)
 {% endcontent-ref %}
+
+{% content-ref url="recommended-tools.md" %}
+[recommended-tools.md](recommended-tools.md)
+{% endcontent-ref %}

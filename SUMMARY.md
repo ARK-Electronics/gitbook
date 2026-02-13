@@ -221,6 +221,7 @@
   * [Connectors and Wiring](fundamentals/connectors-and-wiring.md)
   * [Power and Grounding](fundamentals/power-and-grounding.md)
   * [Communication Buses (I2C, SPI)](fundamentals/communication-buses.md)
+  * [Recommended Tools](fundamentals/recommended-tools.md)
 
 ## Resources
 
