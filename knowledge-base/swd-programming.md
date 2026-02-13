@@ -39,7 +39,7 @@ Computer ↔ USB ↔ ST-LINK V3 Mini ↔ STDC14 Cable ↔ ARK Debug Adapter ↔ 
 Most firmware updates don't require SWD. The day-to-day methods depend on the type of board:
 
 * **Flight controllers** (ARKV6X, ARK FPV, etc.) — firmware is typically loaded via QGroundControl over USB. SWD is not needed for routine updates.
-* **DroneCAN nodes** (ARK CANnode, ARK Flow, ARK MAG, etc.) — the flight controller pushes firmware from its SD card to the node over the [CAN bus](can-bus.md), or you can use the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) directly. This is the normal update path once a bootloader is installed.
+* **DroneCAN nodes** (ARK CANnode, ARK Flow, ARK MAG, etc.) — the flight controller pushes firmware from its SD card to the node over the [CAN bus](can-bus.md), or you can use the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md) directly. This is the normal update path once a bootloader is installed.
 * **USB DFU** — a fallback used on some boards (like the [ARK FPV](../flight-controller/ark-fpv/README.md)) to flash a bootloader over USB when the board is placed into DFU mode. Rarely needed.
 
 SWD is for situations where none of the above work:
@@ -120,6 +120,6 @@ Log out and back in for the change to take effect.
 
 ## Further Reading
 
-* [ST-LINK Flashing Guide](../resources/st-link-flashing-guide.md) — step-by-step flashing procedure for ARK products
+* [ST-LINK Flashing Guide](st-link-flashing-guide.md) — step-by-step flashing procedure for ARK products
 * [ARM SWD Protocol Overview](https://developer.arm.com/documentation/ihi0031/a/The-Serial-Wire-Debug-Port--SW-DP-)
 * [stlink-org/stlink on GitHub](https://github.com/stlink-org/stlink) — open source ST-LINK tools

@@ -4,9 +4,9 @@ description: >-
   systems.
 ---
 
-# Fundamentals
+# Knowledge Base
 
-This section covers the foundational knowledge you need to work effectively with ARK products and drone electronics in general. Each topic is a standalone reference you can revisit as needed.
+Reference pages covering core concepts for working with ARK products, drone electronics, and embedded systems.
 
 {% content-ref url="microcontrollers.md" %}
 [microcontrollers.md](microcontrollers.md)
@@ -42,4 +42,16 @@ This section covers the foundational knowledge you need to work effectively with
 
 {% content-ref url="recommended-tools.md" %}
 [recommended-tools.md](recommended-tools.md)
+{% endcontent-ref %}
+
+{% content-ref url="st-link-flashing-guide.md" %}
+[st-link-flashing-guide.md](st-link-flashing-guide.md)
+{% endcontent-ref %}
+
+{% content-ref url="dronecan-gui-tool-guide.md" %}
+[dronecan-gui-tool-guide.md](dronecan-gui-tool-guide.md)
+{% endcontent-ref %}
+
+{% content-ref url="px4-log-encryption.md" %}
+[px4-log-encryption.md](px4-log-encryption.md)
 {% endcontent-ref %}

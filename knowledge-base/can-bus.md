@@ -72,7 +72,7 @@ Key DroneCAN concepts:
 * **Node ID** — each device on the bus has a unique ID (1–127). PX4 and ArduPilot assign these automatically by default.
 * **Message types** — [standardized data structures](https://dronecan.github.io/Specification/7._List_of_standard_data_types/) (e.g., `uavcan.equipment.ahrs.RawIMU`, `uavcan.equipment.gnss.Fix2`) that all compliant devices understand.
 * **Dynamic node allocation** — devices can obtain a node ID automatically from the flight controller on first boot.
-* **Firmware update** — the flight controller or a tool like the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) can push firmware updates to any node on the bus.
+* **Firmware update** — the flight controller or a tool like the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md) can push firmware updates to any node on the bus.
 
 ## Common Pitfalls
 
@@ -85,7 +85,7 @@ Key DroneCAN concepts:
 
 ## Further Reading
 
-* [DroneCAN GUI Tool Guide](../resources/dronecan-gui-tool-guide.md) — how to inspect, configure, and update firmware on DroneCAN devices
+* [DroneCAN GUI Tool Guide](dronecan-gui-tool-guide.md) — how to inspect, configure, and update firmware on DroneCAN devices
 * [PX4 DroneCAN Documentation](https://docs.px4.io/main/en/dronecan/)
 * [PX4 CAN Wiring Guide](https://docs.px4.io/main/en/can/#wiring)
 * [DroneCAN Specification](https://dronecan.github.io/Specification/)

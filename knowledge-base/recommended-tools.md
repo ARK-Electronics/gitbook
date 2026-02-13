@@ -16,7 +16,7 @@ You can build a drone with just a soldering iron and a prayer, but when somethin
 
 The [ST-LINK V3 Mini](https://www.digikey.com/en/products/detail/stmicroelectronics/STLINK-V3MINIE/16284301) is the recommended programmer/debugger for all ARK products with STM32 microcontrollers. It handles both [SWD programming](swd-programming.md) and [UART debug console](serial-communication-uart.md) access through a single USB connection — no separate USB-to-serial adapter needed.
 
-See the [ST-LINK Flashing Guide](../resources/st-link-flashing-guide.md) for setup and usage.
+See the [ST-LINK Flashing Guide](st-link-flashing-guide.md) for setup and usage.
 
 ### ARK Pixhawk Debug Adapter
 
@@ -24,7 +24,7 @@ The [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debu
 
 ### CAN-to-USB Adapter
 
-A CAN-to-USB adapter like the [Zubax Babel](https://zubax.com/products/babel) lets you connect your computer directly to the [CAN bus](can-bus.md) for diagnostics, firmware updates, and parameter configuration using the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md).
+A CAN-to-USB adapter like the [Zubax Babel](https://zubax.com/products/babel) lets you connect your computer directly to the [CAN bus](can-bus.md) for diagnostics, firmware updates, and parameter configuration using the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md).
 
 This is essential for:
 

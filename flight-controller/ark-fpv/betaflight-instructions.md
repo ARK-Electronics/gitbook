@@ -56,7 +56,7 @@ Betaflight does not have a separate bootloader. If you want to re-flash back to 
 
 #### Flash using ST-Link
 
-For detailed instructions on ST-LINK setup, software installation, and usage, see the [ST-LINK Flashing Guide](../../resources/st-link-flashing-guide.md).
+For detailed instructions on ST-LINK setup, software installation, and usage, see the [ST-LINK Flashing Guide](../../knowledge-base/st-link-flashing-guide.md).
 
 Connect to the 6-pin debug connector and flash:
 

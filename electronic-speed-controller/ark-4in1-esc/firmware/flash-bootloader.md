@@ -16,7 +16,7 @@ You can update the bootloader using the [AM32 Configurator](https://am32.ca/conf
 
 If you're flashing an ESC without firmware or the firmware has become corrupted, you can reflash the ESC with SWD to bring it back to a fresh state.
 
-For detailed instructions on ST-LINK setup, software installation, and usage, see the [ST-LINK Flashing Guide](../../../resources/st-link-flashing-guide.md).
+For detailed instructions on ST-LINK setup, software installation, and usage, see the [ST-LINK Flashing Guide](../../../knowledge-base/st-link-flashing-guide.md).
 
 #### What You'll Need
 

@@ -83,7 +83,7 @@ The [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.
 
 ### MAVCAN
 
-Ardupilot supports MAVLink can tunnel [CAN bus](can-bus.md) traffic over any MAVLink link using the MAVCAN protocol. This lets you use the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) to manage CAN devices remotely — even over a telemetry radio link. PX4 does not yet support this.
+Ardupilot supports MAVLink can tunnel [CAN bus](can-bus.md) traffic over any MAVLink link using the MAVCAN protocol. This lets you use the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md) to manage CAN devices remotely — even over a telemetry radio link. PX4 does not yet support this.
 
 ## Common Pitfalls
 

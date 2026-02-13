@@ -22,7 +22,7 @@ make ark_cannode_canbootloader
 
 #### Flashing the Bootloader
 
-To flash the bootloader firmware you need an ST-LINK programmer. See the [ST-LINK Flashing Guide](../../resources/st-link-flashing-guide.md) for setup instructions.
+To flash the bootloader firmware you need an ST-LINK programmer. See the [ST-LINK Flashing Guide](../../knowledge-base/st-link-flashing-guide.md) for setup instructions.
 
 ```
 st-flash write <bootloader_binary_path> 0x08000000
