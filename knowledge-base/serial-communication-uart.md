@@ -77,7 +77,7 @@ Every ARK board with a debug connector exposes a UART on pins 2 (TX) and 3 (RX) 
 * Run diagnostic commands (`sensors status`, `listener sensor_accel`)
 * Set parameters directly
 
-The easiest way to access the debug console is with an [ST-LINK V3 Mini and ARK Debug Adapter](../resources/st-link-flashing-guide.md), which provides both SWD and UART through a single USB connection.
+The easiest way to access the debug console is with an [ST-LINK V3 Mini and ARK Debug Adapter](st-link-flashing-guide.md), which provides both SWD and UART through a single USB connection.
 
 ### GPS Modules
 
@@ -103,6 +103,6 @@ The [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.
 
 ## Further Reading
 
-* [ST-LINK Flashing Guide — UART Debug Console](../resources/st-link-flashing-guide.md#uart-debug-console) — step-by-step instructions for connecting to the debug console
+* [ST-LINK Flashing Guide — UART Debug Console](st-link-flashing-guide.md#uart-debug-console) — step-by-step instructions for connecting to the debug console
 * [PX4 System Console](https://docs.px4.io/main/en/debug/system_console.html)
 * [Communication Buses (I2C, SPI)](communication-buses.md) — comparison of UART with other protocols

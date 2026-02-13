@@ -4,7 +4,7 @@ description: >-
   wins for drones.
 ---
 
-# Communication Buses (I2C, SPI)
+# Communication Buses
 
 ## What Are Communication Buses?
 
