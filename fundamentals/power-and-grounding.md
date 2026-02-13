@@ -33,7 +33,7 @@ The **3.3V** level is internal to each board — the MCU and sensors operate at 
 ARK power modules ([ARK PAB Power Module](../power/ark-pab-power-module/README.md), [ARK 12S PAB Power Module](../power/ark-12s-pab-power-module/README.md)) do two things:
 
 1. **Regulate** battery voltage down to clean 5V for the flight controller and peripherals
-2. **Measure** battery voltage and current, reporting it to the flight controller over [DroneCAN](can-bus.md)
+2. **Measure** battery voltage and current, reporting it to the flight controller over I2C.
 
 ### 5V Power Through CAN
 
@@ -81,30 +81,46 @@ Digital communication buses ([CAN](can-bus.md), [UART](serial-communication-uart
 |--------|-----------|---------|
 | Motor commutation | kHz–MHz | All buses, especially I2C and analog |
 | ESC switching | 10–100 kHz | Power rail ripple, sensor noise |
+| USB | 480 MHz (harmonics into GHz) | GPS reception — USB is a major source of RF interference in the L-band |
 | Radio transmitter | GHz | Possible digital bus upset at close range |
+| High-current wires | DC–kHz | Magnetometer — motor wires and battery leads create strong magnetic fields |
 | PWM servo signals | 50–400 Hz | Ground bounce on shared connectors |
 
 **Noise reduction strategies:**
 
-* Use [CAN bus](can-bus.md) instead of I2C for sensor connections — CAN's differential signaling rejects common-mode noise
 * Keep sensor cables short and routed away from motor/ESC/power wires
 * Use shielded cables for long runs (>15 cm) on sensitive interfaces
 * Ensure all connectors are fully seated — intermittent contacts cause noise
-* Twist signal pairs (CAN\_H/CAN\_L, or TX/RX with GND) to reduce pickup
+* Twist signal pairs to reduce pickup
 
-## How ARK Products Use It
+### GPS Placement
 
-* **Power modules** — [ARK PAB Power Module](../power/ark-pab-power-module/README.md) and [ARK 12S PAB Power Module](../power/ark-12s-pab-power-module/README.md) provide regulated 5V and battery monitoring.
-* **CAN-powered peripherals** — all ARK DroneCAN sensors draw 5V power through the CAN bus cable, simplifying wiring.
-* **Integrated companion computers** — [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.md) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/README.md) handle power regulation for both the companion computer and the flight controller on a single board.
-* **Noise-resistant design** — ARK products use CAN bus as the primary peripheral bus specifically because of its noise immunity.
+GPS modules are particularly sensitive to both **radio frequency interference** (which degrades satellite reception) and **magnetic interference** (which corrupts the built-in compass). Mount your GPS as far as possible from:
+
+* **USB connectors and cables** — USB 2.0 high-speed signaling at 480 MHz produces harmonics that land directly in the GPS L-band. This is one of the most common causes of poor GPS performance. Never route USB cables near or under a GPS module.
+* **Motor wires and battery leads** — high-current DC wires generate strong magnetic fields that distort magnetometer readings. Even a few centimeters of additional separation helps significantly.
+* **ESCs and power distribution boards** — switching noise from ESCs radiates both RF and magnetic interference.
+* **Radio transmitters and antennas** — 2.4 GHz or 900 MHz radios can desensitize the GPS receiver at close range.
+
+On a typical build, mount the GPS on a mast or the top of the frame, as far from the power system and electronics stack as practical.
+
+### Servo and Actuator Power Isolation
+
+Servos and other actuators with motors are among the worst power consumers on a drone. A stalled servo can draw several amps, and even normal operation causes large current spikes that collapse the voltage rail it shares with other devices.
+
+{% hint style="warning" %}
+**Never power servos from the same regulator as the flight controller.** A servo stall or jam can brown out the entire 5V rail, causing the flight controller and all CAN peripherals to reboot mid-flight. Always use a dedicated BEC for servos and actuators.
+{% endhint %}
+
+This applies to any high-current load: gimbal motors, LED arrays, radio amplifiers, or payload actuators. If it can draw more than a few hundred milliamps, give it its own power supply with only a shared ground to the flight controller.
 
 ## Common Pitfalls
 
 * **Under-rated power supply** — a BEC that can handle bench testing may brown out under load when motors spin up. Size your power supply for worst-case current draw plus margin.
 * **Ground loops through the frame** — carbon fiber frames are conductive. If two boards are bolted to the frame and also connected by a cable, you have a ground loop. Use nylon standoffs or insulating tape.
-* **Long I2C runs** — I2C is highly susceptible to noise and capacitance. Runs longer than 10–15 cm are unreliable on a drone. Use [CAN bus](can-bus.md) for any peripheral that isn't directly next to the flight controller.
-* **Shared voltage regulators** — powering a servo or radio from the same regulator as the flight controller can cause voltage dips when the servo moves. Use a separate BEC for high-current loads.
+* **Long I2C runs** — I2C/Serial is highly susceptible to noise and capacitance. Runs longer than 10–15 cm are unreliable on a drone. Use [CAN bus](can-bus.md) for any peripheral that isn't directly next to the flight controller.
+* **Servos on the flight controller BEC** — see [Servo and Actuator Power Isolation](#servo-and-actuator-power-isolation) above. A stalled servo will take down your entire avionics power rail.
+* **GPS mounted near USB or motor wires** — see [GPS Placement](#gps-placement) above. USB interference and magnetic fields from high-current wires are the two most common causes of poor GPS and compass performance.
 * **Ignoring decoupling** — if you're building custom hardware, every IC needs 100 nF decoupling capacitors on its power pins. ARK products include these, but custom carrier boards sometimes omit them.
 * **Assuming USB power is sufficient** — USB provides 5V but limited current (500 mA from USB 2.0). A flight controller may boot on USB power but behave erratically because peripherals are under-powered.
 
