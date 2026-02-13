@@ -6,7 +6,7 @@ description: >-
 
 # Knowledge Base
 
-A place for reference pages on various topics that come up repeatedly. If we get the same question twice, it probably deserves a page here. Each topic is a standalone reference you can revisit as needed.
+Reference pages covering core concepts for working with ARK products, drone electronics, and embedded systems.
 
 {% content-ref url="microcontrollers.md" %}
 [microcontrollers.md](microcontrollers.md)
