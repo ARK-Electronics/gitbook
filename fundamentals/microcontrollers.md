@@ -34,7 +34,7 @@ Key characteristics of STM32 MCUs:
 
 An MCU runs two distinct pieces of software:
 
-* **Bootloader** — a small program that lives at the start of flash memory. It runs first on power-up and decides whether to enter firmware update mode or jump to the main firmware. On ARK DroneCAN products, the bootloader enables over-the-air firmware updates via CAN bus.
+* **Bootloader** — a small program that lives at the start of flash memory. It runs first on power-up and decides whether to enter firmware update mode or jump to the main firmware. On ARK DroneCAN products, the bootloader enables firmware updates via CAN bus.
 * **Firmware** — the main application. For flight controllers this is PX4 or ArduPilot. For DroneCAN sensors it is a PX4 CANnode build or AP\_Periph build.
 
 The bootloader is flashed once (usually via [SWD](swd-programming.md)) and rarely changes. Firmware is updated regularly as new versions are released.
