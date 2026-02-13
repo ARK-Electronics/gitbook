@@ -34,20 +34,29 @@ The connection chain looks like this:
 Computer ↔ USB ↔ ST-LINK V3 Mini ↔ STDC14 Cable ↔ ARK Debug Adapter ↔ JST-SH Cable ↔ Board Debug Port
 ```
 
-### SWD vs Other Flashing Methods
+### When to Use SWD
 
-| Method | Interface | When to Use |
-|--------|-----------|-------------|
-| **SWD** | Debug connector | Initial bootloader flash, recovery, debugging |
-| **DroneCAN** | CAN bus | Routine firmware updates on CAN nodes |
-| **USB DFU** | USB | Bootloader-mode firmware updates (some boards) |
-| **SD Card** | SD slot | PX4 firmware updates on flight controllers |
+Most firmware updates don't require SWD. The day-to-day methods depend on the type of board:
 
-SWD is the only method that works regardless of the state of the bootloader or firmware. If a board is completely bricked, SWD can recover it.
+* **Flight controllers** (ARKV6X, ARK FPV, etc.) — firmware is typically loaded via QGroundControl over USB. SWD is not needed for routine updates.
+* **DroneCAN nodes** (ARK CANnode, ARK Flow, ARK MAG, etc.) — the flight controller pushes firmware from its SD card to the node over the [CAN bus](can-bus.md), or you can use the [DroneCAN GUI Tool](../resources/dronecan-gui-tool-guide.md) directly. This is the normal update path once a bootloader is installed.
+* **USB DFU** — a fallback used on some boards (like the [ARK FPV](../flight-controller/ark-fpv/README.md)) to flash a bootloader over USB when the board is placed into DFU mode. Rarely needed.
 
-## How ARK Products Use It
+SWD is for situations where none of the above work:
 
-All ARK products with STM32 MCUs include a **Pixhawk Standard Debug Connector** (6-pin JST-SH) that exposes SWD and UART signals:
+* **Initial bootloader flash** — a brand-new or factory-fresh DroneCAN node has no bootloader. SWD is the only way to install one so the node can accept CAN firmware updates going forward.
+* **Recovery** — if a bootloader becomes corrupted or a bad firmware flash leaves the board unresponsive, SWD can overwrite flash directly and bring it back.
+* **Development and debugging** — SWD lets you set breakpoints, step through code, and inspect memory. Not required for firmware development, but useful when you need it.
+
+SWD operates at the hardware level, below any software on the chip. As long as the board is not physically damaged, SWD can recover it — regardless of the state of the bootloader or firmware.
+
+## Debug Connector Pinouts
+
+ARK products use one of two **Pixhawk Standard Debug Connectors** (both JST-SH). The [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/) includes cables for both.
+
+### 6-Pin Debug Connector
+
+Used on most ARK DroneCAN sensors and smaller boards.
 
 | Pin | Signal | Voltage |
 |-----|--------|---------|
@@ -58,18 +67,56 @@ All ARK products with STM32 MCUs include a **Pixhawk Standard Debug Connector** 
 | 5 | SWCLK | 3.3V |
 | 6 | GND | GND |
 
-Common SWD use cases:
+### 10-Pin Debug Connector
 
-* **Flash a bootloader** onto a new or recovered [ARK CANnode](../sensor/ark-cannode/README.md), [ARK Flow](../sensor/ark-flow/README.md), or other DroneCAN sensor so it can accept CAN firmware updates.
-* **Flash PX4 or ArduPilot** directly onto an [ARKV6X](../flight-controller/arkv6x/README.md) or [ARK FPV](../flight-controller/ark-fpv/README.md) during development.
-* **Access the NuttX debug console** for troubleshooting via the UART lines on the same connector.
+Used on flight controllers like the [ARKV6X](../flight-controller/arkv6x/README.md). Adds a second UART and reset line.
+
+| Pin | Signal | Voltage |
+|-----|--------|---------|
+| 1 | 3.3V | 3.3V |
+| 2 | UART5 TX (Debug Console) | 3.3V |
+| 3 | UART5 RX (Debug Console) | 3.3V |
+| 4 | FMU SWDIO | 3.3V |
+| 5 | FMU SWCLK | 3.3V |
+| 6 | SWO | 3.3V |
+| 7 | IO SWDIO | 3.3V |
+| 8 | IO SWCLK | 3.3V |
+| 9 | nRST | 3.3V |
+| 10 | GND | GND |
+
+## Software Setup
+
+Install the stlink tools from source for the most up-to-date version with the best device support:
+
+```bash
+sudo apt install build-essential cmake libusb-1.0-0-dev
+git clone https://github.com/stlink-org/stlink.git
+cd stlink
+cmake .
+make
+sudo make install
+sudo ldconfig
+```
+
+{% hint style="info" %}
+**Prefer building from source** over `sudo apt install stlink-tools`. The packaged version in most distributions is outdated and may not support newer STM32 chips or ST-LINK firmware versions. See the [stlink-org/stlink GitHub page](https://github.com/stlink-org/stlink) for full build instructions and troubleshooting.
+{% endhint %}
+
+If you encounter permission errors after installation, add your user to the `dialout` group:
+
+```bash
+sudo usermod -aG dialout $USER
+```
+
+Log out and back in for the change to take effect.
 
 ## Common Pitfalls
 
 * **Skipping the debug adapter** — the ST-LINK's STDC14 connector does not directly plug into the JST-SH debug port on ARK boards. You need the ARK Pixhawk Debug Adapter or manual wiring.
+* **Wrong bootloader for the firmware stack** — PX4 CAN nodes need the PX4 `canbootloader`, and AP\_Periph nodes need the ArduPilot CAN bootloader. Flashing the wrong bootloader means the node won't accept firmware updates over CAN. If a node isn't picking up firmware, check which bootloader is installed.
 * **Wrong flash address** — STM32 flash typically starts at `0x08000000`. Using the wrong address will produce a seemingly successful flash but a non-functional board.
+* **Outdated stlink tools** — the version from `apt install stlink-tools` is often too old to recognize newer STM32 chips or ST-LINK firmware. Build from source (see [Software Setup](#software-setup) above).
 * **Powering conflicts** — the ST-LINK can supply 3.3V to the target. If the board is already powered externally, this is usually fine, but avoid powering high-current peripherals through the debug connector.
-* **Permission errors on Linux** — if `st-flash` or `st-info` reports permission denied, add your user to the `dialout` group: `sudo usermod -aG dialout $USER` and re-login.
 
 ## Further Reading
 
