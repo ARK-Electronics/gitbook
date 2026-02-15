@@ -17,6 +17,7 @@
   * [ST-LINK Flashing Guide](knowledge-base/st-link-flashing-guide.md)
   * [DroneCAN GUI Tool Guide](knowledge-base/dronecan-gui-tool-guide.md)
   * [PX4 Log Encryption](knowledge-base/px4-log-encryption.md)
+  * [PX4 Setup](knowledge-base/knowledge-base/px4-setup.md)
 
 ## Products
 
