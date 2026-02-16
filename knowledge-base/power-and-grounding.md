@@ -95,14 +95,9 @@ Digital communication buses ([CAN](can-bus.md), [UART](serial-communication-uart
 
 ### GPS Placement
 
-GPS modules are particularly sensitive to both **radio frequency interference** (which degrades satellite reception) and **magnetic interference** (which corrupts the built-in compass). Mount your GPS as far as possible from:
+GPS modules are particularly sensitive to both RF interference (which degrades satellite reception) and magnetic interference (which corrupts the built-in compass). Proper placement is critical for reliable position and heading data.
 
-* **USB connectors and cables** — USB 2.0 high-speed signaling at 480 MHz produces harmonics that land directly in the GPS L-band. This is one of the most common causes of poor GPS performance. Never route USB cables near or under a GPS module.
-* **Motor wires and battery leads** — high-current DC wires generate strong magnetic fields that distort magnetometer readings. Even a few centimeters of additional separation helps significantly.
-* **ESCs and power distribution boards** — switching noise from ESCs radiates both RF and magnetic interference.
-* **Radio transmitters and antennas** — 2.4 GHz or 900 MHz radios can desensitize the GPS receiver at close range.
-
-On a typical build, mount the GPS on a mast or the top of the frame, as far from the power system and electronics stack as practical.
+For detailed guidance on interference sources, mounting best practices, and common mistakes, see the dedicated [GPS Placement](gps-placement.md) page.
 
 ### Servo and Actuator Power Isolation
 
@@ -120,7 +115,7 @@ This applies to any high-current load: gimbal motors, LED arrays, radio amplifie
 * **Ground loops through the frame** — carbon fiber frames are conductive. If two boards are bolted to the frame and also connected by a cable, you have a ground loop. Use nylon standoffs or insulating tape.
 * **Long I2C runs** — I2C/Serial is highly susceptible to noise and capacitance. Runs longer than 10–15 cm are unreliable on a drone. Use [CAN bus](can-bus.md) for any peripheral that isn't directly next to the flight controller.
 * **Servos on the flight controller BEC** — see [Servo and Actuator Power Isolation](#servo-and-actuator-power-isolation) above. A stalled servo will take down your entire avionics power rail.
-* **GPS mounted near USB or motor wires** — see [GPS Placement](#gps-placement) above. USB interference and magnetic fields from high-current wires are the two most common causes of poor GPS and compass performance.
+* **GPS mounted near USB or motor wires** — see [GPS Placement](gps-placement.md). USB interference and magnetic fields from high-current wires are the two most common causes of poor GPS and compass performance.
 * **Ignoring decoupling** — if you're building custom hardware, every IC needs 100 nF decoupling capacitors on its power pins. ARK products include these, but custom carrier boards sometimes omit them.
 * **Assuming USB power is sufficient** — USB provides 5V but limited current (500 mA from USB 2.0). A flight controller may boot on USB power but behave erratically because peripherals are under-powered.
 

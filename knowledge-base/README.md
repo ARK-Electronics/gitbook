@@ -36,6 +36,10 @@ Reference pages covering core concepts for working with ARK products, drone elec
 [power-and-grounding.md](power-and-grounding.md)
 {% endcontent-ref %}
 
+{% content-ref url="gps-placement.md" %}
+[gps-placement.md](gps-placement.md)
+{% endcontent-ref %}
+
 {% content-ref url="communication-buses.md" %}
 [communication-buses.md](communication-buses.md)
 {% endcontent-ref %}
