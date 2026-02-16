@@ -12,6 +12,7 @@
   * [MAVLink](knowledge-base/mavlink.md)
   * [Connectors and Wiring](knowledge-base/connectors-and-wiring.md)
   * [Power and Grounding](knowledge-base/power-and-grounding.md)
+  * [GPS Placement](knowledge-base/gps-placement.md)
   * [Communication Buses (I2C, SPI)](knowledge-base/communication-buses.md)
   * [Recommended Tools](knowledge-base/recommended-tools.md)
   * [ST-LINK Flashing Guide](knowledge-base/st-link-flashing-guide.md)
