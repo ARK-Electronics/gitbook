@@ -45,26 +45,24 @@ On ARK systems, the [CAN bus](can-bus.md) carries both data and power on the sam
 
 ### Ground Loops
 
-A **ground loop** occurs when two or more devices are connected to the same ground reference through multiple paths, creating a loop that acts as an antenna for electromagnetic interference.
+Ground is not an ideal zero-ohm conductor. Every wire and trace has finite resistance and inductance, so when current flows through a ground path it creates a small voltage drop. If two circuits share a ground path, the return current from one circuit creates noise that the other circuit sees. When multiple ground paths between devices form a closed loop, that loop also acts as an antenna — picking up and radiating electromagnetic interference proportional to the loop area.
 
-```
-❌ Ground loop:
-Battery GND ──→ Flight Controller GND ──→ Sensor GND
-    └────────────────────────────────────────┘
-    (second ground path through metal frame)
+On a drone, where ESCs are switching tens of amps at high frequency just centimeters from a GPS receiver trying to hear signals at -130 dBm, even microvolts of ground noise are enough to corrupt sensitive measurements.
 
-✅ Star ground (preferred):
-Battery GND ──→ Power Module GND ──→ Flight Controller GND ──→ Sensor GND
-                                      (single ground path, no loops)
-```
+**Use a star grounding topology.** In a star ground, every subsystem's ground return connects back to a single common point — typically at or near the battery/power supply return. This means:
 
-Ground loops inject noise into analog sensor readings (barometer, current sensor) and can cause communication errors on buses like [UART](serial-communication-uart.md) and [I2C](communication-buses.md).
+* **No shared impedance** — each subsystem has its own dedicated ground return, so motor drive currents never flow through the IMU's ground path.
+* **No loops between subsystems** — with only one path from each device to the common point, there is no closed loop to act as an antenna.
+* **One unambiguous ground reference** — all voltages are measured with respect to the same point, eliminating ground potential differences between boards.
 
-**Mitigation:**
+**Keep every current return path short.** Every current that flows out on a signal or power trace must return to its source, and that outgoing path plus return path form a loop. The radiated EMI and noise susceptibility of that loop is directly proportional to the enclosed area. Keeping return paths short and close to their signal paths minimizes this area. In practice: route ground returns parallel and adjacent to their signal or power traces, don't break ground planes under signal traces, and place decoupling capacitors as close to IC power pins as possible.
 
-* Use a star grounding topology — all grounds return to a single point
-* Avoid mounting electronics directly to a conductive (carbon fiber) frame without insulation
-* Keep signal wires away from high-current motor wires
+**Additional tips:**
+
+* Avoid mounting electronics directly to a conductive (carbon fiber) frame without insulation — this creates unintended ground paths that form loops.
+* Keep signal wires away from high-current motor wires to reduce inductive coupling.
+
+For a deeper dive on grounding, see Analog Devices' [Staying Well Grounded](https://www.analog.com/en/resources/analog-dialogue/articles/staying-well-grounded.html) and TI's [PCB Design Guidelines for Reduced EMI](https://www.ti.com/lit/an/szza009/szza009.pdf).
 
 ### Signal Integrity and Noise
 
