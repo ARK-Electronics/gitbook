@@ -1,13 +1,5 @@
 # ArduPilot Instructions
 
-## Firmware
-
-The ARK G5 RTK GPS uses closed-source PX4 CANnode firmware. No firmware change is needed for ArduPilot — the shipped firmware works with both PX4 and ArduPilot over DroneCAN.
-
-See the [product page](./) for firmware files and update instructions.
-
-***
-
 ## Single GPS Configuration
 
 Connect the ARK G5 RTK GPS to the autopilot's CAN port using a standard 4-pin JST-GH cable. Set the following parameters on the autopilot:
