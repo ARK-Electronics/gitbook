@@ -29,6 +29,26 @@ The G5H provides compass-free yaw estimation using two GNSS antennas on a single
 * Connect antennas to both the MAIN and ANT2 SMA connectors
 * Mount the antennas with a minimum of **30 cm separation** (more is better for heading accuracy)
 
+### CAN Node Parameter
+
+The `SEP_DUAL_ANT` parameter must be set on the G5H CAN node to enable dual antenna heading. This can be configured using [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| `SEP_DUAL_ANT` | 3 | Enable Fixed + Float ambiguities (default, recommended) |
+
+The parameter is a bitmask with the following options:
+
+| Bit | Value | Mode |
+|-----|-------|------|
+| 0 | 1 | Fixed — highest accuracy |
+| 1 | 2 | Float — less accurate but more robust |
+| Both | 3 | Fixed + Float — receiver uses best available |
+
+{% hint style="info" %}
+A reboot of the CAN node is required after changing `SEP_DUAL_ANT`.
+{% endhint %}
+
 ### Autopilot Parameters
 
 #### GPS Configuration
