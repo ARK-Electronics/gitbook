@@ -6,8 +6,8 @@ ARK GPS and RTK GPS modules for precision navigation.
 [ark-dan-gps](ark-dan-gps/)
 {% endcontent-ref %}
 
-{% content-ref url="ark-g5-rtk-gps.md" %}
-[ark-g5-rtk-gps.md](ark-g5-rtk-gps.md)
+{% content-ref url="ark-g5-rtk-gps/" %}
+[ark-g5-rtk-gps](ark-g5-rtk-gps/)
 {% endcontent-ref %}
 
 {% content-ref url="ark-gps/" %}
