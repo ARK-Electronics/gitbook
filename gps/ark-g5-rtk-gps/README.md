@@ -1,19 +1,15 @@
 ---
-cover: ../.gitbook/assets/IMG_5857_edited.JPG
+cover: ../../.gitbook/assets/IMG_5857_edited.JPG
 coverY: 0
 ---
 
 # ARK G5 RTK GPS
 
+[ARK G5 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/) · [ARK G5H RTK Heading GPS](https://arkelectron.com/product/ark-g5-rtk-heading-gps/)
+
 ## G5 vs G5H
 
 The ARK G5 RTK GPS and the ARK G5H RTK GPS share the same PCB design but use different Septentrio G5 modules. The G5 uses the P3 and the G5H uses the P3H. Note that the G5/P3 only support a single antenna and the ANT2 connector is not active.&#x20;
-
-## DroneCAN
-
-Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
-
-{% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}
 
 ## Firmware
 
@@ -23,11 +19,11 @@ Follow the steps for updating the firmware through the flight controller.&#x20;
 
 See the latest firmware below.
 
-{% file src="../.gitbook/assets/91-1.16.c53f8d8e.uavcan.bin" %}
+{% file src="../../.gitbook/assets/91-1.16.c53f8d8e.uavcan.bin" %}
 ARK G5 RTK GPS Firmware
 {% endfile %}
 
-{% file src="../.gitbook/assets/ark_g5-gps_canbootloader.bin" %}
+{% file src="../../.gitbook/assets/ark_g5-gps_canbootloader.bin" %}
 ARK G5 RTK GPS Bootloader
 {% endfile %}
 
@@ -103,10 +99,9 @@ The Septentrio G5 module firmware can be updated using the [Septentrio RxTools](
 1. Install [RxTools](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools)
 2. &#x20;Launch RxControl
 3. Connect to the module on the USB serial connection\
-   ![](<../.gitbook/assets/image (70).png>)
+   ![](<../../.gitbook/assets/image (70).png>)
 4. Under File, select "Upgrade Receiver using Current Connection"\
-   ![](<../.gitbook/assets/image (71).png>)
+   ![](<../../.gitbook/assets/image (71).png>)
 5. Select the SUF firmware file downloaded from [Septentrio's website](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3#resources)\
-   ![](<../.gitbook/assets/image (72).png>)
+   ![](<../../.gitbook/assets/image (72).png>)
 6. Run the upgrade
-
