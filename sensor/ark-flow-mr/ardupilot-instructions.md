@@ -25,6 +25,8 @@ To use the onboard lidar:
 
 * Set [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) = 24 (DroneCAN)
 * Set [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) = 5000 to set range finder’s maximum range to 50m
+* Set [RNGFND1\_ADDR](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-addr) = the sensor ID of the rangefinder
+* Set [RNGFND1\_RECV\_ID](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-recv-id) = the CAN node ID of the sensor
 
 #### Additional Notes <a href="#mounting" id="mounting"></a>
 

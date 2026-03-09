@@ -14,6 +14,12 @@ The ARK DIST can also be connected with UART and communicates over MAVLINK sendi
 
 * Set [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) = 24 (DroneCAN)
 * Set [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) = to set range finder’s maximum range
+* Set [RNGFND1\_ADDR](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-addr) = the sensor ID of the rangefinder
+* Set [RNGFND1\_RECV\_ID](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-recv-id) = the CAN node ID of the sensor
+
+{% hint style="info" %}
+If you intend to use multiple distance sensors, you will need [this ArduPilot PR](https://github.com/ArduPilot/ardupilot/pull/31931).
+{% endhint %}
 
 #### Connection to Autopilot with UART/MAVLink <a href="#mounting" id="mounting"></a>
 
