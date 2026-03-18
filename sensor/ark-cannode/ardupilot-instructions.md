@@ -18,10 +18,11 @@ Flash your ARK flight controller with ArduPilot firmware using [QGroundControl](
 
 Flash the ARK CANnode with AP\_Periph firmware using the DroneCAN GUI Tool. See the [DroneCAN GUI Tool Guide](../../knowledge-base/dronecan-gui-tool-guide.md) for detailed instructions on connecting and uploading firmware.
 
-1. Connect the CANnode to the flight controller's CAN bus
-2. Open the DroneCAN GUI Tool
-3. Double-click the CANnode in the node list
-4. Click **Update Firmware** and select the `.apj` AP\_Periph firmware file
+1. Download the latest AP\_Periph firmware for the ARK CANnode from [firmware.ardupilot.org/AP\_Periph](https://firmware.ardupilot.org/AP_Periph/)
+2. Connect the CANnode to the flight controller's CAN bus
+3. Open the DroneCAN GUI Tool
+4. Double-click the CANnode in the node list
+5. Click **Update Firmware** and select the `.apj` AP\_Periph firmware file
 
 {% hint style="info" %}
 You can build the AP\_Periph firmware yourself:
