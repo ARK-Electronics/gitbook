@@ -24,17 +24,6 @@ Flash the ARK CANnode with AP\_Periph firmware using the DroneCAN GUI Tool. See 
 4. Double-click the CANnode in the node list
 5. Click **Update Firmware** and select the `.apj` AP\_Periph firmware file
 
-{% hint style="info" %}
-You can build the AP\_Periph firmware yourself:
-
-```
-./waf configure --board ARK_CANNODE
-./waf AP_Periph
-```
-
-The bootloader can be updated from the running AP\_Periph firmware by setting `FLASH_BOOTLOADER = 1` on the CANnode via the DroneCAN GUI Tool.
-{% endhint %}
-
 ## Enable CAN on the Flight Controller
 
 Set the following parameters on the flight controller and reboot:
