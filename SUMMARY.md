@@ -111,6 +111,7 @@
     * [3D Model](radio/ark-microhard-ddl-carrier/3d-model.md)
 * [Sensors](sensor/README.md)
   * [ARK CANnode](sensor/ark-cannode/README.md)
+    * [ArduPilot Instructions](sensor/ark-cannode/ardupilot-instructions.md)
     * [PX4 Instructions](sensor/ark-cannode/px4-instructions.md)
     * [3D Models](sensor/ark-cannode/3d-models.md)
   * [ARK DIST](sensor/ark-dist/README.md)
