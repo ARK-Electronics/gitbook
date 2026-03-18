@@ -106,11 +106,11 @@ To use the first 3 CANnode outputs, set `CAN_D1_UC_SRV_BM = 7` (bits 0, 1, 2) an
 
 ### Servo Output While Disarmed
 
-CAN servo output is gated by the safety switch, not vehicle arming. To allow servo holding current while disarmed, disable the safety switch on the flight controller:
+CAN servo output is gated by the safety switch, not vehicle arming. To allow servo holding current while disarmed, set the safety mask to allow the servo channels to output even when safety is on:
 
-| Parameter         | Value | Description           |
-| ----------------- | ----- | --------------------- |
-| `BRD_SAFETY_DEFLT` | 0    | Disable safety switch  |
+| Parameter         | Value | Description                                      |
+| ----------------- | ----- | ------------------------------------------------ |
+| `BRD_SAFETY_MASK` | 1     | Allow Servo Channel 1 to output with safety on (bitmask) |
 
 ## Triggering the Gripper
 
