@@ -106,7 +106,7 @@ To use the first 3 CANnode outputs, set `CAN_D1_UC_SRV_BM = 7` (bits 0, 1, 2) an
 
 ### Servo Output While Disarmed
 
-CAN servo output is gated by the safety switch, not vehicle arming. To allow servo holding current while disarmed, set the safety mask to allow the servo channels to output even when safety is on:
+CAN servo output is gated by the safety switch, not vehicle arming. To allow servo output while safety is on, set the safety mask for the desired servo channels:
 
 | Parameter         | Value | Description                                      |
 | ----------------- | ----- | ------------------------------------------------ |
