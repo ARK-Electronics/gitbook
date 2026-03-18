@@ -104,25 +104,6 @@ The defaults should work without changes:
 
 To use the first 3 CANnode outputs, set `CAN_D1_UC_SRV_BM = 7` (bits 0, 1, 2) and configure `SERVO1_FUNCTION`, `SERVO2_FUNCTION`, and `SERVO3_FUNCTION` on the flight controller.
 
-#### Using Higher Servo Channels
-
-If the flight controller's lower servo channels are already in use for motors or control surfaces, you can use higher numbered channels. For example, to use FC Servo Channels 9-11:
-
-**Flight Controller:**
-
-| Parameter           | Value | Description                     |
-| ------------------- | ----- | ------------------------------- |
-| `CAN_D1_UC_SRV_BM` | 1792  | Bits 8, 9, 10 (Servo 9, 10, 11) |
-| `SERVO9_FUNCTION`   | 28    | Gripper (or desired function)    |
-
-**CANnode:**
-
-| Parameter       | Value | Description                      |
-| --------------- | ----- | -------------------------------- |
-| `OUT1_FUNCTION` | 59    | RCPassThru9 (maps to FC Servo 9)  |
-| `OUT2_FUNCTION` | 60    | RCPassThru10 (maps to FC Servo 10) |
-| `OUT3_FUNCTION` | 61    | RCPassThru11 (maps to FC Servo 11) |
-
 ### Servo Output While Disarmed
 
 CAN servo output is gated by the safety switch, not vehicle arming. To allow servo holding current while disarmed, disable the safety switch on the flight controller:
