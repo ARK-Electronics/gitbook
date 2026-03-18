@@ -135,10 +135,13 @@ Usage:
 ```bash
 python3 gripper_cmd.py open
 python3 gripper_cmd.py close
-python3 gripper_cmd.py open --port /dev/ttyACM0
 ```
 
-The script auto-detects ARK flight controllers connected via USB. Use `--port` to specify a device manually.
+The script auto-detects ARK flight controllers connected via USB. Use `--port` to specify a device manually:
+
+```bash
+python3 gripper_cmd.py open --port /dev/ttyACM0
+```
 
 ## Building Firmware
 
