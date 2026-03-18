@@ -95,7 +95,7 @@ To upload firmware:
 
 **Firmware file formats:**
 
-* `.apj` - AP\_Periph firmware (ArduPilot)
+* `.bin` - AP\_Periph firmware (ArduPilot)
 * `.uavcan.bin` - PX4 CANnode firmware
 
 {% hint style="info" %}

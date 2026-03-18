@@ -31,7 +31,7 @@ Flash the ARK CANnode with AP\_Periph firmware using the DroneCAN GUI Tool. See 
 2. Connect the CANnode to the flight controller's CAN bus
 3. Open the DroneCAN GUI Tool
 4. Double-click the CANnode in the node list
-5. Click **Update Firmware** and select the `.apj` AP\_Periph firmware file
+5. Click **Update Firmware** and select the `.bin` AP\_Periph firmware file
 
 ## Gripper/Dropper Setup
 
