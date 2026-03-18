@@ -44,8 +44,6 @@ Set the following parameters on the flight controller and reboot:
 | `CAN_P1_DRIVER` | 1     | Enable first CAN driver |
 | `CAN_D1_PROTOCOL` | 1   | Set protocol to DroneCAN |
 
-After rebooting, the CANnode should appear in the DroneCAN GUI Tool node list with a solid blue LED.
-
 ## CANnode as PWM Expander
 
 The ARK CANnode has 8 PWM outputs that can be driven over CAN from the flight controller. This is useful for expanding servo outputs beyond what the flight controller provides, or for placing servos far from the flight controller.
