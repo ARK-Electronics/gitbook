@@ -9,17 +9,17 @@ coverY: 0
 
 ## G5 vs G5H
 
-The ARK G5 RTK GPS and the ARK G5H RTK GPS share the same PCB design but use different Septentrio G5 modules. The G5 uses the P3 and the G5H uses the P3H. Note that the G5/P3 only support a single antenna and the ANT2 connector is not active.&#x20;
+The ARK G5 RTK GPS and the ARK G5H RTK GPS share the same PCB design but use different Septentrio G5 modules. The G5 uses the P3 and the G5H uses the P3H. Note that the G5/P3 only support a single antenna and the ANT2 connector is not active.
 
 ## Firmware
 
-Follow the steps for updating the firmware through the flight controller.&#x20;
+Follow the steps for updating the firmware through the flight controller.
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/91-1.16.c53f8d8e.uavcan.bin" %}
+{% file src="../../.gitbook/assets/91-1.16.c8403786.uavcan.bin" %}
 ARK G5 RTK GPS Firmware
 {% endfile %}
 
@@ -29,6 +29,9 @@ ARK G5 RTK GPS Bootloader
 
 ## Release Notes
 
+* 91-1.16.c8403786 - 2026-2-12
+  * Septentrio sensor\_gnss\_relative
+  * General heading improvement
 * 91-1.16.c53f8d8e - 2025-12-18
   * Initial release
 
@@ -61,10 +64,45 @@ Unit: degree
 Configures the output rate for GNSS data messages.
 
 -1: OnChange\
-&#x20;50: 50 ms\
+50: 50 ms\
 100: 100 ms\
 200: 200 ms\
 500: 500 ms
+
+#### SEP\_DUAL\_ANT (bitmask)
+
+Configures the receiver frontend for dual antenna operation, enabling GNSS-based heading. Requires a heading-capable module (e.g. mosaic-G5 P3H or P6) with two antennas connected. Fixed ambiguities provide the highest accuracy. Float ambiguities are less accurate but more robust. Set both for Fixed+Float (receiver will use best available).
+
+bit:\
+0: Fixed\
+1: Float\
+default: 3
+
+#### SEP\_PVT\_MODE (bitmask)
+
+Bitmask of allowed PVT modes for Rover operation. The receiver will use the most accurate mode available.
+
+bit:\
+0: StandAlone\
+1: DGNSS\
+2: RTKFloat\
+3: RTKFixed\
+default: 15
+
+#### SEP\_RCV\_DYN (enum)
+
+Configures the receiver dynamics model to match the expected motion profile of the vehicle.
+
+values:\
+0: Static\
+1: Quasistatic\
+2: Pedestrian\
+3: Automotive\
+4: RaceCar\
+5: HeavyMachinery\
+6: UAV\
+7: Unlimited\
+default: 6
 
 ## Pinout
 
@@ -97,7 +135,7 @@ Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_G5\_RT
 The Septentrio G5 module firmware can be updated using the [Septentrio RxTools](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools) application.
 
 1. Install [RxTools](https://www.septentrio.com/en/products/gps-gnss-receiver-software/rxtools)
-2. &#x20;Launch RxControl
+2. Launch RxControl
 3. Connect to the module on the USB serial connection\
    ![](<../../.gitbook/assets/image (70).png>)
 4. Under File, select "Upgrade Receiver using Current Connection"\

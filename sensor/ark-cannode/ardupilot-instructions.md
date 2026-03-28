@@ -18,10 +18,10 @@ Flash your ARK flight controller with ArduPilot firmware using [QGroundControl](
 
 Set the following parameters on the flight controller and reboot:
 
-| Parameter          | Value | Description             |
-| ------------------ | ----- | ----------------------- |
-| `CAN_P1_DRIVER`   | 1     | Enable first CAN driver |
-| `CAN_D1_PROTOCOL`  | 1     | Set protocol to DroneCAN |
+| Parameter         | Value | Description              |
+| ----------------- | ----- | ------------------------ |
+| `CAN_P1_DRIVER`   | 1     | Enable first CAN driver  |
+| `CAN_D1_PROTOCOL` | 1     | Set protocol to DroneCAN |
 
 ### CANnode
 
@@ -39,15 +39,15 @@ This example configures the first CANnode PWM output as a servo gripper for a dr
 
 ### Flight Controller Parameters
 
-| Parameter           | Value | Description                                      |
-| ------------------- | ----- | ------------------------------------------------ |
-| `CAN_D1_UC_SRV_BM` | 1     | Enable Servo Channel 1 over CAN (bitmask bit 0)  |
-| `SERVO1_FUNCTION`   | 28    | Gripper                                           |
-| `GRIP_ENABLE`       | 1     | Enable gripper                                    |
-| `GRIP_TYPE`         | 0     | Servo                                             |
-| `GRIP_GRAB`         | 1000  | PWM value for grab/close (adjust to your servo)   |
-| `GRIP_RELEASE`      | 1200  | PWM value for release/open (adjust to your servo) |
-| `BRD_SAFETY_MASK`   | 1     | Allow Servo Channel 1 to output with safety on    |
+| Parameter          | Value | Description                                       |
+| ------------------ | ----- | ------------------------------------------------- |
+| `CAN_D1_UC_SRV_BM` | 1     | Enable Servo Channel 1 over CAN (bitmask bit 0)   |
+| `SERVO1_FUNCTION`  | 28    | Gripper                                           |
+| `GRIP_ENABLE`      | 1     | Enable gripper                                    |
+| `GRIP_TYPE`        | 0     | Servo                                             |
+| `GRIP_GRAB`        | 1000  | PWM value for grab/close (adjust to your servo)   |
+| `GRIP_RELEASE`     | 1200  | PWM value for release/open (adjust to your servo) |
+| `BRD_SAFETY_MASK`  | 1     | Allow Servo Channel 1 to output with safety on    |
 
 {% hint style="warning" %}
 After setting `GRIP_ENABLE = 1`, a reboot is required before the other `GRIP_*` parameters will appear.
@@ -71,9 +71,9 @@ The `OUT*` parameters are accessed through the DroneCAN parameter interface. In 
 
 Assign a switch on your transmitter to control the gripper:
 
-| Parameter      | Value | Description     |
-| -------------- | ----- | --------------- |
-| `RCx_OPTION`   | 19    | Gripper Release |
+| Parameter    | Value | Description     |
+| ------------ | ----- | --------------- |
+| `RCx_OPTION` | 19    | Gripper Release |
 
 Replace `x` with the RC channel number mapped to your desired switch.
 
@@ -81,7 +81,7 @@ Replace `x` with the RC channel number mapped to your desired switch.
 
 The gripper can also be controlled programmatically using `MAV_CMD_DO_GRIPPER`. The following Python script sends gripper open/close commands over USB:
 
-{% file src="gripper_cmd.py" %}
+{% file src="../../.gitbook/assets/gripper_cmd.py" %}
 
 Usage:
 
