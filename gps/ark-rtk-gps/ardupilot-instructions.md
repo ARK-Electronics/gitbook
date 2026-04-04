@@ -34,6 +34,10 @@ Connect the ARK RTK GPS to the autopilot's CAN port using a standard 4-pin JST-G
 | `GPS1_TYPE` | 9 | DroneCAN |
 | `GPS_AUTO_CONFIG` | 2 | Auto-configure DroneCAN GPS |
 
+{% hint style="info" %}
+`GPS_AUTO_CONFIG=2` is correct here because the ARK RTK GPS runs AP\_Periph firmware, which supports ArduPilot's DroneCAN parameter auto-configuration. If your GPS module is not running AP\_Periph firmware, leave `GPS_AUTO_CONFIG` at its default value of 1 — setting it to 2 on non-AP\_Periph firmware will block GPS data.
+{% endhint %}
+
 Reboot the autopilot. The GPS should appear as a DroneCAN node and begin reporting position data.
 
 ***
