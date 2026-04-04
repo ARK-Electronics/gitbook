@@ -69,12 +69,12 @@ A reboot of the CAN node is required after changing `SEP_DUAL_ANT`.
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | `GPS1_MB_TYPE` | 1 | RelativeToCustomBase — tells ArduPilot to use the antenna offsets below |
-| `GPS1_MB_OFS_X` | _(meters)_ | Antenna offset from MAIN to ANT2, forward |
-| `GPS1_MB_OFS_Y` | _(meters)_ | Antenna offset from MAIN to ANT2, right |
-| `GPS1_MB_OFS_Z` | _(meters)_ | Antenna offset from MAIN to ANT2, down |
+| `GPS1_MB_OFS_X` | _(meters)_ | Antenna offset from ANT2 to MAIN, positive if MAIN is forward |
+| `GPS1_MB_OFS_Y` | _(meters)_ | Antenna offset from ANT2 to MAIN, positive if MAIN is to the right |
+| `GPS1_MB_OFS_Z` | _(meters)_ | Antenna offset from ANT2 to MAIN, positive if MAIN is below |
 
 {% hint style="info" %}
-The offsets describe the position of ANT2 relative to MAIN in the vehicle body frame (forward/right/down). Measure the physical separation between the two antenna phase centers and enter the values in meters.
+The offsets describe the position of MAIN relative to ANT2 in the vehicle body frame. Measure the physical separation between the two antenna phase centers and enter the values in meters.
 {% endhint %}
 
 #### EKF Configuration
