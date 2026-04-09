@@ -1,5 +1,7 @@
 # Doodle Labs Mesh Rider Radio Integration Guide for ARK Jetson PAB Carrier
 
+{% embed url="https://youtu.be/ljDW6L-XJdI" %}
+
 ## Introduction
 
 This guide provides step-by-step instructions for integrating the **Doodle Labs Mesh Rider Radio system** with the **ARK Jetson PAB Carrier**, designed for seamless deployment in UAV and robotic platforms.\
