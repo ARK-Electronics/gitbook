@@ -12,7 +12,7 @@ We recommend running MAVLink on USB and XRCE-DDS on Serial.
 
 The Pi CM4 has one USB 2.0 OTG interface. It is muxed between the external Micro-USB port and a built in USB hub. The USB hub connects to the flight controller, USB C port, and the two USB JST-GH ports.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2024-10-08 16-42-38.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot from 2024-10-08 16-42-38.png" alt=""><figcaption></figcaption></figure>
 
 The USB connection to the autopilot is muxed with the external Pi micro USB port. When a micro USB cable is connected, the autopilot is disconnected from the Pi and the USB port on the Pi switches from host to device mode. After the micro USB cable is disconnected, a reboot is required to switch the USB port back to a host and connect to the autopilot and external ports.
 
