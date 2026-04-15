@@ -15,7 +15,7 @@ Apply OS customization to configure WiFi and enable SSH:
 * Set the default hostname:
 
 ```
-raspberrypi
+pi6x
 ```
 
 * Set the Wifi:\
@@ -26,10 +26,10 @@ raspberrypi
 sudo nmcli radio wifi on
 ```
 
-* Set the default **username (pi)** and **password (raspberry)**
+* Set the default **username (pi)** and **password (pi)**
 * Enable SSH
 
-<figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-45-02.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-45-02.png" alt=""><figcaption></figcaption></figure> **Change image showcasing pi6x as hostname and password dots to show the password "pi"
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-44-47.png" alt=""><figcaption></figcaption></figure>
 
