@@ -10,12 +10,16 @@ If using Ubuntu:
 wget -O pi_imager.deb https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb && sudo dpkg -i pi_imager.deb && rm pi_imager.deb
 ```
 
+{% hint style="warning" %}
+Select **Raspberry Pi OS (Legacy, 64-bit)**, which is based on Debian Bookworm. The current default Raspberry Pi OS is based on Debian Trixie, which is not supported by the ARK-OS MAVSDK install step.
+{% endhint %}
+
 Apply OS customization to configure WiFi and enable SSH:
 
 * Set the default hostname:
 
 ```
-raspberrypi
+pi6x
 ```
 
 * Set the Wifi:\
@@ -26,7 +30,7 @@ raspberrypi
 sudo nmcli radio wifi on
 ```
 
-* Set the default **username (pi)** and **password (raspberry)**
+* Set the default **username (pi)** and **password (pi)**
 * Enable SSH
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-45-02.png" alt=""><figcaption></figcaption></figure>
