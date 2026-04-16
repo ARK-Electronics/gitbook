@@ -11,7 +11,7 @@ wget -O pi_imager.deb https://downloads.raspberrypi.org/imager/imager_latest_amd
 ```
 
 {% hint style="warning" %}
-Select **Raspberry Pi OS (Legacy, 64-bit)**, which is based on Debian Bookworm. The current default Raspberry Pi OS is based on Debian Trixie, which is not supported by the ARK-OS MAVSDK install step.
+Select **Raspberry Pi OS (Legacy, 64-bit)**, which is based on Debian Bookworm. ARK-OS has only been tested against Bookworm; newer Raspberry Pi OS releases based on Debian Trixie are not yet verified.
 {% endhint %}
 
 Apply OS customization to configure WiFi and enable SSH:
