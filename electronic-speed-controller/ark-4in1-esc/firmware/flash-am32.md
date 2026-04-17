@@ -8,7 +8,7 @@ You can flash firmware to the ESCs using a Betaflight or Ardupilot flight contro
 
 Download the latest release of [AM32](https://github.com/am32-firmware/AM32/releases).
 
-{% file src="../../../.gitbook/assets/AM32_ARK_4IN1_F051_2.19 (1).hex" %}
+{% file src="../../../.gitbook/assets/AM32_ARK_4IN1_F051_2.20.hex" %}
 
 ***
 
