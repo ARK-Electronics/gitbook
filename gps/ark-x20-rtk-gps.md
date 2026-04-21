@@ -18,11 +18,11 @@ Follow the steps for updating the firmware through the flight controller.&#x20;
 See the latest firmware below.
 
 {% file src="../.gitbook/assets/89-1.16.47e04790.uavcan.bin" %}
-ARK Mosaic-X5 GPS Firmware
+ARK X20 GPS Firmware
 {% endfile %}
 
 {% file src="../.gitbook/assets/ark_x20-gps_canbootloader.bin" %}
-ARK Mosaic-X5 GPS Bootloader
+ARK X20 GPS Bootloader
 {% endfile %}
 
 ## Release Notes
