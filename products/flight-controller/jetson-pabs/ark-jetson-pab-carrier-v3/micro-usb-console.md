@@ -1,13 +1,12 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/OwmEn1N45AR4WjMQhHlu/products/flight-controller/ark-jetson-pab-carrier/micro-usb-console
+    - ../ark-jetson-pab-carrier/micro-usb-console.md
 ---
 
 # USB C Console
 
-After plugging in a USB C cable to the Jetson carrier, a file system is mounted and a serial port is presented the the host PC.&#x20;
+After plugging in a USB C cable to the Jetson carrier, a file system is mounted and a serial port is presented the the host PC.
 
 The L4T-README drive contains text files with information on using the serial port and connecting WiFi.
 

@@ -1,19 +1,10 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/OwmEn1N45AR4WjMQhHlu/products/flight-controller/ark-jetson-pab-carrier/pinout
+    - ../ark-jetson-pab-carrier/pinout.md
 ---
 
 # Pinout
-
-<figure><img src="../../.gitbook/assets/Jetson PAB V3 Pinout Drawing Top.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Jetson PAB V3 Pinout Drawing Bottom.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/Jetson PAB V3 Pintout Drawing Front.png" alt=""><figcaption></figcaption></figure>
-
-{% file src="../../.gitbook/assets/Jetson PAB V3 Pinout Drawing (2).pdf" %}
 
 ### **Primary Avionics- 40 Pin** Pico-Clasp 501571
 

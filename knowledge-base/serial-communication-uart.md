@@ -1,6 +1,5 @@
 ---
-description: >-
-  UART basics, RX/TX cross-wiring, baud rates, and using the debug console.
+description: UART basics, RX/TX cross-wiring, baud rates, and using the debug console.
 ---
 
 # Serial Communication (UART)
@@ -17,11 +16,11 @@ Unlike [SPI or I2C](communication-buses.md), UART is point-to-point — it conne
 
 A UART connection uses two data lines plus ground:
 
-| Signal | Purpose |
-|--------|---------|
-| TX | Transmit — data output from the device |
-| RX | Receive — data input to the device |
-| GND | Common ground reference |
+| Signal | Purpose                                |
+| ------ | -------------------------------------- |
+| TX     | Transmit — data output from the device |
+| RX     | Receive — data input to the device     |
+| GND    | Common ground reference                |
 
 ### RX/TX Cross-Wiring
 
@@ -46,15 +45,15 @@ Both devices must agree on the same data speed, called the **baud rate** (bits p
 
 Common baud rates in the ARK/PX4 ecosystem:
 
-| Baud Rate | Typical Use |
-|-----------|-------------|
-| 9600 | Some GPS modules (default) |
-| 57600 | PX4 debug console (NuttX shell) |
-| 115200 | MAVLink telemetry, some GPS modules |
-| 921600 | High-speed MAVLink, companion computer links (see note below) |
+| Baud Rate | Typical Use                                                   |
+| --------- | ------------------------------------------------------------- |
+| 9600      | Some GPS modules (default)                                    |
+| 57600     | PX4 debug console (NuttX shell)                               |
+| 115200    | MAVLink telemetry, some GPS modules                           |
+| 921600    | High-speed MAVLink, companion computer links (see note below) |
 
 {% hint style="warning" %}
-**921600 baud and above requires hardware flow control** (CTS/RTS) unless the UART connection is very short (PCB-to-PCB, like the on-board link between the Jetson and flight controller on the [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.md)). Over cables of any significant length, data will be lost at these speeds without flow control. If you must run high baud rates over a cable, use a TELEM port with CTS/RTS lines connected.
+**921600 baud and above requires hardware flow control** (CTS/RTS) unless the UART connection is very short (PCB-to-PCB, like the on-board link between the Jetson and flight controller on the [ARK Jetson PAB Carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/)). Over cables of any significant length, data will be lost at these speeds without flow control. If you must run high baud rates over a cable, use a TELEM port with CTS/RTS lines connected.
 {% endhint %}
 
 ### Data Format
@@ -81,7 +80,7 @@ The easiest way to access the debug console is with an [ST-LINK V3 Mini and ARK 
 
 ### GPS Modules
 
-ARK GPS modules ([ARK SAM GPS](../gps/ark-sam-gps/README.md), [ARK DAN GPS](../gps/ark-dan-gps/README.md)) that support non-CAN connections use UART to send position data to the flight controller. The flight controller's GPS port provides a UART with the Pixhawk Standard pinout.
+ARK GPS modules ([ARK SAM GPS](../gps/ark-sam-gps/), [ARK DAN GPS](../gps/ark-dan-gps/)) that support non-CAN connections use UART to send position data to the flight controller. The flight controller's GPS port provides a UART with the Pixhawk Standard pinout.
 
 ### Telemetry
 
@@ -89,11 +88,11 @@ MAVLink telemetry between a flight controller and a ground station radio uses UA
 
 ### Companion Computers
 
-The [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.md) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/README.md) use UART connections between the companion computer and the flight controller MCU for MAVLink or XRCE-DDS communication.
+The [ARK Jetson PAB Carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/) use UART connections between the companion computer and the flight controller MCU for MAVLink or XRCE-DDS communication.
 
 ## Common Pitfalls
 
-* **TX and RX swapped** — see [RX/TX Cross-Wiring](#rxtx-cross-wiring) above. Always the first thing to check.
+* **TX and RX swapped** — see [RX/TX Cross-Wiring](serial-communication-uart.md#rxtx-cross-wiring) above. Always the first thing to check.
 * **Baud rate mismatch** — if you see garbled characters instead of readable text, double-check that both ends are set to the same baud rate. The PX4 debug console is 57600, not 115200.
 * **Missing common ground** — UART signals are referenced to ground. If two devices don't share a common ground, communication will be unreliable or fail entirely.
 * **Voltage mismatch** — STM32 UART signals are 3.3V. Connecting directly to a 5V device (like some Arduino boards) can damage the MCU. Use a level shifter if needed.

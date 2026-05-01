@@ -18,7 +18,7 @@ To power the system, use **two separate power modules**:
 * One power module to supply the **ARK Jetson PAB Carrier / Jetson**
 * A second power module to supply the **Mini or Nano OEM radio**
 
-Because the radio operates at **5 V**, it can be powered using either the **ARK 12S Power Module** or the **ARK 12S  Payload Power Module**. Using separate power modules adds redundancy, which is beneficial for overall system reliability—especially for the Jetson companion computer.
+Because the radio operates at **5 V**, it can be powered using either the **ARK 12S Power Module** or the **ARK 12S Payload Power Module**. Using separate power modules adds redundancy, which is beneficial for overall system reliability—especially for the Jetson companion computer.
 
 <br>
 
@@ -30,11 +30,7 @@ Because the radio operates at **5 V**, it can be powered using either the **ARK 
 
 In addition to power, connect an **Ethernet cable** from the radio’s **LAN port** directly to the Ethernet port on the **ARK Jetson PAB Carrier**. This wired connection enables high-throughput, low-latency data exchange between the Jetson companion computer and the mesh network formed by the Doodle Labs radios.
 
-
-
 <figure><img src="../.gitbook/assets/20260210_105745.jpg" alt="" width="375"><figcaption></figcaption></figure>
-
-
 
 ## Jetson setup
 
@@ -56,8 +52,6 @@ After setting the static IP, you can disconnect the USB connection and **restart
 
 <figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 11-57-20.png" alt=""><figcaption><p>Dashboard</p></figcaption></figure>
 
-
-
 ## Ground station radio setup
 
 This section provides detailed instructions for setting up and connecting to Doodle Labs Mesh Rider Radios.\
@@ -67,9 +61,9 @@ Your options are:
 * Mini & Nano OEM
 * OEM
 
-Regardless which radio you use as the base station the network setup is the same.&#x20;
+Regardless which radio you use as the base station the network setup is the same.
 
-After establishing a connection through Ethernet, you must set a static IP address for your host machine within the 10.223.0.0/16 subnet to access the radios. The method for assigning an IP address differs between operating systems (Windows, macOS, Linux, etc.).&#x20;
+After establishing a connection through Ethernet, you must set a static IP address for your host machine within the 10.223.0.0/16 subnet to access the radios. The method for assigning an IP address differs between operating systems (Windows, macOS, Linux, etc.).
 
 For a Windows 10 or later system, navigate to the Network Connections folder in the Control Panel. Right-click on the Wi-Fi or Ethernet adapter your host is using and select Properties. In the properties window, choose Internet Protocol Version 4 and then click Properties. Set the IP address to the 10.223.0.0/16 subnet. Since these addresses are statically assigned, make sure not to use the same IP address for another device on the network. Refer to the figure below for guidance on manually setting the IP address.
 
@@ -91,8 +85,6 @@ Once the setup is complete you can go ahead and open a web browser and navigate 
 
 <figure><img src="../.gitbook/assets/20250328_141507.jpg" alt=""><figcaption><p>IP on the Wearable</p></figcaption></figure>
 
-
-
 The default configuration of the Mesh Rider radios allows Mesh Rider radios of identical band models to automatically form a mesh on first boot-up without any configuration changes. You can immediately run IP-based connections over the Mesh Rider network. The configuration should be adjusted for your application and match both on the radios.
 
 With this setup, your Jetson is part of your IP network, which means if it’s running a MAVLink server or any MAVLink-compatible device, you should be able to connect to it via QGroundControl (QGC) over the network. Additionally, you can access the Jetson remotely using SSH for monitoring or configuration tasks.
@@ -101,7 +93,7 @@ With this setup, your Jetson is part of your IP network, which means if it’s r
 
 <figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 11-57-57.png" alt=""><figcaption><p>Simple mesh configuration</p></figcaption></figure>
 
-**Wi-Fi Connection (only for wearable and OEM)**&#x20;
+**Wi-Fi Connection (only for wearable and OEM)**
 
 You can connect to the radio over its built-in Wi-Fi radio. By default, the built-in Wi-Fi radio starts up an Access Point with SSID DoodleLabsWiFi-\<last 6 hex digits of MAC> and password DoodleSmartRadio. No cables are required for this connection method.
 
@@ -115,8 +107,6 @@ Once you set up all the static IP-s on both the Ground PC and the Jetson you can
 
 <figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-08-31.png" alt=""><figcaption><p>ARK OS</p></figcaption></figure>
 
-
-
 <figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption><p>RTSP server is ready at IP:5600/camera1</p></figcaption></figure>
 
 ### **QGround Control**
@@ -127,7 +117,7 @@ You can go ahead and add the Link for the Drone in QGC, `jetson.local` should gi
 
 Finally, you can add the RTSP video stream using the same IP and `:5600/camera1`
 
-<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-00-51 (1).png" alt=""><figcaption><p>RTSP setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2026-02-10 12-00-51.png" alt=""><figcaption><p>RTSP setup</p></figcaption></figure>
 
 As you can see below the connection and the camera stream are established. We are ready to fly.
 
@@ -137,4 +127,4 @@ Resources:<br>
 
 {% embed url="https://techlibrary.doodlelabs.com/whats-in-the-box-w/quick-start-guide-ch2#physical-setup-instructions" %}
 
-[ark-jetson-pab-carrier](../flight-controller/ark-jetson-pab-carrier/ "mention")
+[ark-jetson-pab-carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/ "mention")

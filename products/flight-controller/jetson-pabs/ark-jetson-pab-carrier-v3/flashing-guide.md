@@ -1,8 +1,7 @@
 ---
 metaLinks:
   alternates:
-    - >-
-      https://app.gitbook.com/s/OwmEn1N45AR4WjMQhHlu/products/flight-controller/ark-jetson-pab-carrier/flashing-guide
+    - ../ark-jetson-pab-carrier/flashing-guide.md
 ---
 
 # Flashing Guide

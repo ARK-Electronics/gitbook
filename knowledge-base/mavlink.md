@@ -20,13 +20,13 @@ MAVLink defines hundreds of standardized message types. Each message has a numer
 
 Common message categories:
 
-| Category | Examples | Purpose |
-|----------|----------|---------|
-| Telemetry | `HEARTBEAT`, `ATTITUDE`, `GPS_RAW_INT` | Live vehicle state |
-| Commands | `COMMAND_LONG`, `COMMAND_INT` | Arm, takeoff, set mode, reboot |
-| Parameters | `PARAM_REQUEST_LIST`, `PARAM_SET` | Read and write configuration |
-| Missions | `MISSION_ITEM_INT`, `MISSION_COUNT` | Upload and download waypoints |
-| File Transfer | `FILE_TRANSFER_PROTOCOL` | Log download, firmware update |
+| Category      | Examples                               | Purpose                        |
+| ------------- | -------------------------------------- | ------------------------------ |
+| Telemetry     | `HEARTBEAT`, `ATTITUDE`, `GPS_RAW_INT` | Live vehicle state             |
+| Commands      | `COMMAND_LONG`, `COMMAND_INT`          | Arm, takeoff, set mode, reboot |
+| Parameters    | `PARAM_REQUEST_LIST`, `PARAM_SET`      | Read and write configuration   |
+| Missions      | `MISSION_ITEM_INT`, `MISSION_COUNT`    | Upload and download waypoints  |
+| File Transfer | `FILE_TRANSFER_PROTOCOL`               | Log download, firmware update  |
 
 ### System and Component IDs
 
@@ -40,12 +40,12 @@ Every device on a MAVLink network has a **system ID** (identifies the vehicle) a
 
 MAVLink is transport-agnostic — it doesn't care how the bytes get from A to B. Common transports:
 
-| Transport | Use Case |
-|-----------|----------|
-| [UART](serial-communication-uart.md) serial | Telemetry radios, direct FC-to-companion links |
-| UDP | Ethernet/Wi-Fi connections (QGC default: port 14550) |
-| TCP | Stable connections over network links |
-| USB | Direct QGC connection to flight controller |
+| Transport                                   | Use Case                                             |
+| ------------------------------------------- | ---------------------------------------------------- |
+| [UART](serial-communication-uart.md) serial | Telemetry radios, direct FC-to-companion links       |
+| UDP                                         | Ethernet/Wi-Fi connections (QGC default: port 14550) |
+| TCP                                         | Stable connections over network links                |
+| USB                                         | Direct QGC connection to flight controller           |
 
 ### MAVLink Versions
 
@@ -56,13 +56,13 @@ MAVLink is transport-agnostic — it doesn't care how the bytes get from A to B.
 
 PX4 supports two protocols for companion computer communication:
 
-| | MAVLink | XRCE-DDS (uORB over DDS) |
-|---|---------|--------------------------|
-| **Maturity** | Battle-tested, supported everywhere | Newer, actively evolving |
-| **Ecosystem** | QGC, Mission Planner, pymavlink, MAVSDK | ROS 2 native integration |
-| **Data model** | Fixed message definitions | PX4 uORB topics published as ROS 2 topics |
-| **Best for** | GCS communication, telemetry radios, simple companion scripts | ROS 2 applications, high-bandwidth sensor data |
-| **Transport** | Serial, UDP, TCP | Serial (Micro XRCE-DDS Agent) |
+|                | MAVLink                                                       | XRCE-DDS (uORB over DDS)                       |
+| -------------- | ------------------------------------------------------------- | ---------------------------------------------- |
+| **Maturity**   | Battle-tested, supported everywhere                           | Newer, actively evolving                       |
+| **Ecosystem**  | QGC, Mission Planner, pymavlink, MAVSDK                       | ROS 2 native integration                       |
+| **Data model** | Fixed message definitions                                     | PX4 uORB topics published as ROS 2 topics      |
+| **Best for**   | GCS communication, telemetry radios, simple companion scripts | ROS 2 applications, high-bandwidth sensor data |
+| **Transport**  | Serial, UDP, TCP                                              | Serial (Micro XRCE-DDS Agent)                  |
 
 {% hint style="info" %}
 **Which should I use?** If you're building a ROS 2 application on a companion computer, use XRCE-DDS — it gives you direct access to PX4's internal topics as ROS 2 messages. For everything else (GCS, telemetry, simple offboard control), MAVLink is the standard choice.
@@ -72,13 +72,13 @@ PX4 supports two protocols for companion computer communication:
 
 ### Ground Station Communication
 
-Flight controllers like the [ARKV6X](../flight-controller/arkv6x/README.md) and [ARK FPV](../flight-controller/ark-fpv/README.md) use MAVLink to communicate with QGroundControl or Mission Planner over USB, telemetry radio, or network connections.
+Flight controllers like the [ARKV6X](../flight-controller/arkv6x/) and [ARK FPV](../flight-controller/ark-fpv/) use MAVLink to communicate with QGroundControl or Mission Planner over USB, telemetry radio, or network connections.
 
 ### Companion Computer Links
 
-The [ARK Jetson PAB Carrier](../flight-controller/ark-jetson-pab-carrier/README.md) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/README.md) use both MAVLink and XRCE-DDS for communication between the companion computer (Jetson or Pi) and the integrated flight controller:
+The [ARK Jetson PAB Carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/) use both MAVLink and XRCE-DDS for communication between the companion computer (Jetson or Pi) and the integrated flight controller:
 
-* **MAVLink** — used by the [QGroundControl connection](../flight-controller/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection.md) and [MissionPlanner connection](../flight-controller/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection.md) forwarded from the companion computer
+* **MAVLink** — used by the [QGroundControl connection](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection.md) and [MissionPlanner connection](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection.md) forwarded from the companion computer
 * **XRCE-DDS** — used by [ROS 2 applications](../ros2-and-px4/ros2-and-px4-teleop-example.md) running on the companion computer
 
 ### MAVCAN

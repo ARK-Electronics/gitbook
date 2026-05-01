@@ -15,4 +15,4 @@ The ARK Jetson PAB Carrier requires a custom device tree to enable all hardware 
 ## Overview
 
 To flash the kernel you will need to connect the Jetson to your Host PC using the **Micro USB** connection. You must boot the jetson while holding the **Force Recovery** button.\
-![](../../.gitbook/assets/Jetson_PAB_LowQ-9-scaled.jpg)
+![](../../../../.gitbook/assets/Jetson_PAB_LowQ-9-scaled.jpg)

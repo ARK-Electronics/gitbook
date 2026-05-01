@@ -10,12 +10,10 @@ Motor configuration is done using the Actuators tab in [QGroundControl](https://
 
 Select DShot protocol for your motors\
 \
-![](<../../.gitbook/assets/Screenshot from 2025-06-11 15-35-58.png>)
-
-
+![](<../../.gitbook/assets/image (47).png>)
 
 Configure the direction in the Geometry tab. This tells PX4 the direction the motors will spin.\
-![](<../../.gitbook/assets/image (50).png>)<br>
+![](<../../.gitbook/assets/image (49).png>)<br>
 
 Use the "Set Spin Direction" buttons to change the spin direction for each motor. You can lightly touch each motor to ensure the spin direction matches the geometry you selected above.\
 \
@@ -29,5 +27,4 @@ Connect your board using the [betaflight configurator](https://app.betaflight.co
 \
 Navigate to the Motors tab. Select Motor direction and follow the prompts.
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 15-49-54 (1).png" alt=""><figcaption></figcaption></figure>
-
+<figure><img src="../../.gitbook/assets/Screenshot from 2025-06-11 15-49-54.png" alt=""><figcaption></figcaption></figure>

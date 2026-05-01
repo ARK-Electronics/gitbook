@@ -1,18 +1,14 @@
 ---
 description: The ARKV6X Flight Controller can be flashed with PX4 or Ardupilot.
-metaLinks:
-  alternates:
-    - >-
-      https://app.gitbook.com/s/OwmEn1N45AR4WjMQhHlu/products/flight-controller/ark-jetson-pab-carrier/updating-the-flight-controller-firmware
 ---
 
 # Updating the Flight Controller Firmware
 
 If you have ARK-OS installed you can use the UI at [http://jetson.local](http://pi6x.local/) to perform a firmware update.
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt="" width="456"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt="" width="456"><figcaption></figcaption></figure>
 
-Otherwise you can ssh into the Jetson and use the [flashing script from ARK-OS](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/scripts/px4_flash.sh).
+Otherwise you can ssh into the Jetson and use the [flashing script from ARK-OS](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/scripts/flash_firmware.sh).
 
 ## PX4 Binaries
 

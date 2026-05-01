@@ -24,25 +24,15 @@ Note: CA4005 battery or **6-18VDC** power source can be used as power options (*
 
 <figure><img src="../.gitbook/assets/Screenshot from 2026-02-05 11-20-29.png" alt=""><figcaption><p>DTC User Guide</p></figcaption></figure>
 
-
-
-<figure><img src="../.gitbook/assets/20260116_130446 (1).jpg" alt="" width="563"><figcaption><p>Setup using <strong>ARK 12S Payload Power Module</strong></p></figcaption></figure>
-
-
+<figure><img src="../.gitbook/assets/20260116_130446.jpg" alt="" width="563"><figcaption><p>Setup using <strong>ARK 12S Payload Power Module</strong></p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (82).png" alt="" width="563"><figcaption></figcaption></figure>
 
-
-
-<figure><img src="../.gitbook/assets/20260116_130852 (1).jpg" alt="" width="375"><figcaption><p>Heat sink attached to the radio using thermal pads</p></figcaption></figure>
-
-
+<figure><img src="../.gitbook/assets/20260116_130852.jpg" alt="" width="375"><figcaption><p>Heat sink attached to the radio using thermal pads</p></figcaption></figure>
 
 You also need the radio for the Ground side, see below:
 
 <figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
-
-
 
 ⚠️ Ensure all connections are secure and that antennas are properly attached to avoid damage during operation.
 
@@ -60,11 +50,9 @@ For this integration the following hardware were used:
 
 For long-range applications, the [BluSDR-90-UL](https://www.dtccodan.com/assets/general-downloads/Datasheets/DTC-UK/BluSDR-90-UL-10W-BluSDR-Ultra-Light-Radio-Module.pdf) offers the same connectivity as the BluSDR-30 (with the exception of the power connector), allowing it to be used as a direct drop-in replacement.
 
-
-
 ## DTC Software Setup
 
-#### &#x20;Configure Radios <a href="#configure-radios" id="configure-radios"></a>
+#### Configure Radios <a href="#configure-radios" id="configure-radios"></a>
 
 * You will need to be on a **Windows computer** for the initial setup, to download DTC’s `Node Finder` software, from [here](https://www.domotactical.com/setup).
 * After downloading the Node Finder software, run it.
@@ -78,8 +66,6 @@ For long-range applications, the [BluSDR-90-UL](https://www.dtccodan.com/assets/
 <figure><img src="../.gitbook/assets/Screenshot 2026-01-05 231309.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-01-05 231328.png" alt=""><figcaption></figcaption></figure>
-
-
 
 * Set a static IP address for the host PC in the same subnet as what you set for the radio.
   * Note: You have to repeat this step on **Linux** once the radios are configured in case you use **Linux** (In case of the **Jetson** at least)
@@ -104,14 +90,10 @@ For long-range applications, the [BluSDR-90-UL](https://www.dtccodan.com/assets/
 
 <figure><img src="../.gitbook/assets/Screenshot 2026-01-05 233326.png" alt=""><figcaption></figcaption></figure>
 
-
-
 | Properties  | Ground Radio  | Air Radio     | Ground PC     | Jetson        |
 | ----------- | ------------- | ------------- | ------------- | ------------- |
 | Ip          | 192.168.0.128 | 192.168.0.41  | 192.168.0.98  | 192.168.0.99  |
 | Subnet mask | 255.255.255.0 | 255.255.255.0 | 255.255.255.0 | 255.255.255.0 |
-
-
 
 #### Ground PC
 
@@ -134,8 +116,6 @@ sudo nmcli connection up "Wired connection 1"
 
 #### Jetson
 
-
-
 After connecting the radio, you can **SSH into the pre-flashed Jetson** via Micro USB to continue configuration or verify connectivity.
 
 Once connected via SSH, set a static IP address on the Jetson that matches the radio network’s subnet. This allows seamless communication with the DTC radio and other devices on the mesh network.
@@ -155,25 +135,13 @@ After setting the static IP, you can disconnect the USB connection and **restart
 
 ### Establishing the connection
 
-
-
 Once you set up all the static IP-s on both the Ground PC and the Jetson you can go ahead and power up the drone. You'll be able to reach to both IP-s from the Ground PC and you can also **SSH** to the Jetson from the established network.
-
-
 
 `jetson.local` should load, here you can interact with our services<br>
 
 <figure><img src="../.gitbook/assets/image (74).png" alt="jetson.local"><figcaption><p>jetson.local</p></figcaption></figure>
 
-
-
-
-
 <figure><img src="../.gitbook/assets/image (75).png" alt=""><figcaption><p>RTSP server is ready at IP:5600/camera1</p></figcaption></figure>
-
-
-
-
 
 ### **QGround Control**
 
@@ -188,4 +156,3 @@ Finally, you can add the RTSP video stream using the same IP and `:5600/camera1`
 As you can see below the connection and the camera stream are established
 
 <figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption><p>Connection and stream are ready</p></figcaption></figure>
-

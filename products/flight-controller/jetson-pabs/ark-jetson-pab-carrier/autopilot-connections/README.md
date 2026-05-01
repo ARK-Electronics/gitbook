@@ -2,10 +2,10 @@
 
 There are two primary communication channels between the Jetson and the Flight Controller: Serial and USB. Both interfaces are direct board to board connections and have been tested up to 3Mbps.
 
-| Type   | Jetson device path | Flight Controller  |
-| ------ | ------------------ | ------------------ |
-| USB    | /dev/ttyACM0       | USB                |
-| Serial | /dev/ttyTHS1       | Telem2             |
+| Type   | Jetson device path | Flight Controller |
+| ------ | ------------------ | ----------------- |
+| USB    | /dev/ttyACM0       | USB               |
+| Serial | /dev/ttyTHS1       | Telem2            |
 
 {% hint style="info" %}
 We recommend running MAVLink on USB and XRCE-DDS on Serial.
@@ -15,9 +15,9 @@ We recommend running MAVLink on USB and XRCE-DDS on Serial.
 
 The USB connection to the autopilot is muxed with the external Jetson micro USB port. When a micro USB cable is connected, the autopilot is disconnected from the Jetson and the USB port on the Jetson switches from host to device mode. After the micro USB cable is disconnected, a reboot is required to switch the USB port back to a host and connect to the autopilot.<br>
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
-For the USB port to be enabled on the ARKV6X flight controller, the VBUS\_SENSE pin must be driven high from the Jetson. It is connected to pin 206 GPIO07. For Jetpack 5, there is a helper python script in ARK-OS to drive the pin high. For Jetpack 6, a script cannot toggle a GPIO and leave it set. As a workaround, the VBUS\_SENSE pin is set high in the Jetson pinmux on boot. \
+For the USB port to be enabled on the ARKV6X flight controller, the VBUS\_SENSE pin must be driven high from the Jetson. It is connected to pin 206 GPIO07. For Jetpack 5, there is a helper python script in ARK-OS to drive the pin high. For Jetpack 6, a script cannot toggle a GPIO and leave it set. As a workaround, the VBUS\_SENSE pin is set high in the Jetson pinmux on boot.\
 [https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/jetson/scripts/vbus\_enable.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/jetson/scripts/vbus_enable.py)
 
 ## UART

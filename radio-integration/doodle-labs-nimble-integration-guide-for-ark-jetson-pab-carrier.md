@@ -12,15 +12,11 @@ It covers hardware connections, software configuration, and troubleshooting tips
 
 Whether you're setting up a new vehicle or retrofitting an existing system, this integration guide ensures a reliable link between the **Jetson-based companion computer** and ground control station, optimized for use with **ROS2, PX4, MAVLink**, and other ARK Electronics software frameworks.
 
-
-
 ## Hardware setup
 
 In this case, you will need the Mini evaluation test board. Once it is connected, it must be powered using an additional power module via the barrel jack port. This auxiliary power supply can also serve as a good redundant power source for the Jetson. After powering the board, you can use the Ethernet ports to connect the Mini (expansion board) to the Jetson carrier.
 
 ## ~~Jetson setup~~
-
-
 
 Once you are done you should ssh to your Jetson:
 
@@ -33,8 +29,6 @@ Password:**jetson**\
 You should also install the [Broken link](/broken/pages/Yxqz8349jGsIQFKfvban "mention")
 
 ## Mesh Rider Radio software setup
-
-
 
 ## Supported Networking Modes <a href="#supported-networking-modes" id="supported-networking-modes"></a>
 
@@ -63,7 +57,7 @@ sudo reboot
 
 The device will act as a WiFi Client device with the following parameters
 
-**SSID: wireless-hotspot** \
+**SSID: wireless-hotspot**\
 **PSK: DoodleSmartRadio**\
 **IP: DHCP Client**
 
@@ -115,9 +109,9 @@ The other networking layout we expect is for customers to use Nimble in Mesh Rid
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-The default mode on Nimble is with Mesh Rider Radio interoperability disabled, and it acts as a normal AP/Client. To achieve the Mesh Rider <-> Nimble network architecture as illustrated in the network diagram above, Mesh Rider interoperability must be enabled using the Nimble Configuration script nimble\_config.sh mentioned earlier.&#x20;
+The default mode on Nimble is with Mesh Rider Radio interoperability disabled, and it acts as a normal AP/Client. To achieve the Mesh Rider <-> Nimble network architecture as illustrated in the network diagram above, Mesh Rider interoperability must be enabled using the Nimble Configuration script nimble\_config.sh mentioned earlier.
 
-This will allow the Nimble radio to connect with Mesh Rider radios in WDS AP/Client mode. The Mesh Rider radio also needs to be configured in WDS mode for Nimble to connect.&#x20;
+This will allow the Nimble radio to connect with Mesh Rider radios in WDS AP/Client mode. The Mesh Rider radio also needs to be configured in WDS mode for Nimble to connect.
 
 You have to be in Client/AP Mode already, then you can enable WDS using Nimble Software Configuration Utility.<br>
 
@@ -132,19 +126,19 @@ Select option 5 and enter 1 to Enable Meshrider interoperability then select 6 t
 
 {% stepper %}
 {% step %}
-Select option 5&#x20;
+Select option 5
 
 To edit Meshrider interoperability
 {% endstep %}
 
 {% step %}
-Enter 1&#x20;
+Enter 1
 
 To enable Meshrider interoperability
 {% endstep %}
 
 {% step %}
-Select option 6&#x20;
+Select option 6
 
 To exit to save and close the Configuration Utility
 {% endstep %}
@@ -159,9 +153,9 @@ Your options are:
 * Mini & Nano OEM
 * OEM
 
-Regardless which radio you use as the base station the network setup is the same.&#x20;
+Regardless which radio you use as the base station the network setup is the same.
 
-After establishing a connection through Ethernet, you must set a static IP address for your host machine within the 10.223.0.0/16 subnet to access the radios. The method for assigning an IP address differs between operating systems (Windows, macOS, Linux, etc.).&#x20;
+After establishing a connection through Ethernet, you must set a static IP address for your host machine within the 10.223.0.0/16 subnet to access the radios. The method for assigning an IP address differs between operating systems (Windows, macOS, Linux, etc.).
 
 For a Windows 10 or later system, navigate to the Network Connections folder in the Control Panel. Right-click on the Wi-Fi or Ethernet adapter your host is using and select Properties. In the properties window, choose Internet Protocol Version 4 and then click Properties. Set the IP address to the 10.223.0.0/16 subnet. Since these addresses are statically assigned, make sure not to use the same IP address for another device on the network. Refer to the figure below for guidance on manually setting the IP address.
 
@@ -202,8 +196,6 @@ sudo iw wlan0 info
 
 <figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>WDS AP on Ground Control Station Radio</p></figcaption></figure>
 
-
-
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>WDS Client on Ground Control Station Radio</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Ground station in AP</p></figcaption></figure>
@@ -218,4 +210,4 @@ Resources:<br>
 
 {% embed url="https://techlibrary.doodlelabs.com/whats-in-the-box-w/quick-start-guide-ch2#physical-setup-instructions" %}
 
-[ark-jetson-pab-carrier](../flight-controller/ark-jetson-pab-carrier/ "mention")
+[ark-jetson-pab-carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/ "mention")

@@ -14,12 +14,12 @@ ARK flight controllers and autopilot carrier boards for PX4, ArduPilot, and Beta
 [ark-pixhawk-autopilot-bus-carrier](ark-pixhawk-autopilot-bus-carrier/)
 {% endcontent-ref %}
 
-{% content-ref url="ark-jetson-pab-carrier/" %}
-[ark-jetson-pab-carrier](ark-jetson-pab-carrier/)
+{% content-ref url="../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/" %}
+[ark-jetson-pab-carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/)
 {% endcontent-ref %}
 
-{% content-ref url="ark-jetson-pab-carrier-v3/" %}
-[ark-jetson-pab-carrier-v3](ark-jetson-pab-carrier-v3/)
+{% content-ref url="../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/" %}
+[ark-jetson-pab-carrier-v3](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/)
 {% endcontent-ref %}
 
 {% content-ref url="ark-pi6x-flow/" %}
