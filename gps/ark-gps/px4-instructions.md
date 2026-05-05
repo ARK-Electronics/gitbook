@@ -25,30 +25,27 @@ ARK GPS boards ship with recent firmware pre-installed, but if you want to build
 
 ### PX4 Configuration <a href="#px4-configuration" id="px4-configuration"></a>
 
-You need to set necessary [DroneCAN](https://docs.px4.io/main/en/dronecan/) parameters and define offsets if the sensor is not centered within the vehicle. The required settings are outlined below.
-
 INFO
 
 The ARK GPS will not boot if there is no SD card in the flight controller when powered on.
 
-#### Enable DroneCAN <a href="#enable-dronecan" id="enable-dronecan"></a>
+Connect the ARK GPS CAN to the Pixhawk CAN. Once parameters are set the module will be detected on boot and GPS data should arrive at 10Hz. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
 
-In order to use the ARK GPS board, connect it to the Pixhawk CAN bus and enable the DroneCAN driver by setting parameter [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` for dynamic node allocation (or `3` if using [DroneCAN ESCs](https://docs.px4.io/main/en/dronecan/escs.html)).
+#### Required Parameters
 
-The steps are:
+Set the following in _QGroundControl_ and reboot the autopilot:
 
-* In _QGroundControl_ set the parameter [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` or `3` and reboot (see [Finding/Updating Parameters](https://docs.px4.io/main/en/advanced_config/parameters.html)).
-* Connect ARK GPS CAN to the Pixhawk CAN.
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation (use `3` if also driving DroneCAN ESCs) |
+| [UAVCAN\_SUB\_GPS](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_GPS) | 1 | Subscribe to DroneCAN GPS messages |
+| [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_MAG) | 1 | Subscribe to DroneCAN magnetometer messages |
+| [UAVCAN\_SUB\_BARO](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BARO) | 1 | Subscribe to DroneCAN barometer messages |
 
-Once enabled, the module will be detected on boot. GPS data should arrive at 10Hz.
+#### Optional Parameters
 
-DroneCAN configuration in PX4 is explained in more detail in [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan).
-
-#### Sensor Position Configuration <a href="#sensor-position-configuration" id="sensor-position-configuration"></a>
-
-If the sensor is not centered within the vehicle you will also need to define sensor offsets:
-
-* Enable GPS yaw fusion by setting bit 3 of [EKF2\_GPS\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_CTRL) to true.
-* Enable [UAVCAN\_SUB\_GPS](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_GPS), [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_MAG), and [UAVCAN\_SUB\_BARO](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BARO).
-* Set [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) to `1` if this is that last node on the CAN bus.
-* The parameters [EKF2\_GPS\_POS\_X](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_X), [EKF2\_GPS\_POS\_Y](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_Y) and [EKF2\_GPS\_POS\_Z](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_Z) can be set to account for the offset of the ARK GPS from the vehicles centre of gravity.
+| Parameter | Description |
+|-----------|-------------|
+| [EKF2\_GPS\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_CTRL) | Set bit 3 to enable GPS yaw fusion |
+| [EKF2\_GPS\_POS\_X](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_X) / [EKF2\_GPS\_POS\_Y](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_Y) / [EKF2\_GPS\_POS\_Z](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_Z) | ARK GPS offset from the vehicle center of gravity (meters) |
+| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` on the ARK GPS via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) if this is the last node on the CAN bus |

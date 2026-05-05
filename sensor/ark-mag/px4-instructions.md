@@ -14,17 +14,17 @@ ARK MAG runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px
 
 ### Flight Controller Setup <a href="#flight-controller-setup" id="flight-controller-setup"></a>
 
-#### CAN Configuration <a href="#px4-configuration" id="px4-configuration"></a>
+#### Required Parameters
 
-Set the following parameters in _QGroundControl_:
+Set the following in _QGroundControl_ and reboot the autopilot:
 
-* [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` for dynamic node allocation
-* Enable [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference#UAVCAN_SUB_MAG)
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation |
+| [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference#UAVCAN_SUB_MAG) | 1 | Subscribe to DroneCAN magnetometer messages |
 
-#### ARK MAG Configuration <a href="#ark-mag-configuration" id="ark-mag-configuration"></a>
+#### Optional Parameters
 
-On the ARK MAG, you may need to configure the following parameter via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md):
-
-| Parameter                                                                                          | Value | Description                                                                |
-| -------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------------------- |
-| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | 1     | Enable the built-in CAN bus termination resistor. Set to `1` only if this device is the last node on the CAN bus. |
+| Parameter | Description |
+|-----------|-------------|
+| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` on the ARK MAG via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) if this is the last node on the CAN bus |
