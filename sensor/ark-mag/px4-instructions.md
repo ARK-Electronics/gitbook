@@ -20,3 +20,11 @@ Set the following parameters in _QGroundControl_:
 
 * [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` for dynamic node allocation
 * Enable [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference#UAVCAN_SUB_MAG)
+
+#### ARK MAG Configuration <a href="#ark-mag-configuration" id="ark-mag-configuration"></a>
+
+On the ARK MAG, you may need to configure the following parameter via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md):
+
+| Parameter                                                                                          | Value | Description                                                                |
+| -------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------------------- |
+| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | 1     | Enable the built-in CAN bus termination resistor. Set to `1` only if this device is the last node on the CAN bus. |

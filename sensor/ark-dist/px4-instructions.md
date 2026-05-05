@@ -27,6 +27,14 @@ Set the following parameters in _QGroundControl_:
 * Set [UAVCAN\_RNG\_MIN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MIN) to 0
 * Set [UAVCAN\_RNG\_MAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MAX) to the max sensor range
 
+#### ARK DIST Configuration <a href="#ark-dist-configuration" id="ark-dist-configuration"></a>
+
+On the ARK DIST, you may need to configure the following parameter via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md):
+
+| Parameter                                                                                          | Value | Description                                                                |
+| -------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------------------- |
+| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | 1     | Enable the built-in CAN bus termination resistor. Set to `1` only if this device is the last node on the CAN bus. |
+
 #### UART/MAVLink Configuration <a href="#px4-configuration" id="px4-configuration"></a>
 
 * Set [MAV\_X\_CONFIG ](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_0_CONFIG)to the port the sensor is connected to

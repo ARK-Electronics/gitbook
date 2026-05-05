@@ -71,6 +71,6 @@ Set the following parameters in _QGroundControl_:
 
 On the ARK Flow, you may need to configure the following parameters:
 
-| Parameter                                                                                          | Description                   |
-| -------------------------------------------------------------------------------------------------- | ----------------------------- |
-| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | CAN built-in bus termination. |
+| Parameter                                                                                          | Value | Description                                                                |
+| -------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------------------- |
+| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | 1     | Enable the built-in CAN bus termination resistor. Set to `1` only if this device is the last node on the CAN bus. |
