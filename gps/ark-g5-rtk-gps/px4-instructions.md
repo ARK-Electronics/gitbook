@@ -52,7 +52,7 @@ The `SEP_DUAL_ANT` parameter must be set on the G5H CAN node via the [DroneCAN G
 
 | Parameter | Description |
 |-----------|-------------|
-| [EKF2\_GPS\_YAW\_OFFSET](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_YAW_OFFSET) | Clockwise rotation in degrees from the vehicle forward axis to the MAIN→ANT2 baseline. Equivalent to the `SEP_OFFS_YAW` node parameter — use one or the other, not both |
+| [EKF2\_GPS\_YAW\_OFFSET](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_YAW_OFFSET) | Clockwise rotation in degrees from the vehicle forward axis to the MAIN→ANT2 baseline (e.g. `0` if ANT2 is directly ahead of MAIN, `90` if ANT2 is to the right). Equivalent to the `SEP_OFFS_YAW` node parameter — use one or the other, not both |
 
 ***
 
