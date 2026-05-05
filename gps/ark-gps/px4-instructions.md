@@ -25,9 +25,9 @@ ARK GPS boards ship with recent firmware pre-installed, but if you want to build
 
 ### PX4 Configuration <a href="#px4-configuration" id="px4-configuration"></a>
 
-INFO
-
+{% hint style="warning" %}
 The ARK GPS will not boot if there is no SD card in the flight controller when powered on.
+{% endhint %}
 
 Connect the ARK GPS CAN to the Pixhawk CAN. Once parameters are set the module will be detected on boot and GPS data should arrive at 10Hz. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
 
