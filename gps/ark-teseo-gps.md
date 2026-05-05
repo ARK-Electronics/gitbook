@@ -21,7 +21,7 @@ Follow the steps for updating the firmware through the flight controller. The fi
 
 See the latest firmware below.
 
-{% file src="../.gitbook/assets/86-1.16.3c45b562.uavcan.bin" %}
+{% file src="../.gitbook/assets/86-1.16.c93582f2.uavcan.bin" %}
 ARK Teseo GPS Firmware
 {% endfile %}
 
@@ -31,6 +31,8 @@ ARK Teseo GPS Bootloader
 
 ## Release Notes
 
+* 86-1.16.c93582f2 - 2026-5-5
+  * Fix NMEA parsers eating first char of each first field. Observable on the RMC timestamp (hhmmss.sss): UTC hours 10-19 appear as 00-09 and 20-23 as 00-03.
 * 86-1.16.3c45b562 - 2025-9-26
   * Migrate to build server
   * Improve NMEA decoder
