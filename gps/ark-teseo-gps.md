@@ -25,7 +25,7 @@ See the latest firmware below.
 ARK Teseo GPS Firmware
 {% endfile %}
 
-{% file src="../.gitbook/assets/ark_teseo-gps_canbootloader.bin" %}
+{% file src="/broken/files/S6ydIQqWxHBVQueITXMZ" %}
 ARK Teseo GPS Bootloader
 {% endfile %}
 
