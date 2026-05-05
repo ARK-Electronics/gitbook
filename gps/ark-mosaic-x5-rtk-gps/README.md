@@ -1,5 +1,5 @@
 ---
-cover: ../.gitbook/assets/IMG_2391_edited (Large).JPG
+cover: ../../.gitbook/assets/IMG_2391_edited (Large).JPG
 coverY: 0
 ---
 
@@ -17,11 +17,11 @@ Follow the steps for updating the firmware through the flight controller.&#x20;
 
 See the latest firmware below.
 
-{% file src="../.gitbook/assets/84-1.16.3c45b562.uavcan.bin" %}
+{% file src="../../.gitbook/assets/84-1.16.3c45b562.uavcan.bin" %}
 ARK Mosaic-X5 GPS Firmware
 {% endfile %}
 
-{% file src="../.gitbook/assets/ark_septentrio-gps_canbootloader.bin" %}
+{% file src="../../.gitbook/assets/ark_septentrio-gps_canbootloader.bin" %}
 ARK Mosaic-X5 GPS Bootloader
 {% endfile %}
 
