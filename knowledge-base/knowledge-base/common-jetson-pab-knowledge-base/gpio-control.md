@@ -25,23 +25,32 @@ sudo reboot
 
 ## Using the GPIOs
 
-After applying the overlay and rebooting, you can control the pins using the Jetson.GPIO Python library. The pins are addressed by their 40-pin header number.
+First, install `Jetson.GPIO` 2.1.12 or newer — the apt-shipped version doesn't recognize the Orin Nano Super and will fail with `Could not determine Jetson model`:
 
+```bash
+sudo pip3 install 'Jetson.GPIO>=2.1.12'
 ```
+
+After applying the overlay and rebooting, you can control the pins using the Jetson.GPIO Python library. The pins are addressed by their 40-pin header number. The example below jumpers HDR40 pin 40 (DOUT) to pin 38 (DIN) and toggles HIGH/LOW/HIGH/LOW, reading each transition back as a loopback test.
+
+```python
+import time
 import Jetson.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(40, GPIO.OUT)  # I2S0_DOUT as output
-GPIO.setup(38, GPIO.IN)   # I2S0_DIN as input
+GPIO.setup(40, GPIO.OUT, initial=GPIO.LOW)  # I2S0_DOUT
+GPIO.setup(38, GPIO.IN)                     # I2S0_DIN
 
-state = GPIO.HIGH
-GPIO.output(40, state)
-print(f"Wrote pin 40: {'HIGH' if state else 'LOW'}")
-
-value = GPIO.input(38)
-print(f"Read pin 38: {'HIGH' if value else 'LOW'}")
-
-GPIO.cleanup()
+try:
+    for level in (GPIO.HIGH, GPIO.LOW, GPIO.HIGH, GPIO.LOW):
+        GPIO.output(40, level)
+        time.sleep(0.2)
+        got = GPIO.input(38)
+        label = "HIGH" if level else "LOW"
+        result = "PASS" if got == level else f"FAIL (read {got})"
+        print(f"DOUT=40 {label}  DIN=38 {got}  {result}")
+finally:
+    GPIO.cleanup()
 ```
 
 For a complete working example, see the [i2s_gpio_example.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/jetson/scripts/i2s_gpio_example.py) script in ARK-OS.
