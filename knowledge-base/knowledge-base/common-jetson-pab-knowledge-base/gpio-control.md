@@ -25,15 +25,7 @@ sudo reboot
 
 ## Using the GPIOs
 
-After applying the overlay and rebooting, you can control the pins using the Jetson.GPIO Python library. The pins are addressed by their 40-pin header number.
-
-Install the library:
-
-```
-pip install Jetson.GPIO
-```
-
-Then control the pins:
+After applying the overlay and rebooting, you can control the pins using the Jetson.GPIO Python library (preinstalled on the Jetson). The pins are addressed by their 40-pin header number.
 
 ```
 import Jetson.GPIO as GPIO
