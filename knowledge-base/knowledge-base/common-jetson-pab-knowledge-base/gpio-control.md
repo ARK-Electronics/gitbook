@@ -27,6 +27,14 @@ sudo reboot
 
 After applying the overlay and rebooting, you can control the pins using the Jetson.GPIO Python library. The pins are addressed by their 40-pin header number.
 
+Install the library:
+
+```
+pip install Jetson.GPIO
+```
+
+Then control the pins:
+
 ```
 import Jetson.GPIO as GPIO
 
@@ -34,8 +42,12 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(40, GPIO.OUT)  # I2S0_DOUT as output
 GPIO.setup(38, GPIO.IN)   # I2S0_DIN as input
 
-GPIO.output(40, GPIO.HIGH)
+state = GPIO.HIGH
+GPIO.output(40, state)
+print(f"Wrote pin 40: {'HIGH' if state else 'LOW'}")
+
 value = GPIO.input(38)
+print(f"Read pin 38: {'HIGH' if value else 'LOW'}")
 
 GPIO.cleanup()
 ```
