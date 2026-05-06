@@ -69,11 +69,9 @@ The overlay file contains documentation explaining how to:
 For more information on Jetson device tree overlays, see the [NVIDIA Jetson-IO Documentation](https://docs.nvidia.com/jetson/archives/r36.4/DeveloperGuide/HR/ConfiguringTheJetsonExpansionHeaders.html).
 
 {% hint style="warning" %}
-**GPIO State Not Retained After Script Exit**
+**GPIO state after script exit**
 
-When using libgpiod (which Jetson.GPIO uses internally), GPIO lines are released when your script or process exits. Once released, the pins revert to their default state (typically input mode). This is standard Linux character device behavior, not a bug.
+On ARK Jetson Carriers, the I2S→GPIO pins come up driven LOW at boot (programmed by MB1 BCT). While your app owns the line, the kernel guarantees its value. **On release (clean exit, crash, or kill), the pin retains its last-written value** until the next reboot, when the BCT default re-asserts. If your app drives a relay HIGH and crashes, the relay stays HIGH until reboot.
 
-If you need to maintain GPIO state persistently, your application must continue running. For command-line tools like `gpioset`, use the `--mode=wait` or `--mode=signal` flags to keep the process alive.
-
-For more technical details, see the [libgpiod persistent state discussion](https://github.com/brgl/libgpiod/issues/77) and the [gpioset documentation](https://libgpiod.readthedocs.io/en/stable/gpioset.html).
+If you need a different default — active-low actuator, peripheral reset that must release on boot, etc. — see the [ARK Jetson Kernel GPIO docs](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/gpio.md#safe-state-when-no-app-owns-the-pin) for safe-state patterns (external pull resistors, `gpio-hog`, signal-mode daemons). For `gpioset` from a shell, use `--mode=signal` to keep the process alive and explicitly own the line.
 {% endhint %}
