@@ -52,30 +52,6 @@ ARK Teseo GPS Bootloader
   * Implement automatic LIV4F updating within the driver
   * Fix speed accuracy reporting
 
-## Parameter Reference
-
-The following parameters are configured on the ARK TESEO GPS DroneCAN node (e.g. via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md)). Changes take effect on the next reboot of the node.
-
-### Constellations
-
-The Teseo-LIV4F can track up to **four GNSS constellations simultaneously**. Enabling more than four has no effect — pick the four that match your operating region. SBAS does not count toward this limit.
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `TESEO_GPS` | 1 | Enable the GPS (USA) constellation |
-| `TESEO_GLONASS` | 1 | Enable the GLONASS (Russia) constellation |
-| `TESEO_GALILEO` | 1 | Enable the Galileo (EU) constellation |
-| `TESEO_BEIDOU` | 1 | Enable the BeiDou (China) constellation |
-| `TESEO_QZSS` | 0 | Enable the QZSS (Japan) constellation |
-| `TESEO_IRNSS` | 0 | Enable the IRNSS / NavIC (India) constellation |
-| `TESEO_SBAS` | 1 | Enable SBAS (Satellite-Based Augmentation System) |
-
-### Firmware Update
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `TESEO_FWUPD` | 0 | Set to `1` to force the cannode to re-flash the embedded LIV4F firmware on the next boot. The cannode also auto-updates the LIV4F whenever the version embedded in the cannode firmware does not match what is on the GPS chip — this parameter is only needed to force a re-flash without a version change. The parameter is automatically cleared back to `0` after a successful update. |
-
 ## 3D Model
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_TESEO\_GPS](https://github.com/ARK-Electronics/ARK_TESEO_GPS)
