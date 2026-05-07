@@ -1,31 +1,27 @@
 ---
-cover: ../.gitbook/assets/IMG_2267_edited (Large).JPG
+cover: ../../.gitbook/assets/IMG_2267_edited (Large).JPG
 coverY: -10
 ---
 
 # ARK TESEO GPS
 
-Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
+The ARK TESEO GPS is a [DroneCAN](https://docs.px4.io/main/en/dronecan/) GNSS module built around the [ST Teseo-LIV4F](https://www.st.com/en/positioning/teseo-liv4f.html) L1/L5 multi-constellation receiver. It also carries an IIS2MDC magnetometer, BMP390 barometer, and ICM-42688-P IMU.
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}
 
-## PX4 EKF Parameters
-
-The ST Teseo-LIV4F can report slightly higher speed accuracy values than the default [EKF2\_REQ\_SACC](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_REQ_SACC) parameter, causing PX4 to reject GPS fusion. The default is 0.5m/s. Increasing this to 1.5-2.0m/s is recommended.
-
 ## Firmware
 
-Follow the steps for updating the firmware through the flight controller. The firmware will now automatically update the LIV4F GPS module firmware.
+Follow the steps for updating the firmware through the flight controller. The firmware will automatically update the LIV4F GPS module firmware on first boot if the embedded version differs from what is on the chip.
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
 
 See the latest firmware below.
 
-{% file src="../.gitbook/assets/86-1.16.c93582f2.uavcan.bin" %}
+{% file src="../../.gitbook/assets/86-1.16.c93582f2.uavcan.bin" %}
 ARK Teseo GPS Firmware
 {% endfile %}
 
-{% file src="../.gitbook/assets/ark_teseo-gps_canbootloader (1).bin" %}
+{% file src="../../.gitbook/assets/ark_teseo-gps_canbootloader (1).bin" %}
 ARK Teseo GPS Bootloader
 {% endfile %}
 
@@ -56,6 +52,30 @@ ARK Teseo GPS Bootloader
   * Implement automatic LIV4F updating within the driver
   * Fix speed accuracy reporting
 
+## Parameter Reference
+
+The following parameters are configured on the ARK TESEO GPS DroneCAN node (e.g. via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md)). Changes take effect on the next reboot of the node.
+
+### Constellations
+
+The Teseo-LIV4F can track up to **four GNSS constellations simultaneously**. Enabling more than four has no effect — pick the four that match your operating region. SBAS does not count toward this limit.
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `TESEO_GPS` | 1 | Enable the GPS (USA) constellation |
+| `TESEO_GLONASS` | 1 | Enable the GLONASS (Russia) constellation |
+| `TESEO_GALILEO` | 1 | Enable the Galileo (EU) constellation |
+| `TESEO_BEIDOU` | 1 | Enable the BeiDou (China) constellation |
+| `TESEO_QZSS` | 0 | Enable the QZSS (Japan) constellation |
+| `TESEO_IRNSS` | 0 | Enable the IRNSS / NavIC (India) constellation |
+| `TESEO_SBAS` | 1 | Enable SBAS (Satellite-Based Augmentation System) |
+
+### Firmware Update
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `TESEO_FWUPD` | 0 | Set to `1` to force the cannode to re-flash the embedded LIV4F firmware on the next boot. The cannode also auto-updates the LIV4F whenever the version embedded in the cannode firmware does not match what is on the GPS chip — this parameter is only needed to force a re-flash without a version change. The parameter is automatically cleared back to `0` after a successful update. |
+
 ## 3D Model
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_TESEO\_GPS](https://github.com/ARK-Electronics/ARK_TESEO_GPS)
@@ -73,6 +93,12 @@ Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_TESEO\
 #### I2C + Timepulse - 5 Pin JST-GH
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5.0V Out (500mA)</td><td>5.0V</td></tr><tr><td>2</td><td>I2C2_SCL</td><td>3.3V</td></tr><tr><td>3</td><td>I2C2_SDA</td><td>3.3V</td></tr><tr><td>4</td><td>TIMEPULSE</td><td>3.3V</td></tr><tr><td>5</td><td>GND</td><td>GND</td></tr></tbody></table>
+
+{% hint style="info" %}
+The **I2C2 SCL/SDA lines on this connector are currently unused** by the firmware.
+
+The TIMEPULSE pin outputs a PPS signal that the flight controller can use to accurately timestamp incoming PVT solutions.
+{% endhint %}
 
 #### Debug - 6 Pin JST-SH
 
