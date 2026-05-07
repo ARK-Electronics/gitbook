@@ -57,7 +57,7 @@ The ARK CANnode includes an onboard Invensense ICM-42688-P 6-axis IMU. Publicati
 
 | Parameter | Description |
 |-----------|-------------|
-| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` on the ARK CANnode via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) to publish the onboard ICM-42688-P `RawIMU` messages on the CAN bus |
+| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` on the ARK CANnode via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) to publish the `RawIMU` messages on the CAN bus |
 | [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` on the autopilot to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK CANnode |
 
 ## CANnode as PWM Expander
