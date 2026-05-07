@@ -3,11 +3,11 @@ cover: ../../.gitbook/assets/IMG_5857_edited.JPG
 coverY: 0
 ---
 
-# ARK G5 RTK GPS
+# ARK G5H RTK Heading GPS
 
-[ARK G5 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/)
+[ARK G5H RTK Heading GPS](https://arkelectron.com/product/ark-g5-rtk-heading-gps/)
 
-The ARK G5 RTK GPS is built around the Septentrio mosaic-G5 P3 module. The P3 only supports a single antenna and the ANT2 connector is not active. For dual antenna heading, see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md).
+The ARK G5H RTK Heading GPS is built around the Septentrio mosaic-G5 P3H module. The P3H supports two antennas connected to MAIN and ANT2, and provides compass-free yaw estimation by handling the moving baseline calculation internally and reporting the heading over DroneCAN as a single GPS node. For a single-antenna variant, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
 
 ## Firmware
 
@@ -18,11 +18,11 @@ Follow the steps for updating the firmware through the flight controller.
 See the latest firmware below.
 
 {% file src="../../.gitbook/assets/91-1.16.c8403786.uavcan.bin" %}
-ARK G5 RTK GPS Firmware
+ARK G5H RTK Heading GPS Firmware
 {% endfile %}
 
 {% file src="../../.gitbook/assets/ark_g5-gps_canbootloader.bin" %}
-ARK G5 RTK GPS Bootloader
+ARK G5H RTK Heading GPS Bootloader
 {% endfile %}
 
 ## Release Notes
