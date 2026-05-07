@@ -51,6 +51,15 @@ You will need to enable the subscriber appropriate for each of the sensors that 
 
 This is done using the the parameters named like `UAVCAN_SUB_*` in the parameter reference (such as [UAVCAN\_SUB\_ASPD](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_ASPD), [UAVCAN\_SUB\_BARO](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BARO) etc.).
 
+#### Onboard IMU
+
+The ARK CANnode includes an onboard Invensense ICM-42688-P 6-axis IMU. Publication of `RawIMU` messages is disabled by default; to stream the IMU data over the CAN bus set the following:
+
+| Parameter | Description |
+|-----------|-------------|
+| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` on the ARK CANnode via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) to publish the onboard ICM-42688-P `RawIMU` messages on the CAN bus |
+| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` on the autopilot to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK CANnode |
+
 ## CANnode as PWM Expander
 
 The ARK CANnode can be used as a PWM Expander over CAN, allowing you to drive additional servos or ESCs from the flight controller.
