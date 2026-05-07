@@ -58,7 +58,7 @@ Set the following on the sensor and reboot the node. CAN node parameters can be 
 | Parameter | Description |
 |-----------|-------------|
 | `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
+| `CANNODE_PUB_IMU` | Set to `1` to publish [`RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) messages on the CAN bus |
 
 #### ArduPilot Setup Instructions
 

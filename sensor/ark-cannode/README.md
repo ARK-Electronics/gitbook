@@ -11,6 +11,14 @@ coverY: 0
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_CANNODE](https://github.com/ARK-Electronics/ARK_CANNODE)
 
+### DroneCAN Messages
+
+The ARK CANnode optionally publishes [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) from its onboard IMU when `CANNODE_PUB_IMU=1`. When used as a [PWM expander](px4-instructions.md#cannode-as-pwm-expander) it subscribes to [`uavcan.equipment.esc.RawCommand`](../../knowledge-base/dronecan-messages.md#esc-rawcommand) and [`uavcan.equipment.actuator.ArrayCommand`](../../knowledge-base/dronecan-messages.md#actuator-arraycommand).
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ### Hardware Specifications <a href="#hardware-specifications" id="hardware-specifications"></a>
 
 * [Open Source Schematic and BOM](https://github.com/ARK-Electronics/ARK_CANNODE)

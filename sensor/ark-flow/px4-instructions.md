@@ -61,7 +61,7 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 
 | Parameter | Description |
 |-----------|-------------|
-| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK Flow |
+| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN [`RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK Flow |
 | [EKF2\_GPS\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_CTRL) | Set to `0` to disable GPS aiding (e.g. indoor flight) |
 | [EKF2\_OF\_POS\_X](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_X) / [EKF2\_OF\_POS\_Y](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_Y) / [EKF2\_OF\_POS\_Z](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_Z) | ARK Flow offset from the vehicle center of gravity (meters) |
 | [SENS\_FLOW\_ROT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_ROT) | Sensor rotation if mounted in a non-default orientation (default `0`) |
@@ -80,4 +80,4 @@ Set the following on the sensor and reboot the node. CAN node parameters can be 
 | Parameter | Description |
 |-----------|-------------|
 | `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus. Pair with `UAVCAN_SUB_IMU` on the flight controller |
+| `CANNODE_PUB_IMU` | Set to `1` to publish [`RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) messages on the CAN bus. Pair with `UAVCAN_SUB_IMU` on the flight controller |

@@ -9,6 +9,18 @@ coverY: 0
 
 The ARK G5 RTK GPS is built around the Septentrio mosaic-G5 P3 module. The P3 only supports a single antenna and the ANT2 connector is not active. For dual antenna heading, see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md).
 
+## DroneCAN Messages
+
+The ARK G5 RTK GPS publishes:
+
+* GNSS solution: [`uavcan.equipment.gnss.Fix2`](../../knowledge-base/dronecan-messages.md#fix2) and [`uavcan.equipment.gnss.Auxiliary`](../../knowledge-base/dronecan-messages.md#gnss-auxiliary)
+* Magnetometer: [`uavcan.equipment.ahrs.MagneticFieldStrength2`](../../knowledge-base/dronecan-messages.md#magneticfieldstrength2)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.

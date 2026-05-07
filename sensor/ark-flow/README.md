@@ -7,6 +7,18 @@ coverY: 0
 
 ARK Flow is an open source [DroneCAN](https://docs.px4.io/main/en/dronecan/) [optical flow](https://docs.px4.io/main/en/sensor/optical_flow.html), [distance sensor](https://docs.px4.io/main/en/sensor/rangefinders.html), and IMU module.
 
+### DroneCAN Messages
+
+The ARK Flow publishes:
+
+* Optical flow: [`com.hex.equipment.flow.Measurement`](../../knowledge-base/dronecan-messages.md#flow-measurement)
+* Rangefinder: [`uavcan.equipment.range_sensor.Measurement`](../../knowledge-base/dronecan-messages.md#range-sensor-measurement)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ### Hardware Specifications <a href="#hardware-specifications" id="hardware-specifications"></a>
 
 * [Open Source Schematic and BOM](https://github.com/ARK-Electronics/ARK_Flow)

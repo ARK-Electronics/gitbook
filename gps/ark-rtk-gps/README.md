@@ -9,6 +9,19 @@ Find most up to date documentation in the PX4 Documentation [https://docs.px4.io
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_RTK_GPS)
 
+## DroneCAN Messages
+
+The ARK RTK GPS publishes:
+
+* GNSS solution: [`uavcan.equipment.gnss.Fix2`](../../knowledge-base/dronecan-messages.md#fix2) and [`uavcan.equipment.gnss.Auxiliary`](../../knowledge-base/dronecan-messages.md#gnss-auxiliary)
+* Magnetometer: [`uavcan.equipment.ahrs.MagneticFieldStrength2`](../../knowledge-base/dronecan-messages.md#magneticfieldstrength2)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+* GPS heading (rover only, when configured for [moving-baseline heading](ardupilot-instructions.md#dual-gps-heading-configuration)): [`ardupilot.gnss.RelPosHeading`](../../knowledge-base/dronecan-messages.md#relposheading)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.&#x20;
