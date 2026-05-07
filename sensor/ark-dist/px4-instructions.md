@@ -1,45 +1,56 @@
 # PX4 Instructions
 
-### Hardware Setup <a href="#hardware-setup" id="hardware-setup"></a>
+## Hardware Setup
 
-#### Wiring <a href="#wiring" id="wiring"></a>
+### Wiring
 
-The ARK DIST is connected to the CAN bus using a Pixhawk standard 4 pin JST GH cable. For more information, refer to the [CAN Wiring](https://docs.px4.io/main/en/can/#wiring) instructions.
+The ARK DIST is connected to the CAN bus using a Pixhawk standard 4 pin JST-GH cable. For more information, refer to the [CAN Wiring](https://docs.px4.io/main/en/can/#wiring) instructions.
 
-Multiple sensors can be connected by plugging additional sensors into the ARK DIST’s second CAN connector.
+Multiple sensors can be connected by plugging additional sensors into the ARK DIST's second CAN connector.
 
-The ARK DIST can also be connected with UART and communicates over MAVLink sending the [DISTANCE\_SENSOR](https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR) message.&#x20;
+The ARK DIST can also be connected with UART and communicates over MAVLink sending the [DISTANCE\_SENSOR](https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR) message.
 
-### Firmware Setup <a href="#firmware-setup" id="firmware-setup"></a>
+### Firmware
 
 ARK DIST runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html). As such, it supports firmware update over the CAN bus and [dynamic node allocation](https://docs.px4.io/main/en/dronecan/#node-id-allocation).
 
-### Flight Controller Setup <a href="#flight-controller-setup" id="flight-controller-setup"></a>
+## CAN Configuration
 
-#### CAN Configuration <a href="#px4-configuration" id="px4-configuration"></a>
+### Flight Controller Parameters
 
-##### Required Parameters
+Set the following in _QGroundControl_ and reboot the flight controller.
 
-Set the following in _QGroundControl_ and reboot the autopilot:
+#### Required
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation |
 | [UAVCAN\_SUB\_RNG](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_RNG) | 1 | Subscribe to DroneCAN range finder messages |
-| [EKF2\_RNG\_A\_HMAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_A_HMAX) | _max sensor range_ | Max range used by the EKF |
-| [EKF2\_RNG\_QLTY\_T](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_QLTY_T) | 0.2 | Range finder quality time |
 | [UAVCAN\_RNG\_MIN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MIN) | 0 | Min reported range |
 | [UAVCAN\_RNG\_MAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MAX) | _max sensor range_ | Max reported range |
+| [EKF2\_RNG\_A\_HMAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_A_HMAX) | _max sensor range_ | Max range used by the EKF |
+| [EKF2\_RNG\_QLTY\_T](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_QLTY_T) | 0.2 | Range finder quality time |
 
-##### Optional Parameters
+### CAN Node Parameters
+
+Set the following on the sensor and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
+
+#### Optional
 
 | Parameter | Description |
 |-----------|-------------|
-| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` on the ARK DIST via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) if this is the last node on the CAN bus |
+| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
 
-#### UART/MAVLink Configuration <a href="#px4-configuration" id="px4-configuration"></a>
+## UART/MAVLink Configuration
 
-##### Required Parameters
+### Flight Controller Parameters
+
+Set the following in _QGroundControl_ and reboot the flight controller.
+
+#### Required
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|

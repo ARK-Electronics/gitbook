@@ -1,39 +1,56 @@
-# Ardupilot Instructions
+# ArduPilot Instructions
 
-### Connection to Autopilot
+## Hardware Setup
 
-#### Wiring <a href="#wiring" id="wiring"></a>
+### Wiring
 
-The ARK DIST is connected to the CAN bus using a Pixhawk standard 4 pin JST GH cable. For more information, refer to the [CAN Wiring](https://docs.px4.io/main/en/can/#wiring) instructions.
+The ARK DIST is connected to the CAN bus using a Pixhawk standard 4 pin JST-GH cable. For more information, refer to the [CAN Wiring](https://docs.px4.io/main/en/can/#wiring) instructions.
 
-Multiple sensors can be connected by plugging additional sensors into the ARK DIST’s second CAN connector.
+Multiple sensors can be connected by plugging additional sensors into the ARK DIST's second CAN connector.
 
-The ARK DIST can also be connected with UART and communicates over MAVLINK sending the [DISTANCE\_SENSOR](https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR) message.&#x20;
+The ARK DIST can also be connected with UART and communicates over MAVLink sending the [DISTANCE\_SENSOR](https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR) message.
 
-#### Connection to Autopilot with CAN <a href="#mounting" id="mounting"></a>
+See the [ArduPilot rangefinder setup guide](https://ardupilot.org/copter/docs/common-rangefinder-setup.html) for additional configuration guidance.
 
-* Set [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) = 24 (DroneCAN)
-* Set [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) = to set range finder’s maximum range
-* Set [RNGFND1\_ADDR](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-addr) = the sensor ID of the rangefinder
-* Set [RNGFND1\_RECV\_ID](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-recv-id) = the CAN node ID of the sensor
+## CAN Configuration
+
+### Flight Controller Parameters
+
+#### Required
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) | 24 | DroneCAN |
+| [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) | _max sensor range_ | Range finder maximum range |
+| [RNGFND1\_ADDR](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-addr) | _sensor ID_ | Sensor ID of the rangefinder |
+| [RNGFND1\_RECV\_ID](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-recv-id) | _node ID_ | CAN node ID of the sensor |
 
 {% hint style="info" %}
 If you intend to use multiple distance sensors, you will need [this ArduPilot PR](https://github.com/ArduPilot/ardupilot/pull/31931).
 {% endhint %}
 
-#### Connection to Autopilot with UART/MAVLink <a href="#mounting" id="mounting"></a>
+### CAN Node Parameters
 
-* Set [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) = 10 (MAVLink)
-* Set [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) = to set range finder’s maximum range
-* Set [SERIALX parameter](https://ardupilot.org/copter/docs/parameters.html#serial-parameters) for the port it is connected to
-* Set [SERIALX\_BAUD ](https://ardupilot.org/copter/docs/parameters.html#serial0-baud-serial0-baud-rate)= 115 (115200)
-* Set [SERIALX\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#serial0-protocol-console-protocol-selection) = 2  (MAVLink2)
+Set the following on the sensor and reboot the node. CAN node parameters can be configured using either:
 
-#### ArduPilot Setup Instructions
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
 
-[https://ardupilot.org/copter/docs/common-rangefinder-setup.html](https://ardupilot.org/copter/docs/common-rangefinder-setup.html)
+#### Optional
 
+| Parameter | Description |
+|-----------|-------------|
+| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
 
+## UART/MAVLink Configuration
 
+### Flight Controller Parameters
 
+#### Required
 
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) | 10 | MAVLink |
+| [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) | _max sensor range_ | Range finder maximum range |
+| [SERIALX\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#serial0-protocol-console-protocol-selection) | 2 | MAVLink2 |
+| [SERIALX\_BAUD](https://ardupilot.org/copter/docs/parameters.html#serial0-baud-serial0-baud-rate) | 115 | 115200 baud |
