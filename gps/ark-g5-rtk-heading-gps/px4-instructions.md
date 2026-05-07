@@ -4,11 +4,11 @@ The ARK G5H RTK Heading GPS can be operated as a single-antenna GPS or with two 
 
 ## Single GPS Configuration
 
-Connect the ARK G5H RTK Heading GPS to the autopilot's CAN port using a standard 4-pin JST-GH cable.
+Connect the ARK G5H RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable.
 
 ### Flight Controller Parameters
 
-Set the following in _QGroundControl_ and reboot the autopilot.
+Set the following in _QGroundControl_ and reboot the flight controller.
 
 #### Required
 
@@ -29,7 +29,10 @@ Set the following in _QGroundControl_ and reboot the autopilot.
 
 ### CAN Node Parameters
 
-Set the following on the GPS via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) and reboot the node.
+Set the following on the GPS and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
 
 #### Required
 
@@ -56,13 +59,13 @@ The G5H provides yaw estimation using two GNSS antennas on a single DroneCAN nod
 
 ### Hardware Setup
 
-* Connect the ARK G5H RTK Heading GPS to the autopilot's CAN port using a standard 4-pin JST-GH cable
+* Connect the ARK G5H RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable
 * Connect antennas to both the MAIN and ANT2 SMA connectors
 * Mount the antennas with a minimum of **30 cm separation** (more is better for heading accuracy)
 
 ### Flight Controller Parameters
 
-Apply the [Single GPS Configuration](#single-gps-configuration) flight controller parameters above, then change/add the following in _QGroundControl_ and reboot the autopilot.
+Apply the [Single GPS Configuration](#single-gps-configuration) flight controller parameters above, then change/add the following in _QGroundControl_ and reboot the flight controller.
 
 #### Required
 
@@ -79,7 +82,7 @@ Apply the [Single GPS Configuration](#single-gps-configuration) flight controlle
 
 ### CAN Node Parameters
 
-Apply the [Single GPS Configuration](#single-gps-configuration) CAN node parameters above, then add the following on the GPS via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) and reboot the node.
+Apply the [Single GPS Configuration](#single-gps-configuration) CAN node parameters above, then add the following on the GPS and reboot the node.
 
 #### Required
 

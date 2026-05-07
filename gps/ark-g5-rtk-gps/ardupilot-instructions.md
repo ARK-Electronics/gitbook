@@ -2,7 +2,7 @@
 
 ## Single GPS Configuration
 
-Connect the ARK G5 RTK GPS to the autopilot's CAN port using a standard 4-pin JST-GH cable.
+Connect the ARK G5 RTK GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable.
 
 ### Flight Controller Parameters
 
@@ -19,11 +19,14 @@ Connect the ARK G5 RTK GPS to the autopilot's CAN port using a standard 4-pin JS
 Do not set `GPS_AUTO_CONFIG` to 2. The `GPS_AUTO_CONFIG=2` setting only works with GPS modules running AP\_Periph firmware (e.g., the ARK RTK GPS). The G5 runs PX4-based cannode firmware and handles its own GPS configuration internally via the `SEP_*` parameters. Setting this to 2 causes ArduPilot to attempt a parameter handshake with the CAN node that fails silently, blocking all GPS data from being processed.
 {% endhint %}
 
-Reboot the autopilot. The GPS should appear as a DroneCAN node and begin reporting position data. The on-board magnetometer will appear as an additional DroneCAN compass and can be enabled via the standard `COMPASS_*` parameters.
+Reboot the flight controller. The GPS should appear as a DroneCAN node and begin reporting position data. The on-board magnetometer will appear as an additional DroneCAN compass and can be enabled via the standard `COMPASS_*` parameters.
 
 ### CAN Node Parameters
 
-Set the following on the GPS via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) and reboot the node.
+Set the following on the GPS and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
 
 #### Required
 
@@ -50,6 +53,6 @@ The ARK G5 RTK GPS uses the single-antenna mosaic-G5 P3 module. For dual antenna
 
 ## Troubleshooting
 
-* **GPS NO FIX with 0 satellites** — if Mission Planner shows "GPS NO FIX" with 0 sats and no position data, but the DroneCAN GUI Tool shows the GPS is publishing valid fix data on the CAN bus, check `GPS_AUTO_CONFIG`. If it is set to 2, change it to 1 and reboot. Setting it to 2 causes ArduPilot to try to auto-configure the CAN node by requesting parameters that the G5 firmware does not expose under the expected names. This handshake never completes, which blocks all GPS data from being used by the autopilot even though the CAN node is broadcasting valid fixes.
-* **Compass calibration or configuration issues** — if you are having trouble calibrating or configuring the compasses, reset all `COMPASS_*` parameters back to their defaults and reboot the autopilot. Perform the compass calibration only after the GPS is connected.
+* **GPS NO FIX with 0 satellites** — if Mission Planner shows "GPS NO FIX" with 0 sats and no position data, but the DroneCAN GUI Tool shows the GPS is publishing valid fix data on the CAN bus, check `GPS_AUTO_CONFIG`. If it is set to 2, change it to 1 and reboot. Setting it to 2 causes ArduPilot to try to auto-configure the CAN node by requesting parameters that the G5 firmware does not expose under the expected names. This handshake never completes, which blocks all GPS data from being used by the flight controller even though the CAN node is broadcasting valid fixes.
+* **Compass calibration or configuration issues** — if you are having trouble calibrating or configuring the compasses, reset all `COMPASS_*` parameters back to their defaults and reboot the flight controller. Perform the compass calibration only after the GPS is connected.
 * See our [GPS Placement](../../knowledge-base/gps-placement.md) guide for mounting best practices, interference sources, and antenna positioning.

@@ -2,11 +2,11 @@
 
 ## Single GPS Configuration
 
-Connect the ARK G5 RTK GPS to the autopilot's CAN port using a standard 4-pin JST-GH cable.
+Connect the ARK G5 RTK GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable.
 
 ### Flight Controller Parameters
 
-Set the following in _QGroundControl_ and reboot the autopilot.
+Set the following in _QGroundControl_ and reboot the flight controller.
 
 #### Required
 
@@ -27,7 +27,10 @@ Set the following in _QGroundControl_ and reboot the autopilot.
 
 ### CAN Node Parameters
 
-Set the following on the GPS via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) and reboot the node.
+Set the following on the GPS and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
 
 #### Required
 
