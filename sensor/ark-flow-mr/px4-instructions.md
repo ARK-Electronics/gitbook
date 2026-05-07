@@ -22,22 +22,24 @@ ARK Flow MR runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/droneca
 
 ### Flight Controller Setup <a href="#flight-controller-setup" id="flight-controller-setup"></a>
 
-INFO
+{% hint style="info" %}
+The ARK Flow MR will not boot if there is no SD card in the flight controller when powered on.
+{% endhint %}
 
-The Ark Flow MR will not boot if there is no SD card in the flight controller when powered on.
+Connect the ARK Flow MR CAN to the flight controller's CAN port. Once parameters are set the module will be detected on boot. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
 
-Connect the ARK Flow MR CAN to the Pixhawk CAN. Once parameters are set the module will be detected on boot. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
+### Flight Controller Parameters
 
-#### Required Parameters
+Set the following in _QGroundControl_ and reboot the flight controller.
 
-Set the following in _QGroundControl_ and reboot the autopilot:
+#### Required
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation (use `3` if also driving DroneCAN ESCs) |
-| [EKF2\_OF\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_CTRL) | 1 | Enable optical flow fusion in the EKF |
 | [UAVCAN\_SUB\_FLOW](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_FLOW) | 1 | Subscribe to DroneCAN optical flow messages |
 | [UAVCAN\_SUB\_RNG](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_RNG) | 1 | Subscribe to DroneCAN range finder messages |
+| [EKF2\_OF\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_CTRL) | 1 | Enable optical flow fusion in the EKF |
 | [EKF2\_RNG\_A\_HMAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_A_HMAX) | 10 | Max range used by the EKF |
 | [EKF2\_RNG\_QLTY\_T](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_QLTY_T) | 0.2 | Range finder quality time |
 | [UAVCAN\_RNG\_MIN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MIN) | 0.08 | Min reported range |
@@ -46,13 +48,25 @@ Set the following in _QGroundControl_ and reboot the autopilot:
 | [SENS\_FLOW\_MAXHGT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MAXHGT) | 25 | Max height for optical flow fusion |
 | [SENS\_FLOW\_MAXR](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MAXR) | 7.4 | Max angular flow rate (PAW3902 limit) |
 
-#### Optional Parameters
+#### Optional
 
 | Parameter | Description |
 |-----------|-------------|
+| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK Flow MR |
 | [EKF2\_GPS\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_CTRL) | Set to `0` to disable GPS aiding (e.g. indoor flight) |
 | [EKF2\_OF\_POS\_X](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_X) / [EKF2\_OF\_POS\_Y](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_Y) / [EKF2\_OF\_POS\_Z](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_Z) | ARK Flow MR offset from the vehicle center of gravity (meters) |
 | [SENS\_FLOW\_ROT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_ROT) | Sensor rotation if mounted in a non-default orientation (default `0`) |
-| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` on the ARK Flow MR via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) if this is the last node on the CAN bus |
-| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` on the ARK Flow MR via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) to publish the `RawIMU` messages on the CAN bus |
-| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` on the autopilot to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK Flow MR |
+
+### CAN Node Parameters
+
+Set the following on the sensor and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
+
+#### Optional
+
+| Parameter | Description |
+|-----------|-------------|
+| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
+| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus. Requires `UAVCAN_SUB_IMU` to also be set on the flight controller |
