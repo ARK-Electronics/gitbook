@@ -12,19 +12,32 @@ Multiple sensors can be connected by plugging additional sensors into the ARK MA
 
 ARK MAG runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html). As such, it supports firmware update over the CAN bus and [dynamic node allocation](https://docs.px4.io/main/en/dronecan/#node-id-allocation).
 
-### Flight Controller Setup <a href="#flight-controller-setup" id="flight-controller-setup"></a>
+### Flight Controller Parameters
 
-#### Required Parameters
+Set the following in _QGroundControl_ and reboot the flight controller.
 
-Set the following in _QGroundControl_ and reboot the autopilot:
+#### Required
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation |
-| [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference#UAVCAN_SUB_MAG) | 1 | Subscribe to DroneCAN magnetometer messages |
+| [UAVCAN\_SUB\_MAG](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_MAG) | 1 | Subscribe to DroneCAN magnetometer messages |
 
-#### Optional Parameters
+### CAN Node Parameters
+
+Set the following on the magnetometer and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
+
+#### Required
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| `CANNODE_PUB_MAG` | 1 | Publish magnetometer messages on the CAN bus |
+
+#### Optional
 
 | Parameter | Description |
 |-----------|-------------|
-| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` on the ARK MAG via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) if this is the last node on the CAN bus |
+| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
