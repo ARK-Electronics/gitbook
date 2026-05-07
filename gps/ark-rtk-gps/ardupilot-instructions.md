@@ -110,4 +110,4 @@ For the full parameter reference, see the [ArduPilot GPS for Yaw documentation](
 * **Antenna spacing** — for dual GPS heading setups, ensure a minimum of 30 cm between antennas. Greater separation improves heading accuracy.
 * **Test outside** — GPS modules need a clear sky view to get a good fix. Indoor testing will not produce reliable results.
 * **Enable logging before arming** — set `LOG_DISARMED` to 1 so GPS data is captured in logs before arming. This helps debug fix quality and satellite count issues.
-* **Verify Fix2 messages** — use the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) Bus Monitor to confirm that `Fix2` messages are being sent by the GPS node(s). If Fix2 messages are absent, check firmware version and CAN wiring.
+* **Verify Fix2 messages** — use the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) Bus Monitor to confirm that [`Fix2`](../../knowledge-base/dronecan-messages.md#fix2) messages are being sent by the GPS node(s). If Fix2 messages are absent, check firmware version and CAN wiring.

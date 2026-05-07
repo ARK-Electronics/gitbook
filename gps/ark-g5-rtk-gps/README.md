@@ -11,6 +11,18 @@ coverY: 0
 
 The ARK G5 RTK GPS and the ARK G5H RTK GPS share the same PCB design but use different Septentrio G5 modules. The G5 uses the P3 and the G5H uses the P3H. Note that the G5/P3 only support a single antenna and the ANT2 connector is not active.
 
+## DroneCAN Messages
+
+The ARK G5 / G5H RTK GPS publishes:
+
+* GNSS solution: [`uavcan.equipment.gnss.Fix2`](../../knowledge-base/dronecan-messages.md#fix2) and [`uavcan.equipment.gnss.Auxiliary`](../../knowledge-base/dronecan-messages.md#gnss-auxiliary)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+* GPS heading (G5H only, when [dual-antenna heading is enabled](ardupilot-instructions.md#dual-antenna-heading-configuration-g5h-only)): [`ardupilot.gnss.RelPosHeading`](../../knowledge-base/dronecan-messages.md#relposheading)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.

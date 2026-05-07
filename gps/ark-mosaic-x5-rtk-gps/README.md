@@ -5,6 +5,17 @@ coverY: 0
 
 # ARK MOSAIC-X5 RTK GPS
 
+## DroneCAN Messages
+
+The ARK MOSAIC-X5 RTK GPS publishes:
+
+* GNSS solution: [`uavcan.equipment.gnss.Fix2`](../../knowledge-base/dronecan-messages.md#fix2) and [`uavcan.equipment.gnss.Auxiliary`](../../knowledge-base/dronecan-messages.md#gnss-auxiliary)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}

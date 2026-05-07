@@ -24,6 +24,10 @@ Reference pages covering core concepts for working with ARK products, drone elec
 [can-bus.md](can-bus.md)
 {% endcontent-ref %}
 
+{% content-ref url="dronecan-messages.md" %}
+[dronecan-messages.md](dronecan-messages.md)
+{% endcontent-ref %}
+
 {% content-ref url="mavlink.md" %}
 [mavlink.md](mavlink.md)
 {% endcontent-ref %}

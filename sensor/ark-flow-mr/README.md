@@ -5,6 +5,18 @@ coverY: 0
 
 # ARK Flow MR
 
+### DroneCAN Messages
+
+The ARK Flow MR publishes:
+
+* Optical flow: [`com.hex.equipment.flow.Measurement`](../../knowledge-base/dronecan-messages.md#flow-measurement)
+* Rangefinder: [`uavcan.equipment.range_sensor.Measurement`](../../knowledge-base/dronecan-messages.md#range-sensor-measurement)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ### Pinout
 
 #### CAN - 4 Pin JST-GH

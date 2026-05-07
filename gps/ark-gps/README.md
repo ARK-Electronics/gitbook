@@ -5,6 +5,19 @@ coverY: 0
 
 # ARK GPS
 
+## DroneCAN Messages
+
+The ARK GPS publishes:
+
+* GNSS solution: [`uavcan.equipment.gnss.Fix2`](../../knowledge-base/dronecan-messages.md#fix2) and [`uavcan.equipment.gnss.Auxiliary`](../../knowledge-base/dronecan-messages.md#gnss-auxiliary)
+* Magnetometer: [`uavcan.equipment.ahrs.MagneticFieldStrength2`](../../knowledge-base/dronecan-messages.md#magneticfieldstrength2)
+* Barometer: [`uavcan.equipment.air_data.StaticPressure`](../../knowledge-base/dronecan-messages.md#staticpressure) and [`uavcan.equipment.air_data.StaticTemperature`](../../knowledge-base/dronecan-messages.md#statictemperature)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.&#x20;

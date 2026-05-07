@@ -7,6 +7,19 @@ coverY: -10
 
 The ARK TESEO GPS is a [DroneCAN](https://docs.px4.io/main/en/dronecan/) GNSS module built around the [ST Teseo-LIV4F](https://www.st.com/en/positioning/teseo-liv4f.html) L1/L5 multi-constellation receiver. It also carries an IIS2MDC magnetometer, BMP390 barometer, and ICM-42688-P IMU.
 
+## DroneCAN Messages
+
+The ARK TESEO GPS publishes:
+
+* GNSS solution: [`uavcan.equipment.gnss.Fix2`](../../knowledge-base/dronecan-messages.md#fix2) and [`uavcan.equipment.gnss.Auxiliary`](../../knowledge-base/dronecan-messages.md#gnss-auxiliary)
+* Magnetometer: [`uavcan.equipment.ahrs.MagneticFieldStrength2`](../../knowledge-base/dronecan-messages.md#magneticfieldstrength2)
+* Barometer: [`uavcan.equipment.air_data.StaticPressure`](../../knowledge-base/dronecan-messages.md#staticpressure) and [`uavcan.equipment.air_data.StaticTemperature`](../../knowledge-base/dronecan-messages.md#statictemperature)
+* IMU: [`uavcan.equipment.ahrs.RawIMU`](../../knowledge-base/dronecan-messages.md#rawimu) (when `CANNODE_PUB_IMU=1`)
+
+Like every DroneCAN node it also emits [`NodeStatus`](../../knowledge-base/dronecan-messages.md#nodestatus) and responds to [`GetNodeInfo`](../../knowledge-base/dronecan-messages.md#getnodeinfo).
+
+See [DroneCAN Messages](../../knowledge-base/dronecan-messages.md) for full message definitions.
+
 {% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}
 
 ## Firmware
