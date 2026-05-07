@@ -32,33 +32,43 @@ st-flash write <bootloader_binary_path> 0x08000000
 
 To flash the application firmware you can use the SD card method as [documented here](https://docs.px4.io/main/en/dronecan/#firmware-update) or you can use the DroneCAN GUI Tool and a USB-to-CAN adaptor to flash the firmware directly.
 
-## Flight Controller Parameters
+## Configuration
 
-In order to use the ARK CANnode board, connect it to the Pixhawk CAN bus and enable the DroneCAN driver by setting parameter [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` for dynamic node allocation (or `3` if using [DroneCAN ESCs](https://docs.px4.io/main/en/dronecan/escs.html)).
-
-The steps are:
-
-* In _QGroundControl_ set the parameter [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` or `3` and reboot (see [Finding/Updating Parameters](https://docs.px4.io/main/en/advanced_config/parameters.html)).
-* Connect ARK CANnode CAN to the Pixhawk CAN.
-
-Once enabled, the module will be detected on boot.
+Connect the ARK CANnode to the flight controller's CAN bus using a standard 4-pin JST-GH cable.
 
 DroneCAN configuration in PX4 is explained in more detail in [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan).
 
-#### Enable Sensors <a href="#enable-sensors" id="enable-sensors"></a>
+### Flight Controller Parameters
 
-You will need to enable the subscriber appropriate for each of the sensors that are connected to the ARK CANnode.
+Set the following in _QGroundControl_ and reboot the flight controller.
 
-This is done using the the parameters named like `UAVCAN_SUB_*` in the parameter reference (such as [UAVCAN\_SUB\_ASPD](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_ASPD), [UAVCAN\_SUB\_BARO](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BARO) etc.).
+#### Required
 
-#### Onboard IMU
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation. Set to `3` if using [DroneCAN ESCs](https://docs.px4.io/main/en/dronecan/escs.html) |
 
-The ARK CANnode includes an onboard Invensense ICM-42688-P 6-axis IMU. Publication of `RawIMU` messages is disabled by default; to stream the IMU data over the CAN bus set the following:
+#### Optional
+
+Enable a `UAVCAN_SUB_*` subscriber for each sensor connected to the ARK CANnode. The onboard IMU subscriber is listed below; for other sensors (airspeed, barometer, etc.), see the parameters named `UAVCAN_SUB_*` in the [PX4 parameter reference](https://docs.px4.io/main/en/advanced_config/parameter_reference.html).
 
 | Parameter | Description |
 |-----------|-------------|
-| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` on the ARK CANnode via the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md) to publish the `RawIMU` messages on the CAN bus |
-| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` on the autopilot to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK CANnode |
+| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN `RawIMU` messages from the onboard IMU. Requires `CANNODE_PUB_IMU` to also be set on the ARK CANnode |
+
+### CAN Node Parameters
+
+Set the following on the CANnode and reboot the node. CAN node parameters can be configured using either:
+
+* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
+* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
+
+#### Optional
+
+| Parameter | Description |
+|-----------|-------------|
+| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` if this is the last node on the CAN bus |
+| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` to publish `RawIMU` messages from the onboard ICM-42688-P IMU on the CAN bus. Requires `UAVCAN_SUB_IMU` to also be set on the flight controller |
 
 ## CANnode as PWM Expander
 
