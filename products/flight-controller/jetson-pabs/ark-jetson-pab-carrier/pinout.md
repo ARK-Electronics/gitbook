@@ -1,9 +1,5 @@
 # Pinout
 
-{% file src="../../../../.gitbook/assets/ARK Jetson Carrier Board Pinout Reference Poster 7-22-2025.png" %}
-Pinout reference poster (PNG) — click Open for a browser-zoomable view
-{% endfile %}
-
 {% file src="../../../../.gitbook/assets/ARK Jetson Carrier Board Pinout Reference Poster 7-22-2025.pdf" %}
 Pinout reference poster (PDF)
 {% endfile %}
