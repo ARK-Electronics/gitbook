@@ -8,6 +8,10 @@ coverY: -23.514666666666663
 
 # ARK 4IN1 ESC
 
+{% hint style="danger" %}
+**Before first use**, configure **KV** and **Pole Count** for each motor channel in the AM32 Configurator. The defaults will not match your motor and the ESC will not run correctly. See [AM32 Configuration](am32-configuration.md).
+{% endhint %}
+
 **Specifications:**
 
 * Voltage
