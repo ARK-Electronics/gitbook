@@ -114,6 +114,7 @@
       * [Ardupilot ESC Passthrough](electronic-speed-controller/ark-4in1-esc/firmware/ardupilot-esc-passthrough.md)
       * [Flash AM32](electronic-speed-controller/ark-4in1-esc/firmware/flash-am32.md)
       * [Flash Bootloader](electronic-speed-controller/ark-4in1-esc/firmware/flash-bootloader.md)
+    * [AM32 Configuration](electronic-speed-controller/ark-4in1-esc/am32-configuration.md)
     * [PWM Calibration](electronic-speed-controller/ark-4in1-esc/pwm-calibration.md)
     * [Motor Spin Direction](electronic-speed-controller/ark-4in1-esc/motor-spin-direction.md)
     * [3D Models](electronic-speed-controller/ark-4in1-esc/3d-models.md)

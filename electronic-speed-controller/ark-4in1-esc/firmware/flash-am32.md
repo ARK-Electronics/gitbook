@@ -23,3 +23,9 @@ Once connected, select Read\
 If successful you should see all of the settings for each motor
 
 <figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
+***
+
+{% hint style="danger" %}
+**Flashing alone is not enough.** You must now set **KV** and **Pole Count** for each motor channel — see [AM32 Configuration](../am32-configuration.md).
+{% endhint %}
