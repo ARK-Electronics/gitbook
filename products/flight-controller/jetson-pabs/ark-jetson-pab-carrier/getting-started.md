@@ -92,6 +92,6 @@ From ARK-UI you can:
 
 ## Next Steps
 
-* [ARK Services](../../../../knowledge-base/knowledge-base/common-jetson-pab-knowledge-base/ark-services/) - Learn about the pre-installed ARK-OS services
+* [ARK Services](ark-services/) - Learn about the pre-installed ARK-OS services
 * [Autopilot Connections](autopilot-connections/) - Connect QGroundControl or MissionPlanner
 * [Flashing Guide](flashing-guide.md) - Update or reflash your Jetson
