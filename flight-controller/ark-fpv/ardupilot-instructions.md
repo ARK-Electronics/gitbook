@@ -1,6 +1,6 @@
 # ArduPilot Instructions
 
-{% embed url="https://ardupilot.org/copter/docs/common-ark-fpv-overview.html" %}
+{% embed url="https://ardupilot.org/copter/docs/common-ark-fpv.html" %}
 ARK FPV ArduPilot Documentation
 {% endembed %}
 

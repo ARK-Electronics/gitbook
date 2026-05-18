@@ -14,7 +14,7 @@ OR if you've changed either the username or hostname:
 ssh <username>@192.168.55.1
 ```
 
-It is also possible to share the internet connection of your host PC with the Jetson over this USB interface by enabling IP packet forwarding as seen in this [example script](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/share_wifi.sh).
+It is also possible to share the internet connection of your host PC with the Jetson over this USB interface by enabling IP packet forwarding as seen in this [example script](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/scripts/share_wifi.sh).
 
 ## Serial Ports
 

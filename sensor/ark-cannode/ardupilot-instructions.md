@@ -6,7 +6,7 @@ description: >-
 
 # ArduPilot Instructions
 
-The ARK CANnode can run [ArduPilot AP\_Periph](https://ardupilot.org/dev/docs/ap-periph-landing-page.html) firmware, enabling it to act as a DroneCAN peripheral node for expanding servo outputs, ESC control, and sensor connectivity over CAN.
+The ARK CANnode can run [ArduPilot AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) firmware, enabling it to act as a DroneCAN peripheral node for expanding servo outputs, ESC control, and sensor connectivity over CAN.
 
 ## Flashing Firmware
 

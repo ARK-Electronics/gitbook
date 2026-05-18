@@ -99,5 +99,5 @@ Ardupilot supports MAVLink can tunnel [CAN bus](can-bus.md) traffic over any MAV
 * [MAVLink Developer Guide](https://mavlink.io/en/)
 * [PX4 MAVLink Documentation](https://docs.px4.io/main/en/middleware/mavlink.html)
 * [PX4 XRCE-DDS (ROS 2)](https://docs.px4.io/main/en/middleware/uxrce_dds.html)
-* [QGroundControl User Guide](http://qgroundcontrol.com/getting_started/)
+* [QGroundControl User Guide](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/quick_start.html)
 * [MAVSDK — MAVLink SDK](https://mavsdk.mavlink.io/main/en/)
