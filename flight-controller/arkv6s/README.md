@@ -7,7 +7,7 @@ The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6S to be used on any
 ### Sensors
 
 * [Invensense IIM-42653 Industrial IMU](https://invensense.tdk.com/products/smartindustrial/iim-42653/)
-* [Bosch BMP388 Barometer](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp388/)
+* [Bosch BMP390 Barometer](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/)
 * [ST IIS2MDC Magnetometer](https://www.st.com/en/mems-and-sensors/iis2mdc.html)
 
 ### Other Features
