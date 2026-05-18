@@ -115,5 +115,5 @@ I2C and SPI remain critical for on-board sensors where their speed advantages an
 * [CAN Bus](can-bus.md) — detailed CAN bus reference
 * [Serial Communication (UART)](serial-communication-uart.md) — UART protocol details
 * [Connectors and Wiring](connectors-and-wiring.md) — Pixhawk standard connector pinouts
-* [I2C Specification (NXP)](https://www.nxp.com/docs/en/user-guide/UM10204.pdf)
+* [I2C Specification (NXP)](https://www.digikey.com/en/pdf/n/nxp-semiconductors/um10204-i2c-bus-specification-and-user-manual)
 * [SPI Overview (Analog Devices)](https://www.analog.com/en/analog-dialogue/articles/introduction-to-spi-interface.html)
