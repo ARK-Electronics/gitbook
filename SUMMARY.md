@@ -84,7 +84,7 @@
       * [Getting Started](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/getting-started.md)
       * [Block Diagram](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/block-diagram.md)
       * [Pinout](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/pinout.md)
-      * [3D Models and Case Files](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/3d-models-and-case-files.md)
+      * [3D Model](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/3d-models-and-case-files.md)
       * [Flashing Guide](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/flashing-guide.md)
       * [Autopilot Connections](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/README.md)
         * [QGroundControl Connection](products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/qgroundcontrol-connection.md)
