@@ -6,17 +6,25 @@ Up to date PX4 Documentation
 
 ### Flashing Firmware
 
+#### QGroundControl (USB-C)
+
 Firmware can be flashed over USB C using [QGroundControl](https://qgroundcontrol.com/).
 
-#### Flashing over UART
+#### px4\_uploader.py (USB or UART)
 
-Firmware can also be flashed from a companion computer over UART using `px_uploader.py`. Connect to the **Telem1** port:
+[`px4_uploader.py`](https://github.com/PX4/PX4-Autopilot/blob/main/Tools/px4_uploader.py) can flash firmware over USB or UART. For UART flashing, only the **Telem1** port is supported.
+
+Over USB:
 
 ```sh
-python3 Tools/px_uploader.py --port /dev/<your-uart> build/ark_fmu-v6x_default/ark_fmu-v6x_default.px4
+python3 Tools/px4_uploader.py build/ark_fmu-v6x_default/ark_fmu-v6x_default.px4
 ```
 
-The ARKV6X bootloader enables only `UART7` (the Telem1 port), so it appears as `/dev/ttyS0` inside the bootloader. The runtime serial port mapping (where `/dev/ttyS0` is GPS1) does not apply during bootloader operation — only Telem1 will respond to `px_uploader.py`.
+Over UART (via Telem1):
+
+```sh
+python3 Tools/px4_uploader.py --port /dev/<your-uart> build/ark_fmu-v6x_default/ark_fmu-v6x_default.px4
+```
 
 ### Building Firmware
 
