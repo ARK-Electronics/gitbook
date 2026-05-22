@@ -1,6 +1,6 @@
 # PX4 Instructions
 
-{% embed url="https://docs.px4.io/main/en/flight_controller/arkv6s.html" %}
+{% embed url="https://docs.px4.io/main/en/flight_controller/ark_v6s.html" %}
 Up to date PX4 Documentation
 {% endembed %}
 
