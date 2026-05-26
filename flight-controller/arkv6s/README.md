@@ -1,0 +1,56 @@
+---
+cover: ../../.gitbook/assets/ark_v6s_front.jpg
+coverY: 0
+---
+
+# ARKV6S
+
+The USA-built ARKV6S flight controller is a low-cost, single-IMU variant of the [ARKV6X](../arkv6x/README.md), based on the [FMUV6X and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards).
+
+The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6S to be used on any [PAB-compatible carrier board](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html), such as the [ARK Pixhawk Autopilot Bus Carrier](https://docs.px4.io/main/en/flight_controller/arkpab.html).
+
+<figure><img src="../../.gitbook/assets/ark_v6s_back.jpg" alt=""><figcaption><p>ARK Electronics ARKV6S</p></figcaption></figure>
+
+### Sensors
+
+* [Invensense IIM-42653 Industrial IMU](https://invensense.tdk.com/products/smartindustrial/iim-42653/)
+* [Bosch BMP390 Barometer](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/)
+* [ST IIS2MDC Magnetometer](https://www.st.com/en/mems-and-sensors/iis2mdc.html)
+
+### Other Features
+
+* FRAM
+* [Pixhawk Autopilot Bus (PAB) Form Factor](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf)
+* LED Indicators
+* MicroSD Slot
+* USA Built
+* Designed with a 1W heater. Keeps sensors warm in extreme conditions
+
+### Power Requirements
+
+* 5V
+* 500mA
+  * 300mA for main system
+  * 200mA for heater
+
+### Additional Information
+
+* Weight: 5.0 g
+* Dimensions: 3.6 x 2.9 x 0.5 cm
+
+### Pinout
+
+For pinout of the ARKV6S see the [DS-10 Pixhawk Autopilot Bus Standard](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf)
+
+### Serial Port Mapping
+
+| UART   | Device     | Port          |
+| ------ | ---------- | ------------- |
+| USART1 | /dev/ttyS0 | GPS           |
+| USART2 | /dev/ttyS1 | TELEM3        |
+| USART3 | /dev/ttyS2 | Debug Console |
+| UART4  | /dev/ttyS3 | UART4 & I2C   |
+| UART5  | /dev/ttyS4 | TELEM2        |
+| USART6 | /dev/ttyS5 | PX4IO/RC      |
+| UART7  | /dev/ttyS6 | TELEM1        |
+| UART8  | /dev/ttyS7 | GPS2          |
