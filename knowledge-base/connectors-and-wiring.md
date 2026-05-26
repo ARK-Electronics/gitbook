@@ -105,8 +105,9 @@ Pixhawk standard cables follow a consistent color scheme:
 
 If you need additional or custom-length cables, these pre-crimped kits include connectors and wires ready to assemble (no crimping tool required):
 
-* **JST-GH 1.25 mm** (peripheral connectors): [GH1.25 Connectors Kit on Amazon](https://www.amazon.com/Pre-Crimped-Connectors-Pixhawk2-Pixracer-Silicone/dp/B07PBHN7TM)
-* **JST-SH 1.0 mm** (debug connectors): [JST SH 1.0mm Connector Kit on Amazon](https://www.amazon.com/Teansic-Connector-Pre-Crimped-Housing-Controller/dp/B0D5X6BY5Z)
+* **JST-GH 1.25 mm**: [GH1.25 Connectors Kit on Amazon](https://www.amazon.com/Pre-Crimped-Connectors-Pixhawk2-Pixracer-Silicone/dp/B07PBHN7TM)
+* **JST-SH 1.0 mm**: [JST SH 1.0mm Connector Kit on Amazon](https://www.amazon.com/Teansic-Connector-Pre-Crimped-Housing-Controller/dp/B0D5X6BY5Z)
+* **JST-GH 1.25 mm to JST-SH 1.0 mm**: [GH1.25 to SH1.0 Connector Kit on Amazon](https://www.amazon.com/dp/B0D2SVX4S4)
 
 ## Common Pitfalls
 
