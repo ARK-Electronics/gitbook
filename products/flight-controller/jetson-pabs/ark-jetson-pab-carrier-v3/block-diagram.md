@@ -6,3 +6,4 @@ metaLinks:
 
 # Block Diagram
 
+<figure><img src="../../../../.gitbook/assets/Block Diagram 0.3.png" alt=""><figcaption></figcaption></figure>
