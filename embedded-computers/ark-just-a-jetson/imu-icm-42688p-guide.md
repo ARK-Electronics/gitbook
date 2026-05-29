@@ -1,6 +1,6 @@
 # IMU ICM-42688P Guide
 
-The ICM-42688P is connected to SPI1 on the Just a Jetson. See the [pinmux spreadsheet](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/device_tree/ark_jaj/Jetson_Orin_NX_and_Orin_Nano_series_Pinmux_Config_Jetpack_6.xlsm) for the GPIO assignments.&#x20;
+The ICM-42688P is connected to SPI1 on the Just a Jetson. See the [pinmux spreadsheet](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/products/JAJ/Jetson_Orin_NX_and_Orin_Nano_series_Pinmux_Config_Jetpack_6.xlsm) for the GPIO assignments.&#x20;
 
 The device shows up in linux under /dev/spidev1.0
 

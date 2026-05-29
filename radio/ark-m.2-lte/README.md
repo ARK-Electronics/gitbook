@@ -23,14 +23,14 @@ Insert the nano-SIM into the ARK M.2 LTE module.
 
 Skip this step if you purchased a pre-flashed ARK Jetson Bundle.
 
-The RC7611 requires the QMI\_WWAN kernel module, which is not included by default in Jetpack 6. You will need to manually build and flash the kernel onto the Jetson device.
+The RC7611 requires the QMI\_WWAN kernel module, which is enabled in the ARK Jetson Kernel defconfig — so any ARK image (prebuilt or built from source) includes it, while stock Jetpack 6 does not.
 
 1.  Clone the kernel repository:
 
     ```bash
     git clone https://github.com/ARK-Electronics/ark_jetson_kernel
     ```
-2.  Use the **setup\_source\_build.sh** script to enable the necessary kernel modules.
+2.  Flash a prebuilt image, or build from source, following the README.
 
     [Follow the instructions in the ARK Jetson Kernel repository](https://github.com/ARK-Electronics/ark_jetson_kernel?tab=readme-ov-file#building-from-source)
 

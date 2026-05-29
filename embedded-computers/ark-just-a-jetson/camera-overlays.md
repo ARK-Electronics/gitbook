@@ -11,12 +11,9 @@ The following camera overlays are available for the ARK Just A Jetson:
 | Camera ARK IMX219 Quad | Four IMX219 cameras (using camera mux board) | Tested |
 | Camera ARK IMX219 Single | Single IMX219 camera | Tested |
 | Camera ARK IMX477 Single | Single IMX477 camera | Tested |
-| Camera IMX477 Dual 4 lane | Dual IMX477 cameras using 4-lane CSI | Not Working |
 
-{% hint style="warning" %}
-**4-Lane CSI Mode Not Working on JetPack 6**
-
-The 4-lane CSI overlays are currently non-functional due to a bug in the JetPack 6 kernel. This affects the "Camera IMX477 Dual 4 lane" overlay. See the [NVIDIA Developer Forum issue](https://forums.developer.nvidia.com/t/imx477-4lane-on-cam1/333270) for updates on a fix.
+{% hint style="info" %}
+**IMX477 4-lane mode is not supported.** The 4-lane overlays have been removed because the `nv_imx477` driver's 4-lane initialization is broken upstream. 2-lane mode delivers the full 12 MP at 30 fps. See the kernel repo's [camera documentation](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/cameras.md) for details.
 {% endhint %}
 
 ## Listing Available Overlays
@@ -40,12 +37,10 @@ Header 1 [default]: Jetson 40pin Header
   6. ReSpeaker 4 Mic Linear Array
 Header 2: Jetson 24pin CSI Connector
   Available hardware modules:
-  1. ARK IMX477 Dual 4 lane
-  2. ARK IMX477 Single 4 lane
-  3. Camera ARK ARDUCAM Single
-  4. Camera ARK IMX219 Quad
-  5. Camera ARK IMX219 Single
-  6. Camera ARK IMX477 Single
+  1. Camera ARK ARDUCAM Single
+  2. Camera ARK IMX219 Quad
+  3. Camera ARK IMX219 Single
+  4. Camera ARK IMX477 Single
 Header 3: Jetson M.2 Key E Slot
   No hardware configurations found!
 ```
@@ -86,66 +81,9 @@ v4l2-ctl --set-fmt-video=width=3840,height=2160,pixelformat=RG10 --stream-mmap -
 
 ## Building and Installing Camera Overlays
 
-There are two approaches for building and deploying camera overlays:
+Camera overlays are built from the [ARK Jetson Kernel](https://github.com/ARK-Electronics/ark_jetson_kernel) repository. You can either include the overlay in a full kernel build/flash, or build it standalone and copy it onto an already-flashed Jetson. For the full list of tested cameras and test commands, see the kernel repo's [camera documentation](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/cameras.md).
 
-1. **Include in kernel build** - The overlay is built and included in the flashed image
-2. **Build standalone** - Build the overlay separately and copy it to an already-flashed system
-
-### Option 1: Include Overlay in Kernel Build
-
-This approach includes the overlay in the kernel build so it's available immediately after flashing.
-
-#### Step 1: Create the overlay source file
-
-Create your `.dts` file in the device tree overlay directory:
-
-```
-device_tree/ark_jaj/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/overlay/
-```
-
-You can use an existing ARK overlay as a template (e.g., `tegra234-p3767-camera-p3768-ark-imx477-single.dts`).
-
-#### Step 2: Add to the Makefile
-
-Edit the Makefile in the same directory and add your overlay to the build:
-
-```
-device_tree/ark_jaj/Linux_for_Tegra/source/hardware/nvidia/t23x/nv-public/overlay/Makefile
-```
-
-Add a line like:
-
-```makefile
-dtbo-y += your-custom-overlay.dtbo
-```
-
-#### Step 3: Add to copy_dtbs_to_prebuilt.sh
-
-Edit `copy_dtbs_to_prebuilt.sh` in the repository root to copy your overlay to the prebuilt directory. You'll need to add a section for JAJ builds (similar to the PAB section) with lines like:
-
-```bash
-sudo cp $DTBS_SOURCE_PATH/your-custom-overlay.dtbo $PREBUILT_PATH/rootfs/boot/
-sudo cp $DTBS_SOURCE_PATH/your-custom-overlay.dtbo $PREBUILT_PATH/kernel/dtb/
-```
-
-#### Step 4: Build and flash
-
-Run the build and flash scripts:
-
-```
-./build_kernel.sh   # Select JAJ when prompted
-./flash.sh
-```
-
-Your overlay will now be available via `config-by-hardware.py -l` after flashing.
-
-### Option 2: Build Standalone and Copy to Flashed System
-
-This approach builds an overlay and copies it to a Jetson that has already been flashed.
-
-#### Step 1: Set up the build environment
-
-Clone and set up the repository:
+Clone and set up the repository (one time):
 
 ```
 git clone https://github.com/ARK-Electronics/ark_jetson_kernel
@@ -153,57 +91,68 @@ cd ark_jetson_kernel
 ./setup.sh
 ```
 
-#### Step 2: Copy device tree files and build
+### Option 1: Include the Overlay in the Kernel Build
 
-Copy the JAJ device tree files and build:
+This bakes the overlay into the flashed image so it is available immediately after flashing.
 
-```
-export CROSS_COMPILE=$HOME/l4t-gcc/aarch64--glibc--stable-2022.08-1/bin/aarch64-buildroot-linux-gnu-
-export KERNEL_HEADERS=$PWD/source_build/Linux_for_Tegra/source/kernel/kernel-jammy-src
+#### Step 1: Create the overlay source file
 
-# Copy JAJ device tree files
-cp -r device_tree/ark_jaj/Linux_for_Tegra/* source_build/Linux_for_Tegra/
-
-cd source_build/Linux_for_Tegra/source/
-make dtbs
-```
-
-The compiled `.dtbo` files will be in:
+Add your `.dts` to the overlay directory for this carrier, using an existing ARK overlay as a template (e.g. `tegra234-p3767-camera-p3768-ark-imx477-single.dts`):
 
 ```
-source_build/Linux_for_Tegra/source/kernel-devicetree/generic-dts/dtbs/
+products/JAJ/device_tree/source/hardware/nvidia/t23x/nv-public/overlay/
 ```
 
-#### Step 3: Copy overlay to the Jetson
+#### Step 2: Register it in the Makefile
 
-Copy the overlay via USB-C (default IP when connected via USB):
+Add your overlay to the `Makefile` in that same directory:
+
+```makefile
+dtbo-y += your-custom-overlay.dtbo
+```
+
+#### Step 3: Build and flash
 
 ```
-DTB_PATH="$PWD/source_build/Linux_for_Tegra/source/kernel-devicetree/generic-dts/dtbs/"
-OVERLAY_DTB=tegra234-p3767-camera-p3768-ark-imx219-quad.dtbo
+./build.sh JAJ
+./flash.sh JAJ
+```
+
+Your overlay will then be listed by `config-by-hardware.py -l` after flashing.
+
+### Option 2: Build Standalone and Copy to a Flashed System
+
+This builds the overlay and copies it onto a Jetson that has already been flashed — no reflash required.
+
+#### Step 1: Build the device tree overlays
+
+```
+./build.sh JAJ
+```
+
+The compiled `.dtbo` files land in:
+
+```
+staging/JAJ/Linux_for_Tegra/source/kernel-devicetree/generic-dts/dtbs/
+```
+
+#### Step 2: Copy the overlay to the Jetson
+
+Copy via USB-C (default IP when connected via USB):
+
+```
+DTB_PATH="staging/JAJ/Linux_for_Tegra/source/kernel-devicetree/generic-dts/dtbs"
+OVERLAY_DTB=tegra234-p3767-camera-p3768-ark-imx219-single.dtbo
 scp $DTB_PATH/$OVERLAY_DTB jetson@192.168.55.1:~
 ```
 
-#### Step 4: Install the overlay on the Jetson
+#### Step 3: Install and apply on the Jetson
 
-SSH into the Jetson and move the overlay to `/boot`:
-
-```
-ssh jetson@jetson.local
-sudo mv tegra234-p3767-camera-p3768-ark-imx219-quad.dtbo /boot
-```
-
-#### Step 5: Apply and reboot
-
-Verify the overlay is available:
+SSH in, move the overlay to `/boot`, apply it, and reboot:
 
 ```
-sudo /opt/nvidia/jetson-io/config-by-hardware.py -l
-```
-
-Apply the overlay:
-
-```
-sudo /opt/nvidia/jetson-io/config-by-hardware.py -n 2="Camera ARK IMX219 Quad"
+ssh jetson@192.168.55.1
+sudo mv tegra234-p3767-camera-p3768-ark-imx219-single.dtbo /boot
+sudo /opt/nvidia/jetson-io/config-by-hardware.py -n 2="Camera ARK IMX219 Single"
 sudo reboot
 ```

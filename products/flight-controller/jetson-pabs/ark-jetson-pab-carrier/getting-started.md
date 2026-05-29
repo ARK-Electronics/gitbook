@@ -14,7 +14,7 @@ When you order an ARK Jetson PAB Carrier bundle, everything comes pre-flashed:
 The ARK Jetson PAB Carrier requires a custom device tree to enable all hardware features. If you reflash your Jetson, you must use the ARK kernel with the correct device tree.
 {% endhint %}
 
-Device tree files: [https://github.com/ARK-Electronics/ark\_jetson\_kernel/tree/main/device\_tree/ark\_pab](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/device_tree/ark_pab)
+Device tree files: [https://github.com/ARK-Electronics/ark\_jetson\_kernel/tree/main/products/PAB/device\_tree](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/products/PAB/device_tree)
 
 See the [Flashing Guide](flashing-guide.md) for complete instructions.
 
