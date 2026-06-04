@@ -1,6 +1,6 @@
 # Flashing Guide
 
-If you purchased just the Pi6X Flow carrier and are installing your own Pi:
+If you purchased just the Just a Pi and are installing your own Pi:
 
 {% content-ref url="pi-cm4-lite-with-micro-sd.md" %}
 [pi-cm4-lite-with-micro-sd.md](pi-cm4-lite-with-micro-sd.md)
