@@ -1,10 +1,10 @@
 # Pinout
 
-<figure><img src="../../../.gitbook/assets/Pinout Drawing Top.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Pinout Drawing Top.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Pinout Drawing Bottom.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Pinout Drawing Bottom.png" alt=""><figcaption></figcaption></figure>
 
-{% file src="../../../.gitbook/assets/Pinout Drawing (1).pdf" %}
+{% file src="../../.gitbook/assets/Pinout Drawing (1).pdf" %}
 
 #### POWER - 6 Pin Molex CLIK-Mate
 
