@@ -1,11 +1,11 @@
 # Embedded Computers
 
-ARK embedded computers built around NVIDIA Jetson modules for onboard AI and autonomous computing.
+ARK embedded computers for onboard AI and autonomous computing, built around NVIDIA Jetson and Raspberry Pi compute modules.
 
 {% content-ref url="ark-just-a-jetson/" %}
 [ark-just-a-jetson](ark-just-a-jetson/)
 {% endcontent-ref %}
 
-{% content-ref url="../products/embedded-computers/ark-just-a-pi/" %}
-[ark-just-a-pi](../products/embedded-computers/ark-just-a-pi/)
+{% content-ref url="ark-just-a-pi/" %}
+[ark-just-a-pi](ark-just-a-pi/)
 {% endcontent-ref %}

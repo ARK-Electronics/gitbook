@@ -14,7 +14,29 @@ Create a new NeworkManager connection profile in **/etc/NetworkManager/system-co
 
 Name the file **YourNetworkSSID**.nmconnection and make sure to replace **YourNetworkSSID** and **YourNetworkPassword**.
 
-{% @github-files/github-code-block url="https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/wifi/ConnectionTemplate.nmconnection" %}
+```
+[connection]
+id=YourNetworkSSID
+uuid=0e214bd8-4501-4394-9a46-123badc0ffee
+type=wifi
+
+[wifi]
+mode=infrastructure
+ssid=YourNetworkSSID
+
+[wifi-security]
+key-mgmt=wpa-psk
+psk=YourNetworkPassword
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=default
+method=auto
+
+[proxy]
+```
 
 ## Prior to Bookworm
 
