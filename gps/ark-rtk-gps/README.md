@@ -9,6 +9,16 @@ Find most up to date documentation in the PX4 Documentation [https://docs.px4.io
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_RTK_GPS)
 
+## L1L5 Variant
+
+The [ARK RTK GPS L1L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/) is a variant of the ARK RTK GPS built around the u-blox ZED-F9P-15B, which receives the L1/L5 bands instead of L1/L2. The L5 band improves resilience to interference and multipath.
+
+{% hint style="info" %}
+The L1L5 variant does **not** support moving baseline heading. For dual-GPS heading use the standard L1/L2 ARK RTK GPS, or see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md) for a dual-antenna solution.
+{% endhint %}
+
+Aside from the receiver, the L1L5 variant is identical to the standard ARK RTK GPS: it uses the same DroneCAN interface, onboard sensors, pinout, and firmware.
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.&#x20;
