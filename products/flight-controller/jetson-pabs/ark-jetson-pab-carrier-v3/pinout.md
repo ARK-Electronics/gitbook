@@ -6,6 +6,12 @@ metaLinks:
 
 # Pinout
 
+<figure><img src="../../../../.gitbook/assets/Jetson PAB V3 Pinout Drawing Top.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/Jetson PAB V3 Pinout Drawing Bottom.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/Jetson PAB V3 Pintout Drawing Front.png" alt=""><figcaption></figcaption></figure>
+
 ### **Primary Avionics- 40 Pin** Pico-Clasp 501571
 
 Mating plug [5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
