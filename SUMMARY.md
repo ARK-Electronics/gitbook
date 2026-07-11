@@ -238,6 +238,7 @@
     * [Pinout](accessories/ark-servo-expander/pinout.md)
     * [PX4 Instructions](accessories/ark-servo-expander/px4-instructions.md)
     * [3D Model](accessories/ark-servo-expander/3d-model.md)
+  * [ARK Secondary Avionics Adapter](products/accessories/ark-secondary-avionics-adapter.md)
 * [Airframes](airframes/README.md)
   * [ARK RIG5](airframes/ark-rig5.md)
   * [ARK RIG7](airframes/ark-rig7.md)
