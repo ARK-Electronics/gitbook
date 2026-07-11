@@ -6,7 +6,7 @@ description: Pin assignments for the ARK Secondary Avionics Adapter connectors.
 
 ### Secondary avionics port
 
-**J3** — 40-pin secondary avionics port
+**J3** — 40-pin Molex Pico-Clasp secondary avionics port
 
 | Pin | Signal                     | Voltage |
 | --- | -------------------------- | ------- |
@@ -44,9 +44,9 @@ description: Pin assignments for the ARK Secondary Avionics Adapter connectors.
 | 32  | IO\_CH8\_EXT               | 3.3V    |
 | 33  | GND                        | GND     |
 | 34  | VDD\_5V\_SBUS\_RC          | 5V      |
-| 35  | JCAN\_P                    | 3.3V    |
+| 35  | JCAN\_P                    | 5V      |
 | 36  | GND                        | GND     |
-| 37  | JCAN\_N                    | 3.3V    |
+| 37  | JCAN\_N                    | 5V      |
 | 38  | GND                        | GND     |
 | 39  | GND                        | GND     |
 | 40  | VDD\_5V\_PERIPH            | 5V      |
@@ -89,8 +89,8 @@ description: Pin assignments for the ARK Secondary Avionics Adapter connectors.
 | Pin | Signal          | Voltage |
 | --- | --------------- | ------- |
 | 1   | VDD\_5V\_PERIPH | 5V      |
-| 2   | JCAN\_P         | 3.3V    |
-| 3   | JCAN\_N         | 3.3V    |
+| 2   | JCAN\_P         | 5V      |
+| 3   | JCAN\_N         | 5V      |
 | 4   | GND             | GND     |
 
 ### SBUS out
