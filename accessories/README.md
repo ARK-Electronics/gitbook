@@ -6,6 +6,6 @@ ARK add-on boards and peripheral accessories.
 [ark-servo-expander](ark-servo-expander/)
 {% endcontent-ref %}
 
-{% content-ref url="../products/accessories/ark-secondary-avionics-adapter.md" %}
-[ark-secondary-avionics-adapter.md](../products/accessories/ark-secondary-avionics-adapter.md)
+{% content-ref url="../products/accessories/ark-secondary-avionics-adapter/" %}
+[ark-secondary-avionics-adapter](../products/accessories/ark-secondary-avionics-adapter/)
 {% endcontent-ref %}

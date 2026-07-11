@@ -1,14 +1,8 @@
 ---
-description: A simple 40 pin Molex Pico-Clasp to Pixhawk Standard JST-GH Connectors.
-cover: ../../.gitbook/assets/IMG_6459 edited.JPG
-coverY: 0
+description: Pin assignments for the ARK Secondary Avionics Adapter connectors.
 ---
 
-# ARK Secondary Avionics Adapter
-
-The ARK Secondary Avionics Adapter breaks out the 40-pin secondary avionics port.
-
-All connectors use JST-GH headers. Pin numbers follow the connector markings.
+# Pinout
 
 ### Secondary avionics port
 
