@@ -13,7 +13,7 @@ When you order an ARK Just A Jetson bundle:
 The ARK Just A Jetson requires a custom device tree to enable all hardware features. If you reflash your Jetson, you must use the ARK kernel with the correct device tree.
 {% endhint %}
 
-Device tree files: [https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/device_tree/ark_jaj](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/device_tree/ark_jaj)
+Device tree files: [https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/products/JAJ/device_tree](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/products/JAJ/device_tree)
 
 See the [Flashing Guide](flashing-guide.md) for complete instructions.
 

@@ -4,13 +4,13 @@ If you purchased a bundle the [Jetpack Ubuntu OS](https://developer.nvidia.com/e
 
 ## ARK Jetson Kernel GitHub Repository
 
-This repository contains helper scripts to download and build the kernel. Please follow the README.\
+The repository provides prebuilt flash packages (recommended) and scripts to build the kernel from source. Follow the README:\
 [https://github.com/ARK-Electronics/ark\_jetson\_kernel](https://github.com/ARK-Electronics/ark_jetson_kernel)
 
 ## Device Tree
 
 The ARK Just A Jetson requires a custom device tree to enable all hardware features. The device tree files are located here:\
-[https://github.com/ARK-Electronics/ark\_jetson\_kernel/tree/main/device\_tree/ark\_jaj](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/device_tree/ark_jaj)
+[https://github.com/ARK-Electronics/ark\_jetson\_kernel/tree/main/products/JAJ/device\_tree](https://github.com/ARK-Electronics/ark_jetson_kernel/tree/main/products/JAJ/device_tree)
 
 ## Overview
 
