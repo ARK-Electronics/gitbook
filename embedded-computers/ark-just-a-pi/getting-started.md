@@ -1,28 +1,34 @@
 # Getting Started
 
-The ARK Just A Pi is a compact carrier board for the Raspberry Pi Compute Module 5. This guide covers preparing the board and connecting to it for the first time.
+The ARK Just A Pi is a compact carrier board for the Raspberry Pi Compute Module 5.
 
-<!-- TODO: Document what comes pre-installed/pre-configured on bundle orders, if anything. -->
+## What's Pre-Installed
 
-## Flashing the Compute Module
+Bundles that include a CM5 ship pre-imaged and ready to use:
 
-If you are installing your own Compute Module, follow the [Flashing Guide](flashing-guide/README.md) to image the CM5 (micro SD for the CM5 Lite, or eMMC over USB-C) and prepare it for first boot.
+* **OS**: Raspberry Pi OS (64-bit) with the carrier configuration baked in and [ARK-OS](https://github.com/ARK-Electronics/ARK-OS) pre-installed
+* **Credentials**: Username `pi`, password `pi`, hostname `just-a-pi`
 
-If you set up the OS using the Raspberry Pi Imager customization options described in the flashing guide, the board comes up with:
+{% hint style="info" %}
+The default password is well known — change it (`passwd`) before putting the device on a network you don't control.
+{% endhint %}
 
-- **Username**: `pi`
-- **Password**: `pi`
-- **Hostname**: `just-a-pi`
+If you are installing your own Compute Module, follow the [Flashing Guide](flashing-guide/README.md) first.
 
 ## Connecting
 
-### Serial Debug Console
+### Option 1: WiFi Hotspot
 
-The **UART0 Debug** connector (6-pin JST-GH) exposes the Compute Module's serial console at 3.3V. Connect a 3.3V USB-to-serial adapter to reach the console before the network is configured. See the [Pinout](pinout.md) for the connector pin assignments.
+On first boot, if no known WiFi network is available, the Pi brings up a hotspot:
 
-### SSH over the network
+* **Network**: `just-a-pi-<serial>`
+* **Password**: `password`
 
-Once Wi-Fi or Ethernet is configured (see [Wi-Fi Setup](flashing-guide/wi-fi-setup.md) and [SSH](flashing-guide/ssh.md)), connect over SSH:
+Connect to the hotspot, open [http://just-a-pi.local](http://just-a-pi.local), and join your WiFi network from the **Connections** page:
+
+<figure><img src="../../.gitbook/assets/ark-ui-connections-justapi.png" alt=""><figcaption><p>ARK-UI Connections page</p></figcaption></figure>
+
+Once the Pi is on your network:
 
 ```bash
 ssh pi@just-a-pi.local
@@ -30,9 +36,21 @@ ssh pi@just-a-pi.local
 
 If mDNS is not available on your network, use the Pi's IP address instead.
 
+### Option 2: Ethernet
+
+Plug either external Ethernet port into your network — the Pi requests an address over DHCP.
+
+### Option 3: Serial Debug Console
+
+The **UART0 Debug** connector (6-pin JST-GH) exposes the Compute Module's serial console at 3.3V. Connect a 3.3V USB-to-serial adapter to reach the console before the network is configured. See the [Pinout](pinout.md) for the connector pin assignments.
+
+## ARK-UI Web Interface
+
+ARK-OS hosts a web UI at [http://just-a-pi.local](http://just-a-pi.local) for managing the device: system info, network connections, services, and video streaming. See [ARK-OS](ark-services/README.md).
+
 ## Next Steps
 
-- [Flashing Guide](flashing-guide/README.md) – Image the Compute Module and prepare it for first boot
-- [Pinout](pinout.md) – Connector and pin assignments
-- [Block Diagram](block-diagram.md) – Board architecture overview
-- [3D Model](3d-model.md) – STEP files
+* [ARK-OS](ark-services/README.md) – The pre-installed services and web UI
+* [Flashing Guide](flashing-guide/README.md) – Image the Compute Module
+* [Pinout](pinout.md) – Connector and pin assignments
+* [Block Diagram](block-diagram.md) – Board architecture overview

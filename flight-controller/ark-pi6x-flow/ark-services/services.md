@@ -1,104 +1,36 @@
 ---
-description: This page explains the function of each ARK-OS service.
+description: What each ARK-OS service does.
 ---
 
 # Services
 
-This collection of services is referred to as ARK-OS and is installed using the [ARK-OS repository](https://github.com/ARK-Electronics/ARK-OS). The services are installed as [systemd user services](https://www.unixsysadmin.com/systemd-user-services/) and follow the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/latest/).
+ARK-OS services are system-level [systemd services](https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html) running as the `pi` user. Manage them — including configuration editing — from the [ARK-UI](http://pi6x.local) **Services** page, or with `systemctl`. Configuration files live under `/etc/ark-os/`.
 
-## Mavlink Router
+## Enabled by Default
 
-The **mavlink-router** service routes the MAVLink data from the Pi USB port **/dev/ttyACM0** to user defined UDP endpoints. The Pi USB port is connected directly to the Flight Controller USB and is capable of 3Mbps.
+**mavlink-router** routes MAVLink between the flight controller (USB, `/dev/ttyACM0`) and user-defined UDP/TCP endpoints such as QGroundControl. Default config: [main.conf](https://github.com/ARK-Electronics/ARK-OS/blob/main/services/mavlink-router/main.conf).
 
-The configuration can be edited in the [ARK-UI](http://pi6x.local/). The default configuration is found here:
+**rtsp-server** streams the first CSI camera over RTSP at `rtsp://pi6x.local:5600/camera1` using gstreamer.
 
-{% @github-files/github-code-block url="https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/main.conf" %}
+**go2rtc** restreams the RTSP feed to the browser over WebRTC for the ARK-UI **Video** page.
 
-***
+**ark-ui-backend**, **system-manager**, **service-manager**, **connection-manager**, **autopilot-manager** are the REST APIs behind the ARK-UI (hidden from the Services page).
 
-## Logloader
+## Optional (installed, disabled by default)
 
-The **logloader** service automatically downloads the PX4 **.ulg** flight logs from the Flight Controller SD card after each flight. It will automatically upload the log to a locally hosted [Flight Review ](https://review.px4.io/)server and optionally upload to a remotely hosted server.
+Enable from the ARK-UI Services page or with `systemctl enable --now <service>`.
 
-The configuration can be edited in the [ARK-UI](http://pi6x.local/). The default configuration is found here:
+**dds-agent** bridges PX4 uORB topics to ROS 2 by running the [Micro XRCE-DDS Agent](https://github.com/eProsima/Micro-XRCE-DDS-Agent) on the high-speed serial connection to the flight controller (`/dev/ttyAMA4` ↔ Telem2, 3 Mbps). The bridged topics are defined in [PX4's dds\_topics.yaml](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml). Set these PX4 parameters:
 
-{% @github-files/github-code-block url="https://github.com/ARK-Electronics/logloader/blob/main/config.toml" %}
+| Parameter       | Value   | Description  |
+| --------------- | ------- | ------------ |
+| UXRCE\_DDS\_CFG | 102     | TELEM 2      |
+| SER\_TEL2\_BAUD | 3000000 | 3 Mbps 8N1   |
 
-***
+**logloader** downloads PX4 `.ulg` flight logs from the flight controller's SD card over MAVLink FTP and optionally uploads them to [Flight Review](https://review.px4.io/). Driven from the ARK-UI **Logs** page.
 
-## Flight Review
+**flight-review** hosts a local [PX4 Flight Review](https://github.com/PX4/flight_review) server at [http://pi6x.local/flight-review](http://pi6x.local/flight-review) for the logs downloaded by logloader.
 
-The **flight-review** service is a locally hosted instance of the [PX4 Flight Review](https://github.com/PX4/flight_review) web application for flight log plotting and analysis. It can be accessed at [http://pi6x.local/flight-review/](http://pi6x.local/flight-review/). By default all logs downloaded by **logloader** will be visible on the local server.
+**polaris** receives network RTK corrections from the [Point One Polaris](https://pointonenav.com/polaris) service (subscription required) and publishes them to the flight controller over MAVLink.
 
-***
-
-## DDS Agent
-
-The **dds-agent** service bridges the [PX4 uORB ](https://docs.px4.io/main/en/middleware/uorb.html)pub/sub system to ROS2 topics on the Pi. The bridged topics are defined in PX4 Firmware and can be [found here](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml).
-
-The **dds-agent** runs the [micro-xrce-dds-agent ](https://github.com/eProsima/Micro-XRCE-DDS-Agent)on the **/dev/ttyAMA4** serial port of the Pi. This serial port is connected directly to the Flight Controller **Telem2** port and is capable of 3Mbps.
-
-The Flight Controller firmware needs to be configured by setting these parameters:
-
-| Parameter       | Value   | Description |
-| --------------- | ------- | ----------- |
-| UXRCE\_DDS\_CFG | 102     |  TELEM 2    |
-| SER\_TEL2\_BAUD | 3000000 | 3000000 8N1 |
-
-For more information please see the official [PX4 docs for UXRCE DDS](https://docs.px4.io/main/en/middleware/uxrce_dds.html).
-
-***
-
-## Hotspot Updater
-
-The **hotspot-updater** service configures the Pi as a hotspot if it is unable to connect to a WiFi network after 1 minute from booting. It will create a hotspot with the name **pi6x-\<serialnumber>** with a password of **password.** Once connected to the hotspot you can go to [http://pi6x.local](http://pi6x.local/) to connect to your local network.
-
-***
-
-## Polaris
-
-The **polaris** service provides a client interface to the Point One [Polaris RTK Correction Network](https://pointonenav.com/polaris). This service allows you to receive network RTK corrections over the internet with an active Point One subscription. This allows you to achieve centimeter precision position hold anywhere the network is available.
-
-The configuration can be edited in the [ARK-UI](http://pi6x.local/). The default configuration is found here:
-
-{% @github-files/github-code-block url="https://github.com/ARK-Electronics/polaris-client-mavlink/blob/main/config.toml" %}
-
-***
-
-## RTSP Server
-
-The **rtsp-server** service provides a RTSP Server for live streaming video. The server uses gstreamer and is currently only compatible with CSI cameras, for example **/dev/video0.** Stay tuned for future plans to support both CSI and USB cameras.
-
-The configuration can be edited in the [ARK-UI](http://pi6x.local/). The default configuration is found here:
-
-{% @github-files/github-code-block url="https://github.com/ARK-Electronics/rtsp-server/blob/main/config.toml" %}
-
-***
-
-## ARK UI Backend
-
-The **ark-ui-backend** service is a REST API backend for the ARK-UI. It provides API endpoints for managing services, querying device information, and updating the Flight Controller firmware.
-
-***
-
-## System Manager
-
-The **system-manager** service provides a REST API for Linux system monitoring. It exposes endpoints for querying system information such as CPU usage, memory usage, disk space, network statistics, and system health metrics.
-
-***
-
-## Autopilot Manager
-
-The **autopilot-manager** service provides a REST API for autopilot MAVLink interactions. It enables programmatic access to autopilot data and control, including reading telemetry, sending commands, and managing parameters.
-
-***
-
-## Connection Manager
-
-The **connection-manager** service provides a REST API for network connection management. It handles WiFi network scanning, connection, and configuration, as well as hotspot management and network interface control.
-
-***
-
-## Service Manager
-
-The **service-manager** service provides a REST API for systemd service management. It allows starting, stopping, enabling, and disabling systemd services, as well as querying service status and logs.
+**pointperfect** receives GNSS corrections from the [u-blox PointPerfect](https://www.u-blox.com/en/product/pointperfect) NTRIP service and publishes them to the flight controller over MAVLink. For u-blox receivers it can also request AssistNow start-up assistance for a faster first fix.

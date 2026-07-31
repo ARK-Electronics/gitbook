@@ -4,13 +4,20 @@ description: The Pi6X Flow can be flashed with PX4 Firmware from v1.15 and above
 
 # Updating the Flight Controller Firmware
 
-If you have ARK-OS installed you can use the UI at [http://pi6x.local](http://pi6x.local/) to perform a firmware update.
+## From the Web UI
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt="" width="456"><figcaption></figcaption></figure>
+Open the [ARK-UI](http://pi6x.local) **Autopilot** page, select the **Firmware** tab, and upload a `.px4` firmware file.
 
-Otherwise you can ssh into the Pi and use the [flashing script from ARK-OS](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/scripts/flash_firmware.sh). The firmware update is performed over the USB connection.
+<figure><img src="../../.gitbook/assets/ark-ui-autopilot-firmware-pi6x.png" alt=""><figcaption></figcaption></figure>
 
-## PX4 Binaries
+## From the Command Line
 
-You can download the latest PX4 v1.15 release here:\
-[https://github.com/PX4/PX4-Autopilot/releases/download/v1.15.0/ark\_pi6x\_default.px4](https://github.com/PX4/PX4-Autopilot/releases/download/v1.15.0/ark_pi6x_default.px4)<br>
+SSH into the Pi and run the ARK-OS flashing tool (on `PATH`). The update is performed over the USB connection:
+
+```bash
+flash_firmware.sh <firmware.px4>
+```
+
+## Firmware Binaries
+
+Download the latest `ark_pi6x_default.px4` from the [PX4 releases page](https://github.com/PX4/PX4-Autopilot/releases/).
