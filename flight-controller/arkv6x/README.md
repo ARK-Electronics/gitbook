@@ -5,6 +5,10 @@ coverY: 0
 
 # ARKV6X
 
+{% hint style="info" %}
+**Using the ARKV6X on an ARK PAB Carrier?** See the [ARK Pixhawk Autopilot Bus Carrier Pinout](../ark-pixhawk-autopilot-bus-carrier/pinout.md).
+{% endhint %}
+
 The USA-built ARKV6X flight controller is based on the [FMUV6X and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards).
 
 With triple synced IMUs, data averaging, voting, and filtering is possible. The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6X to be used on any [PAB-compatible carrier board](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html), such as the [ARK Pixhawk Autopilot Bus Carrier](https://docs.px4.io/main/en/flight_controller/arkpab.html).
@@ -43,7 +47,13 @@ With triple synced IMUs, data averaging, voting, and filtering is possible. The 
 
 ### Pinout
 
-For pinout of the ARKV6X see the [DS-10 Pixhawk Autopilot Bus Standard](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf)
+For pinout of the ARKV6X board-to-board connectors see the [DS-10 Pixhawk Autopilot Bus Standard](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf).
+
+All wiring connectors — GPS, TELEM, CAN, PWM, and the rest — are broken out by the carrier board, not the ARKV6X itself. For the ARK PAB Carrier, see:
+
+{% content-ref url="../ark-pixhawk-autopilot-bus-carrier/pinout.md" %}
+[pinout.md](../ark-pixhawk-autopilot-bus-carrier/pinout.md)
+{% endcontent-ref %}
 
 ### Serial Port Mapping
 

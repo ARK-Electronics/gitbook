@@ -32,6 +32,14 @@ coverY: -23.514666666666663
 * Weight
   * 14.5g
 
+**Capacitance:**
+
+The ARK 4IN1 ESC has 450µF of bulk capacitance built in, which is sufficient for most 3S–6S installations with short battery leads.
+
+{% hint style="warning" %}
+For 8S and above, add an external bulk capacitor across the battery input to keep switching and inrush transients below the 65V absolute maximum. Long battery leads increase inductance and make transients worse at any voltage.
+{% endhint %}
+
 {% content-ref url="pinout.md" %}
 [pinout.md](pinout.md)
 {% endcontent-ref %}
