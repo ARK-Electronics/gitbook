@@ -6,7 +6,7 @@ coverY: 0
 # ARKV6X
 
 {% hint style="info" %}
-**Using the ARKV6X on an ARK PAB Carrier?** The connectors you wire to are on the carrier board. See the [ARK Pixhawk Autopilot Bus Carrier Pinout](../ark-pixhawk-autopilot-bus-carrier/pinout.md).
+**Using the ARKV6X on an ARK PAB Carrier?** See the [ARK Pixhawk Autopilot Bus Carrier Pinout](../ark-pixhawk-autopilot-bus-carrier/pinout.md).
 {% endhint %}
 
 The USA-built ARKV6X flight controller is based on the [FMUV6X and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards).
