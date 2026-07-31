@@ -1,10 +1,8 @@
 # IMU ICM-42688P Guide
 
-The ICM-42688P is connected to SPI1 on the Just a Jetson. See the [pinmux spreadsheet](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/device_tree/ark_jaj/Jetson_Orin_NX_and_Orin_Nano_series_Pinmux_Config_Jetpack_6.xlsm) for the GPIO assignments.&#x20;
+The onboard ICM-42688P IMU is connected to SPI1 on the Just a Jetson and shows up in Linux as `/dev/spidev1.0`. See the [pinmux spreadsheet](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/products/JAJ/Jetson_Orin_NX_and_Orin_Nano_series_Pinmux_Config_Jetpack_6.xlsm) for the GPIO assignments.
 
-The device shows up in linux under /dev/spidev1.0
-
-To enable the SPI bus using the Jetson Expansion Header Tool, enable spi3.
+To enable the SPI bus, enable **spi3** with the Jetson Expansion Header Tool and reboot:
 
 ```
 sudo /opt/nvidia/jetson-io/jetson-io.py
@@ -37,6 +35,10 @@ Configure header pins manually
   ====================================================================
 ```
 
-An example Python driver is provided here.
+To read the IMU, run the test script that ships with ARK-OS (on `PATH`):
 
-{% @github-files/github-code-block url="https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/jetson/scripts/icm42688p_driver.py" %}
+```
+icm42688p_test.py
+```
+
+Source: [icm42688p\_test.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/jetson/scripts/extras/icm42688p_test.py)

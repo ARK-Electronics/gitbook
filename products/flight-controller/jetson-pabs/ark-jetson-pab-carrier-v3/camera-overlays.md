@@ -1,16 +1,16 @@
 # Camera Overlays
 
-The ARK Jetson PAB Carrier has **4× 2-lane CSI ports**. Camera configuration is managed through device tree overlays, and the image ships with the **IMX219 quad** overlay active — IMX219 cameras work on all four ports out of the box.
+The ARK Jetson PAB Carrier V3 has **2× dual-lane CSI ports** on 22-pin FFC connectors. Camera configuration is managed through device tree overlays, and the image ships with the **IMX219 dual** overlay active — IMX219 cameras work on both ports out of the box.
 
 ## Supported Cameras
 
 | Sensor | Resolution | Overlay | Status |
 | --- | --- | --- | --- |
-| IMX219 | 3280x2464 | Camera IMX219 Quad | Working (default) |
-| IMX477 | 4056x3040 | Camera IMX477 Quad | Working |
-| IMX708 | 4608x2592 | Camera IMX708 Quad | Working |
+| IMX219 | 3280x2464 | Camera IMX219 Dual | Working (default) |
+| IMX477 | 4056x3040 | Camera IMX477 Dual | Working |
+| IMX708 | 4608x2592 | Camera IMX708 Dual | Working |
 
-4-lane CSI modes are not supported — 2-lane provides full resolution at 30 fps for the IMX477. See [cameras.md](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/cameras.md) in the kernel repo for sensor details, verification commands, and known issues.
+See [cameras.md](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/cameras.md) in the kernel repo for sensor details, verification commands, and known issues.
 
 ## Switching Overlays
 
@@ -23,7 +23,7 @@ sudo /opt/nvidia/jetson-io/config-by-hardware.py -l
 Apply one and reboot:
 
 ```bash
-sudo /opt/nvidia/jetson-io/config-by-hardware.py -n 2="Camera IMX477 Quad"
+sudo /opt/nvidia/jetson-io/config-by-hardware.py -n 2="Camera IMX477 Dual"
 sudo reboot
 ```
 

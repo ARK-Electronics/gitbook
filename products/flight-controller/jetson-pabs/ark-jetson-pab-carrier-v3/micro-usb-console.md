@@ -4,34 +4,28 @@ metaLinks:
     - ../ark-jetson-pab-carrier/micro-usb-console.md
 ---
 
-# USB C Console
+# USB-C Console
 
-After plugging in a USB C cable to the Jetson carrier, a file system is mounted and a serial port is presented the the host PC.
+Plugging a USB-C cable into the Jetson carrier puts the Jetson in USB device mode. The host PC sees a USB network interface (Jetson at `192.168.55.1`), a serial console, and an `L4T-README` drive.
 
-The L4T-README drive contains text files with information on using the serial port and connecting WiFi.
+## Serial Console
 
-## Accessing the Jetson console over the USB C
+Find the serial port on your host PC and connect with a serial terminal at baud rate **115200**. Log in with your username and password (default `jetson` / `jetson`).
 
-After connecting, find the serial port number in your OS of choice. Using a serial terminal program, connect to that port using baud rate 115200.
+## Connecting to WiFi from the Command Line
 
-You will need to login with your username and password. If you followed the flashing guide in these docs, it will be username "jetson" password "jetson".
-
-## Connecting to WiFi using the USB C port
-
-If you installed an M.2 WiFi module or a USB WiFi dongle, you can use nmcli to connect using the command line.
-
-To scan for available networks:
+Scan for networks:
 
 ```
 sudo nmcli device wifi
 ```
 
-To connect to a network
+Connect to a network:
 
 ```
 sudo nmcli device wifi connect 'SSID' password 'PASSWORD'
 ```
 
-### Creating a WiFi hotspot using the command line
+## Sharing Your PC's Internet over USB
 
-{% embed url="https://gist.github.com/narate/d3f001c97e1c981a59f94cd76f041140" %}
+The kernel repo ships a helper that NATs the Jetson's traffic out through your host PC's WiFi, giving the Jetson internet access over the USB cable — see [share\_wifi.md](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/share_wifi.md).
