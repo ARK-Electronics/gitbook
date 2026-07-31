@@ -1,21 +1,26 @@
 ---
-description: The ARKV6X Flight Controller can be flashed with PX4 or Ardupilot.
+description: Flash PX4 or ArduPilot firmware on a USB-connected flight controller.
 ---
 
 # Updating the Flight Controller Firmware
 
-If you have ARK-OS installed you can use the UI at [http://jetson.local](http://pi6x.local/) to perform a firmware update.
+The Just a Jetson has no onboard flight controller, but ARK-OS can flash one connected over USB.
 
-<figure><img src="../../.gitbook/assets/image (33).png" alt="" width="456"><figcaption></figcaption></figure>
+## From the Web UI
 
-Otherwise you can ssh into the Jetson and use the [flashing script from ARK-OS](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/common/scripts/flash_firmware.sh).
+Open the [ARK-UI](http://jetson.local) **Autopilot** page, select the **Firmware** tab, and upload a `.px4` or `.apj` firmware file.
 
-## PX4 Binaries
+<figure><img src="../../.gitbook/assets/ark-ui-autopilot-firmware.png" alt=""><figcaption></figcaption></figure>
 
-You can download the latest ark\_fmu-v6x PX4 release here:\
-[https://github.com/PX4/PX4-Autopilot/releases/](https://github.com/PX4/PX4-Autopilot/releases/)
+## From the Command Line
 
-## ArduPilot Binaries
+SSH into the Jetson and run the ARK-OS flashing tool (on `PATH`):
 
-You can download the latest ark\_fmu-v6x ArduPilot release here:\
-[https://firmware.ardupilot.org/](https://firmware.ardupilot.org/)
+```bash
+flash_firmware.sh <firmware.px4>
+```
+
+## Firmware Binaries
+
+* **PX4**: [PX4 releases page](https://github.com/PX4/PX4-Autopilot/releases/)
+* **ArduPilot**: [firmware.ardupilot.org](https://firmware.ardupilot.org/)

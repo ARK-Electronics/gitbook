@@ -26,7 +26,7 @@ ssh jetson@jetson.local
 
 Password:**jetson**\
 \
-You should also install the [Broken link](/broken/pages/Yxqz8349jGsIQFKfvban "mention")
+You should also install [ARK-OS](https://github.com/ARK-Electronics/ARK-OS) if it is not already on the image.
 
 ## Mesh Rider Radio software setup
 
