@@ -18,7 +18,7 @@
   * [ST-LINK Flashing Guide](knowledge-base/st-link-flashing-guide.md)
   * [DroneCAN GUI Tool Guide](knowledge-base/dronecan-gui-tool-guide.md)
   * [PX4 Log Encryption](knowledge-base/px4-log-encryption.md)
-  * [PX4 Setup](knowledge-base/knowledge-base/px4-setup.md)
+  * [PX4 Setup](knowledge-base/px4-setup.md)
 
 ## Products
 
@@ -263,6 +263,5 @@
   * [Doodle Labs Mesh Rider Radio Integration Guide for ARK Jetson PAB Carrier](radio-integration/doodle-labs-mesh-rider-radio-integration-guide-for-ark-jetson-pab-carrier-1.md)
   * [ARK Microhard DDL Carrier Integration for ARK Jetson PAB Carrier](radio-integration/ark-microhard-ddl-carrier-integration-for-ark-jetson-pab-carrier.md)
   * [DTC BluSDR Radio integration Guide for ARK Jetson PAB Carrier](radio-integration/dtc-blusdr-radio-integration-guide-for-ark-jetson-pab-carrier.md)
-  * [Doodle Labs Nimble Integration Guide for ARK Jetson PAB Carrier](radio-integration/doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md)
   * [Mobilicom SkyHopper Pro Integration Guide for ARK Jetson PAB Carrier](radio-integration/mobilicom-skyhopper-pro-integration-guide-for-ark-jetson-pab-carrier.md)
   * [Silvus StreamCaster SL5200 (OEM Module) MANET radio integration Guide for ARK Jetson PAB Carrier](radio-integration/silvus-streamcaster-sl5200-oem-module-manet-radio-integration-guide-for-ark-jetson-pab-carrier.md)
