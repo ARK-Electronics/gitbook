@@ -32,6 +32,12 @@ st-flash write <bootloader_binary_path> 0x08000000
 
 To flash the application firmware you can use the SD card method as [documented here](https://docs.px4.io/main/en/dronecan/#firmware-update) or you can use the DroneCAN GUI Tool and a USB-to-CAN adaptor to flash the firmware directly.
 
+If you flash the application over SWD instead, it goes at the application offset — `0x08000000` is the bootloader's address:
+
+```
+st-flash write <application_binary_path> 0x08010000
+```
+
 ## Configuration
 
 Connect the ARK CANnode to the flight controller's CAN bus using a standard 4-pin JST-GH cable.

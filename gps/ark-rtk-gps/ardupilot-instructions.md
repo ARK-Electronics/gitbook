@@ -4,7 +4,7 @@
 
 The ARK RTK GPS ships with PX4 CANnode firmware by default. For use with ArduPilot, we recommend flashing [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) (ArduPilot Peripheral) firmware. AP\_Periph is the well-tested configuration for DroneCAN GPS modules with ArduPilot.
 
-### Flashing AP\_Periph
+### Flashing AP\_Periph over CAN
 
 1. Download `AP_Periph.apj` for the ARK RTK GPS from the [ArduPilot firmware server](https://firmware.ardupilot.org/AP_Periph/stable/ARK_RTK_GPS/)
 2. Connect to the ARK RTK GPS using the DroneCAN GUI Tool — see our [DroneCAN GUI Tool Guide](../../knowledge-base/dronecan-gui-tool-guide.md) for connection and firmware upload instructions
@@ -20,6 +20,22 @@ After flashing AP\_Periph, you should also flash the AP\_Periph bootloader onto 
 4. Reboot the node
 
 This ensures future firmware updates use the AP\_Periph bootloader.
+
+### Flashing AP\_Periph with an ST-LINK
+
+If the node has no bootloader, or you want to replace both images at once, flash over SWD with an ST-LINK. Use the combined bootloader + application image — `AP_Periph_with_bl.hex` — rather than `AP_Periph.bin`:
+
+1. Download `AP_Periph_with_bl.hex` from the [ArduPilot firmware server](https://firmware.ardupilot.org/AP_Periph/stable/ARK_RTK_GPS/)
+2. Connect an ST-LINK to the 6-pin debug connector — see the [ST-LINK Flashing Guide](../../knowledge-base/st-link-flashing-guide.md) for wiring and tool setup
+3. Flash the combined image, then power-cycle the node
+
+```bash
+st-flash --format ihex write AP_Periph_with_bl.hex
+```
+
+{% hint style="warning" %}
+Do not flash `AP_Periph.bin` to `0x08000000`. On the ARK RTK GPS the bootloader occupies the first 64 KB of flash and the application starts at `0x08010000`, so writing the application to the start of flash erases the bootloader. The flash appears to succeed, but the node flashes its LED once at boot and never appears as a CAN node. The combined HEX file carries its own addresses and avoids the problem — see [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
+{% endhint %}
 
 ***
 
