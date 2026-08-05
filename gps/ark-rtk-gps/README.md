@@ -25,6 +25,8 @@ Follow the steps for updating the firmware through the flight controller.&#x20;
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
 
+If the node does not appear on the CAN bus — for example after a bad flash that erased the bootloader — recover it over SWD with an ST-LINK. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
+
 See the latest firmware below.
 
 {% file src="../../.gitbook/assets/82-1.16.e68afe1e.uavcan.bin" %}
