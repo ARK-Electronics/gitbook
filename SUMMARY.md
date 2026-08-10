@@ -199,6 +199,7 @@
     * [ArduPilot Instructions](gps/ark-mosaic-x5-rtk-gps/ardupilot-instructions.md)
     * [Web GUI Login](gps/ark-mosaic-x5-rtk-gps/web-gui-login.md)
   * [ARK RTK Base](gps/ark-rtk-base/README.md)
+    * [PX4 Instructions](gps/ark-rtk-base/px4-instructions.md)
     * [3D Model](gps/ark-rtk-base/3d-model.md)
   * [ARK RTK GPS](gps/ark-rtk-gps/README.md)
     * [ArduPilot Instructions](gps/ark-rtk-gps/ardupilot-instructions.md)
