@@ -51,10 +51,6 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 |-----------|-------|-------------|
 | `CANNODE_SUB_RTCM` | 1 | Subscribe to `RTCMStream` messages on the CAN bus. Enabled by default on the ARK RTK GPS |
 
-{% hint style="info" %}
-`UAVCAN_PUB_MBD` and `CANNODE_SUB_MBD` carry RTCM as well and can be used instead. Use `RTCMStream` as shown above if you also want [moving baseline heading](../ark-rtk-gps/px4-instructions.md#moving-baseline-gps-heading-configuration), which needs the `MovingBaselineData` messages for its own corrections.
-{% endhint %}
-
 ***
 
 ## Tuning
@@ -68,5 +64,5 @@ RTCM streaming needs MAVLink 2, which is the default on recent builds. If correc
 ## Troubleshooting
 
 * **RTK status icon stays red** — Survey-In has not converged. Check that the base station has a clear sky view and has not been moved, and consider relaxing the accuracy target in the _QGroundControl_ RTK GPS settings.
-* **Vehicle never reaches RTK Fixed** — confirm corrections are streaming (white RTK status icon) and that the telemetry link has enough bandwidth. On a DroneCAN GPS, verify `UAVCAN_PUB_RTCM` on the flight controller and `CANNODE_SUB_RTCM` on the node.
+* **Vehicle never reaches RTK Fixed** — confirm corrections are streaming (white RTK status icon) and that the telemetry link has enough bandwidth. When using a DroneCAN GPS on the aircraft, ensure the flight controller sets `UAVCAN_PUB_RTCM` to `1` and the GPS node sets `CANNODE_SUB_RTCM` to `1`.
 * See our [GPS Placement](../../knowledge-base/gps-placement.md) guide for mounting best practices, interference sources, and antenna positioning.
