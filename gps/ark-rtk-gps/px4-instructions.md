@@ -7,7 +7,7 @@ The ARK RTK GPS runs the [PX4 DroneCAN firmware](https://docs.px4.io/main/en/dro
 * Board ID: `82`
 
 {% hint style="warning" %}
-The flight controller must have an SD card installed. PX4 uses it for dynamic node allocation and for CAN firmware update — without one the ARK RTK GPS is never assigned a node ID and will not appear on the bus. The SD card is not used in flight.
+The flight controller must have an SD card installed. PX4 uses it for dynamic node allocation and for CAN firmware update — without one the ARK RTK GPS is never assigned a node ID and will not appear on the bus.
 {% endhint %}
 
 ***
@@ -76,8 +76,8 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 | [UAVCAN\_SUB\_BARO](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BARO) | Set to `1` to subscribe to DroneCAN barometer messages |
 | [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` on the node |
 | [UAVCAN\_SUB\_BTN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BTN) | Set to `1` to use the safety switch on the ARK RTK GPS |
-| [UAVCAN\_SUB\_GPS\_R](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_GPS_R) | Subscribe to DroneCAN `RelPosHeading` messages, which are logged as `sensor_gnss_relative`. Enabled by default, and not required for [moving baseline heading](#moving-baseline-gps-heading-configuration) |
-| [EKF2\_GPS\_POS\_X](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_X) / [EKF2\_GPS\_POS\_Y](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_Y) / [EKF2\_GPS\_POS\_Z](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_POS_Z) | GPS offset from the vehicle center of gravity (meters) |
+| [SENS\_GPS0\_OFFX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_OFFX) / [SENS\_GPS0\_OFFY](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_OFFY) / [SENS\_GPS0\_OFFZ](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_OFFZ) | GPS antenna offset from the vehicle center of gravity (meters). On PX4 v1.17 and earlier these are `EKF2_GPS_POS_X/Y/Z` |
+| [SENS\_GPS0\_ID](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_ID) | Device ID of the receiver the `SENS_GPS0_*` offsets apply to. With two receivers, use `SENS_GPS0_ID` and `SENS_GPS1_ID` to match each set of offsets — matching by instance index is only reliable for serial GPS |
 
 ### CAN Node Parameters
 
@@ -101,31 +101,7 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 
 ## RTK Corrections from a Fixed Base
 
-RTCM corrections from a fixed base station, such as the [ARK RTK Base](../ark-rtk-base/README.md), reach the GPS over the CAN bus. The base station connects to _QGroundControl_, which forwards the corrections to the flight controller over MAVLink, and PX4 republishes them on the CAN bus.
-
-### Flight Controller Parameters
-
-Apply the [Single GPS Configuration](#single-gps-configuration) flight controller parameters above, then add the following in _QGroundControl_ and reboot the flight controller.
-
-#### Required
-
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| [UAVCAN\_PUB\_RTCM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_PUB_RTCM) | 1 | Publish `RTCMStream` messages on the CAN bus |
-
-### CAN Node Parameters
-
-Set the following on the GPS and reboot the node.
-
-#### Required
-
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| `CANNODE_SUB_RTCM` | 1 | Subscribe to `RTCMStream` messages on the CAN bus. Enabled by default on this board |
-
-{% hint style="info" %}
-`UAVCAN_PUB_MBD` and `CANNODE_SUB_MBD` carry RTCM as well and can be used instead. Use `RTCMStream` as shown above if you also want [moving baseline heading](#moving-baseline-gps-heading-configuration), which needs the `MovingBaselineData` messages for its own corrections.
-{% endhint %}
+Centimeter-level absolute position requires RTCM corrections from a fixed base station on the ground. For the base station setup and the flight controller and CAN node parameters that carry the corrections onto the CAN bus, see [ARK RTK Base > PX4 Instructions](../ark-rtk-base/px4-instructions.md).
 
 ***
 
@@ -140,7 +116,7 @@ Two ARK RTK GPS modules can provide compass-free yaw estimation using the GPS mo
 * Choose one module to be the _Rover_ and the other to be the _Moving Base_.
 
 {% hint style="info" %}
-Heading is only output when the _Rover_ has an RTK **Fixed** solution. No heading is output in RTK Float.
+Heading is only output when the _Rover_ has an RTK **Fixed** solution. No heading is output in RTK Float. RTK Fixed here means the baseline between the two antennas is resolved, which is what produces the heading — the vehicle's absolute position is no more accurate than a normal 3D fix unless you also feed in [corrections from a fixed base](#rtk-corrections-from-a-fixed-base).
 {% endhint %}
 
 ### Flight Controller Parameters
@@ -152,6 +128,7 @@ Apply the [Single GPS Configuration](#single-gps-configuration) flight controlle
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | [EKF2\_GPS\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_CTRL) | 15 | Enable GPS fusion + GPS yaw (lon/lat + alt + 3D velocity + yaw). Overrides the value of `7` from the single GPS configuration |
+| [UAVCAN\_SUB\_GPS\_R](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_GPS_R) | 1 | Subscribe to DroneCAN `RelPosHeading` messages, which carry the heading computed by the _Rover_. Enabled by default |
 | [SENS\_GPS\_PRIME](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS_PRIME) | node ID | CAN node ID of the _Moving Base_. It is preferred over the _Rover_, whose navigation rate and data latency can degrade when corrections are intermittent |
 | [SENS\_GPS\_MASK](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS_MASK) | 7 | Blend both receivers using speed, horizontal position, and vertical position accuracy. This is the default value |
 
