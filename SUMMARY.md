@@ -159,6 +159,7 @@
   * [ARK DIST](sensor/ark-dist/README.md)
     * [Pinout](sensor/ark-dist/pinout.md)
     * [Firmware](sensor/ark-dist/firmware.md)
+    * [UART / MAVLink](sensor/ark-dist/uart-mavlink.md)
     * [Ardupilot Instructions](sensor/ark-dist/ardupilot-instructions.md)
     * [PX4 Instructions](sensor/ark-dist/px4-instructions.md)
     * [3D models & Case files](sensor/ark-dist/3d-models-and-case-files.md)
