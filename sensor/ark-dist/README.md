@@ -5,7 +5,7 @@ coverY: 38.38586956521739
 
 # ARK DIST
 
-Open source [DroneCAN](https://dronecan.github.io/) and [MAVLink](https://mavlink.io/en/) distance sensor module (Broadcom AFBR-S50).
+[DroneCAN](https://dronecan.github.io/) and [MAVLink](https://mavlink.io/en/) distance sensor module.
 
 ## Interfaces
 
