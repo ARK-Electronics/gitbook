@@ -2,6 +2,8 @@
 description: >-
   Pixhawk Payload Bus to Pixhawk-standard JST-GH, with a protected 5 V
   peripheral rail.
+cover: ../../../.gitbook/assets/IMG_6529 edited.JPG
+coverY: 0
 ---
 
 # ARK Pixhawk Payload Bus Breakout
