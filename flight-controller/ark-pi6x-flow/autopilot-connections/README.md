@@ -1,37 +1,34 @@
 # Autopilot Connections
 
-There are two primary communication channels between the Pi and the Flight Controller: Serial and USB. Both interfaces are direct board to board connections and have been tested up to 3Mbps.
+There are two communication channels between the Pi and the flight controller: USB and serial. Both are direct board-to-board connections tested up to 3 Mbps.
 
 <table><thead><tr><th width="138">Type</th><th width="189">Pi device path</th><th>Flight Controller</th></tr></thead><tbody><tr><td>USB</td><td> /dev/ttyACM0</td><td>USB</td></tr><tr><td>Serial</td><td>/dev/ttyAMA4</td><td>Telem2</td></tr></tbody></table>
 
 {% hint style="info" %}
-We recommend running MAVLink on USB and XRCE-DDS on Serial.
+We recommend running MAVLink on USB and XRCE-DDS on serial. ARK-OS's defaults do exactly this — see [Services](../../../ark-os/services.md).
 {% endhint %}
 
 ## USB
 
-The Pi CM4 has one USB 2.0 OTG interface. It is muxed between the external Micro-USB port and a built in USB hub. The USB hub connects to the flight controller, USB C port, and the two USB JST-GH ports.&#x20;
+The Pi CM4 has one USB 2.0 OTG interface, muxed between the external Micro USB port and an onboard USB hub. The hub connects the flight controller, the USB-C port, and the two USB JST-GH ports.
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2024-10-08 16-42-38.png" alt=""><figcaption></figcaption></figure>
 
-The USB connection to the autopilot is muxed with the external Pi micro USB port. When a micro USB cable is connected, the autopilot is disconnected from the Pi and the USB port on the Pi switches from host to device mode. After the micro USB cable is disconnected, a reboot is required to switch the USB port back to a host and connect to the autopilot and external ports.
+While a Micro USB cable is connected, the Pi switches to USB device mode and the flight controller (and all hub ports) are disconnected. After unplugging, reboot the Pi to restore them.
 
-For the USB port to be enabled on the ARKV6X flight controller, the VBUS\_SENSE pin must be driven high from the Pi. It is connected to pin GPIO27. There is a helper python script in ARK-OS to drive the pin high. \
-[https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/vbus\_enable.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/vbus_enable.py)
+For the flight controller's USB to enumerate, its VBUS\_SENSE pin (Pi GPIO27) must be driven high. This is set in `config.txt` at boot, so it works out of the box.
 
-## UART
+## Serial
 
-The UART connection between Pi and the autopilot is on Pi UART4 which appears as **/dev/ttyAMA4** in Linux. This goes to **Telem2** on the Flight Controller. This connection has been tested to 3Mbps.&#x20;
-
-Flow control needs to be set to "Force Off" when using Telem2 for MAVLINK. [MAV\_X\_FLOW\_CTRL ](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_1_FLOW_CTRL)set to "0".
+The serial connection is Pi UART4 (`/dev/ttyAMA4`) to **Telem2** on the flight controller, tested to 3 Mbps. When running MAVLink on Telem2, set flow control to off: [MAV\_x\_FLOW\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_1_FLOW_CTRL) = 0.
 
 ## Flight Controller Reset
 
-The flight controller can be hard reset using the reset signal connected to Pi pin GPIO25. The Pi cannot reset the flight controller while it is armed. The reset signal is gated by the nARMED signal from the flight controller.
+The Pi can hard-reset the flight controller via the reset signal on GPIO25. The reset is gated by the nARMED signal — the Pi cannot reset the flight controller while it is armed.
 
-There are a couple of helper scripts to reset the flight controller. One to drive the VBUS\_SENSE pin high before the reset to wait in the bootloader for 5 seconds. This is useful when updating the flight controller firmware and a hard reboot is needed. The other fast reset script drives the VBUS\_SENSE pin low before the reset to avoid the wait.\
-\
-Reset and wait in the bootloader\
-[https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset\_fmu\_wait\_bl.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset_fmu_wait_bl.py)\
-Reset quickly and skip the bootloader\
-[https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset\_fmu\_fast.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset_fmu_wait_bl.py)
+ARK-OS ships two reset helpers on `PATH`:
+
+```bash
+reset_fmu_fast.py       # reset and boot straight into the application
+reset_fmu_wait_bl.py    # reset and wait in the bootloader (for firmware flashing)
+```
