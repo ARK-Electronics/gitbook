@@ -1,18 +1,16 @@
----
-metaLinks:
-  alternates:
-    - ../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/micro-usb-console.md
----
+# Micro USB Console
 
-# USB-C Console
-
-Plugged into a host PC, the Jetson enumerates as one USB composite device (`0955:7020`) providing four functions:
+Plugging a Micro USB cable into the Jetson carrier disconnects the flight controller from the Jetson's USB and puts the Jetson in USB device mode. It enumerates as one USB composite device (`0955:7020`) providing four functions:
 
 | Function | Host sees |
 | -------- | --------- |
 | RNDIS + CDC-NCM networking | Two USB Ethernet interfaces; Jetson at `192.168.55.1` |
 | CDC-ACM serial | Virtual COM port with a login console |
 | Mass storage | `L4T-README` drive |
+
+{% hint style="warning" %}
+After disconnecting the Micro USB cable, reboot the Jetson to reconnect the flight controller USB.
+{% endhint %}
 
 ## Serial Console
 
@@ -32,5 +30,5 @@ Log in with your username and password (default `jetson` / `jetson`). Your user 
 On macOS the port is `/dev/tty.usbmodem*`; on Windows it is a `COMx` port in Device Manager.
 
 {% hint style="info" %}
-This is not a boot console. The gadget (`nv-l4t-usb-device-mode.service`) and login prompt (`serial-getty@ttyGS0.service`) start under `multi-user.target`, so there is no UEFI, bootloader, or early kernel output — and no port at all if boot hangs before that point. For boot-level debugging use UART2 (`/dev/ttyTHS2`), see [Connections](connections.md).
+This is not a boot console. The gadget (`nv-l4t-usb-device-mode.service`) and login prompt (`serial-getty@ttyGS0.service`) start under `multi-user.target`, so there is no UEFI, bootloader, or early kernel output — and no port at all if boot hangs before that point. For boot-level debugging use the physical UART console.
 {% endhint %}
