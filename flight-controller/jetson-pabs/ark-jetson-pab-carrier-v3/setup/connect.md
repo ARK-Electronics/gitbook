@@ -6,8 +6,6 @@ metaLinks:
 
 # Connect
 
-Three ways to reach the Jetson. USB-C needs no network setup and always works.
-
 ## USB-C
 
 Connect the USB-C port to your PC. The Jetson appears as a USB network device at `192.168.55.1`:
@@ -18,7 +16,7 @@ ssh jetson@192.168.55.1
 
 The web UI is reachable the same way at [http://192.168.55.1](http://192.168.55.1).
 
-The same cable also carries a serial login console, which works even when the USB network interface does not — see [USB-C Console](../micro-usb-console.md).
+The same cable also carries a serial login console — see [USB-C Console](../micro-usb-console.md).
 
 ## WiFi Hotspot
 

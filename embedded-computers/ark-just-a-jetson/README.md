@@ -9,7 +9,7 @@ The ARK Just A Jetson (JAJ) is a compact carrier board for the NVIDIA Jetson Ori
 
 ## Where to Start
 
-**Your bundle arrived preflashed.** It already runs ARK-OS. Go to [Set Up Your Jetson](setup/), then manage it from the ARK-UI web interface — no Linux required.
+**Your bundle arrived preflashed.** It already runs ARK-OS. Go to [Set Up Your Jetson](setup/), then manage it from the ARK-UI web interface.
 
 **You have a bare board, or you want to flash it yourself.** Install a Jetson module and NVMe SSD, then start at the [Flashing Guide](flashing-guide.md).
 

@@ -1,7 +1,5 @@
 # Connect
 
-Three ways to reach the Jetson. Micro USB needs no network setup and always works.
-
 ## Micro USB
 
 Connect the Micro USB port to your PC. The Jetson appears as a USB network device at `192.168.55.1`:
@@ -18,7 +16,7 @@ The web UI is reachable the same way at [http://192.168.55.1](http://192.168.55.
 The Micro USB port is muxed with the flight controller's USB connection. While a Micro USB cable is connected, the flight controller is disconnected from the Jetson and MAVLink routing will not work. After unplugging, **reboot the Jetson** to restore the flight controller connection.
 {% endhint %}
 
-The same cable also carries a serial login console, which works even when the USB network interface does not — see [Micro USB Console](../micro-usb-console.md).
+The same cable also carries a serial login console — see [Micro USB Console](../micro-usb-console.md).
 
 ## WiFi Hotspot
 
