@@ -7,13 +7,13 @@ structure:
 # Old file path -> current file, for pages whose file moved in the reorganization.
 # Keys are repo-relative paths without .md (a README is keyed by its directory).
 redirects:
-  embedded-computers/ark-just-a-jetson/apt-upgrade-hold-back-risky-packages: ark-os/apt-hold-back.md
-  embedded-computers/ark-just-a-jetson/ark-services: ark-os/README.md
-  embedded-computers/ark-just-a-jetson/ark-services/services: ark-os/services.md
-  embedded-computers/ark-just-a-jetson/getting-started: embedded-computers/ark-just-a-jetson/setup/README.md
-  embedded-computers/ark-just-a-jetson/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
-  embedded-computers/ark-just-a-jetson/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
-  embedded-computers/ark-just-a-jetson/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md
+  products/embedded-computers/ark-just-a-jetson/apt-upgrade-hold-back-risky-packages: ark-os/apt-hold-back.md
+  products/embedded-computers/ark-just-a-jetson/ark-services: ark-os/README.md
+  products/embedded-computers/ark-just-a-jetson/ark-services/services: ark-os/services.md
+  products/embedded-computers/ark-just-a-jetson/getting-started: embedded-computers/ark-just-a-jetson/setup/README.md
+  products/embedded-computers/ark-just-a-jetson/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
+  products/embedded-computers/ark-just-a-jetson/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
+  products/embedded-computers/ark-just-a-jetson/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md
   products/accessories/ark-pixhawk-payload-bus-breakout/3d-model: accessories/ark-pixhawk-payload-bus-breakout/3d-model.md
   products/accessories/ark-pixhawk-payload-bus-breakout: accessories/ark-pixhawk-payload-bus-breakout/README.md
   products/accessories/ark-pixhawk-payload-bus-breakout/pinout: accessories/ark-pixhawk-payload-bus-breakout/pinout.md
