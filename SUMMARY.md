@@ -28,6 +28,7 @@
     * [ARK-OS](embedded-computers/ark-just-a-jetson/ark-services/README.md)
       * [Services](embedded-computers/ark-just-a-jetson/ark-services/services.md)
     * [Connections](embedded-computers/ark-just-a-jetson/connections.md)
+    * [USB-C Console](embedded-computers/ark-just-a-jetson/usb-c-console.md)
     * [Camera Overlays](embedded-computers/ark-just-a-jetson/camera-overlays.md)
     * [Flashing Guide](embedded-computers/ark-just-a-jetson/flashing-guide.md)
     * [Pinout](embedded-computers/ark-just-a-jetson/pinout.md)
