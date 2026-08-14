@@ -27,4 +27,4 @@ Flash stock Raspberry Pi OS, then configure the carrier by hand:
 [pi-cm5-with-emmc.md](pi-cm5-with-emmc.md)
 {% endcontent-ref %}
 
-Then edit `config.txt` for the carrier ([After Flashing, Before Installing](after-flashing-before-installing.md)), boot, and [install ARK-OS](../ark-services/README.md).
+Then edit `config.txt` for the carrier ([After Flashing, Before Installing](after-flashing-before-installing.md)), boot, and [install ARK-OS](../using-ark-os.md).

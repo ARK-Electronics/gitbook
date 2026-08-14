@@ -5,7 +5,7 @@ There are two communication channels between the Pi and the flight controller: U
 <table><thead><tr><th width="138">Type</th><th width="189">Pi device path</th><th>Flight Controller</th></tr></thead><tbody><tr><td>USB</td><td> /dev/ttyACM0</td><td>USB</td></tr><tr><td>Serial</td><td>/dev/ttyAMA4</td><td>Telem2</td></tr></tbody></table>
 
 {% hint style="info" %}
-We recommend running MAVLink on USB and XRCE-DDS on serial. ARK-OS's defaults do exactly this — see [Services](../ark-services/services.md).
+We recommend running MAVLink on USB and XRCE-DDS on serial. ARK-OS's defaults do exactly this — see [Services](../../../ark-os/services.md).
 {% endhint %}
 
 ## USB

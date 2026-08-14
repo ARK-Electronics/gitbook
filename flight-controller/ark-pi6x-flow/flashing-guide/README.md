@@ -12,4 +12,4 @@ Flash Raspberry Pi OS first:
 [pi-cm4-with-emmc.md](pi-cm4-with-emmc.md)
 {% endcontent-ref %}
 
-Then edit `config.txt` for the carrier ([After Flashing, Before Installing](after-flashing-before-installing.md)), boot, and [install ARK-OS](../ark-services/).
+Then edit `config.txt` for the carrier ([After Flashing, Before Installing](after-flashing-before-installing.md)), boot, and [install ARK-OS](../using-ark-os.md).

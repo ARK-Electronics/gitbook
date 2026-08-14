@@ -46,11 +46,11 @@ The **UART0 Debug** connector (6-pin JST-GH) exposes the Compute Module's serial
 
 ## ARK-UI Web Interface
 
-ARK-OS hosts a web UI at [http://just-a-pi.local](http://just-a-pi.local) for managing the device: system info, network connections, services, and video streaming. See [ARK-OS](ark-services/README.md).
+ARK-OS hosts a web UI at [http://just-a-pi.local](http://just-a-pi.local) for managing the device: system info, network connections, services, and video streaming. See [ARK-OS](using-ark-os.md).
 
 ## Next Steps
 
-* [ARK-OS](ark-services/README.md) – The pre-installed services and web UI
+* [ARK-OS](using-ark-os.md) – The pre-installed services and web UI
 * [Flashing Guide](flashing-guide/README.md) – Image the Compute Module
 * [Pinout](pinout.md) – Connector and pin assignments
 * [Block Diagram](block-diagram.md) – Board architecture overview
