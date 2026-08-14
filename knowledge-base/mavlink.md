@@ -76,9 +76,9 @@ Flight controllers like the [ARKV6X](../flight-controller/arkv6x/) and [ARK FPV]
 
 ### Companion Computer Links
 
-The [ARK Jetson PAB Carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/) use both MAVLink and XRCE-DDS for communication between the companion computer (Jetson or Pi) and the integrated flight controller:
+The [ARK Jetson PAB Carrier](../flight-controller/jetson-pabs/ark-jetson-pab-carrier/) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/) use both MAVLink and XRCE-DDS for communication between the companion computer (Jetson or Pi) and the integrated flight controller:
 
-* **MAVLink** — used by the [QGroundControl connection](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection.md) and [MissionPlanner connection](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection.md) forwarded from the companion computer
+* **MAVLink** — used by the [QGroundControl connection](../flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection.md) and [MissionPlanner connection](../flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection.md) forwarded from the companion computer
 * **XRCE-DDS** — used by [ROS 2 applications](../ros2-and-px4/ros2-and-px4-teleop-example.md) running on the companion computer
 
 ### MAVCAN

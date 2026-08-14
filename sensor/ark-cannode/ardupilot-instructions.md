@@ -33,6 +33,16 @@ Flash the ARK CANnode with AP\_Periph firmware using the DroneCAN GUI Tool. See 
 4. Double-click the CANnode in the node list
 5. Click **Update Firmware** and select the `.bin` AP\_Periph firmware file
 
+### CANnode over SWD
+
+If the CANnode has no bootloader and does not show up on the CAN bus, flash it with an ST-LINK using the combined bootloader + application image:
+
+```bash
+st-flash --format ihex write AP_Periph_with_bl.hex
+```
+
+Do not write `AP_Periph.bin` to `0x08000000` — the bootloader lives there and the application starts at `0x08010000`. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes) for details.
+
 ## Gripper/Dropper Setup
 
 This example configures the first CANnode PWM output as a servo gripper for a dropping mechanism.

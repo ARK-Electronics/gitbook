@@ -1,0 +1,67 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+# Old file path -> current file, for pages whose file moved in the reorganization.
+# Keys are repo-relative paths without .md (a README is keyed by its directory).
+redirects:
+  products/embedded-computers/ark-just-a-jetson/apt-upgrade-hold-back-risky-packages: ark-os/apt-hold-back.md
+  products/embedded-computers/ark-just-a-jetson/ark-services: ark-os/README.md
+  products/embedded-computers/ark-just-a-jetson/ark-services/services: ark-os/services.md
+  products/embedded-computers/ark-just-a-jetson/getting-started: embedded-computers/ark-just-a-jetson/setup/README.md
+  products/embedded-computers/ark-just-a-jetson/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
+  products/embedded-computers/ark-just-a-jetson/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
+  products/embedded-computers/ark-just-a-jetson/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md
+  products/accessories/ark-pixhawk-payload-bus-breakout/3d-model: accessories/ark-pixhawk-payload-bus-breakout/3d-model.md
+  products/accessories/ark-pixhawk-payload-bus-breakout: accessories/ark-pixhawk-payload-bus-breakout/README.md
+  products/accessories/ark-pixhawk-payload-bus-breakout/pinout: accessories/ark-pixhawk-payload-bus-breakout/pinout.md
+  products/accessories/ark-primary-avionics-adapter/3d-model: accessories/ark-primary-avionics-adapter/3d-model.md
+  products/accessories/ark-primary-avionics-adapter: accessories/ark-primary-avionics-adapter/README.md
+  products/accessories/ark-primary-avionics-adapter/pinout: accessories/ark-primary-avionics-adapter/pinout.md
+  products/accessories/ark-secondary-avionics-adapter/3d-model: accessories/ark-secondary-avionics-adapter/3d-model.md
+  products/accessories/ark-secondary-avionics-adapter: accessories/ark-secondary-avionics-adapter/README.md
+  products/accessories/ark-secondary-avionics-adapter/pinout: accessories/ark-secondary-avionics-adapter/pinout.md
+  products/flight-controller/jetson-pabs: flight-controller/jetson-pabs/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/3d-models-and-case-files: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/3d-models-and-case-files.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/apt-upgrade-hold-back-risky-packages: ark-os/apt-hold-back.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/ark-services: ark-os/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/ark-services/services: ark-os/services.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/missionplanner-ardupilot-connection: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/missionplanner-ardupilot-connection.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/qgroundcontrol-connection: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/autopilot-connections/qgroundcontrol-connection.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/block-diagram: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/block-diagram.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/camera-overlays: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/camera-overlays.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/flashing-guide: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/flashing-guide.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/getting-started: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/setup/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/gpio-control: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/gpio-control.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/micro-usb-console: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/micro-usb-console.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/pinout: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/pinout.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/power-cycling-usb-ports: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/power-cycling-usb-ports.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/updating-the-flight-controller-firmware: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/updating-the-flight-controller-firmware.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/3d-models-and-case-files: flight-controller/jetson-pabs/ark-jetson-pab-carrier/3d-models-and-case-files.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier: flight-controller/jetson-pabs/ark-jetson-pab-carrier/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/apt-upgrade-hold-back-risky-packages: ark-os/apt-hold-back.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/ark-services: ark-os/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/ark-services/services: ark-os/services.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections: flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection: flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/missionplanner-ardupilot-connection.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection: flight-controller/jetson-pabs/ark-jetson-pab-carrier/autopilot-connections/qgroundcontrol-connection.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/block-diagram: flight-controller/jetson-pabs/ark-jetson-pab-carrier/block-diagram.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/camera-overlays: flight-controller/jetson-pabs/ark-jetson-pab-carrier/camera-overlays.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/flashing-guide: flight-controller/jetson-pabs/ark-jetson-pab-carrier/flashing-guide.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/getting-started: flight-controller/jetson-pabs/ark-jetson-pab-carrier/setup/README.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/gpio-control: flight-controller/jetson-pabs/ark-jetson-pab-carrier/gpio-control.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/micro-usb-console: flight-controller/jetson-pabs/ark-jetson-pab-carrier/micro-usb-console.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/mini-displayport: flight-controller/jetson-pabs/ark-jetson-pab-carrier/mini-displayport.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/pinout: flight-controller/jetson-pabs/ark-jetson-pab-carrier/pinout.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/power-cycling-usb-ports: flight-controller/jetson-pabs/ark-jetson-pab-carrier/power-cycling-usb-ports.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/updating-the-flight-controller-firmware: flight-controller/jetson-pabs/ark-jetson-pab-carrier/updating-the-flight-controller-firmware.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
+  products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md

@@ -53,7 +53,7 @@ Common baud rates in the ARK/PX4 ecosystem:
 | 921600    | High-speed MAVLink, companion computer links (see note below) |
 
 {% hint style="warning" %}
-**921600 baud and above requires hardware flow control** (CTS/RTS) unless the UART connection is very short (PCB-to-PCB, like the on-board link between the Jetson and flight controller on the [ARK Jetson PAB Carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/)). Over cables of any significant length, data will be lost at these speeds without flow control. If you must run high baud rates over a cable, use a TELEM port with CTS/RTS lines connected.
+**921600 baud and above requires hardware flow control** (CTS/RTS) unless the UART connection is very short (PCB-to-PCB, like the on-board link between the Jetson and flight controller on the [ARK Jetson PAB Carrier](../flight-controller/jetson-pabs/ark-jetson-pab-carrier/)). Over cables of any significant length, data will be lost at these speeds without flow control. If you must run high baud rates over a cable, use a TELEM port with CTS/RTS lines connected.
 {% endhint %}
 
 ### Data Format
@@ -88,7 +88,7 @@ MAVLink telemetry between a flight controller and a ground station radio uses UA
 
 ### Companion Computers
 
-The [ARK Jetson PAB Carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/) use UART connections between the companion computer and the flight controller MCU for MAVLink or XRCE-DDS communication.
+The [ARK Jetson PAB Carrier](../flight-controller/jetson-pabs/ark-jetson-pab-carrier/) and [ARK Pi6X Flow](../flight-controller/ark-pi6x-flow/) use UART connections between the companion computer and the flight controller MCU for MAVLink or XRCE-DDS communication.
 
 ## Common Pitfalls
 

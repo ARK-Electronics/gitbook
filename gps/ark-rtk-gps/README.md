@@ -21,9 +21,9 @@ Aside from the receiver, the L1L5 variant is identical to the standard ARK RTK G
 
 ## Firmware
 
-Follow the steps for updating the firmware through the flight controller.&#x20;
+Follow the steps for updating the firmware through the flight controller — see [Firmware Update](px4-instructions.md#firmware-update) in the PX4 instructions.
 
-{% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
+If the node does not appear on the CAN bus — for example after a bad flash that erased the bootloader — recover it over SWD with an ST-LINK. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
 
 See the latest firmware below.
 

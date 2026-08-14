@@ -151,6 +151,10 @@ Navigate to the directory containing your firmware binary, then flash:
 st-flash write firmware.bin 0x08000000
 ```
 
+{% hint style="warning" %}
+`0x08000000` is the start of flash. It is the correct address for a single-image firmware or a bootloader, but **not** for a DroneCAN node application — see [Flashing DroneCAN Nodes](#flashing-dronecan-nodes) below.
+{% endhint %}
+
 **Expected output:**
 
 ```
@@ -168,6 +172,66 @@ file firmware.bin md5 checksum: abc123..., stlink checksum: 0x00abcdef
 3. Click **File > Open File** and select your firmware binary (.bin file)
 4. Click **Target > Program & Verify**
 5. Verify the success message in the log window
+
+***
+
+## Flashing DroneCAN Nodes
+
+DroneCAN nodes — ARK RTK GPS, ARK CANnode, ARK Flow, ARK MAG, ARK DIST, and the other CAN products — run **two** separate images: a bootloader at the start of flash and the application at a fixed offset above it. On ARK CAN nodes the bootloader region is 64 KB, so the application lives at `0x08010000`, not `0x08000000`. This applies to both ArduPilot AP\_Periph and PX4 CAN node firmware.
+
+| Image | Flash address |
+|-------|---------------|
+| Bootloader (ArduPilot CAN bootloader or PX4 `canbootloader`) | `0x08000000` |
+| Application (AP\_Periph or PX4 CAN node firmware) | `0x08010000` |
+
+{% hint style="warning" %}
+Writing the application to `0x08000000` overwrites the bootloader. `st-flash` reports success, but the node boots with a single LED flash and then goes dark — it never appears in the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md) or the Mission Planner DroneCAN/UAVCAN tab. If you see this after an SWD flash, reflash with the combined image below.
+{% endhint %}
+
+### Recommended: Flash the Combined Bootloader + Application Image
+
+ArduPilot publishes a combined bootloader and application image as an Intel HEX file. HEX files carry their own load addresses, so there is no offset to get wrong. This is the recommended way to flash a node over SWD, and the only way to bring up a node that has no bootloader at all.
+
+Download `AP_Periph_with_bl.hex` for your board from the [ArduPilot firmware server](https://firmware.ardupilot.org/AP_Periph/stable/), then flash it:
+
+```bash
+st-flash --format ihex write AP_Periph_with_bl.hex
+```
+
+Power-cycle the node afterward. It should enumerate on the CAN bus within a few seconds.
+
+### Firmware Files
+
+Each board directory on the ArduPilot firmware server contains several files. Pick the one that matches how you are flashing:
+
+| File | Contents | Use with |
+|------|----------|----------|
+| `AP_Periph_with_bl.hex` | Bootloader + application | ST-LINK / SWD — no address needed |
+| `AP_Periph.bin` | Application only | ST-LINK / SWD, written at `0x08010000` |
+| `AP_Periph.apj` | Application only | [DroneCAN GUI Tool](dronecan-gui-tool-guide.md) or flight controller CAN update |
+
+### Flashing the Application Only
+
+If the node already has a working bootloader and you only want to replace the application, write the `.bin` at the application offset:
+
+```bash
+st-flash write AP_Periph.bin 0x08010000
+```
+
+Prefer the combined HEX unless you have a specific reason not to — an application flashed at the wrong address is the most common way to leave a node unresponsive.
+
+{% hint style="info" %}
+Once a bootloader is installed, SWD is no longer needed for routine updates. Firmware can be pushed over CAN from the flight controller's SD card or with the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md).
+{% endhint %}
+
+### PX4 Nodes
+
+PX4 CAN nodes use the same split — the PX4 `canbootloader` at `0x08000000` and the node application at `0x08010000`. Flash the bootloader first, then the application at its offset. PX4 does not publish a combined image, so both writes are separate:
+
+```bash
+st-flash write canbootloader.bin 0x08000000
+st-flash write firmware.bin 0x08010000
+```
 
 ***
 
@@ -236,7 +300,11 @@ Then log out and back in.
 
 * Ensure the correct firmware binary for your target
 * Try erasing flash first with `st-flash erase`
-* Check that the flash address (0x08000000) is correct for your target
+* Check that the flash address is correct for your target — `0x08000000` for a single-image firmware or a bootloader, `0x08010000` for a DroneCAN node application
+
+### Node Flashes Its LED Once at Boot, Then Nothing
+
+The application was almost certainly written over the bootloader at `0x08000000`. The node has no bootloader to hand off to, so it never joins the CAN bus and no DroneCAN tool will see it. Reflash with the combined image — see [Flashing DroneCAN Nodes](#flashing-dronecan-nodes).
 
 ### Serial Console Shows Garbage Characters
 

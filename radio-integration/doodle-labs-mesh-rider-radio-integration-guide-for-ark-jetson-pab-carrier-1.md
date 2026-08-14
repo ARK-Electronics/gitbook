@@ -127,4 +127,4 @@ Resources:<br>
 
 {% embed url="https://techlibrary.doodlelabs.com/whats-in-the-box-w/quick-start-guide-ch2#physical-setup-instructions" %}
 
-[ark-jetson-pab-carrier](../products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/ "mention")
+[ark-jetson-pab-carrier](../flight-controller/jetson-pabs/ark-jetson-pab-carrier/ "mention")

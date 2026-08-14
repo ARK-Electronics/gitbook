@@ -14,10 +14,6 @@ Step-by-step guides for integrating third-party radios with ARK carrier boards.
 [dtc-blusdr-radio-integration-guide-for-ark-jetson-pab-carrier.md](dtc-blusdr-radio-integration-guide-for-ark-jetson-pab-carrier.md)
 {% endcontent-ref %}
 
-{% content-ref url="doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md" %}
-[doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md](doodle-labs-nimble-integration-guide-for-ark-jetson-pab-carrier.md)
-{% endcontent-ref %}
-
 {% content-ref url="mobilicom-skyhopper-pro-integration-guide-for-ark-jetson-pab-carrier.md" %}
 [mobilicom-skyhopper-pro-integration-guide-for-ark-jetson-pab-carrier.md](mobilicom-skyhopper-pro-integration-guide-for-ark-jetson-pab-carrier.md)
 {% endcontent-ref %}
