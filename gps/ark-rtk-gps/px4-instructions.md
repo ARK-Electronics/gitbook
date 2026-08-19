@@ -96,6 +96,7 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 | `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
 | `GPS_UBX_BAUD1` | F9P UART1 baudrate. Board default is `921600` |
 | `GPS_UBX_BAUD2` | F9P UART2 baudrate. Default is `230400` |
+| `GPS_UBX_MODE` | Set to `7` to make the `UART2` connector a UBX diagnostic port for [u-center](https://docs.px4.io/main/en/gps_compass/u-center.html), at the `GPS_UBX_BAUD2` baudrate |
 
 ***
 
