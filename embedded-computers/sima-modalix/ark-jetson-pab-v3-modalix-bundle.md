@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/IMG_5983_edited.JPG
+cover: ../../.gitbook/assets/IMG_6676_edited.JPG
 coverY: 0
 ---
 
@@ -26,23 +26,23 @@ Use the PAB V3 [Hardware Reference](../../flight-controller/jetson-pabs/ark-jets
 Do not use NVIDIA SDK Manager or L4T. The SOM boots from built-in eMMC; an NVMe SSD is not required.
 
 1. Flash SiMa Modalix eLxr and the ARK PAB V3 carrier overlay — [meta-ark-simaai](https://github.com/ARK-Electronics/meta-ark-simaai).
-2. Install the ARK-OS `modalix` package — see [ARK-OS](#ark-os).
+2. Install the ARK-OS `modalix` package — see [ARK-OS](ark-jetson-pab-v3-modalix-bundle.md#ark-os).
 3. ML tooling — [SiMa.ai Palette](https://developer.sima.ai/) and [SiMa.ai hardware docs](https://developer.sima.ai/hardware).
 
 SiMa eLxr default login: user `sima`, password `edgeai`, hostname `modalix`. ARK-OS services run as `sima`.
 
 ## Interface Differences
 
-| Interface | Modalix |
-| --------- | ------- |
-| UART2 | Works as a console (UART2 debug header) |
-| CAN | No SOM CAN. Flight-controller CAN on the avionics connectors is unchanged. |
-| HDMI | Works only if the Modalix SOM was ordered with the HDMI option. ARK units will not have HDMI. The V3 Micro HDMI connector is unused. |
-| PCIE2 | Only works when HDMI is not used. On ARK units (no HDMI), PCIE2 is available |
-| M.2 Key E | No PCIE |
-| USB-C | USB 3.0 works as a host. USB 2.0 on that connector goes to an FTDI console on the SOM (not Jetson gadget device mode) |
-| UART0 | Works without flow control (no RTS/CTS) |
-| UART1 | Does not work. On this carrier UART1 is the SOM-to-flight-controller serial (Telem2). |
+| Interface | Modalix                                                                                                                              |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| UART2     | Works as a console (UART2 debug header)                                                                                              |
+| CAN       | No SOM CAN. Flight-controller CAN on the avionics connectors is unchanged.                                                           |
+| HDMI      | Works only if the Modalix SOM was ordered with the HDMI option. ARK units will not have HDMI. The V3 Micro HDMI connector is unused. |
+| PCIE2     | Only works when HDMI is not used. On ARK units (no HDMI), PCIE2 is available                                                         |
+| M.2 Key E | No PCIE                                                                                                                              |
+| USB-C     | USB 3.0 works as a host. USB 2.0 on that connector goes to an FTDI console on the SOM (not Jetson gadget device mode)                |
+| UART0     | Works without flow control (no RTS/CTS)                                                                                              |
+| UART1     | Does not work. On this carrier UART1 is the SOM-to-flight-controller serial (Telem2).                                                |
 
 Do not install the Jetson Wi-Fi 6E / Remote ID M.2 option — M.2 Key E has no PCIE on Modalix.
 
@@ -103,11 +103,11 @@ Compared with [ARK-OS](../../ark-os/) on Jetson:
 
 Vendor peak ratings, not a lab benchmark:
 
-| Module | Peak TOPS | Rated power |
-| ------ | --------- | ----------- |
-| SiMa.ai Modalix | 50 TOPS (BF16/INT8/INT16) | sub-10W |
-| NVIDIA Jetson Orin Nano 8GB | 40 TOPS; Super 67 TOPS | 25W |
-| NVIDIA Jetson Orin NX 16GB | 100 TOPS; Super 157 TOPS | 40W |
+| Module                      | Peak TOPS                 | Rated power |
+| --------------------------- | ------------------------- | ----------- |
+| SiMa.ai Modalix             | 50 TOPS (BF16/INT8/INT16) | sub-10W     |
+| NVIDIA Jetson Orin Nano 8GB | 40 TOPS; Super 67 TOPS    | 25W         |
+| NVIDIA Jetson Orin NX 16GB  | 100 TOPS; Super 157 TOPS  | 40W         |
 
 Modalix has higher TOPS per watt than Orin Nano Super and Orin NX Super at those rated points. Peak TOPS on Super NX is higher.
 
