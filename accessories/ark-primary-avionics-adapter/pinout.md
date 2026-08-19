@@ -12,22 +12,22 @@ description: Pin assignments for the ARK Primary Avionics Adapter connectors.
 | --- | ------------------------------ | ---------------- |
 | 1   | VDD\_5V\_SBUS\_RC              | 5V               |
 | 2   | IO\_SBUS\_INPUT\_EXT           | 3.3V             |
-| 3   | GND                            | GND              |
+| 3   | nSAFETY\_SWITCH\_IN\_EXT       | 3.3V             |
 | 4   | GND                            | GND              |
-| 5   | nSAFETY\_SWITCH\_IN\_EXT       | 3.3V             |
-| 6   | nSAFETY\_SWITCH\_LED\_OUT\_EXT | 3.3V             |
-| 7   | 3V3\_FMU                       | 3.3V             |
-| 8   | BUZZER\_EXT                    | 24V (Open Drain) |
+| 5   | nSAFETY\_SWITCH\_LED\_OUT\_EXT | 3.3V             |
+| 6   | BUZZER\_EXT                    | 24V (Open Drain) |
+| 7   | GND                            | GND              |
+| 8   | 3V3\_FMU                       | 3.3V             |
 | 9   | UART7\_TX\_TELEM1\_EXT         | 3.3V             |
 | 10  | UART7\_CTS\_TELEM1\_EXT        | 3.3V             |
 | 11  | UART7\_RX\_TELEM1\_EXT         | 3.3V             |
 | 12  | UART7\_RTS\_TELEM1\_EXT        | 3.3V             |
 | 13  | VDD\_5V\_HIPOWER               | 5V               |
 | 14  | GND                            | GND              |
-| 15  | GND                            | GND              |
+| 15  | VDD\_5V\_HIPOWER               | 5V               |
 | 16  | GND                            | GND              |
 | 17  | GND                            | GND              |
-| 18  | GND                            | GND              |
+| 18  | USART1\_TX\_GPS1\_EXT          | 3.3V             |
 | 19  | I2C1\_SCL\_GPS1\_EXT           | 3.3V             |
 | 20  | USART1\_RX\_GPS1\_EXT          | 3.3V             |
 | 21  | I2C1\_SDA\_GPS1\_EXT           | 3.3V             |
@@ -49,7 +49,7 @@ description: Pin assignments for the ARK Primary Avionics Adapter connectors.
 | 37  | CAN1\_N                        | 5V               |
 | 38  | GND                            | GND              |
 | 39  | GND                            | GND              |
-| 40  | GND                            | GND              |
+| 40  | VDD\_5V\_PERIPH                | 5V               |
 
 ### RC input
 
@@ -87,8 +87,8 @@ description: Pin assignments for the ARK Primary Avionics Adapter connectors.
 | 5   | I2C1\_SDA\_GPS1\_EXT           | 3.3V             |
 | 6   | nSAFETY\_SWITCH\_IN\_EXT       | 3.3V             |
 | 7   | nSAFETY\_SWITCH\_LED\_OUT\_EXT | 3.3V             |
-| 8   | BUZZER\_EXT                    | 24V (Open Drain) |
-| 9   | 3V3\_FMU                       | 3.3V             |
+| 8   | 3V3\_FMU                       | 3.3V             |
+| 9   | BUZZER\_EXT                    | 24V (Open Drain) |
 | 10  | GND                            | GND              |
 
 ### PWM
