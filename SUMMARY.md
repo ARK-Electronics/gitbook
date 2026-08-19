@@ -60,6 +60,8 @@
     * [Pinout](embedded-computers/ark-just-a-pi/pinout.md)
     * [Block Diagram](embedded-computers/ark-just-a-pi/block-diagram.md)
     * [3D Model](embedded-computers/ark-just-a-pi/3d-model.md)
+  * [SiMa.ai Modalix](embedded-computers/sima-modalix/README.md)
+    * [ARK Just A Jetson Modalix Bundle](embedded-computers/sima-modalix/ark-just-a-jetson-modalix-bundle.md)
 * [Flight Controllers](flight-controller/README.md)
   * [ARK FPV](flight-controller/ark-fpv/README.md)
     * [Pinout](flight-controller/ark-fpv/pinout.md)
