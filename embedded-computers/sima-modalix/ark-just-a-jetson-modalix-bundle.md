@@ -1,6 +1,6 @@
 ---
 cover: ../../.gitbook/assets/IMG_6613_edited.JPG
-coverY: 333.37784522003034
+coverY: 0
 ---
 
 # ARK Just A Jetson Modalix Bundle
