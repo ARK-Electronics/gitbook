@@ -34,8 +34,8 @@ ARK GPS and RTK GPS modules for precision navigation.
 [ark-teseo-gps](ark-teseo-gps/)
 {% endcontent-ref %}
 
-{% content-ref url="ark-x20-rtk-gps.md" %}
-[ark-x20-rtk-gps.md](ark-x20-rtk-gps.md)
+{% content-ref url="ark-x20-rtk-gps/" %}
+[ark-x20-rtk-gps](ark-x20-rtk-gps/)
 {% endcontent-ref %}
 
 ## Comparison
@@ -48,7 +48,7 @@ ARK GPS and RTK GPS modules for precision navigation.
 | [ARK TESEO GPS](ark-teseo-gps/) | ST Teseo-LIV4F | L1/L5 | — | — | Jamming/spoofing detection, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK RTK GPS](ark-rtk-gps/) | u-blox ZED-F9P | L1/L2 | Yes | Moving baseline (two units) | Jamming/spoofing detection, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK RTK GPS L1L5](ark-rtk-gps/README.md#l1l5-variant) | u-blox ZED-F9P-15B | L1/L5 | Yes | — | Jamming/spoofing detection, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
-| [ARK X20 RTK GPS](ark-x20-rtk-gps.md) | u-blox ZED-X20P | L1/L2/L5 | Yes | Moving baseline (two units, requires X20P firmware 2.10+) | Advanced anti-jamming/anti-spoofing, triple-band resilience | DroneCAN | Magnetometer, barometer, IMU |
+| [ARK X20 RTK GPS](ark-x20-rtk-gps/) | u-blox ZED-X20P | L1/L2/L5 | Yes | Moving baseline (two units, requires X20P firmware 2.10+) | Advanced anti-jamming/anti-spoofing, triple-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK MOSAIC-X5 RTK GPS](ark-mosaic-x5-rtk-gps/) | Septentrio mosaic-X5 | L1/L2/L5 | Yes | — | AIM+ anti-jamming/anti-spoofing, OSNMA, triple-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK G5 RTK GPS](ark-g5-rtk-gps/) | Septentrio mosaic-G5 P3 | L1/L5 | Yes | — | AIM+ anti-jamming/anti-spoofing, OSNMA, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK G5H RTK Heading GPS](ark-g5-rtk-heading-gps/) | Septentrio mosaic-G5 P3H | L1/L5 | Yes | Dual antenna (internal moving baseline) | AIM+ anti-jamming/anti-spoofing, OSNMA, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |

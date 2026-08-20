@@ -1,6 +1,6 @@
 # PX4 Instructions
 
-Find most up to date documentation at [https://docs.px4.io/main/en/dronecan/ark\_cannode.html](https://docs.px4.io/main/en/dronecan/ark_cannode.html)
+Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_cannode.html](https://docs.px4.io/main/en/dronecan/ark_cannode.html)
 
 ARK CANnode runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html). As such, it supports firmware update over the CAN bus and [dynamic node allocation](https://docs.px4.io/main/en/dronecan/#node-id-allocation).
 

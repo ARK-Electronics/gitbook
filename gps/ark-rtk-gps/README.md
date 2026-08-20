@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK RTK GPS
 
-Find most up to date documentation in the PX4 Documentation [https://docs.px4.io/main/en/dronecan/ark\_rtk\_gps.html](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html)
+Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_rtk\_gps.html](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html)
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_RTK_GPS)
 

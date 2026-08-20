@@ -1,6 +1,6 @@
 # PX4 Instructions
 
-Find most up to date documentation at [https://docs.px4.io/main/en/dronecan/ark\_gps.html](https://docs.px4.io/main/en/dronecan/ark_gps.html)
+Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_gps.html](https://docs.px4.io/main/en/dronecan/ark_gps.html)
 
 ### Hardware Setup <a href="#hardware-setup" id="hardware-setup"></a>
 

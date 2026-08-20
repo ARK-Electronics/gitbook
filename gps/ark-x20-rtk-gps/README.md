@@ -1,27 +1,29 @@
 ---
-cover: ../.gitbook/assets/IMG_5106_edited.JPG
+cover: ../../.gitbook/assets/IMG_5106_edited.JPG
 coverY: 2.777482269503546
 ---
 
 # ARK X20 RTK GPS
 
-Please read through the PX4 Documentation for DroneCAN GPS parameter configuration.
+[ARK X20 RTK GPS](https://arkelectron.com/product/ark-x20-rtk-gps/)
 
-{% embed url="https://docs.px4.io/main/en/dronecan/#gps" %}
+The ARK X20 RTK GPS is built around the u-blox ZED-X20P all-band (L1/L2/L5) RTK GNSS module, with an onboard magnetometer, barometer, IMU, safety button, and buzzer.
+
+Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_x20\_rtk\_gps](https://docs.px4.io/main/en/dronecan/ark_x20_rtk_gps)
 
 ## Firmware
 
-Follow the steps for updating the firmware through the flight controller.&#x20;
+Follow the steps for updating the firmware through the flight controller — see [Firmware Update](px4-instructions.md#firmware-update) in the PX4 instructions.
 
-{% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
+If the node does not appear on the CAN bus — for example after a bad flash that erased the bootloader — recover it over SWD with an ST-LINK. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
 
 See the latest firmware below.
 
-{% file src="../.gitbook/assets/89-1.16.47e04790.uavcan.bin" %}
+{% file src="../../.gitbook/assets/89-1.16.47e04790.uavcan.bin" %}
 ARK X20 GPS Firmware
 {% endfile %}
 
-{% file src="../.gitbook/assets/ark_x20-gps_canbootloader.bin" %}
+{% file src="../../.gitbook/assets/ark_x20-gps_canbootloader.bin" %}
 ARK X20 GPS Bootloader
 {% endfile %}
 
