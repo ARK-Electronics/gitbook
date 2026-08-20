@@ -1,13 +1,13 @@
 # PX4 Instructions
 
-The ARK RTK GPS runs the [PX4 DroneCAN firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html), so it supports firmware update over the CAN bus and dynamic node allocation.
+The ARK X20 RTK GPS runs the [PX4 DroneCAN firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html), so it supports firmware update over the CAN bus and dynamic node allocation.
 
-* Firmware target: `ark_can-rtk-gps_default`
-* Bootloader target: `ark_can-rtk-gps_canbootloader`
-* Board ID: `82`
+* Firmware target: `ark_x20-gps_default`
+* Bootloader target: `ark_x20-gps_canbootloader`
+* Board ID: `89`
 
 {% hint style="warning" %}
-The flight controller must have an SD card installed. PX4 uses it for dynamic node allocation and for CAN firmware update — without one the ARK RTK GPS is never assigned a node ID and will not appear on the bus.
+The flight controller must have an SD card installed. PX4 uses it for dynamic node allocation and for CAN firmware update — without one the ARK X20 RTK GPS is never assigned a node ID and will not appear on the bus.
 {% endhint %}
 
 ***
@@ -18,15 +18,15 @@ The flight controller must have an SD card installed. PX4 uses it for dynamic no
 
 PX4 flashes DroneCAN nodes automatically at boot. This is the recommended method — it needs no hardware beyond the flight controller.
 
-1. Download the firmware from the [ARK RTK GPS](README.md) page, or build `ark_can-rtk-gps_default` yourself.
+1. Download the firmware from the [ARK X20 RTK GPS](README.md) page, or build `ark_x20-gps_default` yourself.
 2. Copy the `.uavcan.bin` file to the root of the flight controller's SD card.
 3. Set [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` (or `3`) and power cycle the vehicle.
 4. Wait for the update to finish. The node's CAN LED blinks blue and red rapidly while flashing, then returns to fast blinking green.
 
-On boot PX4 reads the board ID from the metadata block embedded in the binary, moves the file to `/fs/microsd/ufw/82.bin`, and deletes it from the SD card root. The file name does not matter — only the embedded metadata is used to match the file to the node.
+On boot PX4 reads the board ID from the metadata block embedded in the binary, moves the file to `/fs/microsd/ufw/89.bin`, and deletes it from the SD card root. The file name does not matter — only the embedded metadata is used to match the file to the node.
 
 {% hint style="info" %}
-The firmware stays in `/fs/microsd/ufw/` and PX4 re-flashes any ARK RTK GPS on the bus whose firmware does not match it. This keeps a replacement node in sync automatically, but it also means you must delete `/fs/microsd/ufw/82.bin` before flashing a different version by any other method.
+The firmware stays in `/fs/microsd/ufw/` and PX4 re-flashes any ARK X20 RTK GPS on the bus whose firmware does not match it. This keeps a replacement node in sync automatically, but it also means you must delete `/fs/microsd/ufw/89.bin` before flashing a different version by any other method.
 {% endhint %}
 
 {% hint style="info" %}
@@ -43,18 +43,18 @@ Use this when the node is not connected to a PX4 flight controller, or when you 
 Upload the `.uavcan.bin` file to the node — see the [DroneCAN GUI Tool Guide](../../knowledge-base/dronecan-gui-tool-guide.md) for connection and firmware upload steps.
 
 {% hint style="warning" %}
-If the flight controller still has firmware in `/fs/microsd/ufw/`, it will re-flash the node on the next boot and undo the update. Delete `/fs/microsd/ufw/82.bin` from the SD card first.
+If the flight controller still has firmware in `/fs/microsd/ufw/`, it will re-flash the node on the next boot and undo the update. Delete `/fs/microsd/ufw/89.bin` from the SD card first.
 {% endhint %}
 
 ### Updating to AP\_Periph
 
-To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. An ArduPilot flight controller can act as the CAN adapter for this, so no USB-to-CAN adapter is needed. See [ArduPilot Instructions](ardupilot-instructions.md).
+To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. Support is in review upstream — see [ArduPilot Instructions](ardupilot-instructions.md).
 
 ***
 
 ## Single GPS Configuration
 
-Connect the ARK RTK GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable. The recommended mounting orientation is with the connectors pointing towards the **back of the vehicle**.
+Connect the ARK X20 RTK GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable. The recommended mounting orientation is with the connectors pointing towards the **back of the vehicle**.
 
 ### Flight Controller Parameters
 
@@ -75,7 +75,7 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 |-----------|-------------|
 | [UAVCAN\_SUB\_BARO](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BARO) | Set to `1` to subscribe to DroneCAN barometer messages |
 | [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` on the node |
-| [UAVCAN\_SUB\_BTN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BTN) | Set to `1` to use the safety switch on the ARK RTK GPS |
+| [UAVCAN\_SUB\_BTN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_BTN) | Set to `1` to use the safety switch on the ARK X20 RTK GPS |
 | [SENS\_GPS0\_OFFX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_OFFX) / [SENS\_GPS0\_OFFY](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_OFFY) / [SENS\_GPS0\_OFFZ](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_OFFZ) | GPS antenna offset from the vehicle center of gravity (meters). On PX4 v1.17 and earlier these are `EKF2_GPS_POS_X/Y/Z` |
 | [SENS\_GPS0\_ID](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS0_ID) | Device ID of the receiver the `SENS_GPS0_*` offsets apply to. With two receivers, use `SENS_GPS0_ID` and `SENS_GPS1_ID` to match each set of offsets — matching by instance index is only reliable for serial GPS |
 
@@ -94,8 +94,8 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 | `CANNODE_NODE_ID` | Static node ID, `1`-`125`. Leave at `0` (default) to use dynamic node allocation |
 | `CANNODE_PUB_MAG` | Publish magnetometer messages on the CAN bus. Enabled by default |
 | `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
-| `GPS_UBX_BAUD1` | F9P UART1 baudrate. Board default is `921600` |
-| `GPS_UBX_BAUD2` | F9P UART2 baudrate. Default is `230400` |
+| `GPS_UBX_BAUD1` | X20P UART1 baudrate. Board default is `921600` |
+| `GPS_UBX_BAUD2` | X20P UART2 baudrate. Default is `230400` |
 | `GPS_UBX_MODE` | Set to `7` to make the `UART2` connector a UBX diagnostic port for [u-center](https://docs.px4.io/main/en/gps_compass/u-center.html), at the `GPS_UBX_BAUD2` baudrate |
 
 ***
@@ -104,13 +104,17 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 
 Centimeter-level absolute position requires RTCM corrections from a fixed base station on the ground. For the base station setup and the flight controller and CAN node parameters that carry the corrections onto the CAN bus, see [ARK RTK Base > PX4 Instructions](../ark-rtk-base/px4-instructions.md).
 
-The F9P also accepts [u-blox PointPerfect](https://www.u-blox.com/en/product/pointperfect) PPP-RTK corrections (SPARTN), which need no base station. On vehicles running ARK-OS, the [pointperfect service](../../ark-os/services.md) streams them to the flight controller over MAVLink — see [pointperfect-client-mavlink](https://github.com/ARK-Electronics/pointperfect-client-mavlink). They reach the node the same way as base-station corrections: `UAVCAN_PUB_RTCM` on the flight controller, `CANNODE_SUB_RTCM` on the node.
+The X20P also accepts [u-blox PointPerfect](https://www.u-blox.com/en/product/pointperfect) PPP-RTK corrections (SPARTN), which need no base station. On vehicles running ARK-OS, the [pointperfect service](../../ark-os/services.md) streams them to the flight controller over MAVLink — see [pointperfect-client-mavlink](https://github.com/ARK-Electronics/pointperfect-client-mavlink). They reach the node the same way as base-station corrections: `UAVCAN_PUB_RTCM` on the flight controller, `CANNODE_SUB_RTCM` on the node.
 
 ***
 
 ## Moving Baseline GPS Heading Configuration
 
-Two ARK RTK GPS modules can provide compass-free yaw estimation using the GPS moving baseline technique. The relative position between the two antennas determines heading, so no magnetometer is required.
+Two ARK X20 RTK GPS modules can provide compass-free yaw estimation using the GPS moving baseline technique. The relative position between the two antennas determines heading, so no magnetometer is required.
+
+{% hint style="info" %}
+Moving baseline requires X20P receiver firmware 2.10 or later — see [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md) to check and update it.
+{% endhint %}
 
 ### Hardware Setup
 
@@ -143,7 +147,7 @@ On the _Rover_:
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| `GPS_UBX_MODE` | 3 | Heading — rover with moving base, F9P UART1 connected to the CAN node |
+| `GPS_UBX_MODE` | 3 | Heading — rover with moving base, X20P UART1 connected to the CAN node |
 | `CANNODE_SUB_MBD` | 1 | Subscribe to `MovingBaselineData` messages on the CAN bus |
 | `GPS_YAW_OFFSET` | 0 / 90 / 180 / 270 | Clockwise angle in degrees from the vehicle forward axis to the _Moving Base_ → _Rover_ baseline: `0` if the _Rover_ is in front of the _Moving Base_, `90` if right, `180` if behind, `270` if left |
 
@@ -151,20 +155,21 @@ On the _Moving Base_:
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| `GPS_UBX_MODE` | 4 | Moving base — F9P UART1 connected to the CAN node |
+| `GPS_UBX_MODE` | 4 | Moving base — X20P UART1 connected to the CAN node |
 | `CANNODE_PUB_MBD` | 1 | Publish `MovingBaselineData` messages on the CAN bus |
 
 ### Sending Corrections over UART
 
-The moving baseline corrections can be sent directly between the two modules over the F9P `UART2` link instead of the CAN bus, which keeps that traffic off CAN. Both modules still connect to the flight controller over CAN.
+The moving baseline corrections can be sent directly between the two modules over the X20P `UART2` link instead of the CAN bus, which keeps that traffic off CAN. Both modules still connect to the flight controller over CAN.
 
-Connect the two 3-pin JST-GH `UART2` connectors to each other — TX of one module to RX of the other, and GND to GND.
+Connect the two 4-pin JST-GH `UART2` connectors to each other — TX of one module to RX of the other, and GND to GND.
 
 | Pin | Signal Name |
 |-----|-------------|
-| 1 | F9P\_TXD2 |
-| 2 | F9P\_RXD2 |
-| 3 | GND |
+| 1 | TXD2 |
+| 2 | RXD2 |
+| 3 | TIMEPULSE |
+| 4 | GND |
 
 Then set `GPS_UBX_MODE` to `1` on the _Rover_ and `2` on the _Moving Base_. `GPS_YAW_OFFSET` is set on the _Rover_ as above. `CANNODE_PUB_MBD` and `CANNODE_SUB_MBD` are not used in this configuration.
 
@@ -180,7 +185,7 @@ The GPS status LEDs are to the right of the connectors:
 | Blinking blue | Corrections received, RTK Float |
 | Solid blue | RTK Fixed |
 
-The CAN status LEDs are to the top left of the connectors:
+The CAN status LEDs are to the left of the connectors:
 
 | LED | Meaning |
 |-----|---------|
@@ -195,8 +200,8 @@ The CAN status LEDs are to the top left of the connectors:
 ## Troubleshooting
 
 * **Node does not appear on the bus** — run `uavcan status` in the _QGroundControl_ MAVLink Console to list the nodes PX4 has detected. Check that `UAVCAN_ENABLE` is set to `2` or `3` and that the flight controller has a working SD card installed.
-* **Blinking red CAN LED** — confirm the flight controller has an SD card, that `ark_can-rtk-gps_canbootloader` was installed on the node before `ark_can-rtk-gps_default`, and that there are no stale binaries left in the SD card root or in `/fs/microsd/ufw/`.
+* **Blinking red CAN LED** — confirm the flight controller has an SD card, that `ark_x20-gps_canbootloader` was installed on the node before `ark_x20-gps_default`, and that there are no stale binaries left in the SD card root or in `/fs/microsd/ufw/`.
 * **Node is not detected at all, even by the DroneCAN GUI Tool** — for example after a bad flash that erased the bootloader. Recover it over SWD with an ST-LINK, see [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
-* **No heading in a moving baseline setup** — heading is only output at RTK Fixed. Confirm the _Rover_ shows a solid blue GPS LED, and that the antennas are at least 30 cm apart.
+* **No heading in a moving baseline setup** — heading is only output at RTK Fixed. Confirm the _Rover_ shows a solid blue GPS LED, that the antennas are at least 30 cm apart, and that the X20P receiver firmware is 2.10 or later.
 * **Test outside** — GPS modules need a clear sky view to get a good fix. Indoor testing will not produce reliable results.
 * See our [GPS Placement](../../knowledge-base/gps-placement.md) guide for mounting best practices, interference sources, and antenna positioning.

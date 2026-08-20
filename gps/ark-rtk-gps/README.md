@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK RTK GPS
 
-Find most up to date documentation in the PX4 Documentation [https://docs.px4.io/main/en/dronecan/ark\_rtk\_gps.html](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html)
+Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_rtk\_gps.html](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html)
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_RTK_GPS)
 
@@ -24,6 +24,8 @@ Aside from the receiver, the L1L5 variant is identical to the standard ARK RTK G
 Follow the steps for updating the firmware through the flight controller — see [Firmware Update](px4-instructions.md#firmware-update) in the PX4 instructions.
 
 If the node does not appear on the CAN bus — for example after a bad flash that erased the bootloader — recover it over SWD with an ST-LINK. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
+
+The F9P receiver's own firmware is updated separately with u-center — see [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md).
 
 See the latest firmware below.
 
