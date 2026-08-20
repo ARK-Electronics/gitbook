@@ -6,6 +6,7 @@ The u-blox receiver's firmware is separate from the ARK module's CAN node firmwa
 
 * **ARK RTK Base** — connect over USB-C. The F9P enumerates directly as a USB serial port.
 * **CAN modules (ARK RTK GPS, ARK X20 RTK GPS)** — attach a 3.3V USB-serial adapter to the module's `UART2` connector (adapter RX to module TX, adapter TX to module RX, GND to GND) and set `GPS_UBX_MODE` to `7`, which opens `UART2` as a bidirectional UBX port — see [u-blox Diagnostics with u-center](https://docs.px4.io/main/en/gps_compass/u-center.html) in the PX4 docs. Connect u-center at the `GPS_UBX_BAUD2` baudrate (default `230400`).
+* **Old ARK RTK GPS revisions without a `UART2` connector** — hold the safety switch while powering the module through a CAN port, until all three LEDs blink rapidly. This bridges the F9P's `UART1` to the debug connector's UART (pins 2/3 of the 6-pin JST-SH, plus GND) — attach a 3.3V USB-serial adapter there and connect u-center to that COM port. For a firmware update, check _Use this baudrate for update_ and select `115200`. See the [PX4 ARK RTK GPS page](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html) for the full procedure.
 
 ## Updating
 
