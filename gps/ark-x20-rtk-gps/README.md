@@ -17,6 +17,8 @@ Follow the steps for updating the firmware through the flight controller — see
 
 If the node does not appear on the CAN bus — for example after a bad flash that erased the bootloader — recover it over SWD with an ST-LINK. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
 
+The X20P receiver's own firmware is updated separately with u-center 2 — see [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md).
+
 See the latest firmware below.
 
 {% file src="../../.gitbook/assets/89-1.16.47e04790.uavcan.bin" %}

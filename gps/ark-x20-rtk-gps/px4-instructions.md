@@ -104,6 +104,8 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 
 Centimeter-level absolute position requires RTCM corrections from a fixed base station on the ground. For the base station setup and the flight controller and CAN node parameters that carry the corrections onto the CAN bus, see [ARK RTK Base > PX4 Instructions](../ark-rtk-base/px4-instructions.md).
 
+The X20P also accepts [u-blox PointPerfect](https://www.u-blox.com/en/product/pointperfect) PPP-RTK corrections (SPARTN), which need no base station. On vehicles running ARK-OS, the [pointperfect service](../../ark-os/services.md) streams them to the flight controller over MAVLink — see [pointperfect-client-mavlink](https://github.com/ARK-Electronics/pointperfect-client-mavlink). They reach the node the same way as base-station corrections: `UAVCAN_PUB_RTCM` on the flight controller, `CANNODE_SUB_RTCM` on the node.
+
 ***
 
 ## Moving Baseline GPS Heading Configuration
@@ -111,7 +113,7 @@ Centimeter-level absolute position requires RTCM corrections from a fixed base s
 Two ARK X20 RTK GPS modules can provide compass-free yaw estimation using the GPS moving baseline technique. The relative position between the two antennas determines heading, so no magnetometer is required.
 
 {% hint style="info" %}
-Moving baseline requires X20P receiver firmware 2.10 or later.
+Moving baseline requires X20P receiver firmware 2.10 or later — see [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md) to check and update it.
 {% endhint %}
 
 ### Hardware Setup

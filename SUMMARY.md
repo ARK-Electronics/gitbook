@@ -17,6 +17,7 @@
   * [Recommended Tools](knowledge-base/recommended-tools.md)
   * [ST-LINK Flashing Guide](knowledge-base/st-link-flashing-guide.md)
   * [DroneCAN GUI Tool Guide](knowledge-base/dronecan-gui-tool-guide.md)
+  * [u-blox Firmware Update](knowledge-base/ublox-firmware-update.md)
   * [PX4 Log Encryption](knowledge-base/px4-log-encryption.md)
   * [PX4 Setup](knowledge-base/px4-setup.md)
   * [USB Peripherals](knowledge-base/usb-peripherals.md)
