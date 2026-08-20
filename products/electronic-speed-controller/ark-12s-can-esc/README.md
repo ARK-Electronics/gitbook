@@ -12,6 +12,10 @@ The ARK 12S CAN ESC is a single motor, three phase speed controller. It reports 
 
 Power and phase connections are made through threaded SMT standoffs rather than wires, so the ESC bolts directly to a bus bar or motor mount.
 
+{% hint style="warning" %}
+When running over CAN, each ESC on the same bus must have a unique **ESC Index / Motor Index**. PX4 and ArduPilot use that index to identify which motor is which. A quadcopter is `0`, `1`, `2`, `3`. See [Firmware](firmware.md#esc-index-motor-index).
+{% endhint %}
+
 {% hint style="danger" %}
 Pin 1 of the flight controller connector (J2) is **unregulated battery voltage**. It is not fused or current limited. Do not connect it to a 5V input on your flight controller. See [Pinout](pinout.md).
 {% endhint %}

@@ -109,10 +109,30 @@ If the flight controller still has firmware in `/fs/microsd/ufw/`, it will re-fl
 
 [https://ark32.arkelectron.com](https://ark32.arkelectron.com)
 
-The ARK32 Configurator is the web tool for reading and writing ESC settings and for updating firmware. Use it to check what version an ESC is running, adjust the protection and ramp settings, and restore defaults.
+The ARK32 Configurator is the web tool for reading and writing ESC settings and for updating firmware. Use it to check what version an ESC is running, adjust the protection and ramp settings, assign ESC indices, and restore defaults.
 
 {% hint style="warning" %}
 A restore to defaults returns the ESC to the protection envelope it shipped with, not to the configurator's own disabled defaults. Confirm the current and temperature limits after any restore.
+{% endhint %}
+
+### ESC Index / Motor Index <a href="#esc-index-motor-index" id="esc-index-motor-index"></a>
+
+When the ESC is commanded over CAN, PX4 and ArduPilot identify each motor by its **ESC Index** (also labeled **Motor Index** in the configurator). This is not the DroneCAN node ID — node IDs can be allocated automatically, but the index is how the flight controller maps a throttle command to a specific motor.
+
+Every ESC on the same CAN bus must have a unique index. The index is zero-based and should match the motor order in the flight controller:
+
+| Airframe    | Indices      |
+| ----------- | ------------ |
+| Quadcopter  | `0`, `1`, `2`, `3` |
+| Hexacopter  | `0` through `5`    |
+| Octocopter  | `0` through `7`    |
+
+Set the index in the [ARK32 Configurator](https://ark32.arkelectron.com) or with the [DroneCAN GUI Tool](../../../knowledge-base/dronecan-gui-tool-guide.md), one ESC at a time. If two ESCs share an index, they both respond to the same motor command.
+
+This setting only applies when the ESC is driven over CAN. PWM and DShot use the physical signal wire, so the index is unused.
+
+{% hint style="warning" %}
+Assign unique indices before commanding more than one ESC on the bus. Boards that have not been configured will share the same index.
 {% endhint %}
 
 ### Shipped Protection Defaults
