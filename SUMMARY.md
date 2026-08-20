@@ -227,6 +227,7 @@
     * [PX4 Instructions](gps/ark-teseo-gps/px4-instructions.md)
     * [ArduPilot Instructions](gps/ark-teseo-gps/ardupilot-instructions.md)
   * [ARK X20 RTK GPS](gps/ark-x20-rtk-gps/README.md)
+    * [ArduPilot Instructions](gps/ark-x20-rtk-gps/ardupilot-instructions.md)
     * [PX4 Instructions](gps/ark-x20-rtk-gps/px4-instructions.md)
 * [Power Modules](power/README.md)
   * [ARK PAB Power Module](power/ark-pab-power-module/README.md)

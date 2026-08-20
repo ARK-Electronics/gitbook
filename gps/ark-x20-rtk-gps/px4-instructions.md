@@ -46,6 +46,10 @@ Upload the `.uavcan.bin` file to the node — see the [DroneCAN GUI Tool Guide](
 If the flight controller still has firmware in `/fs/microsd/ufw/`, it will re-flash the node on the next boot and undo the update. Delete `/fs/microsd/ufw/89.bin` from the SD card first.
 {% endhint %}
 
+### Updating to AP\_Periph
+
+To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. Support is in review upstream — see [ArduPilot Instructions](ardupilot-instructions.md).
+
 ***
 
 ## Single GPS Configuration
