@@ -1,7 +1,7 @@
 ---
 description: >-
   NDAA compliant, made in the USA, 4 in 1 electronic speed controller running
-  open source AM32 firmware.
+  open source ARK32 firmware (fork of AM32).
 cover: ../../.gitbook/assets/IMG_3371 edited (Large).JPG
 coverY: -23.514666666666663
 ---
@@ -11,6 +11,8 @@ coverY: -23.514666666666663
 {% hint style="danger" %}
 **Before first use**, configure **KV** and **Pole Count** for each motor channel in the AM32 Configurator. The defaults will not match your motor and the ESC will not run correctly. See [AM32 Configuration](am32-configuration.md).
 {% endhint %}
+
+This ESC runs **[ARK32](https://github.com/ARK-Electronics/ARK32)**, ARK's fork of AM32. Use ARK32 on this board, not stock upstream AM32. See [Why ARK32 instead of upstream AM32](firmware/#why-ark32-instead-of-upstream-am32).
 
 **Specifications:**
 

@@ -53,7 +53,7 @@ When you connect to the [debug console](serial-communication-uart.md), you are i
 
 * **Flight controllers** ([ARKV6X](../flight-controller/arkv6x/README.md), [ARK FPV](../flight-controller/ark-fpv/README.md)) run PX4 or ArduPilot on STM32H7 MCUs, handling sensor fusion, control loops, and communication at hundreds of Hz.
 * **DroneCAN sensors** ([ARK CANnode](../sensor/ark-cannode/README.md), [ARK Flow](../sensor/ark-flow/README.md), [ARK MAG](../sensor/ark-mag/README.md)) run lightweight firmware on STM32F4 MCUs, reading a sensor and publishing data over [CAN bus](can-bus.md).
-* **ESCs** ([ARK 4IN1 ESC](../electronic-speed-controller/ark-4in1-esc/README.md)) use STM32F0 MCUs running AM32 open source firmware for motor control.
+* **ESCs** ([ARK 4IN1 ESC](../electronic-speed-controller/ark-4in1-esc/README.md)) use STM32F0 MCUs running ARK32 (a fork of AM32) for motor control.
 
 ## Common Pitfalls
 
