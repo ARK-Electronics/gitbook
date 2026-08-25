@@ -75,8 +75,8 @@ Repeat the process for ESC 2-4 using their respective SWDIO/SWCLK pins (4/5, 6/7
 
 #### Flash the Bootloader
 
-Flash each ESC MCU with **`AM32_F051_BOOTLOADER_ARK4IN1`**:
+Releases publish Intel HEX, which carries its own load address — there is no offset to pass:
 
 ```bash
-st-flash write AM32_F051_BOOTLOADER_ARK4IN1.bin 0x08000000
+st-flash --format ihex write AM32_F051_BOOTLOADER_ARK4IN1_V18.hex
 ```
