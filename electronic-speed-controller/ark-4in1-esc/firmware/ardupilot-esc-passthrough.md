@@ -1,7 +1,7 @@
 ---
 description: >-
   This page details how to configure Ardupilot for use with the
-  am32-configurator to flash firmware.
+  ARK32 Configurator to flash firmware.
 ---
 
 # Ardupilot ESC Passthrough
@@ -32,6 +32,6 @@ SERVO_BLH_AUTO to 1
 SERVO_BLH_MASK to 15 (if using output channels 1 - 4)
 ```
 
-Follow the instructions on the [AM32 Firmware](flash-am32.md) page to flash firmware.
+Follow the instructions on the [Flash ARK32](flash-ark32.md) page to flash firmware.
 
 [^1]: 

@@ -1,14 +1,30 @@
 ---
 description: >-
-  This page details flashing the bootloader firmware using am32-configurator or
-  SWD.
+  This page details flashing the bootloader firmware using SWD, or letting
+  ARK32 firmware update it.
 ---
 
 # Flash Bootloader
 
-## Flashing Bootloader via AM32&#x20;
+Get the ARK 4IN1 bootloader **`AM32_F051_BOOTLOADER_ARK4IN1`** from **[ARK32-bootloader](https://github.com/ARK-Electronics/ARK32-bootloader)** ([releases](https://github.com/ARK-Electronics/ARK32-bootloader/releases)). The filename includes a version suffix (for example `_V18`).
 
-You can update the bootloader using the [AM32 Configurator](https://am32.ca/configurator). Once connected select "Flash firmware" and select the "Bootloader" tab. Download the **AM32-bootloader-updaters-amj.zip** from the [AM32-bootloader release artifacts](https://github.com/am32-firmware/AM32-bootloader/releases). Select the **AM32\_F051\_BL\_UPDATER\_PB4\_V15.amj.**
+The [ARK32 Configurator](https://ark32.arkelectron.com/) does not flash the bootloader. Use a factory image, an app flash that embeds a newer bootloader, or SWD as below.
+
+## App-side bootloader update
+
+Flashing current [ARK32](https://github.com/ARK-Electronics/ARK32/releases) app firmware can rewrite the on-chip bootloader if it differs. After a successful rewrite the ESC resets and plays two rising beeps, then the normal startup tune. See [Bootloader](https://github.com/ARK-Electronics/ARK32#bootloader) in the ARK32 README.
+
+## Factory image (blank chip)
+
+For a **blank chip**, flash the full-chip factory image from [ARK32 releases](https://github.com/ARK-Electronics/ARK32/releases). Use **`ARK32_ARK_4IN1_F051_<version>.factory.bin`**. That one file writes the bootloader, app, and EEPROM defaults.
+
+Setup, probe, and `st-flash` usage: [ST-LINK Flashing Guide](../../../knowledge-base/st-link-flashing-guide.md). Then:
+
+```bash
+st-flash write ARK32_ARK_4IN1_F051_<version>.factory.bin 0x08000000
+```
+
+You can also build the same image with `make factory-image` in [ARK32](https://github.com/ARK-Electronics/ARK32).
 
 ***
 
@@ -23,7 +39,7 @@ For detailed instructions on ST-LINK setup, software installation, and usage, se
 * ARK 4IN1 ESC
 * ST-LINK V3 Mini (recommended) or ST-LINK V2
 * Computer running Windows or Ubuntu
-* [AM32 bootloader file](./#am32-bootloader-firmware)
+* `AM32_F051_BOOTLOADER_ARK4IN1` from [ARK32-bootloader releases](https://github.com/ARK-Electronics/ARK32-bootloader/releases)
 
 #### Hardware Setup
 
@@ -59,8 +75,8 @@ Repeat the process for ESC 2-4 using their respective SWDIO/SWCLK pins (4/5, 6/7
 
 #### Flash the Bootloader
 
-Flash each ESC MCU with the bootloader binary:
+Releases publish Intel HEX, which carries its own load address — there is no offset to pass:
 
 ```bash
-st-flash write AM32_F051_BOOTLOADER_PB4.bin 0x08000000
+st-flash --format ihex write AM32_F051_BOOTLOADER_ARK4IN1_V18.hex
 ```

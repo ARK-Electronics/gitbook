@@ -7,6 +7,8 @@ structure:
 # Old file path -> current file, for pages whose file moved in the reorganization.
 # Keys are repo-relative paths without .md (a README is keyed by its directory).
 redirects:
+  products/electronic-speed-controller/ark-4in1-esc/am32-configuration: electronic-speed-controller/ark-4in1-esc/ark32-configuration.md
+  products/electronic-speed-controller/ark-4in1-esc/firmware/flash-am32: electronic-speed-controller/ark-4in1-esc/firmware/flash-ark32.md
   products/embedded-computers/ark-just-a-jetson/apt-upgrade-hold-back-risky-packages: ark-os/apt-hold-back.md
   products/embedded-computers/ark-just-a-jetson/ark-services: ark-os/README.md
   products/embedded-computers/ark-just-a-jetson/ark-services/services: ark-os/services.md
