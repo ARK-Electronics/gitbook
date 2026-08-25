@@ -9,7 +9,7 @@ ARK32 keeps DShot, PWM, KISS telemetry, and passthrough flashing. Changes that m
 | Change | Why it matters |
 | ------ | -------------- |
 | More reliable commutation | A missed zero-cross is one extra step, not a drop back to open-loop timing. The motor stays locked instead of bouncing between modes. |
-| The ramp you set is the ramp that runs | Scaled by pack voltage so the same setting means the same volts per millisecond on 4S or 8S. The firmware does not secretly slow the ramp after a desync. |
+| No hidden ramp back-off | Scaled by pack voltage, so one setting means the same volts per millisecond on 4S or 8S. Nothing at runtime lowers it — the firmware does not quietly slow the ramp after a desync. |
 | Bidirectional DShot idle detection | The bootloader uses pulse width, not pin level, so the ESC does not get stuck in the bootloader when DShot idles high. |
 | Hardware-in-the-loop CI | Tested on the ARK 4IN1, not only simulated. |
 
@@ -43,4 +43,6 @@ Set ramp rate in the [ARK32 Configurator](https://ark32.arkelectron.com/). These
 | Mid (~800–1500) | 7–10" | **2 %/ms** (factory) |
 | Low (~500 and below) | 10"+ | 1 %/ms or lower |
 
-Factory ARK 4IN1 images ship at 2 %/ms. A separate slow-ramp firmware is not required — ramp rate is an EEPROM setting on the regular ARK32 image.
+The setting is a **ceiling on all three rpm bands**, not a rate the ESC always applies. The firmware ramps at up to 2 %/ms during startup, 6 %/ms at low rpm and 16 %/ms once spun up, and your value lowers each of those. The factory 2 %/ms therefore flattens the progression — the ESC ramps at the startup rate everywhere, including cruise, which is what makes it safe on a large prop. Set 16 %/ms or higher and all three bands run at their firmware defaults.
+
+A separate slow-ramp firmware is not required — ramp rate is an EEPROM setting on the regular ARK32 image.
