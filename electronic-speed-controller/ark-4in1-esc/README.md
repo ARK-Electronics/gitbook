@@ -9,7 +9,7 @@ coverY: -23.514666666666663
 # ARK 4IN1 ESC
 
 {% hint style="danger" %}
-**Before first use**, configure **KV** and **Pole Count** for each motor channel in the [ARK32 Configurator](https://ark32.arkelectron.com/). The defaults will not match your motor and the ESC will not run correctly. See [ARK32 Configuration](ark32-configuration.md).
+**Before first use**, configure **KV**, **Pole Count**, and **Ramp Rate** for each motor channel in the [ARK32 Configurator](https://ark32.arkelectron.com/). The KV/pole defaults will not match your motor. Factory ramp is 2 %/ms — lower it for large props. See [ARK32 Configuration](ark32-configuration.md).
 {% endhint %}
 
 This ESC runs **[ARK32](https://github.com/ARK-Electronics/ARK32)**. Use ARK32 on this board. See [Why ARK32](firmware/#why-ark32).
