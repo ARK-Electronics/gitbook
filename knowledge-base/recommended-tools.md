@@ -92,7 +92,7 @@ Key features to look for:
 
 ### Betaflight-Capable Flight Controller
 
-To configure or flash firmware on AM32 ESCs (like the [ARK 4IN1 ESC](../electronic-speed-controller/ark-4in1-esc/README.md)), you need a flight controller running Betaflight that supports ESC passthrough. The [ARK FPV](../flight-controller/ark-fpv/README.md) works for this — flash it with [Betaflight](../flight-controller/ark-fpv/betaflight-instructions.md), connect the ESC, and use the Betaflight configurator's ESC tab to configure or update AM32 firmware via passthrough.
+To configure or flash firmware on ARK32 ESCs (like the [ARK 4IN1 ESC](../electronic-speed-controller/ark-4in1-esc/README.md)), you need a flight controller running Betaflight that supports ESC passthrough. The [ARK FPV](../flight-controller/ark-fpv/README.md) works for this — flash it with [Betaflight](../flight-controller/ark-fpv/betaflight-instructions.md), connect the ESC, and use the [ARK32 Configurator](https://ark32.arkelectron.com/) via passthrough.
 
 See the [ARK 4IN1 ESC firmware guide](../electronic-speed-controller/ark-4in1-esc/firmware/README.md) for detailed instructions.
 

@@ -1,14 +1,20 @@
 ---
 description: >-
-  This page details flashing the bootloader firmware using am32-configurator or
-  SWD.
+  This page details flashing the bootloader firmware using SWD, or letting
+  ARK32 firmware update it.
 ---
 
 # Flash Bootloader
 
-## Flashing Bootloader via AM32&#x20;
+Get the ARK 4IN1 bootloader from **[ARK32-bootloader](https://github.com/ARK-Electronics/ARK32-bootloader)** ([releases](https://github.com/ARK-Electronics/ARK32-bootloader/releases)). Use that image — not the generic PB4 image. The ARK 4IN1 bootloader holds DRV8328 `nSLEEP` (PA15) low.
 
-You can update the bootloader using the [AM32 Configurator](https://am32.ca/configurator). Once connected select "Flash firmware" and select the "Bootloader" tab. Download the **AM32-bootloader-updaters-amj.zip** from the [AM32-bootloader release artifacts](https://github.com/am32-firmware/AM32-bootloader/releases). Select the **AM32\_F051\_BL\_UPDATER\_PB4\_V15.amj.**
+The [ARK32 Configurator](https://ark32.arkelectron.com/) does not flash the bootloader. Use a factory image, an app flash that embeds a newer bootloader, or SWD as below.
+
+## App-side bootloader update
+
+Flashing current [ARK32](https://github.com/ARK-Electronics/ARK32/releases) app firmware can rewrite the on-chip bootloader if it differs. After a successful rewrite the ESC resets and plays two rising beeps, then the normal startup tune. See [Bootloader](https://github.com/ARK-Electronics/ARK32#bootloader) in the ARK32 README.
+
+For a **blank chip**, flash the full-chip factory image (`make factory-image` in [ARK32](https://github.com/ARK-Electronics/ARK32)) at `0x08000000` so bootloader, app, and EEPROM defaults land in one step.
 
 ***
 
@@ -23,7 +29,7 @@ For detailed instructions on ST-LINK setup, software installation, and usage, se
 * ARK 4IN1 ESC
 * ST-LINK V3 Mini (recommended) or ST-LINK V2
 * Computer running Windows or Ubuntu
-* [AM32 bootloader file](./#am32-bootloader-firmware)
+* [ARK32 bootloader file](./#ark32-bootloader-firmware)
 
 #### Hardware Setup
 
@@ -59,8 +65,10 @@ Repeat the process for ESC 2-4 using their respective SWDIO/SWCLK pins (4/5, 6/7
 
 #### Flash the Bootloader
 
-Flash each ESC MCU with the bootloader binary:
+Flash each ESC MCU with the ARK 4IN1 bootloader `.bin` from [ARK32-bootloader](https://github.com/ARK-Electronics/ARK32-bootloader/releases):
 
 ```bash
-st-flash write AM32_F051_BOOTLOADER_PB4.bin 0x08000000
+st-flash write <ark4in1-bootloader.bin> 0x08000000
 ```
+
+Do **not** use the generic PB4 image on this board.
