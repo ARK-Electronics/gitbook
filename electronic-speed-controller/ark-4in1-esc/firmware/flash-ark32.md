@@ -6,7 +6,7 @@ description: This page details flashing ARK32 firmware using the ARK32 Configura
 
 You can flash firmware to the ESCs using a Betaflight or Ardupilot flight controller. The ESCs must be powered and connected to the flight controller via the signal wire.
 
-Download the latest release of [ARK32](https://github.com/ARK-Electronics/ARK32/releases).
+Download **`ARK32_ARK_4IN1_F051`** from the latest [ARK32 release](https://github.com/ARK-Electronics/ARK32/releases).
 
 ***
 
