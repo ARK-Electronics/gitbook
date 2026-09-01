@@ -192,7 +192,7 @@ st-flash write ark_fmu-v6x_bootloader.bin 0x08000000
 
 Then flash the `.px4` application over USB.
 
-The bootloader `.bin` is in PX4-Autopilot at `boards/ark/<board>/extras/` and on [PX4 GitHub releases](https://github.com/PX4/PX4-Autopilot/releases) as `<target>_bootloader.bin`. `_bootloader.px4` is the USB uploader envelope.
+The bootloader `.bin` is in PX4-Autopilot at `boards/ark/<board>/extras/` and on [PX4 GitHub releases](https://github.com/PX4/PX4-Autopilot/releases) as `<target>_bootloader.bin`. Older releases attached `_bootloader.px4`; that is the USB uploader envelope, not an SWD image.
 
 SWD of the application is `0x08020000`. `0x08010000` is the DroneCAN-node offset and sits mid-sector on H7.
 
