@@ -40,7 +40,7 @@ make ark_fmu-v6x_default upload
 
 ### Recovering the Bootloader (SWD)
 
-The application is at `0x08020000` (128 KB sectors). `0x08010000` is the DroneCAN-node offset.
+The application is at `0x08020000` (128 KB sectors).
 
 ```bash
 st-flash write ark_fmu-v6x_bootloader.bin 0x08000000
