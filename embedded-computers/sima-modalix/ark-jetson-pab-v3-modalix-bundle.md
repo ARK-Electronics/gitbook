@@ -25,7 +25,15 @@ Use the PAB V3 [Hardware Reference](../../flight-controller/jetson-pabs/ark-jets
 
 Do not use NVIDIA SDK Manager or L4T. The SOM boots from built-in eMMC; an NVMe SSD is not required.
 
-1. Flash SiMa Modalix eLxr and the ARK PAB V3 carrier overlay — [meta-ark-simaai](https://github.com/ARK-Electronics/meta-ark-simaai).
+1. Apply the ARK carrier overlay to the running eLxr image — [ark-meta-simaai](https://github.com/ARK-Electronics/ark-meta-simaai). The overlay ships as a versioned release package:
+
+   ```bash
+   curl -LO https://raw.githubusercontent.com/ARK-Electronics/ark-meta-simaai/main/packaging/provision_from_package.sh
+   chmod +x provision_from_package.sh
+   BOARD=sima@<ip> ./provision_from_package.sh pab-v3
+   ```
+
+   `cat /etc/ark_modalix` afterwards reports which overlay release the board carries.
 2. Install the ARK-OS `modalix` package — see [ARK-OS](ark-jetson-pab-v3-modalix-bundle.md#ark-os).
 3. ML tooling — [SiMa.ai Palette](https://developer.sima.ai/) and [SiMa.ai hardware docs](https://developer.sima.ai/hardware).
 
@@ -43,6 +51,7 @@ SiMa eLxr default login: user `sima`, password `edgeai`, hostname `modalix`. ARK
 | USB-C     | USB 3.0 works as a host. USB 2.0 on that connector goes to an FTDI console on the SOM (not Jetson gadget device mode)                |
 | UART0     | Works without flow control (no RTS/CTS)                                                                                              |
 | UART1     | Does not work. On this carrier UART1 is the SOM-to-flight-controller serial (Telem2).                                                |
+| Ethernet  | Links at 100 Mb/s, not gigabit. The KSZ8795 switch is held in reset on stock eLxr, so there is no Ethernet at all until the ARK overlay is applied. |
 
 Do not install the Jetson Wi-Fi 6E / Remote ID M.2 option — M.2 Key E has no PCIE on Modalix.
 
@@ -60,7 +69,13 @@ Flight-controller CAN, PWM, GPS, and the rest of the avionics connectors are on 
 
 UART2 is the console. USB-C USB 2.0 is an FTDI console on the SOM. USB-C USB 3.0 is host only.
 
-Do not use the Jetson USB-C gadget login (`jetson` / `192.168.55.1`).
+On a freshly flashed eLxr image the SOM USB-C console is the **only** way in: the KSZ8795 switch is held in reset until the ARK overlay releases `SWITCH_RSTn`, so Ethernet does not come up. Apply the overlay over that console, reboot, and Ethernet works on its own from then on.
+
+Do not use the Jetson USB-C gadget login (`jetson` / `192.168.55.1`). The SOM has no USB device controller at all (`/sys/class/udc` is empty), so no USB gadget networking of any kind is available — this is not just a different gadget address.
+
+## Recovery
+
+If the eMMC image is unbootable, reflash eLxr with SiMa's netboot path — `scripts/netboot-elxr-pab-v3.sh` in [ark-meta-simaai](https://github.com/ARK-Electronics/ark-meta-simaai), which drives `sima-cli` over TFTP. There is no NVIDIA Force Recovery mode on this SOM.
 
 ## Storage
 
@@ -77,12 +92,15 @@ M.2 Key M is still NVMe. M.2 Key E has no PCIE.
 ARK-OS is a Debian package, not a full OS image. Flash eLxr first, then install the `modalix` platform on the board (user `sima` must exist):
 
 ```bash
-git clone https://github.com/ARK-Electronics/ARK-OS.git
-cd ARK-OS
-sudo ./packaging/install_ark_os.sh --platform=modalix --ark-os-version=X.Y.Z
+curl -fSLO https://github.com/ARK-Electronics/ARK-OS/releases/download/v1.3.0/ark-os-modalix-bookworm_1.3.0_arm64.deb
+sudo apt-get install -y ./ark-os-modalix-bookworm_1.3.0_arm64.deb
 ```
 
-Build the package on arm64 (eLxr 12 or Debian 12). Do not install the `jetson` package.
+Use `apt-get install`, not `dpkg -i` — the package has dependencies (nginx, gstreamer) that only apt resolves.
+
+The package is named `bookworm` while eLxr 12 reports its own codename, `aria`. They are ABI-compatible; the bookworm build is the one to install. If you use `packaging/install_ark_os.sh` instead, pass `--codename=bookworm`, or it will look for an `aria` asset that is not published.
+
+Do not install the `jetson` package.
 
 ARK-UI is at [http://modalix.local](http://modalix.local) (or the board's IP). Do not use `jetson.local` or USB-C gadget networking.
 
@@ -116,5 +134,5 @@ Modalix has higher TOPS per watt than Orin Nano Super and Orin NX Super at those
 * [SiMa.ai MLSoC Family](https://sima.ai/mlsoc-family/)
 * [SiMa.ai Developer Center (Palette)](https://developer.sima.ai/)
 * [SiMa.ai Hardware Docs](https://developer.sima.ai/hardware)
-* [meta-ark-simaai](https://github.com/ARK-Electronics/meta-ark-simaai) — ARK carrier device tree and flash tooling
+* [ark-meta-simaai](https://github.com/ARK-Electronics/ark-meta-simaai) — ARK carrier device tree and flash tooling
 * [ARK-OS](https://github.com/ARK-Electronics/ARK-OS) — `modalix` platform package
