@@ -24,3 +24,5 @@ Run without an argument to flash the PX4 image bundled with ARK-OS.
 
 * **PX4**: `ark_fmu-v6x` builds from the [PX4 releases page](https://github.com/PX4/PX4-Autopilot/releases/)
 * **ArduPilot**: `ARK_FMU_V6X` builds from [firmware.ardupilot.org](https://firmware.ardupilot.org/)
+
+If the flight controller does not enumerate over USB, recover the bootloader over SWD: [ST-LINK Flashing Guide](../../../knowledge-base/st-link-flashing-guide.md#flashing-px4-flight-controllers).
