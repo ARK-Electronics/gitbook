@@ -98,6 +98,10 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 | `GPS_UBX_BAUD2` | X20P UART2 baudrate. Default is `230400` |
 | `GPS_UBX_MODE` | Set to `7` to make the `UART2` connector a UBX diagnostic port for [u-center](https://docs.px4.io/main/en/gps_compass/u-center.html), at the `GPS_UBX_BAUD2` baudrate |
 
+{% hint style="warning" %}
+UART2 cannot be used for u-blox firmware update. Use the debug passthrough method in [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md).
+{% endhint %}
+
 ***
 
 ## RTK Corrections from a Fixed Base
