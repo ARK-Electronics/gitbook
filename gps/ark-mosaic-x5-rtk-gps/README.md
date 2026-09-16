@@ -11,7 +11,7 @@ Please read through the PX4 Documentation for DroneCAN GPS parameter configurati
 
 ## Firmware
 
-Follow the steps for updating the firmware through the flight controller.&#x20;
+Follow the steps for updating the firmware through the flight controller.
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
 
@@ -48,7 +48,7 @@ ARK Mosaic-X5 GPS Bootloader
 
 #### GPS UART2 + Timepulse - 5 Pin JST-GH
 
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>TXD2</td><td>3.3V</td></tr><tr><td>2</td><td>RXD2</td><td>3.3V</td></tr><tr><td>3</td><td>TIMEPULSE</td><td>3.3V</td></tr><tr><td>4</td><td>GP1</td><td>3.3V</td></tr><tr><td>5</td><td>GND</td><td>GND</td></tr></tbody></table>
+<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>TXD2</td><td>3.3V</td></tr><tr><td>2</td><td>RXD2</td><td>3.3V</td></tr><tr><td>3</td><td>TIMEPULSE</td><td>1.8V</td></tr><tr><td>4</td><td>GP1</td><td>3.3V</td></tr><tr><td>5</td><td>GND</td><td>GND</td></tr></tbody></table>
 
 #### USART3/I2C2 - 6 Pin JST-GH
 
