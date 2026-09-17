@@ -6,7 +6,11 @@ description: Pin assignments for the ARK Secondary Avionics Adapter connectors.
 
 ### Secondary avionics port
 
-**J3** — 40-pin Molex Pico-Clasp secondary avionics port
+**J3** — 40-pin Molex [Pico-Clasp 501571](https://www.molex.com/en-us/part-list/501571) secondary avionics port
+
+Mating plug [5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
+
+Pre-crimped wires [0797581019](https://www.digikey.com/en/products/detail/molex/0797581019/6564344)
 
 | Pin | Signal                     | Voltage  |
 | --- | -------------------------- | -------- |

@@ -27,7 +27,11 @@ When operating at high battery current and/or high 5V regulator output current, 
 
 ### Pinout
 
-#### 5V/I2C - 6 Pin Molex CLIK-Mate
+#### 5V/I2C - 6 Pin 2.00mm Molex [CLIK-Mate 502494](https://www.molex.com/en-us/part-list/502494)
+
+Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
+
+Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>VBRICK</td><td>5.2V</td></tr><tr><td>2</td><td>VBRICK</td><td>5.2V</td></tr><tr><td>3</td><td>SCL</td><td>3.3V</td></tr><tr><td>4</td><td>SDA</td><td>3.3V</td></tr><tr><td>5</td><td>GND</td><td>GND</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
 

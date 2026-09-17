@@ -8,11 +8,19 @@
 
 {% file src="../../.gitbook/assets/Pinout Guide.pdf" %}
 
-#### Flight Controller IO - 40 Pin Molex Pico-Clasp
+#### Flight Controller IO - 40 Pin Molex [Pico-Clasp 501571](https://www.molex.com/en-us/part-list/501571)
+
+Mating plug [5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
+
+Pre-crimped wires [0797581019](https://www.digikey.com/en/products/detail/molex/0797581019/6564344)
 
 <table><thead><tr><th width="71">Pin Number</th><th width="182">Signal Name</th><th width="86">Voltage</th><th width="67">Pin Number</th><th width="256">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>CAN1_P</td><td>5.0V</td><td>2</td><td>UART8_TX_GPS2_EXT</td><td>3.3V</td></tr><tr><td>3</td><td>CAN1_N</td><td>5.0V</td><td>4</td><td>UART8_RX_GPS2_EXT</td><td>3.3V</td></tr><tr><td>5</td><td>GND</td><td>GND</td><td>6</td><td>I2C2_SCL_BASE_GPS2_EXT</td><td>3.3V</td></tr><tr><td>7</td><td>VDD_5V_HIPOWER</td><td>5.0V</td><td>8</td><td>I2C2_SDA_BASE_GPS2_EXT</td><td>3.3V</td></tr><tr><td>9</td><td>VDD_5V_HIPOWER</td><td>5.0V</td><td>10</td><td>GND</td><td>GND</td></tr><tr><td>11</td><td>GND</td><td>GND</td><td>12</td><td>FMU_CH1_EXT</td><td>3.3V</td></tr><tr><td>13</td><td>GND</td><td>GND</td><td>14</td><td>FMU_CH2_EXT</td><td>3.3V</td></tr><tr><td>15</td><td>VDD_5V_SBUS_RC</td><td>5.0V</td><td>16</td><td>FMU_CH3_EXT</td><td>3.3V</td></tr><tr><td>17</td><td>GND</td><td>GND</td><td>18</td><td>FMU_CH4_EXT</td><td>3.3V</td></tr><tr><td>19</td><td>RX_SBUS_IN_EXT</td><td>3.3V</td><td>20</td><td>GND</td><td>GND</td></tr><tr><td>21</td><td>USART6_TX_EXT</td><td>3.3V</td><td>22</td><td>FMU_CH5_EXT</td><td>3.3V</td></tr><tr><td>23</td><td>I2C1_SDA_BASE_GPS1_EXT</td><td>3.3V</td><td>24</td><td>FMU_CH6_EXT</td><td>3.3V</td></tr><tr><td>25</td><td>I2C1_SCL_BASE_GPS1_EXT</td><td>3.3V</td><td>26</td><td>FMU_CH7_EXT</td><td>3.3V</td></tr><tr><td>27</td><td>GND</td><td>GND</td><td>28</td><td>FMU_CH8_EXT</td><td>3.3V</td></tr><tr><td>29</td><td>GND</td><td>GND</td><td>30</td><td>GND</td><td>GND</td></tr><tr><td>31</td><td>VDD_5V_PERIPH</td><td>5.0V</td><td>32</td><td>UART7_TX_TELEM1_EXT</td><td>3.3V</td></tr><tr><td>33</td><td>VDD_5V_PERIPH</td><td>5.0V</td><td>34</td><td>UART7_RX_TELEM1_EXT</td><td>3.3V</td></tr><tr><td>35</td><td>GND</td><td>GND</td><td>36</td><td>UART7_CTS_TELEM1_EXT</td><td>3.3V</td></tr><tr><td>37</td><td>CAN2_P</td><td>5.0V</td><td>38</td><td>UART7_RTS_TELEM1_EXT</td><td>3.3V</td></tr><tr><td>39</td><td>CAN2_N</td><td>5.0V</td><td>40</td><td>GND</td><td>GND</td></tr></tbody></table>
 
-#### Payload IO - 40 Pin Molex Pico-Clasp
+#### Payload IO - 40 Pin Molex [Pico-Clasp 501571](https://www.molex.com/en-us/part-list/501571)
+
+Mating plug [5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
+
+Pre-crimped wires [0797581019](https://www.digikey.com/en/products/detail/molex/0797581019/6564344)
 
 <table><thead><tr><th width="71">Pin Number</th><th width="242">Signal Name</th><th width="81">Voltage</th><th width="108">Pin Number</th><th width="145">Signal Name</th><th width="78">Voltage</th></tr></thead><tbody><tr><td>1</td><td>VDD_5V_PERIPH</td><td>5.0V</td><td>2</td><td>VIN</td><td>BAT</td></tr><tr><td>3</td><td>VDD_5V_PERIPH</td><td>5.0V</td><td>4</td><td>VIN</td><td>BAT</td></tr><tr><td>5</td><td>GND</td><td>GND</td><td>6</td><td>VIN</td><td>BAT</td></tr><tr><td>7</td><td>GND</td><td>GND</td><td>8</td><td>VIN</td><td>BAT</td></tr><tr><td>9</td><td>USART2_TX_TELEM3_EXT</td><td>3.3V</td><td>10</td><td>VIN</td><td>BAT</td></tr><tr><td>11</td><td>USART2_RX_TELEM3_EXT</td><td>3.3V</td><td>12</td><td>GND</td><td>GND</td></tr><tr><td>13</td><td>USART2_CTS_TELEM3_EXT</td><td>3.3V</td><td>14</td><td>GND</td><td>GND</td></tr><tr><td>15</td><td>USART2_RTS_TELEM3_EXT</td><td>3.3V</td><td>16</td><td>GND</td><td>GND</td></tr><tr><td>17</td><td>GND</td><td>GND</td><td>18</td><td>GND</td><td>GND</td></tr><tr><td>19</td><td>VDD_5V_HIPOWER</td><td>5.0V</td><td>20</td><td>GND</td><td>GND</td></tr><tr><td>21</td><td>VDD_5V_HIPOWER</td><td>5.0V</td><td>22</td><td>UART4_TX_EXT</td><td>3.3V</td></tr><tr><td>23</td><td>GND</td><td>GND</td><td>24</td><td>UART4_RX_EXT</td><td>3.3V</td></tr><tr><td>25</td><td>GND</td><td>GND</td><td>26</td><td>GND</td><td>GND</td></tr><tr><td>27</td><td>GPIO_23_UART7_RXD_EXT</td><td>3.3V</td><td>28</td><td>PAYLOAD_5V</td><td>5.0V</td></tr><tr><td>29</td><td>GPIO_22_UART7_TXD_EXT</td><td>3.3V</td><td>30</td><td>PAYLOAD_5V</td><td>5.0V</td></tr><tr><td>31</td><td>GND</td><td>GND</td><td>32</td><td>GND</td><td>GND</td></tr><tr><td>33</td><td>ttyHS2_RX_EXT</td><td>3.3V</td><td>34</td><td>GND</td><td>GND</td></tr><tr><td>35</td><td>ttyHS2_TX_EXT</td><td>3.3V</td><td>36</td><td>USB_PAYLOAD_EXT_P</td><td>3.3V</td></tr><tr><td>37</td><td>GND</td><td>GND</td><td>38</td><td>USB_PAYLOAD_EXT_N</td><td>3.3V</td></tr><tr><td>39</td><td>GND</td><td>GND</td><td>40</td><td>GND</td><td>GND</td></tr></tbody></table>
 
@@ -24,7 +32,11 @@
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>USB_JST_5V</td><td>5.0V</td></tr><tr><td>2</td><td>USB_JST_EXT_N</td><td>3.3V</td></tr><tr><td>3</td><td>USB_JST_EXT_P</td><td>3.3V</td></tr><tr><td>4</td><td>GND</td><td>GND</td></tr></tbody></table>
 
-#### POWER - 14 Pin Molex CLIK-Mate
+#### POWER - 14 Pin 2.00mm Molex [CLIK-Mate 502494](https://www.molex.com/en-us/part-list/502494)
+
+Mating plug [5024391400](https://www.digikey.com/en/products/detail/molex/5024391400/2380427)
+
+Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
 <table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>VIN</td><td>BAT</td></tr><tr><td>2</td><td>VBRICK1</td><td>5.0V</td></tr><tr><td>3</td><td>VBRICK1</td><td>5.0V</td></tr><tr><td>4</td><td>I2C1_SCL_PWR_EXT</td><td>3.3V</td></tr><tr><td>5</td><td>I2C1_SDA_PWR_EXT</td><td>3.3V</td></tr><tr><td>6</td><td>VBRICK2</td><td>5.0V</td></tr><tr><td>7</td><td>VBRICK2</td><td>5.0V</td></tr><tr><td>8</td><td>I2C2_SCL_BASE_PWR_EXT</td><td>3.3V</td></tr><tr><td>9</td><td>I2C2_SDA_BASE_PWR_EXT</td><td>3.3V</td></tr><tr><td>10</td><td>GND</td><td>GND</td></tr><tr><td>11</td><td>GND</td><td>GND</td></tr><tr><td>12</td><td>GND</td><td>GND</td></tr><tr><td>13</td><td>GND</td><td>GND</td></tr><tr><td>14</td><td>GND</td><td>GND</td></tr></tbody></table>
 
