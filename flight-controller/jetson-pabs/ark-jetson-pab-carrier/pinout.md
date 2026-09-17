@@ -4,7 +4,7 @@
 Pinout reference poster (PDF)
 {% endfile %}
 
-### **POWER1** - 6 Pin Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+### **POWER1** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
 
 Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
 
@@ -19,7 +19,7 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5          | GND                   | GND     |
 | 6          | GND                   | GND     |
 
-### **POWER2** - 6 Pin Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+### **POWER2** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
 
 Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
 
@@ -34,7 +34,7 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5          | GND                        | GND     |
 | 6          | GND                        | GND     |
 
-### **POWER3** - 6 Pin Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+### **POWER3** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
 
 Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
 
