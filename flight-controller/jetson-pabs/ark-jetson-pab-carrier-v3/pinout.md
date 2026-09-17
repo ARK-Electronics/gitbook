@@ -12,7 +12,7 @@ metaLinks:
 
 <figure><img src="../../../.gitbook/assets/Jetson PAB V3 Pintout Drawing Front.png" alt=""><figcaption></figcaption></figure>
 
-### **Primary Avionics- 40 Pin** Pico-Clasp 501571
+### **Primary Avionics- 40 Pin** [Pico-Clasp 501571](https://www.molex.com/en-us/part-list/501571)
 
 Mating plug [5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
 
@@ -61,7 +61,7 @@ Pre-crimped wires [0797581019](https://www.digikey.com/en/products/detail/molex/
 | 39         | GND                            | GND              |
 | 40         | VDD\_5V\_PERIPH                | 5.0V (1.5A)      |
 
-### **Secondary Avionics- 40 Pin** Pico-Clasp 501571
+### **Secondary Avionics- 40 Pin** [Pico-Clasp 501571](https://www.molex.com/en-us/part-list/501571)
 
 Mating plug [5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
 
@@ -147,7 +147,9 @@ Mating cable [05-30-D-0304-A-4-06-4-T](https://www.digikey.com/en/products/detai
 | 29         | VDD\_5V\_PERIPH\_nEN    | 3.3V        |
 | 30         | GND                     | GND         |
 
-### **Fan - 4 Pin PicoBlade**
+### **Fan - 4 Pin** [PicoBlade 53047](https://www.molex.com/en-us/part-list/53047)
+
+Mating plug [0510210400](https://www.digikey.com/en/products/detail/molex/0510210400/242844)
 
 | Pin Number | Signal Name     | Voltage |
 | ---------- | --------------- | ------- |
@@ -156,7 +158,7 @@ Mating cable [05-30-D-0304-A-4-06-4-T](https://www.digikey.com/en/products/detai
 | 3          | FAN\_TACH\_CON  | 5.0V    |
 | 4          | FAN\_PWM\_Q\*   | 5.0V    |
 
-### **Power 1 - 6 Pin** Micro-Lock PLUS 505567
+### **Power 1 - 6 Pin** [Micro-Lock PLUS 505567](https://www.molex.com/en-us/part-list/505567)
 
 Mating plug [5055650601](https://www.digikey.com/en/products/detail/molex/5055650601/7807030)
 
@@ -171,7 +173,7 @@ Pre-crimped wires [0797581149](https://www.digikey.com/en/products/detail/molex/
 | 5          | GND                 | GND     |
 | 6          | GND                 | GND     |
 
-### **Power 2 - 6 Pin** Micro-Lock PLUS 505567
+### **Power 2 - 6 Pin** [Micro-Lock PLUS 505567](https://www.molex.com/en-us/part-list/505567)
 
 Mating plug [5055650601](https://www.digikey.com/en/products/detail/molex/5055650601/7807030)
 
@@ -186,7 +188,7 @@ Pre-crimped wires [0797581149](https://www.digikey.com/en/products/detail/molex/
 | 5          | GND                       | GND     |
 | 6          | GND                       | GND     |
 
-### **Power 3 - 6 Pin** Micro-Lock PLUS 505567
+### **Power 3 - 6 Pin** [Micro-Lock PLUS 505567](https://www.molex.com/en-us/part-list/505567)
 
 Mating plug [5055650601](https://www.digikey.com/en/products/detail/molex/5055650601/7807030)
 
