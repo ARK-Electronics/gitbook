@@ -6,9 +6,9 @@ Pico-Clasp 501189
 
 [Connector - 5011894010](https://www.digikey.com/en/products/detail/molex/5011894010/1531524)
 
-[Pre-crimped Wires 6"](https://www.digikey.com/en/products/detail/molex/0797581014/6346648?s=N4IgTCBcDaIOwE44FYAcBGADOgLCAugL5A)
+[Pre-crimped Wires 6"](https://www.digikey.com/en/products/detail/molex/0797581018/6564343)
 
-[Pre-crimped Wires 12"](https://www.digikey.com/en/products/detail/molex/0797581015/6592311?s=N4IgTCBcDaIOwE44FYAcBGADO5IC6AvkA)
+[Pre-crimped Wires 12"](https://www.digikey.com/en/products/detail/molex/0797581019/6564344)
 
 [Crimps](https://www.molex.com/en-us/part-list/501193)
 
