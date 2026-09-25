@@ -4,6 +4,8 @@
 Pinout reference poster (PDF)
 {% endfile %}
 
+`POWER1`–`POWER3` are ideal-diode ORed; see [Carrier Power Inputs](../../../knowledge-base/carrier-power-inputs.md) for load sharing.
+
 ### **POWER1** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
 
 Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)

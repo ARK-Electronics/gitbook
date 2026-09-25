@@ -120,6 +120,7 @@ This applies to any high-current load: gimbal motors, LED arrays, radio amplifie
 ## Further Reading
 
 * [PX4 Power Module Setup](https://docs.px4.io/main/en/power_module/)
+* [Carrier Power Inputs](carrier-power-inputs.md) — how multiple 5V inputs combine on ARK carriers
 * [CAN Bus](can-bus.md) — CAN wiring and 5V power delivery
 * [Connectors and Wiring](connectors-and-wiring.md) — connector types and pinouts
 * [Communication Buses (I2C, SPI)](communication-buses.md) — bus noise susceptibility comparison
