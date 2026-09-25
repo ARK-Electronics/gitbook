@@ -32,6 +32,8 @@ Pre-crimped wires [0797581019](https://www.digikey.com/en/products/detail/molex/
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>USB_JST_5V</td><td>5.0V</td></tr><tr><td>2</td><td>USB_JST_EXT_N</td><td>3.3V</td></tr><tr><td>3</td><td>USB_JST_EXT_P</td><td>3.3V</td></tr><tr><td>4</td><td>GND</td><td>GND</td></tr></tbody></table>
 
+`VBRICK1` and `VBRICK2` are ideal-diode ORed; see [Carrier Power Inputs](../../knowledge-base/carrier-power-inputs.md) for load sharing.
+
 #### POWER - 14 Pin 2.00mm Molex [CLIK-Mate 502494](https://www.molex.com/en-us/part-list/502494)
 
 Mating plug [5024391400](https://www.digikey.com/en/products/detail/molex/5024391400/2380427)

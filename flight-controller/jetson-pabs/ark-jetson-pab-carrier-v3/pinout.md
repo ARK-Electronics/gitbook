@@ -158,6 +158,8 @@ Mating plug [0510210400](https://www.digikey.com/en/products/detail/molex/051021
 | 3          | FAN\_TACH\_CON  | 5.0V    |
 | 4          | FAN\_PWM\_Q\*   | 5.0V    |
 
+Power 1–3 are ideal-diode ORed; see [Carrier Power Inputs](../../../knowledge-base/carrier-power-inputs.md) for load sharing.
+
 ### **Power 1 - 6 Pin** [Micro-Lock PLUS 505567](https://www.molex.com/en-us/part-list/505567)
 
 Mating plug [5055650601](https://www.digikey.com/en/products/detail/molex/5055650601/7807030)

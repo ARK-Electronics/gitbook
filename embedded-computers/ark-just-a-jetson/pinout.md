@@ -6,6 +6,8 @@
 
 {% file src="../../.gitbook/assets/Pinout Drawing.pdf" %}
 
+The onboard 5V regulator (fed from `BAT IN`) and `5V IN` are ideal-diode ORed; see [Carrier Power Inputs](../../knowledge-base/carrier-power-inputs.md) for load sharing.
+
 #### BAT IN - XT60
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>+</td><td>VBAT_IN</td><td>5.5V - 75V</td></tr><tr><td>-</td><td>GND</td><td>GND</td></tr></tbody></table>
