@@ -12,6 +12,8 @@ description: How the 5V inputs on ARK carrier boards combine, and how much curre
 | [ARK Just A Jetson](../embedded-computers/ark-just-a-jetson/README.md) | 5V IN (6 A), BAT IN through the onboard 5.2 V regulator | Ideal-diode OR |
 | [ARK VOXL2 RTK PAB Carrier](../flight-controller/ark-voxl2-rtk-pab-carrier/README.md) | VBRICK1, VBRICK2 on POWER (6 A each) | Ideal-diode OR |
 
+Per-input ratings come from the connector's two power pins (3 A each on CLIK-Mate, 2 A each on Micro-Lock PLUS), not from the power module.
+
 ## Priority Select
 
 The highest-priority valid input powers the board and the others are disconnected: POWER1 > POWER2 > USB. An input is valid between 3.81 V and 5.85 V. Inputs never share current, so the 5V load must stay within the rating of the selected input.
