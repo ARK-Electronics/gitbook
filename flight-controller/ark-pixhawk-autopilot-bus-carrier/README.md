@@ -63,10 +63,10 @@ The PAB form factor enables the ARK PAB Carrier to be used with any [PAB-compati
 ### Power <a href="#power" id="power"></a>
 
 * 5V input on `POWER1`, `POWER2`, `USB C`, and the `USB JST-GH` connector
-  * Input is prioritized in the following order: POWER1 > POWER2 > USB
+  * Input is prioritized in the following order: POWER1 > POWER2 > USB. Only the selected input powers the board; see [Carrier Power Inputs](../../knowledge-base/carrier-power-inputs.md)
   * `USB C` and the `USB JST-GH` are in parallel
-  * Overvoltage protection at 5.8V
-  * Undervoltage protection at 3.9V
+  * Overvoltage protection at 5.85V
+  * Undervoltage protection at 3.81V
 * `VDD_5V_HIPOWER` and `VDD_5V_PERIPH` can each provide a total of 1.5A across all the connectors
 
 ### LEDS <a href="#leds" id="leds"></a>
