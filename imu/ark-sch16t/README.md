@@ -5,8 +5,9 @@ coverY: 0
 
 # ARK SCH16T
 
-## Datasheet
+## Datasheets
 
+* [ARK SCH16T](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_SCH16T/datasheet/ARK_SCH16T_Datasheet.pdf)
 * [Murata SCH16T-K01](https://www.murata.com/-/media/webrenewal/products/sensor/pdf/datasheet/datasheet-sch16t-k01-short.ashx?la=en)
 
 ## Wiring
