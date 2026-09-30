@@ -5,6 +5,11 @@ coverY: 0
 
 # ARK ADIS16507
 
+## Datasheets
+
+* [ARK ADIS16507](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_ADIS16507/datasheet/ARK_ADIS16507_Datasheet.pdf)
+* [Analog Devices ADIS16507-3](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf)
+
 ## Wiring
 
 11 pin JST-GH&#x20;
