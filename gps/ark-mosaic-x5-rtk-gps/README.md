@@ -17,16 +17,23 @@ Follow the steps for updating the firmware through the flight controller.
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/84-1.16.3c45b562.uavcan.bin" %}
+{% file src="../../.gitbook/assets/84-1.18.a784eb57.uavcan.bin" %}
 ARK Mosaic-X5 GPS Firmware
 {% endfile %}
 
-{% file src="../../.gitbook/assets/ark_septentrio-gps_canbootloader.bin" %}
+{% file src="../../.gitbook/assets/ark_mosaic-x5-gps_canbootloader.bin" %}
 ARK Mosaic-X5 GPS Bootloader
 {% endfile %}
 
 ## Release Notes
 
+* 84-1.18.a784eb57 - 2026-10-1
+  * PX4 v1.18 base
+  * Moving base and moving-base rover (`SEP_MODE`)
+  * SBAS available in `SEP_PVT_MODE`, off by default
+  * Jamming, spoofing, OSNMA and receiver error reporting
+  * Receiver reconfigured after it restarts
+  * Bootloader file renamed to `ark_mosaic-x5-gps_canbootloader.bin`
 * 84-1.16.3c45b562 - 2025-9-26
   * Migrate to build server
 * 84-1.15.6dea2ce5 - 2025-2-12
