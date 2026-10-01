@@ -7,7 +7,7 @@ coverY: 0
 
 [ARK G5H RTK Heading GPS](https://arkelectron.com/product/ark-g5-rtk-heading-gps/)
 
-The ARK G5H RTK Heading GPS is built around the Septentrio mosaic-G5 P3H module. The P3H supports two antennas connected to MAIN and ANT2, and provides compass-free yaw estimation by handling the moving baseline calculation internally and reporting the heading over DroneCAN as a single GPS node. For a single-antenna variant, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
+The ARK G5H RTK Heading GPS is built around a Septentrio mosaic-G5 P3H, P6 or P8 module, set to dual antenna in production. It takes two antennas on MAIN and ANT2 and provides compass-free yaw estimation, computing the heading in the module and reporting it over DroneCAN as a single GPS node. For a single-antenna variant, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
 
 ## Firmware
 

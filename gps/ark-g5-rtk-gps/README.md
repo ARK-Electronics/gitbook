@@ -7,7 +7,7 @@ coverY: 0
 
 [ARK G5 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/)
 
-The ARK G5 RTK GPS is built around the Septentrio mosaic-G5 P3 module. The P3 only supports a single antenna and the ANT2 connector is not active. For dual antenna heading, see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md).
+The ARK G5 RTK GPS is built around a Septentrio mosaic-G5 P3, P6 or P8 module. On the P3 the ANT2 connector is not active. On the P6 and P8, `SEP_ANT_MODE` `2` turns on dual antenna heading with ANT2, configured as on the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md). Two units give heading as a moving base and rover, see the PX4 instructions.
 
 ## Firmware
 
