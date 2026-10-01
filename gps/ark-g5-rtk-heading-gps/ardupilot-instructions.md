@@ -82,20 +82,14 @@ The `GPS1_MB_OFS_*` offsets describe the position of MAIN relative to ANT2 in th
 
 ### CAN Node Parameters
 
-Apply the [Single GPS Configuration](#single-gps-configuration) CAN node parameters above, then add the following on the GPS and reboot the node.
-
-#### Required
-
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| `SEP_DUAL_ANT` | 3 | Enable dual antenna heading. Bitmask: `1` = Fixed (highest accuracy), `2` = Float (more robust), `3` = Fixed + Float (default, recommended — receiver uses best available) |
+No change is needed on the node: the G5H ships with dual antenna saved in the receiver. The node reports a heading only with fixed ambiguities.
 
 #### Optional
 
 | Parameter | Description |
 |-----------|-------------|
-| `SEP_OFFS_YAW` | Clockwise rotation in degrees from the vehicle forward axis to the MAIN→ANT2 baseline. Range: `-360` to `360`. Use this if the antennas are not aligned along the vehicle's forward axis |
-| `SEP_OFFS_PITCH` | Pitch offset in degrees to compensate for vertical mounting differences between MAIN and ANT2. Range: `-90` to `90`. A positive pitch indicates the MAIN antenna is mounted lower than ANT2 |
+| `SEP_ANT_MODE` | `0` (default) keeps the antenna mode saved in the receiver, `1` single antenna, `2` dual antenna. `1` and `2` are applied without saving them in the receiver, which restarts once (about 10 s) at each power-up where its saved mode differs |
+| `SEP_DUAL_ANT` | `0` disables heading |
 
 ***
 
@@ -123,6 +117,5 @@ If `OK` is 0, the EKF is rejecting the GPS yaw. See the troubleshooting section 
   * Poor sky view or multipath (e.g., reflections from nearby structures)
   * Incorrect `GPS1_MB_OFS_X/Y/Z` values
   * `EK3_SRC1_YAW` not set to 2 or 3
-* **Yaw alignment** — if the antennas are not aligned along the vehicle's forward axis, set the `SEP_OFFS_YAW` parameter on the G5H node to the clockwise rotation angle.
 * **Compass calibration or configuration issues** — if you are having trouble calibrating or configuring the compasses, reset all `COMPASS_*` parameters back to their defaults and reboot the flight controller. Perform the compass calibration only after the GPS is connected.
 * See our [GPS Placement](../../knowledge-base/gps-placement.md) guide for mounting best practices, interference sources, and antenna positioning.
