@@ -50,8 +50,8 @@ ARK GPS and RTK GPS modules for precision navigation.
 | [ARK RTK GPS L1L5](ark-rtk-gps/README.md#l1l5-variant) | u-blox ZED-F9P-15B | L1/L5 | Yes | — | Jamming/spoofing detection, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK X20 RTK GPS](ark-x20-rtk-gps/) | u-blox ZED-X20P | L1/L2/L5 | Yes | Moving baseline (two units, requires X20P firmware 2.10+) | Advanced anti-jamming/anti-spoofing, triple-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK MOSAIC-X5 RTK GPS](ark-mosaic-x5-rtk-gps/) | Septentrio mosaic-X5 | L1/L2/L5 | Yes | — | AIM+ anti-jamming/anti-spoofing, OSNMA, triple-band resilience | DroneCAN | Magnetometer, barometer, IMU |
-| [ARK G5 RTK GPS](ark-g5-rtk-gps/) | Septentrio mosaic-G5 P3 | L1/L5 | Yes | — | AIM+ anti-jamming/anti-spoofing, OSNMA, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
-| [ARK G5H RTK Heading GPS](ark-g5-rtk-heading-gps/) | Septentrio mosaic-G5 P3H | L1/L5 | Yes | Dual antenna (internal moving baseline) | AIM+ anti-jamming/anti-spoofing, OSNMA, dual-band resilience | DroneCAN | Magnetometer, barometer, IMU |
+| [ARK G5 RTK GPS](ark-g5-rtk-gps/) | Septentrio mosaic-G5 P3, P6 or P8 | L1/L2/L5/E6 | Yes | Moving base (two units); dual antenna on P6/P8 | AIM+ anti-jamming/anti-spoofing, OSNMA, multi-band resilience | DroneCAN | Magnetometer, barometer, IMU |
+| [ARK G5H RTK Heading GPS](ark-g5-rtk-heading-gps/) | Septentrio mosaic-G5 P3H, P6 or P8 | L1/L2/L5/E6 | Yes | Dual antenna (internal moving baseline) | AIM+ anti-jamming/anti-spoofing, OSNMA, multi-band resilience | DroneCAN | Magnetometer, barometer, IMU |
 | [ARK RTK Base](ark-rtk-base/) | u-blox ZED-F9P | L1/L2 | Base station or standalone rover | — | Jamming/spoofing detection, dual-band resilience | USB-C, UART | — |
 
 The serial modules (SAM, DAN) connect to a flight controller GPS port over UART and expose their magnetometer on I2C. The DroneCAN modules connect over CAN and publish GPS, magnetometer, barometer, and IMU data on the bus. The ARK RTK Base provides RTCM corrections for the RTK rovers from the ground side, and can also be used as a standalone RTK GPS rover.

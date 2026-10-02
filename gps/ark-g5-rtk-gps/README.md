@@ -7,7 +7,7 @@ coverY: 0
 
 [ARK G5 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/)
 
-The ARK G5 RTK GPS is built around the Septentrio mosaic-G5 P3 module. The P3 only supports a single antenna and the ANT2 connector is not active. For dual antenna heading, see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md).
+The ARK G5 RTK GPS is built around a Septentrio mosaic-G5 P3, P6 or P8 module. On the P3 the ANT2 connector is not active. On the P6 and P8, `SEP_ANT_MODE` `2` turns on dual antenna heading with ANT2, configured as on the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md). Two units give heading as a moving base and rover, see the PX4 instructions.
 
 ## Firmware
 
@@ -17,7 +17,7 @@ Follow the steps for updating the firmware through the flight controller.
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/91-1.16.c8403786.uavcan.bin" %}
+{% file src="../../.gitbook/assets/91-1.18.a784eb57.uavcan.bin" %}
 ARK G5 RTK GPS Firmware
 {% endfile %}
 
@@ -27,6 +27,14 @@ ARK G5 RTK GPS Bootloader
 
 ## Release Notes
 
+* 91-1.18.a784eb57 - 2026-10-1
+  * PX4 v1.18 base
+  * Moving base and moving-base rover (`SEP_MODE`)
+  * Single or dual antenna on the P6 and P8 (`SEP_ANT_MODE`)
+  * Heading reported only with fixed ambiguities; the antenna mounting is set on the flight controller (`SEP_OFFS_YAW` and `SEP_OFFS_PITCH` removed)
+  * SBAS and Galileo HAS available in `SEP_PVT_MODE`, off by default
+  * Jamming, spoofing, OSNMA and receiver error reporting
+  * Receiver reconfigured after it restarts
 * 91-1.16.c8403786 - 2026-2-12
   * Septentrio sensor\_gnss\_relative
   * General heading improvement

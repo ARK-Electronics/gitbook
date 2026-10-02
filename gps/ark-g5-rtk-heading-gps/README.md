@@ -7,7 +7,7 @@ coverY: 0
 
 [ARK G5H RTK Heading GPS](https://arkelectron.com/product/ark-g5-rtk-heading-gps/)
 
-The ARK G5H RTK Heading GPS is built around the Septentrio mosaic-G5 P3H module. The P3H supports two antennas connected to MAIN and ANT2, and provides compass-free yaw estimation by handling the moving baseline calculation internally and reporting the heading over DroneCAN as a single GPS node. For a single-antenna variant, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
+The ARK G5H RTK Heading GPS is built around a Septentrio mosaic-G5 P3H, P6 or P8 module, set to dual antenna in production. It takes two antennas on MAIN and ANT2 and provides compass-free yaw estimation, computing the heading in the module and reporting it over DroneCAN as a single GPS node. For a single-antenna variant, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
 
 ## Firmware
 
@@ -17,7 +17,7 @@ Follow the steps for updating the firmware through the flight controller.
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/91-1.16.c8403786.uavcan.bin" %}
+{% file src="../../.gitbook/assets/91-1.18.a784eb57.uavcan.bin" %}
 ARK G5H RTK Heading GPS Firmware
 {% endfile %}
 
@@ -27,6 +27,14 @@ ARK G5H RTK Heading GPS Bootloader
 
 ## Release Notes
 
+* 91-1.18.a784eb57 - 2026-10-1
+  * PX4 v1.18 base
+  * Moving base and moving-base rover (`SEP_MODE`)
+  * Single or dual antenna on the P6 and P8 (`SEP_ANT_MODE`)
+  * Heading reported only with fixed ambiguities; the antenna mounting is set on the flight controller (`SEP_OFFS_YAW` and `SEP_OFFS_PITCH` removed)
+  * SBAS and Galileo HAS available in `SEP_PVT_MODE`, off by default
+  * Jamming, spoofing, OSNMA and receiver error reporting
+  * Receiver reconfigured after it restarts
 * 91-1.16.c8403786 - 2026-2-12
   * Septentrio sensor\_gnss\_relative
   * General heading improvement
