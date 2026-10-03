@@ -143,6 +143,13 @@ Apply the [Single GPS Configuration](#single-gps-configuration) flight controlle
 | [SENS\_GPS\_PRIME](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS_PRIME) | node ID | CAN node ID of the _Moving Base_. It is preferred over the _Rover_, whose navigation rate and data latency can degrade when corrections are intermittent |
 | [SENS\_GPS\_MASK](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_GPS_MASK) | 7 | Blend both receivers using speed, horizontal position, and vertical position accuracy. This is the default value |
 
+#### Antenna Mounting
+
+| PX4 version | Parameters |
+|-------------|------------|
+| v1.18 and earlier | `EKF2_GPS_YAW_OFF`: clockwise angle in degrees from the vehicle forward axis to the _Moving Base_ → _Rover_ baseline: `0` if the _Rover_ is in front of the _Moving Base_, `90` if right, `180` if behind, `270` if left |
+| `main` | `SENS_GNSSn_ID` and `SENS_GNSSn_OFFX/Y/Z` (antenna position, meters in the body frame) for both modules, and `SENS_GNSSn_HDG` `1` (Moving base rover) in the _Rover_'s slot |
+
 ### CAN Node Parameters
 
 Set the following on each node and reboot it.
@@ -153,7 +160,6 @@ On the _Rover_:
 |-----------|-------|-------------|
 | `GPS_UBX_MODE` | 3 | Heading — rover with moving base, F9P UART1 connected to the CAN node |
 | `CANNODE_SUB_MBD` | 1 | Subscribe to `MovingBaselineData` messages on the CAN bus |
-| `GPS_YAW_OFFSET` | 0 / 90 / 180 / 270 | Clockwise angle in degrees from the vehicle forward axis to the _Moving Base_ → _Rover_ baseline: `0` if the _Rover_ is in front of the _Moving Base_, `90` if right, `180` if behind, `270` if left |
 
 On the _Moving Base_:
 
@@ -174,7 +180,7 @@ Connect the two 3-pin JST-GH `UART2` connectors to each other — TX of one modu
 | 2 | F9P\_RXD2 |
 | 3 | GND |
 
-Then set `GPS_UBX_MODE` to `1` on the _Rover_ and `2` on the _Moving Base_. `GPS_YAW_OFFSET` is set on the _Rover_ as above. `CANNODE_PUB_MBD` and `CANNODE_SUB_MBD` are not used in this configuration.
+Then set `GPS_UBX_MODE` to `1` on the _Rover_ and `2` on the _Moving Base_. `CANNODE_PUB_MBD` and `CANNODE_SUB_MBD` are not used in this configuration.
 
 ***
 

@@ -13,12 +13,22 @@ Follow the steps for updating the firmware through the flight controller.&#x20;
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/81-1.17.67ace351.uavcan.bin" %}
+{% file src="../../.gitbook/assets/81-1.18.76e683ea.uavcan.bin" %}
 ARK GPS Firmware
 {% endfile %}
 
+{% file src="../../.gitbook/assets/ark_can-gps_canbootloader.bin" %}
+ARK GPS Bootloader
+{% endfile %}
+
+Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
+
 ## Release Notes
 
+* 81-1.18.76e683ea - 2026-10-3
+  * PX4 v1.18 base
+  * Fix the IMU not starting after some resets until the next power cycle
+  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
 * 81-1.17.67ace351 - 2025-11-14
   * [Fix M9N output rate](https://github.com/PX4/PX4-GPSDrivers/pull/191)
 * 81-1.16.e68afe1e - 2025-2-12
