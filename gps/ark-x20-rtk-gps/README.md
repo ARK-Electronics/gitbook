@@ -21,7 +21,7 @@ The X20P receiver's own firmware is updated separately with u-center 2 — see [
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/89-1.16.47e04790.uavcan.bin" %}
+{% file src="../../.gitbook/assets/89-1.18.76e683ea.uavcan.bin" %}
 ARK X20 GPS Firmware
 {% endfile %}
 
@@ -29,8 +29,19 @@ ARK X20 GPS Firmware
 ARK X20 GPS Bootloader
 {% endfile %}
 
+Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
+
 ## Release Notes
 
+* 89-1.18.76e683ea - 2026-10-3
+  * PX4 v1.18 base
+  * The antenna mounting for moving baseline heading is set on the flight controller (`GPS_YAW_OFFSET` removed), see [PX4 Instructions](px4-instructions.md#moving-baseline-gps-heading-configuration)
+  * Moving base and rover run at 5 Hz
+  * Fix timestamps from the receiver's time pulse
+  * A moving baseline rover uses only its moving base's corrections
+  * Receiver UART1 at 921600 baud
+  * Magnetometer scale corrected by 1.7%: recalibrate the magnetometer after updating
+  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
 * 89-1.16.47e04790 - 2025-11-17
   * Initial release
 
