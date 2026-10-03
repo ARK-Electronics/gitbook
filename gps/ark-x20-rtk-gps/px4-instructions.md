@@ -130,6 +130,10 @@ Moving baseline requires X20P receiver firmware 2.10 or later — see [u-blox Fi
 Heading is only output when the _Rover_ has an RTK **Fixed** solution. No heading is output in RTK Float. RTK Fixed here means the baseline between the two antennas is resolved, which is what produces the heading — the vehicle's absolute position is no more accurate than a normal 3D fix unless you also feed in [corrections from a fixed base](#rtk-corrections-from-a-fixed-base).
 {% endhint %}
 
+{% hint style="info" %}
+A moving base and its rover must run at the same navigation rate, and u-blox limits a moving base to 5 Hz. Node firmware 1.18 and later sets 5 Hz on both modules in the moving baseline modes, so leave `GPS_UBX_RATE` at `0`. On earlier node firmware set `GPS_UBX_RATE` to `5` on both modules: a rover running faster than its base has no time-matched observations for the extra epochs and outputs no heading for them.
+{% endhint %}
+
 ### Flight Controller Parameters
 
 Apply the [Single GPS Configuration](#single-gps-configuration) flight controller parameters above, then change/add the following in _QGroundControl_ and reboot the flight controller.
