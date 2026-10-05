@@ -44,7 +44,8 @@ Set the following on the GPS and reboot the node. CAN node parameters can be con
 |-----------|-------------|
 | `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
 | `CANNODE_PUB_BAR` | Publish barometer messages on the CAN bus. Enabled by default |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
+| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus; the flight controller also needs `UAVCAN_SUB_IMU` set to `1` |
+| `CANNODE_NODE_ID` | Fixed node ID (1–125). `0`, the default, uses dynamic node allocation |
 | `TESEO_FWUPD` | Set to `1` to force the cannode to re-flash the embedded LIV4F firmware on the next boot. The cannode auto-updates the LIV4F whenever the embedded version differs from what is on the GPS chip — this parameter is only needed to force a re-flash without a version change. Auto-cleared back to `0` after a successful update |
 
 ***
