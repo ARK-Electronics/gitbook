@@ -17,7 +17,7 @@ Follow the steps for updating the firmware through the flight controller. The fi
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/86-1.18.769e90ff.uavcan.bin" %}
+{% file src="../../.gitbook/assets/86-1.18.0d10f176.uavcan.bin" %}
 ARK Teseo GPS Firmware
 {% endfile %}
 
@@ -29,8 +29,9 @@ Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPD
 
 ## Release Notes
 
-* 86-1.18.769e90ff - 2026-10-5
+* 86-1.18.0d10f176 - 2026-10-5
   * PX4 v1.18 base
+  * Output at 5 Hz by default, set with `TESEO_RATE`. Above 5 Hz with many satellites in use, the Teseo repeats its previous solution in the epochs it cannot compute, and the flight controller fuses each repeat as a new measurement
   * Check the Teseo's saved configuration on every boot and rewrite it only when it differs: a module that lost its configuration is repaired automatically, and the Teseo's flash is no longer rewritten on every boot
   * If the Teseo's configuration cannot be saved, keep publishing a fix from its standard NMEA output, with accuracy estimated from DOP, and log a warning every 30 s
   * Fix the position accuracy sent to the flight controller, which received the square root of the true value
