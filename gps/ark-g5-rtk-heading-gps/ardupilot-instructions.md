@@ -100,7 +100,7 @@ Once the G5H is reporting heading, you can verify it in the flight logs by exami
 | Field | Description |
 |-------|-------------|
 | `RHD` | Reported heading in degrees |
-| `RDist` | Reported baseline distance between antennas (meters) — should match your physical antenna separation |
+| `RDist` | Reported baseline distance between antennas (meters) — should match your physical antenna separation. `0` while the node has no valid heading |
 | `RDown` | Reported vertical offset between antennas (meters) |
 | `OK` | 1 if the heading is valid and being used by the EKF, 0 if rejected |
 
@@ -111,7 +111,7 @@ If `OK` is 0, the EKF is rejecting the GPS yaw. See the troubleshooting section 
 ## Troubleshooting
 
 * **GPS NO FIX with 0 satellites** — if Mission Planner shows "GPS NO FIX" with 0 sats and no position data, but the DroneCAN GUI Tool shows the GPS is publishing valid fix data on the CAN bus, check `GPS_AUTO_CONFIG`. If it is set to 2, change it to 1 and reboot. Setting it to 2 causes ArduPilot to try to auto-configure the CAN node by requesting parameters that the G5H firmware does not expose under the expected names. This handshake never completes, which blocks all GPS data from being used by the flight controller even though the CAN node is broadcasting valid fixes.
-* **Verify RDist** — check the `GPYW.RDist` log field. It should closely match your measured antenna separation. A large discrepancy indicates a problem with the antenna connection or multipath.
+* **Verify RDist** — check the `GPYW.RDist` log field. Once the heading is valid it should closely match your measured antenna separation; a large discrepancy indicates a problem with the antenna connection or multipath. It reads `0` while the node has no valid heading, such as after boot until the heading solution is fixed.
 * **Heading rejected (OK=0)** — common causes include:
   * Insufficient antenna separation
   * Poor sky view or multipath (e.g., reflections from nearby structures)

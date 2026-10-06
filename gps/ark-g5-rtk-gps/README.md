@@ -17,7 +17,7 @@ Follow the steps for updating the firmware through the flight controller.
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/91-1.18.a784eb57.uavcan.bin" %}
+{% file src="../../.gitbook/assets/91-1.18.73506671.uavcan.bin" %}
 ARK G5 RTK GPS Firmware
 {% endfile %}
 
@@ -25,8 +25,13 @@ ARK G5 RTK GPS Firmware
 ARK G5 RTK GPS Bootloader
 {% endfile %}
 
+Node firmware 91-1.18.73506671 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
+
 ## Release Notes
 
+* 91-1.18.73506671 - 2026-10-6
+  * ArduPilot no longer takes a heading the node marks invalid as its GPS yaw: the node sends it with a zero baseline, which ArduPilot rejects. With 91-1.18.a784eb57, ArduPilot could block arming with `Internal errors 0x400` while the heading solution was not fixed
+  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
 * 91-1.18.a784eb57 - 2026-10-1
   * PX4 v1.18 base
   * Moving base and moving-base rover (`SEP_MODE`)
