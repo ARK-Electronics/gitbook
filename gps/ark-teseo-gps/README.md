@@ -17,7 +17,7 @@ Follow the steps for updating the firmware through the flight controller. The fi
 
 See the latest firmware below.
 
-{% file src="../../.gitbook/assets/86-1.16.c93582f2.uavcan.bin" %}
+{% file src="../../.gitbook/assets/86-1.18.0d10f176.uavcan.bin" %}
 ARK Teseo GPS Firmware
 {% endfile %}
 
@@ -25,8 +25,23 @@ ARK Teseo GPS Firmware
 ARK Teseo GPS Bootloader
 {% endfile %}
 
+Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
+
 ## Release Notes
 
+* 86-1.18.0d10f176 - 2026-10-5
+  * PX4 v1.18 base
+  * Output at 5 Hz by default, set with `TESEO_RATE`. Above 5 Hz with many satellites in use, the Teseo repeats its previous solution in the epochs it cannot compute, and the flight controller fuses each repeat as a new measurement
+  * Check the Teseo's saved configuration on every boot and rewrite it only when it differs: a module that lost its configuration is repaired automatically, and the Teseo's flash is no longer rewritten on every boot
+  * If the Teseo's configuration cannot be saved, keep publishing a fix from its standard NMEA output, with accuracy estimated from DOP, and log a warning every 30 s
+  * Fix the position accuracy sent to the flight controller, which received the square root of the true value
+  * Magnetometer scale corrected to the IIS2MDC datasheet: readings are 1.7% lower, recalibrate the compass
+  * Fix the IMU not starting after some resets until the next power cycle
+  * Barometer at 25 Hz, and recovers on its own after repeated read errors
+  * Optional `RawIMU` output (`CANNODE_PUB_IMU`) and static node ID (`CANNODE_NODE_ID`)
+  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
+  * Embedded Teseo firmware is ST's STA8041\_LIV4F\_PVT\_STD 4.6.8.5.11 EB5 build. It reports the same version as 4.6.8.5.11, so a module already on 4.6.8.5.11 keeps its firmware unless `TESEO_FWUPD` is set
+  * Node parameters are kept on update; installing an older firmware afterwards resets all node parameters to defaults
 * 86-1.16.c93582f2 - 2026-5-5
   * Fix NMEA parsers eating first char of each first field. Observable on the RMC timestamp (hhmmss.sss): UTC hours 10-19 appear as 00-09 and 20-23 as 00-03.
 * 86-1.16.3c45b562 - 2025-9-26
