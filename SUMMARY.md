@@ -77,6 +77,8 @@
     * [PX4 Instructions](flight-controller/arkv6x/px4-instructions.md)
     * [ArduPilot Instructions](flight-controller/arkv6x/ardupilot-instructions.md)
     * [3D Models](flight-controller/arkv6x/3d-models.md)
+  * [ARKV6X-RT](flight-controller/arkv6x-rt/README.md)
+    * [PX4 Instructions](flight-controller/arkv6x-rt/px4-instructions.md)
   * [ARKV6S](flight-controller/arkv6s/README.md)
     * [PX4 Instructions](flight-controller/arkv6s/px4-instructions.md)
     * [ArduPilot Instructions](flight-controller/arkv6s/ardupilot-instructions.md)
