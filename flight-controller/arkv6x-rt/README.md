@@ -13,6 +13,10 @@ The USA-built ARKV6X-RT is an NXP i.MX RT1176 variant of the [ARKV6X](../arkv6x/
 
 [PX4 Autopilot](px4-instructions.md) ships on the board. Rev 1.0 is the revision in production.
 
+{% hint style="warning" %}
+Rev 2.0 has different IMUs than Rev 1.0. Rev 1.0 uses an ICM-45686, an IIM-20670, and an LSM6DSV80X. Rev 2.0 uses three LSM6DSV32X IMUs.
+{% endhint %}
+
 Order from [ARK Electronics](https://arkelectron.com/product/arkv6xrt/).
 
 <figure><img src="../../.gitbook/assets/ark_v6xrt_top.jpg" alt="ARKV6X-RT Rev 1.0, PAB connector side"><figcaption><p>ARKV6X-RT Rev 1.0, PAB connector side</p></figcaption></figure>

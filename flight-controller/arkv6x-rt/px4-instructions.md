@@ -18,7 +18,7 @@ iim20670 -R 2 -b 2 -s start
 
 The IIS2MDC starts on I2C3, and the BMP390 starts on I2C2 (`bmp388 -I -b 2 start`), for every hardware type.
 
-Rev 2.0 sets the FMUM hardware revision to 1 and moves the BMP390 to I2C3. A firmware build that only matches `ARKV6XRT000` prints `unsupported FMU hwtype, internal IMUs not started` on that board, and it still looks for the barometer on I2C2.
+Rev 2.0 has different IMUs: three LSM6DSV32X parts, on SPI1, SPI2, and SPI3, in place of the ICM-45686, IIM-20670, and LSM6DSV80X. It also sets the FMUM hardware revision to 1 and moves the BMP390 to I2C3. A firmware build that only matches `ARKV6XRT000` prints `unsupported FMU hwtype, internal IMUs not started` on that board, and it still looks for the barometer on I2C2. The Rev 1.0 start commands above do not probe the LSM6DSV32X.
 
 ### Flashing Firmware
 
@@ -62,7 +62,9 @@ make ark_fmu-v6xrt_bootloader
 
 ### IMUs
 
-Rev 1.0. Each IMU runs at the widest full scale of the channel it publishes, with as little on-chip filtering as the part allows. PX4 filters downstream.
+These rates are for Rev 1.0. Rev 2.0 fits three LSM6DSV32X IMUs instead, and the startup script above does not start them.
+
+On Rev 1.0, each IMU runs at the widest full scale of the channel it publishes, with as little on-chip filtering as the part allows. PX4 filters downstream.
 
 | IMU        | Bus  | Full scale          | Publish rate |
 | ---------- | ---- | ------------------- | ------------ |
