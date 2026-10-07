@@ -40,7 +40,7 @@ Over USB:
 python3 Tools/px4_uploader.py build/ark_fmu-v6xrt_default/ark_fmu-v6xrt_default.px4
 ```
 
-Over UART, use the carrier **TELEM2** port. The bootloader enables LPUART8 and leaves the other UARTs off. TELEM1, the port the ARKV6X bootloader uses, stays silent on this board. The bootloader runs TELEM2 at 1,500,000 baud with RTS/CTS flow control, so wire all four signals. The uploader defaults to 115200, so pass `--baud-bootloader 1500000`:
+Over UART, use the carrier **TELEM2** port. The bootloader enables LPUART8 and leaves the other UARTs off. TELEM1, the port the ARKV6X bootloader uses, stays silent on this board. The bootloader runs TELEM2 at 1,500,000 baud. TX, RX, and GND are enough: the module pulls its CTS input low, so the port doesn't block with CTS unconnected. If you do connect CTS, the adapter must hold RTS asserted, or the bootloader can stop transmitting. The uploader defaults to 115200, so pass `--baud-bootloader 1500000`:
 
 ```sh
 python3 Tools/px4_uploader.py --port /dev/<telem2-uart> --baud-bootloader 1500000 \
@@ -76,7 +76,7 @@ make ark_fmu-v6xrt_bootloader
 
 These rates are for Rev 1.0. Rev 2.0 fits three LSM6DSV32X IMUs instead, and the startup script above does not start them.
 
-On Rev 1.0, each IMU runs at the widest full scale of the channel it publishes, with as little on-chip filtering as the part allows. PX4 filters downstream.
+On Rev 1.0, each IMU runs at the widest full scale of the channel it publishes, with light on-chip filtering. PX4 filters downstream. The LSM6DSV80X accelerometer keeps its LPF2 at ODR/10 (768 Hz) as an anti-alias filter, and the IIM-20670 gyro low-pass can't be set wider than 60 Hz (see below).
 
 | IMU        | Bus  | Full scale          | Publish rate |
 | ---------- | ---- | ------------------- | ------------ |
@@ -94,7 +94,7 @@ The LSM6DSV80X publishes its ±16 g accelerometer. The ±80 g element stays powe
 
 ### Heater
 
-The heater is closed-loop on the ICM-45686 die temperature. `HEATER1_SENS_ID` defaults to that sensor (`3407882`). The pad warms the whole board. The parameter only selects which die is the feedback.
+On Rev 1.0 (`ARKV6XRT000`), the heater is closed-loop on the ICM-45686 die temperature: the board defaults set `HEATER1_SENS_ID` to that sensor (`3407882`). Other hardware types keep the driver default, 0. The pad warms the whole board. The parameter only selects which die is the feedback.
 
 Run the accelerometer calibration after the heater reaches its setpoint. `heater status` prints the sensor temperature and the set temperature. Wait until they are within 2.5 °C, or until `listener heater_status` shows `temperature_target_met` as true.
 
@@ -105,6 +105,10 @@ The module provides 12 FMU PWM outputs, and 8 more from PX4IO on a carrier that 
 FMU outputs 1–8 support DShot and bidirectional DShot. Outputs 9–12 are PWM only.
 
 Each FMU output has its own FlexPWM submodule, so protocol and rate are set per output.
+
+### RC Input
+
+The RC port (LPUART6, the carrier **RC/SBUS** connector) runs CRSF by default: `RC_CRSF_PRT_CFG` is set to Radio Controller. SBUS is off. For an SBUS receiver, set `RC_CRSF_PRT_CFG` to Disabled and `RC_SBUS_PRT_CFG` to Radio Controller, then reboot.
 
 ### Power
 

@@ -46,7 +46,7 @@ PX4 starts the Rev 1.0 IMUs when the hardware type is `ARKV6XRT000`, and it prob
 
 * [NXP i.MX RT1176](https://www.nxp.com/products/i.MX-RT1170), MIMXRT1176DVMAB
   * 1 GHz Arm Cortex-M7. PX4 clocks this core at 996 MHz.
-  * 400 MHz Arm Cortex-M4. PX4 leaves this core idle.
+  * 400 MHz Arm Cortex-M4. PX4 clocks this core at 392.73 MHz and leaves it idle.
   * 2 MB RAM
 * Code store is a 64 MB Macronix MX25UM51345G octal NOR on FlexSPI1. The RT1176 fetches instructions from that flash (execute-in-place). PX4 uses the first 4 MB.
 * [NXP EdgeLock SE051](https://www.nxp.com/products/SE051) secure element, I2C address 0x48
