@@ -5,6 +5,8 @@ coverY: 0
 
 # ARK RTK Base
 
+* Open source [schematic](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_RTK_Base/schematic/ARK_RTK_Base_Rev_1_Schematic.pdf) and [BOM](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_RTK_Base/bom/ARK_RTK_Base_Rev_1_BOM.xlsx)
+
 ## Pinout
 
 #### USB C

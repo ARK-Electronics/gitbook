@@ -5,6 +5,8 @@ coverY: 0
 
 # ARK GPS
 
+* Open source [schematic](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_GPS/schematic/ARK_GPS_Rev_3_Schematic.pdf) and [BOM](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_GPS/bom/ARK_GPS_Rev_3_BOM.xlsx)
+
 ## Firmware
 
 Follow the steps for updating the firmware through the flight controller.&#x20;

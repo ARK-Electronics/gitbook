@@ -11,6 +11,8 @@ Find 3D models at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK
 
 Find case files at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_RTK\_GPS/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case)
 
+* Open source [schematic](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_RTK_GPS/schematic/ARK_RTK_GPS_Rev_3_Schematic.pdf) and [BOM](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_RTK_GPS/bom/ARK_RTK_GPS_Rev_3_BOM.xlsx)
+
 ## L1L5 Variant
 
 The [ARK RTK GPS L1L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/) is a variant of the ARK RTK GPS built around the u-blox ZED-F9P-15B, which receives the L1/L5 bands instead of L1/L2. The L5 band improves resilience to interference and multipath.
