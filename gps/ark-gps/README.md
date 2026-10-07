@@ -42,9 +42,19 @@ The ARK GPS is connected to the CAN bus using a Pixhawk standard 4 pin JST GH ca
 
 ### LED Meanings <a href="#led-meanings" id="led-meanings"></a>
 
-You will see green, blue and red LEDs on the ARK GPS when it is being flashed, and a blinking green LED if it is running properly.
+| Status LED | Meaning |
+|-----|---------|
+| Green, fast blink (10 Hz) | Node firmware running. It does not change with CAN traffic. |
+| Green, slow blink (1 Hz) | Bootloader listening for CAN traffic |
+| Blue, blinking (2 Hz) | Bootloader waiting for a node ID from the flight controller |
+| Blue and green, blinking (3 Hz) | Bootloader waiting up to 3 s for the flight controller to start a firmware update |
+| Red, green and blue together (3 Hz) | Firmware update in progress |
+| Red, blinking | Firmware update error. 1 Hz: the flight controller returned a file error. 2 Hz: the flight controller stopped responding. 4 Hz: the image failed its CRC check. A failed update restarts the node after 20 s. |
+| White, fast blink (10 Hz) | GPS passthrough, entered by holding the safety switch at power-up. See [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md). |
 
-If you see a red LED there is an error and you should check the following:
+Without valid firmware the node stays in the bootloader until the flight controller flashes it.
+
+If the status LED blinks red, check the following:
 
 * Make sure the flight controller has an SD card installed.
 * Make sure the ARK GPS has `ark_can-gps_canbootloader` installed prior to flashing `ark_can-gps_default`.

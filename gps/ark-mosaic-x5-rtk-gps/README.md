@@ -44,6 +44,30 @@ Node firmware 84-1.18.73506671 and later can rewrite its own CAN bootloader: set
 * 84-1.15.6dea2ce5 - 2025-2-12
   * Disable mag bias estimator by default
 
+## LED Meanings
+
+With the connectors at the bottom edge, the GNSS LEDs are on the right edge and the status LED (red, green and blue) is on the left edge. The GNSS LEDs are driven by the receiver; the status LED by the node firmware.
+
+| GNSS LED | Meaning |
+|-----|---------|
+| Green, one short flash per second | Receiver PPS. Starts once the receiver has a position fix. |
+| Blue, blinking | RTK Float |
+| Blue, solid | RTK Fixed |
+
+The receiver configuration ARK saves at the factory sets both LEDs; resetting the receiver to its defaults changes them.
+
+| Status LED | Meaning |
+|-----|---------|
+| Green, fast blink (10 Hz) | Node firmware running. It does not change with CAN traffic. |
+| Green, slow blink (1 Hz) | Bootloader listening for CAN traffic |
+| Blue, blinking (2 Hz) | Bootloader waiting for a node ID from the flight controller |
+| Blue and green, blinking (3 Hz) | Bootloader waiting up to 3 s for the flight controller to start a firmware update |
+| Red, green and blue together (3 Hz) | Firmware update in progress |
+| Red, blinking | Firmware update error. 1 Hz: the flight controller returned a file error. 2 Hz: the flight controller stopped responding. 4 Hz: the image failed its CRC check. A failed update restarts the node after 20 s. |
+| White, fast blink (10 Hz) | GPS passthrough, entered by holding the safety switch at power-up. The receiver's UART1 is bridged to the debug connector's UART. |
+
+Without valid firmware the node stays in the bootloader until the flight controller flashes it.
+
 ## Pinout
 
 #### CAN - 4 Pin JST-GH
