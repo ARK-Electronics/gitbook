@@ -11,6 +11,10 @@ The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6S to be used on any
 
 <figure><img src="../../.gitbook/assets/ark_v6s_back.jpg" alt=""><figcaption><p>ARK Electronics ARKV6S</p></figcaption></figure>
 
+### Datasheet
+
+* [ARKV6S](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARKV6S/datasheet/ARKV6S_Datasheet.pdf)
+
 ### Sensors
 
 * [Invensense IIM-42653 Industrial IMU](https://invensense.tdk.com/products/smartindustrial/iim-42653/)

@@ -21,6 +21,10 @@ The board uses an INA238 digital power monitor with a 0.1mΩ shunt to measure vo
 [3d-model.md](3d-model.md)
 {% endcontent-ref %}
 
+### Datasheet
+
+* [ARK 12S Payload Power Module](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_12S_Payload_Power_Module/datasheet/ARK_12S_Payload_Power_Module_Datasheet.pdf)
+
 ### Cooling
 
 When operating at high battery current and/or high 5V/12V regulator output current, it is recommended to actively cool the board.

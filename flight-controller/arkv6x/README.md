@@ -17,6 +17,10 @@ With triple synced IMUs, data averaging, voting, and filtering is possible. The 
 
 <figure><img src="../../.gitbook/assets/ark_v6x_front.D40XTXGs.jpg" alt=""><figcaption><p>ARK Electronics ARKV6X</p></figcaption></figure>
 
+### Datasheet
+
+* [ARKV6X](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARKV6X/datasheet/ARKV6X_Datasheet.pdf)
+
 ### Sensors
 
 * [Dual Invensense ICM-42688-P IMUs](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/)
