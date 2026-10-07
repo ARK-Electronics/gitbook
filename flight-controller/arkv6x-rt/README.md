@@ -7,6 +7,8 @@ coverY: 0
 
 {% hint style="info" %}
 The ARKV6X-RT is a flight-controller module. It needs a Pixhawk Autopilot Bus carrier, such as the [ARK Pixhawk Autopilot Bus Carrier](../ark-pixhawk-autopilot-bus-carrier/README.md). Wiring connectors (GPS, TELEM, CAN, PWM, Ethernet, power) are on the carrier. See the [ARK Pixhawk Autopilot Bus Carrier Pinout](../ark-pixhawk-autopilot-bus-carrier/pinout.md).
+
+That pinout labels signals with ARKV6X names, such as `UART5` on TELEM2 and `I2C3` on the I2C3 connector. The ARKV6X-RT names are different. Use the [Serial Port Mapping](#serial-port-mapping) and [I2C Bus Mapping](#i2c-bus-mapping) tables on this page.
 {% endhint %}
 
 The USA-built ARKV6X-RT is an NXP i.MX RT1176 variant of the [ARKV6X](../arkv6x/README.md), based on the [FMUv6X-RT and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards). Triple synced IMUs make data averaging, voting, and filtering possible. The Pixhawk Autopilot Bus (PAB) form factor lets the module sit on any [PAB-compatible carrier](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html).
@@ -70,7 +72,7 @@ Rev 2.0 replaces U9, U10, and U15 with three [ST LSM6DSV32X](https://www.st.com/
 * 1 W heater on 5 V, about 200 mA, for warming the sensors in extreme cold
 * Red, green, and blue LED indicators
 * MicroSD slot. A MicroSD card is included.
-* Onboard boot button. Held, it selects the ROM serial downloader. Released, the board boots from the programmed fuses.
+* Onboard boot button. The boot mode is read only at power-on or reset. Hold the button while powering on to select the ROM serial downloader. Otherwise the board boots from the programmed fuses.
 * USA built, NDAA compliant
 
 ### Interfaces
@@ -79,7 +81,7 @@ These signals are on the PAB connectors. A carrier decides which of them reach a
 
 * 12 FMU PWM outputs. A carrier with PX4IO adds 8 more.
 * Eight serial ports: GPS1, GPS2, TELEM1, TELEM2, TELEM3, TELEM4, PX4IO/RC, and the debug console
-* Four I2C buses. I2C3 holds the onboard IIS2MDC. On Rev 1.0 the BMP390 is on I2C2, which is shared with the carrier PM2 connector. On Rev 2.0 the BMP390 is on I2C3.
+* Four I2C buses: I2C1, I2C2, I2C3, and I2C6. I2C3 is internal and holds the onboard IIS2MDC. On Rev 1.0 the BMP390 is on I2C2, which also runs to the carrier GPS2 and POWER2 connectors. On Rev 2.0 the BMP390 is on I2C3. See [I2C Bus Mapping](#i2c-bus-mapping).
 * SPI1, SPI2, and SPI3 serve the onboard IMUs. SPI6 is the external bus, with two chip selects, two data-ready lines, and a reset.
 * CAN1, CAN2, and CAN3. The default PX4 build enables two CAN interfaces.
 * 100BASE-T Ethernet on ENET2. The module drives RMII, PHY power, and the PHY interrupt. The PHY, magnetics, and jack are on the carrier.
@@ -111,19 +113,34 @@ GPS, TELEM, CAN, PWM, Ethernet, and power connectors are on the carrier.
 
 ### Serial Port Mapping
 
-PX4 on the ARKV6X-RT. Flow control is CTS/RTS on the TELEM ports that have it.
+PX4 on the ARKV6X-RT. Flow control is CTS/RTS on the TELEM ports that have it. The last column is the connector and signal name on the [ARK PAB Carrier pinout](../ark-pixhawk-autopilot-bus-carrier/pinout.md), which uses ARKV6X UART names.
 
-| UART     | Device     | Port            | Flow control |
-| -------- | ---------- | --------------- | :----------: |
-| LPUART1  | /dev/ttyS0 | Debug Console   |      No      |
-| LPUART3  | /dev/ttyS1 | GPS1            |      No      |
-| LPUART4  | /dev/ttyS2 | TELEM1          |     Yes      |
-| LPUART5  | /dev/ttyS3 | GPS2            |      No      |
-| LPUART6  | /dev/ttyS4 | PX4IO / RC      |      No      |
-| LPUART8  | /dev/ttyS5 | TELEM2          |     Yes      |
-| LPUART10 | /dev/ttyS6 | TELEM3          |     Yes      |
-| LPUART11 | /dev/ttyS7 | TELEM4          |      No      |
+| UART     | Device     | Port            | Flow control | ARK PAB Carrier connector (pinout label) |
+| -------- | ---------- | --------------- | :----------: | ---------------------------------------- |
+| LPUART1  | /dev/ttyS0 | Debug Console   |      No      | Debug Port (Console TX/RX)               |
+| LPUART3  | /dev/ttyS1 | GPS1            |      No      | GPS1 (`USART1`)                          |
+| LPUART4  | /dev/ttyS2 | TELEM1          |     Yes      | TELEM1 (`UART7`)                         |
+| LPUART5  | /dev/ttyS3 | GPS2            |      No      | GPS2 (`UART8`)                           |
+| LPUART6  | /dev/ttyS4 | PX4IO / RC      |      No      | RC/SBUS (`USART6`)                       |
+| LPUART8  | /dev/ttyS5 | TELEM2          |     Yes      | TELEM2 (`UART5`)                         |
+| LPUART10 | /dev/ttyS6 | TELEM3          |     Yes      | TELEM3 (`USART2`)                        |
+| LPUART11 | /dev/ttyS7 | TELEM4          |      No      | UART4/I2C3 (`UART4`)                     |
 
 {% hint style="info" %}
-The bootloader brings up LPUART8 only. UART flashing talks to TELEM2. See [PX4 Instructions](px4-instructions.md).
+The bootloader brings up LPUART8 only, at 1,500,000 baud. UART flashing uses the carrier TELEM2 connector. See [PX4 Instructions](px4-instructions.md).
 {% endhint %}
+
+### I2C Bus Mapping
+
+PX4 bus numbers, as used by driver `-b` options and parameters such as `PCA9685_EN_BUS`.
+
+| PX4 bus | ARK PAB Carrier connectors | Onboard devices                              |
+| ------- | -------------------------- | -------------------------------------------- |
+| 1       | GPS1, POWER1               | None                                         |
+| 2       | GPS2, POWER2               | Rev 1.0: BMP390 at 0x76                      |
+| 3       | None (internal)            | IIS2MDC at 0x1E. Rev 2.0: BMP390 at 0x76     |
+| 6       | I2C3, UART4/I2C3           | None                                         |
+
+The carrier's `I2C3` connectors are bus 6 on the ARKV6X-RT, not bus 3. Bus 3 is internal. A PCA9685 on the carrier I2C3 connector needs `PCA9685_EN_BUS` set to 6.
+
+On Rev 1.0, don't put another device at address 0x76 on GPS2 or POWER2, such as a barometer in a GPS module. It would collide with the onboard BMP390.

@@ -18,17 +18,21 @@ iim20670 -R 2 -b 2 -s start
 
 The IIS2MDC starts on I2C3, and the BMP390 starts on I2C2 (`bmp388 -I -b 2 start`), for every hardware type.
 
-Rev 2.0 has different IMUs: three LSM6DSV32X parts, on SPI1, SPI2, and SPI3, in place of the ICM-45686, IIM-20670, and LSM6DSV80X. It also sets the FMUM hardware revision to 1 and moves the BMP390 to I2C3. A firmware build that only matches `ARKV6XRT000` prints `unsupported FMU hwtype, internal IMUs not started` on that board, and it still looks for the barometer on I2C2. The Rev 1.0 start commands above do not probe the LSM6DSV32X.
+Rev 2.0 has different IMUs: three LSM6DSV32X parts, on SPI1, SPI2, and SPI3, in place of the ICM-45686, IIM-20670, and LSM6DSV80X. It also sets the FMUM hardware revision to 1 and moves the BMP390 to I2C3. A firmware build that only matches `ARKV6XRT000` prints `unsupported FMU hwtype, internal IMUs not started` on that board, and it still looks for the barometer on I2C2. The `lsm6dsv` driver recognizes the LSM6DSV32X, and the board's SPI table declares an LSM6DSV on SPI3, so the SPI3 part can be started by hand. SPI1 and SPI2 are declared as the ICM-45686 and IIM-20670, so those two LSM6DSV32X parts can't start until the board configuration changes.
 
 ### Flashing Firmware
 
 #### QGroundControl (USB)
 
-Firmware flashes over the carrier USB-C port with [QGroundControl](https://qgroundcontrol.com/).
+[QGroundControl](https://qgroundcontrol.com/) can't download stock firmware for this board yet. The `ark_fmu-v6xrt` build target is on PX4 `main` but isn't in a PX4 release, and QGroundControl has no firmware entry for the board ID (62). Flash a file you built instead:
+
+1. [Build the firmware](#building-firmware).
+2. In QGroundControl, open the **Firmware** setup page, then connect the carrier USB-C port.
+3. Check **Advanced settings**, choose **Custom firmware file...**, and select `ark_fmu-v6xrt_default.px4`.
 
 #### px4\_uploader.py (USB or TELEM2)
 
-[`px4_uploader.py`](https://github.com/PX4/PX4-Autopilot/blob/main/Tools/px4_uploader.py) flashes a `.px4` over USB, or over UART while the bootloader is running.
+[`px4_uploader.py`](https://github.com/PX4/PX4-Autopilot/blob/main/Tools/px4_uploader.py) flashes a `.px4` over USB, or over the carrier TELEM2 UART.
 
 Over USB:
 
@@ -36,10 +40,18 @@ Over USB:
 python3 Tools/px4_uploader.py build/ark_fmu-v6xrt_default/ark_fmu-v6xrt_default.px4
 ```
 
-Over UART, use the carrier **TELEM2** port. The bootloader enables LPUART8 and leaves the other UARTs off. TELEM1, the port the ARKV6X bootloader uses, stays silent on this board.
+Over UART, use the carrier **TELEM2** port. The bootloader enables LPUART8 and leaves the other UARTs off. TELEM1, the port the ARKV6X bootloader uses, stays silent on this board. The bootloader runs TELEM2 at 1,500,000 baud with RTS/CTS flow control, so wire all four signals. The uploader defaults to 115200, so pass `--baud-bootloader 1500000`:
 
 ```sh
-python3 Tools/px4_uploader.py --port /dev/<telem2-uart> build/ark_fmu-v6xrt_default/ark_fmu-v6xrt_default.px4
+python3 Tools/px4_uploader.py --port /dev/<telem2-uart> --baud-bootloader 1500000 \
+  build/ark_fmu-v6xrt_default/ark_fmu-v6xrt_default.px4
+```
+
+That command works only while the bootloader is listening, for example on a board with no valid firmware. When PX4 is installed and no USB cable is connected, the bootloader starts PX4 right away. The uploader then has to reboot the board into the bootloader with a MAVLink command on TELEM2. TELEM2 has no MAVLink instance by default, so first set `MAV_1_CONFIG` to `TELEM 2` and reboot. Then also pass the TELEM2 baud (`SER_TEL2_BAUD`, 921600 by default) as `--baud-flightstack`:
+
+```sh
+python3 Tools/px4_uploader.py --port /dev/<telem2-uart> --baud-bootloader 1500000 --baud-flightstack 921600 \
+  build/ark_fmu-v6xrt_default/ark_fmu-v6xrt_default.px4
 ```
 
 ### Building Firmware
@@ -72,6 +84,8 @@ On Rev 1.0, each IMU runs at the widest full scale of the channel it publishes, 
 | LSM6DSV80X | SPI3 | ±16 g / ±4000 dps   | 768 Hz       |
 | IIM-20670  | SPI2 | ±65.5 g / ±1966 dps | 1000 Hz      |
 
+The ICM-45686 and LSM6DSV80X rates follow `IMU_GYRO_RATEMAX`. The table shows multicopter rates, because multicopter airframes raise `IMU_GYRO_RATEMAX` from 400 to 800. Fixed-wing, VTOL, and rover airframes keep 400, so those two IMUs publish at about 400 Hz. The IIM-20670 publishes at 1000 Hz on every airframe.
+
 Startup order is ICM-45686, then LSM6DSV80X, then IIM-20670. At equal calibration priority the voter keeps the lowest instance, and `CAL_ACC0_PRIO` / `CAL_GYRO0_PRIO` are seeded on the ICM-45686, so that part is the primary.
 
 The IIM-20670 starts last on purpose. Its gyro low-pass cannot be set wider than 60 Hz, which is too much group delay for the rate loop, so it is the navigation and fallback IMU. Its gyro trace looks smoother and later than the other two.
@@ -82,7 +96,7 @@ The LSM6DSV80X publishes its ±16 g accelerometer. The ±80 g element stays powe
 
 The heater is closed-loop on the ICM-45686 die temperature. `HEATER1_SENS_ID` defaults to that sensor (`3407882`). The pad warms the whole board. The parameter only selects which die is the feedback.
 
-Run the accelerometer calibration after `heater status` reports that the setpoint has been reached.
+Run the accelerometer calibration after the heater reaches its setpoint. `heater status` prints the sensor temperature and the set temperature. Wait until they are within 2.5 °C, or until `listener heater_status` shows `temperature_target_met` as true.
 
 ### PWM Outputs
 
@@ -115,7 +129,7 @@ Full notes are in the [board README](https://github.com/PX4/PX4-Autopilot/blob/m
 
 #### What you need
 
-* An NXP MCU-Link (`1fc9:0143`). Its JST-GH cable mates with the carrier debug connector.
+* An NXP MCU-Link (`1fc9:0143`), wired to the carrier FMU Debug connector. That connector is a 10-pin JST-SH (Pixhawk Debug Full), not JST-GH.
 * pyOCD from pip, so `cmsis-pack-manager` is included:
 
 ```bash
@@ -152,7 +166,9 @@ pyocd cmd -t mimxrt1170_cm7 -f 4000k -O resume_on_disconnect=false \
 
 #### 2. Flash
 
-Use the pack target `mimxrt1176dvmaa` here. The built-in `mimxrt1170_cm7` target is only for the preconditioning step and the reset.
+Use the pack target `mimxrt1176dvmaa` here. The chip is marked MIMXRT1176DVMAB, but the DVMAA target is the right one, and PX4 builds for DVMAA as well. The built-in `mimxrt1170_cm7` target is only for the preconditioning step and the reset.
+
+You don't have to build the bootloader. A prebuilt image is in the PX4 tree at [`boards/ark/fmu-v6xrt/extras/ark_fmu-v6xrt_bootloader.bin`](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/fmu-v6xrt/extras/ark_fmu-v6xrt_bootloader.bin). Use that path in place of `build/ark_fmu-v6xrt_bootloader/ark_fmu-v6xrt_bootloader.bin` below.
 
 ```bash
 pyocd flash -t mimxrt1176dvmaa -f 4000k -O resume_on_disconnect=false \
@@ -176,4 +192,4 @@ pyocd reset -t mimxrt1170_cm7 -f 4000k -O reset_type=hw
 
 #### Boot button
 
-Holding the onboard button selects the ROM serial downloader (`BOOT_MODE[1:0] = 01`). Released, the board boots from fuses (`BOOT_MODE[1:0] = 00`). The SWD steps above are for a board whose fuses are already programmed.
+The boot mode is read only at power-on or reset. Holding the onboard button through power-on or reset selects the ROM serial downloader (`BOOT_MODE[1:0] = 01`). Otherwise the board boots from fuses (`BOOT_MODE[1:0] = 00`). Pressing the button on a running board does nothing. The SWD steps above are for a board whose fuses are already programmed.
