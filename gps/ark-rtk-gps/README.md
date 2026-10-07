@@ -7,7 +7,9 @@ coverY: 0
 
 Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_rtk\_gps.html](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html)
 
-Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_RTK_GPS)
+Find 3D models at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_RTK\_GPS/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model)
+
+Find case files at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_RTK\_GPS/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case)
 
 ## L1L5 Variant
 

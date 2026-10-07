@@ -6,5 +6,5 @@ metaLinks:
 
 # 3D Model
 
-[https://github.com/ARK-Electronics/ARK\_Jetson\_PAB\_V3](https://github.com/ARK-Electronics/ARK_Jetson_PAB_V3)
+[https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_Jetson\_PAB\_V3/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_V3/model)
 

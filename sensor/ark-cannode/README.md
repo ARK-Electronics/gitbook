@@ -9,11 +9,13 @@ coverY: 0
 
 ![ARK CANnode](https://docs.px4.io/main/assets/ark_cannode.-X5QpRbg.jpg)
 
-Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_CANNODE](https://github.com/ARK-Electronics/ARK_CANNODE)
+Find 3D models at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_CANnode/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/model)
+
+Find case files at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_CANnode/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/case)
 
 ### Hardware Specifications <a href="#hardware-specifications" id="hardware-specifications"></a>
 
-* [Open Source Schematic and BOM](https://github.com/ARK-Electronics/ARK_CANNODE)
+* Open source [schematic](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_CANnode/schematic/ARK_CANNODE_Rev_1_Schematic.pdf) and [BOM](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_CANnode/bom/ARK_CANNODE_Rev_1_BOM.xlsx)
 * Sensors
   * Bosch BMI088 6-Axis IMU or Invensense ICM-42688-P 6-Axis IMU
 * STM32F412CGU6 MCU

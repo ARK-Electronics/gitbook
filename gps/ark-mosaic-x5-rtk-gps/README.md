@@ -96,4 +96,6 @@ Without valid firmware the node stays in the bootloader until the flight control
 
 ## 3D Model
 
-Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_MOSAIC-X5\_GPS](https://github.com/ARK-Electronics/ARK_MOSAIC-X5_GPS)
+Find 3D models at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_MOSAIC-X5\_RTK\_GPS/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/model)
+
+Find case files at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_MOSAIC-X5\_RTK\_GPS/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/case)
