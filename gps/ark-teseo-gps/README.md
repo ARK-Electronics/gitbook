@@ -67,6 +67,23 @@ Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPD
   * Implement automatic LIV4F updating within the driver
   * Fix speed accuracy reporting
 
+## LED Meanings
+
+The green LED on the left edge flashes once per second with the receiver's time pulse (PPS). The status LED (red, green and blue in a row) is on the right edge and is driven by the node firmware.
+
+| Status LED | Meaning |
+|-----|---------|
+| Green, fast blink (10 Hz) | Node firmware running. It does not change with CAN traffic. |
+| Green, slow blink (1 Hz) | Bootloader listening for CAN traffic |
+| Blue, blinking (2 Hz) | Bootloader waiting for a node ID from the flight controller |
+| Blue and green, blinking (3 Hz) | Bootloader waiting up to 3 s for the flight controller to start a firmware update |
+| Red, green and blue together (3 Hz) | Firmware update in progress |
+| Red, blinking | Firmware update error. 1 Hz: the flight controller returned a file error. 2 Hz: the flight controller stopped responding. 4 Hz: the image failed its CRC check. A failed update restarts the node after 20 s. |
+| Blue, blinking (2 Hz) after the firmware has started | Updating the Teseo receiver firmware |
+| Red, blinking (1 Hz) after the firmware has started | Teseo receiver firmware update failed |
+
+Without valid firmware the node stays in the bootloader until the flight controller flashes it.
+
 ## 3D Model
 
 Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_TESEO\_GPS](https://github.com/ARK-Electronics/ARK_TESEO_GPS)

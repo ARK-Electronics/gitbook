@@ -45,6 +45,28 @@ Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPD
 * 89-1.16.47e04790 - 2025-11-17
   * Initial release
 
+## LED Meanings
+
+With the connectors at the bottom edge, the GNSS LEDs are on the right edge and the status LED (red, green and blue) is on the left edge. The GNSS LEDs are driven by the receiver; the status LED by the node firmware.
+
+| GNSS LED | Meaning |
+|-----|---------|
+| Green, one flash per second | Receiver time pulse. Starts once the receiver has a fix. |
+| Blue, blinking | Corrections received and in use, RTK Float |
+| Blue, solid | RTK Fixed |
+
+| Status LED | Meaning |
+|-----|---------|
+| Green, fast blink (10 Hz) | Node firmware running. It does not change with CAN traffic. |
+| Green, slow blink (1 Hz) | Bootloader listening for CAN traffic |
+| Blue, blinking (2 Hz) | Bootloader waiting for a node ID from the flight controller |
+| Blue and green, blinking (3 Hz) | Bootloader waiting up to 3 s for the flight controller to start a firmware update |
+| Red, green and blue together (3 Hz) | Firmware update in progress |
+| Red, blinking | Firmware update error. 1 Hz: the flight controller returned a file error. 2 Hz: the flight controller stopped responding. 4 Hz: the image failed its CRC check. A failed update restarts the node after 20 s. |
+| White, fast blink (10 Hz) | GPS passthrough, entered by holding the safety switch at power-up. See [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md). |
+
+Without valid firmware the node stays in the bootloader until the flight controller flashes it.
+
 ## Pinout
 
 #### CAN - 4 Pin JST-GH

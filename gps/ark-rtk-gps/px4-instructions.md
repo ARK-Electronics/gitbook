@@ -21,7 +21,7 @@ PX4 flashes DroneCAN nodes automatically at boot. This is the recommended method
 1. Download the firmware from the [ARK RTK GPS](README.md) page, or build `ark_can-rtk-gps_default` yourself.
 2. Copy the `.uavcan.bin` file to the root of the flight controller's SD card.
 3. Set [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` (or `3`) and power cycle the vehicle.
-4. Wait for the update to finish. The node's CAN LED blinks blue and red rapidly while flashing, then returns to fast blinking green.
+4. Wait for the update to finish. The node's status LED flashes red, green and blue together during the update, then returns to fast blinking green.
 
 On boot PX4 reads the board ID from the metadata block embedded in the binary, moves the file to `/fs/microsd/ufw/82.bin`, and deletes it from the SD card root. The file name does not matter — only the embedded metadata is used to match the file to the node.
 
@@ -184,32 +184,10 @@ Then set `GPS_UBX_MODE` to `1` on the _Rover_ and `2` on the _Moving Base_. `CAN
 
 ***
 
-## LED Meanings
-
-The GPS status LEDs are to the right of the connectors:
-
-| LED | Meaning |
-|-----|---------|
-| Blinking green | GPS fix |
-| Blinking blue | Corrections received, RTK Float |
-| Solid blue | RTK Fixed |
-
-The CAN status LEDs are to the top left of the connectors:
-
-| LED | Meaning |
-|-----|---------|
-| Slow blinking green | Waiting for CAN connection |
-| Fast blinking green | Normal operation |
-| Slow blinking green and blue | CAN enumeration |
-| Fast blinking blue and red | Firmware update in progress |
-| Blinking red | Error |
-
-***
-
 ## Troubleshooting
 
 * **Node does not appear on the bus** — run `uavcan status` in the _QGroundControl_ MAVLink Console to list the nodes PX4 has detected. Check that `UAVCAN_ENABLE` is set to `2` or `3` and that the flight controller has a working SD card installed.
-* **Blinking red CAN LED** — confirm the flight controller has an SD card, that `ark_can-rtk-gps_canbootloader` was installed on the node before `ark_can-rtk-gps_default`, and that there are no stale binaries left in the SD card root or in `/fs/microsd/ufw/`.
+* **Blinking red status LED** — see [LED Meanings](README.md#led-meanings), then confirm the flight controller has an SD card, that `ark_can-rtk-gps_canbootloader` was installed on the node before `ark_can-rtk-gps_default`, and that there are no stale binaries left in the SD card root or in `/fs/microsd/ufw/`.
 * **Node is not detected at all, even by the DroneCAN GUI Tool** — for example after a bad flash that erased the bootloader. Recover it over SWD with an ST-LINK, see [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
 * **No heading in a moving baseline setup** — heading is only output at RTK Fixed. Confirm the _Rover_ shows a solid blue GPS LED, and that the antennas are at least 30 cm apart.
 * **Test outside** — GPS modules need a clear sky view to get a good fix. Indoor testing will not produce reliable results.
