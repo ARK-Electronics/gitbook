@@ -122,7 +122,7 @@ UART2 cannot be used for u-blox firmware update. Use the debug passthrough metho
   * Fix timestamps from the receiver's time pulse
   * A moving baseline rover uses only its moving base's corrections
   * Receiver UART1 at 921600 baud
-  * Magnetometer scale corrected by 1.7%: recalibrate the magnetometer after updating
+  * Magnetometer scale corrected to the IIS2MDC datasheet
   * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
 * 89-1.16.47e04790 - 2025-11-17
   * Initial release

@@ -8,4 +8,4 @@ After a reboot, the new outputs will be available in the [actuator page of QGrou
 
 The parameters can also be manually edited with the PCA9685\_ params.
 
-The [pca9685 driver](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/fmu-v6x/default.px4board#L42) must be compiled in the board firmware for the parameter to appear.
+The [pca9685 driver](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/fmu-v6x/default.px4board) must be compiled in the board firmware for the parameter to appear.

@@ -44,7 +44,7 @@ UAVCAN_PUB_ARM 1 # Required to publish arming state to CANnode
 ```
 
 On the CANnode, set the timer output protocol using `PWM_MAIN_TIMx` parameters. You can see the timer-to-output mapping here:\
-[https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer\_config.cpp#L43-L50](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer_config.cpp#L43-L50)
+[boards/ark/cannode/src/timer\_config.cpp](https://github.com/PX4/PX4-Autopilot/blob/main/boards/ark/cannode/src/timer_config.cpp)
 
 ### Servos
 
