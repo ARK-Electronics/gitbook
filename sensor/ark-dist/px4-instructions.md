@@ -1,16 +1,6 @@
 # PX4 Instructions
 
-## Hardware Setup
-
-### Wiring
-
-**CAN:** connect with a Pixhawk standard 4-pin JST-GH cable. See [CAN Wiring](https://docs.px4.io/main/en/can/#wiring). Chain additional nodes from the second CAN connector.
-
-**UART:** connect the 6-pin UART JST-GH to a free FC serial port. Protocol details: [UART / MAVLink](uart-mavlink.md).
-
-### Firmware
-
-ARK DIST runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html) (`ark_dist_default`). Supports CAN firmware update and [dynamic node allocation](https://docs.px4.io/main/en/dronecan/#node-id-allocation). See [Firmware](firmware.md).
+Connect the ARK DIST to the flight controller over CAN or UART as described in [Wiring](hardware.md#wiring).
 
 ## CAN Configuration
 
@@ -30,15 +20,7 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 
 ### CAN Node Parameters
 
-No node parameters are required for range publishing.
-
-Configure optional node params via [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) (_Component X_ under **Vehicle Settings > Parameters**) or the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
+The node publishes range data with its default parameters. To terminate the bus or change the rangefinder mode and rate, see [Node Parameters](firmware.md#node-parameters).
 
 ## UART/MAVLink Configuration
 

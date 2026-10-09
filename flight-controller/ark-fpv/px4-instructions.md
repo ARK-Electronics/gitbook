@@ -4,18 +4,4 @@
 ARK FPV PX4 Documentation
 {% endembed %}
 
-### Flashing Firmware
-
-Firmware can be flashed over USB C using [QGroundControl](https://qgroundcontrol.com/).
-
-### Building Firmware
-
-```
-make ark_fpv_default
-```
-
-and optionally upload
-
-```
-make ark_fpv_default upload
-```
+To build or flash PX4, see [Firmware](firmware.md#px4).

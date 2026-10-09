@@ -4,24 +4,9 @@
 ARK FPV ArduPilot Documentation
 {% endembed %}
 
-### Flashing Firmware
+To build or flash ArduPilot, see [Firmware](firmware.md#ardupilot).
 
-Firmware can be flashed over USB C using [QGroundControl](https://qgroundcontrol.com/).
-
-### Building Firmware
-
-```
-./waf configure --board ARK_FPV
-./waf copter
-```
-
-and optionally upload&#x20;
-
-```
-./waf copter --upload
-```
-
-### UART Mapping
+## UART Mapping
 
 | Name    | Function                                   |
 | ------- | ------------------------------------------ |
@@ -35,8 +20,3 @@ and optionally upload&#x20;
 | SERIAL7 | OTG2 (SLCAN)                               |
 
 All UARTS support DMA. Any UART may be re-tasked by changing its protocol parameter.
-
-
-
-The hardware definition for Ardupilot can be found here:\
-[https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP\_HAL\_ChibiOS/hwdef/ARK\_FPV](https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/ARK_FPV)

@@ -1,54 +1,10 @@
 # PX4 Instructions
 
-The ARK X20 RTK GPS runs the [PX4 DroneCAN firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html), so it supports firmware update over the CAN bus and dynamic node allocation.
-
-* Firmware target: `ark_x20-gps_default`
-* Bootloader target: `ark_x20-gps_canbootloader`
-* Board ID: `89`
+See also the [PX4 documentation for the ARK X20 RTK GPS](https://docs.px4.io/main/en/dronecan/ark_x20_rtk_gps).
 
 {% hint style="warning" %}
-The flight controller must have an SD card installed. PX4 uses it for dynamic node allocation and for CAN firmware update — without one the ARK X20 RTK GPS is never assigned a node ID and will not appear on the bus.
+The flight controller must have an SD card installed. PX4 uses it for dynamic node allocation and for CAN firmware update — without one the ARK X20 RTK GPS is never assigned a node ID and will not appear on the bus. To update the node firmware, see [Firmware](firmware.md).
 {% endhint %}
-
-***
-
-## Firmware Update
-
-### Updating from the Flight Controller
-
-PX4 flashes DroneCAN nodes automatically at boot. This is the recommended method — it needs no hardware beyond the flight controller.
-
-1. Download the firmware from the [ARK X20 RTK GPS](README.md) page, or build `ark_x20-gps_default` yourself.
-2. Copy the `.uavcan.bin` file to the root of the flight controller's SD card.
-3. Set [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) to `2` (or `3`) and power cycle the vehicle.
-4. Wait for the update to finish. The node's status LED flashes red, green and blue together during the update, then returns to fast blinking green.
-
-On boot PX4 reads the board ID from the metadata block embedded in the binary, moves the file to `/fs/microsd/ufw/89.bin`, and deletes it from the SD card root. The file name does not matter — only the embedded metadata is used to match the file to the node.
-
-{% hint style="info" %}
-The firmware stays in `/fs/microsd/ufw/` and PX4 re-flashes any ARK X20 RTK GPS on the bus whose firmware does not match it. This keeps a replacement node in sync automatically, but it also means you must delete `/fs/microsd/ufw/89.bin` before flashing a different version by any other method.
-{% endhint %}
-
-{% hint style="info" %}
-For remote or scripted updates, upload the file to `/fs/microsd/ufw_staging/` instead. PX4 moves it into `/fs/microsd/ufw/` on the next boot, which avoids write conflicts if the file is uploaded while the vehicle is running.
-{% endhint %}
-
-### Updating with the DroneCAN GUI Tool
-
-Use this when the node is not connected to a PX4 flight controller, or when you want to flash a single node directly. You need:
-
-* A USB-to-CAN adapter that supports SLCAN, such as the Zubax Babel, connected to the same CAN bus. PX4 cannot expose its own CAN bus to the tool — see the _ArduPilot - Flight Controller as CAN Interface_ section of the [DroneCAN GUI Tool Guide](../../knowledge-base/dronecan-gui-tool-guide.md) for the ArduPilot alternative.
-* A dynamic node ID allocation server on the bus to assign the node an ID. Either a flight controller with `UAVCAN_ENABLE` set to `2` or `3`, or the DroneCAN GUI Tool's own allocation server, started with the rocket icon in the tool's main window.
-
-Upload the `.uavcan.bin` file to the node — see the [DroneCAN GUI Tool Guide](../../knowledge-base/dronecan-gui-tool-guide.md) for connection and firmware upload steps.
-
-{% hint style="warning" %}
-If the flight controller still has firmware in `/fs/microsd/ufw/`, it will re-flash the node on the next boot and undo the update. Delete `/fs/microsd/ufw/89.bin` from the SD card first.
-{% endhint %}
-
-### Updating to AP\_Periph
-
-To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. Support is in review upstream — see [ArduPilot Instructions](ardupilot-instructions.md).
 
 ***
 
@@ -81,26 +37,7 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 
 ### CAN Node Parameters
 
-Set the following on the GPS and reboot the node. CAN node parameters can be configured using either:
-
-* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
-* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
-| `CANNODE_NODE_ID` | Static node ID, `1`-`125`. Leave at `0` (default) to use dynamic node allocation |
-| `CANNODE_PUB_MAG` | Publish magnetometer messages on the CAN bus. Enabled by default |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
-| `GPS_UBX_BAUD1` | X20P UART1 baudrate. Board default is `921600` |
-| `GPS_UBX_BAUD2` | X20P UART2 baudrate. Default is `230400` |
-| `GPS_UBX_MODE` | Set to `7` to make the `UART2` connector a UBX diagnostic port for [u-center](https://docs.px4.io/main/en/gps_compass/u-center.html), at the `GPS_UBX_BAUD2` baudrate |
-
-{% hint style="warning" %}
-UART2 cannot be used for u-blox firmware update. Use the debug passthrough method in [u-blox Firmware Update](../../knowledge-base/ublox-firmware-update.md).
-{% endhint %}
+The node publishes GPS, magnetometer and barometer data with its default parameters. To terminate the bus, fix the node ID, publish IMU data, change the receiver's baudrates or constellations, or use `UART2` as a u-center diagnostic port, see [Node Parameters](firmware.md#node-parameters).
 
 ***
 
@@ -163,7 +100,8 @@ On the _Rover_:
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | `GPS_UBX_MODE` | 3 | Heading — rover with moving base, X20P UART1 connected to the CAN node |
-| `CANNODE_SUB_MBD` | 1 | Subscribe to `MovingBaselineData` messages on the CAN bus |
+
+`CANNODE_SUB_MBD` already defaults to `1`.
 
 On the _Moving Base_:
 
@@ -192,7 +130,7 @@ Then set `GPS_UBX_MODE` to `1` on the _Rover_ and `2` on the _Moving Base_. `CAN
 ## Troubleshooting
 
 * **Node does not appear on the bus** — run `uavcan status` in the _QGroundControl_ MAVLink Console to list the nodes PX4 has detected. Check that `UAVCAN_ENABLE` is set to `2` or `3` and that the flight controller has a working SD card installed.
-* **Blinking red status LED** — see [LED Meanings](README.md#led-meanings), then confirm the flight controller has an SD card, that `ark_x20-gps_canbootloader` was installed on the node before `ark_x20-gps_default`, and that there are no stale binaries left in the SD card root or in `/fs/microsd/ufw/`.
+* **Blinking red status LED** — see [LEDs](hardware.md#leds), then confirm the flight controller has an SD card, that `ark_x20-gps_canbootloader` was installed on the node before `ark_x20-gps_default`, and that there are no stale binaries left in the SD card root or in `/fs/microsd/ufw/`.
 * **Node is not detected at all, even by the DroneCAN GUI Tool** — for example after a bad flash that erased the bootloader. Recover it over SWD with an ST-LINK, see [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
 * **No heading in a moving baseline setup** — heading is only output at RTK Fixed. Confirm the _Rover_ shows a solid blue GPS LED, that the antennas are at least 30 cm apart, and that the X20P receiver firmware is 2.10 or later.
 * **Test outside** — GPS modules need a clear sky view to get a good fix. Indoor testing will not produce reliable results.

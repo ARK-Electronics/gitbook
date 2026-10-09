@@ -4,8 +4,9 @@ structure:
   readme: README.md
   summary: SUMMARY.md
 
-# Old file path -> current file, for pages whose file moved in the reorganization.
-# Keys are repo-relative paths without .md (a README is keyed by its directory).
+# Old site URL -> current file, for pages whose URL changed.
+# GitBook builds a URL from the site section slug (products/) and the page's SUMMARY.md nesting,
+# so a key is products/ plus the old nav path, without .md (a README takes its directory's name).
 redirects:
   products/electronic-speed-controller/ark-4in1-esc/am32-configuration: electronic-speed-controller/ark-4in1-esc/ark32-configuration.md
   products/electronic-speed-controller/ark-4in1-esc/firmware/flash-am32: electronic-speed-controller/ark-4in1-esc/firmware/flash-ark32.md
@@ -16,15 +17,15 @@ redirects:
   products/embedded-computers/ark-just-a-jetson/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
   products/embedded-computers/ark-just-a-jetson/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
   products/embedded-computers/ark-just-a-jetson/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md
-  products/accessories/ark-pixhawk-payload-bus-breakout/3d-model: accessories/ark-pixhawk-payload-bus-breakout/3d-model.md
+  products/accessories/ark-pixhawk-payload-bus-breakout/3d-model: accessories/ark-pixhawk-payload-bus-breakout/hardware.md
   products/accessories/ark-pixhawk-payload-bus-breakout: accessories/ark-pixhawk-payload-bus-breakout/README.md
-  products/accessories/ark-pixhawk-payload-bus-breakout/pinout: accessories/ark-pixhawk-payload-bus-breakout/pinout.md
-  products/accessories/ark-primary-avionics-adapter/3d-model: accessories/ark-primary-avionics-adapter/3d-model.md
+  products/accessories/ark-pixhawk-payload-bus-breakout/pinout: accessories/ark-pixhawk-payload-bus-breakout/hardware.md
+  products/accessories/ark-primary-avionics-adapter/3d-model: accessories/ark-primary-avionics-adapter/hardware.md
   products/accessories/ark-primary-avionics-adapter: accessories/ark-primary-avionics-adapter/README.md
-  products/accessories/ark-primary-avionics-adapter/pinout: accessories/ark-primary-avionics-adapter/pinout.md
-  products/accessories/ark-secondary-avionics-adapter/3d-model: accessories/ark-secondary-avionics-adapter/3d-model.md
+  products/accessories/ark-primary-avionics-adapter/pinout: accessories/ark-primary-avionics-adapter/hardware.md
+  products/accessories/ark-secondary-avionics-adapter/3d-model: accessories/ark-secondary-avionics-adapter/hardware.md
   products/accessories/ark-secondary-avionics-adapter: accessories/ark-secondary-avionics-adapter/README.md
-  products/accessories/ark-secondary-avionics-adapter/pinout: accessories/ark-secondary-avionics-adapter/pinout.md
+  products/accessories/ark-secondary-avionics-adapter/pinout: accessories/ark-secondary-avionics-adapter/hardware.md
   products/flight-controller/jetson-pabs: flight-controller/jetson-pabs/README.md
   products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/3d-models-and-case-files: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/3d-models-and-case-files.md
   products/flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3: flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/README.md
@@ -67,3 +68,38 @@ redirects:
   products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/usb-bluetooth-adapters: knowledge-base/usb-peripherals.md
   products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/usb-cameras-and-gps: knowledge-base/usb-peripherals.md
   products/flight-controller/jetson-pabs/ark-jetson-pab-carrier/usb-wi-fi-adapters: knowledge-base/usb-peripherals.md
+  products/power/ark-pab-power-module/3d-model: power/ark-pab-power-module/hardware.md
+  products/power/ark-12s-pab-power-module/3d-model: power/ark-12s-pab-power-module/hardware.md
+  products/power/ark-12s-payload-power-module/3d-model: power/ark-12s-payload-power-module/hardware.md
+  products/imu/ark-adis16507/3d-model: imu/ark-adis16507/hardware.md
+  products/imu/ark-sch16t/3d-model: imu/ark-sch16t/hardware.md
+  products/accessories/ark-servo-expander/pinout: accessories/ark-servo-expander/hardware.md
+  products/accessories/ark-servo-expander/3d-model: accessories/ark-servo-expander/hardware.md
+  products/gps/ark-dan-gps/3d-model: gps/ark-dan-gps/hardware.md
+  products/gps/ark-sam-gps/3d-model: gps/ark-sam-gps/hardware.md
+  products/gps/ark-gps/3d-models: gps/ark-gps/hardware.md
+  products/gps/ark-rtk-base/3d-model: gps/ark-rtk-base/hardware.md
+  products/flight-controller/ark-fpv/pinout: flight-controller/ark-fpv/hardware.md
+  products/flight-controller/ark-fpv/3d-models: flight-controller/ark-fpv/hardware.md
+  products/flight-controller/arkv6x/3d-models: flight-controller/arkv6x/hardware.md
+  products/flight-controller/arkv6s/3d-models: flight-controller/arkv6s/hardware.md
+  products/flight-controller/ark-pixhawk-autopilot-bus-carrier/3d-models-and-case-files: flight-controller/ark-pixhawk-autopilot-bus-carrier/hardware.md
+  products/flight-controller/ark-voxl2-rtk-pab-carrier/pinout: flight-controller/ark-voxl2-rtk-pab-carrier/hardware.md
+  products/flight-controller/ark-voxl2-rtk-pab-carrier/connectors-and-cables: flight-controller/ark-voxl2-rtk-pab-carrier/hardware.md
+  products/flight-controller/ark-voxl2-rtk-pab-carrier/3d-models: flight-controller/ark-voxl2-rtk-pab-carrier/hardware.md
+  products/electronic-speed-controller/ark-4in1-esc/pinout: electronic-speed-controller/ark-4in1-esc/hardware.md
+  products/electronic-speed-controller/ark-4in1-esc/3d-models: electronic-speed-controller/ark-4in1-esc/hardware.md
+  products/electronic-speed-controller/ark-12s-can-esc/pinout: products/electronic-speed-controller/ark-12s-can-esc/hardware.md
+  products/electronic-speed-controller/ark-12s-can-esc/3d-models: products/electronic-speed-controller/ark-12s-can-esc/hardware.md
+  products/radio/ark-microhard-ddl-carrier/3d-model: radio/ark-microhard-ddl-carrier/hardware.md
+  products/electronic-speed-controller/ark-4in1-esc/ark32-configuration: electronic-speed-controller/ark-4in1-esc/ark32-configuration.md
+  products/flight-controller/ark-fpv/bootloader-flashing-using-dfu: flight-controller/ark-fpv/bootloader-flashing-using-dfu.md
+  products/flight-controller/ark-pixhawk-autopilot-bus-carrier/pinout: flight-controller/ark-pixhawk-autopilot-bus-carrier/pinout.md
+  products/electronic-speed-controller/ark-12s-can-esc/mounting-and-power-connections: products/electronic-speed-controller/ark-12s-can-esc/mounting-and-power-connections.md
+  products/sensor/ark-cannode/3d-models: sensor/ark-cannode/hardware.md
+  products/sensor/ark-dist/pinout: sensor/ark-dist/hardware.md
+  products/sensor/ark-dist/3d-models-and-case-files: sensor/ark-dist/hardware.md
+  products/sensor/ark-flow/3d-models-and-case-files: sensor/ark-flow/hardware.md
+  products/sensor/ark-flow-mr/3d-models-and-case-files: sensor/ark-flow-mr/hardware.md
+  products/sensor/ark-mag/pinout: sensor/ark-mag/hardware.md
+  products/sensor/ark-mag/3d-models-and-case-files: sensor/ark-mag/hardware.md

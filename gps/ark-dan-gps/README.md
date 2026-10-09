@@ -5,14 +5,13 @@ coverY: 0
 
 # ARK DAN GPS
 
-### Hardware Setup <a href="#hardware-setup" id="hardware-setup"></a>
+The ARK DAN GPS is a GNSS module built around the [u-blox DAN-F10N](https://www.u-blox.com/en/product/dan-f10n-module) dual-band L1/L5 receiver, with an [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) magnetometer on a Pixhawk-standard UART/I2C connector. It works with PX4, ArduPilot and Betaflight. USA built and NDAA compliant.
 
-#### Wiring <a href="#wiring" id="wiring"></a>
+[Buy the ARK DAN GPS](https://arkelectron.com/product/ark-dan-gps/)
 
-The ARK DAN GPS is connected to a UART/I2C port a Pixhawk standard 6 pin JST GH cable.
-
-## Pinout
-
-#### UART/I2C - 6 Pin JST-GH
-
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5V</td><td>5.0V</td></tr><tr><td>2</td><td>RX</td><td>3.3V</td></tr><tr><td>3</td><td>TX</td><td>3.3V</td></tr><tr><td>4</td><td>SCL</td><td>3.3V</td></tr><tr><td>5</td><td>SDA</td><td>3.3V</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
+| Page | Contents |
+|------|----------|
+| [Hardware Reference](hardware.md) | Specifications, pinout, wiring, 3D model |
+| [PX4 Instructions](px4-instructions.md) | Port and sensor position configuration with PX4 |
+| [ArduPilot Instructions](ardupilot-instructions.md) | Magnetometer driver build and port configuration with ArduPilot |
+| [Betaflight Instructions](betaflight-instructions.md) | Enabling GPS and magnetometer orientation in Betaflight |

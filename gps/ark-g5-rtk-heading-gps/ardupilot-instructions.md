@@ -25,27 +25,7 @@ Reboot the flight controller. The GPS should appear as a DroneCAN node and begin
 
 ### CAN Node Parameters
 
-Set the following on the GPS and reboot the node. CAN node parameters can be configured using either:
-
-* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
-* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
-
-#### Required
-
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| `CANNODE_PUB_MAG` | 1 | Publish magnetometer messages on the CAN bus |
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
-| `CANNODE_PUB_BAR` | Publish barometer messages on the CAN bus. Enabled by default |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
-| `SEP_OUT_RATE` | Output rate for GNSS data messages: `-1` = OnChange, or `10` / `20` / `40` / `50` / `100` / `200` / `500` ms |
-| `SEP_PVT_MODE` | Bitmask of allowed PVT modes for Rover operation. Bits: `1` = StandAlone, `2` = DGNSS, `4` = RTKFloat, `8` = RTKFixed, `16` = SBAS, `32` = PPP (Galileo HAS, not on the mosaic-X5). Default `15`. The receiver uses the most accurate mode available |
-| `SEP_RCV_DYN` | Receiver dynamics model: `0` = Static, `1` = Quasistatic, `2` = Pedestrian, `3` = Automotive, `4` = RaceCar, `5` = HeavyMachinery, `6` = UAV (default), `7` = Unlimited |
+The node publishes GPS, magnetometer and barometer data with its default parameters. To terminate the bus, fix the node ID, publish IMU data or change the receiver's output rate, PVT modes or dynamics model, see [Node Parameters](firmware.md#node-parameters).
 
 ***
 
@@ -82,14 +62,7 @@ The `GPS1_MB_OFS_*` offsets describe the position of MAIN relative to ANT2 in th
 
 ### CAN Node Parameters
 
-No change is needed on the node: the G5H ships with dual antenna saved in the receiver. The node reports a heading only with fixed ambiguities.
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| `SEP_ANT_MODE` | `0` (default) keeps the antenna mode saved in the receiver, `1` single antenna, `2` dual antenna. `1` and `2` are applied without saving them in the receiver, which restarts once (about 10 s) at each power-up where its saved mode differs |
-| `SEP_DUAL_ANT` | `0` disables heading |
+No change is needed on the node: the G5H ships with dual antenna saved in the receiver. The node reports a heading only with fixed ambiguities. To override the antenna mode (`SEP_ANT_MODE`) or disable heading (`SEP_DUAL_ANT` `0`), see [Node Parameters](firmware.md#node-parameters).
 
 ***
 

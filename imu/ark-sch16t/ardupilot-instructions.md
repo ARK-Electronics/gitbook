@@ -1,8 +1,7 @@
 # ArduPilot Instructions
 
-## Ardupilot Setup
+## ArduPilot Setup
 
-Add the SCH16T driver to the IMU definitions in your boards hwdef file.
+Add the SCH16T driver to the IMU definitions in your board's hwdef file.
 
-The repository can be found here:\
-[https://github.com/ArduPilot/ardupilot/pull/26876](https://github.com/ArduPilot/ardupilot/pull/26876)
+The driver is in [ArduPilot pull request 26876](https://github.com/ArduPilot/ardupilot/pull/26876).

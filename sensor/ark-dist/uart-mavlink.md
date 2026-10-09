@@ -37,4 +37,4 @@ UART rate matches the rangefinder sample rate (same data path as DroneCAN). Defa
 
 ## Node configuration
 
-No parameters need to be set on the ARK DIST for UART MAVLink output. Stock firmware enables MAVLink on the UART port automatically.
+No parameters need to be set on the ARK DIST for UART MAVLink output. Stock firmware enables MAVLink on the UART port automatically. The defaults are listed in [Node Parameters](firmware.md#node-parameters).
