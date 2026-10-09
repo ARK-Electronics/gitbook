@@ -15,9 +15,3 @@ The ARK TESEO GPS is a [DroneCAN](https://dronecan.github.io/) GNSS module built
 | [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case |
 | [PX4 Instructions](px4-instructions.md) | Connecting and configuring with PX4 |
 | [ArduPilot Instructions](ardupilot-instructions.md) | Connecting and configuring with ArduPilot |
-
-## In the Box
-
-* ARK TESEO GPS
-* 4-pin Pixhawk-standard CAN cable
-* Dual-band (L1/L5) helical GPS antenna, unless ordered without
