@@ -103,3 +103,7 @@ redirects:
   products/sensor/ark-flow-mr/3d-models-and-case-files: sensor/ark-flow-mr/hardware.md
   products/sensor/ark-mag/pinout: sensor/ark-mag/hardware.md
   products/sensor/ark-mag/3d-models-and-case-files: sensor/ark-mag/hardware.md
+  zz-test-unprefixed-new: gps/ark-gps/hardware.md
+  products/zz-test-prefixed-new: gps/ark-gps/hardware.md
+  gps/ark-gps/3d-models: gps/ark-gps/hardware.md
+  /products/zz-test-slash: gps/ark-gps/hardware.md
