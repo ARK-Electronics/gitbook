@@ -4,9 +4,9 @@
 
 | Specification | Value |
 |---------------|-------|
-| IMU | [Analog Devices ADIS16507-3](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf), 6-axis precision MEMS |
-| Gyroscope | ±2000 °/s |
-| Accelerometer | ±392 m/s² |
+| IMU | [Analog Devices ADIS16507-2](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf), 6-axis precision MEMS |
+| Gyroscope | ±500 °/s; in-run bias stability 2.2 °/h (X), 2.7 °/h (Y), 1.6 °/h (Z) |
+| Accelerometer | ±392 m/s²; in-run bias stability 125 µm/s² |
 | Calibration | Factory calibrated sensitivity, bias and axial alignment, −40 °C to +85 °C |
 | Interface | SPI, 11-pin JST-GH |
 | Power | 5 V, 41 mA average |
@@ -36,7 +36,7 @@ The pinout matches the [ARK PAB carrier SPI connector](https://docs.px4.io/main/
 ## Datasheets
 
 * [ARK ADIS16507](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_ADIS16507/datasheet/ARK_ADIS16507_Datasheet.pdf)
-* [Analog Devices ADIS16507-3](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf)
+* [Analog Devices ADIS16507-2](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf)
 
 ## 3D Model and Case
 
