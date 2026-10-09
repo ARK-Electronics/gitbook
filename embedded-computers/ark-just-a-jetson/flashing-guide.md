@@ -24,6 +24,8 @@ chmod +x flash_from_package.sh
 
 The script downloads the release package from the [releases page](https://github.com/ARK-Electronics/ark_jetson_kernel/releases) (tags starting with `jaj-`), waits for the Jetson in recovery mode, and flashes the bootloader and root filesystem. No build tools needed. Pass a specific tag instead of `jaj` to flash a specific version.
 
+Add `--encrypt` to encrypt the root filesystem, so an SSD removed from the carrier can't be read. See [Disk Encryption](disk-encryption.md).
+
 ## Build From Source
 
 To customize the kernel, device tree, or preinstalled software, build and flash from source — see the [ark\_jetson\_kernel README](https://github.com/ARK-Electronics/ark_jetson_kernel#build--flash):
