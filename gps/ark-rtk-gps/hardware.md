@@ -16,6 +16,7 @@
 | Buzzer | Yes |
 | Interfaces | 2× DroneCAN (Pixhawk-standard 4-pin JST-GH), F9P UART2 (3-pin JST-GH), debug (Pixhawk-standard 6-pin JST-SH) |
 | Power | 5 V, 170 mA average, 180 mA max |
+| Weight | 16 g |
 | Alternate antennas (L1/L2) | [Tallysman 33-HC882-28](https://www.digikey.com/en/products/detail/tallysman-wireless-inc/33-HC882-28/10473741), [Taoglas AA.175.301111](https://www.digikey.com/en/products/detail/taoglas-limited/AA-175-301111/11196807), [Taoglas A.80.A.101111](https://www.digikey.com/en/products/detail/taoglas-limited/A-80-A-101111/9972792), [Linx ANT-GNRM-L12A-3](https://www.digikey.com/en/products/detail/linx-technologies-inc/ANT-GNRM-L12A-3/16740159), [u-blox ANN-MB-00-00](https://www.digikey.com/en/products/detail/u-blox/ANN-MB-00-00/9817928) |
 
 ## Pinout

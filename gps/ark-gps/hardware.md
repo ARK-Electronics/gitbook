@@ -15,6 +15,7 @@
 | Interfaces | 2× DroneCAN (Pixhawk-standard 4-pin JST-GH), debug (Pixhawk-standard 6-pin JST-SH) |
 | Power | 5 V, 110 mA average, 117 mA max |
 | Dimensions | 5 × 5 × 1 cm |
+| Weight | 16 g |
 
 ## Pinout
 
