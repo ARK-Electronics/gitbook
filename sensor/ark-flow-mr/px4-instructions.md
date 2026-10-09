@@ -1,32 +1,18 @@
 # PX4 Instructions
 
-### Hardware Setup <a href="#hardware-setup" id="hardware-setup"></a>
+## Mounting
 
-#### Wiring <a href="#wiring" id="wiring"></a>
-
-The ARK Flow MR is connected to the CAN bus using a Pixhawk standard 4 pin JST GH cable. For more information, refer to the [CAN Wiring](https://docs.px4.io/main/en/can/#wiring) instructions.
-
-#### Mounting <a href="#mounting" id="mounting"></a>
-
-The recommended mounting orientation is with the connectors on the board pointing towards **back of vehicle**, as shown in the following picture.
-
-![ARK Flow align with Pixhawk](https://docs.px4.io/main/assets/ark_flow_orientation.auMVvxJ0.png)
-
-This corresponds to the default value (`0`) of the parameter [SENS\_FLOW\_ROT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_ROT). Change the parameter appropriately if using a different orientation.
+Mount the ARK Flow MR as shown in [Mounting](hardware.md#mounting). This corresponds to the default value (`0`) of the parameter [SENS\_FLOW\_ROT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_ROT). Change the parameter appropriately if using a different orientation.
 
 The sensor can be mounted anywhere on the frame, but you will need to specify the focal point position, relative to vehicle center of gravity, during [PX4 configuration](https://docs.px4.io/main/en/dronecan/ark_flow.html#px4-configuration).
 
-### Firmware Setup <a href="#firmware-setup" id="firmware-setup"></a>
-
-ARK Flow MR runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html). As such, it supports firmware update over the CAN bus and [dynamic node allocation](https://docs.px4.io/main/en/dronecan/#node-id-allocation).
-
-### Flight Controller Setup <a href="#flight-controller-setup" id="flight-controller-setup"></a>
+## Flight Controller Setup
 
 {% hint style="info" %}
 The ARK Flow MR will not boot if there is no SD card in the flight controller when powered on.
 {% endhint %}
 
-Connect the ARK Flow MR CAN to the flight controller's CAN port. Once parameters are set the module will be detected on boot. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
+Connect the ARK Flow MR CAN to the flight controller's CAN port, as described in [Wiring](hardware.md#wiring). Once parameters are set the module will be detected on boot. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
 
 ### Flight Controller Parameters
 
@@ -58,14 +44,4 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 
 ### CAN Node Parameters
 
-Set the following on the sensor and reboot the node. CAN node parameters can be configured using either:
-
-* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
-* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus. Requires `UAVCAN_SUB_IMU` to also be set on the flight controller |
+The node publishes optical flow and range finder data with its default parameters. To terminate the bus, publish IMU data or change the distance sensor mode and rate, see [Node Parameters](firmware.md#node-parameters).

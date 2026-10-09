@@ -2,42 +2,6 @@
 
 Find additional documentation at [https://docs.px4.io/main/en/dronecan/ark\_cannode.html](https://docs.px4.io/main/en/dronecan/ark_cannode.html)
 
-ARK CANnode runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html). As such, it supports firmware update over the CAN bus and [dynamic node allocation](https://docs.px4.io/main/en/dronecan/#node-id-allocation).
-
-## CANnode Firmware
-
-ARK CANnode boards ship with recent firmware pre-installed, but if you want to build and flash the latest firmware yourself see [PX4 DroneCAN Firmware > Building the Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html#building-the-firmware).
-
-#### Building the Application&#x20;
-
-```
-make ark_cannode
-```
-
-#### Building the Bootloader&#x20;
-
-```
-make ark_cannode_canbootloader
-```
-
-#### Flashing the Bootloader
-
-To flash the bootloader firmware you need an ST-LINK programmer. See the [ST-LINK Flashing Guide](../../knowledge-base/st-link-flashing-guide.md) for setup instructions.
-
-```
-st-flash write <bootloader_binary_path> 0x08000000
-```
-
-#### Flashing the Application
-
-To flash the application firmware you can use the SD card method as [documented here](https://docs.px4.io/main/en/dronecan/#firmware-update) or you can use the DroneCAN GUI Tool and a USB-to-CAN adaptor to flash the firmware directly.
-
-If you flash the application over SWD instead, it goes at the application offset — `0x08000000` is the bootloader's address:
-
-```
-st-flash write <application_binary_path> 0x08010000
-```
-
 ## Configuration
 
 Connect the ARK CANnode to the flight controller's CAN bus using a standard 4-pin JST-GH cable.
@@ -64,17 +28,7 @@ Enable a `UAVCAN_SUB_*` subscriber for each sensor connected to the ARK CANnode.
 
 ### CAN Node Parameters
 
-Set the following on the CANnode and reboot the node. CAN node parameters can be configured using either:
-
-* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
-* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| [CANNODE\_TERM](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_TERM) | Set to `1` if this is the last node on the CAN bus |
-| [CANNODE\_PUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#CANNODE_PUB_IMU) | Set to `1` to publish `RawIMU` messages from the onboard ICM-42688-P IMU on the CAN bus. Requires `UAVCAN_SUB_IMU` to also be set on the flight controller |
+To terminate the bus, fix the node ID, publish IMU data or enable an external sensor driver, see [Node Parameters](firmware.md#node-parameters).
 
 ## CANnode as PWM Expander
 
@@ -174,4 +128,4 @@ Bidirectional DShot on the CANnode is not yet supported.
 
 #### DShot Telemetry
 
-When using DShot you can also receive ESC telemetry via UART from the Telem pin of the ESC. Connect the Telem pin from the ESC to the USART1\_RX pin of the[ UART1/I2C port](https://arkelectron.gitbook.io/ark-documentation/sensor/ark-cannode#uart1-i2c1-6-pin-jst-gh) of the CANnode. Set the **DSHOT\_TEL\_CFG** parameter on the CANnode to 201.
+When using DShot you can also receive ESC telemetry via UART from the Telem pin of the ESC. Connect the Telem pin from the ESC to the USART1\_RX pin of the [UART1/I2C1 port](hardware.md#pinout) of the CANnode. Set the **DSHOT\_TEL\_CFG** parameter on the CANnode to 201.

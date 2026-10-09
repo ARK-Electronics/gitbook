@@ -5,56 +5,13 @@ coverY: 0
 
 # ARKV6S
 
-The USA-built ARKV6S flight controller is a low-cost, single-IMU variant of the [ARKV6X](../arkv6x/README.md), based on the [FMUV6X and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards).
+The ARKV6S is a low-cost, single-IMU variant of the [ARKV6X](../arkv6x/README.md) flight controller module, based on the [FMUV6X and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards). It has an [STM32H743IIK6](https://www.st.com/en/microcontrollers-microprocessors/stm32h743ii.html) MCU, an [Invensense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/) industrial IMU, a [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) barometer and an [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) magnetometer. The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6S to be used on any [PAB-compatible carrier board](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html), such as the [ARK Pixhawk Autopilot Bus Carrier](https://docs.px4.io/main/en/flight_controller/arkpab.html). It ships with PX4 and can be flashed with ArduPilot. USA built, NDAA compliant and FCC compliant.
 
-The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6S to be used on any [PAB-compatible carrier board](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html), such as the [ARK Pixhawk Autopilot Bus Carrier](https://docs.px4.io/main/en/flight_controller/arkpab.html).
+[Buy the ARKV6S](https://arkelectron.com/product/arkv6s-flight-controller/)
 
-<figure><img src="../../.gitbook/assets/ark_v6s_back.jpg" alt=""><figcaption><p>ARK Electronics ARKV6S</p></figcaption></figure>
-
-### Datasheet
-
-* [ARKV6S](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARKV6S/datasheet/ARKV6S_Datasheet.pdf)
-
-### Sensors
-
-* [Invensense IIM-42653 Industrial IMU](https://invensense.tdk.com/products/smartindustrial/iim-42653/)
-* [Bosch BMP390 Barometer](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/)
-* [ST IIS2MDC Magnetometer](https://www.st.com/en/mems-and-sensors/iis2mdc.html)
-
-### Other Features
-
-* FRAM
-* [Pixhawk Autopilot Bus (PAB) Form Factor](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf)
-* LED Indicators
-* MicroSD Slot
-* USA Built
-* Designed with a 1W heater. Keeps sensors warm in extreme conditions
-
-### Power Requirements
-
-* 5V
-* 500mA
-  * 300mA for main system
-  * 200mA for heater
-
-### Additional Information
-
-* Weight: 5.0 g
-* Dimensions: 3.6 x 2.9 x 0.5 cm
-
-### Pinout
-
-For pinout of the ARKV6S see the [DS-10 Pixhawk Autopilot Bus Standard](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf)
-
-### Serial Port Mapping
-
-| UART   | Device     | Port          |
-| ------ | ---------- | ------------- |
-| USART1 | /dev/ttyS0 | GPS           |
-| USART2 | /dev/ttyS1 | TELEM3        |
-| USART3 | /dev/ttyS2 | Debug Console |
-| UART4  | /dev/ttyS3 | UART4 & I2C   |
-| UART5  | /dev/ttyS4 | TELEM2        |
-| USART6 | /dev/ttyS5 | PX4IO/RC      |
-| UART7  | /dev/ttyS6 | TELEM1        |
-| UART8  | /dev/ttyS7 | GPS2          |
+| Page | Contents |
+|------|----------|
+| [Firmware](firmware.md) | Build targets, flashing PX4 and ArduPilot |
+| [Hardware Reference](hardware.md) | Specifications, pinout, serial port mapping, datasheet, 3D model |
+| [PX4 Instructions](px4-instructions.md) | PX4 documentation |
+| [ArduPilot Instructions](ardupilot-instructions.md) | ArduPilot documentation, serial port mapping, hwdef changes for an IOMCU |

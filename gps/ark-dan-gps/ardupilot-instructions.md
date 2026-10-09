@@ -1,14 +1,14 @@
-# Ardupilot Instructions
+# ArduPilot Instructions
 
-### Firmware Setup <a href="#firmware-setup" id="firmware-setup"></a>
+## Firmware Setup
 
-The IIS2MDC magnetometer driver was added in January 2025 and requires Ardupilot version 4.6 or newer.
+The IIS2MDC magnetometer driver was added in January 2025 and requires ArduPilot version 4.6 or newer.
 
-Use the [Ardupilot Custom Firmware Builder](https://custom.ardupilot.org/) to compile firmware for your autopilot with the IIS2MDC driver. Select `IIS2MDC Compasses` under `Compass` for your board.
+Use the [ArduPilot Custom Firmware Builder](https://custom.ardupilot.org/) to compile firmware for your autopilot with the IIS2MDC driver. Select `IIS2MDC Compasses` under `Compass` for your board.
 
 <figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
-This PR can be backported into previous releases of Ardupilot.
+This PR can be backported into previous releases of ArduPilot.
 
 [https://github.com/ArduPilot/ardupilot/pull/28602](https://github.com/ArduPilot/ardupilot/pull/28602)
 

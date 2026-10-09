@@ -43,7 +43,7 @@ For detailed instructions on ST-LINK setup, software installation, and usage, se
 
 #### Hardware Setup
 
-The ARK 4IN1 ESC has 4 separate STM32F051 microcontrollers (one per motor channel), each with their own SWD interface on a single 10-pin debug connector. See the [pinout](../pinout.md) for the full connector diagram.
+The ARK 4IN1 ESC has 4 separate STM32F051 microcontrollers (one per motor channel), each with their own SWD interface on a single 10-pin debug connector. See the [pinout](../hardware.md#pinout) for the full connector diagram.
 
 | Pin | Signal |
 |-----|--------|

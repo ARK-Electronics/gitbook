@@ -1,7 +1,7 @@
 ---
 description: >-
-  Flashing firmware over SWD, CAN, or a PX4 flight controller, plus the debug
-  console and status LEDs.
+  Flashing firmware over SWD, CAN, or a PX4 flight controller, plus node
+  parameters and the debug console.
 ---
 
 # Firmware
@@ -115,6 +115,30 @@ The ARK32 Configurator is the web tool for reading and writing ESC settings and 
 A restore to defaults returns the ESC to the protection envelope it shipped with, not to the configurator's own disabled defaults. Confirm the current and temperature limits after any restore.
 {% endhint %}
 
+***
+
+## Node Parameters
+
+DroneCAN parameter names and shipped defaults, as the [DroneCAN GUI Tool](../../../knowledge-base/dronecan-gui-tool-guide.md) shows them.
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `ESC_INDEX` | 0 | Motor the flight controller commands this ESC as, 0–31. See [ESC Index / Motor Index](#esc-index-motor-index) |
+| `CAN_NODE` | 0 | Fixed node ID. `0` uses dynamic node allocation |
+| `CAN_TERM_ENABLE` | 0 | Set to `1` on an ESC at either end of the bus to enable its 120Ω termination resistor |
+| `CAN_FD_MBPS` | 0 | CAN FD data bitrate. `0` matches the host; `1`, `2`, `4` or `5` fixes it in Mbps |
+| `TELEM_RATE` | 25 | ESC telemetry rate in Hz. `0` disables it |
+| `REQUIRE_ARMING` | 1 | Ignore throttle commands until the flight controller reports armed |
+| `REQUIRE_ZERO_THROTTLE` | 1 | Arm only after a zero throttle command |
+| `CURRENT_LIMIT` | 200 | Current limit in A |
+| `TEMPERATURE_LIMIT` | 105 | Temperature foldback onset in °C, read from the MCU die sensor |
+| `TEMP_DERATE_BAND` | 15 | Temperature derate band in °C, from the onset to full derate |
+| `MOTOR_KV` | 1020 | Motor nameplate kV |
+| `MOTOR_POLES` | 14 | Magnets on the rotor |
+| `MAX_RAMP` | 5 | Throttle ramp ceiling in 0.1 %/ms. `5` is 0.5 %/ms, zero to full throttle in 200 ms |
+
+The current and temperature limits are firmware limits and they sit well below the hardware overcurrent trip. Foldback reduces power progressively across the derate band rather than cutting output abruptly.
+
 ### ESC Index / Motor Index <a href="#esc-index-motor-index" id="esc-index-motor-index"></a>
 
 When the ESC is commanded over CAN, PX4 and ArduPilot identify each motor by its **ESC Index** (also labeled **Motor Index** in the configurator). This is not the DroneCAN node ID — node IDs can be allocated automatically, but the index is how the flight controller maps a throttle command to a specific motor.
@@ -132,27 +156,7 @@ Set the index in the [ARK32 Configurator](https://ark32.arkelectron.com) or with
 This setting only applies when the ESC is driven over CAN. PWM and DShot use the physical signal wire, so the index is unused.
 
 {% hint style="warning" %}
-Assign unique indices before commanding more than one ESC on the bus. Boards that have not been configured will share the same index.
-{% endhint %}
-
-### Shipped Protection Defaults
-
-| Setting                    | Default |
-| -------------------------- | ------- |
-| Current limit              | 200A    |
-| Temperature foldback onset | 105°C   |
-| Temperature derate band    | 15°C    |
-
-These are firmware limits and they sit well below the hardware overcurrent trip. Foldback reduces power progressively across the derate band rather than cutting output abruptly.
-
-***
-
-## Status LEDs
-
-The ESC has red, green, and blue LEDs driven directly by the microcontroller.
-
-{% hint style="info" %}
-Pattern meanings are still being finalised in firmware. Until they are published, use the debug console below for fault detail — it names the fault directly rather than encoding it in a blink pattern.
+When running over CAN, each ESC on the same bus must have a unique **ESC Index / Motor Index**. Assign unique indices before commanding more than one ESC on the bus. Boards that have not been configured will share the same index.
 {% endhint %}
 
 ***

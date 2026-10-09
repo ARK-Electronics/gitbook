@@ -5,26 +5,12 @@ coverY: 0
 
 # ARK ADIS16507
 
-## Datasheets
+The ARK ADIS16507 is an SPI IMU board built around the [Analog Devices ADIS16507-3](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf) factory-calibrated 6-axis precision MEMS IMU, with an 11-pin JST-GH connector that matches the ARK PAB carrier SPI pinout. It works with PX4 and ArduPilot. USA built and FCC compliant.
 
-* [ARK ADIS16507](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_ADIS16507/datasheet/ARK_ADIS16507_Datasheet.pdf)
-* [Analog Devices ADIS16507-3](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf)
+[Buy the ARK ADIS16507](https://arkelectron.com/product/ark-adis16507/)
 
-## Wiring
-
-11 pin JST-GH&#x20;
-
-| Pin      | Signal                            | Voltage |
-| -------- | --------------------------------- | ------- |
-| 1 (red)  | `VDD_5V_IN`                       | +5.0V   |
-| 2        | SPI6\_SCK                         | +3.3V   |
-| 3        | SPI6\_MISO                        | +3.3V   |
-| 4        | SPI6\_MOSI                        | +3.3V   |
-| 5        | SPI6\_nCS1                        | +3.3V   |
-| 6        | NC                                | +3.3V   |
-| 7        | SPIX\_nSYNC                       | +3.3V   |
-| 8        | SPI6\_DRDY1                       | +3.3V   |
-| 9        | NC                                | +3.3V   |
-| 10       | SPI6\_nRESET (10k pullup to 3.3V) | +3.3V   |
-| 11 (blk) | GND                               | GND     |
-
+| Page | Contents |
+|------|----------|
+| [Hardware Reference](hardware.md) | Specifications, pinout, datasheets, 3D model and case |
+| [PX4 Instructions](px4-instructions.md) | Enabling the driver in PX4 |
+| [ArduPilot Instructions](ardupilot-instructions.md) | Adding the driver to an ArduPilot hwdef |

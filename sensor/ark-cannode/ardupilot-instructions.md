@@ -8,13 +8,9 @@ description: >-
 
 The ARK CANnode can run [ArduPilot AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) firmware, enabling it to act as a DroneCAN peripheral node for expanding servo outputs, ESC control, and sensor connectivity over CAN.
 
-## Flashing Firmware
-
-### Flight Controller
+## Flight Controller Setup
 
 Flash your ARK flight controller with ArduPilot firmware using [QGroundControl](https://qgroundcontrol.com/) over USB.
-
-### Enable CAN on the Flight Controller
 
 Set the following parameters on the flight controller and reboot:
 
@@ -23,25 +19,7 @@ Set the following parameters on the flight controller and reboot:
 | `CAN_P1_DRIVER`   | 1     | Enable first CAN driver  |
 | `CAN_D1_PROTOCOL` | 1     | Set protocol to DroneCAN |
 
-### CANnode
-
-Flash the ARK CANnode with AP\_Periph firmware using the DroneCAN GUI Tool. See the [DroneCAN GUI Tool Guide](../../knowledge-base/dronecan-gui-tool-guide.md) for detailed instructions on connecting and uploading firmware.
-
-1. Download the latest AP\_Periph firmware for the ARK CANnode from [firmware.ardupilot.org/AP\_Periph](https://firmware.ardupilot.org/AP_Periph/)
-2. Connect the CANnode to the flight controller's CAN bus
-3. Open the DroneCAN GUI Tool
-4. Double-click the CANnode in the node list
-5. Click **Update Firmware** and select the `.bin` AP\_Periph firmware file
-
-### CANnode over SWD
-
-If the CANnode has no bootloader and does not show up on the CAN bus, flash it with an ST-LINK using the combined bootloader + application image:
-
-```bash
-st-flash --format ihex write AP_Periph_with_bl.hex
-```
-
-Do not write `AP_Periph.bin` to `0x08000000` — the bootloader lives there and the application starts at `0x08010000`. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes) for details.
+Connect the CANnode to the flight controller's CAN bus and flash it with AP\_Periph firmware as described in [ArduPilot Firmware](firmware.md#ardupilot-firmware).
 
 ## Gripper/Dropper Setup
 
@@ -109,24 +87,3 @@ python3 gripper_cmd.py open --port /dev/ttyACM0
 ## Using Multiple Servos
 
 To use the first 3 CANnode outputs, set `CAN_D1_UC_SRV_BM = 7` (bits 0, 1, 2) and configure `SERVO1_FUNCTION`, `SERVO2_FUNCTION`, and `SERVO3_FUNCTION` on the flight controller. Update `BRD_SAFETY_MASK` accordingly (e.g., 7 for channels 1-3).
-
-## Building Firmware
-
-### Application
-
-```
-./waf configure --board ARK_CANNODE
-./waf AP_Periph
-```
-
-### Bootloader
-
-```
-./waf configure --board ARK_CANNODE --bootloader
-./waf bootloader
-```
-
-The bootloader can also be updated from the running AP\_Periph firmware by setting `FLASH_BOOTLOADER = 1` on the CANnode via the DroneCAN GUI Tool.
-
-The hardware definition can be found here:\
-[https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP\_HAL\_ChibiOS/hwdef/ARK\_CANNODE](https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/ARK_CANNODE)

@@ -4,24 +4,9 @@
 ARKV6S ArduPilot Documentation
 {% endembed %}
 
-### Flashing Firmware
+To build or flash ArduPilot, see [Firmware](firmware.md#ardupilot).
 
-Firmware can be flashed over USB C using [QGroundControl](https://qgroundcontrol.com/).
-
-### Building Firmware
-
-```
-./waf configure --board ARKV6S
-./waf copter
-```
-
-and optionally upload&#x20;
-
-```
-./waf copter --upload
-```
-
-### Serial Port Mapping
+## Serial Port Mapping
 
 {% hint style="info" %}
 Serial Port Mapping for Default Firmware with No IOMCU
@@ -38,12 +23,12 @@ Serial Port Mapping for Default Firmware with No IOMCU
 | USART3   | SERIAL7           | Debug Console |
 | USART6   | SERIAL8           | PX4IO/RC      |
 
-### hwdef modifications for use with an IOMCU
+## hwdef modifications for use with an IOMCU
 
-When using the ARKV6S on a carrier board with an IOMCU, the following modifications to the hwdef need to be made.&#x20;
+When using the ARKV6S on a carrier board with an IOMCU, the following modifications to the hwdef need to be made.
 
 Swap the SERIAL\_ORDER line comments to remove USART6 from the available serial ports.
 
 Uncomment the IOMCU\_UART line to use USART6 for the IOMCU.
 
-Build and flash the firmware using the steps above.
+Build and flash the firmware using the steps in [Firmware](firmware.md#ardupilot).

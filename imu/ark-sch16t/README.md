@@ -5,26 +5,17 @@ coverY: 0
 
 # ARK SCH16T
 
-## Datasheets
+The ARK SCH16T is an SPI IMU board built around the [Murata SCH16T](https://www.murata.com/en-us/products/sensor/gyro/overview/lineup/sch16t) combined gyro sensor and accelerometer, with an 11-pin JST-GH connector that matches the ARK PAB and Jetson carrier SPI pinout. It works with PX4 and ArduPilot. USA built; the ARK SCH16T is FCC compliant and the ARK SCH16T-K10 is NDAA compliant.
 
-* [ARK SCH16T](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_SCH16T/datasheet/ARK_SCH16T_Datasheet.pdf)
-* [Murata SCH16T-K01](https://www.murata.com/-/media/webrenewal/products/sensor/pdf/datasheet/datasheet-sch16t-k01-short.ashx?la=en)
+Buy: [ARK SCH16T](https://arkelectron.com/product/ark-sch16t/) · [ARK SCH16T-K10](https://arkelectron.com/product/ark-sch16t-k10-imu/)
 
-## Wiring
+| Variant | Sensor | Gyro range | Accel range |
+|---------|--------|------------|-------------|
+| ARK SCH16T | SCH16T-K01 | ±300 °/s | ±8 g |
+| ARK SCH16T-K10 | SCH16T-K10 | ±2000 °/s | ±16 g |
 
-11 pin JST-GH&#x20;
-
-| Pin      | Signal                            | Voltage |
-| -------- | --------------------------------- | ------- |
-| 1 (red)  | `VDD_5V_IN`                       | +5.0V   |
-| 2        | SPI6\_SCK                         | +3.3V   |
-| 3        | SPI6\_MISO                        | +3.3V   |
-| 4        | SPI6\_MOSI                        | +3.3V   |
-| 5        | SPI6\_nCS1                        | +3.3V   |
-| 6        | NC                                | +3.3V   |
-| 7        | SPIX\_nSYNC                       | +3.3V   |
-| 8        | SPI6\_DRDY1                       | +3.3V   |
-| 9        | NC                                | +3.3V   |
-| 10       | SPI6\_nRESET (10k pullup to 3.3V) | +3.3V   |
-| 11 (blk) | GND                               | GND     |
-
+| Page | Contents |
+|------|----------|
+| [Hardware Reference](hardware.md) | Specifications, pinout, datasheets, 3D model |
+| [PX4 Instructions](px4-instructions.md) | Enabling the driver in PX4 |
+| [ArduPilot Instructions](ardupilot-instructions.md) | Adding the driver to an ArduPilot hwdef |

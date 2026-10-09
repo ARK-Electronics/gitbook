@@ -4,13 +4,13 @@
 
 <figure><img src="../../.gitbook/assets/arkpab_pinout.BbDXBv95.jpg" alt=""><figcaption><p>ARK PAB Carrier connector locations</p></figcaption></figure>
 
-### POWER1 - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+### POWER1 — 6-pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
 
 Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
 
 Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
-| Pin     | Signal    | Volt  |
+| Pin     | Signal    | Voltage |
 | ------- | --------- | ----- |
 | 1 (red) | `VBRICK1` | +5.0V |
 | 2 (blk) | `VBRICK1` | +5.0V |
@@ -19,13 +19,13 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | `GND`     | GND   |
 | 6 (blk) | `GND`     | GND   |
 
-### POWER2 - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+### POWER2 — 6-pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
 
 Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
 
 Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
-| Pin     | Signal    | Volt  |
+| Pin     | Signal    | Voltage |
 | ------- | --------- | ----- |
 | 1 (red) | `VBRICK2` | +5.0V |
 | 2 (blk) | `VBRICK2` | +5.0V |
@@ -34,9 +34,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | `GND`     | GND   |
 | 6 (blk) | `GND`     | GND   |
 
-### PWM
+### PWM — 10-pin JST-GH
 
-| Pin      | Signal                     | Volt  |
+| Pin      | Signal                     | Voltage |
 | -------- | -------------------------- | ----- |
 | 1 (red)  | VDD\_SERVO (Not Connected) | +5.0V |
 | 2 (blk)  | FMU\_CH1                   | +3.3V |
@@ -49,9 +49,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 9 (blk)  | FMU\_CH8                   | +3.3V |
 | 10 (blk) | `GND`                      | GND   |
 
-### GPS1
+### GPS1 — 10-pin JST-GH
 
-| Pin      | Signal                    | Volt  |
+| Pin      | Signal                    | Voltage |
 | -------- | ------------------------- | ----- |
 | 1 (red)  | `VDD_5V_PERIPH`           | +5.0V |
 | 2 (blk)  | USART1\_TX\_GPS1          | +3.3V |
@@ -64,9 +64,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 9 (blk)  | BUZZER                    | +5.0V |
 | 10 (blk) | `GND`                     | GND   |
 
-### GPS2
+### GPS2 — 6-pin JST-GH
 
-| Pin     | Signal           | Volt  |
+| Pin     | Signal           | Voltage |
 | ------- | ---------------- | ----- |
 | 1 (red) | `VDD_5V_HIPOWER` | +5.0V |
 | 2 (blk) | UART8\_TX\_GPS2  | +3.3V |
@@ -75,9 +75,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | I2C2\_SDA        | +3.3V |
 | 6 (blk) | `GND`            | GND   |
 
-### TELEM1
+### TELEM1 — 6-pin JST-GH
 
-| Pin     | Signal           | Volt  |
+| Pin     | Signal           | Voltage |
 | ------- | ---------------- | ----- |
 | 1 (red) | `VDD_5V_HIPOWER` | +5.0V |
 | 2 (blk) | UART7\_TX        | +3.3V |
@@ -86,9 +86,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | UART7\_RTS       | +3.3V |
 | 6 (blk) | `GND`            | GND   |
 
-### TELEM2
+### TELEM2 — 6-pin JST-GH
 
-| Pin     | Signal          | Volt  |
+| Pin     | Signal          | Voltage |
 | ------- | --------------- | ----- |
 | 1 (red) | `VDD_5V_PERIPH` | +5.0V |
 | 2 (blk) | UART5\_TX       | +3.3V |
@@ -97,9 +97,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | UART5\_RTS      | +3.3V |
 | 6 (blk) | `GND`           | GND   |
 
-### TELEM3
+### TELEM3 — 6-pin JST-GH
 
-| Pin     | Signal           | Volt  |
+| Pin     | Signal           | Voltage |
 | ------- | ---------------- | ----- |
 | 1 (red) | `VDD_5V_HIPOWER` | +5.0V |
 | 2 (blk) | USART2\_TX       | +3.3V |
@@ -108,9 +108,9 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | USART2\_RTS      | +3.3V |
 | 6 (blk) | `GND`            | GND   |
 
-### UART4/I2C3
+### UART4/I2C3 — 6-pin JST-GH
 
-| Pin     | Signal          | Volt  |
+| Pin     | Signal          | Voltage |
 | ------- | --------------- | ----- |
 | 1 (red) | `VDD_5V_PERIPH` | +5.0V |
 | 2 (blk) | UART4\_TX       | +3.3V |
@@ -119,56 +119,56 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 (blk) | I2C3\_SDA       | +3.3V |
 | 6 (blk) | `GND`           | GND   |
 
-### I2C3
+### I2C3 — 4-pin JST-GH
 
-| Pin     | Signal          | Volt  |
+| Pin     | Signal          | Voltage |
 | ------- | --------------- | ----- |
 | 1 (red) | `VDD_5V_PERIPH` | +5.0V |
 | 2 (blk) | I2C3\_SCL       | +3.3V |
 | 3 (blk) | I2C3\_SDA       | +3.3V |
 | 4 (blk) | `GND`           | GND   |
 
-### CAN1
+### CAN1 — 4-pin JST-GH
 
-| Pin     | Signal           | Volt  |
+| Pin     | Signal           | Voltage |
 | ------- | ---------------- | ----- |
 | 1 (red) | `VDD_5V_HIPOWER` | +5.0V |
 | 2 (blk) | CAN1\_H          | +3.3V |
 | 3 (blk) | CAN1\_L          | +3.3V |
 | 4 (blk) | `GND`            | GND   |
 
-### CAN2
+### CAN2 — 4-pin JST-GH
 
-| Pin     | Signal          | Volt  |
+| Pin     | Signal          | Voltage |
 | ------- | --------------- | ----- |
 | 1 (red) | `VDD_5V_PERIPH` | +5.0V |
 | 2 (blk) | CAN2\_H         | +3.3V |
 | 3 (blk) | CAN2\_L         | +3.3V |
 | 4 (blk) | `GND`           | GND   |
 
-### USB
+### USB — 4-pin JST-GH
 
-All signals in parallel with USB C connector
+All signals in parallel with the USB C connector.
 
-| Pin     | Signal    | Volt  |
+| Pin     | Signal    | Voltage |
 | ------- | --------- | ----- |
 | 1 (red) | `VBUS_IN` | +5.0V |
 | 2 (blk) | USB\_N    | +3.3V |
 | 3 (blk) | USB\_P    | +3.3V |
 | 4 (blk) | `GND`     | GND   |
 
-### ETH
+### ETH — 4-pin JST-GH
 
-| Pin     | Signal     | Volt            |
+| Pin     | Signal     | Voltage         |
 | ------- | ---------- | --------------- |
 | 1 (red) | ETH\_RD\_N | +50.0V Tolerant |
 | 2 (blk) | ETH\_RD\_P | +50.0V Tolerant |
 | 3 (blk) | ETH\_TD\_N | +50.0V Tolerant |
 | 4 (blk) | ETH\_TD\_P | +50.0V Tolerant |
 
-### ADIO
+### ADIO — 8-pin JST-GH
 
-| Pin     | Signal          | Volt  |
+| Pin     | Signal          | Voltage |
 | ------- | --------------- | ----- |
 | 1 (red) | `VDD_5V_PERIPH` | +5.0V |
 | 2 (blk) | FMU\_CAP        | +3.3V |
@@ -179,9 +179,9 @@ All signals in parallel with USB C connector
 | 7 (blk) | ADC1\_6V6       | +3.3V |
 | 8 (blk) | `GND`           | GND   |
 
-### RC/SBUS
+### RC/SBUS — 5-pin
 
-| Pin     | Signal               | Volt  |
+| Pin     | Signal               | Voltage |
 | ------- | -------------------- | ----- |
 | 1 (red) | `VDD_5V_SBUS_RC`     | +5.0V |
 | 2 (blk) | USART6\_RX\_SBUS\_IN | +3.3V |
@@ -189,25 +189,25 @@ All signals in parallel with USB C connector
 | 4 (blk) | `VDD_3V3_SPEKTRUM`   | +3.3V |
 | 5 (blk) | `GND`                | GND   |
 
-### PPM
+### PPM — 3-pin JST-GH
 
-| Pin     | Signal                     | Volt  |
+| Pin     | Signal                     | Voltage |
 | ------- | -------------------------- | ----- |
 | 1 (red) | `VDD_5V_PPM_RC`            | +5.0V |
 | 2 (blk) | DSM\_INPUT/FMU\_PPM\_INPUT | +3.3V |
 | 3 (blk) | `GND`                      | GND   |
 
-### DSM
+### DSM — 3-pin JST-ZH
 
-| Pin     | Signal                     | Volt  |
+| Pin     | Signal                     | Voltage |
 | ------- | -------------------------- | ----- |
 | 1 (red) | `VDD_3V3_SPEKTRUM`         | +3.3V |
 | 2 (blk) | `GND`                      | GND   |
 | 3 (blk) | DSM\_INPUT/FMU\_PPM\_INPUT | +3.3V |
 
-### SPI6
+### SPI6 — 11-pin JST-GH
 
-| Pin      | Signal          | Volt  |
+| Pin      | Signal          | Voltage |
 | -------- | --------------- | ----- |
 | 1 (red)  | `VDD_5V_PERIPH` | +5.0V |
 | 2 (blk)  | SPI6\_SCK       | +3.3V |
@@ -221,9 +221,11 @@ All signals in parallel with USB C connector
 | 10 (blk) | SPI6\_nRESET    | +3.3V |
 | 11 (blk) | `GND`           | GND   |
 
-### Debug Port
+### Debug Port — 10-pin JST-SH
 
-| Pin      | Signal             | Volt  |
+The pinouts and connector comply with the [Pixhawk Debug Full](https://docs.px4.io/main/en/debug/swd_debug.html#pixhawk-debug-full) interface defined in the [Pixhawk Connector Standard](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-009%20Pixhawk%20Connector%20Standard.pdf) (JST SM10B connector).
+
+| Pin      | Signal             | Voltage |
 | -------- | ------------------ | ----- |
 | 1 (red)  | `Vtref`            | +3.3V |
 | 2 (blk)  | Console TX (OUT)   | +3.3V |

@@ -5,19 +5,11 @@ coverY: 0
 
 # ARK RTK Base
 
-* Open source [schematic](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_RTK_Base/schematic/ARK_RTK_Base_Rev_1_Schematic.pdf) and [BOM](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_RTK_Base/bom/ARK_RTK_Base_Rev_1_BOM.xlsx)
+The ARK RTK Base is an open source RTK GNSS module built around the [u-blox ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module) multi-band receiver, with USB-C and Pixhawk-standard UART connectors. It can be used as an RTK fixed base, moving base or rover; as a ground base station it connects to _QGroundControl_ over USB-C, which forwards its RTCM corrections to a PX4 vehicle. USA built, NDAA compliant and FCC compliant.
 
-## Pinout
+[Buy the ARK RTK Base](https://arkelectron.com/product/ark-rtk-base/)
 
-#### USB C
-
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>2, 11</td><td>VBUS</td><td>5.0V</td></tr><tr><td>5, 8</td><td>USB_N</td><td>3.3V</td></tr><tr><td>6, 7</td><td>USB_P</td><td>3.3V</td></tr><tr><td>1,12</td><td>GND</td><td>GND</td></tr></tbody></table>
-
-#### F9P UART1 - 6 Pin JST-GH
-
-<table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5.0V</td><td>5.0V</td></tr><tr><td>2</td><td>F9P_RXD</td><td>3.3V</td></tr><tr><td>3</td><td>F9P_TXD</td><td>3.3V</td></tr><tr><td>4</td><td>NC</td><td>NC</td></tr><tr><td>5</td><td>NC</td><td>NC</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
-
-#### F9P UART2 - 3 Pin JST-GH
-
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>F9P_TXD2</td><td>3.3V</td></tr><tr><td>2</td><td>F9P_RXD2</td><td>3.3V</td></tr><tr><td>3</td><td>GND</td><td>GND</td></tr></tbody></table>
-
+| Page | Contents |
+|------|----------|
+| [Hardware Reference](hardware.md) | Specifications, pinout, 3D model, schematic and BOM |
+| [PX4 Instructions](px4-instructions.md) | Base station setup, vehicle configuration and tuning with PX4 |

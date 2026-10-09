@@ -14,7 +14,6 @@
 | MCU | STM32F412VGH6 |
 | Buzzer | Yes |
 | Power | 5 V, 137 mA |
-| Weight | 16 g |
 
 ## Pinout
 

@@ -1,8 +1,12 @@
 # Firmware
 
-## Why ARK32
+{% hint style="danger" %}
+**Before first use**, configure **KV**, **Pole Count**, and **Ramp Rate** for each motor channel in the [ARK32 Configurator](https://ark32.arkelectron.com/). The KV/pole defaults will not match your motor. Factory ramp is 2 %/ms — lower it for large props. See [ARK32 Configuration](../ark32-configuration.md).
+{% endhint %}
 
-The ARK 4IN1 ESC runs **[ARK32](https://github.com/ARK-Electronics/ARK32)**.
+The ARK 4IN1 ESC runs **[ARK32](https://github.com/ARK-Electronics/ARK32)**. Use ARK32 on this board.
+
+## Why ARK32
 
 ARK32 keeps DShot, PWM, KISS telemetry, and passthrough flashing. Changes that matter on this board:
 
@@ -15,21 +19,35 @@ ARK32 keeps DShot, PWM, KISS telemetry, and passthrough flashing. Changes that m
 
 Full write-up: [What ARK32 adds](https://github.com/ARK-Electronics/ARK32#what-ark32-adds).
 
-## Configuration
+## Updating
 
-Use the [ARK32 Configurator](https://ark32.arkelectron.com/). See [ARK32 Configuration](../ark32-configuration.md).
+Flash ARK32 through a Betaflight or ArduPilot flight controller with the [ARK32 Configurator](https://ark32.arkelectron.com/). See [Flash ARK32](flash-ark32.md); ArduPilot needs [ESC passthrough](ardupilot-esc-passthrough.md) set up first. For a blank or corrupted ESC, or to update the bootloader, see [Flash Bootloader](flash-bootloader.md).
 
-## Bootloader
+## Downloads
 
-Download **`AM32_F051_BOOTLOADER_ARK4IN1`** from [ARK32-bootloader releases](https://github.com/ARK-Electronics/ARK32-bootloader/releases). The filename includes a version suffix (for example `_V18`).
-
-See [Flash Bootloader](flash-bootloader.md).
-
-## App firmware
+### App firmware
 
 Download **`ARK32_ARK_4IN1_F051`** from [ARK32 releases](https://github.com/ARK-Electronics/ARK32/releases).
 
-See [Flash ARK32](flash-ark32.md).
+### Bootloader
+
+Download **`AM32_F051_BOOTLOADER_ARK4IN1`** from [ARK32-bootloader releases](https://github.com/ARK-Electronics/ARK32-bootloader/releases). The filename includes a version suffix (for example `_V18`).
+
+## Settings
+
+Factory defaults, per motor channel. Set them with the [ARK32 Configurator](https://ark32.arkelectron.com/); see [ARK32 Configuration](../ark32-configuration.md).
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Motor KV | 1020 | Motor nameplate kV. Set it to your motor's |
+| Motor Poles | 14 | Magnets on the rotor. Set it to your motor's |
+| Ramp Rate | 2 %/ms | How fast duty may change, in percent of full throttle per millisecond. See [Low KV Large Prop Systems](#low-kv-large-prop-systems) |
+| Timing Advance | 15°, fixed | How early the ESC commutates relative to the BEMF zero-cross |
+| PWM Type | By RPM | Switching frequency follows commutation speed |
+| Protocol | DShot | Throttle input. PWM input needs a [PWM Calibration](../pwm-calibration.md) |
+| Low / High Threshold | 1020 µs / 1980 µs | PWM pulse treated as zero and full throttle. Ignored under DShot |
+| Temperature Limit | Off | Folds duty back as FET temperature approaches this value |
+| Current Limit | Off | All four channels share one current shunt, so this is not a per-motor limit |
 
 ## Low KV Large Prop Systems
 
@@ -46,3 +64,7 @@ Set ramp rate in the [ARK32 Configurator](https://ark32.arkelectron.com/). These
 The setting is a **ceiling on all three rpm bands**, not a rate the ESC always applies. The firmware ramps at up to 2 %/ms during startup, 6 %/ms at low rpm and 16 %/ms once spun up, and your value lowers each of those. The factory 2 %/ms therefore flattens the progression — the ESC ramps at the startup rate everywhere, including cruise, which is what makes it safe on a large prop. Set 16 %/ms or higher and all three bands run at their firmware defaults.
 
 A separate slow-ramp firmware is not required — ramp rate is an EEPROM setting on the regular ARK32 image.
+
+## Release Notes
+
+See [ARK32 releases](https://github.com/ARK-Electronics/ARK32/releases).
