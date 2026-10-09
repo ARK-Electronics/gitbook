@@ -81,13 +81,9 @@ Do not flash `AP_Periph.bin` to `0x08000000`. On the ARK RTK GPS the bootloader 
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/82-1.18.73506671.uavcan.bin" %}
-ARK RTK GPS Firmware
-{% endfile %}
-
-{% file src="../../.gitbook/assets/ark_can-rtk-gps_canbootloader.bin" %}
-ARK RTK GPS Bootloader
-{% endfile %}
+* [ARK RTK GPS Firmware](https://downloads.arkelectron.com/firmware/ark_can-rtk-gps/latest/application.uavcan.bin)
+* [ARK RTK GPS Bootloader](https://downloads.arkelectron.com/firmware/ark_can-rtk-gps/latest/bootloader.bin)
+* [All releases and SHA-256 checksums](https://downloads.arkelectron.com/firmware/ark_can-rtk-gps/)
 
 Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
 
