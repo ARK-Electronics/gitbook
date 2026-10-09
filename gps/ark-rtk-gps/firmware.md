@@ -81,7 +81,7 @@ Do not flash `AP_Periph.bin` to `0x08000000`. On the ARK RTK GPS the bootloader 
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/82-1.18.76e683ea.uavcan.bin" %}
+{% file src="../../.gitbook/assets/82-1.18.73506671.uavcan.bin" %}
 ARK RTK GPS Firmware
 {% endfile %}
 
@@ -117,6 +117,8 @@ UART2 cannot be used for u-blox firmware update. Use the debug passthrough metho
 
 ## Release Notes
 
+* 82-1.18.73506671 - 2026-10-9
+  * Moving baseline: an invalid heading goes out with a zero baseline, so ArduPilot ignores it instead of taking a NaN yaw that blocks arming (`PreArm: Internal errors 0x400`)
 * 82-1.18.76e683ea - 2026-10-3
   * PX4 v1.18 base
   * Fix the IMU not starting after some resets until the next power cycle

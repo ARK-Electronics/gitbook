@@ -44,7 +44,7 @@ If the node does not appear on the CAN bus — for example after a bad flash tha
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/89-1.18.76e683ea.uavcan.bin" %}
+{% file src="../../.gitbook/assets/89-1.18.73506671.uavcan.bin" %}
 ARK X20 GPS Firmware
 {% endfile %}
 
@@ -113,6 +113,8 @@ UART2 cannot be used for u-blox firmware update. Use the debug passthrough metho
 
 ## Release Notes
 
+* 89-1.18.73506671 - 2026-10-9
+  * Moving baseline: an invalid heading goes out with a zero baseline, so ArduPilot ignores it instead of taking a NaN yaw that blocks arming (`PreArm: Internal errors 0x400`)
 * 89-1.18.76e683ea - 2026-10-3
   * PX4 v1.18 base
   * The antenna mounting for moving baseline heading is set on the flight controller (`GPS_YAW_OFFSET` removed), see [PX4 Instructions](px4-instructions.md#moving-baseline-gps-heading-configuration)
