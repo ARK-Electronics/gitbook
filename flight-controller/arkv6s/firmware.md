@@ -5,7 +5,7 @@ The ARKV6S ships with PX4 and can be flashed with ArduPilot.
 | Firmware | Build target |
 |----------|--------------|
 | PX4 | `ark_fmu-v6s_default` ([boards/ark/fmu-v6s](https://github.com/PX4/PX4-Autopilot/tree/main/boards/ark/fmu-v6s)) |
-| ArduPilot | `ARKV6S` ([ArduPilot pull request](https://github.com/ArduPilot/ardupilot/pull/33157)) |
+| ArduPilot | `ARKV6S` ([hwdef](https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/ARKV6S)) |
 
 ## PX4
 
