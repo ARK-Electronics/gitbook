@@ -6,13 +6,9 @@ Follow the steps for updating the firmware through the flight controller.
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/91-1.18.73506671.uavcan.bin" %}
-ARK G5H RTK Heading GPS Firmware
-{% endfile %}
-
-{% file src="../../.gitbook/assets/ark_g5-gps_canbootloader.bin" %}
-ARK G5H RTK Heading GPS Bootloader
-{% endfile %}
+* [ARK G5H RTK Heading GPS Firmware](https://downloads.arkelectron.com/firmware/ark_g5-gps/latest/application.uavcan.bin)
+* [ARK G5H RTK Heading GPS Bootloader](https://downloads.arkelectron.com/firmware/ark_g5-gps/latest/bootloader.bin)
+* [All releases and SHA-256 checksums](https://downloads.arkelectron.com/firmware/ark_g5-gps/)
 
 Node firmware 91-1.18.73506671 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
 

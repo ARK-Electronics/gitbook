@@ -8,13 +8,9 @@ To flash the application firmware you can use the SD card method as [documented 
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/83-1.18.d1f97771.uavcan.bin" %}
-ARK CANnode Firmware
-{% endfile %}
-
-{% file src="../../.gitbook/assets/ark_cannode_canbootloader.bin" %}
-ARK CANnode Bootloader
-{% endfile %}
+* [ARK CANnode Firmware](https://downloads.arkelectron.com/firmware/ark_cannode/latest/application.uavcan.bin)
+* [ARK CANnode Bootloader](https://downloads.arkelectron.com/firmware/ark_cannode/latest/bootloader.bin)
+* [All releases and SHA-256 checksums](https://downloads.arkelectron.com/firmware/ark_cannode/)
 
 ## Building and Flashing over SWD
 

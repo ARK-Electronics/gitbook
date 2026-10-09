@@ -10,13 +10,9 @@ Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPD
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/86-1.18.0d10f176.uavcan.bin" %}
-ARK Teseo GPS Firmware
-{% endfile %}
-
-{% file src="../../.gitbook/assets/ark_teseo-gps_canbootloader.bin" %}
-ARK Teseo GPS Bootloader
-{% endfile %}
+* [ARK Teseo GPS Firmware](https://downloads.arkelectron.com/firmware/ark_teseo-gps/latest/application.uavcan.bin)
+* [ARK Teseo GPS Bootloader](https://downloads.arkelectron.com/firmware/ark_teseo-gps/latest/bootloader.bin)
+* [All releases and SHA-256 checksums](https://downloads.arkelectron.com/firmware/ark_teseo-gps/)
 
 ## Node Parameters
 
