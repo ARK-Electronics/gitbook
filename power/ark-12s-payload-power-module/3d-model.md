@@ -1,4 +1,4 @@
 # 3D Model
 
 Step files can be found here\
-[https://github.com/ARK-Electronics/ARK\_12S\_PAYLOAD\_POWER\_MODULE](https://github.com/ARK-Electronics/ARK_12S_PAYLOAD_POWER_MODULE)
+[https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_12S\_Payload\_Power\_Module/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_Payload_Power_Module/model)

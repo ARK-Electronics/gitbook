@@ -14,6 +14,11 @@ coverY: -23.514666666666663
 
 This ESC runs **[ARK32](https://github.com/ARK-Electronics/ARK32)**. Use ARK32 on this board. See [Why ARK32](firmware/#why-ark32).
 
+**Datasheets:**
+
+* [ARK 4IN1 ESC](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_4IN1_ESC/datasheet/ARK_4IN1_ESC_Datasheet.pdf)
+* [ARK 4IN1 ESC CONS](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_4IN1_ESC/datasheet/ARK_4IN1_ESC_CONS_Datasheet.pdf)
+
 **Specifications:**
 
 * Voltage

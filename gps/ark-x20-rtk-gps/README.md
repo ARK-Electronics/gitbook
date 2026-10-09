@@ -91,4 +91,6 @@ Without valid firmware the node stays in the bootloader until the flight control
 
 ## 3D Model
 
-Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_X20\_GPS](https://github.com/ARK-Electronics/ARK_X20_GPS)
+Find 3D models at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_X20\_RTK\_GPS/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/model)
+
+Find case files at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_X20\_RTK\_GPS/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/case)

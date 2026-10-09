@@ -12,6 +12,10 @@ The ARK Pixhawk Payload Bus Breakout fans the 30-pin Payload Bus out to individu
 
 A 5 V supply enters on a 6-pin Molex Pico-Clasp using the Pixhawk power-module pinout. An onboard TI BQ24315 protection switch derives the `VDD_5V_PERIPH` rail with a 1.5 A current limit, overvoltage protection, and a fault flag, and is gated by the autopilot over `VDD_5V_PERIPH_nEN`.
 
+### Datasheet
+
+* [ARK Pixhawk Payload Bus Breakout](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Pixhawk_Payload_Bus_Breakout/datasheet/ARK_Pixhawk_Payload_Bus_Breakout_Datasheet.pdf)
+
 ### Connectors
 
 | Ref | Connector                | Function           |

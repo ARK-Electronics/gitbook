@@ -86,7 +86,9 @@ Without valid firmware the node stays in the bootloader until the flight control
 
 ## 3D Model
 
-Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_TESEO\_GPS](https://github.com/ARK-Electronics/ARK_TESEO_GPS)
+Find 3D models at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_TESEO\_GPS/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/model)
+
+Find case files at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_TESEO\_GPS/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/case)
 
 ## Pinout
 

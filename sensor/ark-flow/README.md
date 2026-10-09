@@ -9,7 +9,7 @@ ARK Flow is an open source [DroneCAN](https://docs.px4.io/main/en/dronecan/) [op
 
 ### Hardware Specifications <a href="#hardware-specifications" id="hardware-specifications"></a>
 
-* [Open Source Schematic and BOM](https://github.com/ARK-Electronics/ARK_Flow)
+* Open source [schematic](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Flow/schematic/ARK_Flow_Rev_2_Schematic.pdf) and [BOM](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Flow/bom/ARK_Flow_Rev_2_BOM.xlsx)
 * Sensors
   * PixArt PAW3902 Optical Flow Sensor
     * Tracks under super low light condition of >9 lux

@@ -22,6 +22,8 @@ See the [ST-LINK Flashing Guide](st-link-flashing-guide.md) for setup and usage.
 
 The [ARK Pixhawk Debug Adapter](https://arkelectron.com/product/ark-pixhawk-debug-adapter/) bridges the ST-LINK V3 Mini's STDC14 connector to the Pixhawk Standard 6-pin and 10-pin JST-SH debug connectors found on ARK boards. Includes debug cables. Without this adapter, you would need to manually wire the ST-LINK to JST-SH connectors.
 
+A printable holder that mounts an ST-LINK V3 Mini to the adapter is at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_Pixhawk\_Debug\_Adapter/case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pixhawk_Debug_Adapter/case)
+
 ### CAN-to-USB Adapter
 
 A CAN-to-USB adapter like the [Zubax Babel](https://zubax.com/products/babel) lets you connect your computer directly to the [CAN bus](can-bus.md) for diagnostics, firmware updates, and parameter configuration using the [DroneCAN GUI Tool](dronecan-gui-tool-guide.md).

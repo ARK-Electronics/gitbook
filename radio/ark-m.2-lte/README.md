@@ -182,4 +182,4 @@ ping -4 -c 4 -I wwan0 8.8.8.8
 
 ## 3D Model
 
-Find the 3D model at [https://github.com/ARK-Electronics/ARK\_M.2\_LTE](https://github.com/ARK-Electronics/ARK_M.2_LTE)
+Find the 3D model at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_M.2\_LTE/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_M.2_LTE/model)

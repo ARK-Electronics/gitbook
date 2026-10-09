@@ -20,6 +20,10 @@ When running over CAN, each ESC on the same bus must have a unique **ESC Index /
 Pin 1 of the flight controller connector (J2) is **unregulated battery voltage**. It is not fused or current limited. Do not connect it to a 5V input on your flight controller. See [Pinout](pinout.md).
 {% endhint %}
 
+**Datasheet:**
+
+* [ARK 12S CAN ESC](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_12S_CAN_ESC/datasheet/ARK_12S_CAN_ESC_Datasheet.pdf)
+
 **Specifications:**
 
 * Voltage
