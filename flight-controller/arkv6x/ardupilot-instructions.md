@@ -25,14 +25,12 @@ Serial Port Mapping for Default Firmware with No IOMCU
 
 ## hwdef modifications for use with an IOMCU
 
-When using the ARKV6X on a carrier board with an IOMCU, the following modifications to the hwdef need to be made.
+The default build is for a carrier without an IOMCU, such as the ARK PAB Carrier, where USART6 is the RC input. For a carrier with an IOMCU on USART6, edit the [ARKV6X hwdef](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat) and build it:
 
-Swap the SERIAL\_ORDER line comments to remove USART6 from the available serial ports.
+1. Swap the `SERIAL_ORDER` line comments ([L30-L33](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L30-L33)) to remove USART6 from the serial ports.
+2. Comment out `define DEFAULT_SERIAL8_PROTOCOL SerialProtocol_RCIN` ([L88](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L88)), present from ArduPilot 4.7.0. With USART6 removed, SERIAL8 is the second USB port.
+3. Uncomment `IOMCU_UART USART6` ([L91](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L91)).
 
-[https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP\_HAL\_ChibiOS/hwdef/ARKV6X/hwdef.dat#L30-L34](https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L30-L34)
-
-Uncomment the IOMCU\_UART line to use USART6 for the IOMCU.
-
-[https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP\_HAL\_ChibiOS/hwdef/ARKV6X/hwdef.dat#L91](https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L91)
+Keep the `PC6` and `PC7` USART6 pin lines; the IOMCU uses them.
 
 Build and flash the firmware using the steps in [Firmware](firmware.md#ardupilot).
