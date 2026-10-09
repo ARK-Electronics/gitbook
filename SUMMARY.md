@@ -228,6 +228,8 @@
     * [Betaflight Instructions](gps/ark-sam-gps/betaflight-instructions.md)
     * [3D Model](gps/ark-sam-gps/3d-model.md)
   * [ARK TESEO GPS](gps/ark-teseo-gps/README.md)
+    * [Firmware](gps/ark-teseo-gps/firmware.md)
+    * [Hardware Reference](gps/ark-teseo-gps/hardware.md)
     * [PX4 Instructions](gps/ark-teseo-gps/px4-instructions.md)
     * [ArduPilot Instructions](gps/ark-teseo-gps/ardupilot-instructions.md)
   * [ARK X20 RTK GPS](gps/ark-x20-rtk-gps/README.md)
