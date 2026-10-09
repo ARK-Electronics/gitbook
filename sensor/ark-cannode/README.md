@@ -11,7 +11,7 @@ The ARK CANnode is an open source generic [DroneCAN](https://docs.px4.io/main/en
 
 | Page | Contents |
 |------|----------|
-| [Firmware](firmware.md) | PX4 and AP\_Periph firmware: building, flashing and node parameters |
+| [Firmware](firmware.md) | PX4 and AP\_Periph firmware: downloads, building, flashing, node parameters and release notes |
 | [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, wiring, 3D model, case, schematic and BOM |
 | [PX4 Instructions](px4-instructions.md) | Configuring with PX4, and using the CANnode as a PWM expander |
 | [ArduPilot Instructions](ardupilot-instructions.md) | Configuring with ArduPilot, gripper and servo setup |

@@ -1,6 +1,6 @@
 # Firmware
 
-The ARKV6X ships with PX4 and can be flashed with ArduPilot. The ARKV6X Extended Range needs PX4 1.14 or later, or ArduPilot 4.5 or later.
+The ARKV6X ships with PX4 and can be flashed with ArduPilot. The ARKV6X Extended Range needs PX4 1.14 or later, or ArduPilot 4.6.3 or later.
 
 | Firmware | Build target |
 |----------|--------------|

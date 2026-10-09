@@ -9,7 +9,7 @@ The flight controller flashes the node firmware over CAN.
 * Firmware target: `ark_mag_default`
 * Bootloader target: `ark_mag_canbootloader`
 
-Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
+Node firmware built in October 2026 or later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
 
 ## Node Parameters
 
@@ -20,4 +20,4 @@ Set these on the ARK MAG, then reboot it. Use [QGroundControl](https://docs.px4.
 | `CANNODE_TERM` | 0 | Set to `1` on the last node of the CAN bus |
 | `CANNODE_NODE_ID` | 0 | Fixed node ID (1–125). `0` uses dynamic node allocation |
 | `CANNODE_PUB_MAG` | 1 | Publish magnetometer messages on the CAN bus |
-| `SYS_BL_UPDATE` | 0 | Set to `1` to rewrite the CAN bootloader from the running firmware |
+| `SYS_BL_UPDATE` | 0 | Set to `1` to rewrite the CAN bootloader from the running firmware. Firmware built before October 2026 lacks this parameter |

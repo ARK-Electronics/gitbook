@@ -119,9 +119,9 @@ A restore to defaults returns the ESC to the protection envelope it shipped with
 
 ## Node Parameters
 
-DroneCAN parameter names and shipped defaults, as the [DroneCAN GUI Tool](../../../knowledge-base/dronecan-gui-tool-guide.md) shows them.
+DroneCAN parameter names, as the [DroneCAN GUI Tool](../../../knowledge-base/dronecan-gui-tool-guide.md) shows them, with the values the ESC ships with.
 
-| Parameter | Default | Description |
+| Parameter | Shipped | Description |
 |-----------|---------|-------------|
 | `ESC_INDEX` | 0 | Motor the flight controller commands this ESC as, 0–31. See [ESC Index / Motor Index](#esc-index-motor-index) |
 | `CAN_NODE` | 0 | Fixed node ID. `0` uses dynamic node allocation |

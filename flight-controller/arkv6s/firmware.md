@@ -1,6 +1,6 @@
 # Firmware
 
-The ARKV6S ships with PX4 and can be flashed with ArduPilot.
+The ARKV6S ships with PX4 and can be flashed with ArduPilot 4.7.1 or later.
 
 | Firmware | Build target |
 |----------|--------------|

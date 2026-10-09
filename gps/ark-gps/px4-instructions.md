@@ -20,7 +20,7 @@ The sensor can be mounted anywhere on the frame, but you will need to specify it
 The ARK GPS will not boot if there is no SD card in the flight controller when powered on.
 {% endhint %}
 
-Connect the ARK GPS CAN to the Pixhawk CAN. Once parameters are set the module will be detected on boot and GPS data should arrive at 10Hz. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
+Connect the ARK GPS CAN to the Pixhawk CAN. Once parameters are set the module will be detected on boot and GPS data should arrive at 8 Hz. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
 
 ### Required Parameters
 

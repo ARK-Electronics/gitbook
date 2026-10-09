@@ -100,7 +100,8 @@ On the _Rover_:
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | `GPS_UBX_MODE` | 3 | Heading — rover with moving base, X20P UART1 connected to the CAN node |
-| `CANNODE_SUB_MBD` | 1 | Subscribe to `MovingBaselineData` messages on the CAN bus |
+
+`CANNODE_SUB_MBD` already defaults to `1`.
 
 On the _Moving Base_:
 

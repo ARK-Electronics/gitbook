@@ -7,8 +7,8 @@
 | GNSS receiver | Septentrio [mosaic-G5 P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H), P6 or P8, multi-constellation, quad-band |
 | Positioning | cm-level RTK |
 | Dual antenna heading | MAIN and ANT2, triple-band, set to dual antenna in production |
-| Update rate | 20 Hz |
-| Interference protection | [AIM+ jamming protection](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/aim-jamming-protection) |
+| Update rate | 20 Hz (P3H), 100 Hz (P8) |
+| Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/aim-jamming-protection) (P3H), [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P6), [AIM+ ultimate](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P8): jamming and spoofing detection and mitigation |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) |
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |

@@ -4,8 +4,9 @@ structure:
   readme: README.md
   summary: SUMMARY.md
 
-# Old file path -> current file, for pages whose file moved in the reorganization.
-# Keys are repo-relative paths without .md (a README is keyed by its directory).
+# Old site URL -> current file, for pages whose URL changed.
+# GitBook builds a URL from the site section slug (products/) and the page's SUMMARY.md nesting,
+# so a key is products/ plus the old nav path, without .md (a README takes its directory's name).
 redirects:
   products/electronic-speed-controller/ark-4in1-esc/am32-configuration: electronic-speed-controller/ark-4in1-esc/ark32-configuration.md
   products/electronic-speed-controller/ark-4in1-esc/firmware/flash-am32: electronic-speed-controller/ark-4in1-esc/firmware/flash-ark32.md

@@ -4,7 +4,7 @@
 
 | Specification | Value |
 |---------------|-------|
-| GNSS receiver | [u-blox ZED-X20P](https://www.u-blox.com/en/product/zed-x20p-module), all-band (L1/L2/L5), all constellations |
+| GNSS receiver | [u-blox ZED-X20P](https://www.u-blox.com/en/product/zed-x20p-module), all-band (L1/L2/L5). The node firmware uses GPS, QZSS, SBAS, Galileo, BeiDou and NavIC, not GLONASS: see [Constellations](firmware.md#constellations) |
 | Positioning | RTK, PPP-RTK and PPP |
 | Update rate | 25 Hz |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |

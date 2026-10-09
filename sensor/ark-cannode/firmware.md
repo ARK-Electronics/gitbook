@@ -6,6 +6,16 @@ ARK CANnode runs the [PX4 DroneCAN Firmware](https://docs.px4.io/main/en/droneca
 
 To flash the application firmware you can use the SD card method as [documented here](https://docs.px4.io/main/en/dronecan/#firmware-update) or you can use the DroneCAN GUI Tool and a USB-to-CAN adaptor to flash the firmware directly.
 
+## Downloads
+
+{% file src="../../.gitbook/assets/83-1.18.d1f97771.uavcan.bin" %}
+ARK CANnode Firmware
+{% endfile %}
+
+{% file src="../../.gitbook/assets/ark_cannode_canbootloader.bin" %}
+ARK CANnode Bootloader
+{% endfile %}
+
 ## Building and Flashing over SWD
 
 ARK CANnode boards ship with recent firmware pre-installed, but if you want to build and flash the latest firmware yourself see [PX4 DroneCAN Firmware > Building the Firmware](https://docs.px4.io/main/en/dronecan/px4_cannode_fw.html#building-the-firmware).
@@ -97,3 +107,10 @@ These apply to the PX4 DroneCAN firmware. Set them on the CANnode, then reboot i
 | `SYS_BL_UPDATE` | 0 | Set to `1` to rewrite the CAN bootloader from the running firmware. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`. Firmware built before October 2026 lacks this parameter |
 
 PWM output parameters (`PWM_MAIN_*`, `DSHOT_TEL_CFG`) are set per use case; see [CANnode as PWM Expander](px4-instructions.md#cannode-as-pwm-expander).
+
+## Release Notes
+
+* 83-1.18.d1f97771 - 2026-10-3
+  * PX4 v1.18 base
+  * SCH16T driver built in
+  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)

@@ -6,8 +6,8 @@
 |---------------|-------|
 | GNSS receiver | [u-blox NEO-M9N](https://www.u-blox.com/en/product/neo-m9n-module), meter-level, 4 concurrent GNSS |
 | Interference | Spoofing and jamming detection, RF interference mitigation |
-| Magnetometer | [Bosch BMM150](https://www.bosch-sensortec.com/products/motion-sensors/magnetometers-bmm150/) |
-| Barometer | [Bosch BMP388](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp388/) |
+| Magnetometer | [Bosch BMM150](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmm150-ds001.pdf) |
+| Barometer | [Bosch BMP388](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp388-ds001.pdf) |
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
 | MCU | STM32F412CEU6 |
 | Safety button | Yes |
