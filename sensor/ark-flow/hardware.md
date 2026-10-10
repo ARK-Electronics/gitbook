@@ -5,7 +5,7 @@
 | Specification | Value |
 |---------------|-------|
 | Optical flow sensor | [PixArt PAW3902](https://www.pixart.com/products-detail/93/PAW3902JF-TXQT) |
-| Flow working range | 80 mm up to 30 m |
+| Flow working range | 80 mm to infinity |
 | Low light | Tracks under super low light conditions of >9 lux. 40 mW IR LED on the board for improved low light operation |
 | Max flow rate | 7.4 rad/s |
 | Distance sensor | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) time-of-flight, integrated 850 nm laser light source |

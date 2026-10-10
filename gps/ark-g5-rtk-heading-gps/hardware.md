@@ -6,7 +6,7 @@
 |---------------|-------|
 | GNSS receiver | Septentrio [mosaic-G5 P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H), P6 or P8, multi-constellation, quad-band |
 | Positioning | cm-level RTK |
-| Dual antenna heading | MAIN and ANT2, triple-band, set to dual antenna in production |
+| Dual antenna heading | MAIN (SMA jack) and ANT2 (U.FL connector), triple-band, set to dual antenna in production |
 | Update rate | 20 Hz (P3H), 100 Hz (P8) |
 | Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/aim-jamming-protection) (P3H), [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P6), [AIM+ ultimate](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P8): jamming and spoofing detection and mitigation |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
@@ -16,7 +16,7 @@
 | Buzzer | Yes |
 | Interfaces | Two CAN, receiver UART2 with PPS, receiver USB-C, debug |
 | Power | 4.6–5.4 V, 360 mA |
-| Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 48.0 × 40.0 × 51.0 mm with main antenna, 91.5 × 40.0 × 51.0 mm with dual antennas |
+| Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 55.8 × 43.5 × 51.2 mm with the helical antenna on MAIN |
 | Weight | 13.0 g without antenna, 43.5 g with main antenna, 91.0 g with dual antennas |
 
 ## Pinout

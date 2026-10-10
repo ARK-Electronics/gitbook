@@ -15,7 +15,7 @@
 | Buzzer | Yes |
 | Interfaces | Two CAN, receiver UART2 with PPS, I2C expansion, debug |
 | Power | 4.7–5.4 V; 144 mA average, 157 mA max |
-| Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 48.0 × 40.0 × 51.0 mm with antenna |
+| Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 55.2 × 43.5 × 51.2 mm with antenna |
 | Weight | 13.0 g without antenna, 43.5 g with antenna |
 
 ## Pinout

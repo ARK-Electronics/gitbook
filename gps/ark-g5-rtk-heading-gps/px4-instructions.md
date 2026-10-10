@@ -40,7 +40,7 @@ The G5H provides yaw estimation using two GNSS antennas on a single DroneCAN nod
 ### Hardware Setup
 
 * Connect the ARK G5H RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable
-* Connect antennas to both the MAIN and ANT2 SMA connectors
+* Connect an antenna to MAIN (SMA) and one to ANT2 (U.FL), through an SMA-to-U.FL cable
 * Mount the antennas with a minimum of **30 cm separation** (more is better for heading accuracy)
 
 ### Flight Controller Parameters

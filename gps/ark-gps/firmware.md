@@ -11,6 +11,16 @@ Follow the steps for updating the firmware through the flight controller.
 
 {% embed url="https://docs.px4.io/main/en/dronecan/#firmware-update" %}
 
+## Updating to AP\_Periph
+
+To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. AP\_Periph does not publish the ARK GPS IMU.
+
+1. Download `AP_Periph.apj` from the [ArduPilot firmware server](https://firmware.ardupilot.org/AP_Periph/stable/ARK_GPS/).
+2. Flash it to the node with the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md). An ArduPilot flight controller can act as the CAN adapter.
+3. Set the node's `FLASH_BOOTLOADER` parameter to `1` to replace the bootloader with AP\_Periph's, then reboot the node.
+
+A node with no bootloader needs `AP_Periph_with_bl.hex` flashed over SWD; see [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
+
 ## Downloads
 
 {% file src="../../.gitbook/assets/81-1.18.76e683ea.uavcan.bin" %}
