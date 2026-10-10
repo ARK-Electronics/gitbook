@@ -6,7 +6,7 @@
 |---------------|-------|
 | GNSS receiver | Septentrio [mosaic-G5 P3](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3), [P6](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6) or [P8](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p8), multi-constellation, quad-band |
 | Positioning | cm-level RTK, Galileo HAS |
-| Dual antenna heading | P6 and P8 (ANT2). ANT2 is not active on the P3 |
+| Dual antenna heading | P6 and P8. MAIN is an SMA jack, ANT2 a U.FL connector. ANT2 is not active on the P3 |
 | Update rate | 20 Hz (P3), 100 Hz (P8) |
 | Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/Advanced-positioning-technology/gnss-technology/ionospheric-scintillation-monitoring) (P3), [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P6), [AIM+ ultimate](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P8): jamming and spoofing detection and mitigation |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
@@ -16,7 +16,7 @@
 | Buzzer | Yes |
 | Interfaces | Two CAN, receiver UART2 with PPS, receiver USB-C, debug |
 | Power | 4.6–5.4 V; 270 mA (P3), 360 mA (P6, P8) |
-| Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 48.0 × 40.0 × 51.0 mm with antenna, 91.5 × 40.0 × 51.0 mm with dual antennas (P6, P8) |
+| Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 55.8 × 43.5 × 51.2 mm with the helical antenna on MAIN |
 | Weight | 13.0 g without antenna, 43.5 g with antenna, 91.0 g with dual antennas (P6, P8) |
 
 ## Pinout

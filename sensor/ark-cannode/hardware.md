@@ -6,7 +6,7 @@
 
 | Specification | Value |
 |---------------|-------|
-| IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/) or [Bosch BMI088](https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi088/), 6-axis |
+| IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
 | MCU | STM32F412CGU6, 1 MB flash |
 | CAN | 2× Pixhawk-standard 4-pin JST-GH |
 | I2C | Pixhawk-standard 4-pin JST-GH |
@@ -15,7 +15,7 @@
 | PWM | 8 outputs on a 10-pin JST-GH, matching the Pixhawk 4 PWM connector pinout |
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, current depends on connected peripherals |
-| Dimensions | 3 × 3 × 1.3 cm |
+| Dimensions | 3.0 × 3.0 × 1.03 cm |
 | Weight | 5 g |
 
 ## Pinout

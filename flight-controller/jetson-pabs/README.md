@@ -28,4 +28,4 @@ The ARK Jetson PAB Carrier and ARK Jetson PAB Carrier V3 are NVIDIA Jetson Orin 
 | Display output | Mini DisplayPort | Micro HDMI |
 | Jetson console / recovery | Micro USB (muxed with FC USB) | USB-C |
 | NVMe storage | M.2 Key M 2242, PCIe ×4 | M.2 Key M 2242, PCIe ×4 |
-| M.2 Key E 2230 slot | PCIe x2, USB, UART, I2S | PCIe x2, USB, UART, I2S |
+| M.2 Key E 2230 slot | PCIe x1, USB, UART, I2S | PCIe x1, USB, UART, I2S |
