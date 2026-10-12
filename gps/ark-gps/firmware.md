@@ -23,13 +23,9 @@ A node with no bootloader needs `AP_Periph_with_bl.hex` flashed over SWD; see [F
 
 ## Downloads
 
-{% file src="../../.gitbook/assets/81-1.18.76e683ea.uavcan.bin" %}
-ARK GPS Firmware
-{% endfile %}
-
-{% file src="../../.gitbook/assets/ark_can-gps_canbootloader.bin" %}
-ARK GPS Bootloader
-{% endfile %}
+* [ARK GPS Firmware](https://downloads.arkelectron.com/firmware/ark_can-gps/latest/application.uavcan.bin)
+* [ARK GPS Bootloader](https://downloads.arkelectron.com/firmware/ark_can-gps/latest/bootloader.bin)
+* [All releases and SHA-256 checksums](https://downloads.arkelectron.com/firmware/ark_can-gps/)
 
 Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPDATE` to `1` on the node. The flight controller logs `bootloader updated`, `bootloader unchanged` or `bootloader update failed`, and the parameter returns to `0`.
 
