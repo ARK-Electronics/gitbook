@@ -26,7 +26,7 @@ The Septentrio G5 module firmware can be updated using the [Septentrio RxTools](
    ![](<../../.gitbook/assets/image (70).png>)
 4. Under File, select "Upgrade Receiver using Current Connection"\
    ![](<../../.gitbook/assets/image (71).png>)
-5. Select the SUF firmware file downloaded from [Septentrio's website](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3#resources)\
+5. Select the SUF firmware file for your module, downloaded from Septentrio's website: [P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H#resources), [P6](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6#resources) or [P8](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p8#resources)\
    ![](<../../.gitbook/assets/image (72).png>)
 6. Run the upgrade
 
@@ -45,7 +45,7 @@ Set these on the GPS node, then reboot it. Use [QGroundControl](https://docs.px4
 | `CANNODE_PUB_MBD` | 0 | Publish `MovingBaselineData`. Set to `1` on a moving base |
 | `CANNODE_SUB_MBD` | 1 | Receive `MovingBaselineData` from a moving base |
 | `SEP_MODE` | 0 | `0` rover, `1` moving base, `2` moving-base rover |
-| `SEP_ANT_MODE` | 0 | `0` keeps the antenna mode saved in the receiver (dual antenna, set in production), `1` single antenna, `2` dual antenna. `1` and `2` are applied without saving them in the receiver, which restarts once (about 10 s) at each power-up where its saved mode differs |
+| `SEP_ANT_MODE` | 0 | `0` keeps the antenna mode saved in the receiver (dual antenna on the P3H, single on the P6 and P8 unless changed in the web GUI), `1` single antenna, `2` dual antenna. `1` and `2` are applied without saving them in the receiver, which restarts once (about 10 s) at each power-up where its saved mode differs |
 | `SEP_DUAL_ANT` | 3 | Ambiguity types allowed for dual antenna heading: `1` fixed, `2` float, `3` both. `0` disables heading |
 | `SEP_PVT_MODE` | 15 | Bitmask of allowed PVT modes for Rover operation. Bits: `1` = StandAlone, `2` = DGNSS, `4` = RTKFloat, `8` = RTKFixed, `16` = SBAS, `32` = PPP (Galileo HAS). The receiver uses the most accurate mode available |
 | `SEP_RCV_DYN` | 6 | Receiver dynamics model: `0` = Static, `1` = Quasistatic, `2` = Pedestrian, `3` = Automotive, `4` = RaceCar, `5` = HeavyMachinery, `6` = UAV, `7` = Unlimited |

@@ -1,10 +1,10 @@
 # PX4 Instructions
 
-The ARK G5H RTK Heading GPS can be operated as a single-antenna GPS or with two antennas to provide GNSS-derived heading. Start with the [Single GPS Configuration](#single-gps-configuration) below, then add the [Dual Antenna Heading Configuration](#dual-antenna-heading-configuration) if you want heading.
+The ARK G5 RTK Heading GPS can be operated as a single-antenna GPS or with two antennas to provide GNSS-derived heading. Start with the [Single GPS Configuration](#single-gps-configuration) below, then add the [Dual Antenna Heading Configuration](#dual-antenna-heading-configuration) if you want heading.
 
 ## Single GPS Configuration
 
-Connect the ARK G5H RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable.
+Connect the ARK G5 RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable.
 
 ### Flight Controller Parameters
 
@@ -35,11 +35,11 @@ The node publishes GPS, magnetometer and barometer data with its default paramet
 
 ## Dual Antenna Heading Configuration
 
-The G5H provides yaw estimation using two GNSS antennas on a single DroneCAN node. The mosaic-G5 module computes the heading and reports it over DroneCAN.
+The G5 provides yaw estimation using two GNSS antennas on a single DroneCAN node. The mosaic-G5 module computes the heading and reports it over DroneCAN.
 
 ### Hardware Setup
 
-* Connect the ARK G5H RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable
+* Connect the ARK G5 RTK Heading GPS to the flight controller's CAN port using a standard 4-pin JST-GH cable
 * Connect an antenna to MAIN (SMA) and one to ANT2 (U.FL), through an SMA-to-U.FL cable
 * Mount the antennas with a minimum of **30 cm separation** (more is better for heading accuracy)
 
@@ -61,13 +61,13 @@ The node reports the heading of the MAIN→ANT2 baseline. Set where the antennas
 | PX4 version | Parameters |
 |-------------|------------|
 | v1.18 and earlier | `EKF2_GPS_YAW_OFF`: clockwise angle in degrees from the vehicle forward axis to the MAIN→ANT2 baseline (`0` if ANT2 is directly ahead of MAIN, `90` if ANT2 is to the right) |
-| `main` | `SENS_GNSSn_HDG` `2` (Dual antenna) in the G5H's slot (`SENS_GNSSn_ID`, `n` = `0` for a single receiver), `SENS_GNSSn_OFFX/Y/Z` the position of MAIN and `SENS_GNSSn_AUXX/Y/Z` the position of ANT2, in meters in the body frame |
+| `main` | `SENS_GNSSn_HDG` `2` (Dual antenna) in the GPS's slot (`SENS_GNSSn_ID`, `n` = `0` for a single receiver), `SENS_GNSSn_OFFX/Y/Z` the position of MAIN and `SENS_GNSSn_AUXX/Y/Z` the position of ANT2, in meters in the body frame |
 
 PX4 v1.17 and earlier use the heading only while the position is RTK fixed.
 
 ### CAN Node Parameters
 
-No change is needed on the node: the G5H ships with dual antenna saved in the receiver. The node reports a heading only with fixed ambiguities. To override the antenna mode (`SEP_ANT_MODE`) or disable heading (`SEP_DUAL_ANT` `0`), see [Node Parameters](firmware.md#node-parameters).
+On the P6 and P8, set `SEP_ANT_MODE` to `2` and reboot the node. The P3H ships with dual antenna saved in the receiver and needs no change. The node reports a heading only with fixed ambiguities. To disable heading (`SEP_DUAL_ANT` `0`), see [Node Parameters](firmware.md#node-parameters).
 
 ***
 

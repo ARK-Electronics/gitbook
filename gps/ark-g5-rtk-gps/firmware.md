@@ -45,7 +45,6 @@ Set these on the GPS node, then reboot it. Use [QGroundControl](https://docs.px4
 | `CANNODE_PUB_MBD` | 0 | Publish `MovingBaselineData`. Set to `1` on a moving base |
 | `CANNODE_SUB_MBD` | 1 | Receive `MovingBaselineData` from a moving base |
 | `SEP_MODE` | 0 | `0` rover, `1` moving base, `2` moving-base rover. See [Moving Base Heading Configuration](px4-instructions.md#moving-base-heading-configuration) |
-| `SEP_ANT_MODE` | 0 | P6 and P8 only. `0` keeps the antenna mode saved in the receiver (single antenna unless changed in the web GUI), `1` single antenna, `2` dual antenna. `1` and `2` are applied without saving them in the receiver, which restarts once (about 10 s) at each power-up where its saved mode differs |
 | `SEP_DUAL_ANT` | 3 | Ambiguity types allowed for dual antenna heading: `1` fixed, `2` float, `3` both. `0` disables heading |
 | `SEP_PVT_MODE` | 15 | Bitmask of allowed PVT modes for Rover operation. Bits: `1` = StandAlone, `2` = DGNSS, `4` = RTKFloat, `8` = RTKFixed, `16` = SBAS, `32` = PPP (Galileo HAS). The receiver uses the most accurate mode available |
 | `SEP_RCV_DYN` | 6 | Receiver dynamics model: `0` = Static, `1` = Quasistatic, `2` = Pedestrian, `3` = Automotive, `4` = RaceCar, `5` = HeavyMachinery, `6` = UAV, `7` = Unlimited |

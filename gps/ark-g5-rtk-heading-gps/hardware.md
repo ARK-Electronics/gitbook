@@ -4,9 +4,9 @@
 
 | Specification | Value |
 |---------------|-------|
-| GNSS receiver | Septentrio [mosaic-G5 P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H), P6 or P8, multi-constellation, quad-band |
+| GNSS receiver | Septentrio [mosaic-G5 P3H](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3H), [P6](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P6) or [P8](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-g5-p8), multi-constellation, quad-band |
 | Positioning | cm-level RTK |
-| Dual antenna heading | MAIN (SMA jack) and ANT2 (U.FL connector), triple-band, set to dual antenna in production |
+| Dual antenna heading | MAIN (SMA jack) and ANT2 (U.FL connector), triple-band. Dual antenna as shipped on the P3H; `SEP_ANT_MODE` `2` on the P6 and P8 |
 | Update rate | 20 Hz (P3H), 100 Hz (P8) |
 | Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/aim-jamming-protection) (P3H), [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P6), [AIM+ ultimate](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P8): jamming and spoofing detection and mitigation |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
@@ -84,7 +84,7 @@ Without valid firmware the node stays in the bootloader until the flight control
 
 ## 3D Model and Case
 
-The G5H shares these files with the ARK G5 RTK GPS.
+The ARK G5 RTK GPS shares these files.
 
 | File | Contents |
 |------|----------|

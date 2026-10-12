@@ -1,10 +1,10 @@
 # Web GUI Login
 
-The Septentrio mosaic-G5 P3H module hosts a web interface for configuration, status, and diagnostics accessible via USB-C connector.
+The Septentrio mosaic-G5 module hosts a web interface for configuration, status, and diagnostics accessible via USB-C connector.
 
 ## Connect
 
-1. Plug a USB-C cable from your computer to the USB-C port on the ARK G5H RTK Heading GPS.
+1. Plug a USB-C cable from your computer to the USB-C port on the ARK G5 RTK Heading GPS.
 2. Open a browser and go to [http://192.168.3.1](http://192.168.3.1).
 
 ## Log in
