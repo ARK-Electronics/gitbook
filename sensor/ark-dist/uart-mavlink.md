@@ -33,7 +33,7 @@ The Debug connector is NSH console + SWD only.
 
 ## Rate
 
-UART rate matches the rangefinder sample rate (same data path as DroneCAN). Defaults are typically about **5–25 Hz** depending on short/long range mode.
+UART rate matches the rangefinder sample rate (same data path as DroneCAN): by default 20 Hz on the SR, 15 Hz on the MR and 10 Hz on the LR. See [Node Parameters](firmware.md#node-parameters).
 
 ## Node configuration
 

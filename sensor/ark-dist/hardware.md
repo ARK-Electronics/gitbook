@@ -4,17 +4,31 @@
 
 | Specification | Value |
 |---------------|-------|
-| Distance sensor | MR: [Broadcom AFBR-S50LX85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d) time-of-flight. SR: [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) time-of-flight |
-| Range | MR: typically up to 50 m. SR: typically up to 30 m |
-| Beam | MR: laser opening angle of 2° × 2°. SR: integrated 850 nm laser, 2° × 2° transmitter beam illuminating 1 to 3 pixels, 12.4° × 6.2° field of view with 32 pixels, reference pixel for system health monitoring |
-| Ambient light | Operates up to 200k lux |
+| Distance sensor | SR: [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d). MR: [Broadcom AFBR-S50LX85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d). LR: Broadcom AFBR-S50EX85D. All time-of-flight |
+| Range | See [Range](#range) |
+| Reported distance | SR: 0 to 30 m. MR: 0.1 to 50 m. LR: 0.6 to 100 m |
+| Rate | SR: 20 Hz, 50 Hz with `SENS_AFBR_PROF` Fast. MR: 15 Hz, 25 Hz with `SENS_AFBR_PROF` Fast. LR: 10 Hz |
+| Laser | 850 nm, Class 1 eye safe (IEC 60825-1) |
+| Beam | 2° × 2°, 3.5 cm spot at 1 m. SR and MR: 32-pixel receiver, 12.4° × 6.2° field of view, reference pixel for system health monitoring |
 | MCU | STM32F412VG |
 | CAN | DroneCAN range, 2× Pixhawk-standard 4-pin JST-GH |
 | UART | MAVLink 2 `DISTANCE_SENSOR`, Pixhawk-standard 6-pin JST-GH |
 | Debug | NSH console and SWD, Pixhawk-standard 6-pin JST-SH |
-| Power | 5 V. MR: 78 mA average, 84 mA max. SR: 84 mA average, 86 mA max |
+| Power | 5 V. SR: 84 mA average, 86 mA max. MR: 78 mA average, 84 mA max |
 | Dimensions | 2.0 × 2.8 × 1.4 cm |
 | Weight | 4 g |
+
+## Range
+
+Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. Measured in flight with default settings, as the greatest height at which at least half the readings are valid and within 5 m of the true height:
+
+| Variant | Asphalt, bright sun | Asphalt, dusk | Grass, bright sun | Grass, dusk |
+|---------|---------------------|---------------|-------------------|-------------|
+| SR | 18 m | — | — | 30 m\* |
+| MR | 16 m | — | — | 50 m\* |
+| LR | 18 m | 40 m | 40 m | 82 m |
+
+Bright sun: sun 49–61° above the horizon; a lower sun gives more range. Dusk: sun below 6°. \* Limited by the maximum reported distance; the sensor was still measuring at the flight ceiling (SR 38 m, MR 54 m). — Not measured. Wet surfaces reduce range. Over open water, readings are short and intermittent.
 
 ## Pinout
 
@@ -74,7 +88,7 @@ Without valid firmware the node stays in the bootloader until the flight control
 
 ## 3D Model and Case
 
-Both variants use the same board and case.
+All three variants use the same board and case.
 
 | File | Contents |
 |------|----------|
