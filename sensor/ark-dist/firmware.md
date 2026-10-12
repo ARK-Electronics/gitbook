@@ -40,6 +40,8 @@ Set these on the ARK DIST, then reboot it. Use [QGroundControl](https://docs.px4
 
 ## Release Notes
 
+* 92-1.18.48fb05b9 - 2026-10-12
+  * The rangefinder's device ID names the AFBR-S50 instead of an unknown device
 * 92-1.18.f8ebe52d - 2026-10-12
   * PX4 v1.18 base
   * Supports the ARK DIST LR (AFBR-S50EX85D) in Extended Long Range mode at 10 Hz
