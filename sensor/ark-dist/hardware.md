@@ -26,7 +26,7 @@ Range depends on the ambient light on the ground and on how well the surface ref
 |---------|---------------------|---------------|-------------------|-------------|
 | SR | 18 m | 30 m | 18 m | 30 m\* |
 | MR | 18 m | 40 m | 18 m | 50 m\* |
-| LR | 18 m | 40 m | 18 m | 82 m |
+| LR | 18 m | 40 m | 40 m | 82 m |
 
 Bright sun: sun 49–61° above the horizon; a lower sun gives more range. Dusk: sun below 6°. \* Limited by the maximum reported distance; the sensor was still measuring at the flight ceiling (SR 38 m, MR 54 m). Wet surfaces reduce range. Over open water, readings are short and intermittent.
 
