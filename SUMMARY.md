@@ -209,7 +209,7 @@
     * [PX4 Instructions](gps/ark-g5-rtk-gps/px4-instructions.md)
     * [ArduPilot Instructions](gps/ark-g5-rtk-gps/ardupilot-instructions.md)
     * [Web GUI Login](gps/ark-g5-rtk-gps/web-gui-login.md)
-  * [ARK G5H RTK Heading GPS](gps/ark-g5-rtk-heading-gps/README.md)
+  * [ARK G5 RTK Heading GPS](gps/ark-g5-rtk-heading-gps/README.md)
     * [Firmware](gps/ark-g5-rtk-heading-gps/firmware.md)
     * [Hardware Reference](gps/ark-g5-rtk-heading-gps/hardware.md)
     * [PX4 Instructions](gps/ark-g5-rtk-heading-gps/px4-instructions.md)

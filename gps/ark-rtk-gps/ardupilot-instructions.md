@@ -32,7 +32,7 @@ Reboot the autopilot. The GPS should appear as a DroneCAN node and begin reporti
 Two ARK RTK GPS modules can provide compass-free yaw estimation using the GPS moving baseline technique. This uses the relative position between two GPS antennas to determine heading, eliminating the need for a magnetometer.
 
 {% hint style="info" %}
-The L1L5 variant does **not** support moving baseline heading. For dual-GPS heading use the standard L1/L2 ARK RTK GPS, or see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md) for a dual-antenna solution.
+The L1L5 variant does **not** support moving baseline heading. For dual-GPS heading use the standard L1/L2 ARK RTK GPS, or see the [ARK G5 RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md) for a dual-antenna solution.
 {% endhint %}
 
 ### Hardware Setup

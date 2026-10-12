@@ -30,7 +30,7 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 The node publishes GPS, magnetometer and barometer data with its default parameters. To terminate the bus, fix the node ID, publish IMU data or change the receiver's output rate, PVT modes or dynamics model, see [Node Parameters](firmware.md#node-parameters).
 
 {% hint style="info" %}
-On the P3 the ANT2 connector is not active. On the P6 and P8, `SEP_ANT_MODE` `2` turns on dual antenna heading, configured as on the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/px4-instructions.md#dual-antenna-heading-configuration).
+The ANT2 connector is not active on the P3. For dual antenna heading from one unit, see the [ARK G5 RTK Heading GPS](../ark-g5-rtk-heading-gps/px4-instructions.md#dual-antenna-heading-configuration) (P3H, P6, P8).
 {% endhint %}
 
 ***
