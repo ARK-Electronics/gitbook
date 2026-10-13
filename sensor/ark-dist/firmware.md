@@ -16,14 +16,14 @@ Node firmware 1.18 and later can rewrite its own CAN bootloader: set `SYS_BL_UPD
 
 ## Node Parameters
 
-Set these on the ARK DIST, then reboot it. Use [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration), where each CAN node is a separate _Component X_ under **Vehicle Settings > Parameters**, or the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md). The defaults suit each variant; the driver picks the mode and rate for the sensor it finds.
+Set these on the ARK DIST, then reboot it. Use [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration), where each CAN node is a separate _Component X_ under **Vehicle Settings > Parameters**, or the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md). The driver picks the mode and rate for the sensor it finds.
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
 | `CANNODE_TERM` | 0 | Set to `1` on the last node of the CAN bus |
 | `CANNODE_NODE_ID` | 0 | Fixed node ID (1–125). `0` uses dynamic node allocation |
 | `SENS_AFBR_MODE` | -1 | Measurement mode. `-1` the sensor's default: Long Range on the SR and MR, Extended Long Range on the LR. `0` short range, `1` long range, `2` high speed short range, `3` high speed long range, `4` high precision short range, `5` background suppression short range, `6` extended long range |
-| `SENS_AFBR_PROF` | 0 | SR and MR only. `0` Range: 20 Hz on the SR, 15 Hz on the MR. `1` Fast: 50 Hz on the SR, 25 Hz on the MR, for optical flow and terrain following near the ground; costs a few metres of range in bright light |
+| `SENS_AFBR_PROF` | 0 | SR and MR only. `0` Range: 20 Hz on the SR, 15 Hz on the MR. `1` Fast: 50 Hz on the SR, 25 Hz on the MR, for optical flow and terrain following near the ground; costs a few meters of range in bright light |
 | `SENS_AFBR_RATE` | 0 | Measurement rate in Hz. `0` uses the profile's rate (SR, MR) or 10 Hz (LR). Lower rates give more range. Values below 5 Hz are clamped to 5 Hz |
 | `SENS_AFBR_DFM` | -1 | Dual frequency mode. `-1` 4X on the SR and MR; the LR's mode has none. `0` off, `1` 4X, `2` 8X |
 | `SENS_AFBR_SNM` | 3 | Shot noise monitor. `0` static indoor, `1` static outdoor, `2` dynamic, `3` dynamic plus |
