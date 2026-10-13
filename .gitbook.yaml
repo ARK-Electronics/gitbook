@@ -99,3 +99,10 @@ redirects:
   products/sensor/ark-mag/3d-models-and-case-files: sensor/ark-mag/hardware.md
   products/flight-controller/ark-pi6x-flow/ark-services/services: ark-os/services.md
   products/flight-controller/ark-pi6x-flow/ark-services: flight-controller/ark-pi6x-flow/using-ark-os.md
+  products/flight-controller/ark-pi6x-flow/updating-the-flight-controller-firmware: flight-controller/ark-pi6x-flow/firmware.md
+  products/flight-controller/ark-pi6x-flow/pinout: flight-controller/ark-pi6x-flow/hardware.md
+  products/flight-controller/ark-pi6x-flow/block-diagram: flight-controller/ark-pi6x-flow/hardware.md
+  products/flight-controller/ark-pi6x-flow/3d-models: flight-controller/ark-pi6x-flow/hardware.md
+  products/embedded-computers/ark-just-a-pi/pinout: embedded-computers/ark-just-a-pi/hardware.md
+  products/embedded-computers/ark-just-a-pi/block-diagram: embedded-computers/ark-just-a-pi/hardware.md
+  products/embedded-computers/ark-just-a-pi/3d-model: embedded-computers/ark-just-a-pi/hardware.md

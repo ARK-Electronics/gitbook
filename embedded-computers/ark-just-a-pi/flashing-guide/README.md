@@ -9,11 +9,11 @@ The [ark\_pi\_image](https://github.com/ARK-Electronics/ark_pi_image) repository
 ```bash
 git clone https://github.com/ARK-Electronics/ark_pi_image.git
 cd ark_pi_image
-./build.sh --provision        # build the Just A Pi CM5 image with ARK-OS
-./flash.sh /dev/sdX           # write it to the SD card
+./build.sh --target justapi-cm5 --provision
+./flash.sh --target justapi-cm5
 ```
 
-No Raspberry Pi Imager and no manual `config.txt` edits. For a CM5 with onboard eMMC (no SD slot), short the `BOOT` jumper, connect USB-C, run [rpiboot](https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc) so the eMMC appears as a block device, then `./flash.sh` to it.
+`flash.sh` finds the SD card and asks for confirmation before writing. For a CM5 with eMMC, hold the **BOOT** button while powering the board, connect the USB JST-GH port to the host, and run [rpiboot](https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc) so the eMMC appears as a block device. Then run `./flash.sh --target justapi-cm5 /dev/sdX`.
 
 ## Option 2: Raspberry Pi Imager (manual)
 

@@ -4,4 +4,4 @@ When using Pi CM4 with EMMC, it must be flashed through the Micro-USB port on th
 
 {% embed url="https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc" %}
 
-Once complete follow the steps at [After Flashing, Before Installing](https://arkelectron.gitbook.io/ark-documentation/flight-controller/ark-pi6x-flow/flashing-guide/after-flashing-before-installing)
+Once complete, follow [After Flashing, Before Installing](after-flashing-before-installing.md).

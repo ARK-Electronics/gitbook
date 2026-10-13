@@ -29,9 +29,9 @@ gpio=20=op,dh
 # Enable 3.3V camera rail feeding both CSI connectors
 gpio=22=op,dh
 
-# CAM0 = J2 on MIPI0 (I2C0), CAM1 = J1 on MIPI1 (ID_SD/ID_SC). Swap imx219 for your sensor.
+# CAM1 connector (MIPI0) takes cam0; CAM2 connector (MIPI1) is the overlay default. Swap imx219 for your sensor.
 dtoverlay=imx219,cam0
-dtoverlay=imx219,cam1
+dtoverlay=imx219
 
 # ---- UARTs ----
 enable_uart=1                 # UART0 debug console, J6 (GPIO14/15)

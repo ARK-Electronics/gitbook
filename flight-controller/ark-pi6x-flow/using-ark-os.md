@@ -8,4 +8,4 @@
 ## On This Carrier
 
 * [Autopilot Connections](autopilot-connections/) — connect QGroundControl or Mission Planner
-* [Updating the Flight Controller Firmware](updating-the-flight-controller-firmware.md)
+* [Firmware](firmware.md) — update the flight controller from ARK-UI or the command line

@@ -42,7 +42,7 @@ Plug either external Ethernet port into your network — the Pi requests an addr
 
 ### Option 3: Serial Debug Console
 
-The **UART0 Debug** connector (6-pin JST-GH) exposes the Compute Module's serial console at 3.3V. Connect a 3.3V USB-to-serial adapter to reach the console before the network is configured. See the [Pinout](pinout.md) for the connector pin assignments.
+The **UART0 Debug** connector (6-pin JST-GH) exposes the Compute Module's serial console at 3.3V. Connect a 3.3V USB-to-serial adapter to reach the console before the network is configured. See the [Pinout](hardware.md#pinout) for the connector pin assignments.
 
 ## ARK-UI Web Interface
 
@@ -52,5 +52,4 @@ ARK-OS hosts a web UI at [http://just-a-pi.local](http://just-a-pi.local) for ma
 
 * [ARK-OS](using-ark-os.md) – The pre-installed services and web UI
 * [Flashing Guide](flashing-guide/README.md) – Image the Compute Module
-* [Pinout](pinout.md) – Connector and pin assignments
-* [Block Diagram](block-diagram.md) – Board architecture overview
+* [Hardware Reference](hardware.md) – Specifications, pinout and block diagram

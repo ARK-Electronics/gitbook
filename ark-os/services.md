@@ -22,7 +22,7 @@ ARK-OS services are system-level [systemd services](https://www.freedesktop.org/
 
 Enable from the ARK-UI Services page or with `systemctl enable --now <service>`.
 
-**dds-agent** bridges PX4 uORB topics to ROS 2 by running the [Micro XRCE-DDS Agent](https://github.com/eProsima/Micro-XRCE-DDS-Agent) on the high-speed serial connection to the flight controller — `/dev/ttyTHS1` on Jetson carriers, `/dev/ttyAMA4` on the Pi6X Flow, both wired to TELEM2 at 3 Mbps. The bridged topics are defined in [PX4's dds\_topics.yaml](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml). Set these PX4 parameters:
+**dds-agent** bridges PX4 uORB topics to ROS 2 by running the [Micro XRCE-DDS Agent](https://github.com/eProsima/Micro-XRCE-DDS-Agent) on the high-speed serial connection to the flight controller — `/dev/ttyTHS1` on Jetson carriers, `/dev/ttyAMA4` on the Pi6X Flow (`/dev/ttyAMA3` with a CM5), both wired to TELEM2 at 3 Mbps. The bridged topics are defined in [PX4's dds\_topics.yaml](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml). Set these PX4 parameters:
 
 | Parameter       | Value   | Description  |
 | --------------- | ------- | ------------ |
