@@ -5,51 +5,18 @@ coverY: 0
 
 # ARK RTK GPS
 
-Find most up to date documentation in the PX4 Documentation [https://docs.px4.io/main/en/dronecan/ark\_rtk\_gps.html](https://docs.px4.io/main/en/dronecan/ark_rtk_gps.html)
+The ARK RTK GPS is an open source [DroneCAN](https://dronecan.github.io/) RTK GNSS module built around the [u-blox ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module) multi-band receiver, with a magnetometer, barometer, IMU, buzzer and safety switch. It works with PX4 and ArduPilot. The ARK RTK GPS L1L5 variant uses the u-blox ZED-F9P-15B, which receives the L1/L5 bands instead of L1/L2; the L5 band improves resilience to interference and multipath. Aside from the receiver, the L1L5 variant is identical to the standard ARK RTK GPS: it uses the same DroneCAN interface, onboard sensors, pinout, and firmware. USA built and FCC compliant; the L1/L2 ARK RTK GPS is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list).
 
-Find 3D models and case files at [https://github.com/ARK-Electronics/ARK\_RTK\_GPS](https://github.com/ARK-Electronics/ARK_RTK_GPS)
+Buy: [ARK RTK GPS](https://arkelectron.com/product/ark-rtk-gps/) · [ARK RTK GPS L1L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/)
 
-## L1L5 Variant
+| Variant | Receiver | Bands | Moving baseline heading |
+|---------|----------|-------|-------------------------|
+| ARK RTK GPS | u-blox ZED-F9P | L1/L2 | Yes |
+| ARK RTK GPS L1L5 | u-blox ZED-F9P-15B | L1/L5 | No |
 
-The [ARK RTK GPS L1L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/) is a variant of the ARK RTK GPS built around the u-blox ZED-F9P-15B, which receives the L1/L5 bands instead of L1/L2. The L5 band improves resilience to interference and multipath.
-
-{% hint style="info" %}
-The L1L5 variant does **not** support moving baseline heading. For dual-GPS heading use the standard L1/L2 ARK RTK GPS, or see the [ARK G5H RTK Heading GPS](../ark-g5-rtk-heading-gps/README.md) for a dual-antenna solution.
-{% endhint %}
-
-Aside from the receiver, the L1L5 variant is identical to the standard ARK RTK GPS: it uses the same DroneCAN interface, onboard sensors, pinout, and firmware.
-
-## Firmware
-
-Follow the steps for updating the firmware through the flight controller — see [Firmware Update](px4-instructions.md#firmware-update) in the PX4 instructions.
-
-If the node does not appear on the CAN bus — for example after a bad flash that erased the bootloader — recover it over SWD with an ST-LINK. See [Flashing DroneCAN Nodes](../../knowledge-base/st-link-flashing-guide.md#flashing-dronecan-nodes).
-
-See the latest firmware below.
-
-{% file src="../../.gitbook/assets/82-1.16.e68afe1e.uavcan.bin" %}
-ARK RTK GPS Firmware
-{% endfile %}
-
-## Release Notes
-
-* 82-1.16.e68afe1e - 2025-2-12
-  * Disable mag bias estimator by default
-
-## Pinout
-
-#### CAN - 4 Pin JST-GH
-
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5V</td><td>5.0V</td></tr><tr><td>2</td><td>CAN_P</td><td>5.0V</td></tr><tr><td>3</td><td>CAN_N</td><td>5.0V</td></tr><tr><td>4</td><td>GND</td><td>GND</td></tr></tbody></table>
-
-#### CAN - 4 Pin JST-GH
-
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>5V</td><td>5.0V</td></tr><tr><td>2</td><td>CAN_P</td><td>5.0V</td></tr><tr><td>3</td><td>CAN_N</td><td>5.0V</td></tr><tr><td>4</td><td>GND</td><td>GND</td></tr></tbody></table>
-
-#### F9P UART2 - 3 Pin JST-GH
-
-<table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>F9P_TXD2</td><td>3.3V</td></tr><tr><td>2</td><td>F9P_RXD2</td><td>3.3V</td></tr><tr><td>3</td><td>GND</td><td>GND</td></tr></tbody></table>
-
-#### Debug - 6 Pin JST-SH
-
-<table><thead><tr><th width="153">Pin Number</th><th width="210">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>3.3V</td><td>3.3V</td></tr><tr><td>2</td><td>USART2_TX</td><td>3.3V</td></tr><tr><td>3</td><td>USART2_RX</td><td>3.3V</td></tr><tr><td>4</td><td>FMU_SWDIO</td><td>3.3V</td></tr><tr><td>5</td><td>FMU_SWCLK</td><td>3.3V</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
+| Page | Contents |
+|------|----------|
+| [Firmware](firmware.md) | Updating, AP\_Periph, node parameters, downloads and release notes |
+| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case, schematic and BOM |
+| [PX4 Instructions](px4-instructions.md) | Single GPS, RTK corrections and moving baseline heading with PX4 |
+| [ArduPilot Instructions](ardupilot-instructions.md) | Single GPS and dual GPS heading with ArduPilot |

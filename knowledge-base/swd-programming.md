@@ -114,7 +114,8 @@ Log out and back in for the change to take effect.
 
 * **Skipping the debug adapter** — the ST-LINK's STDC14 connector does not directly plug into the JST-SH debug port on ARK boards. You need the ARK Pixhawk Debug Adapter or manual wiring.
 * **Wrong bootloader for the firmware stack** — PX4 CAN nodes need the PX4 `canbootloader`, and AP\_Periph nodes need the ArduPilot CAN bootloader. Flashing the wrong bootloader means the node won't accept firmware updates over CAN. If a node isn't picking up firmware, check which bootloader is installed.
-* **Wrong flash address** — STM32 flash starts at `0x08000000`, but that is the bootloader's address on a DroneCAN node. The node application lives at `0x08010000` on ARK CAN nodes, and writing it to `0x08000000` wipes the bootloader. The flash reports success either way. Flashing the combined bootloader + application image (`AP_Periph_with_bl.hex`) avoids the problem entirely — see the [ST-LINK Flashing Guide](st-link-flashing-guide.md#flashing-dronecan-nodes).
+* **Wrong flash address** — STM32 flash starts at `0x08000000` (the bootloader). On ARK CAN nodes the application is at `0x08010000`. On PX4 STM32H7 flight controllers (ARKV6X, ARKV6S, ARK FPV, ARK Pi6X) the application is at `0x08020000`. See the [ST-LINK Flashing Guide](st-link-flashing-guide.md).
+* **`.px4` over SWD** — `st-flash` takes a `.bin`.
 * **Outdated stlink tools** — the version from `apt install stlink-tools` is often too old to recognize newer STM32 chips or ST-LINK firmware. Build from source (see [Software Setup](#software-setup) above).
 * **Powering conflicts** — the ST-LINK can supply 3.3V to the target. If the board is already powered externally, this is usually fine, but avoid powering high-current peripherals through the debug connector.
 

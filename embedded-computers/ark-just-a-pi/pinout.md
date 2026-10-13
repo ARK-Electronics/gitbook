@@ -6,7 +6,11 @@
 
 {% file src="../../.gitbook/assets/Pinout Drawing (1).pdf" %}
 
-#### POWER - 6 Pin Molex CLIK-Mate
+#### POWER - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+
+Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
+
+Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>VDD_5V_IN</td><td>5.0V</td></tr><tr><td>2</td><td>VDD_5V_IN</td><td>5.0V</td></tr><tr><td>3</td><td>PI_SCL1_PWR_EXT</td><td>3.3V</td></tr><tr><td>4</td><td>PI_SDA1_PWR_EXT</td><td>3.3V</td></tr><tr><td>5</td><td>GND</td><td>GND</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
 

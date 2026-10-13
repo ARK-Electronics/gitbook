@@ -10,6 +10,10 @@ ARK flight controllers and autopilot carrier boards for PX4, ArduPilot, and Beta
 [arkv6x](arkv6x/)
 {% endcontent-ref %}
 
+{% content-ref url="arkv6x-rt/" %}
+[arkv6x-rt](arkv6x-rt/)
+{% endcontent-ref %}
+
 {% content-ref url="ark-pixhawk-autopilot-bus-carrier/" %}
 [ark-pixhawk-autopilot-bus-carrier](ark-pixhawk-autopilot-bus-carrier/)
 {% endcontent-ref %}

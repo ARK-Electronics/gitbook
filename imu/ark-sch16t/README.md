@@ -5,21 +5,17 @@ coverY: 0
 
 # ARK SCH16T
 
-## Wiring
+The ARK SCH16T is an SPI IMU board built around the [Murata SCH16T](https://www.murata.com/en-us/products/sensor/gyro/overview/lineup/sch16t) combined gyro sensor and accelerometer, with an 11-pin JST-GH connector that matches the ARK PAB and Jetson carrier SPI pinout. It works with PX4 and ArduPilot. USA built; the ARK SCH16T is FCC compliant and the ARK SCH16T-K10 is NDAA compliant.
 
-11 pin JST-GH&#x20;
+Buy: [ARK SCH16T](https://arkelectron.com/product/ark-sch16t/) · [ARK SCH16T-K10](https://arkelectron.com/product/ark-sch16t-k10-imu/)
 
-| Pin      | Signal                            | Voltage |
-| -------- | --------------------------------- | ------- |
-| 1 (red)  | `VDD_5V_IN`                       | +5.0V   |
-| 2        | SPI6\_SCK                         | +3.3V   |
-| 3        | SPI6\_MISO                        | +3.3V   |
-| 4        | SPI6\_MOSI                        | +3.3V   |
-| 5        | SPI6\_nCS1                        | +3.3V   |
-| 6        | NC                                | +3.3V   |
-| 7        | SPIX\_nSYNC                       | +3.3V   |
-| 8        | SPI6\_DRDY1                       | +3.3V   |
-| 9        | NC                                | +3.3V   |
-| 10       | SPI6\_nRESET (10k pullup to 3.3V) | +3.3V   |
-| 11 (blk) | GND                               | GND     |
+| Variant | Sensor | Gyro range | Accel range |
+|---------|--------|------------|-------------|
+| ARK SCH16T | SCH16T-K01 | ±300 °/s | ±8 g |
+| ARK SCH16T-K10 | SCH16T-K10 | ±2000 °/s | ±16 g |
 
+| Page | Contents |
+|------|----------|
+| [Hardware Reference](hardware.md) | Specifications, pinout, datasheets, 3D model |
+| [PX4 Instructions](px4-instructions.md) | Enabling the driver in PX4 |
+| [ArduPilot Instructions](ardupilot-instructions.md) | Adding the driver to an ArduPilot hwdef |

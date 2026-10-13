@@ -56,6 +56,10 @@ Reference pages covering core concepts for working with ARK products, drone elec
 [dronecan-gui-tool-guide.md](dronecan-gui-tool-guide.md)
 {% endcontent-ref %}
 
+{% content-ref url="ublox-firmware-update.md" %}
+[ublox-firmware-update.md](ublox-firmware-update.md)
+{% endcontent-ref %}
+
 {% content-ref url="px4-log-encryption.md" %}
 [px4-log-encryption.md](px4-log-encryption.md)
 {% endcontent-ref %}

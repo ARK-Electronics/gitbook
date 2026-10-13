@@ -24,3 +24,5 @@ flash_firmware.sh <firmware.px4>
 
 * **PX4**: [PX4 releases page](https://github.com/PX4/PX4-Autopilot/releases/)
 * **ArduPilot**: [firmware.ardupilot.org](https://firmware.ardupilot.org/)
+
+If the flight controller does not enumerate over USB, recover the bootloader over SWD: [ST-LINK Flashing Guide](../../knowledge-base/st-link-flashing-guide.md#flashing-px4-flight-controllers).

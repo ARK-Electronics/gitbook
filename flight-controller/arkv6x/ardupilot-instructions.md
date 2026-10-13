@@ -4,24 +4,9 @@
 ARKV6X ArduPilot Documentation
 {% endembed %}
 
-### Flashing Firmware
+To build or flash ArduPilot, see [Firmware](firmware.md#ardupilot).
 
-Firmware can be flashed over USB C using [QGroundControl](https://qgroundcontrol.com/).
-
-### Building Firmware
-
-```
-./waf configure --board ARKV6X
-./waf copter
-```
-
-and optionally upload&#x20;
-
-```
-./waf copter --upload
-```
-
-### Serial Port Mapping
+## Serial Port Mapping
 
 {% hint style="info" %}
 Serial Port Mapping for Default Firmware with No IOMCU
@@ -38,16 +23,14 @@ Serial Port Mapping for Default Firmware with No IOMCU
 | USART3   | SERIAL7           | Debug Console |
 | USART6   | SERIAL8           | PX4IO/RC      |
 
-### hwdef modifications for use with an IOMCU
+## hwdef modifications for use with an IOMCU
 
-When using the ARKV6X on a carrier board with an IOMCU, the following modifications to the hwdef need to be made.&#x20;
+The default build is for a carrier without an IOMCU, such as the ARK PAB Carrier, where USART6 is the RC input. For a carrier with an IOMCU on USART6, edit the [ARKV6X hwdef](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat) and build it:
 
-Swap the SERIAL\_ORDER line comments to remove USART6 from the available serial ports.
+1. Swap the `SERIAL_ORDER` line comments ([L30-L33](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L30-L33)) to remove USART6 from the serial ports.
+2. Comment out `define DEFAULT_SERIAL8_PROTOCOL SerialProtocol_RCIN` ([L88](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L88)), present from ArduPilot 4.7.0. With USART6 removed, SERIAL8 is the second USB port.
+3. Uncomment `IOMCU_UART USART6` ([L91](https://github.com/ArduPilot/ardupilot/blob/Copter-4.7.1/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L91)).
 
-[https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP\_HAL\_ChibiOS/hwdef/ARKV6X/hwdef.dat#L30-L34](https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L30-L34)
+Keep the `PC6` and `PC7` USART6 pin lines; the IOMCU uses them.
 
-Uncomment the IOMCU\_UART line to use USART6 for the IOMCU.\
-\
-[https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP\_HAL\_ChibiOS/hwdef/ARKV6X/hwdef.dat#L91](https://github.com/ArduPilot/ardupilot/blob/Copter-4.6.0/libraries/AP_HAL_ChibiOS/hwdef/ARKV6X/hwdef.dat#L91)\
-\
-Build and flash the firmware using the steps above.
+Build and flash the firmware using the steps in [Firmware](firmware.md#ardupilot).

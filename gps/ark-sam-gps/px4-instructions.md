@@ -1,12 +1,12 @@
 # PX4 Instructions
 
-### Firmware Setup <a href="#firmware-setup" id="firmware-setup"></a>
+## Firmware Setup
 
 Configure [GPS\_1\_CONFIG ](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#GPS_1_CONFIG)to match the port the ARK SAM GPS is connected to on the flight controller. On the ARK FPV Flight Controller, this is already GPS 1 by default. On the ARK PAB Carrier or ARK Jetson Carrier, this is likely GPS 2 or TELEM/SERIAL 4 depending on which port it is connected to.
 
-Older versions of PX4 will require [this PR](https://github.com/PX4/PX4-Autopilot/pull/24254) backported to start the IIS2MDL magnetometer.
+Older versions of PX4 will require [this PR](https://github.com/PX4/PX4-Autopilot/pull/24254) backported to start the IIS2MDC magnetometer.
 
-#### Sensor Position Configuration <a href="#sensor-position-configuration" id="sensor-position-configuration"></a>
+### Sensor Position Configuration
 
 If the sensor is not centered within the vehicle you will also need to define sensor offsets:
 

@@ -1,22 +1,12 @@
 # ArduPilot Instructions
 
-### Wiring <a href="#wiring" id="wiring"></a>
+Connect and mount the ARK Flow MR as described in [Wiring](hardware.md#wiring) and [Mounting](hardware.md#mounting).
 
-The ARK Flow MR is connected to the CAN bus using a Pixhawk standard 4 pin JST GH cable. For more information, refer to the [CAN Wiring](https://docs.px4.io/main/en/can/#wiring) instructions.
-
-Multiple sensors can be connected by plugging additional sensors into the ARK Flow MR's second CAN connector.
-
-### Mounting <a href="#mounting" id="mounting"></a>
-
-The recommended mounting orientation is with the connectors on the board pointing towards **back of vehicle**, as shown in the following picture.
-
-![ARK Flow align with Pixhawk](https://docs.px4.io/main/assets/ark_flow_orientation.auMVvxJ0.png)
-
-### Flight Controller Parameters
+## Flight Controller Parameters
 
 Connect the ARK Flow MR to the flight controller's CAN port and set the following parameters. Reboot the flight controller after setting them.
 
-#### Required
+### Required
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
@@ -24,7 +14,7 @@ Connect the ARK Flow MR to the flight controller's CAN port and set the followin
 | [CAN\_D1\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#can-d1-protocol) | 1 | Set protocol to DroneCAN |
 | [FLOW\_TYPE](https://ardupilot.org/copter/docs/parameters.html#flow-type) | 6 | DroneCAN optical flow |
 
-#### Optional
+### Optional
 
 To use the onboard lidar:
 
@@ -41,25 +31,15 @@ To compensate for sensor placement (see [sensor offset compensation](https://ard
 |-----------|-------------|
 | [FLOW\_POS\_X](https://ardupilot.org/copter/docs/parameters.html#flow-pos-x) / [FLOW\_POS\_Y](https://ardupilot.org/copter/docs/parameters.html#flow-pos-y) / [FLOW\_POS\_Z](https://ardupilot.org/copter/docs/parameters.html#flow-pos-z) | ARK Flow MR offset from the vehicle center of gravity (meters) |
 
-### CAN Node Parameters
+## CAN Node Parameters
 
-Set the following on the sensor and reboot the node. CAN node parameters can be configured using either:
+The node publishes optical flow and range finder data with its default parameters. To terminate the bus, publish IMU data or change the distance sensor mode and rate, see [Node Parameters](firmware.md#node-parameters).
 
-* [QGroundControl](https://docs.px4.io/main/en/dronecan/#qgc-cannode-parameter-configuration) — each CAN node appears as a separate _Component X_ entry under **Vehicle Settings > Parameters**.
-* The [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md).
-
-#### Optional
-
-| Parameter | Description |
-|-----------|-------------|
-| `CANNODE_TERM` | Set to `1` if this is the last node on the CAN bus |
-| `CANNODE_PUB_IMU` | Set to `1` to publish `RawIMU` messages on the CAN bus |
-
-### Additional Notes
+## Additional Notes
 
 * [FlowHold](https://ardupilot.org/copter/docs/flowhold-mode.html#flowhold-mode) does not require the use of a rangefinder.
 
-#### ArduPilot Setup Instructions
+## ArduPilot Setup Instructions
 
 {% embed url="https://ardupilot.org/copter/docs/common-optical-flow-sensor-setup.html" fullWidth="false" %}
 Sensor Setup Instructions

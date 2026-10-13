@@ -4,18 +4,4 @@
 Up to date PX4 Documentation
 {% endembed %}
 
-### Flashing Firmware
-
-Firmware can be flashed over USB C using [QGroundControl](https://qgroundcontrol.com/).
-
-### Building Firmware
-
-```
-make ark_fmu-v6s_default
-```
-
-and optionally upload
-
-```
-make ark_fmu-v6s_default upload
-```
+To build or flash PX4, see [Firmware](firmware.md#px4).

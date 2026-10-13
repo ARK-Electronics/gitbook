@@ -3,7 +3,7 @@
 The ARK Flow outputs data using the DroneCAN protocol\
 [https://dronecan.github.io/Specification/1.\_Introduction/](https://dronecan.github.io/Specification/1._Introduction/)\
 \
-There are 3 onboard sensors with a corresponding message each. Optical Flow and Rangefinder data publishing is enabled by default. IMU data publishing must be enabled by setting the node parameter CANNODE\_PUB\_IMU.
+There are 3 onboard sensors with a corresponding message each. Optical Flow and Rangefinder data publishing is enabled by default. IMU data publishing must be enabled by setting the node parameter [CANNODE\_PUB\_IMU](firmware.md#node-parameters).
 
 * Optical Flow:  `com.hex.equipment.flow`&#x20;
 * Rangefinder:  `uavcan.equipment.range_sensor`

@@ -4,7 +4,13 @@
 Pinout reference poster (PDF)
 {% endfile %}
 
-### **POWER1**
+`POWER1`–`POWER3` are ideal-diode ORed; see [Carrier Power Inputs](../../../knowledge-base/carrier-power-inputs.md) for load sharing.
+
+### **POWER1** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+
+Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
+
+Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
 | Pin Number | Signal Name           | Voltage |
 | ---------- | --------------------- | ------- |
@@ -15,7 +21,11 @@ Pinout reference poster (PDF)
 | 5          | GND                   | GND     |
 | 6          | GND                   | GND     |
 
-### **POWER2**
+### **POWER2** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+
+Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
+
+Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
 | Pin Number | Signal Name                | Voltage |
 | ---------- | -------------------------- | ------- |
@@ -26,7 +36,11 @@ Pinout reference poster (PDF)
 | 5          | GND                        | GND     |
 | 6          | GND                        | GND     |
 
-### **POWER3**
+### **POWER3** - 6 Pin 2.00mm Molex [CLIK-Mate 502443](https://www.molex.com/en-us/part-list/502443)
+
+Mating plug [5024390600](https://www.digikey.com/en/products/detail/molex/5024390600/2380425)
+
+Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/0797581014/6346648)
 
 | Pin Number | Signal Name           | Voltage |
 | ---------- | --------------------- | ------- |
@@ -244,7 +258,9 @@ Pinout reference poster (PDF)
 | 3          | JCAN\_L          | 3.3V    |
 | 4          | GND              | GND     |
 
-### **Jetson Fan**
+### **Jetson Fan** - 4 Pin Molex [PicoBlade 53047](https://www.molex.com/en-us/part-list/53047)
+
+Mating plug [0510210400](https://www.digikey.com/en/products/detail/molex/0510210400/242844)
 
 | Pin Number | Signal Name      | Voltage |
 | ---------- | ---------------- | ------- |

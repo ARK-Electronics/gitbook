@@ -152,7 +152,9 @@ st-flash write firmware.bin 0x08000000
 ```
 
 {% hint style="warning" %}
-`0x08000000` is the start of flash. It is the correct address for a single-image firmware or a bootloader, but **not** for a DroneCAN node application — see [Flashing DroneCAN Nodes](#flashing-dronecan-nodes) below.
+`st-flash` takes a `.bin`. A `.px4` is a JSON envelope for QGC / ARK-OS / `px_uploader`, not an SWD image.
+
+`0x08000000` is the start of flash (bootloader or single-image firmware). Application offsets: [PX4 flight controllers](#flashing-px4-flight-controllers) and [DroneCAN nodes](#flashing-dronecan-nodes).
 {% endhint %}
 
 **Expected output:**
@@ -172,6 +174,27 @@ file firmware.bin md5 checksum: abc123..., stlink checksum: 0x00abcdef
 3. Click **File > Open File** and select your firmware binary (.bin file)
 4. Click **Target > Program & Verify**
 5. Verify the success message in the log window
+
+***
+
+## Flashing PX4 Flight Controllers
+
+ARKV6X, ARKV6S, ARK FPV, and ARK Pi6X are STM32H7 with 128 KB flash sectors.
+
+| Image | File | Address |
+|-------|------|---------|
+| Bootloader | `<target>_bootloader.bin` | `0x08000000` |
+| Application | `<target>_default.px4` | USB (QGC / ARK-OS) |
+
+```bash
+st-flash write ark_fmu-v6x_bootloader.bin 0x08000000
+```
+
+Then flash the `.px4` application over USB.
+
+The bootloader `.bin` is in PX4-Autopilot at `boards/ark/<board>/extras/` and on [PX4 GitHub releases](https://github.com/PX4/PX4-Autopilot/releases) as `<target>_bootloader.bin`.
+
+SWD of the application is `0x08020000`.
 
 ***
 
@@ -300,7 +323,7 @@ Then log out and back in.
 
 * Ensure the correct firmware binary for your target
 * Try erasing flash first with `st-flash erase`
-* Check that the flash address is correct for your target — `0x08000000` for a single-image firmware or a bootloader, `0x08010000` for a DroneCAN node application
+* Check that the flash address is correct for your target — `0x08000000` for a bootloader or single-image firmware, `0x08020000` for a PX4 STM32H7 application, `0x08010000` for a DroneCAN node application
 
 ### Node Flashes Its LED Once at Boot, Then Nothing
 

@@ -44,7 +44,7 @@ Design files can be found here:\
 [https://a360.co/48jmK8b](https://a360.co/48jmK8b)
 
 3D models can be found here:\
-[https://github.com/ARK-Electronics/ARK\_RIG5](https://github.com/ARK-Electronics/ARK_RIG5)
+[https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_RIG5/printed\_parts](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RIG5/printed_parts)
 
 ### Compatibility
 

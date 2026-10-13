@@ -5,16 +5,17 @@ coverY: 0
 
 # ARK PAB Power Module
 
-The ARK PAB Power Module is rated for 60A continuous battery current at 20C ambient. However, when running 60A battery current at 20C without cooling, the 5V regulator is de-rated to 3A continuous output. It is recommended to run multiple power modules in parallel if more than 60A continuous current is required.
+The ARK PAB Power Module is a 5V 6A power supply and digital power monitor for the Pixhawk Autopilot Bus carrier boards, built around the [TI INA226](https://www.ti.com/product/INA226) digital power monitor. It works with PX4 and ArduPilot. USA built and FCC compliant.
 
-{% content-ref url="px4-instructions.md" %}
-[px4-instructions.md](px4-instructions.md)
-{% endcontent-ref %}
+Buy: [ARK PAB Power Module](https://arkelectron.com/product/ark-pab-power-module/) · [ARK PAB Power Module No Connector](https://arkelectron.com/product/ark-pab-power-module-no-connector/)
 
-{% content-ref url="ardupilot-instructions.md" %}
-[ardupilot-instructions.md](ardupilot-instructions.md)
-{% endcontent-ref %}
+| Variant | Battery input and output |
+|---------|--------------------------|
+| ARK PAB Power Module | XT60 |
+| ARK PAB Power Module No Connector | Solder pads |
 
-{% content-ref url="3d-model.md" %}
-[3d-model.md](3d-model.md)
-{% endcontent-ref %}
+| Page | Contents |
+|------|----------|
+| [Hardware Reference](hardware.md) | Specifications, current rating, 3D model and case |
+| [PX4 Instructions](px4-instructions.md) | Configuring the power monitor in PX4 |
+| [ArduPilot Instructions](ardupilot-instructions.md) | Configuring the power monitor in ArduPilot |

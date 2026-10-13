@@ -22,7 +22,7 @@ On first boot, if no known WiFi network is available, the Jetson brings up a hot
 Connect to it and open [http://jetson.local](http://jetson.local).
 
 {% hint style="info" %}
-**MHF4 antenna cables are required for WiFi and are not included.** Compatible MHF4 to RP-SMA cables: [option 1](https://www.amazon.com/female-Pigtail-Antenna-Extension-wireless/dp/B07GTL2G69), [option 2](https://www.amazon.com/dp/B076SGTMFS).
+**WiFi antennas and MHF4 cables are not included.** Connect an MHF4 to RP-SMA cable ([option 1](https://www.amazon.com/female-Pigtail-Antenna-Extension-wireless/dp/B07GTL2G69), [option 2](https://www.amazon.com/dp/B076SGTMFS)) to each MHF4 connector on the WiFi card, then any dual-band (2.4/5 GHz) RP-SMA WiFi antenna. The 6 GHz band needs an antenna rated for Wi-Fi 6E.
 {% endhint %}
 
 ## Ethernet
