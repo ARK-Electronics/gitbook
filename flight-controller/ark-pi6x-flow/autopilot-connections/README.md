@@ -8,7 +8,7 @@ There are two direct board-to-board links between the Pi and the flight controll
 | Serial | `/dev/ttyAMA4` (CM4), `/dev/ttyAMA3` (CM5) | TELEM2 |
 
 {% hint style="info" %}
-We recommend running MAVLink on USB and XRCE-DDS on serial. ARK-OS's defaults do exactly this — see [Services](../../../ark-os/services.md).
+We recommend running MAVLink on USB and XRCE-DDS on serial. ARK-OS runs MAVLink on USB by default; enable **dds-agent** on the ARK-UI **Services** page for XRCE-DDS. See [Services](../../../ark-os/services.md).
 {% endhint %}
 
 ## USB
