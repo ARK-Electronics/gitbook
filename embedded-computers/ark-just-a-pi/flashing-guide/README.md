@@ -4,16 +4,11 @@ Bundles that include a CM5 ship pre-imaged with ARK-OS — no flashing required.
 
 ## Option 1: ARK Golden Image (recommended)
 
-The [ark\_pi\_image](https://github.com/ARK-Electronics/ark_pi_image) repository builds the same turnkey image that ships on bundles: Raspberry Pi OS with the carrier's `config.txt` configuration baked in and ARK-OS pre-installed. On a Linux host:
+The golden image is Raspberry Pi OS with the carrier's `config.txt` baked in and ARK-OS installed, the same image that ships on bundles. Download the one for your compute module from [downloads.arkelectron.com/pi/just-a-pi/latest](https://downloads.arkelectron.com/pi/just-a-pi/latest/): `justapi-cm5-trixie-ark-os.img.xz` or `justapi-cm4-trixie-ark-os.img.xz`. Write it to the SD card with [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (**Use custom**), without OS customisation.
 
-```bash
-git clone https://github.com/ARK-Electronics/ark_pi_image.git
-cd ark_pi_image
-./build.sh --target justapi-cm5 --provision
-./flash.sh --target justapi-cm5
-```
+For a module with eMMC, hold the **BOOT** button while powering the board, connect the USB JST-GH port to the host, and run [rpiboot](https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc) so the eMMC appears as a drive. Write the image to it.
 
-`flash.sh` finds the SD card and asks for confirmation before writing. For a CM5 with eMMC, hold the **BOOT** button while powering the board, connect the USB JST-GH port to the host, and run [rpiboot](https://www.raspberrypi.com/documentation/computers/compute-module.html#flashing-the-compute-module-emmc) so the eMMC appears as a block device. Then run `./flash.sh --target justapi-cm5 /dev/sdX`.
+To build the image yourself, see [ark\_pi\_image](https://github.com/ARK-Electronics/ark_pi_image) (`--target justapi-cm5` or `justapi-cm4`).
 
 ## Option 2: Raspberry Pi Imager (manual)
 
