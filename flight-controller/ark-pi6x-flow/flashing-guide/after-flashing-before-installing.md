@@ -41,9 +41,13 @@ gpio=27=op,dh
 # Drive USB Hub nRESET high. Only needed on Rev 1.
 gpio=26=op,dh
 
-# Cameras on CAM0 and CAM1 (CAM1 is the overlay default). Change imx219 to your sensor
-dtoverlay=imx219,cam0
-dtoverlay=imx219
+# Cameras on CAM0 and CAM1 (CAM1 is the overlay default). Compute modules don't auto-detect
+# cameras: use imx708 for Camera Module 3, imx219 for Camera Module 2, imx477 for HQ
+dtoverlay=imx708,cam0
+dtoverlay=imx708
+
+# Pi I2C1 connector. /dev/i2c-1 also needs the i2c-dev module (add it to /etc/modules-load.d/)
+dtparam=i2c_arm=on
 
 # Fan GPIO
 dtoverlay=gpio-fan,gpiopin=19
@@ -70,8 +74,12 @@ gpio=27=op,dh
 # Drive USB Hub nRESET high. Only needed on Rev 1.
 gpio=26=op,dh
 
-# Camera on the CAM1 connector, which is cam0 on the CM5. Change imx219 to your sensor
-dtoverlay=imx219,cam0
+# Camera on the CAM1 connector, which is cam0 on the CM5. Compute modules don't auto-detect
+# cameras: use imx708 for Camera Module 3, imx219 for Camera Module 2, imx477 for HQ
+dtoverlay=imx708,cam0
+
+# Pi I2C1 connector. /dev/i2c-1 also needs the i2c-dev module (add it to /etc/modules-load.d/)
+dtparam=i2c_arm=on
 
 # Fan GPIO
 dtoverlay=gpio-fan,gpiopin=19
