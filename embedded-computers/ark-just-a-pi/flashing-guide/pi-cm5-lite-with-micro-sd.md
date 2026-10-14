@@ -30,7 +30,7 @@ just-a-pi
 sudo nmcli radio wifi on
 ```
 
-* Set the default **username (pi)** and **password (pi)**
+* Set the default **username (pi)** and **password (raspberry)**
 * Enable SSH
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-45-02.png" alt=""><figcaption></figcaption></figure>
