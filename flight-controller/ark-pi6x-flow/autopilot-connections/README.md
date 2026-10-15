@@ -23,7 +23,7 @@ TELEM2 on the flight controller is wired to Pi UART4 (`/dev/ttyAMA4`) on a CM4 a
 
 ## Ground Station
 
-ARK-OS's mavlink-router serves MAVLink on UDP port 14550 and replies to whoever sends to it. In QGroundControl, add a UDP comm link with server `pi6x.local:14550`; in Mission Planner, connect with **UDPCl** to the same address.
+ARK-OS serves MAVLink on UDP port 14550. In QGroundControl, add a UDP comm link with server `pi6x.local:14550`; in Mission Planner, connect with **UDPCl** to the same address.
 
 ## Flight Controller Reset
 

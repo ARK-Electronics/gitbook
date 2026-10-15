@@ -1,7 +1,5 @@
 # Getting Started
 
-The ARK Just A Pi is a compact carrier board for the Raspberry Pi Compute Module 5.
-
 ## What's Pre-Installed
 
 Bundles that include a CM5 ship pre-imaged:

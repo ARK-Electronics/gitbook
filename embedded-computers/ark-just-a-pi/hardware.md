@@ -8,7 +8,7 @@
 | Storage | microSD slot for Lite modules (no eMMC); modules with eMMC boot from their eMMC |
 | Ethernet | Built-in switch with two 100 Mbps ports (4-pin JST-GH) |
 | USB | USB-C, dual role, USB 3.0; 4-pin JST-GH, USB 2.0 |
-| Cameras | 2× MIPI CSI, 22-pin 0.5 mm FFC, Raspberry Pi 5 CSI pinout. Tested with the Raspberry Pi Camera Module 3 (IMX708) |
+| Cameras | 2× MIPI CSI, 22-pin 0.5 mm FFC, Raspberry Pi 5 CSI pinout |
 | PCIe | PCIe x1, 16-pin FFC, Raspberry Pi 5 PCIe pinout |
 | Display | Micro HDMI |
 | UARTs and GPIO | UART0 debug/GPIO, UART2/SPI3/GPIO, UART3/SPI4/GPIO, UART4/PWM/GPIO (6-pin JST-GH each) |
