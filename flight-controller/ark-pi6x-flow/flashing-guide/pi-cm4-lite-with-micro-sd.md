@@ -37,4 +37,4 @@ sudo nmcli radio wifi on
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-44-47.png" alt=""><figcaption></figcaption></figure>
 
-After flashing the SD card is complete, you will need to modify the **/boot/config.txt** file on the SD card before installing it into the Pi. See [**After Flashing, Before Installing**](after-flashing-before-installing.md)**.**
+After flashing the SD card is complete, you will need to modify `config.txt` on the card's boot partition before installing it into the Pi. See [**After Flashing, Before Installing**](after-flashing-before-installing.md)**.**

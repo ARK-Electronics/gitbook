@@ -22,7 +22,7 @@ ARK-OS services are system-level [systemd services](https://www.freedesktop.org/
 
 Enable from the ARK-UI Services page or with `systemctl enable --now <service>`.
 
-**dds-agent** bridges PX4 uORB topics to ROS 2 by running the [Micro XRCE-DDS Agent](https://github.com/eProsima/Micro-XRCE-DDS-Agent) on the high-speed serial connection to the flight controller — `/dev/ttyTHS1` on Jetson carriers, `/dev/ttyAMA4` on the Pi6X Flow (`/dev/ttyAMA3` with a CM5), both wired to TELEM2 at 3 Mbps. The bridged topics are defined in [PX4's dds\_topics.yaml](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml). Set these PX4 parameters:
+**dds-agent** bridges PX4 uORB topics to ROS 2 by running the [Micro XRCE-DDS Agent](https://github.com/eProsima/Micro-XRCE-DDS-Agent) on the high-speed serial connection to the flight controller — `/dev/ttyTHS1` on Jetson carriers and `/dev/ttyAMA4` on Pi carriers, wired to TELEM2 at 3 Mbps. A Pi6X Flow with a CM5 uses `/dev/ttyAMA3`: set it on the Services page, and again after an ARK-OS upgrade, which resets the agent's config. The bridged topics are defined in [PX4's dds\_topics.yaml](https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/uxrce_dds_client/dds_topics.yaml). Set these PX4 parameters:
 
 | Parameter       | Value   | Description  |
 | --------------- | ------- | ------------ |
@@ -37,4 +37,4 @@ Enable from the ARK-UI Services page or with `systemctl enable --now <service>`.
 
 **pointperfect** receives GNSS corrections from the [u-blox PointPerfect](https://www.u-blox.com/en/product/pointperfect) NTRIP service and publishes them to the flight controller over MAVLink. For u-blox receivers it can also request AssistNow start-up assistance for a faster first fix.
 
-**rid-transmitter** broadcasts Remote ID over Bluetooth per ASTM F3411 (requires a Bluetooth 5.x capable radio).
+**rid-transmitter** (Jetson carriers only) broadcasts Remote ID over Bluetooth per ASTM F3411 (requires a Bluetooth 5.x capable radio).

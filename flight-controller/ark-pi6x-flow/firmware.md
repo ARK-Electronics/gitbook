@@ -11,7 +11,7 @@ The flight controller's USB connects only to the Pi, so firmware is updated from
 
 ## From the Web UI
 
-Open the [ARK-UI](http://pi6x.local) **Autopilot** page, select the **Firmware** tab, and upload a `.px4` firmware file.
+Open the [ARK-UI](http://pi6x.local) **Autopilot** page, select the **Firmware** tab, and upload a `.px4` (PX4) or `.apj` (ArduPilot) firmware file.
 
 <figure><img src="../../.gitbook/assets/ark-ui-autopilot-firmware-pi6x.png" alt=""><figcaption></figcaption></figure>
 

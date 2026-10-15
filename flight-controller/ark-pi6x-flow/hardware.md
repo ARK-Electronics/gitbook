@@ -26,7 +26,7 @@ The board was designed for the CM4. With a CM5:
 | | CM4 | CM5 |
 |---|---|---|
 | Telem2 to the flight controller | UART4, `/dev/ttyAMA4` | UART3, `/dev/ttyAMA3` |
-| Pi UART3 connector | UART3 | UART2 |
+| Pi UART3 connector | UART3, `/dev/ttyAMA3` | UART2, `/dev/ttyAMA2` |
 | Cameras | CAM0 and CAM1 | CAM1 only, as `cam0` in `config.txt`. The CM5 uses the CM4's CAM0 pins for USB 3.0 |
 | USB 3.0 | None | Not wired to any connector |
 

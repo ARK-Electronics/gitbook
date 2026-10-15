@@ -4,10 +4,10 @@ The ARK Just A Pi is a compact carrier board for the Raspberry Pi Compute Module
 
 ## What's Pre-Installed
 
-Bundles that include a CM5 ship pre-imaged and ready to use:
+Bundles that include a CM5 ship pre-imaged:
 
 * **OS**: Raspberry Pi OS (64-bit) with the carrier configuration baked in and [ARK-OS](https://github.com/ARK-Electronics/ARK-OS) pre-installed
-* **Credentials**: Username `pi`, password `pi`, hostname `just-a-pi`
+* **Credentials**: Username `pi`, password `raspberry`, hostname `just-a-pi`
 
 {% hint style="info" %}
 The default password is well known — change it (`passwd`) before putting the device on a network you don't control.

@@ -5,7 +5,7 @@
 | Specification | Value |
 |---------------|-------|
 | Compute module | Raspberry Pi [Compute Module 5](https://www.raspberrypi.com/products/compute-module-5/); [Compute Module 4](https://www.raspberrypi.com/products/compute-module-4/) with the [limits below](#compute-module-4) |
-| Storage | microSD slot, for CM4 or CM5 Lite only (no eMMC) |
+| Storage | microSD slot for Lite modules (no eMMC); modules with eMMC boot from their eMMC |
 | Ethernet | Built-in switch with two 100 Mbps ports (4-pin JST-GH) |
 | USB | USB-C, dual role, USB 3.0; 4-pin JST-GH, USB 2.0 |
 | Cameras | 2× MIPI CSI, 22-pin 0.5 mm FFC, Raspberry Pi 5 CSI pinout. Tested with the Raspberry Pi Camera Module 3 (IMX708) |
@@ -19,13 +19,13 @@
 
 A CM4 fits, but these interfaces don't work with it:
 
-* CAM2 (CSI1)
+* CAM2 (MIPI1)
 * UART2
 * USB-C
 * PCIe
 * Fan
 
-With a CM4, the camera on CAM1 is the overlay default in `config.txt` (no `cam0` parameter).
+With a CM4, the camera on CAM1 is the overlay default in `config.txt` (no `cam0` parameter), and the UART3 and UART4 connectors are uart4 (`/dev/ttyAMA4`) and uart5 (`/dev/ttyAMA5`).
 
 ## Pinout
 
@@ -103,7 +103,7 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 | PWM3/GPIO19 | 3.3V |
 | 6 | GND | GND |
 
-### CAM1 (CSI0) — 22-pin 0.5 mm FFC
+### CAM1 (MIPI0) — 22-pin 0.5 mm FFC
 
 | Pin | Signal | Voltage |
 |---|---|---|
@@ -130,7 +130,7 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 21 | SDA0 | 3.3V |
 | 22 | VDD_3V3_CAMERA | 3.3V (1A) |
 
-### CAM2 (CSI1) — 22-pin 0.5 mm FFC
+### CAM2 (MIPI1) — 22-pin 0.5 mm FFC
 
 | Pin | Signal | Voltage |
 |---|---|---|

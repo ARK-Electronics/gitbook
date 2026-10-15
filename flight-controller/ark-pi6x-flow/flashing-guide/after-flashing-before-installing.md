@@ -18,7 +18,7 @@ Comment out the following lines:
 # display_auto_detect=1
 ```
 
-Leave the stock `[cm4]` and `[cm5]` sections in place; they enable the USB port. Add the block for your compute module at the end of the file, after `[all]`. The CM5 maps the board's UARTs and cameras differently; see [Compute Module 5](../hardware.md#compute-module-5).
+Leave the stock `[cm4]` and `[cm5]` sections in place; they enable the USB port. Add the block for your compute module at the end of the file, after `[all]`. For `/dev/i2c-1`, also add `i2c-dev` to a file in `/etc/modules-load.d/`. The CM5 maps the board's UARTs and cameras differently; see [Compute Module 5](../hardware.md#compute-module-5).
 
 {% tabs %}
 {% tab title="CM4" %}
@@ -46,7 +46,7 @@ gpio=26=op,dh
 dtoverlay=imx708,cam0
 dtoverlay=imx708
 
-# Pi I2C1 connector. /dev/i2c-1 also needs the i2c-dev module (add it to /etc/modules-load.d/)
+# Pi I2C1 connector
 dtparam=i2c_arm=on
 
 # Fan GPIO
@@ -78,7 +78,7 @@ gpio=26=op,dh
 # cameras: use imx708 for Camera Module 3, imx219 for Camera Module 2, imx477 for HQ
 dtoverlay=imx708,cam0
 
-# Pi I2C1 connector. /dev/i2c-1 also needs the i2c-dev module (add it to /etc/modules-load.d/)
+# Pi I2C1 connector
 dtparam=i2c_arm=on
 
 # Fan GPIO

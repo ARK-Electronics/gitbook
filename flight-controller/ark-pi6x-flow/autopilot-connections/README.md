@@ -19,7 +19,11 @@ For the flight controller's USB to enumerate, its VBUS\_SENSE pin (Pi GPIO27) mu
 
 ## Serial
 
-TELEM2 on the flight controller is wired to Pi UART4 (`/dev/ttyAMA4`) on a CM4 and to UART3 (`/dev/ttyAMA3`) on a CM5, tested to 3 Mbps. ARK-OS's dds-agent defaults to `/dev/ttyAMA4`; on a CM5, change its device on the ARK-UI **Services** page. When running MAVLink on TELEM2, set flow control to off: [MAV\_x\_FLOW\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_1_FLOW_CTRL) = 0.
+TELEM2 on the flight controller is wired to Pi UART4 (`/dev/ttyAMA4`) on a CM4 and to UART3 (`/dev/ttyAMA3`) on a CM5, tested to 3 Mbps. ARK-OS's dds-agent defaults to `/dev/ttyAMA4`; on a CM5, change its device on the ARK-UI **Services** page, and again after an ARK-OS upgrade. PX4 doesn't start its DDS client on TELEM2 by default: set `UXRCE_DDS_CFG` and `SER_TEL2_BAUD` as listed in [Services](../../../ark-os/services.md). When running MAVLink on TELEM2, set flow control to off: [MAV\_x\_FLOW\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_1_FLOW_CTRL) = 0.
+
+## Ground Station
+
+ARK-OS's mavlink-router serves MAVLink on UDP port 14550 and replies to whoever sends to it. In QGroundControl, add a UDP comm link with server `pi6x.local:14550`; in Mission Planner, connect with **UDPCl** to the same address.
 
 ## Flight Controller Reset
 
