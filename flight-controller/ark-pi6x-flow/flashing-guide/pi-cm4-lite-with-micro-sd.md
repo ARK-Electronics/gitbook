@@ -10,8 +10,8 @@ If using Ubuntu:
 wget -O pi_imager.deb https://downloads.raspberrypi.org/imager/imager_latest_amd64.deb && sudo dpkg -i pi_imager.deb && rm pi_imager.deb
 ```
 
-{% hint style="warning" %}
-Select **Raspberry Pi OS (Legacy, 64-bit)**, which is based on Debian Bookworm. ARK-OS has only been tested against Bookworm; newer Raspberry Pi OS releases based on Debian Trixie are not yet verified.
+{% hint style="info" %}
+Select a **64-bit** Raspberry Pi OS. ARK-OS ships packages for both current Raspberry Pi OS (Debian 13 Trixie) and Legacy (Debian 12 Bookworm) — the install script picks the matching one automatically.
 {% endhint %}
 
 Apply OS customization to configure WiFi and enable SSH:
@@ -30,11 +30,11 @@ pi6x
 sudo nmcli radio wifi on
 ```
 
-* Set the default **username (pi)** and **password (pi)**
+* Set the default **username (pi)** and **password (raspberry)**
 * Enable SSH
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-45-02.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/Screenshot from 2025-08-15 10-44-47.png" alt=""><figcaption></figcaption></figure>
 
-After flashing the SD card is complete, you will need to modify the **/boot/config.txt** file on the SD card before installing it into the Pi. See [**After Flashing, Before Installing**](after-flashing-before-installing.md)**.**
+After flashing the SD card is complete, you will need to modify `config.txt` on the card's boot partition before installing it into the Pi. See [**After Flashing, Before Installing**](after-flashing-before-installing.md)**.**

@@ -1,37 +1,37 @@
 # Autopilot Connections
 
-There are two primary communication channels between the Pi and the Flight Controller: Serial and USB. Both interfaces are direct board to board connections and have been tested up to 3Mbps.
+There are two direct board-to-board links between the Pi and the flight controller: USB and serial.
 
-<table><thead><tr><th width="138">Type</th><th width="189">Pi device path</th><th>Flight Controller</th></tr></thead><tbody><tr><td>USB</td><td> /dev/ttyACM0</td><td>USB</td></tr><tr><td>Serial</td><td>/dev/ttyAMA4</td><td>Telem2</td></tr></tbody></table>
+| Type | Pi device path | Flight controller |
+|------|----------------|-------------------|
+| USB | `/dev/ttyACM0` | USB |
+| Serial | `/dev/ttyAMA4` (CM4), `/dev/ttyAMA3` (CM5) | TELEM2 |
 
 {% hint style="info" %}
-We recommend running MAVLink on USB and XRCE-DDS on Serial.
+We recommend running MAVLink on USB and XRCE-DDS on serial. ARK-OS runs MAVLink on USB by default; enable **dds-agent** on the ARK-UI **Services** page for XRCE-DDS. See [Services](../../../ark-os/services.md).
 {% endhint %}
 
 ## USB
 
-The Pi CM4 has one USB 2.0 OTG interface. It is muxed between the external Micro-USB port and a built in USB hub. The USB hub connects to the flight controller, USB C port, and the two USB JST-GH ports.&#x20;
+The flight controller sits behind the board's full-speed (12 Mbps) USB hub, shared with the USB-C and USB JST-GH ports. Plugging a cable into the programming micro USB disconnects the hub until the Pi reboots. See [USB](../hardware.md#usb).
 
-<figure><img src="../../../.gitbook/assets/Screenshot from 2024-10-08 16-42-38.png" alt=""><figcaption></figcaption></figure>
+For the flight controller's USB to enumerate, its VBUS\_SENSE pin (Pi GPIO27) must be driven high. This is set in `config.txt` at boot.
 
-The USB connection to the autopilot is muxed with the external Pi micro USB port. When a micro USB cable is connected, the autopilot is disconnected from the Pi and the USB port on the Pi switches from host to device mode. After the micro USB cable is disconnected, a reboot is required to switch the USB port back to a host and connect to the autopilot and external ports.
+## Serial
 
-For the USB port to be enabled on the ARKV6X flight controller, the VBUS\_SENSE pin must be driven high from the Pi. It is connected to pin GPIO27. There is a helper python script in ARK-OS to drive the pin high. \
-[https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/vbus\_enable.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/vbus_enable.py)
+TELEM2 on the flight controller is wired to Pi UART4 (`/dev/ttyAMA4`) on a CM4 and to UART3 (`/dev/ttyAMA3`) on a CM5, tested to 3 Mbps. ARK-OS's dds-agent defaults to `/dev/ttyAMA4`; on a CM5, change its device on the ARK-UI **Services** page, and again after an ARK-OS upgrade. PX4 doesn't start its DDS client on TELEM2 by default: set `UXRCE_DDS_CFG` and `SER_TEL2_BAUD` as listed in [Services](../../../ark-os/services.md). When running MAVLink on TELEM2, set flow control to off: [MAV\_x\_FLOW\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_1_FLOW_CTRL) = 0.
 
-## UART
+## Ground Station
 
-The UART connection between Pi and the autopilot is on Pi UART4 which appears as **/dev/ttyAMA4** in Linux. This goes to **Telem2** on the Flight Controller. This connection has been tested to 3Mbps.&#x20;
-
-Flow control needs to be set to "Force Off" when using Telem2 for MAVLINK. [MAV\_X\_FLOW\_CTRL ](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#MAV_1_FLOW_CTRL)set to "0".
+ARK-OS serves MAVLink on UDP port 14550. In QGroundControl, add a UDP comm link with server `pi6x.local:14550`; in Mission Planner, connect with **UDPCl** to the same address.
 
 ## Flight Controller Reset
 
-The flight controller can be hard reset using the reset signal connected to Pi pin GPIO25. The Pi cannot reset the flight controller while it is armed. The reset signal is gated by the nARMED signal from the flight controller.
+The Pi can hard-reset the flight controller via the reset signal on GPIO25. The reset is gated by the nARMED signal — the Pi cannot reset the flight controller while it is armed.
 
-There are a couple of helper scripts to reset the flight controller. One to drive the VBUS\_SENSE pin high before the reset to wait in the bootloader for 5 seconds. This is useful when updating the flight controller firmware and a hard reboot is needed. The other fast reset script drives the VBUS\_SENSE pin low before the reset to avoid the wait.\
-\
-Reset and wait in the bootloader\
-[https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset\_fmu\_wait\_bl.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset_fmu_wait_bl.py)\
-Reset quickly and skip the bootloader\
-[https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset\_fmu\_fast.py](https://github.com/ARK-Electronics/ARK-OS/blob/main/platform/pi/scripts/reset_fmu_wait_bl.py)
+ARK-OS ships two reset helpers on `PATH`:
+
+```bash
+reset_fmu_fast.py       # reset and boot straight into the application
+reset_fmu_wait_bl.py    # reset and wait in the bootloader (for firmware flashing)
+```
