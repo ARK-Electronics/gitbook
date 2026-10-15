@@ -58,3 +58,11 @@ dtparam=fan_temp3=70000
 # Drive the power LED on by default
 dtparam=pwr_led_trigger=default-on
 ```
+
+{% hint style="warning" %}
+A Camera Module 3 (IMX708) on CAM2 needs a software reset after every power-up before it streams: CAM2's camera power-enable pin is tied high, so the sensor misses its power-on reset. The golden image does this at boot. On a manual install, run it at boot before anything opens the camera (needs `i2c-tools` and the `i2c-dev` module):
+
+```
+sudo i2ctransfer -f -y 0 w3@0x1a 0x01 0x03 0x01
+```
+{% endhint %}
