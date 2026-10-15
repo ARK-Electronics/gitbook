@@ -276,6 +276,7 @@
     * [Hardware Reference](accessories/ark-primary-avionics-adapter/hardware.md)
   * [ARK Pixhawk Payload Bus Breakout](accessories/ark-pixhawk-payload-bus-breakout/README.md)
     * [Hardware Reference](accessories/ark-pixhawk-payload-bus-breakout/hardware.md)
+  * [ARK Ethernet Adapter](accessories/ark-ethernet-adapter/README.md)
 * [Airframes](airframes/README.md)
   * [ARK RIG5](airframes/ark-rig5.md)
   * [ARK RIG7](airframes/ark-rig7.md)
