@@ -18,7 +18,7 @@ Connect the ARK Flow to the flight controller's CAN port and set the following i
 | [CAN\_D1\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#can-d1-protocol) | 1 | Set protocol to DroneCAN |
 | [FLOW\_TYPE](https://ardupilot.org/copter/docs/parameters.html#flow-type) | 6 | DroneCAN optical flow |
 | [RNGFND1\_TYPE](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-type) | 24 | DroneCAN range finder |
-| [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) | 3000 | Range finder maximum range (cm) — set to 30 m |
+| [RNGFND1\_MAX](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-max) | 30 | Range finder maximum range in m |
 | [RNGFND1\_ADDR](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-addr) | _sensor ID_ | Sensor ID of the rangefinder |
 | [RNGFND1\_RECV\_ID](https://ardupilot.org/copter/docs/parameters.html#rngfnd1-recv-id) | _node ID_ | CAN node ID of the ARK Flow |
 
