@@ -18,6 +18,10 @@ ARK DroneCAN sensors including optical flow, distance, and magnetometer modules.
 [ark-flow-mr](ark-flow-mr/)
 {% endcontent-ref %}
 
+{% content-ref url="ark-flow-lr/" %}
+[ark-flow-lr](ark-flow-lr/)
+{% endcontent-ref %}
+
 {% content-ref url="ark-mag/" %}
 [ark-mag](ark-mag/)
 {% endcontent-ref %}

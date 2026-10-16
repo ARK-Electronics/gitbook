@@ -1,0 +1,47 @@
+# PX4 Instructions
+
+## Mounting
+
+Mount the ARK Flow LR as shown in [Mounting](hardware.md#mounting). This corresponds to the default value (`0`) of the parameter [SENS\_FLOW\_ROT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_ROT). Change the parameter appropriately if using a different orientation.
+
+The sensor can be mounted anywhere on the frame, but you will need to specify the focal point position, relative to vehicle center of gravity, during [PX4 configuration](https://docs.px4.io/main/en/dronecan/ark_flow.html#px4-configuration).
+
+## Flight Controller Setup
+
+{% hint style="info" %}
+The ARK Flow LR will not boot if there is no SD card in the flight controller when powered on.
+{% endhint %}
+
+Connect the ARK Flow LR CAN to the flight controller's CAN port, as described in [Wiring](hardware.md#wiring). Once parameters are set the module will be detected on boot. See [DroneCAN > Enabling DroneCAN](https://docs.px4.io/main/en/dronecan/#enabling-dronecan) for more detail.
+
+### Flight Controller Parameters
+
+Set the following in _QGroundControl_ and reboot the flight controller.
+
+#### Required
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| [UAVCAN\_ENABLE](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_ENABLE) | 2 | Enable DroneCAN with dynamic node allocation (use `3` if also driving DroneCAN ESCs) |
+| [UAVCAN\_SUB\_FLOW](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_FLOW) | 1 | Subscribe to DroneCAN optical flow messages |
+| [UAVCAN\_SUB\_RNG](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_RNG) | 1 | Subscribe to DroneCAN range finder messages |
+| [EKF2\_OF\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_CTRL) | 1 | Enable optical flow fusion in the EKF |
+| [EKF2\_RNG\_QLTY\_T](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_QLTY_T) | 0.2 | Range finder quality time |
+| [UAVCAN\_RNG\_MIN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MIN) | 0.6 | Min reported range in m |
+| [UAVCAN\_RNG\_MAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MAX) | 100 | Max reported range in m |
+| [SENS\_FLOW\_MINHGT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MINHGT) | 0.08 | Min height for optical flow fusion |
+| [SENS\_FLOW\_MAXHGT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MAXHGT) | 25 | Max height for optical flow fusion |
+| [SENS\_FLOW\_MAXR](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MAXR) | 7.4 | Max angular flow rate (PAA3905 limit) |
+
+#### Optional
+
+| Parameter | Description |
+|-----------|-------------|
+| [UAVCAN\_SUB\_IMU](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_SUB_IMU) | Set to `1` to subscribe to DroneCAN `RawIMU` messages. Requires `CANNODE_PUB_IMU` to also be set on the ARK Flow LR |
+| [EKF2\_GPS\_CTRL](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_GPS_CTRL) | Set to `0` to disable GPS aiding (e.g. indoor flight) |
+| [EKF2\_OF\_POS\_X](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_X) / [EKF2\_OF\_POS\_Y](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_Y) / [EKF2\_OF\_POS\_Z](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_OF_POS_Z) | ARK Flow LR offset from the vehicle center of gravity (meters) |
+| [SENS\_FLOW\_ROT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_ROT) | Sensor rotation if mounted in a non-default orientation (default `0`) |
+
+### CAN Node Parameters
+
+The node publishes optical flow and range finder data with its default parameters. To terminate the bus, publish IMU data or change the distance sensor mode and rate, see [Node Parameters](firmware.md#node-parameters).
