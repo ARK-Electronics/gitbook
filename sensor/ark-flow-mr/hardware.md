@@ -11,7 +11,6 @@
 | Distance sensor | [Broadcom AFBR-S50LX85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d) time-of-flight |
 | Distance range | Typically up to 50 m |
 | Laser opening angle | 2° × 2° |
-| Ambient light | Operates up to 200k lux |
 | IMU | [InvenSense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/), 6-axis |
 | MCU | STM32F412VG |
 | CAN | 2× Pixhawk-standard 4-pin JST-GH |
