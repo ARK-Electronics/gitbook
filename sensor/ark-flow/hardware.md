@@ -9,9 +9,8 @@
 | Low light | Tracks under super low light conditions of >9 lux. 40 mW IR LED on the board for improved low light operation |
 | Max flow rate | 7.4 rad/s |
 | Distance sensor | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) time-of-flight, integrated 850 nm laser light source |
-| Distance range | Typically up to 30 m, works well on all surface conditions |
+| Distance range | Typically up to 30 m |
 | Field of view | 12.4° × 6.2° with 32 pixels. 2° × 2° transmitter beam illuminates 1 to 3 pixels |
-| Ambient light | Operates up to 200k lux |
 | IMU | [Bosch BMI088](https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi088/) or [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
 | MCU | STM32F412CEU6 |
 | CAN | 2× Pixhawk-standard 4-pin JST-GH, software-toggleable built-in termination resistor |
