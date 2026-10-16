@@ -22,7 +22,7 @@ chmod +x flash_from_package.sh
 ./flash_from_package.sh jaj
 ```
 
-The script downloads the release package from the [releases page](https://github.com/ARK-Electronics/ark_jetson_kernel/releases) (tags starting with `jaj-`), waits for the Jetson in recovery mode, and flashes the bootloader and root filesystem. No build tools needed. Pass a specific tag instead of `jaj` to flash a specific version.
+The script downloads the package from [downloads.arkelectron.com/jetson/jaj](https://downloads.arkelectron.com/jetson/jaj/), checks its SHA-256, waits for the Jetson in recovery mode, and flashes the bootloader and root filesystem. To flash a specific version, pass its tag instead of `jaj`, for example `jaj-6.2.2.6`.
 
 ## Build From Source
 

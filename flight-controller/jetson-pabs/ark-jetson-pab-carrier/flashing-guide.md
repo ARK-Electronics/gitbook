@@ -24,7 +24,7 @@ chmod +x flash_from_package.sh
 ./flash_from_package.sh pab
 ```
 
-The script downloads the release package from the [releases page](https://github.com/ARK-Electronics/ark_jetson_kernel/releases) (tags starting with `pab-`), waits for the Jetson in recovery mode, and flashes the bootloader and root filesystem. No build tools needed. Pass a specific tag instead of `pab` to flash a specific version.
+The script downloads the package from [downloads.arkelectron.com/jetson/pab](https://downloads.arkelectron.com/jetson/pab/), checks its SHA-256, waits for the Jetson in recovery mode, and flashes the bootloader and root filesystem. To flash a specific version, pass its tag instead of `pab`, for example `pab-6.2.2.6`.
 
 {% hint style="warning" %}
 Hardware revision 3 of this carrier (PAB Rev 3) still uses the `pab` image. `pab-v3` releases are for the [ARK Jetson PAB Carrier V3](../ark-jetson-pab-carrier-v3/), a different product.
