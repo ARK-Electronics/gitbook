@@ -29,7 +29,7 @@ Set the following in _QGroundControl_ and reboot the flight controller.
 | [EKF2\_RNG\_QLTY\_T](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#EKF2_RNG_QLTY_T) | 0.2 | Range finder quality time |
 | [UAVCAN\_RNG\_MIN](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MIN) | 0.6 | Min reported range in m |
 | [UAVCAN\_RNG\_MAX](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#UAVCAN_RNG_MAX) | 100 | Max reported range in m |
-| [SENS\_FLOW\_MINHGT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MINHGT) | 0.08 | Min height for optical flow fusion |
+| [SENS\_FLOW\_MINHGT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MINHGT) | 0.6 | Min height for optical flow fusion: the rangefinder reads nothing below 0.6 m |
 | [SENS\_FLOW\_MAXHGT](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MAXHGT) | 25 | Max height for optical flow fusion |
 | [SENS\_FLOW\_MAXR](https://docs.px4.io/main/en/advanced_config/parameter_reference.html#SENS_FLOW_MAXR) | 7.4 | Max angular flow rate (PAA3905 limit) |
 

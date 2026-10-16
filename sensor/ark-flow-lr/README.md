@@ -13,7 +13,7 @@ The distance sensor reports 0.6 to 100 m at 10 Hz. Range depends on the light on
 
 | Page | Contents |
 |------|----------|
-| [Firmware](firmware.md) | Updating, node parameters and downloads |
+| [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |
 | [Hardware Reference](hardware.md) | Specifications, range, pinout, LEDs, wiring, mounting, 3D model and case |
 | [PX4 Instructions](px4-instructions.md) | Connecting and configuring with PX4 |
 | [ArduPilot Instructions](ardupilot-instructions.md) | Connecting and configuring with ArduPilot |

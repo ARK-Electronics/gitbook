@@ -1,16 +1,14 @@
 # DroneCAN Messages
 
-The ARK Flow LR outputs data using the DroneCAN protocol\
-[https://dronecan.github.io/Specification/1.\_Introduction/](https://dronecan.github.io/Specification/1._Introduction/)\
-\
+The ARK Flow LR outputs data using the [DroneCAN protocol](https://dronecan.github.io/Specification/1._Introduction/).
+
 There are 3 onboard sensors with a corresponding message each. Optical Flow and Rangefinder data publishing is enabled by default. IMU data publishing must be enabled by setting the node parameter [CANNODE\_PUB\_IMU](firmware.md#node-parameters).
 
 * Optical Flow:  `com.hex.equipment.flow`
 * Rangefinder:  `uavcan.equipment.range_sensor`
 * IMU: `RawIMU`
 
-There are also messages all Nodes emit:\
-[https://dronecan.github.io/Specification/6.\_Application\_level\_functions/](https://dronecan.github.io/Specification/6._Application_level_functions/)
+All nodes also emit the [application-level messages](https://dronecan.github.io/Specification/6._Application_level_functions/).
 
 * NodeStatus: `NodeStatus`
 * GetNodeInfo: `GetNodeInfo`
