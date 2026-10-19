@@ -29,7 +29,7 @@ With a CM4, the camera on CAM1 is the overlay default in `config.txt` (no `cam0`
 
 ## PCIe
 
-* Runs at Gen 2, tested with an NVMe SSD. `dtparam=pciex1_gen=3` in [`config.txt`](flashing-guide/after-flashing-before-installing.md) selects Gen 3.
+* Gen 2 (default, tested). Set `dtparam=pciex1_gen=3` in [`config.txt`](flashing-guide/after-flashing-before-installing.md) for Gen 3 (untested).
 * The 5 V pins are fed through a load switch limited to 1.5 A. The Compute Module's `PCIE_PWR_EN` turns the switch on and is also routed to pin 13, so the adapter can use it to enable its own regulator.
 
 ## Pinout
