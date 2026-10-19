@@ -36,7 +36,7 @@ If mDNS is not available on your network, use the Pi's IP address instead.
 
 ### Option 2: Ethernet
 
-Plug either external Ethernet port into your network — the Pi requests an address over DHCP.
+Connect either Ethernet port to your network through an [ARK Ethernet Adapter](../../accessories/ark-ethernet-adapter/README.md) (4-pin JST-GH to RJ45). The Pi requests an address over DHCP.
 
 ### Option 3: Serial Debug Console
 

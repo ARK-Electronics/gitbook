@@ -11,7 +11,7 @@ The ARK Just a Pi is a compact carrier board for the Raspberry Pi Compute Module
 
 | Page | Contents |
 |------|----------|
-| [Hardware Reference](hardware.md) | Specifications, Compute Module 4 limits, pinout, block diagram, 3D model and case |
+| [Hardware Reference](hardware.md) | Specifications, Compute Module 4 limits, PCIe, pinout, block diagram, 3D model and case |
 | [Getting Started](getting-started.md) | Default credentials and connecting over Wi-Fi, Ethernet or the debug console |
 | [Using ARK-OS](using-ark-os.md) | ARK-OS services and web UI on this board |
 | [Flashing Guide](flashing-guide/README.md) | Imaging your own Compute Module and its `config.txt` |

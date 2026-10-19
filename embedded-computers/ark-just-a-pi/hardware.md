@@ -27,6 +27,11 @@ A CM4 fits, but these interfaces don't work with it:
 
 With a CM4, the camera on CAM1 is the overlay default in `config.txt` (no `cam0` parameter), and the UART3 and UART4 connectors are uart4 (`/dev/ttyAMA4`) and uart5 (`/dev/ttyAMA5`).
 
+## PCIe
+
+* Runs at Gen 2, tested with an NVMe SSD. `dtparam=pciex1_gen=3` in [`config.txt`](flashing-guide/after-flashing-before-installing.md) selects Gen 3.
+* The 5 V pins are fed through a load switch limited to 1.5 A. The Compute Module's `PCIE_PWR_EN` turns the switch on and is also routed to pin 13, so the adapter can use it to enable its own regulator.
+
 ## Pinout
 
 <figure><img src="../../.gitbook/assets/Pinout Drawing Top.png" alt=""><figcaption></figcaption></figure>
