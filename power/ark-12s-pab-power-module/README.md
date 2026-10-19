@@ -11,6 +11,6 @@ The ARK 12S PAB Power Module is a 5V 6A power supply and digital power monitor f
 
 | Page | Contents |
 |------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, current rating, capacitor and TVS diode, datasheet, 3D model |
+| [Hardware Reference](hardware.md) | Specifications, wiring, pinout, current rating, capacitor and TVS diode, datasheet, 3D model |
 | [PX4 Instructions](px4-instructions.md) | Configuring the power monitor in PX4 |
 | [ArduPilot Instructions](ardupilot-instructions.md) | Configuring the power monitor in ArduPilot |
