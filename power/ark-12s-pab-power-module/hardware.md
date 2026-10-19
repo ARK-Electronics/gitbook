@@ -13,6 +13,10 @@
 | Dimensions | 3.7 × 2.2 × 1.3 cm |
 | Weight | 11.5 g |
 
+## Wiring
+
+The power monitor measures only the current that flows from the battery input pads to the battery output pads. Wire the ESCs and every other battery load to the output pads.
+
 ## Pinout
 
 ### 5V and I2C — 6-pin Molex CLIK-Mate
