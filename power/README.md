@@ -1,6 +1,6 @@
 # Power Modules
 
-ARK DroneCAN power modules for voltage and current monitoring.
+ARK power modules for Pixhawk Autopilot Bus carriers, with I2C voltage and current monitoring.
 
 {% content-ref url="ark-pab-power-module/" %}
 [ark-pab-power-module](ark-pab-power-module/)

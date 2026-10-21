@@ -8,7 +8,7 @@
 | Gyroscope range | ±300 °/s (K01), ±2000 °/s (K10) |
 | Accelerometer range | ±8 g (K01), ±16 g (K10); redundant digital accelerometer channel up to ±26 g |
 | Gyro bias instability | Down to 0.3 °/h (K01), 2 °/h (K10) |
-| Gyro noise density | Down to 0.3 m°/s/√Hz (K01), 6 m°/s/√Hz (K10) |
+| Gyro noise density | Down to 0.4 m°/s/√Hz (K01), 6 m°/s/√Hz (K10) |
 | Operating temperature | −40 °C to +110 °C |
 | Interface | SPI, 11-pin JST-GH |
 | Power | 5 V, 46 mA average |
