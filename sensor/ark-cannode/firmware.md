@@ -106,7 +106,8 @@ PWM output parameters (`PWM_MAIN_*`, `DSHOT_TEL_CFG`) are set per use case; see 
 
 ## Release Notes
 
-* 83-1.18.d1f97771 - 2026-10-3
-  * PX4 v1.18 base
-  * SCH16T driver built in
-  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
+### v1.18.0.1 - d1f97771 - 2026-10-03
+
+- PX4 v1.18 base
+- SCH16T driver built in
+- Bootloader update from the running firmware (`SYS_BL_UPDATE`)

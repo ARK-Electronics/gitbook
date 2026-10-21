@@ -35,21 +35,34 @@ Set these on the ARK Flow MR, then reboot it. Use [QGroundControl](https://docs.
 
 ## Release Notes
 
-* 88-1.16.3c45b562 - 2025-9-26
-  * Migrate to build server
-* 88-1.16.afb2c08b - 2025-8-6
-  * AFBRS50: Fix long range measurement publishing
-* 88-1.16.2248a40e - 2025-7-10
-  * [AFBRS40: fix Range Mode switching](https://github.com/PX4/PX4-Autopilot/pull/25185)
-* 88-1.16.d0bfa548 - 2025-6-12
-  * [AFBRS50 fix scheduling and refactor](https://github.com/PX4/PX4-Autopilot/pull/24837)
-* 88-1.15.82ff8744- 2025-6-11
-  * Add DroneCAN RawIMU publisher
-* 88-1.16.c8bed86b - 2025-2-26
-  * Default to Long Range Mode (SENS\_AFBR\_MODE = 1)
-  * Default to 5Hz output rate over 4m (SENS\_AFBR\_L\_RATE = 5)
-* 88-1.16.61036f77 - 2025-2-7
-  * Update to [AFBR 1.6.5 API](https://github.com/Broadcom/AFBR-S50-API/releases/tag/v1.6.5)
-    * Improved distance sensor performance
-  * Fix PAA3905 challenging surface detected spam
-    * Only notify once every second
+### v1.16 - 3c45b562 - 2025-09-26
+
+- Migrate to build server
+
+### v1.16 - afb2c08b - 2025-08-06
+
+- AFBRS50: Fix long range measurement publishing
+
+### v1.16 - 2248a40e - 2025-07-10
+
+- [AFBRS40: fix Range Mode switching](https://github.com/PX4/PX4-Autopilot/pull/25185)
+
+### v1.16 - d0bfa548 - 2025-06-12
+
+- [AFBRS50 fix scheduling and refactor](https://github.com/PX4/PX4-Autopilot/pull/24837)
+
+### v1.15 - 82ff8744 - 2025-06-11
+
+- Add DroneCAN RawIMU publisher
+
+### v1.16 - c8bed86b - 2025-02-26
+
+- Default to Long Range Mode (`SENS_AFBR_MODE` = 1)
+- Default to 5Hz output rate over 4m (`SENS_AFBR_L_RATE` = 5)
+
+### v1.16 - 61036f77 - 2025-02-07
+
+- Update to [AFBR 1.6.5 API](https://github.com/Broadcom/AFBR-S50-API/releases/tag/v1.6.5)
+  - Improved distance sensor performance
+- Fix PAA3905 challenging surface detected spam
+  - Only notify once every second

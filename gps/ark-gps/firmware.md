@@ -44,11 +44,16 @@ Set these on the GPS node, then reboot it. Use [QGroundControl](https://docs.px4
 
 ## Release Notes
 
-* 81-1.18.76e683ea - 2026-10-3
-  * PX4 v1.18 base
-  * Fix the IMU not starting after some resets until the next power cycle
-  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
-* 81-1.17.67ace351 - 2025-11-14
-  * [Fix M9N output rate](https://github.com/PX4/PX4-GPSDrivers/pull/191)
-* 81-1.16.e68afe1e - 2025-2-12
-  * Disable mag bias estimator by default
+### v1.18.0.1 - 76e683ea - 2026-10-03
+
+- PX4 v1.18 base
+- Fix the IMU not starting after some resets until the next power cycle
+- Bootloader update from the running firmware (`SYS_BL_UPDATE`)
+
+### v1.17 - 67ace351 - 2025-11-14
+
+- [Fix M9N output rate](https://github.com/PX4/PX4-GPSDrivers/pull/191)
+
+### v1.16 - e68afe1e - 2025-02-12
+
+- Disable mag bias estimator by default

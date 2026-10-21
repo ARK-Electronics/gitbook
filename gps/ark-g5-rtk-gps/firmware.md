@@ -49,19 +49,26 @@ Set these on the GPS node, then reboot it. Use [QGroundControl](https://docs.px4
 
 ## Release Notes
 
-* 91-1.18.73506671 - 2026-10-6
-  * ArduPilot no longer takes a heading the node marks invalid as its GPS yaw: the node sends it with a zero baseline, which ArduPilot rejects. With 91-1.18.a784eb57, ArduPilot could block arming with `Internal errors 0x400` while the heading solution was not fixed
-  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
-* 91-1.18.a784eb57 - 2026-10-1
-  * PX4 v1.18 base
-  * Moving base and moving-base rover (`SEP_MODE`)
-  * Single or dual antenna on the P6 and P8 (`SEP_ANT_MODE`)
-  * Heading reported only with fixed ambiguities; the antenna mounting is set on the flight controller (`SEP_OFFS_YAW` and `SEP_OFFS_PITCH` removed)
-  * SBAS and Galileo HAS available in `SEP_PVT_MODE`, off by default
-  * Jamming, spoofing, OSNMA and receiver error reporting
-  * Receiver reconfigured after it restarts
-* 91-1.16.c8403786 - 2026-2-12
-  * Septentrio sensor\_gnss\_relative
-  * General heading improvement
-* 91-1.16.c53f8d8e - 2025-12-18
-  * Initial release
+### v1.18.0.2 - 73506671 - 2026-10-06
+
+- ArduPilot no longer takes a heading the node marks invalid as its GPS yaw: the node sends it with a zero baseline, which ArduPilot rejects. With v1.18.0.1, ArduPilot could block arming with `Internal errors 0x400` while the heading solution was not fixed
+- Bootloader update from the running firmware (`SYS_BL_UPDATE`)
+
+### v1.18.0.1 - a784eb57 - 2026-10-01
+
+- PX4 v1.18 base
+- Moving base and moving-base rover (`SEP_MODE`)
+- Single or dual antenna on the P6 and P8 (`SEP_ANT_MODE`)
+- Heading reported only with fixed ambiguities; the antenna mounting is set on the flight controller (`SEP_OFFS_YAW` and `SEP_OFFS_PITCH` removed)
+- SBAS and Galileo HAS available in `SEP_PVT_MODE`, off by default
+- Jamming, spoofing, OSNMA and receiver error reporting
+- Receiver reconfigured after it restarts
+
+### v1.16 - c8403786 - 2026-02-12
+
+- Septentrio `sensor_gnss_relative`
+- General heading improvement
+
+### v1.16 - c53f8d8e - 2025-12-18
+
+- Initial release

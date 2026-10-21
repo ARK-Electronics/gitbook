@@ -33,5 +33,6 @@ Set these on the ARK Flow LR, then reboot it. Use [QGroundControl](https://docs.
 
 ## Release Notes
 
-* 95-1.18.46d8238c - 2026-10-16
-  * Initial release: PX4 v1.18 base, AFBR-S50EX85D in Extended Long Range mode at 10 Hz
+### v1.18.0.1 - 46d8238c - 2026-10-16
+
+- Initial release: PX4 v1.18 base, AFBR-S50EX85D in Extended Long Range mode at 10 Hz

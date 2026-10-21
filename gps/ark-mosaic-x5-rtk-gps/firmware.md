@@ -34,17 +34,24 @@ Set these on the GPS node, then reboot it. Use [QGroundControl](https://docs.px4
 
 ## Release Notes
 
-* 84-1.18.73506671 - 2026-10-6
-  * ArduPilot no longer takes a heading the node marks invalid as its GPS yaw: the node sends it with a zero baseline, which ArduPilot rejects. With 84-1.18.a784eb57, ArduPilot could block arming with `Internal errors 0x400` while the heading solution was not fixed
-  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
-* 84-1.18.a784eb57 - 2026-10-1
-  * PX4 v1.18 base
-  * Moving base and moving-base rover (`SEP_MODE`)
-  * SBAS available in `SEP_PVT_MODE`, off by default
-  * Jamming, spoofing, OSNMA and receiver error reporting
-  * Receiver reconfigured after it restarts
-  * Bootloader file renamed to `ark_mosaic-x5-gps_canbootloader.bin`
-* 84-1.16.3c45b562 - 2025-9-26
-  * Migrate to build server
-* 84-1.15.6dea2ce5 - 2025-2-12
-  * Disable mag bias estimator by default
+### v1.18.0.2 - 73506671 - 2026-10-06
+
+- ArduPilot no longer takes a heading the node marks invalid as its GPS yaw: the node sends it with a zero baseline, which ArduPilot rejects. With v1.18.0.1, ArduPilot could block arming with `Internal errors 0x400` while the heading solution was not fixed
+- Bootloader update from the running firmware (`SYS_BL_UPDATE`)
+
+### v1.18.0.1 - a784eb57 - 2026-10-01
+
+- PX4 v1.18 base
+- Moving base and moving-base rover (`SEP_MODE`)
+- SBAS available in `SEP_PVT_MODE`, off by default
+- Jamming, spoofing, OSNMA and receiver error reporting
+- Receiver reconfigured after it restarts
+- Bootloader file renamed to `ark_mosaic-x5-gps_canbootloader.bin`
+
+### v1.16 - 3c45b562 - 2025-09-26
+
+- Migrate to build server
+
+### v1.15 - 6dea2ce5 - 2025-02-12
+
+- Disable mag bias estimator by default
