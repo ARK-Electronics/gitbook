@@ -109,16 +109,21 @@ UART2 cannot be used for u-blox firmware update. Use the debug passthrough metho
 
 ## Release Notes
 
-* 89-1.18.73506671 - 2026-10-9
-  * Moving baseline: an invalid heading goes out with a zero baseline, so ArduPilot ignores it instead of taking a NaN yaw that blocks arming (`PreArm: Internal errors 0x400`)
-* 89-1.18.76e683ea - 2026-10-3
-  * PX4 v1.18 base
-  * The antenna mounting for moving baseline heading is set on the flight controller (`GPS_YAW_OFFSET` removed), see [PX4 Instructions](px4-instructions.md#moving-baseline-gps-heading-configuration)
-  * Moving base and rover run at 5 Hz
-  * Fix timestamps from the receiver's time pulse
-  * A moving baseline rover uses only its moving base's corrections
-  * Receiver UART1 at 921600 baud
-  * Magnetometer scale corrected to the IIS2MDC datasheet
-  * Bootloader update from the running firmware (`SYS_BL_UPDATE`)
-* 89-1.16.47e04790 - 2025-11-17
-  * Initial release
+### v1.18.0.2 - 73506671 - 2026-10-09
+
+- Moving baseline: an invalid heading goes out with a zero baseline, so ArduPilot ignores it instead of taking a NaN yaw that blocks arming (`PreArm: Internal errors 0x400`)
+
+### v1.18.0.1 - 76e683ea - 2026-10-03
+
+- PX4 v1.18 base
+- The antenna mounting for moving baseline heading is set on the flight controller (`GPS_YAW_OFFSET` removed), see [PX4 Instructions](https://docs.arkelectron.com/products/gps/ark-x20-rtk-gps/px4-instructions#moving-baseline-gps-heading-configuration)
+- Moving base and rover run at 5 Hz
+- Fix timestamps from the receiver's time pulse
+- A moving baseline rover uses only its moving base's corrections
+- Receiver UART1 at 921600 baud
+- Magnetometer scale corrected to the IIS2MDC datasheet
+- Bootloader update from the running firmware (`SYS_BL_UPDATE`)
+
+### v1.16 - 47e04790 - 2025-11-17
+
+- Initial release

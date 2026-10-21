@@ -40,18 +40,25 @@ Set these on the ARK DIST, then reboot it. Use [QGroundControl](https://docs.px4
 
 ## Release Notes
 
-* 92-1.18.48fb05b9 - 2026-10-12
-  * The rangefinder's device ID names the AFBR-S50 instead of an unknown device
-* 92-1.18.f8ebe52d - 2026-10-12
-  * PX4 v1.18 base
-  * Supports the ARK DIST LR (AFBR-S50EX85D) in Extended Long Range mode at 10 Hz
-  * Broadcom AFBR-S50 API 1.7.6
-  * Mode, rate and dual frequency mode default per sensor: SR 20 Hz and MR 15 Hz, both with DFM 4X; `SENS_AFBR_PROF` Fast selects 50 and 25 Hz
-  * `SENS_AFBR_RATE` and `SENS_AFBR_PROF` replace `SENS_AFBR_S_RATE`, `SENS_AFBR_L_RATE`, `SENS_AFBR_THRESH` and `SENS_AFBR_HYSTER`; settings made with those are not carried over
-  * Range offset calibration (`afbrs50 cal`), minimum signal quality (`SENS_AFBR_QMIN`) and mounting orientation (`SENS_AFBR_ROT`)
-  * Recovers on its own when the sensor stalls
-  * Bootloader update from the running firmware (`SYS_BL_UPDATE`) and static node ID (`CANNODE_NODE_ID`)
-* 92-1.16.3c45b562 - 2025-9-26
-  * Migrate to build server
-* 92-1.16.e448eba4 - 2025-8-8
-  * Initial Release
+### v1.18.0.2 - 48fb05b9 - 2026-10-12
+
+- The rangefinder's device ID names the AFBR-S50 instead of an unknown device
+
+### v1.18.0.1 - f8ebe52d - 2026-10-12
+
+- PX4 v1.18 base
+- Supports the ARK DIST LR (AFBR-S50EX85D) in Extended Long Range mode at 10 Hz
+- Broadcom AFBR-S50 API 1.7.6
+- Mode, rate and dual frequency mode default per sensor: SR 20 Hz and MR 15 Hz, both with DFM 4X; `SENS_AFBR_PROF` Fast selects 50 and 25 Hz
+- `SENS_AFBR_RATE` and `SENS_AFBR_PROF` replace `SENS_AFBR_S_RATE`, `SENS_AFBR_L_RATE`, `SENS_AFBR_THRESH` and `SENS_AFBR_HYSTER`; settings made with those are not carried over
+- Range offset calibration (`afbrs50 cal`), minimum signal quality (`SENS_AFBR_QMIN`) and mounting orientation (`SENS_AFBR_ROT`)
+- Recovers on its own when the sensor stalls
+- Bootloader update from the running firmware (`SYS_BL_UPDATE`) and static node ID (`CANNODE_NODE_ID`)
+
+### v1.16 - 3c45b562 - 2025-09-26
+
+- Migrate to build server
+
+### v1.16 - e448eba4 - 2025-08-08
+
+- Initial Release
