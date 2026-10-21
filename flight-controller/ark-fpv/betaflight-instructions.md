@@ -1,6 +1,6 @@
 # Betaflight Instructions
 
-To build or flash Betaflight, see [Firmware](firmware.md#betaflight).
+To build or flash Betaflight, see [Firmware](firmware.md#betaflight). The published `ARK_FPV` target selects the IIM-42653, so it leaves the IMU stopped on an ARK FPV 32X.
 
 ## Connection to the Flight Controller
 

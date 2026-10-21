@@ -5,7 +5,8 @@
 | Specification | Value |
 |---------------|-------|
 | MCU | [STM32H743IIK6](https://www.st.com/en/microcontrollers-microprocessors/stm32h743ii.html), 480 MHz, 2 MB flash, 1 MB RAM |
-| IMU | [Invensense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/) industrial IMU |
+| IMU | [Invensense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/) industrial IMU on the ARK FPV. PX4 reports this board as `ARKFPV000` |
+| IMU, 32X | [ST LSM6DSV32X](https://www.st.com/en/mems-and-sensors/lsm6dsv32x.html) on the ARK FPV 32X, on the same SPI pads. PX4 reports this board as `ARKFPV001` |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp390.html) |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Heater | 1 W, for warming sensors in extreme cold |
@@ -147,6 +148,8 @@
 | UART7 | Telem | Telem1 | /dev/ttyS6 |
 
 ## 3D Model and Case
+
+The ARK FPV 32X uses the same board and case.
 
 | File | Contents |
 |------|----------|

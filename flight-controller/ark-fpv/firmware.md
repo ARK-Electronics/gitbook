@@ -1,6 +1,8 @@
 # Firmware
 
-The ARK FPV ships with PX4. It also runs ArduPilot and Betaflight.
+The ARK FPV ships with PX4. It also runs ArduPilot and Betaflight. The ARK FPV 32X uses the same build targets.
+
+PX4 main starts the LSM6DSV32X on an ARK FPV 32X (`ARKFPV001`). [PX4 1.18 support](https://github.com/PX4/PX4-Autopilot/pull/29375) is in review. ArduPilot master starts it too. The [ArduPilot 4.7 backport](https://github.com/ArduPilot/ardupilot/pull/34484) is open. The published Betaflight `ARK_FPV` target selects the IIM-42653.
 
 | Firmware | Build target |
 |----------|--------------|
@@ -46,6 +48,10 @@ and optionally upload
 ```
 
 ## Betaflight
+
+{% hint style="info" %}
+The published Betaflight `ARK_FPV` target selects the IIM-42653. On an ARK FPV 32X that leaves the IMU stopped.
+{% endhint %}
 
 ### Building Firmware
 

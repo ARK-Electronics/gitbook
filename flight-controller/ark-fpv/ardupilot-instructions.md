@@ -4,7 +4,7 @@
 ARK FPV ArduPilot Documentation
 {% endembed %}
 
-To build or flash ArduPilot, see [Firmware](firmware.md#ardupilot).
+ArduPilot master starts the LSM6DSV32X on an ARK FPV 32X. To build or flash ArduPilot, see [Firmware](firmware.md#ardupilot).
 
 ## UART Mapping
 

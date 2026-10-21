@@ -4,4 +4,4 @@
 ARK FPV PX4 Documentation
 {% endembed %}
 
-To build or flash PX4, see [Firmware](firmware.md#px4).
+PX4 main starts the LSM6DSV32X on an ARK FPV 32X. To build or flash PX4, see [Firmware](firmware.md#px4).
