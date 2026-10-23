@@ -4,7 +4,7 @@
 
 | Specification | Value |
 |---------------|-------|
-| Power monitor | [TI INA238](https://www.ti.com/product/INA238), 0.1 mΩ shunt, I2C |
+| Power monitor | [TI INA238](https://www.ti.com/product/INA238), 0.1 mΩ shunt, I2C address 0x45 |
 | 5V regulator | 5.2 V 6 A step-down, 10 V minimum input at 6 A out, output over-current protection |
 | 12V regulator | 12.0 V 6 A step-down, 15 V minimum input at 6 A out, output over-current protection |
 | Input voltage | 75 V maximum (12S) |
