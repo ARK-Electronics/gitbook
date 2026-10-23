@@ -44,9 +44,16 @@ Set these on the GPS node, then reboot it. Use [QGroundControl](https://docs.px4
 - PX4 v1.18 base
 - Moving base and moving-base rover (`SEP_MODE`)
 - SBAS available in `SEP_PVT_MODE`, off by default
+- `SEP_OUT_RATE` defaults to 50 ms (20 Hz); v1.16 used OnChange
 - Jamming, spoofing, OSNMA and receiver error reporting
 - Receiver reconfigured after it restarts
 - Bootloader file renamed to `ark_mosaic-x5-gps_canbootloader.bin`
+
+### v1.16 - a4ebf79b - 2025-12-22
+
+- PPP and DGNSS fix types reported
+- Output rate parameter `SEP_OUT_RATE`, default OnChange
+- Receiver configured 10 s after boot
 
 ### v1.16 - 3c45b562 - 2025-09-26
 
