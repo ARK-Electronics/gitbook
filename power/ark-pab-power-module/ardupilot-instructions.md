@@ -6,3 +6,7 @@
 2. Set the [BATTX\_SHUNT](https://ardupilot.org/copter/docs/parameters.html#batt-shunt-battery-monitor-shunt-resistor) parameter to 0.0005
 3. Set the [BATTn\_I2C\_BUS](https://ardupilot.org/copter/docs/parameters.html#batt2-i2c-bus-battery-monitor-i2c-bus-number) parameter to match the power connector the module is plugged into: `1` for Power 1, `2` for Power 2, `3` for Power 3
 4. Reboot the flight controller
+
+{% hint style="warning" %}
+The bus numbers above apply to ARK flight controllers and the Pixhawk 6X. On other flight controllers, set `BATTn_I2C_BUS` to the ArduPilot bus number of the I2C port the module is wired to. Cube Orange power ports are analog and have no I2C.
+{% endhint %}
