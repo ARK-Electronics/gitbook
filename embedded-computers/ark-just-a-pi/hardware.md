@@ -108,6 +108,8 @@ Pre-crimped wires [0797581014](https://www.digikey.com/en/products/detail/molex/
 | 5 | PWM3/GPIO19 | 3.3V |
 | 6 | GND | GND |
 
+Pin 4 is a GNSS PPS input by default; see [PPS Input](pps-input.md).
+
 ### CAM1 (MIPI0) — 22-pin 0.5 mm FFC
 
 | Pin | Signal | Voltage |

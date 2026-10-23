@@ -56,6 +56,7 @@
     * [Hardware Reference](embedded-computers/ark-just-a-pi/hardware.md)
     * [Getting Started](embedded-computers/ark-just-a-pi/getting-started.md)
     * [Using ARK-OS](embedded-computers/ark-just-a-pi/using-ark-os.md)
+    * [PPS Input](embedded-computers/ark-just-a-pi/pps-input.md)
     * [Flashing Guide](embedded-computers/ark-just-a-pi/flashing-guide/README.md)
       * [Pi CM5 Lite with Micro SD](embedded-computers/ark-just-a-pi/flashing-guide/pi-cm5-lite-with-micro-sd.md)
       * [Pi CM5 with EMMC](embedded-computers/ark-just-a-pi/flashing-guide/pi-cm5-with-emmc.md)
