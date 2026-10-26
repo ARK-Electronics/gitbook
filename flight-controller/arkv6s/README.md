@@ -12,7 +12,7 @@ A single-IMU variant of the ARKV6X flight controller module, built to the Pixhaw
 * **Processor:** STM32H743, 480 MHz
 * **Sensors:** Invensense IIM-42653 industrial IMU, Bosch BMP390 barometer, ST IIS2MDC magnetometer
 * **Autopilots:** PX4 (preinstalled), ArduPilot
-* **Compliance:** USA built, NDAA, FCC
+* **Compliance:** USA built, NDAA
 
 ## Documentation
 

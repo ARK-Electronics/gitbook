@@ -12,7 +12,7 @@ A flight controller module built to the Pixhawk FMUv6X and Autopilot Bus standar
 * **Processor:** STM32H743, 480 MHz
 * **Sensors:** triple synced IMUs, Bosch BMP390 barometer, Bosch BMM150 magnetometer
 * **Autopilots:** PX4 (preinstalled), ArduPilot
-* **Compliance:** USA built, NDAA, FCC, Blue Framework listed
+* **Compliance:** USA built, NDAA, Blue Framework listed
 
 ## Variants
 

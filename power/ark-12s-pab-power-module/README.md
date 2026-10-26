@@ -13,7 +13,7 @@ A 12S power supply and digital power monitor for Pixhawk Autopilot Bus carriers,
 * **Battery:** 12S, 75 V maximum, 100 A continuous, solder pads
 * **Power monitor:** TI INA238, I2C
 * **Autopilots:** PX4, ArduPilot
-* **Compliance:** USA built
+* **Compliance:** USA built, NDAA
 
 ## Documentation
 

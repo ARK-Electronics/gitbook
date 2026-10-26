@@ -12,7 +12,7 @@ An SPI IMU board with an 11-pin JST-GH connector that matches the SPI port on th
 * **IMU:** Murata SCH16T gyro and accelerometer
 * **Interface:** SPI, 11-pin JST-GH
 * **Autopilots:** PX4, ArduPilot
-* **Compliance:** USA built, FCC (ARK SCH16T), NDAA (ARK SCH16T-K10)
+* **Compliance:** USA built, NDAA (ARK SCH16T-K10)
 
 ## Variants
 

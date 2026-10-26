@@ -12,7 +12,7 @@ An open source RTK GNSS module for use as a fixed base, moving base or rover. As
 * **Receiver:** u-blox ZED-F9P, L1/L2, centimeter-level RTK
 * **Interface:** USB-C, Pixhawk-standard UART (F9P UART1), F9P UART2
 * **Autopilots:** PX4
-* **Compliance:** USA built, NDAA, FCC
+* **Compliance:** USA built, NDAA
 
 ## Documentation
 
