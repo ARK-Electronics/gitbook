@@ -1,5 +1,4 @@
 ---
-description: 4-pin JST-GH Ethernet to RJ45.
 ---
 
 # ARK Ethernet Adapter

@@ -1,7 +1,4 @@
 ---
-description: >-
-  NDAA compliant, made in the USA, 4 in 1 electronic speed controller running
-  open source ARK32 firmware.
 cover: ../../.gitbook/assets/IMG_3371 edited (Large).JPG
 coverY: -23.514666666666663
 ---

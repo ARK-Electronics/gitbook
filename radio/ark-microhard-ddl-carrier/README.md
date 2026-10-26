@@ -1,7 +1,4 @@
 ---
-description: >-
-  Microhard Pico DDL carrier supporting USB C power delivery and battery power
-  up to 55V
 cover: ../../.gitbook/assets/IMG_3931 edited.JPG
 coverY: 0
 ---

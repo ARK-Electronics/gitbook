@@ -1,7 +1,4 @@
 ---
-description: >-
-  NDAA compliant, made in the USA, single channel electronic speed controller
-  with CAN FD, designed for 12S brushless propulsion.
 cover: ../../../.gitbook/assets/IMG_6571_edited.JPG
 coverY: 0
 ---

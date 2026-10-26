@@ -1,7 +1,5 @@
 ---
-description: >-
-  This guide will help you set up the ARK Jetson PAB Carrier with the RC7611 LTE
-  module.
+description: Set up the ARK M.2 LTE (Sierra Wireless RC7611) on an ARK Jetson carrier.
 cover: ../../.gitbook/assets/IMG_2982 edited (Large).JPG
 coverY: -14
 ---
