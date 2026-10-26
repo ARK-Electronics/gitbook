@@ -14,6 +14,10 @@
 | UARTs and GPIO | UART0 debug/GPIO, UART2/SPI3/GPIO, UART3/SPI4/GPIO, UART4/PWM/GPIO (6-pin JST-GH each) |
 | Fan | 4-pin JST-SH, Raspberry Pi 5 fan pinout |
 | Power | 5 V, 2 A minimum, through a 6-pin Molex CLIK-Mate with I2C that matches [ARK PAB power modules](https://arkelectron.com/product-category/power/) |
+| Operating temperature | 0 °C to +70 °C, carrier only |
+| Storage temperature | −25 °C to +80 °C, carrier only |
+
+The Ethernet switch sets the operating range. The CM5 itself is rated −20 °C to +85 °C.
 
 ## Compute Module 4
 

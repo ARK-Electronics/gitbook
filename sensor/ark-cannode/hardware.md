@@ -16,7 +16,11 @@
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, current depends on connected peripherals |
 | Dimensions | 3.0 × 3.0 × 1.03 cm |
+| Operating temperature | −20 °C to +80 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Weight | 5 g |
+
+The blue status LED sets the operating range and the JST connectors the storage range. The next operating limit is the JST connectors, −25 °C to +85 °C.
 
 ## Pinout
 

@@ -25,8 +25,12 @@
 | ADIO | 8-pin JST-GH |
 | Debug | 10-pin JST-SH |
 | Power | 5 V |
+| Operating temperature | −25 °C to +85 °C, without flight controller module |
+| Storage temperature | −25 °C to +85 °C, without flight controller module |
 | Dimensions | 74.0 × 43.5 × 12.0 mm, without flight controller module |
 | Weight | 22 g, without flight controller module |
+
+The JST connectors set the −25 °C limits.
 
 ## Pinout
 

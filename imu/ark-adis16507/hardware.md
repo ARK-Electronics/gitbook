@@ -11,7 +11,11 @@
 | Interface | SPI, 11-pin JST-GH |
 | Power | 5 V, 41 mA average |
 | Dimensions | 2.5 × 2.25 × 0.71 cm |
+| Operating temperature | −25 °C to +85 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Weight | 4 g |
+
+The JST-GH connector sets both temperature ranges. The ADIS16507 itself is rated −40 °C to +105 °C operating and −65 °C to +150 °C storage.
 
 ## Pinout
 

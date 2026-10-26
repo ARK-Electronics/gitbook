@@ -18,10 +18,14 @@
 | Power draw | 500 mA: 300 mA main system, 200 mA heater |
 | 12 V regulator | 2 A, for video transmitters and payloads. Tracks VBAT when VBAT is below 12 V. Power control from the MCU (pit switch) |
 | Voltage monitoring | VBAT in, 5.0 V, 12.0 V, 3.3 V FMU, 3.3 V sensors |
+| Operating temperature | −25 °C to +85 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Mounting | 30.5 mm |
 | Dimensions | 3.6 × 3.6 × 0.8 cm |
 | Weight | 7.5 g with MicroSD card |
 | Compliance | USA built, NDAA compliant. The ARK FPV is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
+
+The JST connectors and micro-SD slot set the −25 °C limits.
 
 ## Pinout
 
