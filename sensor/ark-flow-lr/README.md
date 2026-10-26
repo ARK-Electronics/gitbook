@@ -9,6 +9,8 @@ The ARK Flow LR is a [DroneCAN](https://dronecan.github.io/) optical flow and lo
 
 [Buy the ARK Flow LR](https://arkelectron.com/product/ark-flow-lr/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/case)
+
 The distance sensor reports 0.6 to 100 m at 10 Hz. Range depends on the light on the ground and on the surface. See [Range](hardware.md#range).
 
 | Page | Contents |

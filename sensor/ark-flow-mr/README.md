@@ -9,6 +9,8 @@ The ARK Flow MR is a [DroneCAN](https://dronecan.github.io/) optical flow and mi
 
 [Buy the ARK Flow MR](https://arkelectron.com/product/ark-flow-mr/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |

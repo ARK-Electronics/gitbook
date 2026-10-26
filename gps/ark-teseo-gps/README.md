@@ -9,6 +9,8 @@ The ARK TESEO GPS is a [DroneCAN](https://dronecan.github.io/) GNSS module built
 
 [Buy the ARK TESEO GPS](https://arkelectron.com/product/ark-teseo-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |

@@ -9,6 +9,8 @@ The ARK G5 RTK Heading GPS is a [DroneCAN](https://dronecan.github.io/) RTK GNSS
 
 Buy: [ARK G5 P3H RTK Heading GPS](https://arkelectron.com/product/ark-g5-rtk-heading-gps/) · [ARK G5 P6 RTK GPS](https://arkelectron.com/product/ark-g5-p6-rtk-gps/) · [ARK G5 P8 RTK GPS](https://arkelectron.com/product/ark-g5-p8-rtk-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/case)
+
 | Variant | Antenna mode as shipped |
 |---------|-------------------------|
 | P3H | Dual antenna |

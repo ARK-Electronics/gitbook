@@ -9,6 +9,8 @@ The ARK RTK GPS is an open source [DroneCAN](https://dronecan.github.io/) RTK GN
 
 Buy: [ARK RTK GPS](https://arkelectron.com/product/ark-rtk-gps/) · [ARK RTK GPS L1L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case)
+
 | Variant | Receiver | Bands | Moving baseline heading |
 |---------|----------|-------|-------------------------|
 | ARK RTK GPS | u-blox ZED-F9P | L1/L2 | Yes |

@@ -9,6 +9,8 @@ The ARK Pi6X Flow puts a Raspberry Pi Compute Module 4 carrier, an ARKV6X flight
 
 Buy: [ARK Pi6X Flow](https://arkelectron.com/product/ark-pi6x-flow/) · [ARK Pi6X](https://arkelectron.com/product/ark-pi6x/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pi6X/model)
+
 | Variant | Optical flow and distance sensors |
 |---------|-----------------------------------|
 | ARK Pi6X Flow | PAW3902 and AFBR-S50LV85D (the AFBR-S50LV85D is not supported in ArduPilot) |

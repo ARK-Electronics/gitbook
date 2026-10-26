@@ -9,6 +9,8 @@ The ARK GPS is an open source [DroneCAN](https://dronecan.github.io/) GNSS modul
 
 [Buy the ARK GPS](https://arkelectron.com/product/ark-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_GPS/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Build targets, updating, AP\_Periph, node parameters, downloads and release notes |

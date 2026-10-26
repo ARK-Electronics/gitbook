@@ -10,6 +10,8 @@ The ARK Primary Avionics Adapter breaks a 40-pin Molex Pico-Clasp primary avioni
 
 [Buy the ARK Primary Avionics Adapter](https://arkelectron.com/product/ark-primary-avionics-breakout/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Primary_Avionics_Breakout/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, 3D model |

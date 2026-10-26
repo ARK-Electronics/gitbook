@@ -12,6 +12,8 @@ The ARK Microhard DDL Carrier is a carrier board for [Microhard](https://www.mic
 
 [Buy the ARK Microhard DDL Carrier](https://arkelectron.com/product/1w-microhard-ddl-ip-radio/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Microhard_DDL_Carrier/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Microhard_DDL_Carrier/case)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, module assembly and disassembly, 3D model and case |

@@ -9,6 +9,8 @@ The ARK FPV is a flight controller based on the [ARKV6X](../arkv6x/README.md) in
 
 Buy: [ARK FPV](https://arkelectron.com/product/ark-fpv-flight-controller/) · [ARK FPV 32X](https://arkelectron.com/product/ark-fpv-32x-flight-controller/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_FPV/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_FPV/case)
+
 The ARK FPV 32X is the same board with an [ST LSM6DSV32X](https://www.st.com/en/mems-and-sensors/lsm6dsv32x.html) IMU. Connectors, power, and the case are unchanged. The ARK FPV is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list).
 
 | Variant | IMU | PX4 hardware type |

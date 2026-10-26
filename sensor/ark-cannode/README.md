@@ -9,6 +9,8 @@ The ARK CANnode is an open source generic [DroneCAN](https://docs.px4.io/main/en
 
 [Buy the ARK CANnode](https://arkelectron.com/product/ark-cannode/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | PX4 and AP\_Periph firmware: downloads, building, flashing, node parameters and release notes |

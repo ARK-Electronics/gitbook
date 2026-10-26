@@ -9,6 +9,8 @@ The ARK SAM GPS is a GNSS module built around the [u-blox SAM-M10Q](https://www.
 
 Buy: [ARK SAM GPS](https://arkelectron.com/product/ark-sam-gps/) · [ARK SAM GPS MINI](https://arkelectron.com/product/ark-sam-gps-mini/)
 
+CAD: [ARK SAM GPS](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SAM_GPS/model) · [ARK SAM GPS MINI](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SAM_GPS_MINI/model)
+
 | Variant | Dimensions | Weight |
 |---------|------------|--------|
 | ARK SAM GPS | 3.6 × 3.6 × 0.8 cm | 11 g |

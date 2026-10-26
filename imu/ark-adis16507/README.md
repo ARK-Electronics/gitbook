@@ -9,6 +9,8 @@ The ARK ADIS16507 is an SPI IMU board built around the [Analog Devices ADIS16507
 
 [Buy the ARK ADIS16507](https://arkelectron.com/product/ark-adis16507/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_ADIS16507/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_ADIS16507/case)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, datasheets, 3D model and case |

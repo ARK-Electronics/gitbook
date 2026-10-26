@@ -7,6 +7,8 @@ coverY: -16
 
 An NVIDIA Jetson Orin Nano/NX carrier board built around the ARKV6X flight controller and the Pixhawk Autopilot Bus. It runs PX4 and ships with ARK-OS pre-installed.
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/case)
+
 ## Where to Start
 
 **Your bundle arrived preflashed.** The Jetson already runs ARK-OS and the flight controller already has PX4. Go to [Set Up Your Carrier](setup/), then manage it from the ARK-UI web interface.

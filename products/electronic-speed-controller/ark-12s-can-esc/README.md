@@ -12,6 +12,8 @@ The ARK 12S CAN ESC is a single motor, three phase speed controller for 4S–12S
 
 [Buy the ARK 12S CAN ESC](https://arkelectron.com/product/ark-12s-can-esc/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_CAN_ESC/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_CAN_ESC/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Flashing over SWD, CAN or PX4, ARK32 Configurator, node parameters, ESC index, debug console |

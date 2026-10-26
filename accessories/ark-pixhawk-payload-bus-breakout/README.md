@@ -12,6 +12,8 @@ The ARK Pixhawk Payload Bus Breakout fans the 30-pin Payload Bus out to individu
 
 [Buy the ARK Pixhawk Payload Bus Breakout](https://arkelectron.com/product/ark-pixhawk-payload-bus-breakout/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pixhawk_Payload_Bus_Breakout/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, power, datasheet, 3D model |
