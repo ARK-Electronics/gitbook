@@ -17,9 +17,10 @@
 | Logging | Micro-SD slot for mosaic-X5 logging |
 | Power | 5 V; 260 mA average, 340 mA peak |
 | Operating temperature | −25 °C to +70 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Weight | 21 g |
 
-The buzzer limits operating temperature to +70 °C and the JST connectors and micro-SD slot to −25 °C. The mosaic-X5 itself is rated −40 °C to +85 °C.
+The buzzer sets the +70 °C operating limit and the JST connectors and micro-SD slot the −25 °C limit. The mosaic-X5 itself is rated −40 °C to +85 °C operating and −55 °C to +85 °C storage.
 
 ## Pinout
 
