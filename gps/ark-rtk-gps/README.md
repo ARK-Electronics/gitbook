@@ -7,7 +7,7 @@ coverY: 0
 
 An open source DroneCAN RTK GNSS module that connects to a flight controller's CAN port.
 
-<a href="https://arkelectron.com/product-category/sensors/gps/rtk-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
+<a href="https://arkelectron.com/product/ark-rtk-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
 * **Receiver:** u-blox ZED-F9P, centimeter-level RTK
 * **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
