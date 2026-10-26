@@ -5,7 +5,7 @@
 | Specification | Value |
 |---------------|-------|
 | GNSS receiver | [Septentrio mosaic-X5](https://www.septentrio.com/en/products/gps/gnss-receiver-modules/mosaic-x5), triple-band L1/L2/L5 |
-| Update rate | Up to 100 Hz. Ships at 20 Hz; set [`SEP_OUT_RATE`](firmware.md#node-parameters) to `10` (ms) for 100 Hz |
+| Update rate | Up to 100 Hz |
 | Interference protection | [AIM+ jamming protection](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference) |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp390.html) |
