@@ -13,7 +13,7 @@ An SPI IMU board with an 11-pin JST-GH connector that matches the SPI port on th
 * **Range:** 2000 dps, 392 m/s²
 * **Interface:** SPI, 11-pin JST-GH
 * **Autopilots:** PX4, ArduPilot
-* **Compliance:** USA built, FCC
+* **Compliance:** USA built
 
 ## Documentation
 

@@ -13,7 +13,7 @@ An open source DroneCAN RTK GNSS module that connects to a flight controller's C
 * **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
 * **Interface:** 2× CAN, F9P UART2, safety switch, buzzer
 * **Autopilots:** PX4, ArduPilot (AP\_Periph recommended)
-* **Compliance:** USA built, NDAA, FCC, Blue Framework listed (L1/L2 model)
+* **Compliance:** USA built, NDAA, Blue Framework listed (L1/L2 model)
 
 ## Variants
 

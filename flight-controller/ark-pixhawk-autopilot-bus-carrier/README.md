@@ -12,7 +12,7 @@ A flight controller carrier board built to the Pixhawk Autopilot Bus standard. I
 * **Power:** dual digital power module inputs
 * **Interfaces:** Ethernet, two GPS, two CAN, three TELEM, eight PWM, RC, SPI, ADIO, debug
 * **Autopilots:** PX4
-* **Compliance:** USA built, NDAA, FCC
+* **Compliance:** USA built, NDAA
 
 ## Documentation
 

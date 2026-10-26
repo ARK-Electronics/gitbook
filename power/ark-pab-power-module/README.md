@@ -13,7 +13,7 @@ A power supply and digital power monitor for Pixhawk Autopilot Bus carriers, suc
 * **Battery:** 33 V maximum, 60 A continuous
 * **Power monitor:** TI INA226, I2C
 * **Autopilots:** PX4, ArduPilot
-* **Compliance:** USA built, FCC
+* **Compliance:** USA built, NDAA
 
 ## Variants
 

@@ -12,7 +12,7 @@ An open source DroneCAN node that puts I2C, SPI and UART sensors on the CAN bus 
 * **IMU:** InvenSense ICM-42688-P, 6-axis
 * **Interfaces:** 2× CAN, I2C, SPI, UART, 8 PWM outputs
 * **Firmware:** PX4 DroneCAN or ArduPilot AP\_Periph
-* **Compliance:** USA built, FCC
+* **Compliance:** USA built
 
 ## Documentation
 
