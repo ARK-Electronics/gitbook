@@ -16,10 +16,10 @@ A flight controller module built to the Pixhawk FMUv6X and Autopilot Bus standar
 
 ## Variants
 
-| Variant | IMUs | Gyro | Accel | Buy |
-|---------|------|------|-------|-----|
-| **ARKV6X** | 2× ICM-42688-P, IIM-42652 | 2000 dps | 16 g | [Module](https://arkelectron.com/product/arkv6x/) · [With PAB carrier](https://arkelectron.com/product/arkv6x-bundle/) |
-| **ARKV6X Extended Range** | 3× IIM-42653 | 4000 dps | 32 g | [Module](https://arkelectron.com/product/arkv6x-iim-42653/) · [With PAB carrier](https://arkelectron.com/product/arkv6x-extended-range-bundle/) |
+| Variant | IMUs | Range | Module | On PAB carrier |
+|---------|------|-------|--------|----------------|
+| **ARKV6X** | 2× ICM-42688-P, IIM-42652 | 2000 dps, 16 g | [Buy](https://arkelectron.com/product/arkv6x/) | [Buy](https://arkelectron.com/product/arkv6x-bundle/) |
+| **ARKV6X Extended Range** | 3× IIM-42653 | 4000 dps, 32 g | [Buy](https://arkelectron.com/product/arkv6x-iim-42653/) | [Buy](https://arkelectron.com/product/arkv6x-extended-range-bundle/) |
 
 ## Documentation
 
