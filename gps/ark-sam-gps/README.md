@@ -7,7 +7,7 @@ coverY: -5
 
 A GNSS and magnetometer module that connects to a flight controller's GPS port over UART and I2C.
 
-<a href="#variants" class="button primary" data-icon="cart-shopping">Buy</a>
+<a href="https://arkelectron.com/product-tag/sam-m10q/" class="button primary" data-icon="cart-shopping">Buy</a>
 
 * **Receiver:** u-blox SAM-M10Q, 4 concurrent GNSS
 * **Sensors:** ST IIS2MDC magnetometer

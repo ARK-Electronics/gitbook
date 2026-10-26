@@ -7,7 +7,7 @@ coverY: 0
 
 A flight controller module built to the Pixhawk FMUv6X and Autopilot Bus standards. It plugs into any PAB carrier, such as the [ARK Pixhawk Autopilot Bus Carrier](../ark-pixhawk-autopilot-bus-carrier/README.md).
 
-<a href="#variants" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARKV6X/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARKV6X/datasheet/ARKV6X_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
+<a href="https://arkelectron.com/product-category/flight-controllers/arkv6/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARKV6X/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARKV6X/datasheet/ARKV6X_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
 * **Processor:** STM32H743, 480 MHz
 * **Sensors:** triple synced IMUs, Bosch BMP390 barometer, Bosch BMM150 magnetometer
