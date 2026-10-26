@@ -5,22 +5,22 @@ coverY: 0
 
 # ARKV6X
 
-The ARKV6X is a flight controller module based on the [FMUV6X and Pixhawk Autopilot Bus open source standards](https://github.com/pixhawk/Pixhawk-Standards), with an [STM32H743IIK6](https://www.st.com/en/microcontrollers-microprocessors/stm32h743ii.html) MCU, a [Bosch BMP390](https://www.bosch-sensortec.com/en/products/environmental-sensors/pressure-sensors/bmp390) barometer and a [Bosch BMM150](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmm150-ds001.pdf) magnetometer. With triple synced IMUs, data averaging, voting, and filtering is possible. The Pixhawk Autopilot Bus (PAB) form factor enables the ARKV6X to be used on any [PAB-compatible carrier board](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html), such as the [ARK Pixhawk Autopilot Bus Carrier](../ark-pixhawk-autopilot-bus-carrier/README.md). It ships with PX4 and can be flashed with ArduPilot. USA built, NDAA compliant, FCC compliant and [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list).
+A flight controller module built to the Pixhawk FMUv6X and Autopilot Bus standards. It plugs into any PAB carrier, such as the [ARK Pixhawk Autopilot Bus Carrier](../ark-pixhawk-autopilot-bus-carrier/README.md).
 
-Buy: [ARKV6X](https://arkelectron.com/product/arkv6x/) · [ARKV6X Extended Range](https://arkelectron.com/product/arkv6x-iim-42653/) · [ARKV6X Bundle](https://arkelectron.com/product/arkv6x-bundle/) · [ARKV6X Extended Range Bundle](https://arkelectron.com/product/arkv6x-extended-range-bundle/)
+<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARKV6X/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARKV6X/datasheet/ARKV6X_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARKV6X/model)
+* **Processor:** STM32H743, 480 MHz
+* **Sensors:** three synced IMUs, Bosch BMP390 barometer, Bosch BMM150 magnetometer
+* **Autopilots:** PX4 (preinstalled), ArduPilot
+* **Compliance:** USA built, NDAA, FCC, Blue Framework listed
 
-| Variant | IMUs | Gyro range | Accel range | On an ARK PAB Carrier |
-|---------|------|------------|-------------|------------------------|
-| ARKV6X | Dual ICM-42688-P, IIM-42652 | 2000 dps | 16 g | No |
-| ARKV6X Extended Range | Triple IIM-42653 | 4000 dps | 32 g | No |
-| ARKV6X Bundle | Dual ICM-42688-P, IIM-42652 | 2000 dps | 16 g | Yes |
-| ARKV6X Extended Range Bundle | Triple IIM-42653 | 4000 dps | 32 g | Yes |
+## Variants
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Build targets, flashing PX4 and ArduPilot, bootloader recovery |
-| [Hardware Reference](hardware.md) | Specifications, pinout, serial port mapping, datasheet, 3D model |
-| [PX4 Instructions](px4-instructions.md) | PX4 documentation |
-| [ArduPilot Instructions](ardupilot-instructions.md) | ArduPilot documentation, serial port mapping, hwdef changes for an IOMCU |
+| Variant | IMUs | Gyro | Accel | Buy |
+|---------|------|------|-------|-----|
+| **ARKV6X** | 2× ICM-42688-P, IIM-42652 | 2000 dps | 16 g | [Module](https://arkelectron.com/product/arkv6x/) · [With PAB carrier](https://arkelectron.com/product/arkv6x-bundle/) |
+| **ARKV6X Extended Range** | 3× IIM-42653 | 4000 dps | 32 g | [Module](https://arkelectron.com/product/arkv6x-iim-42653/) · [With PAB carrier](https://arkelectron.com/product/arkv6x-extended-range-bundle/) |
+
+## Documentation
+
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Firmware</strong></td><td>Build targets, flashing PX4 and ArduPilot, bootloader recovery</td><td><a href="firmware.md">firmware.md</a></td></tr><tr><td><strong>Hardware Reference</strong></td><td>Specifications, pinout, serial port mapping</td><td><a href="hardware.md">hardware.md</a></td></tr><tr><td><strong>PX4 Instructions</strong></td><td>Setting up PX4</td><td><a href="px4-instructions.md">px4-instructions.md</a></td></tr><tr><td><strong>ArduPilot Instructions</strong></td><td>Serial port mapping, hwdef changes for an IOMCU</td><td><a href="ardupilot-instructions.md">ardupilot-instructions.md</a></td></tr></tbody></table>
