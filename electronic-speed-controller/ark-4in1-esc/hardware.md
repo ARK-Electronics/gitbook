@@ -71,10 +71,6 @@ The ARK 4IN1 ESC has 450µF of bulk capacitance built in, which is sufficient fo
 For 8S and above, add an external bulk capacitor across the battery input to keep switching and inrush transients below the 65V absolute maximum. Long battery leads increase inductance and make transients worse at any voltage.
 {% endhint %}
 
-## Motor Leads
-
-No maximum motor-lead length is specified. ARK airframes fly with motor leads up to 400 mm. Long motor leads don't call for extra input capacitance; long battery leads do, see [Capacitance](#capacitance).
-
 ## Datasheets
 
 * [ARK 4IN1 ESC](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_4IN1_ESC/datasheet/ARK_4IN1_ESC_Datasheet.pdf)

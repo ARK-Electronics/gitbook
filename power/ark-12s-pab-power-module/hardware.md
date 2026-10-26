@@ -38,10 +38,6 @@ The ARK 12S PAB Power Module is rated for 100A continuous battery current at 20C
 
 When operating at high battery current and/or high 5V regulator output current, it is recommended to actively cool the board.
 
-## 6S Operation
-
-The module runs on 6S. The included capacitor and TVS diode are only needed at 12S.
-
 ## Capacitor and TVS Diode
 
 <figure><img src="../../.gitbook/assets/IMG_3824 edited.JPG" alt=""><figcaption><p>12S with Capacitor and TVS Diode</p></figcaption></figure>

@@ -51,10 +51,6 @@ The ARK 12S Payload Power Module is rated for 100A continuous battery current at
 
 When operating at high battery current and/or high 5V/12V regulator output current, it is recommended to actively cool the board.
 
-## 6S Operation
-
-Both outputs deliver 6 A at the same time on 6S.
-
 ## Output Protection
 
 Each output has its own short-circuit and thermal protection, which recovers on its own. A fault on one output doesn't shut down the other. The power monitor runs from the 5.2 V output, so a 5.2 V fault also stops battery monitoring.
