@@ -6,7 +6,7 @@
 |---------------|-------|
 | GNSS receiver | [Septentrio mosaic-X5](https://www.septentrio.com/en/products/gps/gnss-receiver-modules/mosaic-x5), triple-band L1/L2/L5 |
 | Update rate | 100 Hz |
-| Interference protection | [AIM+ jamming protection](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/aim-jamming-protection) |
+| Interference protection | [AIM+ jamming protection](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference) |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp390.html) |
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |

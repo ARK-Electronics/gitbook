@@ -10,7 +10,7 @@
 | Continuous current | 60 A battery at 20 °C ambient |
 | Battery input and output | XT60 (ARK PAB Power Module), solder pads (No Connector) |
 | Avionics output | 6-pin Molex CLIK-Mate, matches the [ARK PAB carrier power pinout](https://docs.px4.io/main/en/flight_controller/arkpab.html#power1) |
-| Dimensions | 4.75 × 3.43 × 1.15 cm (ARK PAB Power Module), 4.75 × 3.43 × 0.86 cm (No Connector) |
+| Dimensions | 4.75 × 3.43 × 1.15 cm (ARK PAB Power Module), 4.05 × 3.43 × 0.86 cm (No Connector) |
 | Weight | 17.9 g (ARK PAB Power Module), 9.5 g (No Connector) |
 
 ## Current Rating and Cooling

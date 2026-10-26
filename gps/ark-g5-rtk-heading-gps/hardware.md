@@ -8,7 +8,7 @@
 | Positioning | cm-level RTK |
 | Dual antenna heading | MAIN (SMA jack) and ANT2 (U.FL connector), triple-band. Dual antenna as shipped on the P3H; `SEP_ANT_MODE` `2` on the P6 and P8 |
 | Update rate | 20 Hz (P3H), 100 Hz (P8) |
-| Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/aim-jamming-protection) (P3H), [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P6), [AIM+ ultimate](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P8): jamming and spoofing detection and mitigation |
+| Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference) (P3H), [AIM+ Premium](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P6), [AIM+ ultimate](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference#paragraph-id-21060) (P8): jamming and spoofing detection and mitigation |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) |
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |

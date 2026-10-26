@@ -16,8 +16,6 @@
 | Dimensions | 94.25 × 36.00 × 18 mm, without VOXL2 and flight controller module |
 | Weight | 25 g |
 
-This product is not intended for military use. See the [u-blox code of conduct](https://www.u-blox.com/en/code-of-conduct).
-
 ## Pinout
 
 <figure><img src="../../.gitbook/assets/Pinout Guide 1 (1).png" alt=""><figcaption></figcaption></figure>

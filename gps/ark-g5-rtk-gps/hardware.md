@@ -7,7 +7,7 @@
 | GNSS receiver | Septentrio [mosaic-G5 P3](https://www.septentrio.com/en/products/gnss-receivers/gnss-receiver-modules/mosaic-G5-P3), multi-constellation, quad-band |
 | Positioning | cm-level RTK, Galileo HAS |
 | Update rate | 20 Hz |
-| Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/Advanced-positioning-technology/gnss-technology/ionospheric-scintillation-monitoring): jamming and spoofing detection and mitigation |
+| Interference protection | [AIM+](https://www.septentrio.com/en/learn-more/advanced-positioning-technology/gps-gnss-interference): jamming and spoofing detection and mitigation |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) |
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
