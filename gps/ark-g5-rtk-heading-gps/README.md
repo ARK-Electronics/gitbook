@@ -7,7 +7,7 @@ coverY: 0
 
 A DroneCAN RTK GNSS module that computes heading from two antennas in the module and reports it as one GPS node, for yaw without a compass. For the single-antenna P3, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
 
-<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
+<a href="#variants" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
 * **Receiver:** Septentrio mosaic-G5 P3H, P6 or P8, quad-band, centimeter-level RTK
 * **Sensors:** ST IIS2MDC magnetometer, Bosch BMP390 barometer, InvenSense ICM-42688-P IMU
