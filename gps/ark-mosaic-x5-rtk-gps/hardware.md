@@ -16,7 +16,10 @@
 | Interfaces | Two CAN ([DroneCAN](https://dronecan.github.io/), 5 V input), receiver UART2 with timepulse and GP1, Pixhawk-standard basic GPS port (USART3 and I2C2 from the MCU) for external sensors such as airspeed or distance, receiver USB-C (USB 2.0, 5 V input), debug |
 | Logging | Micro-SD slot for mosaic-X5 logging |
 | Power | 5 V; 260 mA average, 340 mA peak |
+| Operating temperature | −25 °C to +70 °C |
 | Weight | 21 g |
+
+The buzzer limits operating temperature to +70 °C and the JST connectors and micro-SD slot to −25 °C. The mosaic-X5 itself is rated −40 °C to +85 °C.
 
 ## Pinout
 
