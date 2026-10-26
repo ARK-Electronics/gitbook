@@ -31,11 +31,13 @@ The RC7611 needs the QMI\_WWAN driver. Every ARK Jetson image includes it; stock
 
 ### 3. Connect to the Device
 
-Connect a Micro USB cable and SSH in:
+Connect the carrier's USB port to your PC (USB-C on the ARK Just A Jetson and ARK Jetson PAB Carrier V3, Micro USB on the ARK Jetson PAB Carrier) and SSH in:
 
 ```
-ssh jetson@jetson.local
+ssh jetson@192.168.55.1
 ```
+
+On a network, use `ssh jetson@jetson.local` instead.
 
 ### 4. Determine the Modem Instance Number
 

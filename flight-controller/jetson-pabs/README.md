@@ -8,7 +8,7 @@
 [ark-jetson-pab-carrier-v3](ark-jetson-pab-carrier-v3/)
 {% endcontent-ref %}
 
-The ARK Jetson PAB Carrier and ARK Jetson PAB Carrier V3 are NVIDIA Jetson Orin Nano/NX carrier boards built around the ARKV6X flight controller and the Pixhawk Autopilot Bus. Both run PX4 and ship with ARK-OS pre-installed. The V3 is a re-architected revision that adds a dedicated I/O co-processor (doubling the PWM outputs to 16), consolidates wiring into two 40-pin avionics connectors, and adds a 30-pin Pixhawk Payload Bus.
+The ARK Jetson PAB Carrier and ARK Jetson PAB Carrier V3 are NVIDIA Jetson Orin Nano/NX carrier boards built around the ARKV6X flight controller and the Pixhawk Autopilot Bus. Both run PX4 and ARK-OS; the bundles ship with ARK-OS preinstalled. The V3 is a re-architected revision that adds a dedicated I/O co-processor (doubling the PWM outputs to 16), consolidates wiring into two 40-pin avionics connectors, and adds a 30-pin Pixhawk Payload Bus.
 
 ## Comparison
 

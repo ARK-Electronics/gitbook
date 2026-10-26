@@ -12,7 +12,7 @@ A carrier board for an NVIDIA Jetson Orin Nano or NX module and a Pixhawk Autopi
 * **Flight controller I/O:** eight PWM, two CAN, TELEM, GPS, RC, SPI, I2C on JST-GH
 * **Jetson interfaces:** gigabit Ethernet (RJ45), three USB 3.0 and one USB 2.0 Type-A, four CSI cameras, Mini DisplayPort, CAN, M.2 Key E
 * **Power:** three 5 V, 6 A inputs (Molex CLIK-Mate)
-* **Software:** ARK-OS on the Jetson, PX4 on the flight controller
+* **Software:** ARK-OS on the Jetson (preinstalled on the bundles), PX4 on the flight controller
 * **Compliance:** USA built, NDAA
 
 ## Where to Start
