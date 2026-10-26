@@ -10,8 +10,8 @@
 | Input voltage | 75 V maximum (12S) |
 | Continuous current | 100 A battery at 20 °C ambient |
 | Battery input and output | Solder pads |
-| Avionics output | 6-pin Molex CLIK-Mate, 5 V, matches the [ARK PAB carrier power pinout](https://docs.px4.io/main/en/flight_controller/arkpab.html#power1) |
-| Payload output | 4-pin Molex CLIK-Mate, 12 V |
+| Avionics output | 6-pin Molex CLIK-Mate, 5 V, matches the [ARK PAB carrier power pinout](https://docs.px4.io/main/en/flight_controller/arkpab.html#power1). Two 5.2 V pins, 3 A each |
+| Payload output | 4-pin Molex CLIK-Mate, 12 V. Two 12 V pins, 3 A each |
 | Dimensions | 3.7 × 3.5 × 1.3 cm |
 | Weight | 20.5 g |
 
@@ -47,9 +47,17 @@ The power monitor measures only the current that flows from the battery input pa
 
 ## Current Rating and Cooling
 
-The ARK 12S Payload Power Module is rated for 100A continuous battery current at 20C ambient. It is recommended to run multiple power modules in parallel if more than 100A continuous current is required.
+The ARK 12S Payload Power Module is rated for 100A continuous battery current at 20C ambient. It has no peak rating above 100A. It is recommended to run multiple power modules in parallel if more than 100A continuous current is required.
 
 When operating at high battery current and/or high 5V/12V regulator output current, it is recommended to actively cool the board.
+
+## 6S Operation
+
+Both outputs deliver 6 A at the same time on 6S.
+
+## Output Protection
+
+Each output has its own short-circuit and thermal protection, which recovers on its own. A fault on one output doesn't shut down the other. The power monitor runs from the 5.2 V output, so a 5.2 V fault also stops battery monitoring.
 
 ## Datasheet
 

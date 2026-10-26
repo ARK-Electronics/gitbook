@@ -9,7 +9,7 @@
 | Input voltage | 75 V maximum (12S), 10 V minimum at 6 A out |
 | Continuous current | 100 A battery at 20 °C ambient |
 | Battery input and output | Solder pads |
-| Avionics output | 6-pin Molex CLIK-Mate, matches the [ARK PAB carrier power pinout](https://docs.px4.io/main/en/flight_controller/arkpab.html#power1) |
+| Avionics output | 6-pin Molex CLIK-Mate, matches the [ARK PAB carrier power pinout](https://docs.px4.io/main/en/flight_controller/arkpab.html#power1). Two 5.2 V pins, 3 A each |
 | Dimensions | 3.7 × 2.2 × 1.3 cm |
 | Weight | 11.5 g |
 
@@ -37,6 +37,10 @@ The power monitor measures only the current that flows from the battery input pa
 The ARK 12S PAB Power Module is rated for 100A continuous battery current at 20C ambient. It is recommended to run multiple power modules in parallel if more than 100A continuous current is required.
 
 When operating at high battery current and/or high 5V regulator output current, it is recommended to actively cool the board.
+
+## 6S Operation
+
+The module runs on 6S. The included capacitor and TVS diode are for 12S.
 
 ## Capacitor and TVS Diode
 

@@ -7,7 +7,7 @@
 | MCU | 4 × STM32F051, one per motor channel |
 | Gate driver | [TI DRV8328](https://www.ti.com/product/DRV8328) |
 | Input voltage | 3S–8S LiPo, 6 V minimum, 65 V absolute maximum |
-| Current per motor | 50 A continuous, 75 A burst. CONS: MR30 connector limit 30 A continuous, 40 A burst |
+| Current per motor | 50 A continuous, 75 A burst. CONS: MR30 connector limit 30 A continuous, 40 A burst. See [Current Rating](#current-rating) |
 | Bulk capacitance | 450 µF, see [Capacitance](#capacitance) |
 | Current sensor | Onboard, one shunt shared by all four channels |
 | Input protocols | DShot (300, 600) with bidirectional DShot and KISS serial telemetry; PWM |
@@ -52,6 +52,17 @@
 
 Each SWDIO/SWDCLK pair reaches one channel's MCU. See [Flash Bootloader](firmware/flash-bootloader.md) for ST-LINK wiring.
 
+## Current Rating
+
+The 50 A continuous and 75 A burst ratings are per channel. They are board thermal limits, not component limits, and assume some airflow. They have no fixed duration: how long a channel holds a current depends on airflow, ambient temperature and how well the airframe draws heat away.
+
+| Condition | Current |
+|-----------|---------|
+| Per channel, with airflow | 50 A continuous, 75 A burst |
+| Per channel, little airflow (hover) | 25–30 A continuous. No derating curve is published |
+| All four channels | About 170 A continuous in total, limited by the current-sense shunt the channels share. About 43 A per channel when loaded evenly |
+| CONS, per motor | 30 A continuous, 40 A burst (MR30 connector limit) |
+
 ## Capacitance
 
 The ARK 4IN1 ESC has 450µF of bulk capacitance built in, which is sufficient for most 3S–6S installations with short battery leads.
@@ -59,6 +70,10 @@ The ARK 4IN1 ESC has 450µF of bulk capacitance built in, which is sufficient fo
 {% hint style="warning" %}
 For 8S and above, add an external bulk capacitor across the battery input to keep switching and inrush transients below the 65V absolute maximum. Long battery leads increase inductance and make transients worse at any voltage.
 {% endhint %}
+
+## Motor Leads
+
+No maximum motor-lead length is specified. ARK airframes fly with motor leads up to 400 mm. Long motor leads don't call for extra input capacitance; long battery leads do, see [Capacitance](#capacitance).
 
 ## Datasheets
 
