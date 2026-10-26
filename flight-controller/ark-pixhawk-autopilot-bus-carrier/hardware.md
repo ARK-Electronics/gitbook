@@ -47,12 +47,16 @@ There are two LEDs on the ARK PAB:
 
 ## Power
 
-* 5V input on `POWER1`, `POWER2`, `USB C`, and the `USB JST-GH` connector
-  * Input is prioritized in the following order: POWER1 > POWER2 > USB. Only the selected input powers the board; see [Carrier Power Inputs](../../knowledge-base/carrier-power-inputs.md)
-  * `USB C` and the `USB JST-GH` are in parallel
-  * Overvoltage protection at 5.85V
-  * Undervoltage protection at 3.81V
-* `VDD_5V_HIPOWER` and `VDD_5V_PERIPH` can each provide a total of 1.5A across all the connectors
+| Input or rail | Rating |
+|---------------|--------|
+| `POWER1`, `POWER2` | 5 V, 6 A each (two power pins, 3 A each) |
+| `USB C`, `USB JST-GH` | 5 V, in parallel |
+| Input protection | Undervoltage 3.81 V, overvoltage 5.85 V |
+| Input range with an ARKV6X | 4.8 V minimum, 5.5 V absolute maximum. The selected input powers the flight controller module directly |
+| `VDD_5V_HIPOWER` | 1.5 A current limit, shared by GPS2, TELEM1, TELEM3 and CAN1 |
+| `VDD_5V_PERIPH` | 1.5 A current limit, shared by GPS1, TELEM2, UART4/I2C3, I2C3, CAN2, ADIO and SPI6 |
+
+Inputs are prioritized POWER1 > POWER2 > USB. Only the selected input powers the board, so the flight controller module and both 5 V rails draw from it; see [Carrier Power Inputs](../../knowledge-base/carrier-power-inputs.md).
 
 ## 3D Model and Case
 

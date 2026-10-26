@@ -9,7 +9,7 @@
 | Input voltage | 33 V maximum, 5.8 V minimum at 6 A out |
 | Continuous current | 60 A battery at 20 °C ambient |
 | Battery input and output | XT60 (ARK PAB Power Module), solder pads (No Connector) |
-| Avionics output | 6-pin Molex CLIK-Mate, matches the [ARK PAB carrier power pinout](https://docs.px4.io/main/en/flight_controller/arkpab.html#power1) |
+| Avionics output | 6-pin Molex CLIK-Mate, matches the [ARK PAB carrier power pinout](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/pinout.md#power1-6-pin-2.00mm-molex-clik-mate-502443). Two 5.2 V pins, 3 A each |
 | Dimensions | 4.75 × 3.43 × 1.15 cm (ARK PAB Power Module), 4.05 × 3.43 × 0.86 cm (No Connector) |
 | Weight | 17.9 g (ARK PAB Power Module), 9.5 g (No Connector) |
 
