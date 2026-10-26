@@ -7,6 +7,8 @@ coverY: 0
 
 ARK Just A Jetson carrier, SiMa.ai Modalix SOM, heatsink and fan. Optional NDAA 480GB M.2 NVMe SSD.
 
+<a href="https://arkelectron.com/product/ark-just-a-jetson-modalix-bundle/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Jetson/model" class="button secondary" data-icon="cube">3D model</a>
+
 The carrier is the same hardware as [ARK Just A Jetson](../ark-just-a-jetson/). This page covers SOM differences only.
 
 {% hint style="info" %}

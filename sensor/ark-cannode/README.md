@@ -5,15 +5,18 @@ coverY: 0
 
 # ARK CANnode
 
-The ARK CANnode is an open source generic [DroneCAN](https://docs.px4.io/main/en/dronecan/) node that includes an [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/) 6-axis IMU. Its main purpose is to enable the use of non-CAN sensors (I2C, SPI, UART) on the CAN bus. It also has PWM outputs to expand a vehicle's control outputs in quantity and physical distance. It runs PX4 DroneCAN firmware or ArduPilot AP\_Periph. USA built and FCC compliant.
+An open source DroneCAN node that puts I2C, SPI and UART sensors on the CAN bus and adds PWM outputs to a vehicle.
 
-[Buy the ARK CANnode](https://arkelectron.com/product/ark-cannode/)
+<a href="https://arkelectron.com/product/ark-cannode/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_CANnode/case)
+* **IMU:** InvenSense ICM-42688-P, 6-axis
+* **Interfaces:** 2× CAN, I2C, SPI, UART, 8 PWM outputs
+* **Firmware:** PX4 DroneCAN or ArduPilot AP\_Periph
+* **Compliance:** USA built, FCC
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | PX4 and AP\_Periph firmware: downloads, building, flashing, node parameters and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, wiring, 3D model, case, schematic and BOM |
-| [PX4 Instructions](px4-instructions.md) | Configuring with PX4, and using the CANnode as a PWM expander |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Configuring with ArduPilot, gripper and servo setup |
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

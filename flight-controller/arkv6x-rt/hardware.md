@@ -29,7 +29,7 @@ Values are for Rev 1.0, the revision in production. Rev 2.0 differences are unde
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/pressure-sensors-bmp390.html) on I2C2, address 0x76 |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) on I2C3, address 0x1E |
 | FRAM | Infineon FM25V02A, 256 Kbit (32 KB), on FlexSPI2. PX4 stores parameters here |
-| Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf): 100-pin Hirose DF40C-100DP-0.4V(51) and 50-pin Hirose DF40C-50DP-0.4V(51) |
+| Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf): 100-pin Hirose DF40C-100DP-0.4V(51) and 50-pin Hirose DF40C-50DP-0.4V(51). Fits any [PAB-compatible carrier](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html) |
 | Heater | 1 W on 5 V, about 200 mA, for warming the sensors in extreme cold |
 | Indicators | Red, green, and blue LEDs |
 | Storage | MicroSD slot. A MicroSD card is included |

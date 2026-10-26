@@ -5,14 +5,18 @@ coverY: 0
 
 # ARK GPS
 
-The ARK GPS is an open source [DroneCAN](https://dronecan.github.io/) GNSS module built around the [u-blox NEO-M9N](https://www.u-blox.com/en/product/neo-m9n-module) receiver, with a magnetometer, barometer, IMU, buzzer and safety switch. It runs the open source PX4 DroneCAN firmware and works with PX4, or with ArduPilot through [AP\_Periph](firmware.md#updating-to-ap_periph). USA built and FCC compliant.
+An open source DroneCAN GNSS module that connects to a flight controller's CAN port.
 
-[Buy the ARK GPS](https://arkelectron.com/product/ark-gps/)
+<a href="https://arkelectron.com/product/ark-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_GPS/case)
+* **Receiver:** u-blox NEO-M9N, 4 concurrent GNSS
+* **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
+* **Interface:** 2× CAN, safety switch, buzzer
+* **Autopilots:** PX4, ArduPilot (AP\_Periph on the node)
+* **Compliance:** USA built, FCC
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Build targets, updating, AP\_Periph, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case, schematic and BOM |
-| [PX4 Instructions](px4-instructions.md) | Wiring, mounting and configuring with PX4 |
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)

@@ -6,7 +6,7 @@
 |---------------|-------|
 | Magnetometer | [PNI RM3100](https://www.pnisensor.com/rm3100/), tri-axis |
 | MCU | STM32F412VG |
-| CAN | 2× Pixhawk-standard 4-pin JST-GH |
+| CAN | [DroneCAN](https://dronecan.github.io/), 2× Pixhawk-standard 4-pin JST-GH |
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 44 mA average, 50 mA max |
 | Dimensions | 2.7 × 1.8 × 0.9 cm |

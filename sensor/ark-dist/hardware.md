@@ -11,7 +11,7 @@
 | Laser | 850 nm, Class 1 eye safe (IEC 60825-1) |
 | Beam | 2° × 2°, 3.5 cm spot at 1 m. SR and MR: 32-pixel receiver, 12.4° × 6.2° field of view, reference pixel for system health monitoring |
 | MCU | STM32F412VG |
-| CAN | DroneCAN range, 2× Pixhawk-standard 4-pin JST-GH |
+| CAN | [DroneCAN](https://dronecan.github.io/) range, 2× Pixhawk-standard 4-pin JST-GH. ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan) |
 | UART | MAVLink 2 `DISTANCE_SENSOR`, Pixhawk-standard 6-pin JST-GH |
 | Debug | NSH console and SWD, Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 78–86 mA |

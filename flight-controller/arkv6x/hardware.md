@@ -20,6 +20,7 @@
 | Mounting | PAB. In the bundles, the module is screwed into the ARK PAB Carrier with four M2×8 mm screws |
 | Dimensions | 3.6 × 2.9 × 0.5 cm |
 | Weight | 5.0 g |
+| Compliance | USA built, NDAA compliant, FCC compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

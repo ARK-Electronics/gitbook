@@ -21,6 +21,7 @@
 | Mounting | 30.5 mm |
 | Dimensions | 3.6 × 3.6 × 0.8 cm |
 | Weight | 7.5 g with MicroSD card |
+| Compliance | USA built, NDAA compliant. The ARK FPV is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

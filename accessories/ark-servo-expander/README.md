@@ -5,13 +5,17 @@ coverY: 0
 
 # ARK Servo Expander
 
-The ARK Servo Expander is an I2C to 16-channel servo/PWM expander built around the [NXP PCA9685](https://www.nxp.com/products/PCA9685) PWM controller, with two 8-channel 10-pin JST-GH outputs. It works with flight controllers running PX4. USA built and NDAA compliant.
+An I2C to 16-channel servo/PWM expander for flight controllers running PX4.
 
-[Buy the ARK Servo Expander](https://arkelectron.com/product/ark-servo-expander/)
+<a href="https://arkelectron.com/product/ark-servo-expander/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Servo_Expander/model" class="button secondary" data-icon="cube">3D model</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Servo_Expander/model)
+* **PWM controller:** NXP PCA9685
+* **Outputs:** 16 PWM channels on two 10-pin JST-GH connectors
+* **Interface:** I2C, 4-pin JST-GH
+* **Autopilots:** PX4
+* **Compliance:** USA built, NDAA
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, resistor settings, 3D model |
-| [PX4 Instructions](px4-instructions.md) | Enabling the PCA9685 driver in PX4 |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)

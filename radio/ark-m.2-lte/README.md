@@ -1,14 +1,12 @@
 ---
-description: >-
-  This guide will help you set up the ARK Jetson PAB Carrier with the RC7611 LTE
-  module.
+description: Set up the ARK M.2 LTE (Sierra Wireless RC7611) on an ARK Jetson carrier.
 cover: ../../.gitbook/assets/IMG_2982 edited (Large).JPG
 coverY: -14
 ---
 
 # ARK M.2 LTE
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_M.2_LTE/model)
+<a href="https://arkelectron.com/product/ark-m-2-lte/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_M.2_LTE/model" class="button secondary" data-icon="cube">3D model</a>
 
 ### Prerequisites
 
@@ -174,7 +172,3 @@ ping -4 -c 4 -I wwan0 8.8.8.8
 * **Modem not registering?** Double-check the APN value.
 * **Modem not detected?** Ensure the required kernel modules are enabled.
 * **SIM card inactive?** Make sure your SIM has a valid data plan.
-
-## 3D Model
-
-Find the 3D model at [https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK\_M.2\_LTE/model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_M.2_LTE/model)

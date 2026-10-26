@@ -13,8 +13,10 @@
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
 | MCU | STM32F412VGH6 |
 | Buzzer | Yes |
+| Interfaces | Two CAN ([DroneCAN](https://dronecan.github.io/)), I2C and timepulse, debug |
 | Power | 5 V, 137 mA |
 | Weight | 16 g |
+| Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

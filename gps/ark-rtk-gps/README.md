@@ -5,20 +5,26 @@ coverY: 0
 
 # ARK RTK GPS
 
-The ARK RTK GPS is an open source [DroneCAN](https://dronecan.github.io/) RTK GNSS module built around the [u-blox ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module) multi-band receiver, with a magnetometer, barometer, IMU, buzzer and safety switch. It works with PX4 and ArduPilot. The ARK RTK GPS L1L5 variant uses the u-blox ZED-F9P-15B, which receives the L1/L5 bands instead of L1/L2; the L5 band improves resilience to interference and multipath. Aside from the receiver, the L1L5 variant is identical to the standard ARK RTK GPS: it uses the same DroneCAN interface, onboard sensors, pinout, and firmware. USA built and FCC compliant; the L1/L2 ARK RTK GPS is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list).
+An open source DroneCAN RTK GNSS module that connects to a flight controller's CAN port.
 
-Buy: [ARK RTK GPS](https://arkelectron.com/product/ark-rtk-gps/) · [ARK RTK GPS L1L5](https://arkelectron.com/product/ark-rtk-gps-l1-l5/)
+<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case)
+* **Receiver:** u-blox ZED-F9P, centimeter-level RTK
+* **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
+* **Interface:** 2× CAN, F9P UART2, safety switch, buzzer
+* **Autopilots:** PX4, ArduPilot (AP\_Periph recommended)
+* **Compliance:** USA built, FCC, Blue Framework listed (L1/L2 model)
 
-| Variant | Receiver | Bands | Moving baseline heading |
-|---------|----------|-------|-------------------------|
-| ARK RTK GPS | u-blox ZED-F9P | L1/L2 | Yes |
-| ARK RTK GPS L1L5 | u-blox ZED-F9P-15B | L1/L5 | No |
+## Variants
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Updating, AP\_Periph, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case, schematic and BOM |
-| [PX4 Instructions](px4-instructions.md) | Single GPS, RTK corrections and moving baseline heading with PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Single GPS and dual GPS heading with ArduPilot |
+| Variant | Receiver | Moving baseline heading | Buy |
+|---------|----------|-------------------------|-----|
+| **ARK RTK GPS** | u-blox ZED-F9P, L1/L2 | Yes | [Buy](https://arkelectron.com/product/ark-rtk-gps/) |
+| **ARK RTK GPS L1L5** | u-blox ZED-F9P-15B, L1/L5 | No | [Buy](https://arkelectron.com/product/ark-rtk-gps-l1-l5/) |
+
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

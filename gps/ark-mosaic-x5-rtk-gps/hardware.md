@@ -13,7 +13,7 @@
 | MCU | STM32F412VGH6 |
 | Safety button | Yes |
 | Buzzer | Yes |
-| Interfaces | Two CAN (5 V input), receiver UART2 with timepulse and GP1, Pixhawk-standard basic GPS port (USART3 and I2C2 from the MCU) for external sensors such as airspeed or distance, receiver USB-C (USB 2.0, 5 V input), debug |
+| Interfaces | Two CAN ([DroneCAN](https://dronecan.github.io/), 5 V input), receiver UART2 with timepulse and GP1, Pixhawk-standard basic GPS port (USART3 and I2C2 from the MCU) for external sensors such as airspeed or distance, receiver USB-C (USB 2.0, 5 V input), debug |
 | Logging | Micro-SD slot for mosaic-X5 logging |
 | Power | 5 V; 260 mA average, 340 mA peak |
 | Weight | 21 g |

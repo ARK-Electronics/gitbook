@@ -10,7 +10,7 @@
 
 | Specification | Value |
 |---------------|-------|
-| Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf?_ga=2.20605755.2081055420.1671562222-391294592.1671562222) |
+| Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf). Takes any [PAB-compatible flight controller](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html) |
 | PAB board-to-board interface | 100-pin Hirose DF40, 50-pin Hirose DF40 ([Pixhawk Autopilot Bus](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf)) |
 | Power module inputs | Dual digital power module inputs: 5 V input, I2C power monitor, 6-pin Molex CLIK-Mate |
 | Ethernet | 100 Mbps, built-in magnetics, 4-pin JST-GH |

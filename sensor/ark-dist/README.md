@@ -5,24 +5,29 @@ coverY: 38.38586956521739
 
 # ARK DIST
 
-The ARK DIST is a [DroneCAN](https://dronecan.github.io/) and [MAVLink](https://mavlink.io/en/) distance sensor module built around a Broadcom time-of-flight sensor, with CAN and UART interfaces. It works with PX4, ArduPilot and ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan). USA built and NDAA compliant.
+A time-of-flight distance sensor that reports to the flight controller over DroneCAN or MAVLink.
 
-Buy: [ARK DIST SR](https://arkelectron.com/product/ark-dist-sr/) · [ARK DIST MR](https://arkelectron.com/product/ark-dist-mr/) · [ARK DIST LR](https://arkelectron.com/product/ark-dist-lr/)
+<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/case" class="button secondary" data-icon="box">Case</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_DIST/datasheet/ARK_DIST_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/case)
+* **Sensor:** Broadcom time-of-flight, 850 nm Class 1 eye-safe laser
+* **Interfaces:** 2× CAN (DroneCAN), UART (MAVLink 2)
+* **Works with:** PX4, ArduPilot, ROS 2 through ros2\_dronecan
+* **Compliance:** USA built, NDAA
 
-| Variant | Distance sensor | Rate | Max reported distance |
-|---------|-----------------|------|-----------------------|
-| SR | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) | 20 Hz | 30 m |
-| MR | [Broadcom AFBR-S50LX85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d) | 15 Hz | 50 m |
-| LR | Broadcom AFBR-S50EX85D | 10 Hz | 100 m |
+## Variants
 
-Range depends on the light on the ground and on the surface. See [Range](hardware.md#range).
+| Variant | Sensor | Max reported distance | Rate | Buy |
+|---------|--------|-----------------------|------|-----|
+| **ARK DIST SR** | AFBR-S50LV85D | 30 m | 20 Hz | [Buy](https://arkelectron.com/product/ark-dist-sr/) |
+| **ARK DIST MR** | AFBR-S50LX85D | 50 m | 15 Hz | [Buy](https://arkelectron.com/product/ark-dist-mr/) |
+| **ARK DIST LR** | AFBR-S50EX85D | 100 m | 10 Hz | [Buy](https://arkelectron.com/product/ark-dist-lr/) |
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, wiring, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Configuring with PX4 over CAN or UART |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Configuring with ArduPilot over CAN or UART |
-| [UART / MAVLink](uart-mavlink.md) | Serial link settings and MAVLink messages |
+Range depends on the light on the ground and on the surface; see [Range](hardware.md#range).
+
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)
+* [UART / MAVLink](uart-mavlink.md)

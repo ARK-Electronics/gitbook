@@ -5,9 +5,15 @@ coverY: -16
 
 # ARK Jetson PAB Carrier
 
-An NVIDIA Jetson Orin Nano/NX carrier board built around the ARKV6X flight controller and the Pixhawk Autopilot Bus. It runs PX4 and ships with ARK-OS pre-installed.
+A carrier board for an NVIDIA Jetson Orin Nano or NX module and a Pixhawk Autopilot Bus flight controller, such as the [ARKV6X](../../arkv6x/README.md).
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/case)
+<a href="https://arkelectron.com/product/ark-jetson-pab-carrier/" class="button primary" data-icon="cart-shopping">Buy carrier</a> <a href="https://arkelectron.com/product/ark-jetson-pab-ndaa-bundle/" class="button primary" data-icon="cart-shopping">Buy NDAA bundle</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/case" class="button secondary" data-icon="box">Case</a>
+
+* **Flight controller I/O:** eight PWM, two CAN, TELEM, GPS, RC, SPI, I2C on JST-GH
+* **Jetson interfaces:** gigabit Ethernet (RJ45), three USB 3.0 and one USB 2.0 Type-A, four CSI cameras, Mini DisplayPort, CAN, M.2 Key E
+* **Power:** three 5 V, 6 A inputs (Molex CLIK-Mate)
+* **Software:** ARK-OS on the Jetson, PX4 on the flight controller
+* **Compliance:** USA built, NDAA
 
 ## Where to Start
 
@@ -15,9 +21,9 @@ CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Je
 
 **You have a bare board, or you want to flash it yourself.** Install a Jetson module and NVMe SSD, then start at the [Flashing Guide](flashing-guide.md).
 
-## Sections
+## Documentation
 
-* [Set Up Your Carrier](setup/) — connect to it and get it on your network
-* [Using ARK-OS](using-ark-os.md) — services, web interface, autopilot connections
-* [Hardware Reference](hardware.md) — pinout, GPIO, cameras, display output
-* [Developer Guide](developer.md) — flashing, serial console, building from source
+* [Set Up Your Carrier](setup/README.md)
+* [Using ARK-OS](using-ark-os.md)
+* [Hardware Reference](hardware.md)
+* [Developer Guide](developer.md)

@@ -1,19 +1,19 @@
 ---
-description: >-
-  Pixhawk Payload Bus to Pixhawk-standard JST-GH, with a protected 5 V
-  peripheral rail.
 cover: ../../.gitbook/assets/IMG_6529 edited.JPG
 coverY: 0
 ---
 
 # ARK Pixhawk Payload Bus Breakout
 
-The ARK Pixhawk Payload Bus Breakout fans the 30-pin Payload Bus out to individually keyed Pixhawk-standard JST-GH connectors. UART4/I2C3, CAN, Ethernet, USB, and GPIO each get their own connector, so a payload can be wired to an ARK carrier without a custom harness. An onboard [TI BQ24315](https://www.ti.com/product/BQ24315) protection switch supplies a current-limited 5 V peripheral rail. It comes with a 30-pin, 0.5 mm pitch, 150 mm FFC cable. USA built.
+A breakout from the 30-pin Pixhawk Payload Bus, such as the one on the [ARK Jetson PAB Carrier V3](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/README.md), to individually keyed Pixhawk-standard JST-GH connectors.
 
-[Buy the ARK Pixhawk Payload Bus Breakout](https://arkelectron.com/product/ark-pixhawk-payload-bus-breakout/)
+<a href="https://arkelectron.com/product/ark-pixhawk-payload-bus-breakout/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pixhawk_Payload_Bus_Breakout/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Pixhawk_Payload_Bus_Breakout/datasheet/ARK_Pixhawk_Payload_Bus_Breakout_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pixhawk_Payload_Bus_Breakout/model)
+* **Payload Bus:** 30-pin 0.5 mm pitch FFC, 150 mm cable included
+* **Breakouts:** UART4/I2C3, CAN, Ethernet, USB, GPIO
+* **Power:** 5 V in, protected 5 V peripheral rail limited to 1.5 A
+* **Compliance:** USA built
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, power, datasheet, 3D model |
+## Documentation
+
+* [Hardware Reference](hardware.md)

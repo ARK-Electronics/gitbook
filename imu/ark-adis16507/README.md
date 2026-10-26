@@ -5,14 +5,18 @@ coverY: 0
 
 # ARK ADIS16507
 
-The ARK ADIS16507 is an SPI IMU board built around the [Analog Devices ADIS16507-3](https://www.analog.com/media/en/technical-documentation/data-sheets/ADIS16507.pdf) factory-calibrated 6-axis precision MEMS IMU, with an 11-pin JST-GH connector that matches the ARK PAB carrier SPI pinout. It works with PX4 and ArduPilot. USA built and FCC compliant.
+An SPI IMU board with an 11-pin JST-GH connector that matches the SPI port on the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md).
 
-[Buy the ARK ADIS16507](https://arkelectron.com/product/ark-adis16507/)
+<a href="https://arkelectron.com/product/ark-adis16507/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_ADIS16507/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_ADIS16507/case" class="button secondary" data-icon="box">Case</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_ADIS16507/datasheet/ARK_ADIS16507_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_ADIS16507/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_ADIS16507/case)
+* **IMU:** Analog Devices ADIS16507-3, factory calibrated, 6-axis
+* **Range:** 2000 dps, 392 m/s²
+* **Interface:** SPI, 11-pin JST-GH
+* **Autopilots:** PX4, ArduPilot
+* **Compliance:** USA built, FCC
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, datasheets, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Enabling the driver in PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Adding the driver to an ArduPilot hwdef |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

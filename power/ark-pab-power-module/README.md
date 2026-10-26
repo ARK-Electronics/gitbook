@@ -5,19 +5,25 @@ coverY: 0
 
 # ARK PAB Power Module
 
-The ARK PAB Power Module is a 5V 6A power supply and digital power monitor for the Pixhawk Autopilot Bus carrier boards, built around the [TI INA226](https://www.ti.com/product/INA226) digital power monitor. It works with PX4 and ArduPilot. USA built and FCC compliant.
+A power supply and digital power monitor for Pixhawk Autopilot Bus carriers, such as the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md).
 
-Buy: [ARK PAB Power Module](https://arkelectron.com/product/ark-pab-power-module/) · [ARK PAB Power Module No Connector](https://arkelectron.com/product/ark-pab-power-module-no-connector/)
+<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/case)
+* **Output:** 5.2 V 6 A avionics, 6-pin Molex CLIK-Mate
+* **Battery:** 33 V maximum, 60 A continuous
+* **Power monitor:** TI INA226, I2C
+* **Autopilots:** PX4, ArduPilot
+* **Compliance:** USA built, FCC
 
-| Variant | Battery input and output |
-|---------|--------------------------|
-| ARK PAB Power Module | XT60 |
-| ARK PAB Power Module No Connector | Solder pads |
+## Variants
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, current rating, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Configuring the power monitor in PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Configuring the power monitor in ArduPilot |
+| Variant | Battery input and output | Buy |
+|---------|--------------------------|-----|
+| **ARK PAB Power Module** | XT60 | [Buy](https://arkelectron.com/product/ark-pab-power-module/) |
+| **ARK PAB Power Module No Connector** | Solder pads | [Buy](https://arkelectron.com/product/ark-pab-power-module-no-connector/) |
+
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

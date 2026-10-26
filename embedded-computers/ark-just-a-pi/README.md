@@ -5,15 +5,18 @@ coverY: 0
 
 # ARK Just a Pi
 
-The ARK Just a Pi is a compact carrier board for the Raspberry Pi Compute Module 5, with a built-in Ethernet switch, USB 3.0 USB-C, two CSI camera connectors, PCIe, HDMI, and UART and GPIO on JST-GH connectors. It runs [ARK-OS](../../ark-os/) and talks to a flight controller over USB. A Compute Module 4 fits with some interfaces lost. USA built and NDAA compliant.
+A carrier board for the Raspberry Pi Compute Module 5. It runs [ARK-OS](../../ark-os/README.md) and talks to a flight controller over USB.
 
-[Buy the ARK Just a Pi](https://arkelectron.com/product/ark-just-a-pi/)
+<a href="https://arkelectron.com/product/ark-just-a-pi/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Pi/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Pi/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Pi/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Pi/case)
+* **Compute module:** Raspberry Pi Compute Module 5; a Compute Module 4 fits, with some interfaces lost
+* **Interfaces:** Ethernet switch, USB 3.0 on USB-C, two CSI cameras, PCIe, Micro HDMI, UART and GPIO on JST-GH
+* **Power:** 5 V, 2 A minimum (Molex CLIK-Mate)
+* **Compliance:** USA built, NDAA
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, Compute Module 4 limits, PCIe, pinout, block diagram, 3D model and case |
-| [Getting Started](getting-started.md) | Default credentials and connecting over Wi-Fi, Ethernet or the debug console |
-| [Using ARK-OS](using-ark-os.md) | ARK-OS services and web UI on this board |
-| [Flashing Guide](flashing-guide/README.md) | Imaging your own Compute Module and its `config.txt` |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [Getting Started](getting-started.md)
+* [Using ARK-OS](using-ark-os.md)
+* [Flashing Guide](flashing-guide/README.md)
