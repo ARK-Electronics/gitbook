@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK Just A Jetson
 
-A carrier board for an NVIDIA Jetson Orin NX or Orin Nano module. It runs [ARK-OS](../../ark-os/README.md).
+A carrier board for an NVIDIA Jetson Orin NX or Orin Nano module. It runs [ARK-OS](../../ark-os/README.md), preinstalled on the bundles.
 
 <a href="https://arkelectron.com/product/ark-just-a-jetson/" class="button primary" data-icon="cart-shopping">Buy carrier</a> <a href="https://arkelectron.com/product/ark-just-a-jetson-ndaa-bundle/" class="button primary" data-icon="cart-shopping">Buy NDAA bundle</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Jetson/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Jetson/case" class="button secondary" data-icon="box">Case</a>
 

@@ -13,7 +13,7 @@ An open source DroneCAN GNSS module that connects to a flight controller's CAN p
 * **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
 * **Interface:** 2× CAN, safety switch, buzzer
 * **Autopilots:** PX4, ArduPilot (AP\_Periph on the node)
-* **Compliance:** USA built, FCC
+* **Compliance:** USA built, NDAA, FCC
 
 ## Documentation
 
