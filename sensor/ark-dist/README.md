@@ -7,7 +7,7 @@ coverY: 38.38586956521739
 
 A time-of-flight distance sensor that reports to the flight controller over DroneCAN or MAVLink.
 
-<a href="#variants" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/case" class="button secondary" data-icon="box">Case</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_DIST/datasheet/ARK_DIST_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
+<a href="https://arkelectron.com/product-category/sensors/rangefinders/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/case" class="button secondary" data-icon="box">Case</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_DIST/datasheet/ARK_DIST_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
 * **Sensor:** Broadcom time-of-flight, 850 nm Class 1 eye-safe laser
 * **Interfaces:** 2× CAN (DroneCAN), UART (MAVLink 2)
