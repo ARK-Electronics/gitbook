@@ -16,7 +16,7 @@
 | Beam | 2° × 2°, 3.5 cm spot at 1 m |
 | IMU | [InvenSense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/), 6-axis |
 | MCU | STM32F412VG |
-| CAN | 2× Pixhawk-standard 4-pin JST-GH |
+| CAN | 2× Pixhawk-standard 4-pin JST-GH. ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan) |
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 86 mA average, 90 mA max |
 | Dimensions | 3 × 3 × 1.4 cm |

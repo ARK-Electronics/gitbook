@@ -6,12 +6,14 @@ coverY: 0
 
 # ARK Secondary Avionics Adapter
 
-The ARK Secondary Avionics Adapter breaks a 40-pin Molex Pico-Clasp secondary avionics port out to Pixhawk-standard JST-GH connectors for PWM, TELEM3, GPS2, JCAN, SPI and SBUS out.
+A breakout from a 40-pin secondary avionics port, such as the one on the [ARK Jetson PAB Carrier V3](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/README.md), to Pixhawk-standard JST-GH connectors.
 
-[Buy the ARK Secondary Avionics Adapter](https://arkelectron.com/product/ark-secondary-avionics-breakout/)
+<a href="https://arkelectron.com/product/ark-secondary-avionics-breakout/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Secondary_Avionics_Breakout/model" class="button secondary" data-icon="cube">3D model</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Secondary_Avionics_Breakout/model)
+* **Avionics port:** 40-pin Molex Pico-Clasp
+* **Breakouts:** PWM, TELEM3, GPS2, JCAN, SPI, SBUS out
+* **Weight:** 5 g
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, 3D model |
+## Documentation
+
+* [Hardware Reference](hardware.md)

@@ -5,14 +5,18 @@ coverY: 0
 
 # ARK 12S PAB Power Module
 
-The ARK 12S PAB Power Module is a 5V 6A power supply and digital power monitor for the Pixhawk Autopilot Bus carrier boards on 12S batteries. A [TI INA238](https://www.ti.com/product/INA238) digital power monitor measures voltage and current over I2C, and a 5.2V 6A regulator powers the avionics through a 6-pin Molex CLIK-Mate connector that matches the pinout on the ARK PAB Carriers. It works with PX4 and ArduPilot. USA built.
+A 12S power supply and digital power monitor for Pixhawk Autopilot Bus carriers, such as the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md).
 
-[Buy the ARK 12S PAB Power Module](https://arkelectron.com/product/ark-12s-pab-power-module/)
+<a href="https://arkelectron.com/product/ark-12s-pab-power-module/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_PAB_Power_Module/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_12S_PAB_Power_Module/datasheet/ARK_12S_PAB_Power_Module_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_PAB_Power_Module/model)
+* **Output:** 5.2 V 6 A avionics, 6-pin Molex CLIK-Mate
+* **Battery:** 12S, 75 V maximum, 100 A continuous, solder pads
+* **Power monitor:** TI INA238, I2C
+* **Autopilots:** PX4, ArduPilot
+* **Compliance:** USA built
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, wiring, pinout, current rating, capacitor and TVS diode, datasheet, 3D model |
-| [PX4 Instructions](px4-instructions.md) | Configuring the power monitor in PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Configuring the power monitor in ArduPilot |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

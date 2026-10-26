@@ -5,13 +5,16 @@ coverY: 0
 
 # ARK Pixhawk Autopilot Bus Carrier
 
-The ARK Pixhawk Autopilot Bus (PAB) Carrier is a flight controller carrier board, based on the [Pixhawk Autopilot Bus open source standard](https://github.com/pixhawk/Pixhawk-Standards). The PAB form factor enables the ARK PAB Carrier to be used with any [PAB-compatible flight controller](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html), such as the [ARKV6X](../arkv6x/README.md). It breaks out dual power module inputs, Ethernet, two GPS ports, two CAN ports, three telemetry ports, eight PWM outputs, RC, SPI, ADIO and debug ports, and works with PX4. USA built, NDAA compliant and FCC compliant.
+A flight controller carrier board built to the Pixhawk Autopilot Bus standard. It takes any PAB flight controller module, such as the [ARKV6X](../arkv6x/README.md).
 
-[Buy the ARK Pixhawk Autopilot Bus Carrier](https://arkelectron.com/product/ark-pixhawk-autopilot-bus-carrier/)
+<a href="https://arkelectron.com/product/ark-pixhawk-autopilot-bus-carrier/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Carrier/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Carrier/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Carrier/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Carrier/case)
+* **Power:** dual digital power module inputs
+* **Interfaces:** Ethernet, two GPS, two CAN, three TELEM, eight PWM, RC, SPI, ADIO, debug
+* **Autopilots:** PX4
+* **Compliance:** USA built, NDAA, FCC
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, power, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | PX4 documentation and the FMU debug port |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)

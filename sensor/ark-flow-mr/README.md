@@ -5,16 +5,20 @@ coverY: 0
 
 # ARK Flow MR
 
-The ARK Flow MR is a [DroneCAN](https://dronecan.github.io/) optical flow and mid-range distance sensor module, with a [PixArt PAA3905](https://www.pixart.com/products-detail/108/PAA3905E1-Q_) optical flow sensor, a [Broadcom AFBR-S50LX85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d) time-of-flight distance sensor and an [InvenSense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/) IMU. It is a drop-in upgrade for the [ARK Flow](../ark-flow/README.md). It works with PX4, ArduPilot and ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan). USA built and NDAA compliant.
+A DroneCAN optical flow, mid-range distance sensor and IMU module. It is a drop-in upgrade for the [ARK Flow](../ark-flow/README.md).
 
-[Buy the ARK Flow MR](https://arkelectron.com/product/ark-flow-mr/)
+<a href="https://arkelectron.com/product/ark-flow-mr/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/case)
+* **Optical flow:** PixArt PAA3905
+* **Distance sensor:** Broadcom AFBR-S50LX85D time-of-flight, typically up to 50 m
+* **IMU:** InvenSense IIM-42653
+* **Works with:** PX4, ArduPilot, ROS 2 through ros2\_dronecan
+* **Compliance:** USA built, NDAA
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, wiring, mounting, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Connecting and configuring with PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Connecting and configuring with ArduPilot |
-| [DroneCAN Messages](dronecan-messages.md) | Messages the ARK Flow MR publishes |
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)
+* [DroneCAN Messages](dronecan-messages.md)

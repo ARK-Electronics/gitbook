@@ -11,7 +11,7 @@
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Memory | FRAM |
-| Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf) |
+| Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf). Fits any [PAB-compatible carrier](https://docs.px4.io/main/en/flight_controller/pixhawk_autopilot_bus.html) |
 | Heater | 1 W. Keeps sensors warm in extreme conditions |
 | Storage | MicroSD slot |
 | Indicators | LEDs |

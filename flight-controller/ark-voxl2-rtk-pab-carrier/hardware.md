@@ -15,6 +15,7 @@
 | Power | 14-pin Molex CLIK-Mate: 12S 3 A battery input, dual 5 V 6 A inputs, dual I2C power module inputs |
 | Dimensions | 94.25 × 36.00 × 18 mm, without VOXL2 and flight controller module |
 | Weight | 25 g |
+| Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

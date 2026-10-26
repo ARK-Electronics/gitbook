@@ -5,19 +5,24 @@ coverY: 0
 
 # ARK SCH16T
 
-The ARK SCH16T is an SPI IMU board built around the [Murata SCH16T](https://www.murata.com/en-us/products/sensor/gyro/overview/lineup/sch16t) combined gyro sensor and accelerometer, with an 11-pin JST-GH connector that matches the ARK PAB and Jetson carrier SPI pinout. It works with PX4 and ArduPilot. USA built; the ARK SCH16T is FCC compliant and the ARK SCH16T-K10 is NDAA compliant.
+An SPI IMU board with an 11-pin JST-GH connector that matches the SPI port on the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md) and the ARK Jetson carriers.
 
-Buy: [ARK SCH16T](https://arkelectron.com/product/ark-sch16t/) · [ARK SCH16T-K10](https://arkelectron.com/product/ark-sch16t-k10-imu/)
+<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SCH16T/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_SCH16T/datasheet/ARK_SCH16T_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SCH16T/model)
+* **IMU:** Murata SCH16T gyro and accelerometer
+* **Interface:** SPI, 11-pin JST-GH
+* **Autopilots:** PX4, ArduPilot
+* **Compliance:** USA built, FCC (ARK SCH16T), NDAA (ARK SCH16T-K10)
 
-| Variant | Sensor | Gyro range | Accel range |
-|---------|--------|------------|-------------|
-| ARK SCH16T | SCH16T-K01 | ±300 °/s | ±8 g |
-| ARK SCH16T-K10 | SCH16T-K10 | ±2000 °/s | ±16 g |
+## Variants
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, datasheets, 3D model |
-| [PX4 Instructions](px4-instructions.md) | Enabling the driver in PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Adding the driver to an ArduPilot hwdef |
+| Variant | IMU | Range | Buy |
+|---------|-----|-------|-----|
+| **ARK SCH16T** | SCH16T-K01 | 300 dps, 8 g | [Buy](https://arkelectron.com/product/ark-sch16t/) |
+| **ARK SCH16T-K10** | SCH16T-K10 | 2000 dps, 16 g | [Buy](https://arkelectron.com/product/ark-sch16t-k10-imu/) |
+
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

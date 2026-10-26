@@ -13,11 +13,12 @@
 | Field of view | 12.4° × 6.2° with 32 pixels. 2° × 2° transmitter beam illuminates 1 to 3 pixels |
 | IMU | [Bosch BMI088](https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi088/) or [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
 | MCU | STM32F412CEU6 |
-| CAN | 2× Pixhawk-standard 4-pin JST-GH, software-toggleable built-in termination resistor |
+| CAN | 2× Pixhawk-standard 4-pin JST-GH, software-toggleable built-in termination resistor. ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan) |
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 71 mA average, 76 mA max |
 | Dimensions | 3 × 3 × 1.4 cm |
 | Weight | 5 g |
+| Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

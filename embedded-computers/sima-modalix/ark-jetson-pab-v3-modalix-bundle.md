@@ -7,6 +7,8 @@ coverY: 0
 
 ARK Jetson PAB Carrier V3, SiMa.ai Modalix SOM, heatsink and fan. Optional NDAA 480GB M.2 NVMe SSD.
 
+<a href="https://arkelectron.com/product/ark-jetson-pab-v3-modalix-bundle/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_V3/model" class="button secondary" data-icon="cube">3D model</a>
+
 The carrier is the same hardware as [ARK Jetson PAB Carrier V3](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/) — ARKV6X flight controller, Pixhawk Autopilot Bus, I/O co-processor, avionics connectors, and Payload Bus. This page covers SOM differences only.
 
 {% hint style="info" %}

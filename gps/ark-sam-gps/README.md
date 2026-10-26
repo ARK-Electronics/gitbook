@@ -5,20 +5,24 @@ coverY: -5
 
 # ARK SAM GPS
 
-The ARK SAM GPS is a GNSS module built around the [u-blox SAM-M10Q](https://www.u-blox.com/en/product/sam-m10q-module) receiver, with an [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) magnetometer on a Pixhawk-standard UART/I2C connector. It works with PX4, ArduPilot and Betaflight. USA built and NDAA compliant; the ARK SAM GPS is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list).
+A GNSS and magnetometer module that connects to a flight controller's GPS port over UART and I2C.
 
-Buy: [ARK SAM GPS](https://arkelectron.com/product/ark-sam-gps/) · [ARK SAM GPS MINI](https://arkelectron.com/product/ark-sam-gps-mini/)
+* **Receiver:** u-blox SAM-M10Q, 4 concurrent GNSS
+* **Sensors:** ST IIS2MDC magnetometer
+* **Interface:** UART and I2C on one Pixhawk-standard 6-pin JST-GH
+* **Autopilots:** PX4, ArduPilot, Betaflight
+* **Compliance:** USA built, NDAA, Blue Framework listed (ARK SAM GPS)
 
-CAD: [ARK SAM GPS](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SAM_GPS/model) · [ARK SAM GPS MINI](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SAM_GPS_MINI/model)
+## Variants
 
-| Variant | Dimensions | Weight |
-|---------|------------|--------|
-| ARK SAM GPS | 3.6 × 3.6 × 0.8 cm | 11 g |
-| ARK SAM GPS MINI | 3.225 × 1.6 × 0.8 cm | 8 g |
+| Variant | Dimensions, weight | 3D model | Buy |
+|---------|--------------------|----------|-----|
+| **ARK SAM GPS** | 3.6 × 3.6 × 0.8 cm, 11 g | [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SAM_GPS/model) | [Buy](https://arkelectron.com/product/ark-sam-gps/) |
+| **ARK SAM GPS MINI** | 3.225 × 1.6 × 0.8 cm, 8 g | [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SAM_GPS_MINI/model) | [Buy](https://arkelectron.com/product/ark-sam-gps-mini/) |
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, wiring, 3D models |
-| [PX4 Instructions](px4-instructions.md) | Port and sensor position configuration with PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Magnetometer driver build and port configuration with ArduPilot |
-| [Betaflight Instructions](betaflight-instructions.md) | Enabling GPS and magnetometer orientation in Betaflight |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)
+* [Betaflight Instructions](betaflight-instructions.md)

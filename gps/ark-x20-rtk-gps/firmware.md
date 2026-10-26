@@ -5,6 +5,7 @@ The ARK X20 RTK GPS runs the [PX4 DroneCAN firmware](https://docs.px4.io/main/en
 * Firmware target: `ark_x20-gps_default`
 * Bootloader target: `ark_x20-gps_canbootloader`
 * Board ID: `89`
+* Board source: [PX4-Autopilot `boards/ark/x20-gps`](https://github.com/PX4/PX4-Autopilot/tree/main/boards/ark/x20-gps)
 
 ## Updating from the Flight Controller
 

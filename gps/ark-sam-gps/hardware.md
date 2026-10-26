@@ -12,6 +12,7 @@
 | Power | 5 V, 15 mA average, 20 mA max |
 | Dimensions | ARK SAM GPS: 3.6 × 3.6 × 0.8 cm. ARK SAM GPS MINI: 3.225 × 1.6 × 0.8 cm |
 | Weight | ARK SAM GPS: 11 g. ARK SAM GPS MINI: 8 g |
+| Compliance | USA built, NDAA compliant. ARK SAM GPS: [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

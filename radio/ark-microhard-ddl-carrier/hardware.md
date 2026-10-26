@@ -4,7 +4,7 @@
 
 | Specification | Value |
 |---------------|-------|
-| Radio socket | Microhard Pico |
+| Radio socket | [Microhard](https://www.microhardcorp.com/) Pico |
 | Supported modules | [pMDDL2460](https://www.microhardcorp.com/pMDDL2460.php), [pMDDL2550](https://www.microhardcorp.com/pMDDL2550.php), [pMDDL2450](https://www.microhardcorp.com/pMDDL2450.php), [pMDDL2350](https://www.microhardcorp.com/pMDDL2350.php), [pDDL1800](https://www.microhardcorp.com/pDDL1800.php), [pDDL900](https://www.microhardcorp.com/pDDL900.php) |
 | Serial | Pixhawk standard, 6-pin JST-GH, 3.3 V UART |
 | Ethernet | LAN and WAN ports, 4-pin JST-GH each |

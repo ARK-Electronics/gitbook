@@ -5,15 +5,19 @@ coverY: -10
 
 # ARK TESEO GPS
 
-The ARK TESEO GPS is a [DroneCAN](https://dronecan.github.io/) GNSS module built around the [ST Teseo-LIV4F](https://www.st.com/en/positioning/teseo-liv4f.html) L1/L5 multi-constellation receiver, with a magnetometer, barometer, IMU and buzzer. It works with PX4 and ArduPilot. USA built, NDAA compliant and [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list).
+A DroneCAN GNSS module that connects to a flight controller's CAN port.
 
-[Buy the ARK TESEO GPS](https://arkelectron.com/product/ark-teseo-gps/)
+<a href="https://arkelectron.com/product/ark-teseo-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_TESEO_GPS/case)
+* **Receiver:** ST Teseo-LIV4F, L1/L5, submeter accuracy
+* **Sensors:** ST IIS2MDC magnetometer, Bosch BMP390 barometer, InvenSense ICM-42688-P IMU
+* **Interface:** 2× CAN, PPS output, buzzer
+* **Autopilots:** PX4, ArduPilot
+* **Compliance:** USA built, NDAA, Blue Framework listed
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Connecting and configuring with PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Connecting and configuring with ArduPilot |
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

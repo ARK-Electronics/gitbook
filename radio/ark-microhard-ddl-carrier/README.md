@@ -8,12 +8,15 @@ coverY: 0
 
 # ARK Microhard DDL Carrier
 
-The ARK Microhard DDL Carrier is a carrier board for [Microhard](https://www.microhardcorp.com/) Pico DDL radio modules. It connects the radio to a flight controller over a Pixhawk standard serial port, to Ethernet over its LAN and WAN ports, and to a computer over USB-C, and takes power from USB-C power delivery or a 5.5–55 V battery. It is sold with or without a [pMDDL2450](https://www.microhardcorp.com/pMDDL2450.php) module. USA built.
+A carrier board for Microhard Pico DDL radio modules. It connects the radio to a flight controller, an Ethernet network and a computer.
 
-[Buy the ARK Microhard DDL Carrier](https://arkelectron.com/product/1w-microhard-ddl-ip-radio/)
+<a href="https://arkelectron.com/product/1w-microhard-ddl-ip-radio/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Microhard_DDL_Carrier/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Microhard_DDL_Carrier/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Microhard_DDL_Carrier/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Microhard_DDL_Carrier/case)
+* **Radio:** Microhard Pico DDL modules; sold with or without a pMDDL2450
+* **Interfaces:** Pixhawk standard serial, LAN and WAN Ethernet, USB-C
+* **Power:** USB-C power delivery or 5.5–55 V battery
+* **Compliance:** USA built
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, module assembly and disassembly, 3D model and case |
+## Documentation
+
+* [Hardware Reference](hardware.md)

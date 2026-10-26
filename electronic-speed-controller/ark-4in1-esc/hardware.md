@@ -15,6 +15,7 @@
 | Dimensions | 43.00 × 40.50 × 7.60 mm. CONS: 77.00 × 42.00 × 9.43 mm |
 | Mounting pattern | 30.5 mm |
 | Weight | 14.5 g. CONS: 24.0 g |
+| Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Pinout
 

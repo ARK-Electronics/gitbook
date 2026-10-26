@@ -18,6 +18,7 @@
 | ESC mounting | 4-in-1 ESC, 30 × 30 mm |
 | Dimensions | 91.5 × 56 mm, without compute module and ESC |
 | Weight | 41 g without compute module, SD card and ESC; 53 g with CM4 and SD card |
+| Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Compute Module 5
 

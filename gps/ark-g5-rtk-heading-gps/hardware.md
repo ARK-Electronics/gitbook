@@ -14,7 +14,7 @@
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
 | MCU | STM32F412VGH6 |
 | Buzzer | Yes |
-| Interfaces | Two CAN, receiver UART2 with PPS, receiver USB-C, debug |
+| Interfaces | Two CAN ([DroneCAN](https://dronecan.github.io/)), receiver UART2 with PPS, receiver USB-C, debug |
 | Power | 4.6–5.4 V, 360 mA |
 | Dimensions | 48.0 × 40.0 × 15.4 mm without antenna, 55.8 × 43.5 × 51.2 mm with the helical antenna on MAIN |
 | Weight | 13.0 g without antenna, 43.5 g with main antenna, 91.0 g with dual antennas |

@@ -5,16 +5,20 @@ coverY: 0
 
 # ARK MOSAIC-X5 RTK GPS
 
-The ARK MOSAIC-X5 RTK GPS is a [DroneCAN](https://dronecan.github.io/) RTK GNSS module built around the [Septentrio mosaic-X5](https://www.septentrio.com/en/products/gps/gnss-receiver-modules/mosaic-x5) triple-band (L1/L2/L5) receiver, with a magnetometer, barometer, IMU, buzzer and safety switch. It runs PX4 open source firmware and works with PX4 and ArduPilot flight controllers. USA built and NDAA compliant.
+A DroneCAN RTK GNSS module that connects to a flight controller's CAN port.
 
-[Buy the ARK MOSAIC-X5 RTK GPS](https://arkelectron.com/product/ark-mosaic-x5-gps/)
+<a href="https://arkelectron.com/product/ark-mosaic-x5-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/case)
+* **Receiver:** Septentrio mosaic-X5, L1/L2/L5, 100 Hz
+* **Sensors:** ST IIS2MDC magnetometer, Bosch BMP390 barometer, InvenSense ICM-42688-P IMU
+* **Interface:** 2× CAN, receiver UART2 and USB-C, UART/I2C port for external sensors, micro-SD logging, safety switch, buzzer
+* **Autopilots:** PX4, ArduPilot
+* **Compliance:** USA built, NDAA
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Connecting and configuring with PX4 |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Connecting and configuring with ArduPilot |
-| [Web GUI Login](web-gui-login.md) | Receiver web interface over USB-C, login and spectrum analyzer |
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)
+* [Web GUI Login](web-gui-login.md)

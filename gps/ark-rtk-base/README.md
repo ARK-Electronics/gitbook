@@ -5,13 +5,16 @@ coverY: 0
 
 # ARK RTK Base
 
-The ARK RTK Base is an open source RTK GNSS module built around the [u-blox ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module) multi-band receiver, with USB-C and Pixhawk-standard UART connectors. It can be used as an RTK fixed base, moving base or rover; as a ground base station it connects to _QGroundControl_ over USB-C, which forwards its RTCM corrections to a PX4 vehicle. USA built, NDAA compliant and FCC compliant.
+An open source RTK GNSS module for use as a fixed base, moving base or rover. As a base station it connects to QGroundControl over USB-C, which forwards its RTCM corrections to a PX4 vehicle.
 
-[Buy the ARK RTK Base](https://arkelectron.com/product/ark-rtk-base/)
+<a href="https://arkelectron.com/product/ark-rtk-base/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_Base/model" class="button secondary" data-icon="cube">3D model</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_Base/model)
+* **Receiver:** u-blox ZED-F9P, L1/L2, centimeter-level RTK
+* **Interface:** USB-C, Pixhawk-standard UART (F9P UART1), F9P UART2
+* **Autopilots:** PX4
+* **Compliance:** USA built, NDAA, FCC
 
-| Page | Contents |
-|------|----------|
-| [Hardware Reference](hardware.md) | Specifications, pinout, 3D model, schematic and BOM |
-| [PX4 Instructions](px4-instructions.md) | Base station setup, vehicle configuration and tuning with PX4 |
+## Documentation
+
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)

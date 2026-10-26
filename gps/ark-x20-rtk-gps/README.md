@@ -5,15 +5,19 @@ coverY: 2.777482269503546
 
 # ARK X20 RTK GPS
 
-The ARK X20 RTK GPS is a [DroneCAN](https://dronecan.github.io/) RTK GNSS module built around the [u-blox ZED-X20P](https://www.u-blox.com/en/product/zed-x20p-module) all-band (L1/L2/L5) RTK GNSS module, with an onboard magnetometer, barometer, IMU, safety button, and buzzer. It runs the [PX4 DroneCAN firmware](https://github.com/PX4/PX4-Autopilot/tree/main/boards/ark/x20-gps) and works with PX4; ArduPilot support through AP\_Periph is in review. USA built and NDAA compliant.
+A DroneCAN RTK GNSS module that connects to a flight controller's CAN port.
 
-[Buy the ARK X20 RTK GPS](https://arkelectron.com/product/ark-x20-rtk-gps/)
+<a href="https://arkelectron.com/product/ark-x20-rtk-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
-CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/case)
+* **Receiver:** u-blox ZED-X20P, L1/L2/L5; RTK, PPP-RTK and PPP
+* **Sensors:** ST IIS2MDC magnetometer, Bosch BMP390 barometer, InvenSense ICM-42688-P IMU
+* **Interface:** 2× CAN, receiver UART2 with PPS, I2C expansion, safety switch, buzzer
+* **Autopilots:** PX4, ArduPilot (AP\_Periph, in review)
+* **Compliance:** USA built, NDAA
 
-| Page | Contents |
-|------|----------|
-| [Firmware](firmware.md) | Updating node and receiver firmware, AP\_Periph, node parameters, downloads and release notes |
-| [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, 3D model and case |
-| [PX4 Instructions](px4-instructions.md) | Connecting and configuring with PX4, RTK corrections and moving baseline heading |
-| [ArduPilot Instructions](ardupilot-instructions.md) | Configuring with ArduPilot |
+## Documentation
+
+* [Firmware](firmware.md)
+* [Hardware Reference](hardware.md)
+* [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)
