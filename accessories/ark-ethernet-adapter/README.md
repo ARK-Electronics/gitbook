@@ -8,6 +8,8 @@ The ARK Ethernet Adapter converts a Pixhawk-standard 4-pin JST-GH Ethernet port,
 
 [Buy the ARK Ethernet Adapter](https://arkelectron.com/product/ethernet-adapter/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/Ethernet_Adapter/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/Ethernet_Adapter/case)
+
 ## Connectors
 
 | Connector | Part |

@@ -9,6 +9,8 @@ The ARK G5 RTK GPS is a [DroneCAN](https://dronecan.github.io/) RTK GNSS module 
 
 [Buy the ARK G5 P3 RTK GPS](https://arkelectron.com/product/ark-g5-rtk-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating node and receiver firmware, node parameters, downloads and release notes |

@@ -9,6 +9,8 @@ The ARK MOSAIC-X5 RTK GPS is a [DroneCAN](https://dronecan.github.io/) RTK GNSS 
 
 [Buy the ARK MOSAIC-X5 RTK GPS](https://arkelectron.com/product/ark-mosaic-x5-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MOSAIC-X5_RTK_GPS/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |

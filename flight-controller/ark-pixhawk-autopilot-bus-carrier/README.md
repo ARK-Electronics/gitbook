@@ -9,6 +9,8 @@ The ARK Pixhawk Autopilot Bus (PAB) Carrier is a flight controller carrier board
 
 [Buy the ARK Pixhawk Autopilot Bus Carrier](https://arkelectron.com/product/ark-pixhawk-autopilot-bus-carrier/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Carrier/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Carrier/case)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, LEDs, power, 3D model and case |

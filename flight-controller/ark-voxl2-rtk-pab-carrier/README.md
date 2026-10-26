@@ -9,6 +9,8 @@ The ARK VOXL2 RTK PAB Carrier is a carrier board for a [ModalAI VOXL2](https://w
 
 [Buy the ARK VOXL2 RTK PAB Carrier](https://arkelectron.com/product/ark-voxl2-rtk-pab-carrier/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_VOXL2_RTK_PAB_Carrier/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, connectors and cables, 3D model |

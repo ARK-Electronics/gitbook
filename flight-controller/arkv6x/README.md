@@ -9,6 +9,8 @@ The ARKV6X is a flight controller module based on the [FMUV6X and Pixhawk Autopi
 
 Buy: [ARKV6X](https://arkelectron.com/product/arkv6x/) · [ARKV6X Extended Range](https://arkelectron.com/product/arkv6x-iim-42653/) · [ARKV6X Bundle](https://arkelectron.com/product/arkv6x-bundle/) · [ARKV6X Extended Range Bundle](https://arkelectron.com/product/arkv6x-extended-range-bundle/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARKV6X/model)
+
 | Variant | IMUs | Gyro range | Accel range | On an ARK PAB Carrier |
 |---------|------|------------|-------------|------------------------|
 | ARKV6X | Dual ICM-42688-P, IIM-42652 | 2000 dps | 16 g | No |

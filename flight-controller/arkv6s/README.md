@@ -9,6 +9,8 @@ The ARKV6S is a low-cost, single-IMU variant of the [ARKV6X](../arkv6x/README.md
 
 [Buy the ARKV6S](https://arkelectron.com/product/arkv6s-flight-controller/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARKV6S/model)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Build targets, flashing PX4 and ArduPilot |

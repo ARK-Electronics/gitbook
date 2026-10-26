@@ -7,6 +7,8 @@ coverY: 0
 
 The ARK Just A Jetson (JAJ) is a compact carrier board for the NVIDIA Jetson Orin NX/Nano module. It provides essential connectivity including USB-C, Ethernet, WiFi/Bluetooth, CSI camera, CAN bus, and GPIO in a minimal form factor.
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Jetson/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Jetson/case)
+
 ## Where to Start
 
 **Your bundle arrived preflashed.** It already runs ARK-OS. Go to [Set Up Your Jetson](setup/), then manage it from the ARK-UI web interface.

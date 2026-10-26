@@ -9,6 +9,8 @@ The ARK MAG is a [DroneCAN](https://dronecan.github.io/) magnetometer node built
 
 [Buy the ARK MAG](https://arkelectron.com/product/ark-mag/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MAG/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_MAG/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating and node parameters |

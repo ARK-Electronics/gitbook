@@ -9,6 +9,8 @@ The ARK X20 RTK GPS is a [DroneCAN](https://dronecan.github.io/) RTK GNSS module
 
 [Buy the ARK X20 RTK GPS](https://arkelectron.com/product/ark-x20-rtk-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_X20_RTK_GPS/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating node and receiver firmware, AP\_Periph, node parameters, downloads and release notes |

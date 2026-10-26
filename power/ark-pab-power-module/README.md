@@ -9,6 +9,8 @@ The ARK PAB Power Module is a 5V 6A power supply and digital power monitor for t
 
 Buy: [ARK PAB Power Module](https://arkelectron.com/product/ark-pab-power-module/) · [ARK PAB Power Module No Connector](https://arkelectron.com/product/ark-pab-power-module-no-connector/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/case)
+
 | Variant | Battery input and output |
 |---------|--------------------------|
 | ARK PAB Power Module | XT60 |

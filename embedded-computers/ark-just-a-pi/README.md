@@ -9,6 +9,8 @@ The ARK Just a Pi is a compact carrier board for the Raspberry Pi Compute Module
 
 [Buy the ARK Just a Pi](https://arkelectron.com/product/ark-just-a-pi/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Pi/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Pi/case)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, Compute Module 4 limits, PCIe, pinout, block diagram, 3D model and case |

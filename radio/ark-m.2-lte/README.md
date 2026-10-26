@@ -8,6 +8,8 @@ coverY: -14
 
 # ARK M.2 LTE
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_M.2_LTE/model)
+
 ### Prerequisites
 
 * A nano-SIM card with a data plan.

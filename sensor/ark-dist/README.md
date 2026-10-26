@@ -9,6 +9,8 @@ The ARK DIST is a [DroneCAN](https://dronecan.github.io/) and [MAVLink](https://
 
 Buy: [ARK DIST SR](https://arkelectron.com/product/ark-dist-sr/) · [ARK DIST MR](https://arkelectron.com/product/ark-dist-mr/) · [ARK DIST LR](https://arkelectron.com/product/ark-dist-lr/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DIST/case)
+
 | Variant | Distance sensor | Rate | Max reported distance |
 |---------|-----------------|------|-----------------------|
 | SR | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) | 20 Hz | 30 m |

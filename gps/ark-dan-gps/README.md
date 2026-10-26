@@ -9,6 +9,8 @@ The ARK DAN GPS is a GNSS module built around the [u-blox DAN-F10N](https://www.
 
 [Buy the ARK DAN GPS](https://arkelectron.com/product/ark-dan-gps/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_DAN_GPS/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, wiring, 3D model |

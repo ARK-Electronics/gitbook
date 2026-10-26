@@ -9,6 +9,8 @@ ARK Flow is an open source [DroneCAN](https://docs.px4.io/main/en/dronecan/) [op
 
 [Buy the ARK Flow](https://arkelectron.com/product/ark-flow/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow/model) · [case](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow/case)
+
 | Page | Contents |
 |------|----------|
 | [Firmware](firmware.md) | Updating, node parameters, downloads and release notes |

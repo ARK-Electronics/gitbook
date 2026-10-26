@@ -9,6 +9,8 @@ The ARK RTK Base is an open source RTK GNSS module built around the [u-blox ZED-
 
 [Buy the ARK RTK Base](https://arkelectron.com/product/ark-rtk-base/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_Base/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, 3D model, schematic and BOM |

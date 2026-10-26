@@ -9,6 +9,8 @@ The ARK SCH16T is an SPI IMU board built around the [Murata SCH16T](https://www.
 
 Buy: [ARK SCH16T](https://arkelectron.com/product/ark-sch16t/) · [ARK SCH16T-K10](https://arkelectron.com/product/ark-sch16t-k10-imu/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SCH16T/model)
+
 | Variant | Sensor | Gyro range | Accel range |
 |---------|--------|------------|-------------|
 | ARK SCH16T | SCH16T-K01 | ±300 °/s | ±8 g |

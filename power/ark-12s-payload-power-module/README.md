@@ -9,6 +9,8 @@ The ARK 12S Payload Power Module is a dual 5V 6A and 12V 6A power supply and dig
 
 [Buy the ARK 12S Payload Power Module](https://arkelectron.com/product/ark-12s-payload-power-module/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_Payload_Power_Module/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, wiring, pinout, current rating, datasheet, 3D model |

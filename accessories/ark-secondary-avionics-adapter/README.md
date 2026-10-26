@@ -10,6 +10,8 @@ The ARK Secondary Avionics Adapter breaks a 40-pin Molex Pico-Clasp secondary av
 
 [Buy the ARK Secondary Avionics Adapter](https://arkelectron.com/product/ark-secondary-avionics-breakout/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Secondary_Avionics_Breakout/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, 3D model |

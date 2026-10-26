@@ -12,6 +12,8 @@ The ARK 4IN1 ESC drives four brushless motors from a 3S–8S pack, with four STM
 
 Buy: [ARK 4IN1 ESC](https://arkelectron.com/product/ark-4in1-esc/) · [ARK 4IN1 ESC CONS](https://arkelectron.com/product/ark-4in1-esc-cons/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_4IN1_ESC/model)
+
 | Variant | Motor and battery connections | Current per motor | Weight |
 |---------|-------------------------------|-------------------|--------|
 | ARK 4IN1 ESC | Solder | 50 A continuous, 75 A burst | 14.5 g |

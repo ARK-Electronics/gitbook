@@ -9,6 +9,8 @@ The ARK Servo Expander is an I2C to 16-channel servo/PWM expander built around t
 
 [Buy the ARK Servo Expander](https://arkelectron.com/product/ark-servo-expander/)
 
+CAD: [3D model](https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Servo_Expander/model)
+
 | Page | Contents |
 |------|----------|
 | [Hardware Reference](hardware.md) | Specifications, pinout, resistor settings, 3D model |
