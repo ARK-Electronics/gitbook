@@ -7,7 +7,7 @@ coverY: -23.514666666666663
 
 A 4-in-1 ESC that drives four brushless motors. It takes DShot or PWM from PX4, ArduPilot and Betaflight flight controllers.
 
-<a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_4IN1_ESC/model" class="button secondary" data-icon="cube">3D model</a>
+<a href="#variants" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_4IN1_ESC/model" class="button secondary" data-icon="cube">3D model</a>
 
 * **MCUs:** four STM32F051, one per motor, with TI DRV8328 gate drivers
 * **Input:** 3S–8S
