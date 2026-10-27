@@ -9,7 +9,7 @@
 | Flow features | Detects challenging conditions such as checkerboards, stripes, glossy surfaces and yawing, and switches operation mode automatically |
 | IR LED | 40 mW, on the board for improved low light operation |
 | Distance sensor | Broadcom AFBR-S50EX85D time-of-flight |
-| Range | See [Range](#range) |
+| Distance range | Typically up to 80 m; see [Range](#range) |
 | Reported distance | 0.6 to 100 m |
 | Rate | 10 Hz |
 | Laser | 850 nm, Class 1 eye safe (IEC 60825-1) |
