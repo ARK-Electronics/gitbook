@@ -5,12 +5,12 @@ coverY: 0
 
 # ARK Flow LR
 
-A DroneCAN optical flow, long-range distance sensor and IMU module. It is the [ARK Flow MR](../ark-flow-mr/README.md) with a longer-range distance sensor and its own firmware.
+A DroneCAN optical flow, long-range distance sensor and IMU module.
 
 <a href="https://arkelectron.com/product/ark-flow-lr/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/case" class="button secondary" data-icon="box">Case</a>
 
 * **Optical flow:** PixArt PAA3905
-* **Distance sensor:** Broadcom AFBR-S50EX85D time-of-flight, reports 0.6 to 100 m at 10 Hz
+* **Distance sensor:** Broadcom AFBR-S50EX85D time-of-flight, typically up to 80 m
 * **IMU:** InvenSense IIM-42653
 * **Works with:** PX4, ArduPilot, ROS 2 through ros2\_dronecan
 * **Compliance:** USA built, NDAA

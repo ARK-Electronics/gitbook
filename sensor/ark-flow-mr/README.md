@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK Flow MR
 
-A DroneCAN optical flow, mid-range distance sensor and IMU module. It is a drop-in upgrade for the [ARK Flow](../ark-flow/README.md).
+A DroneCAN optical flow, mid-range distance sensor and IMU module.
 
 <a href="https://arkelectron.com/product/ark-flow-mr/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Flow_MR/case" class="button secondary" data-icon="box">Case</a>
 
