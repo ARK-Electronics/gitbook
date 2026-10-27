@@ -44,7 +44,7 @@ If the flight controller still has firmware in `/fs/microsd/ufw/`, it will re-fl
 
 ## Updating to AP\_Periph
 
-To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) (ArduPilot Peripheral) instead. An ArduPilot flight controller can act as the CAN adapter for this, so no USB-to-CAN adapter is needed.
+[AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html), ArduPilot's node firmware, can replace the ARK firmware; an ArduPilot flight controller uses either. An ArduPilot flight controller can act as the CAN adapter for this, so no USB-to-CAN adapter is needed.
 
 ### Flashing AP\_Periph over CAN
 

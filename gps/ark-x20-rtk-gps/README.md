@@ -13,7 +13,7 @@ A DroneCAN RTK GNSS module that connects to a flight controller's CAN port.
 * **Heading:** moving base with two units, X20P firmware 2.10 or later
 * **Sensors:** ST IIS2MDC magnetometer, Bosch BMP390 barometer, InvenSense ICM-42688-P IMU
 * **Interface:** 2× CAN, receiver UART2 with PPS, I2C expansion, safety switch, buzzer
-* **Autopilots:** PX4, ArduPilot (AP\_Periph, in review)
+* **Autopilots:** PX4, ArduPilot (AP\_Periph not yet released)
 * **Compliance:** USA built, NDAA
 
 ## Documentation

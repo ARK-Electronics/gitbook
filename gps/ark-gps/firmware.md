@@ -13,7 +13,7 @@ Follow the steps for updating the firmware through the flight controller.
 
 ## Updating to AP\_Periph
 
-To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. AP\_Periph does not publish the ARK GPS IMU.
+[AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html), ArduPilot's node firmware, can replace the ARK firmware; an ArduPilot flight controller uses either. AP\_Periph does not publish the ARK GPS IMU.
 
 1. Download `AP_Periph.apj` from the [ArduPilot firmware server](https://firmware.ardupilot.org/AP_Periph/stable/ARK_GPS/).
 2. Flash it to the node with the [DroneCAN GUI Tool](../../knowledge-base/dronecan-gui-tool-guide.md). An ArduPilot flight controller can act as the CAN adapter.

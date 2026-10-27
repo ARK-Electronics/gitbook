@@ -12,7 +12,7 @@ An open source DroneCAN GNSS module that connects to a flight controller's CAN p
 * **Receiver:** u-blox NEO-M9N, 4 concurrent GNSS
 * **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
 * **Interface:** 2× CAN, safety switch, buzzer
-* **Autopilots:** PX4, ArduPilot (AP\_Periph on the node)
+* **Autopilots:** PX4, ArduPilot (AP\_Periph optional)
 * **Compliance:** USA built, NDAA
 
 ## Documentation
