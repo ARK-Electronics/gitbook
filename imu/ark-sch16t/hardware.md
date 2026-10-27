@@ -9,11 +9,14 @@
 | Accelerometer range | ±8 g (K01), ±16 g (K10); redundant digital accelerometer channel up to ±26 g |
 | Gyro bias instability | Down to 0.3 °/h (K01), 2 °/h (K10) |
 | Gyro noise density | Down to 0.4 m°/s/√Hz (K01), 6 m°/s/√Hz (K10) |
-| Operating temperature | −40 °C to +110 °C |
 | Interface | SPI, 11-pin JST-GH |
 | Power | 5 V, 46 mA average |
 | Dimensions | 2.5 × 2.25 × 0.59 cm |
+| Operating temperature | −25 °C to +85 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Weight | 2.5 g |
+
+The SCH16T is rated −40 °C to +110 °C operating and −50 °C to +150 °C storage (24 h maximum).
 
 ## Pinout
 

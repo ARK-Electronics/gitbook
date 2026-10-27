@@ -12,6 +12,8 @@
 | Current sensor | Onboard, one shunt shared by all four channels |
 | Input protocols | DShot (300, 600) with bidirectional DShot and KISS serial telemetry; PWM |
 | Connectors | 8-pin JST-SH flight controller, 10-pin JST-SH debug. CONS: MR30 motor connectors, M2.5 threaded battery standoffs |
+| Operating temperature | −25 °C to +85 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Dimensions | 43.00 × 40.50 × 7.60 mm. CONS: 77.00 × 42.00 × 9.43 mm |
 | Mounting pattern | 30.5 mm |
 | Weight | 14.5 g. CONS: 24.0 g |

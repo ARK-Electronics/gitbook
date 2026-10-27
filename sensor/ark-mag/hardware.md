@@ -10,6 +10,8 @@
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 44 mA average, 50 mA max |
 | Dimensions | 2.7 × 1.8 × 0.9 cm |
+| Operating temperature | −25 °C to +85 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Weight | 3 g |
 
 ## Pinout

@@ -19,6 +19,8 @@
 | Power | 5 V, 500 mA: 300 mA main system, 200 mA heater |
 | Input voltage | 4.8 V minimum, 5.5 V absolute maximum, supplied by the carrier. ARK PAB power modules output 5.2 V |
 | Mounting | PAB. In the bundles, the module is screwed into the ARK PAB Carrier with four M2×8 mm screws |
+| Operating temperature | −10 °C to +60 °C |
+| Storage temperature | −10 °C to +60 °C |
 | Dimensions | 3.6 × 2.9 × 0.5 cm |
 | Weight | 5.0 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |

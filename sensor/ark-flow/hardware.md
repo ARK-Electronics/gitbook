@@ -16,6 +16,8 @@
 | CAN | 2× Pixhawk-standard 4-pin JST-GH, software-toggleable built-in termination resistor. ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan) |
 | Debug | Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 71 mA average, 76 mA max |
+| Operating temperature | 0 °C to +60 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Dimensions | 3 × 3 × 1.4 cm |
 | Weight | 5 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
