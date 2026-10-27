@@ -16,7 +16,9 @@
 | Storage temperature | −25 °C to +85 °C |
 | Weight | 2.5 g |
 
-The JST-GH connector sets both temperature ranges. The SCH16T itself is rated −40 °C to +110 °C operating and −50 °C to +150 °C storage (24 h maximum).
+The SCH16T is rated −40 °C to +110 °C operating and −50 °C to +150 °C storage (24 h maximum).
+
+<!-- Temperature limits: JST-GH SM11B-GHS-TB −25/+85 (no storage spec, so its operating range is used). No schematic or BOM on file, so the other parts are unchecked. -->
 
 ## Pinout
 

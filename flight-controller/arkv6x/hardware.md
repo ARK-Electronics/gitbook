@@ -25,7 +25,7 @@
 | Weight | 5.0 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
-The RTC backup supercapacitor sets both temperature ranges. The next limit is the blue status LED, −20 °C to +80 °C.
+<!-- Temperature limits (Rev 5.1 schematic, Extended Range): Elna DSK-3R3H224U-HL RTC backup supercap C56 −10/+60, no storage spec, series obsolete. Next: blue status LED −20/+80, micro-SD −25/+85, DF40 −35/+85. Standard variant schematic not checked. -->
 
 ## Pinout
 

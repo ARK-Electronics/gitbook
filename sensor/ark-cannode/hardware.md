@@ -20,7 +20,7 @@
 | Storage temperature | −25 °C to +85 °C |
 | Weight | 5 g |
 
-The blue status LED sets the operating range and the JST connectors the storage range. The next operating limit is the JST connectors, −25 °C to +85 °C.
+<!-- Temperature limits (Rev 1 BOM): LTST-C194TBKT blue status LED −20/+80; JST −25/+85 storage (no storage spec, so its operating range is used). Without the LED −25/+85. -->
 
 ## Pinout
 

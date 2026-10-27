@@ -19,7 +19,7 @@
 | Weight | 14.5 g. CONS: 24.0 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
-The JST-SH connectors set the −25 °C limits and the STM32F051 the +85 °C operating limit.
+<!-- Temperature limits (Rev 4.1 schematic): JST-SH J1/J2 −25/+85 (no storage spec, so its operating range is used); STM32F051K6U6 +85. Without the connectors −40/+85 operating, −55/+125 storage. Unchecked: FETs, TVS, shunt, MLCCs, MR30 connectors and leads. -->
 
 ## Pinout
 

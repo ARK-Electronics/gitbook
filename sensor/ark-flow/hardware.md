@@ -22,7 +22,7 @@
 | Weight | 5 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
-The optical flow sensor sets the operating range and the JST connectors the −25 °C storage limit. The distance sensor is rated −20 °C to +70 °C.
+<!-- Temperature limits: PAW3902JF (Rev 2) and PAA3905E1-Q (Rev 3) flow sensors 0/+60; JST −25 storage (no storage spec, so its operating range is used). Next: AFBR-S50LV85D distance sensor −20/+70. Which revision ships is unconfirmed. -->
 
 ## Pinout
 

@@ -14,7 +14,7 @@
 | Storage temperature | −25 °C to +85 °C |
 | Weight | 3 g |
 
-The JST connectors set the −25 °C limits.
+<!-- Temperature limits (Rev 1.0 schematic): JST −25/+85 (no storage spec, so its operating range is used). -->
 
 ## Pinout
 

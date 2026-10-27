@@ -22,7 +22,9 @@
 | Compliance | USA built, NDAA compliant. L1/L2 model: [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 | Alternate antennas (L1/L2) | [Tallysman 33-HC882-28](https://www.digikey.com/en/products/detail/tallysman-wireless-inc/33-HC882-28/10473741), [Taoglas AA.175.301111](https://www.digikey.com/en/products/detail/taoglas-limited/AA-175-301111/11196807), [Taoglas A.80.A.101111](https://www.digikey.com/en/products/detail/taoglas-limited/A-80-A-101111/9972792), [Linx ANT-GNRM-L12A-3](https://www.digikey.com/en/products/detail/linx-technologies-inc/ANT-GNRM-L12A-3/16740159), [u-blox ANN-MB-00-00](https://www.digikey.com/en/products/detail/u-blox/ANN-MB-00-00/9817928) |
 
-The backup supercapacitor sets both temperature ranges. The ZED-F9P itself is rated −40 °C to +85 °C operating and storage.
+The ZED-F9P module is rated −40 °C to +85 °C operating and storage.
+
+<!-- Temperature limits (Rev 3 BOM): Elna DSK-3R3H224U-HL backup supercap −10/+60, no storage spec, series obsolete. Next: ST-03CH buzzer +70, JST −25. -->
 
 ## Pinout
 

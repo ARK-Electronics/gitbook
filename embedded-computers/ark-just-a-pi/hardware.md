@@ -17,7 +17,9 @@
 | Operating temperature | 0 °C to +70 °C, carrier only |
 | Storage temperature | −25 °C to +80 °C, carrier only |
 
-The Ethernet switch sets the operating range. The CM5 itself is rated −20 °C to +85 °C.
+The CM5 is rated −20 °C to +85 °C.
+
+<!-- Temperature limits (Rev 2.0 schematic): KSZ8794CNXCC Ethernet switch 0/+70 (commercial grade; KSZ8794CNXIC is the industrial part). Storage: micro-HDMI 10118241 −30/+80; JST, Cvilux and micro-SD −25 (no storage spec). -->
 
 ## Compute Module 4
 

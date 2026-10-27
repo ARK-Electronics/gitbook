@@ -15,7 +15,7 @@
 | Storage temperature | −40 °C to +85 °C |
 | Weight | 11.5 g |
 
-The power monitor's 3.3 V regulator sets the +85 °C operating limit.
+<!-- Temperature limits (Rev 3.1 schematic): LP5907 3.3 V regulator −40/+85 ambient (TI recommended conditions); LTST-C191KGKT green LED +85 storage. Unchecked: shunts, TVS, bulk MLCCs, loose 12S capacitor and TVS. -->
 
 ## Wiring
 

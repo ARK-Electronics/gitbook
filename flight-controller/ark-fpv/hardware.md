@@ -25,7 +25,7 @@
 | Weight | 7.5 g with MicroSD card |
 | Compliance | USA built, NDAA compliant. The ARK FPV is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
-The JST connectors and micro-SD slot set the −25 °C limits.
+<!-- Temperature limits (Rev 4.2 schematic): JST-GH/SH and micro-SD −25 (no storage spec, so its operating range is used); STM32H743IIK6, SiP32402A, IIS2MDC, BMP390 +85. -->
 
 ## Pinout
 
