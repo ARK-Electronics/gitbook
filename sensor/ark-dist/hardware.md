@@ -30,6 +30,8 @@ Range depends on the ambient light on the ground and on how well the surface ref
 
 Bright sun is around midday; dusk is around sunset. \* Capped by the maximum reported distance. Wet surfaces reduce range. Over open water, readings are short and intermittent.
 
+The ARK Flow and ARK Pi6X Flow use the SR's sensor, the ARK Flow MR the MR's and the ARK Flow LR the LR's. Only the Flow LR runs it at the same settings.
+
 ## Pinout
 
 ### CAN (×2) — 4-pin JST-GH

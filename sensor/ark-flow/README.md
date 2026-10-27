@@ -15,7 +15,7 @@ An open source DroneCAN optical flow, distance sensor and IMU module.
 * **Works with:** PX4, ArduPilot, ROS 2 through ros2\_dronecan
 * **Compliance:** USA built, NDAA, Blue Framework listed
 
-Maximum range depends on the surface's texture and reflectivity and on ambient light; see [Range](hardware.md#range).
+Maximum range depends on the surface's texture and reflectivity and on ambient light; see [Range](../ark-dist/hardware.md#range).
 
 ## Documentation
 

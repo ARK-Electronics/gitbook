@@ -10,7 +10,7 @@
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Power monitor | [TI INA226](https://www.ti.com/product/INA226) voltage and current monitor |
 | Optical flow (Pi6X Flow only) | [PixArt PAW3902](https://www.pixart.com/products-detail/93/PAW3902JF-TXQT) |
-| Distance sensor (Pi6X Flow only) | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d), typically up to 30 m; see [Range](#range). Not supported in ArduPilot |
+| Distance sensor (Pi6X Flow only) | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d), typically up to 30 m; see [ARK DIST Range](../../sensor/ark-dist/hardware.md#range). Not supported in ArduPilot |
 | Compute module | Raspberry Pi Compute Module 4; CM4 Lite boots from the microSD slot. Compute Module 5 with the [differences below](#compute-module-5) |
 | Flight controller interfaces | TELEM1, RC input, 8 PWM outputs (DShot capable), UART4, GPS (UART, I2C), CAN, buzzer, debug (SWD, UART console), microSD |
 | Pi interfaces | Micro HDMI, Ethernet, USB-C host, 2× USB JST-GH, 2× MIPI CSI (22-pin FFC), programming micro USB, I2C, UART, LED strip GPIO, GPIO, console, CPU fan |
@@ -19,10 +19,6 @@
 | Dimensions | 91.5 × 56 mm, without compute module and ESC |
 | Weight | 41 g without compute module, SD card and ESC; 53 g with CM4 and SD card |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
-
-## Range
-
-Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. Wet surfaces reduce range. Over open water, readings are short and intermittent. Outdoor measurements of the same sensor, at the ARK DIST's settings, are in [ARK DIST Range](../../sensor/ark-dist/hardware.md#range).
 
 ## Compute Module 5
 

@@ -9,7 +9,7 @@
 | Low light | Tracks under super low light conditions of >9 lux. 40 mW IR LED on the board for improved low light operation |
 | Max flow rate | 7.4 rad/s |
 | Distance sensor | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) time-of-flight, integrated 850 nm laser light source |
-| Distance range | Typically up to 30 m; see [Range](#range) |
+| Distance range | Typically up to 30 m; see [ARK DIST Range](../ark-dist/hardware.md#range) |
 | Field of view | 12.4° × 6.2° with 32 pixels. 2° × 2° transmitter beam illuminates 1 to 3 pixels |
 | IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/) on rev 2 and later, [Bosch BMI088](https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi088/) on rev 1; 6-axis |
 | MCU | STM32F412CEU6 |
@@ -19,10 +19,6 @@
 | Dimensions | 3 × 3 × 1.4 cm |
 | Weight | 5 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
-
-## Range
-
-Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. Wet surfaces reduce range. Over open water, readings are short and intermittent. Outdoor measurements of the same sensor, at the ARK DIST's settings, are in [ARK DIST Range](../ark-dist/hardware.md#range).
 
 ## Pinout
 
