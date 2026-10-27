@@ -20,3 +20,4 @@ An open source DroneCAN GNSS module that connects to a flight controller's CAN p
 * [Firmware](firmware.md)
 * [Hardware Reference](hardware.md)
 * [PX4 Instructions](px4-instructions.md)
+* [ArduPilot Instructions](ardupilot-instructions.md)

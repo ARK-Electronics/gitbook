@@ -224,6 +224,7 @@
     * [Firmware](gps/ark-gps/firmware.md)
     * [Hardware Reference](gps/ark-gps/hardware.md)
     * [PX4 Instructions](gps/ark-gps/px4-instructions.md)
+    * [ArduPilot Instructions](gps/ark-gps/ardupilot-instructions.md)
   * [ARK MOSAIC-X5 RTK GPS](gps/ark-mosaic-x5-rtk-gps/README.md)
     * [Firmware](gps/ark-mosaic-x5-rtk-gps/firmware.md)
     * [Hardware Reference](gps/ark-mosaic-x5-rtk-gps/hardware.md)
