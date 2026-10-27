@@ -10,10 +10,10 @@ An open source DroneCAN RTK GNSS module that connects to a flight controller's C
 <a href="https://arkelectron.com/product/ark-rtk-gps/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
 * **Receiver:** u-blox ZED-F9P, centimeter-level RTK
-* **Heading:** moving base with two units, L1/L2 model only
+* **Heading:** moving base with two units
 * **Sensors:** Bosch BMM150 magnetometer, Bosch BMP388 barometer, InvenSense ICM-42688-P IMU
 * **Interface:** 2× CAN, F9P UART2, safety switch, buzzer
-* **Autopilots:** PX4, ArduPilot (AP\_Periph recommended)
+* **Autopilots:** PX4, ArduPilot
 * **Compliance:** USA built, NDAA, Blue Framework listed (L1/L2 model)
 
 ## Variants

@@ -22,8 +22,6 @@ A Raspberry Pi compute module carrier with a flight controller, a power module a
 | **ARK Pi6X Flow** | PAW3902 flow, AFBR-S50LV85D distance | [Buy](https://arkelectron.com/product/ark-pi6x-flow/) |
 | **ARK Pi6X** | None | [Buy](https://arkelectron.com/product/ark-pi6x/) |
 
-ArduPilot does not support the AFBR-S50LV85D.
-
 ## Documentation
 
 * [Firmware](firmware.md)

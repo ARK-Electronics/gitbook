@@ -11,7 +11,6 @@ A flight controller carrier board built to the Pixhawk Autopilot Bus standard. I
 
 * **Power:** dual digital power module inputs
 * **Interfaces:** Ethernet, USB-C, two GPS, two CAN, three TELEM, eight PWM, RC, SPI, ADIO, debug
-* **Autopilots:** set by the flight controller module; the ARKV6X runs PX4 and ArduPilot
 * **Compliance:** USA built, NDAA
 
 ## Documentation

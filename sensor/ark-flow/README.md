@@ -11,11 +11,11 @@ An open source DroneCAN optical flow, distance sensor and IMU module.
 
 * **Optical flow:** PixArt PAW3902
 * **Distance sensor:** Broadcom AFBR-S50LV85D time-of-flight, typically up to 30 m
-* **IMU:** InvenSense ICM-42688-P (rev 2 and later), Bosch BMI088 (rev 1)
+* **IMU:** InvenSense ICM-42688-P
 * **Works with:** PX4, ArduPilot, ROS 2 through ros2\_dronecan
 * **Compliance:** USA built, NDAA, Blue Framework listed
 
-Maximum range depends on the surface's texture and reflectivity and on ambient light.
+Maximum range depends on the surface's texture and reflectivity and on ambient light; see [Range](hardware.md#range).
 
 ## Documentation
 

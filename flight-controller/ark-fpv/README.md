@@ -22,8 +22,6 @@ A flight controller based on the [ARKV6X](../arkv6x/README.md), in a 30.5 mm mou
 | **ARK FPV** | IIM-42653 | [Buy](https://arkelectron.com/product/ark-fpv-flight-controller/) |
 | **ARK FPV 32X** | LSM6DSV32X | [Buy](https://arkelectron.com/product/ark-fpv-32x-flight-controller/) |
 
-The ARK FPV 32X needs PX4 main or release/1.18 after v1.18.0-rc1, or ArduPilot master. The published Betaflight target leaves its IMU stopped.
-
 ## Documentation
 
 * [Firmware](firmware.md)

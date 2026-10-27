@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK G5 RTK Heading GPS
 
-A DroneCAN RTK GNSS module that computes heading from two external antennas on its MAIN and ANT2 connectors and reports it as one GPS node. For the single-antenna P3, see the [ARK G5 RTK GPS](../ark-g5-rtk-gps/README.md).
+A DroneCAN RTK GNSS module that computes heading from two external antennas and reports it as one GPS node.
 
 <a href="https://arkelectron.com/product-tag/gps-heading/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_G5_RTK_GPS/case" class="button secondary" data-icon="box">Case</a>
 
@@ -23,8 +23,6 @@ A DroneCAN RTK GNSS module that computes heading from two external antennas on i
 | **ARK G5 P3H RTK Heading GPS** | Dual antenna | AIM+ | [Buy](https://arkelectron.com/product/ark-g5-rtk-heading-gps/) |
 | **ARK G5 P6 RTK GPS** | Single antenna | AIM+ Premium | [Buy](https://arkelectron.com/product/ark-g5-p6-rtk-gps/) |
 | **ARK G5 P8 RTK GPS** | Single antenna | AIM+ ultimate | [Buy](https://arkelectron.com/product/ark-g5-p8-rtk-gps/) |
-
-On the P6 and P8, set `SEP_ANT_MODE` to `2` for dual antenna heading.
 
 ## Documentation
 

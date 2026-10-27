@@ -5,7 +5,7 @@ coverY: -16
 
 # ARK Jetson PAB Carrier
 
-A carrier board for an NVIDIA Jetson Orin Nano or NX module and a Pixhawk Autopilot Bus flight controller, such as the [ARKV6X](../../arkv6x/README.md). The [comparison table](../README.md) lists what changed in the ARK Jetson PAB Carrier V3.
+A carrier board for an NVIDIA Jetson Orin Nano or NX module and a Pixhawk Autopilot Bus flight controller, such as the [ARKV6X](../../arkv6x/README.md).
 
 <a href="https://arkelectron.com/product/ark-jetson-pab-carrier/" class="button primary" data-icon="cart-shopping">Buy carrier</a> <a href="https://arkelectron.com/product/ark-jetson-pab-ndaa-bundle/" class="button primary" data-icon="cart-shopping">Buy NDAA bundle</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Jetson_PAB_Carrier/case" class="button secondary" data-icon="box">Case</a>
 
