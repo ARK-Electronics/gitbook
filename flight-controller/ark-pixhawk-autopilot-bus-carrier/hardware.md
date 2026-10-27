@@ -30,8 +30,6 @@
 | Dimensions | 74.0 × 43.5 × 12.0 mm, without flight controller module |
 | Weight | 22 g, without flight controller module |
 
-<!-- Temperature limits (Rev 3.0 schematic): JST-GH/SH/ZH −25/+85 (no storage spec, so its operating range is used). The DF40HC −10/+60 storage range is for unmounted stock, so not applied. -->
-
 ## Pinout
 
 See the [Pinout](pinout.md) page for the connector pinouts.

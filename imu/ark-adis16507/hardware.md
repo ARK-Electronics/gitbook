@@ -17,8 +17,6 @@
 
 The ADIS16507 is rated −40 °C to +105 °C operating and −65 °C to +150 °C storage.
 
-<!-- Temperature limits (Rev 1 schematic): JST-GH SM11B-GHS-TB −25/+85 (no storage spec, so its operating range is used); C2 X5R +85. -->
-
 ## Pinout
 
 ### SPI — 11-pin JST-GH

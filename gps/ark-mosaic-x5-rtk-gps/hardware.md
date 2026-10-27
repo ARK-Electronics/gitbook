@@ -22,8 +22,6 @@
 
 The mosaic-X5 module is rated −40 °C to +85 °C operating and −55 °C to +85 °C storage.
 
-<!-- Temperature limits (Rev 2.1 schematic): CSS-J4B20-SMT-TR buzzer +70; LTST-C194TBKT blue status LED −20; JST-GH/SH and Molex 503398 micro-SD −25 storage (no storage spec, so its operating range is used). -->
-
 ## Pinout
 
 ### CAN (×2) — 4-pin JST-GH

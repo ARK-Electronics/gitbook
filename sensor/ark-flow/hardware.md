@@ -22,8 +22,6 @@
 | Weight | 5 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
-<!-- Temperature limits: PAW3902JF (Rev 2) and PAA3905E1-Q (Rev 3) flow sensors 0/+60; JST −25 storage (no storage spec, so its operating range is used). Next: AFBR-S50LV85D distance sensor −20/+70. Which revision ships is unconfirmed. -->
-
 ## Pinout
 
 ### CAN (×2) — 4-pin JST-GH

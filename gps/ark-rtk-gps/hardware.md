@@ -24,8 +24,6 @@
 
 The ZED-F9P module is rated −40 °C to +85 °C operating and storage.
 
-<!-- Temperature limits (Rev 3 BOM): Elna DSK-3R3H224U-HL backup supercap −10/+60, no storage spec, series obsolete. Next: ST-03CH buzzer +70, JST −25. -->
-
 ## Pinout
 
 ### CAN (×2) — 4-pin JST-GH

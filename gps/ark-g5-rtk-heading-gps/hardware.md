@@ -23,8 +23,6 @@
 
 The mosaic-G5 module is rated −40 °C to +85 °C operating and −55 °C to +85 °C storage.
 
-<!-- Temperature limits (Rev 1.1 schematic): ST-03CH buzzer +70; LTST-C194TBKT blue status LED −20; JST −25 storage (no storage spec, so its operating range is used). -->
-
 ## Pinout
 
 ### CAN (×2) — 4-pin JST-GH

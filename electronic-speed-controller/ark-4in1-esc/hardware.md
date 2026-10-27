@@ -19,8 +19,6 @@
 | Weight | 14.5 g. CONS: 24.0 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
-<!-- Temperature limits (Rev 4.1 schematic): JST-SH J1/J2 −25/+85 (no storage spec, so its operating range is used); STM32F051K6U6 +85. Without the connectors −40/+85 operating, −55/+125 storage. Unchecked: FETs, TVS, shunt, MLCCs, MR30 connectors and leads. -->
-
 ## Pinout
 
 ### Flight Controller — 8-pin JST-SH

@@ -18,8 +18,6 @@
 
 The SCH16T is rated −40 °C to +110 °C operating and −50 °C to +150 °C storage (24 h maximum).
 
-<!-- Temperature limits: JST-GH SM11B-GHS-TB −25/+85 (no storage spec, so its operating range is used). No schematic or BOM on file, so the other parts are unchecked. -->
-
 ## Pinout
 
 ### SPI — 11-pin JST-GH

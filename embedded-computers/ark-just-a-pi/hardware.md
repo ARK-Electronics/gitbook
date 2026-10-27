@@ -19,8 +19,6 @@
 
 The CM5 is rated −20 °C to +85 °C.
 
-<!-- Temperature limits (Rev 2.0 schematic): KSZ8794CNXCC Ethernet switch 0/+70 (commercial grade; KSZ8794CNXIC is the industrial part). Storage: micro-HDMI 10118241 −30/+80; JST, Cvilux and micro-SD −25 (no storage spec). -->
-
 ## Compute Module 4
 
 A CM4 fits, but these interfaces don't work with it:
