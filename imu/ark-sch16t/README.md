@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK SCH16T
 
-An SPI IMU board with an 11-pin JST-GH connector that matches the SPI port on the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md) and the ARK Jetson carriers.
+An SPI IMU board with an 11-pin JST-GH connector that matches the SPI port on the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md), the [ARK Jetson PAB Carrier](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier/README.md) and the [ARK Secondary Avionics Breakout](../../accessories/ark-secondary-avionics-breakout/README.md).
 
 <a href="https://arkelectron.com/product-tag/murata/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_SCH16T/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_SCH16T/datasheet/ARK_SCH16T_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 

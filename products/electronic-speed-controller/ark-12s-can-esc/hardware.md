@@ -1,9 +1,3 @@
----
-description: >-
-  Specifications, design limits, connector pinouts and status LEDs of the ARK
-  12S CAN ESC.
----
-
 # Hardware Reference
 
 * [Mounting and Power Connections](mounting-and-power-connections.md) — board outline, mounting holes, power and phase standoffs, grounding, thermal notes

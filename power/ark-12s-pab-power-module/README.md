@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK 12S PAB Power Module
 
-A 12S power supply and digital power monitor for Pixhawk Autopilot Bus carriers, such as the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md).
+A power supply and digital power monitor for Pixhawk Autopilot Bus carriers, such as the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md).
 
 <a href="https://arkelectron.com/product/ark-12s-pab-power-module/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_12S_PAB_Power_Module/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_12S_PAB_Power_Module/datasheet/ARK_12S_PAB_Power_Module_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 

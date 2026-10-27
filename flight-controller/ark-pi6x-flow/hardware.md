@@ -4,8 +4,8 @@
 
 | Specification | Value |
 |---------------|-------|
-| Flight controller | ARKV6X: [STM32H743](https://www.st.com/en/microcontrollers-microprocessors/stm32h743ii.html), 480 MHz, 2 MB flash, 1 MB RAM |
-| IMUs | Dual [Invensense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), heated |
+| Flight controller | [STM32H743](https://www.st.com/en/microcontrollers-microprocessors/stm32h743ii.html), 480 MHz, 2 MB flash, 1 MB RAM |
+| IMUs | Dual [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), heated |
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Power monitor | [TI INA226](https://www.ti.com/product/INA226) voltage and current monitor |
@@ -15,7 +15,7 @@
 | Flight controller interfaces | TELEM1, RC input, 8 PWM outputs (DShot capable), UART4, GPS (UART, I2C), CAN, buzzer, debug (SWD, UART console), microSD |
 | Pi interfaces | Micro HDMI, Ethernet, USB-C host, 2× USB JST-GH, 2× MIPI CSI (22-pin FFC), programming micro USB, I2C, UART, LED strip GPIO, GPIO, console, CPU fan |
 | Power | 5.5–25.2 V (2S–6S) battery input |
-| ESC mounting | 4-in-1 ESC, 30 × 30 mm |
+| ESC mounting | 4-in-1 ESC, 30.5 × 30.5 mm |
 | Dimensions | 91.5 × 56 mm, without compute module and ESC |
 | Weight | 41 g without compute module, SD card and ESC; 53 g with CM4 and SD card |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |

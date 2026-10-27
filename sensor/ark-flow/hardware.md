@@ -11,7 +11,7 @@
 | Distance sensor | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d) time-of-flight, integrated 850 nm laser light source |
 | Distance range | Typically up to 30 m |
 | Field of view | 12.4° × 6.2° with 32 pixels. 2° × 2° transmitter beam illuminates 1 to 3 pixels |
-| IMU | [Bosch BMI088](https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi088/) or [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/), 6-axis |
+| IMU | [InvenSense ICM-42688-P](https://invensense.tdk.com/products/motion-tracking/6-axis/icm-42688-p/) on rev 2 and later, [Bosch BMI088](https://www.bosch-sensortec.com/products/motion-sensors/imus/bmi088/) on rev 1; 6-axis |
 | MCU | STM32F412CEU6 |
 | CAN | 2× Pixhawk-standard 4-pin JST-GH, software-toggleable built-in termination resistor. ROS 2 through [ros2\_dronecan](https://github.com/ARK-Electronics/ros2_dronecan) |
 | Debug | Pixhawk-standard 6-pin JST-SH |

@@ -20,7 +20,8 @@
 | PWM | Eight PWM outputs, 10-pin JST-GH |
 | UART/I2C | 6-pin JST-GH |
 | I2C | 4-pin JST-GH |
-| RC | PPM RC port, 3-pin JST-GH. DSM RC port, 3-pin JST-ZH |
+| RC | PPM RC port, 3-pin JST-GH. DSM RC port, 3-pin JST-ZH. RC/SBUS port, 5-pin |
+| USB | USB-C, and a 4-pin JST-GH in parallel |
 | SPI | 11-pin JST-GH |
 | ADIO | 8-pin JST-GH |
 | Debug | 10-pin JST-SH |
