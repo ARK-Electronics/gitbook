@@ -24,13 +24,13 @@
 
 ## Range
 
-Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. With default settings, range is the greatest height at which at least half the readings are valid and within 5 m of the true height. Measured with the same sensor and settings on the [ARK DIST LR](../ark-dist/hardware.md#range):
+Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. Measured outdoors on the [ARK DIST LR](../ark-dist/hardware.md#range), which has the same sensor and settings:
 
-| Asphalt, bright sun | Asphalt, dusk | Grass, bright sun | Grass, dusk |
-|---------------------|---------------|-------------------|-------------|
-| 18 m | 40 m | 40 m | 82 m |
+| Max reported distance | Asphalt, bright sun | Asphalt, dusk | Grass, bright sun | Grass, dusk |
+|-----------------------|---------------------|---------------|-------------------|-------------|
+| 100 m | 18 m | 40 m | 40 m | 82 m |
 
-Bright sun: sun 59–60° above the horizon; a lower sun gives more range. Dusk: sun below 6°. Wet surfaces reduce range. Over open water, readings are short and intermittent.
+Bright sun is around midday; dusk is around sunset. Wet surfaces reduce range. Over open water, readings are short and intermittent.
 
 ## Pinout
 

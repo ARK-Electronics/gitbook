@@ -20,15 +20,15 @@
 
 ## Range
 
-Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. With default settings, range is the greatest height at which at least half the readings are valid and within 5 m of the true height:
+Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. Measured outdoors:
 
-| Variant | Asphalt, bright sun | Asphalt, dusk | Grass, bright sun | Grass, dusk |
-|---------|---------------------|---------------|-------------------|-------------|
-| SR | 18 m | 30 m | 18 m | 30 m\* |
-| MR | 18 m | 40 m | 18 m | 50 m\* |
-| LR | 18 m | 40 m | 40 m | 82 m |
+| Variant | Max reported distance | Asphalt, bright sun | Asphalt, dusk | Grass, bright sun | Grass, dusk |
+|---------|-----------------------|---------------------|---------------|-------------------|-------------|
+| SR | 30 m | 18 m | 30 m | 18 m | 30 m\* |
+| MR | 50 m | 18 m | 40 m | 18 m | 50 m\* |
+| LR | 100 m | 18 m | 40 m | 40 m | 82 m |
 
-Bright sun: sun 49–61° above the horizon; a lower sun gives more range. Dusk: sun below 6°. \* Limited by the maximum reported distance; the sensor was still measuring at the flight ceiling (SR 38 m, MR 54 m). Wet surfaces reduce range. Over open water, readings are short and intermittent.
+Bright sun is around midday; dusk is around sunset. \* Capped by the maximum reported distance. Wet surfaces reduce range. Over open water, readings are short and intermittent.
 
 ## Pinout
 
