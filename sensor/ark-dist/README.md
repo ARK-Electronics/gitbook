@@ -16,13 +16,13 @@ A time-of-flight distance sensor that reports to the flight controller over Dron
 
 ## Variants
 
-| Variant | Sensor | Max reported distance | Rate | Buy |
+| Variant | Sensor | Typical range | Rate | Buy |
 |---------|--------|-----------------------|------|-----|
-| **ARK DIST SR** | AFBR-S50LV85D | 30 m | 20 Hz | [Buy](https://arkelectron.com/product/ark-dist-sr/) |
-| **ARK DIST MR** | AFBR-S50LX85D | 50 m | 15 Hz | [Buy](https://arkelectron.com/product/ark-dist-mr/) |
-| **ARK DIST LR** | AFBR-S50EX85D | 100 m | 10 Hz | [Buy](https://arkelectron.com/product/ark-dist-lr/) |
+| **ARK DIST SR** | AFBR-S50LV85D | Up to 30 m | 20 Hz | [Buy](https://arkelectron.com/product/ark-dist-sr/) |
+| **ARK DIST MR** | AFBR-S50LX85D | Up to 50 m | 15 Hz | [Buy](https://arkelectron.com/product/ark-dist-mr/) |
+| **ARK DIST LR** | AFBR-S50EX85D | Up to 80 m | 10 Hz | [Buy](https://arkelectron.com/product/ark-dist-lr/) |
 
-Range depends on the light on the ground and on the surface; see [Range](hardware.md#range).
+Maximum range depends on the surface's texture and reflectivity and on ambient light; see [Range](hardware.md#range).
 
 ## Documentation
 

@@ -9,7 +9,7 @@
 | Flow features | Detects challenging conditions such as checkerboards, stripes, glossy surfaces and yawing, and switches operation mode automatically |
 | IR LED | 40 mW, on the board for improved low light operation |
 | Distance sensor | Broadcom AFBR-S50EX85D time-of-flight |
-| Range | See [Range](#range) |
+| Distance range | Typically up to 80 m; see [ARK DIST Range](../ark-dist/hardware.md#range) |
 | Reported distance | 0.6 to 100 m |
 | Rate | 10 Hz |
 | Laser | 850 nm, Class 1 eye safe (IEC 60825-1) |
@@ -21,16 +21,6 @@
 | Power | 5 V, 86 mA average, 90 mA max |
 | Dimensions | 3 × 3 × 1.4 cm |
 | Weight | 5 g |
-
-## Range
-
-Range depends on the ambient light on the ground and on how well the surface reflects 850 nm light. With default settings, range is the greatest height at which at least half the readings are valid and within 5 m of the true height. Measured with the same sensor and settings on the [ARK DIST LR](../ark-dist/hardware.md#range):
-
-| Asphalt, bright sun | Asphalt, dusk | Grass, bright sun | Grass, dusk |
-|---------------------|---------------|-------------------|-------------|
-| 18 m | 40 m | 40 m | 82 m |
-
-Bright sun: sun 59–60° above the horizon; a lower sun gives more range. Dusk: sun below 6°. Wet surfaces reduce range. Over open water, readings are short and intermittent.
 
 ## Pinout
 

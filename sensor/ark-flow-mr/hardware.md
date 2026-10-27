@@ -9,7 +9,7 @@
 | Flow features | Detects challenging conditions such as checkerboards, stripes, glossy surfaces and yawing, and switches operation mode automatically |
 | IR LED | 40 mW, on the board for improved low light operation |
 | Distance sensor | [Broadcom AFBR-S50LX85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lx85d) time-of-flight |
-| Distance range | Typically up to 50 m |
+| Distance range | Typically up to 50 m; see [ARK DIST Range](../ark-dist/hardware.md#range) |
 | Laser opening angle | 2° × 2° |
 | IMU | [InvenSense IIM-42653](https://invensense.tdk.com/products/smartindustrial/iim-42653/), 6-axis |
 | MCU | STM32F412VG |

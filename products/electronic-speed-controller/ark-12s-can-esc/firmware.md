@@ -1,9 +1,3 @@
----
-description: >-
-  Flashing firmware over SWD, CAN, or a PX4 flight controller, plus node
-  parameters and the debug console.
----
-
 # Firmware
 
 The ARK 12S CAN ESC runs ARK32 with a DroneCAN interface. The build target is `ARK_G431_CAN`.

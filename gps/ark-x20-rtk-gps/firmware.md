@@ -57,7 +57,7 @@ The X20P receiver's own firmware is updated separately with u-center 2 — see [
 
 ## ArduPilot Firmware
 
-To run the node with ArduPilot, flash [AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html) instead. AP\_Periph support for the ARK X20 RTK GPS is in review — [ArduPilot PR #33941](https://github.com/ArduPilot/ardupilot/pull/33941) adds the `ARK_X20_GPS` target (board ID 89). Until it merges there are no prebuilt binaries on the ArduPilot firmware server.
+[AP\_Periph](https://ardupilot.org/dev/docs/ap-peripheral-landing-page.html), ArduPilot's node firmware, can replace the ARK firmware. ArduPilot is compatible with either. Its `ARK_X20_GPS` target (board ID 89) is in [ArduPilot PR #33941](https://github.com/ArduPilot/ardupilot/pull/33941), which is not merged, so the ArduPilot firmware server has no binaries for it.
 
 Build AP\_Periph from the PR branch:
 

@@ -3,7 +3,7 @@ cover: ../../.gitbook/assets/IMG_6459 edited.JPG
 coverY: 0
 ---
 
-# ARK Secondary Avionics Adapter
+# ARK Secondary Avionics Breakout
 
 A breakout from a 40-pin secondary avionics port, such as the one on the [ARK Jetson PAB Carrier V3](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/README.md), to Pixhawk-standard JST-GH connectors.
 

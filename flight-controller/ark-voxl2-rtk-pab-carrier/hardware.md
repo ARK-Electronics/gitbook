@@ -5,14 +5,14 @@
 | Specification | Value |
 |---------------|-------|
 | Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf) and [ModalAI VOXL2](https://www.modalai.com/products/voxl-2) |
-| GNSS receiver | [u-blox ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module), L1/L2 multi-band RTK with centimeter-level accuracy. Concurrent GPS, GLONASS, Galileo and BeiDou. Moving base for heading. MMCX antenna connector |
+| GNSS receiver | [u-blox ZED-F9P](https://www.u-blox.com/en/product/zed-f9p-module), L1/L2 multi-band RTK with centimeter-level accuracy. Concurrent GPS, GLONASS, Galileo and BeiDou. Heading with a second ZED-F9P as the moving base or rover. MMCX antenna connector |
 | VOXL2 connectors | MicroSD. USB-C: USB 3.0 host, 5 V 1.5 A. USB: USB 2.0 host, 4-pin JST-GH, 5 V 0.75 A |
 | PAB board-to-board interface | 100-pin Hirose DF40, 50-pin Hirose DF40 |
 | Flight Controller IO | 40-pin Molex Pico-Clasp: dual 5 V 1.5 A (shared with Payload IO), 5 V 0.25 A out for an RC receiver, dual CAN, dual UART (TX/RX), UART with RTS/CTS, dual I2C, 8 PWM |
 | SPI | 11-pin JST-GH |
 | Debug | Pixhawk Debug, 10-pin JST-SH: SWD, UART |
 | Payload IO | 40-pin Molex Pico-Clasp: battery output, dual 5 V 1.5 A (shared with Flight Controller IO), autopilot UART with RTS/CTS, autopilot UART (TX/RX), dual VOXL2 UARTs (TX/RX), USB 2.0 |
-| Power | 14-pin Molex CLIK-Mate: 12S 3 A battery input, dual 5 V 6 A inputs, dual I2C power module inputs |
+| Power | 14-pin Molex CLIK-Mate: 12S 3 A battery input for the Payload IO battery output only, dual 5 V 6 A inputs, dual I2C power module inputs |
 | Dimensions | 94.25 × 36.00 × 18 mm, without VOXL2 and flight controller module |
 | Weight | 25 g |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |

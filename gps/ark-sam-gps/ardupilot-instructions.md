@@ -2,16 +2,8 @@
 
 ## Firmware Setup
 
-The IIS2MDC magnetometer driver was added in January 2025 and requires ArduPilot version 4.6 or newer.
+ArduPilot supports the IIS2MDC magnetometer since 4.7.2, and on the ARK FPV since 4.6.3. For 4.6.0 to 4.7.1 on other boards, build firmware with the [ArduPilot Custom Firmware Builder](https://custom.ardupilot.org/) and select `IIS2MDC compasses` under `Compass`.
 
-Use the [ArduPilot Custom Firmware Builder](https://custom.ardupilot.org/) to compile firmware for your autopilot with the IIS2MDC driver. Select `IIS2MDC Compasses` under `Compass` for your board.
+Set [SERIALx\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#serial-parameters) to `5` (GPS) on the port the ARK SAM GPS connects to. The ARK FPV GPS port defaults to GPS.
 
 <figure><img src="../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
-
-This PR can be backported into previous releases of ArduPilot.
-
-[https://github.com/ArduPilot/ardupilot/pull/28602](https://github.com/ArduPilot/ardupilot/pull/28602)
-
-Configure [SERIALX ](https://ardupilot.org/copter/docs/parameters.html#serial-parameters)to GPS on the port the GPS is connected to. On the ARK FPV GPS port, this is set by default and is plug and play.
-
-Ensure [COMPASS\_EXTERNAL ](https://ardupilot.org/copter/docs/parameters.html#compass-external-compass-is-attached-via-an-external-cable)is set to 1 to auto detect the magnetometer on I2C.&#x20;

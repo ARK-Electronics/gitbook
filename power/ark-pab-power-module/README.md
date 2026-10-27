@@ -9,7 +9,7 @@ A power supply and digital power monitor for Pixhawk Autopilot Bus carriers, suc
 
 <a href="https://arkelectron.com/product-category/power/pab-power-modules/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_PAB_Power_Module/case" class="button secondary" data-icon="box">Case</a>
 
-* **Output:** 5.2 V 6 A avionics, 6-pin Molex CLIK-Mate
+* **Output:** 5.2 V 6 A avionics (3 A at 60 A battery current without cooling), 6-pin Molex CLIK-Mate
 * **Battery:** 33 V maximum, 60 A continuous
 * **Power monitor:** TI INA226, I2C
 * **Autopilots:** PX4, ArduPilot

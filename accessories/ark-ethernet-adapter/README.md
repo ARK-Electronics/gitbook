@@ -1,6 +1,3 @@
----
----
-
 # ARK Ethernet Adapter
 
 An adapter from a Pixhawk-standard 4-pin JST-GH Ethernet port, such as the one on the [ARK Pixhawk Autopilot Bus Carrier](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/README.md), to an RJ45 jack. It comes with a 4-pin JST-GH cable.
