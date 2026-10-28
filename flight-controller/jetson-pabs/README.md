@@ -26,6 +26,7 @@ The ARK Jetson PAB Carrier and ARK Jetson PAB Carrier V3 are NVIDIA Jetson Orin 
 | Ethernet | Gigabit, RJ45 | 10/100, onboard switch → JST-GH (4-pin) + Payload Bus |
 | USB host | 3x USB 3.0 A Ports; 1x USB 2.0 A Port | 2× USB 2.0 (JST-GH); USB 3.0 on USB-C |
 | Display output | Mini DisplayPort | Micro HDMI |
-| Jetson console / recovery | Micro USB (muxed with FC USB) | USB-C |
+| USB console / recovery | Micro USB (muxed with FC USB) | USB-C |
+| Debug UART / Linux console | 6-pin JST-SH | 6-pin JST-SH |
 | NVMe storage | M.2 Key M 2242, PCIe ×4 | M.2 Key M 2242, PCIe ×4 |
 | M.2 Key E 2230 slot | PCIe x1, USB, UART, I2S | PCIe x1, USB, UART, I2S |

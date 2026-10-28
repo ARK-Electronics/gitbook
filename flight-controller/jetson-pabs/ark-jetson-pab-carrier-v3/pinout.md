@@ -221,7 +221,7 @@ Pre-crimped wires [0797581149](https://www.digikey.com/en/products/detail/molex/
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>USBSS2_VBUS</td><td>5.0V</td></tr><tr><td>2</td><td>HUB_USB2_N</td><td>3.3V</td></tr><tr><td>3</td><td>HUB_USB2_P</td><td>3.3V</td></tr><tr><td>4</td><td>GND</td><td>GND</td></tr></tbody></table>
 
-#### UART2 - 6 Pin JST-SH
+#### UART2 (Jetson Debug) - 6 Pin JST-SH
 
 <table><thead><tr><th width="134">Pin Number</th><th width="237">Signal Name</th><th>Voltage</th></tr></thead><tbody><tr><td>1</td><td>3V3</td><td>3.3V</td></tr><tr><td>2</td><td>UART2_TXD_3V3</td><td>3.3V</td></tr><tr><td>3</td><td>UART2_RXD_3V3</td><td>3.3V</td></tr><tr><td>4</td><td>NC</td><td>NC</td></tr><tr><td>5</td><td>NC</td><td>NC</td></tr><tr><td>6</td><td>GND</td><td>GND</td></tr></tbody></table>
 

@@ -1,6 +1,7 @@
 # Hardware Reference
 
 * [Pinout](pinout.md)
+* [Ports and Serial](ports-and-serial.md) — Micro USB modes and the UART map
 * [Block Diagram](block-diagram.md)
 * [3D Models and Case Files](3d-models-and-case-files.md)
 * [GPIO Control](gpio-control.md)

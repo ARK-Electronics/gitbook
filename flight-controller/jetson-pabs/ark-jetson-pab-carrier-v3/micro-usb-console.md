@@ -32,5 +32,5 @@ Log in with your username and password (default `jetson` / `jetson`). Your user 
 On macOS the port is `/dev/tty.usbmodem*`; on Windows it is a `COMx` port in Device Manager.
 
 {% hint style="info" %}
-This is not a boot console. The gadget (`nv-l4t-usb-device-mode.service`) and login prompt (`serial-getty@ttyGS0.service`) start under `multi-user.target`, so there is no UEFI, bootloader, or early kernel output — and no port at all if boot hangs before that point. For boot-level debugging use the physical UART console.
+This is not a boot console. The gadget (`nv-l4t-usb-device-mode.service`) and login prompt (`serial-getty@ttyGS0.service`) start under `multi-user.target`, so there is no UEFI, bootloader, or early kernel output — and no port at all if boot hangs before that point. For boot-level debugging use the [debug UART](ports-and-serial.md).
 {% endhint %}
