@@ -12,6 +12,7 @@
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/en/products/environmental-sensors/pressure-sensors/bmp390) |
 | Magnetometer | [Bosch BMM150](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmm150-ds001.pdf) |
 | Memory | FRAM |
+| PWM outputs | 8 FMU outputs. DShot on 1–6 only: 7–8 are on TIM12, which has no DMA. A carrier with PX4IO adds 8 PWM outputs |
 | Form factor | [Pixhawk Autopilot Bus (PAB)](https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-010%20Pixhawk%20Autopilot%20Bus%20Standard.pdf) |
 | Heater | 1 W. Keeps sensors warm in extreme conditions |
 | Storage | MicroSD slot |

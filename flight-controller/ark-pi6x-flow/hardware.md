@@ -12,7 +12,7 @@
 | Optical flow (Pi6X Flow only) | [PixArt PAW3902](https://www.pixart.com/products-detail/93/PAW3902JF-TXQT) |
 | Distance sensor (Pi6X Flow only) | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d), typically up to 30 m; see [ARK DIST Range](../../sensor/ark-dist/hardware.md#range). Not supported in ArduPilot |
 | Compute module | Raspberry Pi Compute Module 4; CM4 Lite boots from the microSD slot. Compute Module 5 with the [differences below](#compute-module-5) |
-| Flight controller interfaces | TELEM1, RC input, 8 PWM outputs (DShot capable), UART4, GPS (UART, I2C), CAN, buzzer, debug (SWD, UART console), microSD |
+| Flight controller interfaces | TELEM1, RC input, 8 PWM outputs (DShot on 1–6 only: 7–8 are on TIM12, which has no DMA), UART4, GPS (UART, I2C), CAN, buzzer, debug (SWD, UART console), microSD |
 | Pi interfaces | Micro HDMI, Ethernet, USB-C host, 2× USB JST-GH, 2× MIPI CSI (22-pin FFC), programming micro USB, I2C, UART, LED strip GPIO, GPIO, console, CPU fan |
 | Power | 5.5–25.2 V (2S–6S) battery input |
 | ESC mounting | 4-in-1 ESC, 30.5 × 30.5 mm |
