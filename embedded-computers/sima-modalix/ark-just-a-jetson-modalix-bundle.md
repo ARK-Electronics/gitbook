@@ -5,14 +5,14 @@ coverY: 0
 
 # ARK Just A Jetson Modalix Bundle
 
-ARK Just A Jetson carrier, SiMa.ai Modalix SOM, heatsink and fan. Optional NDAA 480GB M.2 NVMe SSD.
+ARK Just A Jetson carrier, SiMa.ai Modalix SoM, heatsink and fan. Optional NDAA 480GB M.2 NVMe SSD.
 
 <a href="https://arkelectron.com/product/ark-just-a-jetson-modalix-bundle/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Just_A_Jetson/model" class="button secondary" data-icon="cube">3D model</a>
 
-The carrier is the same hardware as [ARK Just A Jetson](../ark-just-a-jetson/). This page covers SOM differences only.
+The carrier is the same hardware as [ARK Just A Jetson](../ark-just-a-jetson/). This page covers SoM differences only.
 
 {% hint style="info" %}
-The ARK carrier is NDAA. The SOM is SiMa.ai.
+The ARK carrier is NDAA. The SoM is SiMa.ai.
 {% endhint %}
 
 ## Carrier Hardware
@@ -25,7 +25,7 @@ Use the JAJ [Hardware Reference](../ark-just-a-jetson/hardware.md) for pinout, p
 
 ## Where to Start
 
-Do not use NVIDIA SDK Manager or L4T. The SOM boots from built-in eMMC; an NVMe SSD is not required.
+Do not use NVIDIA SDK Manager or L4T. The SoM boots from built-in eMMC; an NVMe SSD is not required.
 
 1. Apply the ARK carrier overlay to the running eLxr image — [ark-meta-simaai](https://github.com/ARK-Electronics/ark-meta-simaai). The overlay ships as a versioned release package:
 
@@ -47,27 +47,27 @@ SiMa eLxr default login: user `sima`, password `edgeai`, hostname `modalix`. ARK
 | --------- | --------------------------------------------------------------------------------------------------------------------- |
 | UART2     | Works as a console                                                                                                    |
 | CAN       | No CAN interface                                                                                                      |
-| HDMI      | Works only if the Modalix SOM was ordered with the HDMI option. ARK units will not have HDMI.                         |
-| PCIE2     | Only works when HDMI is not used. On ARK units (no HDMI), PCIE2 is available                                          |
-| M.2 Key E | No PCIE                                                                                                               |
-| USB-C     | USB 3.0 works as a host. USB 2.0 on that connector goes to an FTDI console on the SOM (not Jetson gadget device mode) |
+| HDMI      | Works only if the Modalix SoM was ordered with the HDMI option. ARK units will not have HDMI.                         |
+| PCIe2     | Only works when HDMI is not used. On ARK units (no HDMI), PCIe2 is available                                          |
+| M.2 Key E | No PCIe                                                                                                               |
+| USB-C     | USB 3.0 works as a host. USB 2.0 on that connector goes to an FTDI console on the SoM (not Jetson gadget device mode) |
 | UART0     | Works without flow control (no RTS/CTS)                                                                               |
 | UART1     | Does not work                                                                                                         |
 | Ethernet  | Carrier gigabit Ethernet works on stock eLxr, before the ARK overlay is applied                                        |
 
-Do not install the Jetson Wi-Fi 6E / Remote ID M.2 option — M.2 Key E has no PCIE on Modalix.
+Do not install the Jetson Wi-Fi 6E / Remote ID M.2 option — M.2 Key E has no PCIe on Modalix.
 
 The JAJ [Ports and Serial](../ark-just-a-jetson/connections.md) UART map (`/dev/ttyTHS*`) is for NVIDIA Jetson modules.
 
 ## Console
 
-UART2 is the console. USB-C USB 2.0 is an FTDI console on the SOM. USB-C USB 3.0 is host only.
+UART2 is the console. USB-C USB 2.0 is an FTDI console on the SoM. USB-C USB 3.0 is host only.
 
-Do not use the Jetson USB-C gadget login (`jetson` / `192.168.55.1`). The SOM has no USB device controller at all (`/sys/class/udc` is empty), so no USB gadget networking of any kind is available — this is not just a different gadget address.
+Do not use the Jetson USB-C gadget login (`jetson` / `192.168.55.1`). The SoM has no USB device controller at all (`/sys/class/udc` is empty), so no USB gadget networking of any kind is available — this is not just a different gadget address.
 
 ## Recovery
 
-If the eMMC image is unbootable, reflash eLxr with SiMa's netboot path — `./flash.sh JAJ --netboot` in [ark-meta-simaai](https://github.com/ARK-Electronics/ark-meta-simaai), which drives `sima-cli` over TFTP. There is no NVIDIA Force Recovery mode on this SOM.
+If the eMMC image is unbootable, reflash eLxr with SiMa's netboot path — `./flash.sh JAJ --netboot` in [ark-meta-simaai](https://github.com/ARK-Electronics/ark-meta-simaai), which drives `sima-cli` over TFTP. There is no NVIDIA Force Recovery mode on this SoM.
 
 ## Storage
 
@@ -75,9 +75,9 @@ Boots from on-module eMMC. M.2 Key M NVMe is optional extra storage.
 
 ## Display / PCIe
 
-ARK-sold Modalix SOMs do not include HDMI. Because HDMI is unused, PCIE2 is available.
+ARK-sold Modalix SoMs do not include HDMI. Because HDMI is unused, PCIe2 is available.
 
-M.2 Key M is still NVMe. M.2 Key E has no PCIE.
+M.2 Key M is still NVMe. M.2 Key E has no PCIe.
 
 ## ARK-OS
 
@@ -99,7 +99,7 @@ ARK-UI is at [http://modalix.local](http://modalix.local) (or the board's IP). D
 Compared with [ARK-OS](../../ark-os/) on Jetson:
 
 * No `jtop` / jetson-stats
-* No `jetson-can` (no SOM CAN)
+* No `jetson-can` (no SoM CAN)
 * No `rid-transmitter`
 * FMU reset / VBUS GPIO helpers are no-ops until mapped
 * mavlink-router still uses the USB flight-controller path when an FC is on USB
