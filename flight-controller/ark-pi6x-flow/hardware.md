@@ -43,6 +43,20 @@ The hub is full speed only (12 Mbps, USB 1.1) with either compute module, so eve
 
 While a cable is plugged into the micro USB, the compute module switches to that port and the hub is disconnected. Reboot after unplugging it.
 
+## Power
+
+| Rail | Limit | Connectors |
+|------|-------|------------|
+| `VDD_5V_HIPOWER` | 500 mA, shared | CAN, GPS, TELEM1 |
+| `VDD_5V_SBUS_RC` | 250 mA fuse | RC |
+| Pi 5 V | 2 A fuse | Pi LED Strip |
+| Pi 5 V | 500 mA fuse each | Pi I2C1, Pi UART3, Pi GPIO, Pi Fan |
+| USB VBUS | 500 mA each | USB-C, Pi USB (hub port 2), Pi USB (hub port 4) |
+| HDMI 5 V | 250 mA fuse | Micro HDMI |
+| Camera 3.3 V | 1 A each | CAM0, CAM1 |
+
+`VDD_5V_HIPOWER` and the USB ports are current-limited switch channels, guaranteed to 500 mA; above that they may limit at anything from 0.5 to 1.25 A.
+
 ## Pinout
 
 <figure><img src="../../.gitbook/assets/Pi6X Flow Wireframe.png" alt=""><figcaption><p>ARK Pi6X Flow connector locations</p></figcaption></figure>
@@ -283,6 +297,10 @@ ArduPilot's SERIAL0 is the USB connection to the Pi.
 <figure><img src="../../.gitbook/assets/ARK Pi6X Flow Block Diagram.png" alt=""><figcaption><p>Block diagram</p></figcaption></figure>
 
 {% file src="../../.gitbook/assets/ARK Pi6X Flow Block Diagram.pdf" %}
+
+## Datasheet
+
+* [ARK Pi6X and ARK Pi6X Flow](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Pi6X/datasheet/ARK_Pi6X_Datasheet.pdf)
 
 ## 3D Model and Case
 

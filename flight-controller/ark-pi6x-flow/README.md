@@ -7,7 +7,7 @@ coverY: 0
 
 A Raspberry Pi compute module carrier with a flight controller, a power module and 4-in-1 ESC mounting on one board. The Pi runs [ARK-OS](../../ark-os/README.md).
 
-<a href="https://arkelectron.com/product-category/flight-controllers/pi6x/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pi6X/model" class="button secondary" data-icon="cube">3D model</a>
+<a href="https://arkelectron.com/product-category/flight-controllers/pi6x/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Pi6X/model" class="button secondary" data-icon="cube">3D model</a> <a href="https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Pi6X/datasheet/ARK_Pi6X_Datasheet.pdf" class="button secondary" data-icon="file-pdf">Datasheet</a>
 
 * **Flight controller:** STM32H743, dual InvenSense ICM-42688-P IMUs, Bosch BMP390 barometer, ST IIS2MDC magnetometer
 * **Companion computer:** Raspberry Pi Compute Module 4; a Compute Module 5 fits, with some interfaces lost
