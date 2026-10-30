@@ -15,6 +15,8 @@
 | UART | MAVLink 2 `DISTANCE_SENSOR`, Pixhawk-standard 6-pin JST-GH |
 | Debug | NSH console and SWD, Pixhawk-standard 6-pin JST-SH |
 | Power | 5 V, 78–86 mA |
+| Operating temperature | −20 °C to +70 °C |
+| Storage temperature | −25 °C to +85 °C |
 | Dimensions | 2.0 × 2.8 × 1.4 cm |
 | Weight | 4 g |
 

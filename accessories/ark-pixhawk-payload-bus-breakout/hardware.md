@@ -10,11 +10,9 @@
 | Protection            | [TI BQ24315](https://www.ti.com/product/BQ24315) switch: overvoltage, overcurrent, fault flag |
 | Signal logic level    | 3.3 V                                |
 | Operating temperature | −25 °C to +85 °C                     |
+| Storage temperature   | −25 °C to +85 °C                     |
 | Dimensions            | 34.25 × 18.50 × 5.81 mm              |
 | Weight                | 3.5 g                                |
-| PCB                   | 2-layer FR-4, 1.61 mm, ENIG          |
-
-Operating temperature is limited by the JST-GH connectors; all other components are rated wider.
 
 ## Pinout
 

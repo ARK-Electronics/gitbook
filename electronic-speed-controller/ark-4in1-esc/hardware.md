@@ -6,7 +6,7 @@
 |---------------|-------|
 | MCU | 4 × STM32F051, one per motor channel |
 | Gate driver | [TI DRV8328](https://www.ti.com/product/DRV8328) |
-| Input voltage | 3S–8S LiPo, 6 V minimum, 65 V absolute maximum |
+| Input voltage | 3S–8S LiPo |
 | Current per motor | 50 A continuous, 75 A burst. CONS: MR30 connector limit 30 A continuous, 40 A burst. See [Current Rating](#current-rating) |
 | Bulk capacitance | 450 µF, see [Capacitance](#capacitance) |
 | Current sensor | Onboard, one shunt shared by all four channels |
@@ -63,7 +63,7 @@ The 50 A continuous and 75 A burst ratings are per channel. They are board therm
 |-----------|---------|
 | Per channel, with airflow | 50 A continuous, 75 A burst |
 | Per channel, little airflow (hover) | 25–30 A continuous. No derating curve is published |
-| All four channels | About 170 A continuous in total, limited by the current-sense shunt the channels share. About 43 A per channel when loaded evenly |
+| All four channels | About 170 A continuous in total, about 43 A per channel when loaded evenly |
 | CONS, per motor | 30 A continuous, 40 A burst (MR30 connector limit) |
 
 ## Capacitance
@@ -71,7 +71,7 @@ The 50 A continuous and 75 A burst ratings are per channel. They are board therm
 The ARK 4IN1 ESC has 450µF of bulk capacitance built in, which is sufficient for most 3S–6S installations with short battery leads.
 
 {% hint style="warning" %}
-For 8S and above, add an external bulk capacitor across the battery input to keep switching and inrush transients below the 65V absolute maximum. Long battery leads increase inductance and make transients worse at any voltage.
+For 8S and above, add an external bulk capacitor across the battery input to absorb switching and inrush transients. Long battery leads increase inductance and make transients worse at any voltage.
 {% endhint %}
 
 ## Datasheets
