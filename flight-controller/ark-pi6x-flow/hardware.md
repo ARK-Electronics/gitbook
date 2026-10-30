@@ -18,6 +18,8 @@
 | ESC mounting | 4-in-1 ESC, 30.5 × 30.5 mm |
 | Dimensions | 91.5 × 56 mm, without compute module and ESC |
 | Weight | 41 g without compute module, SD card and ESC; 53 g with CM4 and SD card |
+| Operating temperature | −10 °C to +60 °C; Pi6X Flow 0 °C to +60 °C. Carrier only: CM4 and CM5 are rated −20 °C to +85 °C |
+| Storage temperature | −10 °C to +60 °C |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Compute Module 5
