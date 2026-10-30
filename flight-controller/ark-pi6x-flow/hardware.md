@@ -9,7 +9,7 @@
 | Barometer | [Bosch BMP390](https://www.bosch-sensortec.com/products/environmental-sensors/pressure-sensors/bmp390/) |
 | Magnetometer | [ST IIS2MDC](https://www.st.com/en/mems-and-sensors/iis2mdc.html) |
 | Power monitor | [TI INA226](https://www.ti.com/product/INA226) voltage and current monitor |
-| Optical flow (Pi6X Flow only) | [PixArt PAW3902](https://www.pixart.com/products-detail/93/PAW3902JF-TXQT) |
+| Optical flow (Pi6X Flow only) | [PixArt PAW3902](https://www.pixart.com/products-detail/93/PAW3902JF-TXQT). Not supported in ArduPilot |
 | Distance sensor (Pi6X Flow only) | [Broadcom AFBR-S50LV85D](https://www.broadcom.com/products/optical-sensors/time-of-flight-3d-sensors/afbr-s50lv85d), typically up to 30 m; see [ARK DIST Range](../../sensor/ark-dist/hardware.md#range). Not supported in ArduPilot |
 | Compute module | Raspberry Pi Compute Module 4; CM4 Lite boots from the microSD slot. Compute Module 5 with the [differences below](#compute-module-5) |
 | Flight controller interfaces | TELEM1, RC input, 8 PWM outputs (DShot on 1–6 only: 7–8 are on TIM12, which has no DMA), UART4, GPS (UART, I2C), CAN, buzzer, debug (SWD, UART console), microSD |
@@ -18,6 +18,8 @@
 | ESC mounting | 4-in-1 ESC, 30.5 × 30.5 mm |
 | Dimensions | 91.5 × 56 mm, without compute module and ESC |
 | Weight | 41 g without compute module, SD card and ESC; 53 g with CM4 and SD card |
+| Operating temperature | −10 °C to +60 °C; Pi6X Flow 0 °C to +60 °C. Carrier only: CM4 and CM5 are rated −20 °C to +85 °C |
+| Storage temperature | −10 °C to +60 °C |
 | Compliance | USA built, NDAA compliant, [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
 ## Compute Module 5
@@ -42,6 +44,20 @@ The hub is full speed only (12 Mbps, USB 1.1) with either compute module, so eve
 {% endhint %}
 
 While a cable is plugged into the micro USB, the compute module switches to that port and the hub is disconnected. Reboot after unplugging it.
+
+## Power
+
+| Rail | Limit | Connectors |
+|------|-------|------------|
+| `VDD_5V_HIPOWER` | 500 mA, shared with the CAN transceiver | CAN, GPS, TELEM1 |
+| `VDD_5V_SBUS_RC` | 250 mA fuse | RC |
+| `5.0V` | 2 A fuse | Pi LED Strip |
+| `5.0V` | 500 mA fuse each | Pi I2C1, Pi UART3, Pi GPIO, Pi Fan |
+| USB VBUS | 500 mA each | USB-C, Pi USB (hub port 2), Pi USB (hub port 4) |
+| HDMI 5 V | 250 mA fuse | Micro HDMI |
+| `3.3V_RPI` | 600 mA, the compute module's 3.3 V output, shared | CAM0, CAM1, Pi Console |
+
+`VDD_5V_HIPOWER` and the USB ports are current-limited switch channels, guaranteed to 500 mA; above that they may limit anywhere in 0.5–1.25 A. Every 5 V rail and the compute module draw from the board's 5 V regulator.
 
 ## Pinout
 
@@ -144,10 +160,10 @@ While a cable is plugged into the micro USB, the compute module switches to that
 
 | Pin | Signal | Voltage |
 |---|---|---|
-| 1 | ETH_RD_N | 3.3V |
-| 2 | ETH_RD_P | 3.3V |
-| 3 | ETH_TD_N | 3.3V |
-| 4 | ETH_TD_P | 3.3V |
+| 1 | ETH_RD_N | — |
+| 2 | ETH_RD_P | — |
+| 3 | ETH_TD_N | — |
+| 4 | ETH_TD_P | — |
 
 ### Pi LED Strip — 8-pin JST-GH
 
@@ -173,7 +189,7 @@ While a cable is plugged into the micro USB, the compute module switches to that
 | 5 | GPIO24_EXT | 3.3V |
 | 6 | GND | GND |
 
-### Pi Fan — 4-pin JST-GH
+### Pi Fan — 4-pin Molex [KK 254 47053](https://www.molex.com/en-us/part-list/47053)
 
 | Pin | Signal | Voltage |
 |---|---|---|
@@ -283,6 +299,10 @@ ArduPilot's SERIAL0 is the USB connection to the Pi.
 <figure><img src="../../.gitbook/assets/ARK Pi6X Flow Block Diagram.png" alt=""><figcaption><p>Block diagram</p></figcaption></figure>
 
 {% file src="../../.gitbook/assets/ARK Pi6X Flow Block Diagram.pdf" %}
+
+## Datasheet
+
+* [ARK Pi6X and ARK Pi6X Flow](https://github.com/ARK-Electronics/ark-hardware/blob/main/ARK_Pi6X/datasheet/ARK_Pi6X_Datasheet.pdf)
 
 ## 3D Model and Case
 
