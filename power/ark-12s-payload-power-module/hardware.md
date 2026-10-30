@@ -13,6 +13,8 @@
 | Avionics output | 6-pin Molex CLIK-Mate, 5 V, matches the [ARK PAB carrier power pinout](../../flight-controller/ark-pixhawk-autopilot-bus-carrier/pinout.md#power1-6-pin-2.00mm-molex-clik-mate-502443). Two 5.2 V pins, 3 A each |
 | Payload output | 4-pin Molex CLIK-Mate, 12 V. Two 12 V pins, 3 A each |
 | Dimensions | 3.7 × 3.5 × 1.3 cm |
+| Operating temperature | −40 °C to +85 °C |
+| Storage temperature | −40 °C to +85 °C |
 | Weight | 20.5 g |
 
 ## Wiring
