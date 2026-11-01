@@ -33,6 +33,15 @@ The board was designed for the CM4. With a CM5:
 | Cameras | CAM0 and CAM1 | CAM1 only, as `cam0` in `config.txt`. The CM5 uses the CM4's CAM0 pins for USB 3.0 |
 | USB 3.0 | None | Not wired to any connector |
 
+A CM5 needs bootloader 2025-11-27 or later. With older ones, such as the 2025-06-13 on some mid-2025 modules, the USB hub never enumerates: the flight controller and the USB ports are missing from `lsusb`, and `dmesg` shows `error -71`. Raspberry Pi OS updates the bootloader on its own only when it is older than 2025-05-08. Check it with `vcgencmd bootloader_version`, and update it:
+
+```
+sudo rpi-eeprom-update -a
+sudo reboot
+```
+
+The `pi6x-cm5` golden image, from pi6x-v1.1.0, does this at boot.
+
 The `config.txt` for each module is in [After Flashing, Before Installing](flashing-guide/after-flashing-before-installing.md).
 
 ## USB

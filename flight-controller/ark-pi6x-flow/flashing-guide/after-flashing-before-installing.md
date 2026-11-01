@@ -18,7 +18,7 @@ Comment out the following lines:
 # display_auto_detect=1
 ```
 
-Leave the stock `[cm4]` and `[cm5]` sections in place; they enable the USB port. Add the block for your compute module at the end of the file, after `[all]`. For `/dev/i2c-1`, also add `i2c-dev` to a file in `/etc/modules-load.d/`. The CM5 maps the board's UARTs and cameras differently; see [Compute Module 5](../hardware.md#compute-module-5).
+Leave the stock `[cm4]` and `[cm5]` sections in place; they enable the USB port. Add the block for your compute module at the end of the file, after `[all]`. For `/dev/i2c-1`, also add `i2c-dev` to a file in `/etc/modules-load.d/`. The CM5 maps the board's UARTs and cameras differently and needs a recent bootloader; see [Compute Module 5](../hardware.md#compute-module-5).
 
 {% tabs %}
 {% tab title="CM4" %}
