@@ -40,7 +40,7 @@ sudo rpi-eeprom-update -a
 sudo reboot
 ```
 
-The `pi6x-cm5` golden image does this at boot.
+The `pi6x-cm5` golden image, from pi6x-v1.1.0, does this at boot.
 
 The `config.txt` for each module is in [After Flashing, Before Installing](flashing-guide/after-flashing-before-installing.md).
 
