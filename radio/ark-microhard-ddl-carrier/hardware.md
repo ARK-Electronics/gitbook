@@ -59,7 +59,7 @@ Molex 1054301202. Mates with [45130](https://www.molex.com/en-us/part-list/45130
 
 ## LEDs
 
-Power, wireless TX and RX, RSSI and LAN link status.
+5 V and 3.3 V power, module CPU status, wireless TX and RX, three RSSI bars, LAN link and WAN link.
 
 ## Assembly
 

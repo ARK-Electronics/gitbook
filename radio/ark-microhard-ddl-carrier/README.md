@@ -17,3 +17,4 @@ A carrier board for Microhard Pico DDL radio modules. It connects the radio to a
 ## Documentation
 
 * [Hardware Reference](hardware.md)
+* [Setup](setup.md)

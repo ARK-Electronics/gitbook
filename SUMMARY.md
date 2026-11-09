@@ -169,6 +169,7 @@
     * [OpenVPN](radio/ark-m.2-lte/openvpn.md)
   * [ARK Microhard DDL Carrier](radio/ark-microhard-ddl-carrier/README.md)
     * [Hardware Reference](radio/ark-microhard-ddl-carrier/hardware.md)
+    * [Setup](radio/ark-microhard-ddl-carrier/setup.md)
 * [Sensors](sensor/README.md)
   * [ARK CANnode](sensor/ark-cannode/README.md)
     * [Firmware](sensor/ark-cannode/firmware.md)
