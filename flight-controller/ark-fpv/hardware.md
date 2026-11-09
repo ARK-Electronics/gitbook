@@ -25,6 +25,17 @@
 | Weight | 7.5 g with MicroSD card |
 | Compliance | USA built, NDAA compliant. The ARK FPV is [Blue Framework listed](https://tyrionprod.servicenowservices.com/gsp?id=framework_list) |
 
+## Power
+
+| Rail | Limit | Connectors |
+|------|-------|------------|
+| `5.0V` | 2 A, including the flight controller's 0.5 A | RC, CAN, GPS, TELEM, SPI |
+| `12.0V` | 2 A | VTX, POWER AUX |
+
+The 5 V connector pins have no fuse or current limit. With the battery disconnected, USB powers the 5 V rail and everything on it.
+
+Power a high-current telemetry radio, such as an RFD900x, from its own 5 V regulator. With a radio drawing about 1 A from TELEM, connecting USB and the battery at the same time can crash the flight controller.
+
 ## Pinout
 
 <figure><img src="../../.gitbook/assets/Acrobat_IDpk1kUSKm.png" alt=""><figcaption><p>ARK FPV Flight Controller Top</p></figcaption></figure>
