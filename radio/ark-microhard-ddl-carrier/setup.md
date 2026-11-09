@@ -11,13 +11,13 @@ This page covers the carrier and getting started with the radio. For everything 
 
 On a vehicle, power the carrier from the battery input. You can connect battery and USB-C at the same time, and the carrier runs from whichever is the higher voltage.
 
-The radio takes 60–75 seconds to boot.
+The radio takes about a minute to boot.
 
 ## Radio Access
 
 Connect the carrier's USB-C port to a computer. The radio shows up as a network adapter and gives the computer an address, so you can open the radio's web UI at `192.168.168.1` in a browser. The factory login is `admin` / `admin`, and the radio asks you to change the password the first time you log in.
 
-Every radio ships at `192.168.168.1`, so give each one its own address before linking them, such as `192.168.168.11` for the air radio and `192.168.168.12` for the ground radio.
+Every radio ships at `192.168.168.1`, so give each one its own address before linking them.
 
 **RESET** reboots the radio. Holding **CONFIG** after the radio has booted resets it to factory settings. The hold time depends on the module, so check its manual.
 
@@ -27,7 +27,7 @@ In the web UI, open **Wireless > RF**. Set one radio as the master and the other
 
 ## Flight Controller
 
-Connect the carrier's serial connector to a TELEM port on the flight controller with a 6-pin JST-GH cable. The radio sends the flight controller's serial data over the network as UDP. Give the ground computer a static address on the radio's subnet, such as `192.168.168.20` with netmask `255.255.255.0`. Then in the air radio's web UI, set its serial port to the flight controller's baud rate and send to that address on port 14550, which QGroundControl and Mission Planner listen on.
+Connect the carrier's serial connector to a TELEM port on the flight controller with a 6-pin JST-GH cable. The radio sends the flight controller's serial data over the network as UDP. Give the ground computer a static address on the radio's subnet, such as `192.168.168.69` with netmask `255.255.255.0`. Then in the air radio's web UI, set its serial port to the flight controller's baud rate and send to that address on port 14550, which QGroundControl and Mission Planner listen on.
 
 PX4 and ArduPilot both run MAVLink on TELEM1 at 57600 baud by default. The radio's serial port goes up to 230400 baud. To use another port or rate:
 
