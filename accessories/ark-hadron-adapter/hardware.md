@@ -32,7 +32,7 @@ The Hadron's reset is one line shared by the EO sensor and the Boson. The adapte
 | J2 | IR Camera / USB | JST BM04B-GHS, 4-pin JST-GH |
 | J3 | I2C | JST BM06B-GHS, 6-pin JST-GH |
 
-The EO camera FFC goes to a CSI port on the carrier and the USB cable to a USB 2.0 JST-GH. The I2C cable goes to the host's I2C connector: on the Just A Jetson that is UART2/I2C0, a 6-pin JST-GH with I2C on pins 4 and 5, which takes the included straight cable, and on the Just A Pi it is the UART2 connector. The Jetson PAB Carrier's Jetson I2C0 is a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, so it needs a 6-to-4-pin cable. The Jetson PAB Carrier V3 has no Jetson I2C connector; the IMU can be reached by bit-banging I2C with the kernel's `i2c-gpio` driver on two Jetson GPIO pins from its Pixhawk Payload Bus connector, which the image does not set up.
+The EO camera FFC goes to a CSI port on the carrier and the USB cable to a USB 2.0 JST-GH. The I2C cable goes to the host's I2C connector: on the Just A Jetson that is UART2/I2C0, a 6-pin JST-GH with I2C on pins 4 and 5, which takes the included straight cable, and on the Just A Pi it is the UART2 connector. The Jetson PAB Carrier's Jetson I2C0 is a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, so it needs a 6-to-4-pin cable. The Jetson PAB Carrier V3 has no Jetson I2C connector; the IMU can be reached by bit-banging I2C with the kernel's `i2c-gpio` driver on GPIO01 (pin 23) and GPIO12 (pin 12) of its [Pixhawk Payload Bus connector](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/pinout.md), which the image does not set up. Those pins are 1.8 V and the adapter's I2C port is 3.3 V, so a level translator goes between them.
 
 ## What's included
 

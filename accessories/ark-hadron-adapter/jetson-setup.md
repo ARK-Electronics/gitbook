@@ -8,7 +8,7 @@ The ARK Jetson images carry the driver for the Hadron's visible (EO) camera, `nv
 | ----------------- | ----------------- |
 | EO Camera (22-pin FFC) | A CSI camera port, see the overlay table below. The 22-to-22-pin cable fits the Just A Jetson and PAB Carrier V3; the 22-to-15-pin cable fits the PAB Carrier |
 | IR Camera / USB (4-pin JST-GH) | Any USB 2.0 JST-GH port |
-| I2C (6-pin JST-GH) | Just A Jetson: UART2/I2C0, with the included straight cable. Jetson PAB Carrier: Jetson I2C0, a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, which needs a 6-to-4-pin cable (not included). Jetson PAB Carrier V3: no Jetson I2C connector; the IMU can be reached by bit-banging I2C with the kernel's `i2c-gpio` driver on two Jetson GPIO pins from the Pixhawk Payload Bus connector, which the image does not set up |
+| I2C (6-pin JST-GH) | Just A Jetson: UART2/I2C0, with the included straight cable. Jetson PAB Carrier: Jetson I2C0, a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, which needs a 6-to-4-pin cable (not included). Jetson PAB Carrier V3: no Jetson I2C connector; the IMU can be reached by bit-banging I2C with the kernel's `i2c-gpio` driver on GPIO01 (pin 23) and GPIO12 (pin 12) of the Pixhawk Payload Bus connector, which the image does not set up. Those pins are 1.8 V and the adapter's I2C port is 3.3 V, so a level translator goes between them |
 
 ## Overlays
 
