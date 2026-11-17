@@ -6,7 +6,7 @@ The ARK Jetson images carry the driver for the Hadron's visible (EO) camera, `nv
 
 | Adapter connector | Carrier connector |
 | ----------------- | ----------------- |
-| EO Camera (22-pin FFC) | A CSI camera port, see the overlay table below |
+| EO Camera (22-pin FFC) | A CSI camera port, see the overlay table below. The 22-to-22-pin cable fits the Just A Jetson and PAB Carrier V3; the 22-to-15-pin cable fits the PAB Carrier |
 | IR Camera / USB (4-pin JST-GH) | Any USB 2.0 JST-GH port |
 | I2C (6-pin JST-GH) | A 6-pin connector with I2C on pins 4 and 5, such as UART2/I2C0 on the Just A Jetson, with a straight cable |
 
@@ -20,7 +20,7 @@ Each overlay is for one port. Pick the row for your carrier and port.
 | ARK Just A Jetson | CAM1 (J25) | 4 | Camera FLIR Hadron EO CAM1 4-lane | Bench-tested |
 | ARK Jetson PAB Carrier V3 | CAM0 (J28) | 4 | Camera FLIR Hadron EO CAM0 4-lane | Untested on hardware |
 | ARK Jetson PAB Carrier V3 | CAM1 (J25) | 4 | Camera FLIR Hadron EO CAM1 4-lane | Untested on hardware |
-| ARK Jetson PAB Carrier | CAM0–CAM3 | 2 | Camera FLIR Hadron EO CAM*n* 2-lane | Untested on hardware; the 15-pin ports need a 22-to-15-pin FFC adapter |
+| ARK Jetson PAB Carrier | CAM0–CAM3 | 2 | Camera FLIR Hadron EO CAM*n* 2-lane | Untested on hardware; use the included 22-to-15-pin FFC |
 
 On the Just A Jetson, CAM1 is the 4-lane port. CAM0 runs two lanes, at half the frame rate of each mode.
 

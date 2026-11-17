@@ -29,6 +29,18 @@ The Hadron's reset is one line shared by the EO sensor and the Boson. The adapte
 
 The EO camera FFC goes to a CSI port on the carrier, the USB cable to a USB 2.0 JST-GH, and the I2C cable to a 6-pin JST-GH with I2C on pins 4 and 5, such as the Jetson carriers' UART2/I2C0 connector. All three are straight cables.
 
+## What's included
+
+| Item | Use |
+|------|-----|
+| ARK Hadron Adapter | |
+| 22-to-22-pin 0.5 mm FFC | EO camera to a 22-pin CSI port (Just A Jetson, Jetson PAB Carrier V3, Just A Pi) |
+| 22-to-15-pin 0.5 mm FFC | EO camera to a 15-pin CSI port (Jetson PAB Carrier) |
+| 4-pin JST-GH cable | IR camera / USB |
+| 6-pin JST-GH cable | I2C |
+
+The Hadron camera module is not included.
+
 ## Pinout
 
 ### EO Camera — 22-pin 0.5 mm FFC
