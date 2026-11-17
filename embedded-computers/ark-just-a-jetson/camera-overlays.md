@@ -1,6 +1,6 @@
 # Camera Overlays
 
-The ARK Just A Jetson has **2× CSI ports** on 22-pin FFC connectors: CAM1 runs up to 4 lanes and CAM0 runs 2. Camera configuration is managed through device tree overlays, and the image ships with the **IMX219 dual** overlay active — IMX219 cameras work on both ports out of the box.
+The ARK Just A Jetson has **2× 4-lane CSI ports** on 22-pin FFC connectors. Camera configuration is managed through device tree overlays, and the image ships with the **IMX219 dual** overlay active — IMX219 cameras work on both ports out of the box.
 
 ## Supported Cameras
 

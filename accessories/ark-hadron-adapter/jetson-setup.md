@@ -8,7 +8,7 @@ The ARK Jetson images carry the driver for the Hadron's visible (EO) camera, `nv
 | ----------------- | ----------------- |
 | EO Camera (22-pin FFC) | A CSI camera port, see the overlay table below. The 22-to-22-pin cable fits the Just A Jetson and PAB Carrier V3; the 22-to-15-pin cable fits the PAB Carrier |
 | IR Camera / USB (4-pin JST-GH) | Any USB 2.0 JST-GH port |
-| I2C (6-pin JST-GH) | Just A Jetson: UART2/I2C0, with the included straight cable. Jetson PAB Carrier: Jetson I2C0, a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, which needs a 6-to-4-pin cable (not included). Jetson PAB Carrier V3: no Jetson I2C connector, so the IMU is not available |
+| I2C (6-pin JST-GH) | Just A Jetson: UART2/I2C0, with the included straight cable. Jetson PAB Carrier: Jetson I2C0, a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, which needs a 6-to-4-pin cable (not included). Jetson PAB Carrier V3: no Jetson I2C connector; the IMU can be reached by bit-banging I2C with the kernel's `i2c-gpio` driver on two Jetson GPIO pins from the Pixhawk Payload Bus connector, which the image does not set up |
 
 ## Overlays
 
@@ -22,7 +22,7 @@ Each overlay is for one port. Pick the row for your carrier and port.
 | ARK Jetson PAB Carrier V3 | CAM1 (J25) | 4 | Camera FLIR Hadron EO CAM1 4-lane | Untested on hardware |
 | ARK Jetson PAB Carrier | CAM0–CAM3 | 2 | Camera FLIR Hadron EO CAM*n* 2-lane | Untested on hardware; use the included 22-to-15-pin FFC |
 
-On the Just A Jetson, CAM1 is the 4-lane port. CAM0 runs two lanes, at half the frame rate of each mode.
+Both Just A Jetson ports carry four lanes. The CAM0 overlay uses two of them, because L4T runs 4-lane only from CSI0_CLK or CSI2_CLK and CAM0's clock is on CSI1_CLK, so each mode runs there at half its 4-lane frame rate.
 
 List the overlays, apply the one for your port and reboot:
 
