@@ -15,10 +15,15 @@
 | PCB | 6-layer, impedance controlled |
 | Mounting | 4× 1.8 mm holes |
 | Dimensions | 33 × 47 × 6 mm |
+| Weight | 8 g |
 
 The Hadron's reset is one line shared by the EO sensor and the Boson. The adapter level-translates it from the camera port's `CAMn_PWDN` pin, and the host drivers release it once and never pull it low again, so a camera driver powering down cannot reset the Boson.
 
 ## Connectors
+
+<figure><img src="../../.gitbook/assets/ARK Hadron Adapter Top.jpg" alt="ARK Hadron Adapter, top"><figcaption><p>Top: EO Camera FFC (J4), IR Camera USB (J2) and I2C (J3)</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/ARK Hadron Adapter Bottom.jpg" alt="ARK Hadron Adapter, bottom"><figcaption><p>Bottom: Hadron connector (J1)</p></figcaption></figure>
 
 | Connector | Label | Part |
 |-----------|-------|------|
