@@ -4,20 +4,18 @@
 
 | Specification | Value |
 |---------------|-------|
-| Camera module | Teledyne FLIR Hadron 640R / 640R+, on a Hirose DF40 50-pin board-to-board connector (underside) |
-| EO camera | OmniVision OV64B40, 4-lane MIPI CSI-2 on a 22-pin 0.5 mm FFC (Molex 52559-2253) |
-| IR camera | FLIR Boson, USB 2.0 on a 4-pin JST-GH (UVC device `09cb:4007`) |
+| Camera module | Teledyne FLIR Hadron 640R / 640R+, on the 50-pin board-to-board connector underneath |
+| EO camera | OmniVision OV64B40, 4-lane MIPI CSI-2 on a 22-pin 0.5 mm FFC |
+| IR camera | FLIR Boson, USB 2.0 on a 4-pin JST-GH, UVC device `09cb:4007` |
 | Control | Hadron I2C on a 6-pin JST-GH, level-translated to 3.3 V |
 | IMU | TDK InvenSense ICM-45686 6-axis, I2C address `0x68`, on the control I2C |
-| Frame sync | Hadron `EXT_VSYNC` joined to the camera port's MCLK pin and to the IMU's FSYNC pin |
-| Power | 5 V from the USB connector; the Hadron and the adapter's 1.8 V regulator run from it |
+| Frame sync | Hadron `EXT_VSYNC` to the camera port's MCLK pin and the IMU's FSYNC pin |
+| Power | 5 V from the USB connector, which powers the Hadron and the adapter |
 | ESD protection | On every MIPI, USB and I2C line |
 | PCB | 6-layer, impedance controlled |
 | Mounting | 4× 1.8 mm holes |
 | Dimensions | 33 × 47 × 6 mm |
 | Weight | 8 g |
-
-The Hadron's reset is one line shared by the EO sensor and the Boson. The adapter level-translates it from the camera port's `CAMn_PWDN` pin, and the host drivers release it once and never pull it low again, so a camera driver powering down cannot reset the Boson.
 
 ## Connectors
 
@@ -32,7 +30,7 @@ The Hadron's reset is one line shared by the EO sensor and the Boson. The adapte
 | J2 | IR Camera / USB | JST BM04B-GHS, 4-pin JST-GH |
 | J3 | I2C | JST BM06B-GHS, 6-pin JST-GH |
 
-The EO camera FFC goes to a CSI port on the carrier and the USB cable to a USB 2.0 JST-GH. The I2C cable goes to the host's I2C connector: on the Just A Jetson that is UART2/I2C0, a 6-pin JST-GH with I2C on pins 4 and 5, which takes the included straight cable, and on the Just A Pi it is the UART2 connector. The Jetson PAB Carrier's Jetson I2C0 is a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, so it needs a 6-to-4-pin cable. The Jetson PAB Carrier V3 has no Jetson I2C connector; the IMU can be reached by bit-banging I2C with the kernel's `i2c-gpio` driver on GPIO01 (pin 23) and GPIO12 (pin 12) of its [Pixhawk Payload Bus connector](../../flight-controller/jetson-pabs/ark-jetson-pab-carrier-v3/pinout.md), which the image does not set up. Those pins are 1.8 V and the adapter's I2C port is 3.3 V, so a level translator goes between them.
+Each host's cabling is on its setup page: [Jetson](jetson-setup.md#cabling), [Just A Pi](just-a-pi-setup.md#cabling).
 
 ## What's included
 
@@ -50,7 +48,7 @@ The Hadron camera module is not included.
 
 ### EO Camera — 22-pin 0.5 mm FFC
 
-The connector carries the 22-pin Raspberry Pi / Jetson camera pinout, numbered the way the carriers number their CSI ports.
+The connector uses the 22-pin Raspberry Pi and Jetson camera pinout, numbered the way the carriers number their CSI ports.
 
 | Pin | Signal | Voltage | Note |
 | --- | ------ | ------- | ---- |
@@ -79,6 +77,8 @@ The connector carries the 22-pin Raspberry Pi / Jetson camera pinout, numbered t
 
 On a 2-lane port only lanes 0 and 1 are used.
 
+The EO sensor and the Boson share the reset on pin 17. ARK's drivers release it once and never pull it low again, so powering down the EO camera does not reset the Boson.
+
 ### IR Camera / USB — 4-pin JST-GH
 
 | Pin | Signal | Voltage |
@@ -88,7 +88,7 @@ On a 2-lane port only lanes 0 and 1 are used.
 | 3 | USB\_P | +3.3V |
 | 4 | GND | GND |
 
-`USB_VBUS` powers the Hadron and the adapter. The Boson enumerates as a UVC camera.
+`USB_VBUS` powers the Hadron and the adapter.
 
 ### I2C — 6-pin JST-GH
 
@@ -101,19 +101,22 @@ On a 2-lane port only lanes 0 and 1 are used.
 | 5 | I2C\_SDA | +3.3V |
 | 6 | GND | GND |
 
-Pins 4 to 6 match the I2C pins of a Pixhawk-standard UART/I2C 6-pin connector, so a straight cable works. The bus carries the ICM-45686 at `0x68` and the Hadron's own I2C devices, translated from 1.8 V to 3.3 V by a TXS0104E, which also supplies the 3.3 V pull-ups.
+Pins 4 to 6 match the I2C pins of a Pixhawk-standard 6-pin UART/I2C connector, so a straight cable works. The bus carries the ICM-45686 at `0x68` and the Hadron's own I2C devices. A TXS0104E translates the Hadron's 1.8 V I2C to 3.3 V and supplies the pull-ups.
 
 ### Hadron connector
 
-The adapter connects these Hadron pins: USB 2.0 and 5 V in, the four EO MIPI data lanes and clock, the EO camera I2C, the Hadron I2C, the shared reset and `EXT_VSYNC` (pin 43). The rest are not connected.
+The adapter connects these Hadron pins: USB 2.0 and 5 V in, the four EO MIPI data lanes and clock, the EO camera I2C, the Hadron I2C, the shared reset and `EXT_VSYNC` on pin 43. The rest are not connected.
 
 ## Frame sync
 
-Hadron pin 43 `EXT_VSYNC` is the module's frame-sync line. On the adapter, R11 joins it to the EO camera connector's MCLK pin (pin 18), and R12 joins it to the ICM-45686's FSYNC pin. Both are 0 Ω and fitted.
+The Hadron's frame-sync line is `EXT_VSYNC` on pin 43. R11 joins it to pin 18 of the EO camera connector, the carrier's MCLK pin. R12 joins it to the IMU's FSYNC pin. Both are 0 Ω and fitted.
 
-* The Boson can be made the sync master over its serial port. It then sends a short 1.8 V pulse for each of its 60 Hz core frames, and the host can timestamp those pulses on its MCLK pad, which the host overlays turn into an input.
-* The ICM-45686 tags the first sample after each pulse with the pulse-to-sample delay, at 1 µs resolution, once its pin 9 is switched from INT2 to FSYNC.
-* The EO sensor neither drives nor follows the line with the current driver tables; it free-runs on its own oscillator.
+| Device | Role on the sync line |
+| ------ | --------------------- |
+| Boson | Once made sync master over its serial port, sends a short 1.8 V pulse for each 60 Hz core frame |
+| Host | Can timestamp the pulses on the camera port's MCLK pin, which ARK's overlays set as an input |
+| ICM-45686 | Once its pin 9 is switched from INT2 to FSYNC, tags the first sample after each pulse with the pulse-to-sample delay at 1 µs resolution |
+| EO sensor | Neither drives nor follows the line with the current driver. It free-runs on its own oscillator |
 
 ## 3D Model
 
