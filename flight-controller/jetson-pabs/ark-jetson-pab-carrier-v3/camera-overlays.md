@@ -1,6 +1,6 @@
 # Camera Overlays
 
-The ARK Jetson PAB Carrier V3 has **2× dual-lane CSI ports** on 22-pin FFC connectors. Camera configuration is managed through device tree overlays, and the image ships with the **IMX219 dual** overlay active — IMX219 cameras work on both ports out of the box.
+The ARK Jetson PAB Carrier V3 has **2× 4-lane CSI ports** on 22-pin FFC connectors. Camera configuration is managed through device tree overlays, and the image ships with the **IMX219 dual** overlay active — IMX219 cameras work on both ports out of the box.
 
 ## Supported Cameras
 

@@ -8,7 +8,7 @@ The ARK Jetson images carry the driver for the Hadron's visible (EO) camera, `nv
 | ----------------- | ----------------- |
 | EO Camera (22-pin FFC) | A CSI camera port, see the overlay table below. The 22-to-22-pin cable fits the Just A Jetson and PAB Carrier V3; the 22-to-15-pin cable fits the PAB Carrier |
 | IR Camera / USB (4-pin JST-GH) | Any USB 2.0 JST-GH port |
-| I2C (6-pin JST-GH) | A 6-pin connector with I2C on pins 4 and 5, such as UART2/I2C0 on the Just A Jetson, with a straight cable |
+| I2C (6-pin JST-GH) | Just A Jetson: UART2/I2C0, with the included straight cable. Jetson PAB Carrier: Jetson I2C0, a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, which needs a 6-to-4-pin cable (not included). Jetson PAB Carrier V3: no Jetson I2C connector, so the IMU is not available |
 
 ## Overlays
 
@@ -39,7 +39,9 @@ sudo reboot
 | 0 | 4624x3468 | 30 | 15 | 4-cell binned (default) |
 | 1 | 3840x2160 | 60 | 30 | |
 | 2 | 2304x1296 | 120 | 60 | |
-| 3 | 9248x6936 | 13.2 | 6.6 | Full array; needs an Orin NX 16GB for full size through Argus |
+| 3 | 9248x6936 | 13.2 | 6.6 | Full array. At full size through Argus it ran out of memory on an Orin Nano 4GB and ran on an Orin NX 16GB; see [hadron.md](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/hadron.md#argus) |
+
+Through Argus, mode 2 on a 4-lane port delivers about 100 fps, or the full 120 fps after `sudo jetson_clocks`.
 
 ## Verifying the camera
 

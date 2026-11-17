@@ -32,7 +32,7 @@ The Hadron's reset is one line shared by the EO sensor and the Boson. The adapte
 | J2 | IR Camera / USB | JST BM04B-GHS, 4-pin JST-GH |
 | J3 | I2C | JST BM06B-GHS, 6-pin JST-GH |
 
-The EO camera FFC goes to a CSI port on the carrier, the USB cable to a USB 2.0 JST-GH, and the I2C cable to a 6-pin JST-GH with I2C on pins 4 and 5, such as the Jetson carriers' UART2/I2C0 connector. All three are straight cables.
+The EO camera FFC goes to a CSI port on the carrier and the USB cable to a USB 2.0 JST-GH. The I2C cable goes to the host's I2C connector: on the Just A Jetson that is UART2/I2C0, a 6-pin JST-GH with I2C on pins 4 and 5, which takes the included straight cable, and on the Just A Pi it is the UART2 connector. The Jetson PAB Carrier's Jetson I2C0 is a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3, so it needs a 6-to-4-pin cable. The Jetson PAB Carrier V3 has no Jetson I2C connector, so the IMU is not reachable there.
 
 ## What's included
 
@@ -50,32 +50,32 @@ The Hadron camera module is not included.
 
 ### EO Camera — 22-pin 0.5 mm FFC
 
-The connector carries the 22-pin Raspberry Pi / Jetson camera pinout. The pins are listed as the adapter numbers them.
+The connector carries the 22-pin Raspberry Pi / Jetson camera pinout, numbered the way the carriers number their CSI ports.
 
 | Pin | Signal | Voltage | Note |
 | --- | ------ | ------- | ---- |
-| 1 | 3V3\_CON | +3.3V | From the carrier; powers the carrier side of the level translators |
-| 2 | CAM\_SDA | +3.3V | EO camera I2C, translated to the Hadron's 1.8 V |
-| 3 | CAM\_SCL | +3.3V | EO camera I2C, translated to the Hadron's 1.8 V |
+| 1 | GND | GND | |
+| 2 | EO\_D0\_N | 1.2V | MIPI data lane 0 |
+| 3 | EO\_D0\_P | 1.2V | |
 | 4 | GND | GND | |
-| 5 | CAM\_FS | +1.8V | Carrier `CAMn_MCLK` pin. Frame-sync line, see below |
-| 6 | CAM\_RESET\_N | +3.3V | Carrier `CAMn_PWDN` pin. Hadron reset, translated to 1.8 V; high releases it |
+| 5 | EO\_D1\_N | 1.2V | MIPI data lane 1 |
+| 6 | EO\_D1\_P | 1.2V | |
 | 7 | GND | GND | |
-| 8 | EO\_D3\_P | 1.2V | MIPI data lane 3 |
-| 9 | EO\_D3\_N | 1.2V | |
+| 8 | EO\_CLK\_N | 1.2V | MIPI clock lane |
+| 9 | EO\_CLK\_P | 1.2V | |
 | 10 | GND | GND | |
-| 11 | EO\_D2\_P | 1.2V | MIPI data lane 2 |
-| 12 | EO\_D2\_N | 1.2V | |
+| 11 | EO\_D2\_N | 1.2V | MIPI data lane 2 |
+| 12 | EO\_D2\_P | 1.2V | |
 | 13 | GND | GND | |
-| 14 | EO\_CLK\_P | 1.2V | MIPI clock lane |
-| 15 | EO\_CLK\_N | 1.2V | |
+| 14 | EO\_D3\_N | 1.2V | MIPI data lane 3 |
+| 15 | EO\_D3\_P | 1.2V | |
 | 16 | GND | GND | |
-| 17 | EO\_D1\_P | 1.2V | MIPI data lane 1 |
-| 18 | EO\_D1\_N | 1.2V | |
+| 17 | CAM\_RESET\_N | +3.3V | Carrier `CAMn_PWDN` pin. Hadron reset, translated to 1.8 V; high releases it |
+| 18 | CAM\_FS | +1.8V | Carrier `CAMn_MCLK` pin. Frame-sync line, see below |
 | 19 | GND | GND | |
-| 20 | EO\_D0\_P | 1.2V | MIPI data lane 0 |
-| 21 | EO\_D0\_N | 1.2V | |
-| 22 | GND | GND | |
+| 20 | CAM\_SCL | +3.3V | EO camera I2C, translated to the Hadron's 1.8 V |
+| 21 | CAM\_SDA | +3.3V | EO camera I2C, translated to the Hadron's 1.8 V |
+| 22 | 3V3\_CON | +3.3V | From the carrier; powers the carrier side of the level translators |
 
 On a 2-lane port only lanes 0 and 1 are used.
 
@@ -109,7 +109,7 @@ The adapter connects these Hadron pins: USB 2.0 and 5 V in, the four EO MIPI dat
 
 ## Frame sync
 
-Hadron pin 43 `EXT_VSYNC` is the module's frame-sync line. On the adapter, R11 joins it to the EO camera connector's MCLK pin (pin 5), and R12 joins it to the ICM-45686's FSYNC pin. Both are 0 Ω and fitted from Rev 1.1 on (Rev 1.0 shipped without R12).
+Hadron pin 43 `EXT_VSYNC` is the module's frame-sync line. On the adapter, R11 joins it to the EO camera connector's MCLK pin (pin 18), and R12 joins it to the ICM-45686's FSYNC pin. Both are 0 Ω and fitted.
 
 * The Boson can be made the sync master over its serial port. It then sends a short 1.8 V pulse for each of its 60 Hz core frames, and the host can timestamp those pulses on its MCLK pad, which the host overlays turn into an input.
 * The ICM-45686 tags the first sample after each pulse with the pulse-to-sample delay, at 1 µs resolution, once its pin 9 is switched from INT2 to FSYNC.

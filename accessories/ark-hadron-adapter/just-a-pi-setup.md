@@ -1,6 +1,6 @@
 # Just A Pi Setup
 
-The `justapi-cm5` image carries the driver for the Hadron's visible (EO) camera, `ov64b40`, built with DKMS, and its overlay. The thermal camera (Boson) is a UVC camera ("FLIR Video") at 30 fps. The driver and the bench results are in [ark\_pi\_image](https://github.com/ARK-Electronics/ark_pi_image).
+This setup needs a Compute Module 5: a CM4 on the Just A Pi has no UART2 and no CAM2. It also needs a `justapi-cm5` image that carries the driver for the Hadron's visible (EO) camera, `ov64b40`, built with DKMS, and its overlay. [ark\_pi\_image#11](https://github.com/ARK-Electronics/ark_pi_image/pull/11) adds them; on an image built without that change the `config.txt` edits below do nothing. The thermal camera (Boson) is a UVC camera ("FLIR Video") at 30 fps and needs no driver.
 
 The Pi 5's CSI-2 receiver takes at most 1.5 Gbps per lane, so the EO runs one mode here: 2304x1728 RAW10 (RGGB) at 20 fps on two lanes, and up to 29.4 fps through `VBLANK`. libcamera does not support the sensor, so `rpicam-*` and ARK-OS's RTSP server do not see it. Capture raw frames with V4L2.
 
@@ -12,7 +12,7 @@ The Pi 5's CSI-2 receiver takes at most 1.5 Gbps per lane, so the EO runs one mo
 | IR Camera / USB (4-pin JST-GH) | USB 2.0 JST-GH |
 | I2C (6-pin JST-GH) | UART2 connector, straight cable |
 
-The Just A Pi has no free I2C connector, so the adapter's I2C goes to the UART2 connector, where SCL and SDA land on GPIO6 and GPIO7 (the connector's CTS and RTS). The RP1 bit-bangs that bus. UART2 keeps TX and RX.
+The Just A Pi has no free I2C connector, so the adapter's I2C goes to the UART2 connector, where SCL and SDA land on GPIO6 and GPIO7 (the connector's CTS and RTS). The kernel's `i2c-gpio` driver bit-bangs the bus on those pins. UART2 keeps TX and RX.
 
 ## config.txt
 
@@ -49,4 +49,4 @@ To reload the driver, reboot. Unloading and reloading a sensor module oopses the
 
 The adapter's ICM-45686 is at `0x68` on `/dev/i2c-7`. The Hadron's sync line runs through R11 to CAM1 pin 18 (GPIO35), which the Pi reads as an input, and through R12 to the IMU's FSYNC pin. With the Boson as sync master, the Pi sees its 60 Hz pulses on GPIO35 and the IMU tags them.
 
-The CM5 pulls GPIO35 up to 3.3 V through 15 kΩ on the module. While the Boson drives the line, which it does from power-on, the pull-up only loads its output. The line floats above the Hadron's 1.8 V inputs only when nothing drives it: for a moment during boot, with the Boson as a sync slave, or with the Hadron unpowered while the CM5 is on. The inputs then clamp it at about 2.2 V.
+The CM5 pulls GPIO35 up to 3.3 V through 15 kΩ on the module, and no setting removes it. The Hadron's inputs on that line are rated to 2.1 V. While the Boson drives the line, which it does from power-on, the pull-up only loads its output and the line stays at or below 1.8 V. When nothing drives it, the 1.8 V inputs clamp it at about 2.2 V, which is above the 2.1 V limit. That happens for a moment during boot, with the Boson set as a sync slave, or with the Hadron unpowered while the CM5 is on. To stay within the limit, keep the Hadron's USB connected whenever the CM5 is on and do not set the Boson as a sync slave on the Just A Pi.
