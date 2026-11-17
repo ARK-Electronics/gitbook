@@ -9,6 +9,7 @@ The ARK Jetson PAB Carrier has **4× 2-lane CSI ports**. Camera configuration is
 | IMX219 | 3280x2464 | Camera IMX219 Quad | Working (default) |
 | IMX477 | 4056x3040 | Camera IMX477 Quad | Working |
 | IMX708 | 4608x2592 | Camera IMX708 Quad | Working |
+| OV64B40 (FLIR Hadron EO) | 9248x6936 | Camera FLIR Hadron EO CAM0-CAM3 2-lane | Untested on hardware, through the [ARK Hadron Adapter](../../../accessories/ark-hadron-adapter/jetson-setup.md) with a 22-to-15-pin FFC adapter |
 
 4-lane CSI modes are not supported — 2-lane provides full resolution at 30 fps for the IMX477. See [cameras.md](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/cameras.md) in the kernel repo for sensor details, verification commands, and known issues.
 
