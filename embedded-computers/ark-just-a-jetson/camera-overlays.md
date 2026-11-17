@@ -9,6 +9,7 @@ The ARK Just A Jetson has **2× dual-lane CSI ports** on 22-pin FFC connectors. 
 | IMX219 | 3280x2464 | Camera IMX219 Dual | Working (default) |
 | IMX477 | 4056x3040 | Camera IMX477 Dual | Working |
 | IMX708 | 4608x2592 | Camera IMX708 Dual | Working |
+| OV64B40 (FLIR Hadron EO) | 9248x6936 | Camera FLIR Hadron EO CAM0 2-lane, CAM1 4-lane | Working, through the [ARK Hadron Adapter](../../accessories/ark-hadron-adapter/jetson-setup.md) |
 
 See [cameras.md](https://github.com/ARK-Electronics/ark_jetson_kernel/blob/main/docs/cameras.md) in the kernel repo for sensor details, verification commands, and known issues.
 
