@@ -5,6 +5,7 @@ A breakout for the Teledyne FLIR Hadron 640R and 640R+ camera module. The Hadron
 <a href="https://arkelectron.com/product/ark-hadron-adapter/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Hadron_Adapter/model" class="button secondary" data-icon="cube">3D model</a>
 
 * **Camera module:** Teledyne FLIR Hadron 640R / 640R+ (not included)
+* **In the box:** the adapter, a 22-to-22-pin and a 22-to-15-pin 0.5 mm FFC camera cable, a 4-pin and a 6-pin JST-GH cable
 * **EO camera:** 4-lane MIPI CSI-2 on a 22-pin 0.5 mm FFC
 * **IR camera:** USB 2.0 on a 4-pin JST-GH
 * **Control:** Hadron I2C and the adapter's ICM-45686 IMU on a 6-pin JST-GH
