@@ -61,6 +61,21 @@ Molex 1054301202. Mates with [45130](https://www.molex.com/en-us/part-list/45130
 
 5 V and 3.3 V power, module CPU status, wireless TX and RX, three RSSI bars, LAN link and WAN link.
 
+## Antennas
+
+Connect an antenna tuned to the module's band to every antenna port, on both the air and ground radios. The pMDDL2450 is 2×2 MIMO, with two U.FL ports labeled ANT1 and ANT2.
+
+| Radio | Antennas | Mounting |
+|---|---|---|
+| Air | Two 2–3 dBi dipoles with U.FL leads | Vertical, at least half a wavelength apart |
+| Ground | Two omnidirectional antennas of about 5 dBi, on U.FL to RP-SMA bulkhead pigtails | High, with a clear view of the flight area |
+
+Half a wavelength is 6 cm at 2.4 GHz. Keep the air antennas clear of carbon fiber and of other radios in the same band, such as a 2.4 GHz radio control receiver. For more range when the aircraft stays in one direction from the ground station, use a directional patch antenna on the ground radio.
+
+{% hint style="warning" %}
+Set the radio's transmit power so that transmit power plus antenna gain stays within your local limit on effective isotropic radiated power (EIRP). The pMDDL2450 transmits up to 30 dBm. At 2.4 GHz, the limit is 36 dBm in the US and 20 dBm in the UK and EU.
+{% endhint %}
+
 ## Assembly
 
 1. Remove all connections from the board.
