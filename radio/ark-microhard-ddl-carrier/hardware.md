@@ -13,7 +13,7 @@
 | Reverse polarity protection | Yes |
 | Buttons | Configuration, reset |
 | Fan | 5 V and GND pads |
-| Weight | 18 g |
+| Weight | 18 g without a radio module, 26 g with one |
 
 ## Pinout
 
