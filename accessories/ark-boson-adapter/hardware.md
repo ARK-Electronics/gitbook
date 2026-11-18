@@ -4,7 +4,7 @@
 
 | Specification | Value |
 |---------------|-------|
-| Camera module | Teledyne FLIR Boson+ with the MIPI interface, on the 80-pin board-to-board connector underneath |
+| Camera module | Teledyne FLIR Boson+ with the MIPI interface, on the 80-pin board-to-board connector underneath. USB versions are not supported |
 | Video | 2-lane MIPI CSI-2 on a 22-pin 0.5 mm FFC, 640x512 at 60 fps |
 | Camera control | Boson I2C on the camera connector, level-translated to 3.3 V, address `0x6a` |
 | Serial port | Boson UART on a 6-pin JST-GH, level-translated to 3.3 V, 921600 8N1 |
@@ -37,7 +37,7 @@ Each host's cabling is on its setup page: [Jetson](jetson-setup.md#cabling), [Ju
 | 22-to-15-pin 0.5 mm FFC | Camera to a 15-pin CSI port (Jetson PAB Carrier). The PAB carriers have no Boson+ overlay yet |
 | 6-pin JST-GH cable | Serial port and IMU |
 
-The Boson+ camera module is not included.
+The Boson+ camera module is not included. Only the MIPI versions of the Boson+ work with the adapter. The USB versions do not.
 
 ## Pinout
 
