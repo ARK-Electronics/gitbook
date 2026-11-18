@@ -1,28 +1,36 @@
 # Just A Pi Setup
 
-This setup needs a Compute Module 5: a CM4 on the Just A Pi has no UART2 and no CAM2. It also needs a `justapi-cm5` image that carries the driver for the Hadron's visible (EO) camera, `ov64b40`, built with DKMS, and its overlay. [ark\_pi\_image#11](https://github.com/ARK-Electronics/ark_pi_image/pull/11) adds them; on an image built without that change the `config.txt` edits below do nothing. The thermal camera (Boson) is a UVC camera ("FLIR Video") at 30 fps and needs no driver.
+This setup needs:
 
-The Pi 5's CSI-2 receiver takes at most 1.5 Gbps per lane, so the EO runs one mode here: 2304x1728 RAW10 (RGGB) at 20 fps on two lanes, and up to 29.4 fps through `VBLANK`. libcamera does not support the sensor, so `rpicam-*` and ARK-OS's RTSP server do not see it. Capture raw frames with V4L2.
+* A Compute Module 5. With a CM4, the Just A Pi has no UART2 and no CAM2.
+* A `justapi-cm5` image with the driver for the Hadron's visible (EO) camera, `ov64b40`, and its overlay. [ark\_pi\_image#11](https://github.com/ARK-Electronics/ark_pi_image/pull/11) adds them. On older images the `config.txt` edits below do nothing.
+
+The Boson thermal camera appears as the UVC camera "FLIR Video" at 30 fps and needs no driver.
+
+The Pi 5's CSI-2 receiver limits the EO camera to one mode: 2304x1728 RAW10 RGGB on two lanes. It runs at 20 fps, or up to 29.4 fps with a shorter vertical blanking. libcamera does not support the sensor, so `rpicam-*` and ARK-OS's RTSP server do not see it. Capture raw frames with V4L2.
 
 ## Cabling
 
 | Adapter connector | Carrier connector |
 | ----------------- | ----------------- |
-| EO Camera (22-pin FFC) | CAM1 (J2), or CAM2 (J1) |
+| EO Camera (22-pin FFC) | CAM1 (J2) or CAM2 (J1) |
 | IR Camera / USB (4-pin JST-GH) | USB 2.0 JST-GH |
-| I2C (6-pin JST-GH) | UART2 connector, straight cable |
+| I2C (6-pin JST-GH) | UART2, straight cable |
 
-The Just A Pi has no free I2C connector, so the adapter's I2C goes to the UART2 connector, where SCL and SDA land on GPIO6 and GPIO7 (the connector's CTS and RTS). The kernel's `i2c-gpio` driver bit-bangs the bus on those pins. UART2 keeps TX and RX.
+On CAM2 the Pi cannot reset the Hadron or read its sync pulses. The carrier ties CAM2's pin 17 high and leaves pin 18 unconnected. The IMU still timestamps the pulses.
+
+The Just A Pi has no free I2C connector, so the I2C cable goes to UART2. SCL and SDA land on the connector's CTS and RTS pins, GPIO6 and GPIO7, where the kernel's `i2c-gpio` driver bit-bangs the bus. UART2 keeps TX and RX.
 
 ## config.txt
 
-In `/boot/firmware/config.txt`, with the Hadron on CAM1:
+In `/boot/firmware/config.txt`, change the camera line for your port:
 
-1. Change `dtoverlay=imx708,cam0` to `dtoverlay=ov64b40,cam0`.
-2. Change `dtoverlay=uart2,ctsrts` to `dtoverlay=uart2`.
-3. Uncomment `dtoverlay=i2c-gpio,i2c_gpio_sda=7,i2c_gpio_scl=6,bus=7`, which gives `/dev/i2c-7`.
+| Port | Change | To |
+| ---- | ------ | -- |
+| CAM1 | `dtoverlay=imx708,cam0` | `dtoverlay=ov64b40,cam0` |
+| CAM2 | `dtoverlay=imx708` | `dtoverlay=ov64b40` |
 
-With the Hadron on CAM2 instead, keep `dtoverlay=imx708,cam0` and change the plain `dtoverlay=imx708` line to `dtoverlay=ov64b40`. CAM2's pin 17 is tied high on the carrier, so the Hadron's reset is always released, and CAM2 has no pin 18, so the Pi cannot read the sync pulses there; the IMU still tags them.
+For the I2C on UART2, change `dtoverlay=uart2,ctsrts` to `dtoverlay=uart2` and uncomment `dtoverlay=i2c-gpio,i2c_gpio_sda=7,i2c_gpio_scl=6,bus=7`. The bus appears as `/dev/i2c-7`.
 
 Reboot after editing.
 
@@ -41,12 +49,21 @@ v4l2-ctl -d $VIDEO --set-fmt-video=width=2304,height=1728,pixelformat=pRAA
 v4l2-ctl -d $VIDEO --stream-mmap --stream-count=20 --stream-to=frames.raw
 ```
 
-Exposure (lines), analogue gain (`0x100` = 1x), vertical blanking (998 for 20 fps, down to 128 for 29.4 fps) and a colour-bar test pattern are controls on the sensor's subdevice: `v4l2-ctl -d $SENSOR -l`.
+The sensor's controls are on its subdevice. List them with `v4l2-ctl -d $SENSOR -l`.
 
-To reload the driver, reboot. Unloading and reloading a sensor module oopses the Pi kernel's CSI-2 receiver driver.
+| Control | Value |
+| ------- | ----- |
+| Exposure | In lines |
+| Analogue gain | `0x100` is 1x |
+| Vertical blanking | 998 for 20 fps, down to 128 for 29.4 fps |
+| Test pattern | Colour bars |
+
+Reboot to reload the driver. Unloading the sensor module crashes the Pi kernel's CSI-2 receiver driver.
 
 ## IMU and frame sync
 
-The adapter's ICM-45686 is at `0x68` on `/dev/i2c-7`. The Hadron's sync line runs through R11 to CAM1 pin 18 (GPIO35), which the Pi reads as an input, and through R12 to the IMU's FSYNC pin. With the Boson as sync master, the Pi sees its 60 Hz pulses on GPIO35 and the IMU tags them.
+The ICM-45686 is at `0x68` on `/dev/i2c-7`. On CAM1 the Hadron's sync line reaches the Pi on GPIO35, through pin 18. With the Boson as sync master, the Pi sees its 60 Hz pulses on GPIO35 and the IMU timestamps them.
 
-The CM5 pulls GPIO35 up to 3.3 V through 15 kΩ on the module, and no setting removes it. The Hadron's inputs on that line are rated to 2.1 V. While the Boson drives the line, which it does from power-on, the pull-up only loads its output and the line stays at or below 1.8 V. When nothing drives it, the 1.8 V inputs clamp it at about 2.2 V, which is above the 2.1 V limit. That happens for a moment during boot, with the Boson set as a sync slave, or with the Hadron unpowered while the CM5 is on. To stay within the limit, keep the Hadron's USB connected whenever the CM5 is on and do not set the Boson as a sync slave on the Just A Pi.
+{% hint style="warning" %}
+With the Hadron on CAM1, keep its USB connected while the CM5 is on, and do not set the Boson as a sync slave. The CM5 pulls GPIO35 up to 3.3 V through 15 kΩ, and no setting removes it. The Boson holds the line at or below 1.8 V from power-on unless it is a sync slave. Undriven, the line sits at about 2.2 V, above the Hadron's 2.1 V input rating.
+{% endhint %}

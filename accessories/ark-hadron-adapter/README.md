@@ -5,7 +5,7 @@ coverY: 0
 
 # ARK Hadron Adapter
 
-A breakout for the Teledyne FLIR Hadron 640R and 640R+ camera module. The Hadron plugs into the 50-pin connector on the underside, and the adapter brings its visible (EO) camera out on a 22-pin MIPI CSI-2 FFC, its thermal (IR) camera out on a USB JST-GH, and its control I2C out on a 6-pin JST-GH. An onboard ICM-45686 IMU shares the control I2C and tags the Hadron's frame-sync pulses, for camera and IMU synchronization.
+A breakout for the Teledyne FLIR Hadron 640R and 640R+ camera module. It brings out the Hadron's visible (EO) camera, thermal (IR) camera and control I2C. An onboard ICM-45686 IMU timestamps the Hadron's frame-sync pulses.
 
 <a href="https://arkelectron.com/product/ark-hadron-adapter/" class="button primary" data-icon="cart-shopping">Buy</a> <a href="https://github.com/ARK-Electronics/ark-hardware/tree/main/ARK_Hadron_Adapter/model" class="button secondary" data-icon="cube">3D model</a>
 
