@@ -24,7 +24,7 @@ Apply the overlay for your carrier and port.
 | ARK Just A Jetson | CAM1 (J25) | 4 | Camera FLIR Hadron EO CAM1 4-lane | Bench-tested |
 | ARK Jetson PAB Carrier V3 | CAM0 (J28) | 4 | Camera FLIR Hadron EO CAM0 4-lane | Untested on hardware |
 | ARK Jetson PAB Carrier V3 | CAM1 (J25) | 4 | Camera FLIR Hadron EO CAM1 4-lane | Untested on hardware |
-| ARK Jetson PAB Carrier | CAM0–CAM3 | 2 | Camera FLIR Hadron EO CAM*n* 2-lane | Untested on hardware |
+| ARK Jetson PAB Carrier | CAM0–CAM3 | 2 | Camera FLIR Hadron EO CAM*n* 2-lane | Bench-tested |
 
 Both Just A Jetson ports carry four lanes, but L4T runs CAM0 on only two of them. Each mode on CAM0 runs at half its 4-lane frame rate.
 
