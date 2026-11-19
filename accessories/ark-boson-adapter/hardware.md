@@ -15,6 +15,7 @@
 | PCB | 6-layer, impedance controlled |
 | Mounting | 4× 1.8 mm holes |
 | Dimensions | 21 × 21 × 6 mm |
+| Weight | 2.5 g |
 
 The adapter wires no reset, power-down or clock to the Boson. The Boson runs from the camera connector's 3.3 V and its own oscillator.
 
