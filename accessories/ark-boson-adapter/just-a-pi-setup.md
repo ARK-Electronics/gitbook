@@ -67,7 +67,7 @@ The driver changes only the video output and saves nothing to the Boson's flash.
 
 ## IMU and Frame Sync
 
-The ICM-45686 is at `0x68` on `/dev/i2c-7`. On CAM1 the Boson's sync line reaches the Pi on GPIO35, through pin 18, and the Pi only reads it. With the Boson as sync master, the Pi sees its 60 Hz pulses there. The carrier leaves CAM2's pin 18 unconnected, so on CAM2 only the IMU sees the pulses. The IMU timestamps them only with R13 fitted, as [Frame Sync](hardware.md#frame-sync) describes.
+The ICM-45686 is at `0x68` on `/dev/i2c-7`. On CAM1 the Boson's sync line reaches the Pi on GPIO35, through pin 18, and the Pi only reads it. With the Boson as sync master, the Pi sees its 60 Hz pulses there. The carrier leaves CAM2's pin 18 unconnected, so on CAM2 only the IMU sees the pulses. The IMU tags them as [Frame Sync](hardware.md#frame-sync) describes.
 
 {% hint style="warning" %}
 Do not set the Boson as a sync slave on CAM1. The CM5 pulls GPIO35 up to 3.3 V through 15 kΩ, and no setting removes it. With nothing driving the line, the pull-up takes it above FLIR's 1.92 V absolute limit for `EXT_SYNC`. The Boson holds the line low from power-on and drives it as sync master, so in those states the pull-up only loads its output.
