@@ -4,15 +4,14 @@
 
 | Specification | Value |
 |---------------|-------|
-| Camera module | Teledyne FLIR Boson+ with the MIPI interface, on the 80-pin board-to-board connector underneath. USB versions are not supported |
+| Camera module | Teledyne FLIR Boson+ with the MIPI interface, on the 80-pin board-to-board connector underneath. The USB versions do not work with the adapter |
 | Video | 2-lane MIPI CSI-2 on a 22-pin 0.5 mm FFC, 640x512 at 60 fps |
 | Camera control | Boson I2C on the camera connector, level-translated to 3.3 V, address `0x6a` |
 | Serial port | Boson UART on a 6-pin JST-GH, level-translated to 3.3 V, 921600 8N1 |
 | IMU | TDK InvenSense ICM-45686 6-axis, I2C address `0x68`, on the 6-pin JST-GH |
-| Frame sync | Boson `EXT_SYNC` to the camera connector's MCLK pin. The jumper to the IMU's FSYNC pin is not fitted |
+| Frame sync | Boson `EXT_SYNC`, 1.8 V, to the camera connector's MCLK pin. The jumper to the IMU's FSYNC pin is not fitted |
 | Power | 3.3 V from the camera connector, which powers the Boson and the adapter |
 | ESD protection | On every MIPI, I2C and UART line |
-| PCB | 6-layer, impedance controlled |
 | Mounting | 4× 1.8 mm holes |
 | Dimensions | 21 × 21 × 6 mm |
 | Weight | 2.5 g |
@@ -27,22 +26,24 @@ The adapter wires no reset, power-down or clock to the Boson. The Boson runs fro
 | J2 | Camera | Molex 52559-2253, 22-pin 0.5 mm FFC |
 | J3 | I2C/UART | JST BM06B-GHS, 6-pin JST-GH |
 
+Video needs only the camera cable. The camera connector powers the Boson and carries the I2C that ARK's drivers configure it over. The I2C/UART cable is for the Boson's serial port and the IMU.
+
 Each host's cabling is on its setup page: [Jetson](jetson-setup.md#cabling), [Just A Pi](just-a-pi-setup.md#cabling).
 
-## What's included
+## What's Included
 
 | Item | Use |
 |------|-----|
 | ARK Boson Adapter | |
 | 22-to-22-pin 0.5 mm FFC | Camera to a 22-pin CSI port (Just A Jetson, Just A Pi) |
-| 22-to-15-pin 0.5 mm FFC | Camera to a 15-pin CSI port (Jetson PAB Carrier). The PAB carriers have no Boson+ overlay yet |
-| 6-pin JST-GH cable | Serial port and IMU |
+| 22-to-15-pin 0.5 mm FFC | Camera to a 15-pin CSI port (Jetson PAB Carrier) |
+| 6-pin JST-GH cable | Serial port and IMU. Straight, see the [I2C/UART pinout](#pinout) |
 
-The Boson+ camera module is not included. Only the MIPI versions of the Boson+ work with the adapter. The USB versions do not.
+The Boson+ camera module is not included.
 
 ## Pinout
 
-### Camera — 22-pin 0.5 mm FFC
+### Camera (J2) — 22-pin 0.5 mm FFC
 
 The connector uses the 22-pin Raspberry Pi and Jetson camera pinout, numbered the way the carriers number their CSI ports.
 
@@ -71,38 +72,46 @@ The connector uses the 22-pin Raspberry Pi and Jetson camera pinout, numbered th
 | 21 | CAM\_SDA | +3.3V | Boson I2C, translated to the Boson's 1.8 V |
 | 22 | 3V3\_CON | +3.3V | From the carrier. Powers the Boson and the adapter |
 
-The Boson answers on this I2C at `0x6a`. ARK's drivers configure it and start its MIPI output over this bus, so video needs no other cable.
+The Boson answers on this I2C at `0x6a`.
 
-### I2C/UART — 6-pin JST-GH
+### I2C/UART (J3) — 6-pin JST-GH
+
+This is the pinout of Rev 1.0, the shipping revision.
 
 | Pin | Signal | Voltage | Note |
 | --- | ------ | ------- | ---- |
 | 1 | NC | — | |
-| 2 | BOSON\_RX | +3.3V | Boson serial input. Goes to the host's TX |
-| 3 | BOSON\_TX | +3.3V | Boson serial output. Goes to the host's RX |
+| 2 | BOSON\_TX | +3.3V | Boson serial output |
+| 3 | BOSON\_RX | +3.3V | Boson serial input |
 | 4 | I2C\_SCL | +3.3V | IMU |
 | 5 | I2C\_SDA | +3.3V | IMU |
 | 6 | GND | GND | |
 
-The UART is crossed against a Pixhawk-standard 6-pin UART/I2C connector, so a straight cable joins it to a host's UART. An LSF0102 translates the UART between the Boson's 1.8 V and 3.3 V. A TXS0104E translates the I2C and supplies its pull-ups. This I2C carries only the ICM-45686 at `0x68`. The Boson's own I2C is on the camera connector.
-
 {% hint style="warning" %}
-On Rev 1.0, pin 2 is the Boson's serial output and pin 3 its input. Cross pins 2 and 3 in the cable to a host UART. The board wires the Boson's `uart_apb_sin` on pin 33 and `uart_apb_sout` on pin 43 the other way round. With the crossed cable, the Boson's output has no 3.3 V pull-up of its own. It works with the Just A Jetson, which pulls up its RX line, and was bench-tested on the Just A Pi.
+Cross pins 2 and 3 of the 6-pin cable before connecting this connector to a host UART. On a Pixhawk-standard UART/I2C connector pin 2 is the host's output, and on Rev 1.0 pin 2 is the Boson's output too. The included cable is straight. Video and the IMU do not use these pins.
 {% endhint %}
 
-### Boson connector
+Pins 4 to 6 match the I2C pins of a Pixhawk-standard 6-pin UART/I2C connector. An LSF0102 translates the UART between the Boson's 1.8 V and 3.3 V. A TXS0104E translates the I2C and supplies its pull-ups. This I2C carries only the ICM-45686 at `0x68`. The Boson's own I2C is on the camera connector.
 
-The adapter connects these Boson pins: 3.3 V in, the two MIPI data lanes and clock, the Boson I2C, the UART on pins 33 and 43, `EXT_SYNC` on pin 72 and the pull-up FLIR asks for on pin 58. The rest are not connected.
+### Boson (J1) — 80-pin board-to-board
 
-## Frame sync
+The adapter connects these Boson pins: 3.3 V in, the two MIPI data lanes and clock, the Boson I2C, the UART, `EXT_SYNC` on pin 72 and the pull-up FLIR asks for on pin 58. The rest are not connected.
+
+## Frame Sync
 
 The Boson's frame-sync line is `EXT_SYNC` on pin 72. R12 joins it to pin 18 of the camera connector, the carrier's MCLK pin, and is fitted. R13 joins it to the IMU's FSYNC pin and is not fitted on Rev 1.0. Fit a 0 Ω resistor at R13 to let the IMU timestamp the pulses.
 
+The line is the Boson's own 1.8 V I/O, with no buffer on the adapter. FLIR's absolute limit for it is −0.25 to 1.92 V.
+
 | Device | Role on the sync line |
 | ------ | --------------------- |
-| Boson | Powers on with sync off and holds the line low. Once made sync master over its serial port, with FLIR function `0x00050098` set to 1, it sends one pulse per 60 Hz frame while it streams |
-| Host | Reads the pulses on the camera port's MCLK pin, which ARK's overlays set as an input. On the bench, 60.0–60.2 pulses per second on the Just A Jetson and 60.25 Hz on the Just A Pi |
-| ICM-45686 | With R13 fitted and its pin 9 switched from INT2 to FSYNC, tags the first sample after each pulse with the pulse-to-sample delay at 1 µs resolution. On the bench, 59.4–59.8 tags per second, counted on the IMU's own clock |
+| Boson | Holds the line low from power-on. As sync master, sends one pulse per 60 Hz frame while it streams |
+| Host | Reads the pulses on the camera port's MCLK pin, which ARK's overlays set as an input |
+| ICM-45686 | With R13 fitted, tags the first sample after each pulse with the pulse-to-sample delay at 1 µs resolution |
+
+Set the Boson's sync mode over its serial port with FLIR function `0x00050098`: 0 off, 1 master, 2 slave. The Boson powers on with sync off and forgets the setting at power-off. Switch the IMU's pin 9 from INT2, its power-on function, to FSYNC before it can tag the pulses.
+
+On the bench, with the Boson as sync master, the Just A Jetson counted 59.9–60.2 pulses per second and the Just A Pi 60.25. The IMU tagged 59.4–59.8 pulses per second, counted on its own clock.
 
 ## 3D Model
 

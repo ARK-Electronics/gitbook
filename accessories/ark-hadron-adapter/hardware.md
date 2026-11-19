@@ -12,7 +12,6 @@
 | Frame sync | Hadron `EXT_VSYNC` to the camera port's MCLK pin and the IMU's FSYNC pin |
 | Power | 5 V from the USB connector, which powers the Hadron and the adapter |
 | ESD protection | On every MIPI, USB and I2C line |
-| PCB | 6-layer, impedance controlled |
 | Mounting | 4× 1.8 mm holes |
 | Dimensions | 33 × 47 × 6 mm |
 | Weight | 8 g |
@@ -32,7 +31,7 @@
 
 Each host's cabling is on its setup page: [Jetson](jetson-setup.md#cabling), [Just A Pi](just-a-pi-setup.md#cabling).
 
-## What's included
+## What's Included
 
 | Item | Use |
 |------|-----|
@@ -46,7 +45,7 @@ The Hadron camera module is not included.
 
 ## Pinout
 
-### EO Camera — 22-pin 0.5 mm FFC
+### EO Camera (J4) — 22-pin 0.5 mm FFC
 
 The connector uses the 22-pin Raspberry Pi and Jetson camera pinout, numbered the way the carriers number their CSI ports.
 
@@ -79,7 +78,7 @@ On a 2-lane port only lanes 0 and 1 are used.
 
 The EO sensor and the Boson share the reset on pin 17. ARK's drivers release it once and never pull it low again, so powering down the EO camera does not reset the Boson.
 
-### IR Camera / USB — 4-pin JST-GH
+### IR Camera / USB (J2) — 4-pin JST-GH
 
 | Pin | Signal | Voltage |
 | --- | ------ | ------- |
@@ -90,7 +89,7 @@ The EO sensor and the Boson share the reset on pin 17. ARK's drivers release it 
 
 `USB_VBUS` powers the Hadron and the adapter.
 
-### I2C — 6-pin JST-GH
+### I2C (J3) — 6-pin JST-GH
 
 | Pin | Signal | Voltage |
 | --- | ------ | ------- |
@@ -103,11 +102,11 @@ The EO sensor and the Boson share the reset on pin 17. ARK's drivers release it 
 
 Pins 4 to 6 match the I2C pins of a Pixhawk-standard 6-pin UART/I2C connector, so a straight cable works. The bus carries the ICM-45686 at `0x68` and the Hadron's own I2C devices. A TXS0104E translates the Hadron's 1.8 V I2C to 3.3 V and supplies the pull-ups.
 
-### Hadron connector
+### Hadron (J1) — 50-pin board-to-board
 
 The adapter connects these Hadron pins: USB 2.0 and 5 V in, the four EO MIPI data lanes and clock, the EO camera I2C, the Hadron I2C, the shared reset and `EXT_VSYNC` on pin 43. The rest are not connected.
 
-## Frame sync
+## Frame Sync
 
 The Hadron's frame-sync line is `EXT_VSYNC` on pin 43. R11 joins it to pin 18 of the EO camera connector, the carrier's MCLK pin. R12 joins it to the IMU's FSYNC pin. Both are 0 Ω and fitted.
 
