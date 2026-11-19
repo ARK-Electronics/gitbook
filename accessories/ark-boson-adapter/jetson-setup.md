@@ -82,4 +82,4 @@ When a stream starts, the driver switches the Boson's output to MIPI, selects th
 
 The ICM-45686 is at `0x68` on whichever I2C bus the cable lands on. The I2C0 bus runs at 100 kHz, which carries accel and gyro at up to 400 Hz.
 
-With the Boson as sync master, each overlay reads its pulses on the port's MCLK pad: `PP.00` for CAM0 and `PP.01` for CAM1 on both carriers, and `PQ.05` for CAM2 and `PQ.06` for CAM3 on the Jetson PAB Carrier. A port whose overlay is not applied keeps its pad as a driven output, so a Boson there sends no pulses through. The IMU timestamps the pulses only with R13 fitted, as [Frame Sync](hardware.md#frame-sync) describes.
+With the Boson as sync master, each overlay reads its pulses on the port's MCLK pad: `PP.00` for CAM0 and `PP.01` for CAM1 on both carriers, and `PQ.05` for CAM2 and `PQ.06` for CAM3 on the Jetson PAB Carrier. A port whose overlay is not applied keeps its pad as a driven output, so a Boson there sends no pulses through. The IMU tags the pulses as [Frame Sync](hardware.md#frame-sync) describes.
