@@ -108,7 +108,7 @@ The adapter connects these Hadron pins: USB 2.0 and 5 V in, the four EO MIPI dat
 
 ## Frame Sync
 
-The Hadron's frame-sync line is `EXT_VSYNC` on pin 43. R11 joins it to pin 18 of the EO camera connector, the carrier's MCLK pin. R12 joins it to the IMU's FSYNC pin. Both are 0 Ω and fitted.
+The Hadron's frame-sync line is `EXT_VSYNC` on pin 43. It connects to pin 18 of the EO camera connector, the carrier's MCLK pin, and to the IMU's FSYNC pin.
 
 | Device | Role on the sync line |
 | ------ | --------------------- |
