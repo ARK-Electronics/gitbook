@@ -10,7 +10,7 @@ Video needs only the camera cable, see [Connectors](hardware.md#connectors). The
 
 | Carrier | Camera cable | Boson serial port | IMU |
 | ------- | ------------ | ----------------- | --- |
-| ARK Just A Jetson | Included 22-to-22-pin FFC to CAM0 or CAM1 | UART1/GPIO, `/dev/ttyTHS1` at 921600 8N1 | Pins 4 and 5 of UART2/I2C0, which are I2C0 |
+| ARK Just A Jetson | Included 22-to-22-pin FFC to CAM0 or CAM1 | UART1/GPIO, `/dev/ttyTHS1` at 921600 8N1, bench-tested | Pins 4 and 5 of UART2/I2C0, which are I2C0 |
 | ARK Jetson PAB Carrier | Included 22-to-15-pin FFC to CAM0–CAM3 | None, see below | Jetson I2C0, a 4-pin JST-GH with SCL on pin 2 and SDA on pin 3. Needs a 6-to-4-pin cable, not included |
 
 The I2C/UART connector carries the Boson's serial port on pins 2 and 3 and the IMU's I2C on pins 4 and 5. No Just A Jetson connector takes both, so split the cable. Cross pins 2 and 3 for the serial port, as the [I2C/UART pinout](hardware.md#pinout) describes.

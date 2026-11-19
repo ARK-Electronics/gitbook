@@ -88,7 +88,7 @@ This is the pinout of Rev 1.0, the shipping revision.
 | 6 | GND | GND | |
 
 {% hint style="warning" %}
-Cross pins 2 and 3 of the 6-pin cable before connecting this connector to a host UART. On a Pixhawk-standard UART/I2C connector pin 2 is the host's output, and on Rev 1.0 pin 2 is the Boson's output too. The included cable is straight. Video and the IMU do not use these pins.
+Cross pins 2 and 3 of the 6-pin cable before connecting this connector to a host UART. On a Pixhawk-standard UART/I2C connector pin 2 is the host's output, and on Rev 1.0 pin 2 is the Boson's output too. The included cable is straight. The crossed cable was bench-tested on the Just A Jetson and the Just A Pi. Video and the IMU do not use these pins.
 {% endhint %}
 
 Pins 4 to 6 match the I2C pins of a Pixhawk-standard 6-pin UART/I2C connector. An LSF0102 translates the UART between the Boson's 1.8 V and 3.3 V. A TXS0104E translates the I2C and supplies its pull-ups. This I2C carries only the ICM-45686 at `0x68`. The Boson's own I2C is on the camera connector.
