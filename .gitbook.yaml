@@ -73,6 +73,14 @@ redirects:
   products/imu/ark-sch16t/3d-model: imu/ark-sch16t/hardware.md
   products/accessories/ark-servo-expander/pinout: accessories/ark-servo-expander/hardware.md
   products/accessories/ark-servo-expander/3d-model: accessories/ark-servo-expander/hardware.md
+  products/accessories/ark-hadron-adapter: cameras/ark-hadron-adapter/README.md
+  products/accessories/ark-hadron-adapter/hardware: cameras/ark-hadron-adapter/hardware.md
+  products/accessories/ark-hadron-adapter/jetson-setup: cameras/ark-hadron-adapter/jetson-setup.md
+  products/accessories/ark-hadron-adapter/just-a-pi-setup: cameras/ark-hadron-adapter/just-a-pi-setup.md
+  products/accessories/ark-boson-adapter: cameras/ark-boson-adapter/README.md
+  products/accessories/ark-boson-adapter/hardware: cameras/ark-boson-adapter/hardware.md
+  products/accessories/ark-boson-adapter/jetson-setup: cameras/ark-boson-adapter/jetson-setup.md
+  products/accessories/ark-boson-adapter/just-a-pi-setup: cameras/ark-boson-adapter/just-a-pi-setup.md
   products/gps/ark-dan-gps/3d-model: gps/ark-dan-gps/hardware.md
   products/gps/ark-sam-gps/3d-model: gps/ark-sam-gps/hardware.md
   products/gps/ark-gps/3d-models: gps/ark-gps/hardware.md
