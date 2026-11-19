@@ -1,3 +1,8 @@
+---
+cover: ../../.gitbook/assets/ARK Boson Adapter on Boson+.jpg
+coverY: 0
+---
+
 # ARK Boson Adapter
 
 A breakout for the Teledyne FLIR Boson+ thermal camera module with the MIPI interface. It brings the Boson's video out on a 22-pin CSI-2 FFC, and the Boson's serial port and an onboard ICM-45686 IMU out on a 6-pin JST-GH.

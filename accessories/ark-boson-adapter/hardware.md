@@ -9,7 +9,7 @@
 | Camera control | Boson I2C on the camera connector, level-translated to 3.3 V, address `0x6a` |
 | Serial port | Boson UART on a 6-pin JST-GH, level-translated to 3.3 V, 921600 8N1 |
 | IMU | TDK InvenSense ICM-45686 6-axis, I2C address `0x68`, on the 6-pin JST-GH |
-| Frame sync | Boson `EXT_SYNC`, 1.8 V, to the camera connector's MCLK pin. The jumper to the IMU's FSYNC pin is not fitted |
+| Frame sync | Boson `EXT_SYNC`, 1.8 V, to the camera connector's MCLK pin and the IMU's FSYNC pin |
 | Power | 3.3 V from the camera connector, which powers the Boson and the adapter |
 | ESD protection | On every MIPI, I2C and UART line |
 | Mounting | 4× 1.8 mm holes |
@@ -19,6 +19,10 @@
 The adapter wires no reset, power-down or clock to the Boson. The Boson runs from the camera connector's 3.3 V and its own oscillator.
 
 ## Connectors
+
+<figure><img src="../../.gitbook/assets/ARK Boson Adapter Top.jpg" alt="ARK Boson Adapter, top"><figcaption><p>Top: Camera FFC (J2) and I2C/UART (J3)</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/ARK Boson Adapter Bottom.jpg" alt="ARK Boson Adapter, bottom"><figcaption><p>Bottom: Boson connector (J1)</p></figcaption></figure>
 
 | Connector | Label | Part |
 |-----------|-------|------|
@@ -99,7 +103,7 @@ The adapter connects these Boson pins: 3.3 V in, the two MIPI data lanes and clo
 
 ## Frame Sync
 
-The Boson's frame-sync line is `EXT_SYNC` on pin 72. R12 joins it to pin 18 of the camera connector, the carrier's MCLK pin, and is fitted. R13 joins it to the IMU's FSYNC pin and is not fitted on Rev 1.0. Fit a 0 Ω resistor at R13 to let the IMU timestamp the pulses.
+The Boson's frame-sync line is `EXT_SYNC` on pin 72. It connects to pin 18 of the camera connector, the carrier's MCLK pin, and to the IMU's FSYNC pin.
 
 The line is the Boson's own 1.8 V I/O, with no buffer on the adapter. FLIR's absolute limit for it is −0.25 to 1.92 V.
 
@@ -107,7 +111,7 @@ The line is the Boson's own 1.8 V I/O, with no buffer on the adapter. FLIR's abs
 | ------ | --------------------- |
 | Boson | Holds the line low from power-on. As sync master, sends one pulse per 60 Hz frame while it streams |
 | Host | Reads the pulses on the camera port's MCLK pin, which ARK's overlays set as an input |
-| ICM-45686 | With R13 fitted, tags the first sample after each pulse with the pulse-to-sample delay at 1 µs resolution |
+| ICM-45686 | Tags the first sample after each pulse with the pulse-to-sample delay at 1 µs resolution |
 
 Set the Boson's sync mode over its serial port with FLIR function `0x00050098`: 0 off, 1 master, 2 slave. The Boson powers on with sync off and forgets the setting at power-off. Switch the IMU's pin 9 from INT2, its power-on function, to FSYNC before it can tag the pulses.
 
