@@ -2,9 +2,11 @@
 
 The ARK OSD connects to the ARK FPV's SPI port or its TELEM port, as in [Wiring](hardware.md#wiring). Enter the settings for one link in the Betaflight Configurator's CLI tab. The ARK FPV defaults to `vcd_video_system = HD`, a layout for digital goggles. Each link below sets `AUTO` instead.
 
+Keep **OSD (Analog)** in the build options when you flash. Without it, Betaflight sets `vcd_video_system` back to `HD` whenever MSP DisplayPort starts, and items placed outside the ARK OSD's 30 × 13 grid don't show.
+
 ## SPI
 
-[betaflight/config#1262](https://github.com/betaflight/config/pull/1262) adds the MAX7456 driver on the ARK FPV's SPI port. Until it is in a Betaflight release, use [MSP DisplayPort](#msp-displayport). Keep **OSD (Analog)** in the build options when you flash.
+[betaflight/config#1262](https://github.com/betaflight/config/pull/1262) adds the MAX7456 driver on the ARK FPV's SPI port. Until it is in a Betaflight release, use [MSP DisplayPort](#msp-displayport).
 
 ```text
 set vcd_video_system = AUTO
