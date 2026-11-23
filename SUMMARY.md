@@ -52,6 +52,7 @@
       * [Flashing Guide](embedded-computers/ark-just-a-jetson/flashing-guide.md)
       * [Release Notes](embedded-computers/ark-just-a-jetson/release-notes.md)
       * [USB-C Console](embedded-computers/ark-just-a-jetson/usb-c-console.md)
+      * [Disk Encryption](embedded-computers/ark-just-a-jetson/disk-encryption.md)
   * [ARK Just a Pi](embedded-computers/ark-just-a-pi/README.md)
     * [Hardware Reference](embedded-computers/ark-just-a-pi/hardware.md)
     * [Getting Started](embedded-computers/ark-just-a-pi/getting-started.md)
