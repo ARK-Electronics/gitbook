@@ -44,6 +44,8 @@ dtoverlay=uart2,ctsrts
 dtoverlay=uart3,ctsrts
 # UART4 connector, TX/RX only (GPIO12/13)
 dtoverlay=uart4
+# GNSS PPS input on the UART4 connector's pin 4 (GPIO18) as /dev/pps0. See PPS Input
+dtoverlay=pps-gpio,gpiopin=18,pull=down
 
 # PCIe FFC connector, off by default on the CM5. Uncomment the second line for Gen 3
 # if the cable and device run cleanly at Gen 3
@@ -86,6 +88,8 @@ enable_uart=1
 dtoverlay=uart4,ctsrts
 # UART4 connector, TX/RX only (uart5 on the CM4, GPIO12/13)
 dtoverlay=uart5
+# GNSS PPS input on the UART4 connector's pin 4 (GPIO18) as /dev/pps0. See PPS Input
+dtoverlay=pps-gpio,gpiopin=18,pull=down
 
 # USB 2.0 host port VBUS
 gpio=24=op,dh
