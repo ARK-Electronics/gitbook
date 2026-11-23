@@ -21,3 +21,7 @@ ARK add-on boards and peripheral accessories.
 {% content-ref url="ark-ethernet-adapter/" %}
 [ark-ethernet-adapter](ark-ethernet-adapter/)
 {% endcontent-ref %}
+
+{% content-ref url="ark-osd/" %}
+[ark-osd](ark-osd/)
+{% endcontent-ref %}
