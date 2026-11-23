@@ -15,8 +15,6 @@
 | Dimensions | 36 × 29 × 7.4 mm |
 | Weight | 5.0 g |
 
-PAL has not yet been tested with a camera.
-
 ## Pinout
 
 <figure><img src="../../.gitbook/assets/ARK OSD.jpg" alt="ARK OSD, top"><figcaption><p>Top: SPI (J1), TELEM (J2), CAM (J3), VIDEO OUT (J5) and DEBUG (J4)</p></figcaption></figure>
