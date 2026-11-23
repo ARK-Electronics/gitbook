@@ -19,7 +19,7 @@ PAL has not yet been tested with a camera.
 
 ## Pinout
 
-<figure><img src="../../.gitbook/assets/TODO-ark-osd-top.jpg" alt="ARK OSD, top"><figcaption><p>TODO: photo with the connectors labeled</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ARK OSD.jpg" alt="ARK OSD, top"><figcaption><p>Top: SPI (J1), TELEM (J2), CAM (J3), VIDEO OUT (J5) and DEBUG (J4)</p></figcaption></figure>
 
 ### SPI (J1) — 8-pin JST-SH
 

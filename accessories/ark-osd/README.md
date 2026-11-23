@@ -1,5 +1,5 @@
 ---
-cover: ../../.gitbook/assets/TODO-ark-osd-cover.jpg
+cover: ../../.gitbook/assets/ARK OSD.jpg
 coverY: 0
 ---
 
