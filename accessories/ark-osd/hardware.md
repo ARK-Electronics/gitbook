@@ -13,7 +13,7 @@
 | Power draw | TODO |
 | Mounting | 4× 3.8 mm holes on a 30.5 × 23.4 mm pattern |
 | Dimensions | 36 × 29 × 7.4 mm |
-| Weight | TODO |
+| Weight | 5.0 g |
 
 PAL has not yet been tested with a camera.
 
