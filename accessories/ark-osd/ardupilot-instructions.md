@@ -17,7 +17,7 @@ ArduPilot checks the ARK OSD's font at boot and uploads the one [OSD\_FONT](http
 
 | Parameter | Value | Description |
 |-----------|-------|-------------|
-| [SERIAL1\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#serial1-protocol) | `42` | DisplayPort on the TELEM port |
+| [SERIAL1\_PROTOCOL](https://ardupilot.org/copter/docs/parameters.html#serial1-protocol) | `42` | DisplayPort on the TELEM port, in place of MAVLink |
 | [SERIAL1\_BAUD](https://ardupilot.org/copter/docs/parameters.html#serial1-baud) | `115` | 115200 baud |
 | [OSD\_TYPE](https://ardupilot.org/copter/docs/parameters.html#osd-type) | `5` | MSP DisplayPort, the ARK FPV default |
 
