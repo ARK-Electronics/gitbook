@@ -5,14 +5,15 @@
 | Specification | Value |
 |---------------|-------|
 | SPI | Register-compatible with the MAX7456, SPI modes 0 and 3 |
-| UART | MSP DisplayPort, 115200 baud, no flow control |
+| UART | MSP DisplayPort and firmware updates, 115200 baud, no flow control |
 | Video | NTSC and PAL composite, detected from the camera |
 | Overlay | Monochrome, 30 × 13 characters on NTSC and 30 × 16 on PAL. The camera's color passes through |
 | Power | 5 V on the SPI or TELEM connector |
-| Power draw | TODO |
 | Mounting | 4× 3.8 mm holes on a 30.5 × 23.4 mm pattern |
 | Dimensions | 36 × 29 × 7.4 mm |
 | Weight | 5.0 g |
+
+<!-- TODO: add a Power draw row once the ARK OSD's current is measured. -->
 
 ## Pinout
 
@@ -83,7 +84,7 @@ The camera and video transmitter cables are not included.
 | CAM | Camera video output | 3-pin JST-GH, not included |
 | VIDEO OUT | Video transmitter's camera input | 3-pin JST-GH, not included |
 
-Connect the SPI cable, the TELEM cable or both. Either one powers the board. Video reaches the transmitter only while the ARK OSD has power.
+Connect the SPI cable, the TELEM cable or both. Either one powers the board. Firmware updates go over TELEM. Video reaches the transmitter only while the ARK OSD has power.
 
 {% hint style="danger" %}
 Connect TELEM only to the ARK FPV's TELEM port, never to its VTX port. The VTX port's pin 1 carries 12 V. The ARK OSD's 5 V inputs are rated 6 V maximum.

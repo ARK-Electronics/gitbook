@@ -1,10 +1,14 @@
 # Betaflight Instructions
 
-The ARK OSD connects to the ARK FPV's SPI port or its TELEM port, as in [Wiring](hardware.md#wiring). Enter the settings for one link in the Betaflight Configurator's CLI tab. The ARK FPV defaults to `vcd_video_system = HD`, a layout for digital goggles. Each link below sets `AUTO` instead.
+The ARK OSD connects to the ARK FPV's SPI port or its TELEM port, as in [Wiring](hardware.md#wiring). Enter the settings for one link in the Betaflight Configurator's CLI tab. Builds with the HD OSD option default to `vcd_video_system = HD`, a layout for digital goggles, so each link below sets `AUTO`.
+
+{% hint style="warning" %}
+Until [betaflight/config#1262](https://github.com/betaflight/config/pull/1262) merges, the ARK OSD needs a Betaflight master build on [MSP DisplayPort](#msp-displayport).
+{% endhint %}
 
 ## SPI
 
-[betaflight/config#1262](https://github.com/betaflight/config/pull/1262) adds the MAX7456 driver on the ARK FPV's SPI port. Until it is in a Betaflight release, use [MSP DisplayPort](#msp-displayport). Keep **OSD (Analog)** in the build options when you flash.
+[betaflight/config#1262](https://github.com/betaflight/config/pull/1262) adds the MAX7456 driver on the ARK FPV's SPI port. Keep **OSD (Analog)** in the build options when you flash.
 
 ```text
 set vcd_video_system = AUTO
@@ -16,9 +20,7 @@ With `AUTO`, Betaflight reads NTSC or PAL from the ARK OSD. The Font Manager in 
 
 ## MSP DisplayPort
 
-`vcd_video_system = AUTO` gives the 13 NTSC rows. With a PAL camera, set `PAL` instead to get 16.
-
-### Betaflight Master
+These settings need a Betaflight master build. `vcd_video_system = AUTO` gives the 13 NTSC rows. With a PAL camera, set `PAL` instead to get 16.
 
 ```text
 set vcd_video_system = AUTO
@@ -28,15 +30,3 @@ set osd_uart = UART7
 set osd_displayport_device = MSP
 save
 ```
-
-### Betaflight 2026.6
-
-In the [Ports tab](https://betaflight.com/docs/wiki/app/ports-tab), turn on **Configuration/MSP** for UART7 and set its **Peripherals** to **VTX (MSP + Displayport)**. On UART5, the VTX port, turn off MSP and set **Peripherals** to **Disabled**. Then enter:
-
-```text
-set vcd_video_system = AUTO
-set osd_displayport_device = MSP
-save
-```
-
-This setup hasn't been tested on hardware.
